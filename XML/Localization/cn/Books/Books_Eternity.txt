@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BookDescRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <bookDescList>
+
+    <BookDesc BookID="226769000">
+      <BookName>蓬莱山辉夜之页</BookName>
+      <TextList>
+         <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+
+
+    <BookDesc BookID="226769001">
+      <BookName>八意永琳之页</BookName>
+      <TextList>
+         <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+
+    <BookDesc BookID="226769002">
+      <BookName>铃仙之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+
+  </bookDescList>
+</BookDescRoot>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleEffectTextRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <effectTextList>
+<!--书页标签-->	 
+	<BattleEffectText ID="EternityCard1_Keyword">
+      <Name>(难题)</Name>
+      <Desc>本书页享受双倍“难题”骰子加成</Desc>
+    </BattleEffectText> 
+	<BattleEffectText ID="EternityCard2_Keyword">
+      <Name>(疯狂)</Name>
+      <Desc>本书页在“疯狂”骰子使用时获得改变</Desc>
+    </BattleEffectText> 
+	<BattleEffectText ID="EternityCard3_Keyword">
+      <Name>月相(X)</Name>
+      <Desc>本书页在第X颗骰子使用时获得特殊效果并触发“月相”</Desc>
+    </BattleEffectText> 
+<!--蓬莱山辉夜-->	  
+    <BattleEffectText ID="KaguyaBuf1">
+      <Name>午时</Name>
+      <Desc>本幕内造成伤害与混乱伤害+1</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="KaguyaBuf2">
+      <Name>未时</Name>
+      <Desc>本幕内受到伤害与混乱伤害-1</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="KaguyaBuf3">
+      <Name>申时</Name>
+      <Desc>每一幕开始恢复1点光芒</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="KaguyaBuf4">
+      <Name>酉时</Name>
+      <Desc>每一幕开始抽取1张书页</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="KaguyaBuf5">
+      <Name>戌时</Name>
+      <Desc>每一幕开始获得1层“忍耐”</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="KaguyaBuf6">
+      <Name>亥时</Name>
+      <Desc>每一幕开始获得1层“强壮”</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="KaguyaBuf7">
+      <Name>子时</Name>
+      <Desc>速度骰子+1
+每一幕开始抽取1张书页</Desc>
+    </BattleEffectText>
+	
+	<!--难题任务完成后获得的Buff-->
+	<BattleEffectText ID="KaguyaBuf8">
+      <Name>难题解疑</Name>
+      <Desc>自身左侧{0}颗速度骰子更改为“难题”骰子
+“难题”骰子将按特定的顺序排列
+且每完成1个难题获得特殊加成
+目前完成:
+{1}
+目前“难题”骰子加成:
+{2}
+目前常驻加成:
+{3}
+</Desc>
+    </BattleEffectText>
+    <!--排列顺序从左到右为[龙颈之玉][佛御石之钵][火鼠的皮衣][燕的子安贝][蓬莱玉枝]的难题骰子-->
+    <!--完成[龙颈之玉]获得[骰子上下限+1]-->
+
+<!--完成[佛御石之钵]获得[拼点失败时受到伤害-2]--><!--代码就,投掷时,检测有没有拼点,然后有拼点就减少目标骰子2点伤害-->
+<!--完成[火鼠的皮衣]获得[拼点胜利时对目标施加2层烧伤]-->
+<!--完成[燕的子安贝]获得[拼点胜利时为体力最低的友方恢复3点体力与混乱]-->
+<!--完成[蓬莱玉枝]获得[拼点失败时使自身下一颗骰子威力+2,单方面攻击时骰子威力+2]-->
+
+<!--完成[龙颈之玉]获得[施加负面时层数+1]-->
+<!--完成[佛御石之钵]获得[随机一个非耐性的抗性改为耐性]-->
+<!--完成[火鼠的皮衣]获得[被施加烧伤时层数-1]-->
+<!--完成[燕的子安贝]获得[每幕结束时恢复10点体力与混乱]-->
+<!--完成[蓬莱玉枝]获得[若累计造成7点伤害,则抽取1张书页恢复1点光芒]--><!--每次触发后清空累计,并且触发上限+7-->
+
+<!--八意永琳-->
+	<BattleEffectText ID="YagokoroBuf1">
+      <Name>残月</Name>
+      <Desc>每一幕开始获得1层“迅捷”</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroBuf2">
+      <Name>半月</Name>
+      <Desc>所有骰子上限与下限+1</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroBuf3">
+      <Name>满月</Name>
+      <Desc>光芒上限+1
+每一幕开始恢复1点光芒</Desc>
+    </BattleEffectText>
+	
+	<BattleEffectText ID="YagokoroBuf4">
+      <Name>入梦</Name>
+      <Desc>无法行动且无法被选中</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroBuf5">
+      <Name>美梦</Name>
+      <Desc>无法行动且无法被选中
+本幕结束时恢复100点体力与全部混乱抗性</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroBuf6">
+      <Name>噩梦</Name>
+      <Desc>无法行动且无法被选中
+本幕结束时受到20点混乱伤害且下一幕所有骰子最大值与最小值-2</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroBuf7">
+      <Name>狂梦</Name>
+      <Desc>无法行动且无法被选中
+本幕结束时对自身施加{0}层“疯狂”</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="CardBuf_YagokoroCardBuf1">
+      <Name>蓄力</Name>
+      <Desc>[使用时]若持有“蓄力”则使本书页所有骰子威力+5</Desc>
+    </BattleEffectText>
+	
+	<BattleEffectText ID="YagokoroBuf8">
+      <Name>突刺失效</Name>
+      <Desc>本幕内将摧毁近战书页内所有“突刺”骰子</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroBuf9">
+      <Name>斩击失效</Name>
+      <Desc>本幕内将摧毁近战书页内所有“斩击”骰子</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroBuf10">
+      <Name>打击失效</Name>
+      <Desc>本幕内将摧毁近战书页内所有“打击”骰子</Desc>
+    </BattleEffectText>
+	
+	<BattleEffectText ID="YagokoroBuf11">
+      <Name>回光反照</Name>
+      <Desc>体力无法变动
+累计所有受到的伤害与恢复
+每一幕结束时层数-1
+该状态移除时
+若层数为正数则受到其“数值*2”的伤害
+若层数为负数则恢复其“数值*2”的体力</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroBuf11_TXTGg1">
+      <Name>回光反照</Name><!--伤害强化的文本-->
+      <Desc>体力无法变动
+累计所有受到的伤害与恢复
+每一幕结束时层数-1
+该状态移除时
+若层数为正数则受到其“数值*2.5”的伤害
+若层数为负数则恢复其“数值*2”的体力</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroBuf11_TXTGg2">
+      <Name>回光反照</Name><!--治疗强化的文本-->
+      <Desc>体力无法变动
+累计所有受到的伤害与恢复
+每一幕结束时层数-1
+该状态移除时
+若层数为正数则受到其“数值*2”的伤害
+若层数为负数则恢复其“数值*2.5”的体力</Desc>
+    </BattleEffectText>
+	
+	
+<!--铃仙-->
+	<BattleEffectText ID="InabaBuf1">
+      <Name>狂气</Name>
+      <Desc>当前层数:{0}</Desc>
+    </BattleEffectText>
+	
+	<BattleEffectText ID="InabaBuf2">
+      <Name>疯狂</Name>
+      <Desc>本幕内速度最高的速度骰子将“失控”
+失控-随机使用书页指向目标(包括友方)且所有骰子威力+2
+(每拥有1层则使“失控”的速度骰子数量+1)</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="InabaBuf3"><!--铃仙获得时-->
+      <Name>疯狂</Name>
+      <Desc>本幕内速度最高的速度骰子将“失控”
+失控-随机使用书页指向目标(不包括友方)且所有骰子威力+2
+(每拥有1层则使“失控”的速度骰子数量+1)</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="InabaBuf3_ally"><!--“蓬莱山辉夜”与“八意永琳”获得时-->
+      <Name>疯狂</Name>
+      <Desc>本幕内速度最高的速度骰子更改为“疯狂”骰子
+疯狂-使用书页时所有骰子威力+2
+(每拥有1层则使“失控”的速度骰子数量+1)</Desc>
+    </BattleEffectText>
+	
+	<BattleEffectText ID="InabaBuf4">
+      <Name>障壁</Name>
+      <Desc>免疫{0}次伤害
+受到伤害时层数-1</Desc>
+    </BattleEffectText>
+	
+	<BattleEffectText ID="InabaBuf5">
+      <Name>国士无双</Name><!--1层的时候-->
+      <Desc>受到的伤害-1
+造成的伤害+1
+(至多3层)</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="InabaBuf5_Txt1">
+      <Name>国士无双</Name><!--2层的时候-->
+      <Desc>受到的伤害-2
+造成的伤害+2
+(至多3层)</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="InabaBuf5_Txt2">
+      <Name>国士无双</Name><!--3层的时候-->
+      <Desc>受到的伤害-4
+造成的伤害+4
+(至多3层)</Desc>
+    </BattleEffectText>
+	
+	
+	<BattleEffectText ID="InabaBuf6">
+      <Name>怠惰</Name>
+      <Desc>本幕内免疫“正面状态”且无法获得“正面状态”</Desc>
+    </BattleEffectText>
+	
+	
+	
+	<BattleEffectText ID="InabaBuf7">
+      <Name>狂视</Name>
+      <Desc>每一幕开始对所有敌方施加1层“疯狂”并对自身施加2层“疯狂”
+每一幕结束时层数-1</Desc>
+    </BattleEffectText>
+	
+</effectTextList>
+</BattleEffectTextRoot>

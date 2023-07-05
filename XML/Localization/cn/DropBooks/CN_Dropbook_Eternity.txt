@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<localize xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<text id="TheWorld_Eternity1">永远之亭</text>
+	
+	<text id="TheWorld_Eternity2">蓬莱山辉夜之书</text>
+	<text id="TheWorld_Eternity3">八意永琳之书</text>
+	<text id="TheWorld_Eternity4">铃仙之书</text>
+	
+</localize>

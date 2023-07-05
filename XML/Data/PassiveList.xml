@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PassiveXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!--蓬莱山辉夜-->
+<Passive ID="226769000">
+	<Rarity>Unique</Rarity>
+	<Cost>6</Cost>
+	<CanGivePassive>false</CanGivePassive>
+	<Script>226769000</Script>
+	<Name>永夜</Name>
+	<Desc>开启舞台时,将时间更改为“午时”
+每间隔1幕推进1时辰(至多为“子时”)
+(需“永远亭”3人在场,且仅对“永远亭”3人生效)
+(无法转移)</Desc>
+</Passive>
+<Passive ID="226769001">
+	<Rarity>Unique</Rarity>
+	<Cost>10</Cost>
+	<CanGivePassive>false</CanGivePassive>
+	<Script>226769001</Script>
+	<Name>五难题</Name>
+	<Desc>开启舞台时,向自身E.G.O栏置入5张“难题”
+(“难题”书页可指向友方,完成“难题”后获得特殊加成)
+“疯狂”效果改变
+(无法转移)</Desc>
+</Passive>
+<Passive ID="226769002">
+	<Rarity>Unique</Rarity>
+	<Cost>8</Cost>
+	<Script>226769002</Script>
+	<CanGivePassive>false</CanGivePassive>
+	<Name>永远须臾</Name>
+	<Desc>每一幕开始时将自身数值高于4的速度骰子设为99
+将自身数值至少为3的速度骰子设为1
+且设为1的速度骰子被击中时,无法被施加“负面状态”
+(无法转移)</Desc>
+</Passive>
+
+<Passive ID="226769003">
+	<Rarity>Unique</Rarity>
+	<Cost>0</Cost>
+	<Script>226769003</Script>
+	<Name>符卡规则</Name>
+	<Desc>造成的伤害与混乱伤害-30%</Desc>
+</Passive><!--通用，“永远亭”3人都会有-->
+
+<Passive ID="226769004">
+	<Rarity>Unique</Rarity>
+	<Cost>0</Cost>
+	<Script>226769004</Script>
+	<Name>观测</Name>
+	<Desc>司书选择异想体时,选择数+2</Desc>
+</Passive><!--来宾限定-->
+<!--八意永琳-->
+<Passive ID="226769005">
+	<Rarity>Unique</Rarity>
+	<Cost>0</Cost>
+	<Script>226769005</Script>
+	<CanGivePassive>false</CanGivePassive>
+	<Name>月相轮转</Name><!--未生效-->
+	<Desc>若时间为“午时”,本被动生效
+“疯狂”效果改变
+(无法转移)</Desc>
+</Passive>
+<Passive ID="226769105"><!--该被动只作为文本-->
+	<Rarity>Unique</Rarity>
+	<Cost>0</Cost>
+	<Script>226769105</Script>
+	<CanGivePassive>false</CanGivePassive>
+	<Name>月相轮转</Name><!--生效-->
+	<Desc>若自身速度骰子数量达到5时
+将自身速度骰子更改为“月相”
+若使用“专属”书页触发“月相”达到5则触发1次“轮转”
+(至多轮转3次)
+“疯狂”效果改变
+(无法转移)</Desc>
+</Passive>
+<Passive ID="226769006">
+	<Rarity>Unique</Rarity>
+	<Cost>8</Cost>
+	<Script>226769006</Script>
+	<CanGivePassive>false</CanGivePassive>
+	<Name>投掷药剂</Name>
+	<Desc>以下种类骰子取得拼点胜利时
+打击-下一幕对目标随机从(“流血”/“烧伤”/“腐蚀”/“易损”/“麻痹”)施加1层
+斩击-下一幕对目标随机从(“流血”/“烧伤”/“束缚”/“破绽”/“烟气”)施加1层
+突刺-下一幕对目标随机从(“流血”/“烧伤”/“混乱易损”/“虚弱”/“易损”)施加1层
+防御-下一幕随机从(“守护”/“忍耐”/“振奋”)获得1层
+闪避-下一幕随机从(“迅捷”/“守护”/“强壮”)获得1层
+(一幕内“防御”/“闪避”至多触发3次)
+(无法转移)</Desc>
+</Passive>
+<Passive ID="226769007"><!--来宾限定-->
+	<Rarity>Unique</Rarity>
+	<Cost>0</Cost>
+	<Script>226769007</Script>
+	<CanGivePassive>false</CanGivePassive>
+	<Name>暂时休整</Name>
+	<Desc>舞台结束时恢复所有友方“10%的已损失体力”的体力
+若舞台结束时自身处于“无法行动”状态则使恢复量改为“20%的已损失体力”</Desc>
+</Passive>
+<Passive ID="226769008"><!--司书限定-->
+	<Rarity>Unique</Rarity>
+	<Cost>4</Cost>
+	<Script>226769008</Script>
+	<CanGivePassive>false</CanGivePassive>
+	<Name>暂时休整</Name>
+	<Desc>舞台结束时恢复所有友方“10%的已损失体力”的体力
+(无法转移)</Desc>
+</Passive>
+<!--铃仙-->
+<Passive ID="226769009">
+	<Rarity>Unique</Rarity>
+	<Cost>5</Cost>
+	<Script>226769009</Script>
+	<CanGivePassive>false</CanGivePassive>
+	<Name>狂月</Name>
+	<Desc>若当前月相为“满月”,且自身至少拥有300层“狂气”
+则每一幕开始时,对随机1名敌方施加“疯狂”
+(无法转移)</Desc>
+</Passive>
+<Passive ID="226769010">
+	<Rarity>Unique</Rarity>
+	<Cost>4</Cost>
+	<Script>226769010</Script>
+	<CanGivePassive>false</CanGivePassive>
+	<Name>混乱之眼</Name>
+	<Desc>开启舞台时,永久获得1层“疯狂”
+所有单位受到伤害时,自身获得等量“狂气”
+“疯狂”效果改变
+(无法转移)</Desc>
+</Passive>
+<Passive ID="226769011">
+	<Rarity>Unique</Rarity>
+	<Cost>8</Cost>
+	<Script>226769011</Script>
+	<CanGivePassive>false</CanGivePassive>
+	<Name>着魔之人</Name>
+	<Desc>若被“疯狂”导致的书页攻击时
+免疫此次伤害且反弹其伤害量的50%
+(无法转移)</Desc>
+</Passive>
+<Passive ID="226769012">
+	<Rarity>Unique</Rarity>
+	<Cost>0</Cost>
+	<Script>226769012</Script>
+	<CanGivePassive>false</CanGivePassive>
+	<Name>情感激发</Name>
+	<Desc>每一幕开始时,使司书方情感提升1级
+(至多“已结束舞台数”的次数)</Desc>
+</Passive>
+</PassiveXmlRoot>

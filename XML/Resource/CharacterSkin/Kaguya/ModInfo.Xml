@@ -1,0 +1,108 @@
+<ModInfo>
+  <ClothInfo>
+    <Name>蓬莱山辉夜</Name>
+    <Default>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="259.9" pivot_y="-360.9" />
+      <Head head_x="-17.55" head_y="456.7" rotation="0" head_enable="False" />
+    </Default>
+    <Guard>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="269.1" pivot_y="-360.9" />
+      <Head head_x="-41.85" head_y="436.45" rotation="0" head_enable="False" />
+    </Guard>
+    <Evade>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="232.3" pivot_y="-358.6" />
+      <Head head_x="55.35" head_y="424.3" rotation="0" head_enable="False" />
+    </Evade>
+    <Damaged>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="243.8" pivot_y="-370.1" />
+      <Head head_x="153.9" head_y="421.6" rotation="0" head_enable="False" />
+    </Damaged>
+    <Slash>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="227.7" pivot_y="-365.5" />
+      <Head head_x="-82.35001" head_y="400" rotation="0" head_enable="False" />
+    </Slash>
+    <Penetrate>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="170.2" pivot_y="-358.6" />
+      <Head head_x="-32.40001" head_y="429.7" rotation="0" head_enable="False" />
+    </Penetrate>
+    <Hit>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="269.1" pivot_y="-363.2" />
+      <Head head_x="0" head_y="421.6" rotation="0" head_enable="False" />
+    </Hit>
+    <Move>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="161.0" pivot_y="-365.5" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </Move>
+	<Fire>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="255.3" pivot_y="-363.2" />
+      <Head head_x="-32.40001" head_y="429.7" rotation="0" head_enable="False" />
+    </Fire>
+	  <Aim>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="255.3" pivot_y="-363.2" />
+      <Head head_x="-32.40001" head_y="429.7" rotation="0" head_enable="False" />
+    </Aim>
+	
+	
+	
+	<S1>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="246.1" pivot_y="-363.2" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S1>
+	<S2>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="200.1" pivot_y="-363.2" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S2>
+	<S3>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="253.0" pivot_y="-360.9" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S3>
+	<S4>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="253.0" pivot_y="-360.9" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S4>
+	<S5>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="253.0" pivot_y="-360.9" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S5>
+	<S6>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="170.2" pivot_y="-358.6" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S6>
+	<S7>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="255.3" pivot_y="-363.2" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S7>
+	<S8>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="220.8" pivot_y="-360.9" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S8>
+	<S9>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="259.9" pivot_y="-363.2" />
+      <Head head_x="-41.85" head_y="436.45" rotation="0" head_enable="False" />
+    </S9>
+	  <S10>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="262.2" pivot_y="-360.9" />
+      <Head head_x="-41.85" head_y="436.45" rotation="0" head_enable="False" />
+    </S10>
+  </ClothInfo>
+</ModInfo>

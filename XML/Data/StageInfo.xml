@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StageXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>1.1</Version>
+  
+   <Stage id="226769000">
+		<Name>永远之亭</Name>
+		<Wave>
+			<Unit>226769000</Unit>
+			<Unit>226769001</Unit>
+			<Unit>226769002</Unit>
+			<Formation>1</Formation>
+			<FormationType>Default</FormationType>
+			<AvailableUnit>5</AvailableUnit>
+			<!--<ManagerScript>舞台被动名字</ManagerScript>-->
+		<emotionCardList />
+		</Wave>
+		<StageType>Invitation</StageType>
+		<FloorNum>1</FloorNum>
+		<Chapter>7</Chapter>
+		<Invitation Combine="BookRecipe">
+			<Book>226769000</Book>
+		</Invitation>
+		<!--<MapInfo>地图名字</MapInfo>-->
+		<!--<MapInfo>Philip1</MapInfo>-->
+		<StoryType>TheWorld_Eternity</StoryType>
+		
+		<!--<Story Condition="Start">战前剧情.xml</Story>-->
+		<!--<Story Condition="End">战后剧情.xml</Story>-->
+		<IsChapterLast>false</IsChapterLast>
+		<invitationtype>false</invitationtype>
+  </Stage>
+  
+</StageXmlRoot>

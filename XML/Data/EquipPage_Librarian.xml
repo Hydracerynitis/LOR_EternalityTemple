@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BookXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>1.1</Version>
+   <Book ID="226769003">
+    <Name>蓬莱山辉夜之页</Name>
+    <TextId>226769000</TextId>
+    <EquipEffect>
+      <HP>105</HP>
+      <Break>50</Break>
+      <SpeedMin>1</SpeedMin>
+      <Speed>6</Speed>
+      <SResist>Endure</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Endure</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+	  
+	  <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+	  
+      <Passive Pid="@origin">10004</Passive>
+      <Passive>226769000</Passive>
+      <Passive>226769001</Passive>
+      <Passive>226769002</Passive>
+      <Passive>226769003</Passive><!--通用-->
+	  
+	  <OnlyCard>226769000</OnlyCard>  
+	  <OnlyCard>226769001</OnlyCard>  
+	  <OnlyCard>226769002</OnlyCard>  
+	  <OnlyCard>226769003</OnlyCard>  
+	  <OnlyCard>226769004</OnlyCard>  
+	  <OnlyCard>226769005</OnlyCard>  
+
+    </EquipEffect>
+    <RangeType>Hybrid</RangeType>
+    <BookIcon>TheWorld_Eternity</BookIcon>
+    <Rarity>Special</Rarity>
+	
+    <CharacterSkin>Kaguya</CharacterSkin>
+    <CharacterSkinType>Custom</CharacterSkinType>
+    <SkinGender>N</SkinGender>
+    <Chapter>7</Chapter>
+    <Episode>-1</Episode>
+    <RangeType>Melee</RangeType>
+    <NotEquip>false</NotEquip>
+    <RandomFace>false</RandomFace>
+    <SpeedDiceNum>1</SpeedDiceNum>
+    <SuccessionPossibleNumber>9</SuccessionPossibleNumber>
+  </Book>
+  
+   <Book ID="226769004">
+    <Name>八意永琳之页</Name>
+    <TextId>226769001</TextId>
+    <EquipEffect>
+      <HP>105</HP>
+      <Break>50</Break>
+      <SpeedMin>3</SpeedMin>
+      <Speed>6</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Endure</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Endure</PBResist>
+      <HBResist>Normal</HBResist>
+	  
+	  <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+	  
+      <Passive Pid="@origin">10004</Passive>
+      <Passive>226769005</Passive>
+      <Passive>226769006</Passive>
+      <Passive>226769003</Passive><!--通用-->
+      <Passive>226769008</Passive>
+
+	  <OnlyCard>226769000</OnlyCard>  
+	  <OnlyCard>226769016</OnlyCard>  
+	  <OnlyCard>226769017</OnlyCard>  
+	  <OnlyCard>226769018</OnlyCard>  
+	  <OnlyCard>226769019</OnlyCard>  
+	  <OnlyCard>226769020</OnlyCard>  
+	  <OnlyCard>226769021</OnlyCard>  
+	  <OnlyCard>226769022</OnlyCard>  
+	  <OnlyCard>226769023</OnlyCard>  
+    </EquipEffect>
+    <RangeType>Hybrid</RangeType>
+    <BookIcon>TheWorld_Eternity</BookIcon>
+    <Rarity>Special</Rarity>
+	
+    <CharacterSkin>Yagokoro</CharacterSkin>
+    <CharacterSkinType>Custom</CharacterSkinType>
+    <SkinGender>N</SkinGender>
+    <Chapter>7</Chapter>
+    <Episode>-1</Episode>
+    <RangeType>Melee</RangeType>
+    <NotEquip>false</NotEquip>
+    <RandomFace>false</RandomFace>
+    <SpeedDiceNum>1</SpeedDiceNum>
+    <SuccessionPossibleNumber>9</SuccessionPossibleNumber>
+  </Book>
+  
+	<Book ID="226769005">
+    <Name>铃仙之页</Name>
+    <TextId>226769002</TextId>
+    <EquipEffect>
+      <HP>105</HP>
+      <Break>50</Break>
+      <SpeedMin>4</SpeedMin>
+      <Speed>6</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Endure</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Endure</HBResist>
+	  
+	  <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+	  
+      <Passive Pid="@origin">10004</Passive>
+      <Passive>226769009</Passive>
+      <Passive>226769010</Passive>
+      <Passive>226769003</Passive><!--通用-->
+      <Passive>226769011</Passive>
+
+	  <OnlyCard>226769000</OnlyCard>  
+	  <OnlyCard>226769028</OnlyCard>  
+	  <OnlyCard>226769029</OnlyCard>  
+	  <OnlyCard>226769030</OnlyCard>  
+	  <OnlyCard>226769031</OnlyCard>  
+	  <OnlyCard>226769032</OnlyCard>  
+	  <OnlyCard>226769033</OnlyCard>    
+
+    </EquipEffect>
+    <RangeType>Hybrid</RangeType>
+    <BookIcon>TheWorld_Eternity</BookIcon>
+    <Rarity>Special</Rarity>
+	
+    <CharacterSkin>Inaba</CharacterSkin>
+    <CharacterSkinType>Custom</CharacterSkinType>
+    <SkinGender>N</SkinGender>
+    <Chapter>7</Chapter>
+    <Episode>-1</Episode>
+    <RangeType>Melee</RangeType>
+    <NotEquip>false</NotEquip>
+    <RandomFace>false</RandomFace>
+    <SpeedDiceNum>1</SpeedDiceNum>
+    <SuccessionPossibleNumber>9</SuccessionPossibleNumber>
+  </Book>
+</BookXmlRoot>

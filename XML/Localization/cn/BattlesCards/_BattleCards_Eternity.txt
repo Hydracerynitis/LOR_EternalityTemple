@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardDescRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<cardDescList>
+<!--永远亭通用-->
+    <BattleCardDesc ID="226769000">
+      <LocalizedName>月之都市</LocalizedName>
+    </BattleCardDesc>
+<!--蓬莱山辉夜--> 
+	<BattleCardDesc ID="226769001">
+      <LocalizedName>新难题[艾哲红石]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769002">
+      <LocalizedName>新难题[Mysterium]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769003">
+      <LocalizedName>恐惧[崔斯特姆的诅咒]</LocalizedName><!--疯狂变化书页--> 
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769004">
+      <LocalizedName>新难题[金阁寺的天花板]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769005">
+      <LocalizedName>永远与须臾</LocalizedName>
+    </BattleCardDesc>
+	<!--宝物书页--> 
+	<BattleCardDesc ID="226769006"><!--由[火鼠的皮衣]获得--> 
+      <LocalizedName>神宝[火蜥蜴之盾]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769007"><!--由[龙颈之玉]获得--> 
+      <LocalizedName>神宝[耀眼的龙玉]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769008"><!--由[燕的子安贝]获得--> 
+      <LocalizedName>神宝[无限的生命之泉]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769009"><!--由[佛御石之钵]获得--> 
+      <LocalizedName>神宝[佛体的金刚石]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769010"><!--由[蓬莱玉枝]获得--> 
+      <LocalizedName>神宝[蓬莱的弹枝-七色的弹幕-]</LocalizedName>
+    </BattleCardDesc>
+	
+	<!--难题书页-E.G.O槽--> 
+	<BattleCardDesc ID="226769011">
+      <LocalizedName>难题-火鼠的皮衣</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769012">
+      <LocalizedName>难题-龙颈之玉</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769013">
+      <LocalizedName>难题-燕的子安贝</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769014">
+      <LocalizedName>难题-佛御石之钵</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769015">
+      <LocalizedName>难题-蓬莱玉枝</LocalizedName>
+    </BattleCardDesc>
+	
+	
+<!--八意永琳--> 
+	<BattleCardDesc ID="226769016">
+      <LocalizedName>药符[蝴蝶梦丸]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769017">
+      <LocalizedName>疯狂的梦</LocalizedName><!--疯狂变化书页--> 
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769018">
+      <LocalizedName>箭</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769019">
+      <LocalizedName>秘药[仙香玉兔]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769020">
+      <LocalizedName>炼丹[水银之海]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769021">
+      <LocalizedName>药符[壶中的大银河]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769022">
+      <LocalizedName>天网蛛网捕蝶之法</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769023">
+      <LocalizedName>蓬莱壶中的弹枝</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769123">
+      <LocalizedName>永夜符[蓬莱壶中的弹枝]</LocalizedName>
+    </BattleCardDesc>
+	
+	<!--E.G.O槽--> 
+	<BattleCardDesc ID="226769024">
+      <LocalizedName>敌之尖刀</LocalizedName><!--装备卡--> 
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769025">
+      <LocalizedName>我之伤药</LocalizedName><!--装备卡--> 
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769026">
+      <LocalizedName>死地后生</LocalizedName><!--装备卡--> 
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769027">
+      <LocalizedName>回光反照</LocalizedName><!--装备卡--> 
+    </BattleCardDesc>
+	
+	
+	
+<!--铃仙--> 
+	<BattleCardDesc ID="226769028">
+      <LocalizedName>波符[赤眼催眠]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769029">
+      <LocalizedName>障壁波动</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769030">
+      <LocalizedName>生药[国士无双之药]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769031">
+      <LocalizedName>幻胧月睨</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769032">
+      <LocalizedName>幻兔[平行交差]</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769033">
+      <LocalizedName>丧心疮痍</LocalizedName>
+    </BattleCardDesc>
+	
+	<!--E.G.O槽-->
+	<BattleCardDesc ID="226769034">
+      <LocalizedName>多重疯狂</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769035">
+      <LocalizedName>疯狂回声</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769036">
+      <LocalizedName>调整波长</LocalizedName>
+    </BattleCardDesc>
+</cardDescList>
+</BattleCardDescRoot>

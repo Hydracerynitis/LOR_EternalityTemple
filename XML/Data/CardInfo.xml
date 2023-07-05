@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiceCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>1.1</Version>
+  <Card ID="226769000">
+    <Name>月之都市</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Far" Cost="0"/>
+    <Script></Script>
+    <BehaviourList>
+     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="MoLisa_Proj1" Script="yaleiyalei" ActionScript="MoLisaAction2"  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769101">
+    <Name>难题-火鼠的皮衣</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Special</Rarity>
+	  <Option>Personal</Option>
+    <Spec Range="Instance" Cost="0"/>
+    <Script>KaguyaPuzzle1</Script>
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769102">
+    <Name>难题-龙颈之玉</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Special</Rarity>
+	  <Option>Personal</Option>
+    <Spec Range="Instance" Cost="0"/>
+    <Script>KaguyaPuzzle2</Script>
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769103">
+    <Name>难题-燕的子安贝</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Special</Rarity>
+	  <Option>Personal</Option>
+    <Spec Range="Instance" Cost="0"/>
+    <Script>KaguyaPuzzle3</Script>
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769104">
+    <Name>难题-佛御石之钵</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Special</Rarity>
+	  <Option>Personal</Option>
+    <Spec Range="Instance" Cost="0"/>
+    <Script>KaguyaPuzzle4</Script>
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769105">
+    <Name>难题-蓬莱玉枝</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Special</Rarity>
+	  <Option>Personal</Option>
+    <Spec Range="Instance" Cost="0"/>
+    <Script>KaguyaPuzzle5</Script>
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+</DiceCardXmlRoot>

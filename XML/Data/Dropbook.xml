@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BookUseXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>1.1</Version>
+  <BookUse ID="226769000">
+	<Name>永远之亭</Name>
+    <TextId>TheWorld_Eternity1</TextId>
+	<BookIcon>TheWorld_Eternity</BookIcon>
+    <Chapter>7</Chapter>
+  </BookUse>
+  
+<!--我想你应该看到这里了吧,掉书还请写在舞台被动的接待结束里-->
+<!--也就是ManagerScript-->
+<!--<ManagerScript>舞台被动名字</ManagerScript>-->
+<!--差不多就这样,请看到StageInfo文件-->
+	   
+  <BookUse ID="226769001">
+    <Name>蓬莱山辉夜之书</Name>
+    <TextId>TheWorld_Eternity2</TextId>
+    <BookIcon>TheWorld_Eternity</BookIcon>
+    <DropNum>1</DropNum>
+    <Chapter>7</Chapter>
+	<DropItemState>All</DropItemState>
+	<DropItem Type="Equip">226769003</DropItem>
+	<DropItem Type="Card">226769000</DropItem>
+	<DropItem Type="Card">226769001</DropItem>
+	<DropItem Type="Card">226769002</DropItem>
+	<DropItem Type="Card">226769004</DropItem>
+	<DropItem Type="Card">226769005</DropItem>
+  </BookUse>
+   <BookUse ID="226769002">
+    <Name>八意永琳之书</Name>
+    <TextId>TheWorld_Eternity3</TextId>
+    <BookIcon>TheWorld_Eternity</BookIcon>
+    <DropNum>1</DropNum>
+    <Chapter>7</Chapter>
+	<DropItemState>All</DropItemState>
+	<DropItem Type="Equip">226769004</DropItem>
+	<DropItem Type="Card">226769000</DropItem>
+	<DropItem Type="Card">226769016</DropItem>
+	<DropItem Type="Card">226769018</DropItem>
+	<DropItem Type="Card">226769019</DropItem>
+	<DropItem Type="Card">226769020</DropItem>
+	<DropItem Type="Card">226769021</DropItem>
+	<DropItem Type="Card">226769022</DropItem>
+	<DropItem Type="Card">226769023</DropItem>
+  </BookUse>
+   <BookUse ID="226769003">
+    <Name>铃仙之书</Name>
+    <TextId>TheWorld_Eternity4</TextId>
+    <BookIcon>TheWorld_Eternity</BookIcon>
+    <DropNum>1</DropNum>
+    <Chapter>7</Chapter>
+	<DropItemState>All</DropItemState>
+	<DropItem Type="Equip">226769005</DropItem>
+	<DropItem Type="Card">226769000</DropItem>
+	<DropItem Type="Card">226769028</DropItem>
+	<DropItem Type="Card">226769029</DropItem>
+	<DropItem Type="Card">226769030</DropItem>
+	<DropItem Type="Card">226769031</DropItem>
+	<DropItem Type="Card">226769032</DropItem>
+	<DropItem Type="Card">226769033</DropItem>
+  </BookUse>
+</BookUseXmlRoot>

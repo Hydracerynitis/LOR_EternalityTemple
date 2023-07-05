@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CardDropTableXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Version>1.1</Version>
+  <!--蓬莱山辉夜--> 
+  <Deck ID="226769000">
+    <Card>226769000</Card>
+    <Card>226769000</Card>
+    <Card>226769001</Card>
+	
+    <Card>226769001</Card>
+    <Card>226769003</Card>
+    <Card>226769003</Card>
+	
+    <Card>226769004</Card>
+    <Card>226769004</Card>
+    <Card>226769005</Card>
+  </Deck>
+  
+  
+<!--八意永琳--> 
+   <Deck ID="226769001">
+    <Card>226769000</Card>
+    <Card>226769000</Card>
+    <Card>226769016</Card>
+	
+    <Card>226769016</Card>
+    <Card>226769018</Card>
+    <Card>226769018</Card>
+	
+    <Card>226769019</Card>
+    <Card>226769020</Card>
+    <Card>226769022</Card>
+    <Card>226769023</Card>
+  </Deck>
+  
+  
+<!--铃仙--> 
+   <Deck ID="226769002">
+    <Card>226769000</Card>
+    <Card>226769000</Card>
+    <Card>226769000</Card>
+	
+    <Card>226769028</Card>
+    <Card>226769029</Card>
+    <Card>226769030</Card>
+	
+    <Card>226769031</Card>
+    <Card>226769032</Card>
+    <Card>226769033</Card>
+  </Deck>
+</CardDropTableXmlRoot>

@@ -1,0 +1,126 @@
+<ModInfo>
+  <ClothInfo>
+    <Name>秦心</Name>
+    <Default>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="0" pivot_y="-400" />
+      <Head head_x="-17.55" head_y="456.7" rotation="0" head_enable="False" />
+    </Default>
+    <Guard>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="14" pivot_y="-400" />
+      <Head head_x="-41.85" head_y="436.45" rotation="0" head_enable="False" />
+    </Guard>
+    <Evade>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="-71" pivot_y="-400" />
+      <Head head_x="55.35" head_y="424.3" rotation="0" head_enable="False" />
+    </Evade>
+    <Damaged>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="0" pivot_y="-400" />
+      <Head head_x="153.9" head_y="421.6" rotation="0" head_enable="False" />
+    </Damaged>
+    <Slash>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="55" pivot_y="-400" />
+      <Head head_x="-82.35001" head_y="400" rotation="0" head_enable="False" />
+    </Slash>
+    <Penetrate>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="0" pivot_y="-400" />
+      <Head head_x="-32.40001" head_y="429.7" rotation="0" head_enable="False" />
+    </Penetrate>
+    <Hit>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="0" pivot_y="-400" />
+      <Head head_x="0" head_y="421.6" rotation="0" head_enable="False" />
+    </Hit>
+    <Move>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="92" pivot_y="-400" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </Move>
+	<S1>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="30" pivot_y="-400" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S1>
+	<S2>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="30" pivot_y="-400" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S2>
+	<S3>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="108" pivot_y="-400" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S3>
+	<S4>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="25" pivot_y="-400" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S4>
+	<S5>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="65" pivot_y="-400" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S5>
+	<S6>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="20" pivot_y="-400" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S6>
+	<S7>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="20" pivot_y="-400" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S7>
+	<S8>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="20" pivot_y="-400" />
+      <Head head_x="-83.69998" head_y="417.55" rotation="0" head_enable="False" />
+    </S8>
+	  <Fire>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="0" pivot_y="-400" />
+      <Head head_x="-32.40001" head_y="429.7" rotation="0" head_enable="False" />
+    </Fire>
+	  <Aim>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="0" pivot_y="-400" />
+      <Head head_x="-32.40001" head_y="429.7" rotation="0" head_enable="False" />
+    </Aim>
+	  <S9>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="14" pivot_y="-400" />
+      <Head head_x="-41.85" head_y="436.45" rotation="0" head_enable="False" />
+    </S9>
+	  <S10>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="14" pivot_y="-400" />
+      <Head head_x="-41.85" head_y="436.45" rotation="0" head_enable="False" />
+    </S10>
+	 <S11>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="14" pivot_y="-400" />
+      <Head head_x="-41.85" head_y="436.45" rotation="0" head_enable="False" />
+    </S11>
+
+	 <S12>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="14" pivot_y="-400" />
+      <Head head_x="-41.85" head_y="436.45" rotation="0" head_enable="False" />
+    </S12>
+	<S13>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="14" pivot_y="-400" />
+      <Head head_x="-41.85" head_y="436.45" rotation="0" head_enable="False" />
+    </S13>
+	<S14>
+      <Direction>Front</Direction>
+      <Pivot pivot_x="14" pivot_y="-400" />
+      <Head head_x="-41.85" head_y="436.45" rotation="0" head_enable="False" />
+    </S14>
+  </ClothInfo>
+</ModInfo>

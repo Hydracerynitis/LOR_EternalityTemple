@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace EternalityTemple.Util
 {
-    internal interface PassiveIsImmunePos
+    internal interface IsBufImmune
     {
+        bool IsImmune(BattleUnitBuf buf);
+    }
+    internal interface OnGiveOtherBuf
+    {
+        void OnGiveBuf(BattleUnitBuf buf,int stack);
+    }
+    internal interface OnRecoverHP
+    {
+        void OnHeal(int num);
     }
 }

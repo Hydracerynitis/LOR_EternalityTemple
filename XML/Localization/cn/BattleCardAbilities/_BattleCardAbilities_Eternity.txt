@@ -43,7 +43,6 @@
 	<BattleCardAbility ID="EternityDice1"><!--恐惧[崔斯特姆的诅咒]-->
 		<Desc>[命中时]下一幕对目标施加1层[疯狂]</Desc>
 	</BattleCardAbility>
-	
 <!--宝物书页--> 
 	<BattleCardAbility ID="EternityCard5"><!--火蜥蜴之盾-->
 		<Desc>[使用时]本幕结束时使所有友方转移至自身并移除[烧伤]
@@ -66,30 +65,31 @@
 	<BattleCardAbility ID="EternityDice3"><!--耀眼的龙玉-->
 		<Desc>[命中时]使目标所有[负面状态]层数+1</Desc>
 	</BattleCardAbility>
-	<BattleCardAbility ID="EternityDice3"><!--无限的生命之泉-->
+	<BattleCardAbility ID="EternityDice4"><!--无限的生命之泉-->
 		<Desc>[拼点胜利]使所有友方恢复2点体力</Desc>
 	</BattleCardAbility>
 <!--难题书页-E.G.O槽--> 
-	<BattleCardAbility ID="EternityCard9"><!--火鼠的皮衣-->
-		<Desc>[难题][条件]持有时施加20层[烧伤]
-[完成]被施加[烧伤]时层数-1</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="EternityCard10"><!--龙颈之玉-->
+	<BattleCardAbility ID="KaguyaPuzzle1"><!--龙颈之玉-->
 		<Desc>[难题][条件]持有时施加30层[负面状态]
 [完成]施加[负面状态]时层数+1</Desc>
 	</BattleCardAbility>
-	<BattleCardAbility ID="EternityCard11"><!--燕的子安贝-->
-		<Desc>[难题][条件]持有时恢复50点体力
-[完成]每一幕结束时恢复10点体力与混乱抗性</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="EternityCard12"><!--佛御石之钵-->
+	<BattleCardAbility ID="KaguyaPuzzle2"><!--佛御石之钵-->
 		<Desc>[难题][条件]持有时以[防御型]骰子取得拼点胜利10次
 [完成]随1个[非耐性]抗性改为[耐性]</Desc>
 	</BattleCardAbility>
-	<BattleCardAbility ID="EternityCard13"><!--蓬莱玉枝-->
-		<Desc>[难题][条件]持有时消耗30点光芒
-[完成]若至少造成7点伤害则下一幕开始抽取1张书页并恢复1点光芒
-(每次触发后伤害需求量+7)</Desc>
+	<BattleCardAbility ID="KaguyaPuzzle3"><!--火鼠的皮衣-->
+		<Desc>[难题][条件]持有时施加20层[烧伤]
+[完成]被施加[烧伤]时层数-1</Desc>
+	</BattleCardAbility>
+	
+	<BattleCardAbility ID="KaguyaPuzzle4"><!--燕的子安贝-->
+		<Desc>[难题][条件]持有时恢复50点体力
+[完成]每一幕结束时恢复10点体力与混乱抗性</Desc>
+	</BattleCardAbility>
+	
+	<BattleCardAbility ID="KaguyaPuzzle5"><!--蓬莱玉枝-->
+		<Desc>[难题][条件]投掷70次骰子
+[完成]使用3+骰子书页时所有骰子提升2点威力</Desc>
 	</BattleCardAbility>
 	
 	
@@ -163,17 +163,17 @@
 	</BattleCardAbility>
 	
 	
-	<BattleCardAbility ID="YagokoroCard7"><!--蓬莱壶中的弹枝-->
+	<BattleCardAbility ID="YagokoroCard8"><!--蓬莱壶中的弹枝-->
 		<Desc>本书页将同时拥有[神宝“蓬莱的弹枝-七色的弹幕-”]与[药符“壶中的大银河”]的效果</Desc>
 	</BattleCardAbility>
 <!--E.G.O槽-->
-	<BattleCardAbility ID="YagokoroCard8"><!--敌之尖刀-->
+	<BattleCardAbility ID="YagokoroCard9"><!--敌之尖刀-->
 		<Desc>[装备时]使目标[抗性]本幕改为[耐性]并下一幕对其施加1层[虚弱][破绽]与随机5层[负面状态]
 [月相](3)改为“使目标[抗性]本幕改为[抵抗]并下一幕对其施加2层[虚弱][破绽]与随机10层[负面状态]”</Desc>
 	</BattleCardAbility>
 	
 	
-	<BattleCardAbility ID="YagokoroCard9"><!--我之伤药-->
+	<BattleCardAbility ID="YagokoroCard10"><!--我之伤药-->
 		<Desc>[装备时]若指向[友方]则随机移除其1种[负面状态](至多10层)
 并为其恢复[移除层数]点体力
 若指向[敌方]则随机移除其1种[正面状态](至多3层)
@@ -183,7 +183,7 @@
 	</BattleCardAbility>
 	
 	
-	<BattleCardAbility ID="YagokoroCard10"><!--死地后生-->
+	<BattleCardAbility ID="YagokoroCard11"><!--死地后生-->
 		<Desc>[装备时]对目标造成[其当前体力50%]的伤害(至少10点,至高50点)
 并对其施加10层随机[负面状态]
 后4幕每一幕开始对其施加随机3层[负面状态]并恢复25点体力
@@ -192,7 +192,7 @@
 	</BattleCardAbility>
 
 
-	<BattleCardAbility ID="YagokoroCard11"><!--回光反照-->
+	<BattleCardAbility ID="YagokoroCard12"><!--回光反照-->
 		<Desc>[装备时]对其施加3层[回光反照]
 [月相](2)-使[回光反照]造成的伤害为*2.5
 [月相](3)-施加[回光反照]层数改为4层
@@ -248,7 +248,7 @@
 	</BattleCardAbility>
 	
 	
-	<BattleCardAbility ID="InabaCard5"><!--丧心疮痍-->
+	<BattleCardAbility ID="InabaCard6"><!--丧心疮痍-->
 		<Desc>[(疯狂)]-[命中时]丢弃目标2张书页</Desc>
 		<!--这里的意思是在[疯狂]骰子使用的时候-->
 		<!--然后效果是-后面的-->
@@ -259,13 +259,13 @@
 	
 	
 <!--E.G.O槽-->
-	<BattleCardAbility ID="InabaCard6"><!--多重疯狂-->
+	<BattleCardAbility ID="InabaCard7"><!--多重疯狂-->
 		<Desc>[使用时]消耗150层[狂气]使自身下2幕进入[狂视]状态</Desc>
 		<!--本幕内施加就是施加3层[狂视]-->
 		<!--下一幕施加就是施加2层[狂视]-->
 	</BattleCardAbility>
 	
-	<BattleCardAbility ID="InabaCard7"><!--疯狂回声-->
+	<BattleCardAbility ID="InabaCard8"><!--疯狂回声-->
 		<Desc>本书页仅可指向友方
 [使用时]使指向的[骰子]下一幕更改为[疯狂]骰子
 [(疯狂)]-[使用时]下一幕对随机1名友方施加1层[疯狂]</Desc>
@@ -280,7 +280,7 @@
 	</BattleCardAbility>
 	
 	
-	<BattleCardAbility ID="InabaCard8"><!--调整波长-->
+	<BattleCardAbility ID="InabaCard9"><!--调整波长-->
 		<Desc>本书页可指向友方
 [使用时]双方恢复50%[已损失]的混乱抗性
 [(疯狂)]-[使用时]对所有[敌方]造成[恢复量50%]的混乱伤害</Desc>

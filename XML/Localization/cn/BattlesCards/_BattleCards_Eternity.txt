@@ -39,17 +39,17 @@
     </BattleCardDesc>
 	
 	<!--难题书页-E.G.O槽--> 
-	<BattleCardDesc ID="226769011">
-      <LocalizedName>难题-火鼠的皮衣</LocalizedName>
-    </BattleCardDesc>
-	<BattleCardDesc ID="226769012">
+  <BattleCardDesc ID="226769011">
       <LocalizedName>难题-龙颈之玉</LocalizedName>
     </BattleCardDesc>
+    <BattleCardDesc ID="226769012">
+      <LocalizedName>难题-佛御石之钵</LocalizedName>
+    </BattleCardDesc>
 	<BattleCardDesc ID="226769013">
-      <LocalizedName>难题-燕的子安贝</LocalizedName>
+      <LocalizedName>难题-火鼠的皮衣</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="226769014">
-      <LocalizedName>难题-佛御石之钵</LocalizedName>
+      <LocalizedName>难题-燕的子安贝</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="226769015">
       <LocalizedName>难题-蓬莱玉枝</LocalizedName>

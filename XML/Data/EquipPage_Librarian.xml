@@ -35,14 +35,13 @@
     </EquipEffect>
     <RangeType>Hybrid</RangeType>
     <BookIcon>TheWorld_Eternity</BookIcon>
-    <Rarity>Special</Rarity>
+    <Rarity>Unique</Rarity>
 	
     <CharacterSkin>Kaguya</CharacterSkin>
     <CharacterSkinType>Custom</CharacterSkinType>
     <SkinGender>N</SkinGender>
     <Chapter>7</Chapter>
-    <Episode>-1</Episode>
-    <RangeType>Melee</RangeType>
+    <Episode>226769000</Episode>
     <NotEquip>false</NotEquip>
     <RandomFace>false</RandomFace>
     <SpeedDiceNum>1</SpeedDiceNum>
@@ -85,14 +84,13 @@
     </EquipEffect>
     <RangeType>Hybrid</RangeType>
     <BookIcon>TheWorld_Eternity</BookIcon>
-    <Rarity>Special</Rarity>
+    <Rarity>Unique</Rarity>
 	
     <CharacterSkin>Yagokoro</CharacterSkin>
     <CharacterSkinType>Custom</CharacterSkinType>
     <SkinGender>N</SkinGender>
     <Chapter>7</Chapter>
-    <Episode>-1</Episode>
-    <RangeType>Melee</RangeType>
+    <Episode>226769000</Episode>
     <NotEquip>false</NotEquip>
     <RandomFace>false</RandomFace>
     <SpeedDiceNum>1</SpeedDiceNum>
@@ -134,14 +132,13 @@
     </EquipEffect>
     <RangeType>Hybrid</RangeType>
     <BookIcon>TheWorld_Eternity</BookIcon>
-    <Rarity>Special</Rarity>
+    <Rarity>Unique</Rarity>
 	
     <CharacterSkin>Inaba</CharacterSkin>
     <CharacterSkinType>Custom</CharacterSkinType>
     <SkinGender>N</SkinGender>
     <Chapter>7</Chapter>
-    <Episode>-1</Episode>
-    <RangeType>Melee</RangeType>
+    <Episode>226769000</Episode>
     <NotEquip>false</NotEquip>
     <RandomFace>false</RandomFace>
     <SpeedDiceNum>1</SpeedDiceNum>

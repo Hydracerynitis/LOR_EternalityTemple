@@ -13,57 +13,62 @@
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
-  <Card ID="226769101">
-    <Name>难题-火鼠的皮衣</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
-    <Rarity>Special</Rarity>
-	  <Option>Personal</Option>
-    <Spec Range="Instance" Cost="0"/>
-    <Script>KaguyaPuzzle1</Script>
-    <BehaviourList>
-    </BehaviourList>
-    <Chapter>7</Chapter>
-  </Card>
-  <Card ID="226769102">
+  <Card ID="226769011">
     <Name>难题-龙颈之玉</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Special</Rarity>
 	  <Option>Personal</Option>
     <Spec Range="Instance" Cost="0"/>
-    <Script>KaguyaPuzzle2</Script>
+    <Script>KaguyaPuzzle1</Script>
+    <ScriptDesc>任务条件：施加三十层负面效果。加成：施加的负面层数加一。难题骰使用：骰子上下限加一。</ScriptDesc>
     <BehaviourList>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
-  <Card ID="226769103">
-    <Name>难题-燕的子安贝</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
-    <Rarity>Special</Rarity>
-	  <Option>Personal</Option>
-    <Spec Range="Instance" Cost="0"/>
-    <Script>KaguyaPuzzle3</Script>
-    <BehaviourList>
-    </BehaviourList>
-    <Chapter>7</Chapter>
-  </Card>
-  <Card ID="226769104">
+  <Card ID="226769012">
     <Name>难题-佛御石之钵</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Special</Rarity>
 	  <Option>Personal</Option>
     <Spec Range="Instance" Cost="0"/>
-    <Script>KaguyaPuzzle4</Script>
+    <Script>KaguyaPuzzle2</Script>
+    <ScriptDesc>任务条件：防御骰拼点成功十次（暂定，感觉这个的可选方案挺多，反震伤害或者收到伤害都可以）加成：自身随机一个抗性变为耐性。难题骰使用：所有友方获得使用书页最后一颗防御骰</ScriptDesc>
     <BehaviourList>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
-  <Card ID="226769105">
+  <Card ID="226769013">
+    <Name>难题-火鼠的皮衣</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Special</Rarity>
+	  <Option>Personal</Option>
+    <Spec Range="Instance" Cost="0"/>
+    <Script>KaguyaPuzzle3</Script>
+    <ScriptDesc>任务条件：施加二十层烧伤。加成：每次受到烧伤时减少一层烧伤。难题骰使用：拼点成功时施加两层烧伤</ScriptDesc>
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter> 
+  </Card>
+  <Card ID="226769014">
+    <Name>难题-燕的子安贝</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Special</Rarity>
+	  <Option>Personal</Option>
+    <Spec Range="Instance" Cost="0"/>
+    <Script>KaguyaPuzzle4</Script>
+    <ScriptDesc>任务条件：治疗五十点生命值（包括自身回血）。加成：每幕结束时回复十点生命和混乱。难题骰使用：拼点成功时回复血量最少的友军三点生命和混乱。</ScriptDesc>
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769015">
     <Name>难题-蓬莱玉枝</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Special</Rarity>
 	  <Option>Personal</Option>
     <Spec Range="Instance" Cost="0"/>
     <Script>KaguyaPuzzle5</Script>
+    <ScriptDesc>任务条件：消耗三十点光芒。加成：若造成7伤害下一幕额外抽一张牌回复一点光芒（每次达成后下一幕所需伤害增加七点，切换舞台后重置）难题骰使用：拼点失败或单方面攻击时该书页后续点数加二</ScriptDesc>
     <BehaviourList>
     </BehaviourList>
     <Chapter>7</Chapter>

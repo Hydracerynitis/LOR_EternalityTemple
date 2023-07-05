@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
-using System.Threading.Tasks;
+using UnityEngine;
 using System.IO;
 using LOR_XML;
 using System.Xml.Serialization;
@@ -33,7 +33,8 @@ namespace EternalityTemple
         }
         public static void LoadStageName(string language)
         {
-            foreach(FileInfo file in new DirectoryInfo(EI.ModPath+ "/Localization/"+language+"/StageName/").GetFiles())
+            Debug.Log("Eternality: Localization Path " + EI.ModPath + "/Localization/" + language + "/StageName/");
+            foreach(FileInfo file in new DirectoryInfo(EI.ModPath + "/Localization/" + language + "/StageName/").GetFiles())
             try
             {
                 using (StringReader stringReader = new StringReader(File.ReadAllText(file.FullName)))
@@ -50,7 +51,8 @@ namespace EternalityTemple
         }
         public static void LoadCharacter(string language)
         {
-            foreach(FileInfo file in new DirectoryInfo(EI.ModPath+ "/Localization/" + language + "/CharactersName/").GetFiles())
+            Debug.Log("Eternality: Localization Path " + EI.ModPath + "/Localization/" + language + "/CharactersName/");
+            foreach (FileInfo file in new DirectoryInfo(EI.ModPath+ "/Localization/" + language + "/CharactersName/").GetFiles())
             {
                 try
                 {
@@ -69,7 +71,8 @@ namespace EternalityTemple
         }
         public static void LoadDropBook(string language)
         {
-            foreach(FileInfo file in new DirectoryInfo(EI.ModPath + "/Localization/" + language + "/DropBooks/").GetFiles())
+            Debug.Log("Eternality: Localization Path " + EI.ModPath + "/Localization/" + language + "/DropBooks/");
+            foreach (FileInfo file in new DirectoryInfo(EI.ModPath + "/Localization/" + language + "/DropBooks/").GetFiles())
             {
                 try
                 {
@@ -93,7 +96,8 @@ namespace EternalityTemple
         }
         public static void LoadExtra(string language)
         {
-            foreach(FileInfo file in new DirectoryInfo(EI.ModPath+ "/Localization/" + language + "/etc/").GetFiles())
+            Debug.Log("Eternality: Localization Path " + EI.ModPath + "/Localization/" + language + "/etc/");
+            foreach (FileInfo file in new DirectoryInfo(EI.ModPath+ "/Localization/" + language + "/etc/").GetFiles())
             {
                 try
                 {
@@ -117,7 +121,8 @@ namespace EternalityTemple
         }
         public static void LoadCardAbility(string language)
         {
-            foreach(FileInfo file in new DirectoryInfo(EI.ModPath + "/Localization/"+language+"/BattleCardAbilities/").GetFiles())
+            Debug.Log("Eternality: Localization Path " + EI.ModPath + "/Localization/" + language + "/BattleCardAbilities/");
+            foreach (FileInfo file in new DirectoryInfo(EI.ModPath + "/Localization/"+language+"/BattleCardAbilities/").GetFiles())
             {
                 try
                 {
@@ -131,13 +136,14 @@ namespace EternalityTemple
                 }
                 catch (Exception ex)
                 {
-                    File.WriteAllText(EI.ModPath + "/CardAbilityLTLError_"+language+".txt", ex.ToString());
+                    File.WriteAllText(EI.ModPath + "/CardAbilityLTLError_"+ file.Name + ".txt", ex.ToString());
                 }
             }
             
         }
         public static void LoadEffect(string language)
         {
+            Debug.Log("Eternality: Localization Path " + EI.ModPath + "/Localization/" + language + "/EffectTexts/");
             foreach (FileInfo file in new DirectoryInfo(EI.ModPath + "/Localization/" +language + "/EffectTexts/").GetFiles())
             {
                 try
@@ -158,6 +164,7 @@ namespace EternalityTemple
         }
         public static void LoadPassive(string language)
         {
+            Debug.Log("Eternality: Localization Path " + EI.ModPath + "/Localization/" + language + "/PassiveDesc/");
             foreach (FileInfo file in new DirectoryInfo(EI.ModPath + "/Localization/" +language + "/PassiveDesc/").GetFiles())
             {
                 try
@@ -180,6 +187,7 @@ namespace EternalityTemple
         }
         public static void LoadCard(string language)
         {
+            Debug.Log("Eternality: Localization Path " + EI.ModPath + "/Localization/" + language + "/BattlesCards/");
             foreach (FileInfo file in new DirectoryInfo(EI.ModPath + "/Localization/" +language + "/BattlesCards/").GetFiles())
             {
                 try
@@ -188,7 +196,7 @@ namespace EternalityTemple
                     {
                         BattleCardDescRoot battleCardDescRoot = (BattleCardDescRoot)new XmlSerializer(typeof(BattleCardDescRoot)).Deserialize(stringReader);
                         foreach (DiceCardXmlInfo diceCardXmlInfo in ItemXmlDataList.instance.GetAllWorkshopData()[EI.packageId])
-                            diceCardXmlInfo.workshopName = battleCardDescRoot.cardDescList.Find(x => x.cardID == diceCardXmlInfo.id.id).cardName;
+                            diceCardXmlInfo.workshopName = battleCardDescRoot.cardDescList.Find(x => x.cardID == diceCardXmlInfo.id.id)?.cardName;
                     }
                 }
                 catch (Exception ex)
@@ -199,6 +207,7 @@ namespace EternalityTemple
         }
         public static void LoadBook(string language)
         {
+            Debug.Log("Eternality: Localization Path " + EI.ModPath + "/Localization/" + language + "/Books/");
             foreach (FileInfo file in new DirectoryInfo(EI.ModPath + "/Localization/" +language + "/Books/").GetFiles())
             {
                 try

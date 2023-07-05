@@ -92,7 +92,7 @@ namespace EternalityTemple.Kaguya
         }
         public override void OnRoundStart()
         {
-            _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Endurance, 1);
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Endurance, 1);
         }
         public override void OnRoundEnd()
         {
@@ -110,7 +110,7 @@ namespace EternalityTemple.Kaguya
         }
         public override void OnRoundStart()
         {
-            _owner.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Strength, 1);
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 1);
         }
         public override void OnRoundEnd()
         {
@@ -121,7 +121,7 @@ namespace EternalityTemple.Kaguya
     public class BattleUnitBuf_KaguyaBuf7 : BattleUnitBuf
     {
         public override string keywordIconId => "Silence_StopTime";
-        public override string keywordId => "KaguyaBuf6";
+        public override string keywordId => "KaguyaBuf7";
         public override void Init(BattleUnitModel owner)
         {
             stack = 7;

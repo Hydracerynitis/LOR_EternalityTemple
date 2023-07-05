@@ -11,12 +11,13 @@ namespace EternalityTemple.Kaguya
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            owner.bufListDetail.AddBuf(new BattleUnitBuf_Puzzle());
-            owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769101));
-            owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769102));
-            owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769103));
-            owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769104));
-            owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769105));
+            foreach(BattleUnitModel unit in BattleObjectManager.instance.GetAliveList(owner.faction))
+                unit.bufListDetail.AddBuf(new BattleUnitBuf_PuzzleBuf());
+            owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769011));
+            owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769012));
+            owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769013));
+            owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769014));
+            owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769015));
         }
     }
 }

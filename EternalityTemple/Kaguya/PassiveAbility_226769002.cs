@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace EternalityTemple.Kaguya
 {
-    public class PassiveAbility_226769002: PassiveAbilityBase, PassiveIsImmunePos
+    public class PassiveAbility_226769002: PassiveAbilityBase, IsBufImmune
     {
         private bool ImmuneActive =false;
 
-        public bool IsImmune(BufPositiveType pos)
+        public bool IsImmune(BattleUnitBuf buf)
         {
-            return ImmuneActive;
+            return buf.positiveType==BufPositiveType.Negative && ImmuneActive;
         }
 
         public override void OnRollSpeedDice()

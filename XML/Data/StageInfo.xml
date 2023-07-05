@@ -11,7 +11,7 @@
 			<Formation>1</Formation>
 			<FormationType>Default</FormationType>
 			<AvailableUnit>5</AvailableUnit>
-			<!--<ManagerScript>舞台被动名字</ManagerScript>-->
+			<ManagerScript>Eternality</ManagerScript>
 		<emotionCardList />
 		</Wave>
 		<StageType>Invitation</StageType>

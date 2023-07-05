@@ -3,11 +3,13 @@
 
 <text id="QXing_Luguo">秦 心</text>
 
-<text id="KaguyaBuf_Puzzle1">[龙颈之玉]
-<text id="KaguyaBuf_Puzzle2">[佛御石之钵]
-<text id="KaguyaBuf_Puzzle3">[火鼠的皮衣]
-<text id="KaguyaBuf_Puzzle4">[燕的子安贝]
-<text id="KaguyaBuf_Puzzle5">[蓬莱玉枝]
+<text id="KaguyaBuf_None">暂无</text>
+
+<text id="KaguyaBuf_Puzzle1">[龙颈之玉]</text>
+<text id="KaguyaBuf_Puzzle2">[佛御石之钵]</text>
+<text id="KaguyaBuf_Puzzle3">[火鼠的皮衣]</text>
+<text id="KaguyaBuf_Puzzle4">[燕的子安贝]</text>
+<text id="KaguyaBuf_Puzzle5">[蓬莱玉枝]</text>
 
 <text id="KaguyaBuf_NtDice1">[第1颗速骰子]所有骰子上下限+1
 </text><!--[龙颈之玉]难题骰子加成-->
@@ -17,7 +19,7 @@
 </text><!--[火鼠的皮衣]难题骰子加成文本-->
 <text id="KaguyaBuf_NtDice4">[第4颗速骰子][拼点胜利]为体力最低的友方恢复3点体力与混乱
 </text><!--[燕的子安贝]难题骰子加成文本-->
-<text id="KaguyaBuf_NtDice5">[第5颗速骰子][拼点失败]使自身下一颗骰子威力,[单方面攻击]骰子威力+2
+<text id="KaguyaBuf_NtDice5">[第5颗速骰子]进攻骰子若命中敌人则减少随机手牌1点费用
 </text><!--[蓬莱玉枝]难题骰子加成文本-->
 
 <text id="KaguyaBuf_Nt1">施加[负面]时层数+1
@@ -28,7 +30,7 @@
 </text><!--[火鼠的皮衣]常驻加成文本-->
 <text id="KaguyaBuf_Nt4">每一幕结束时恢复10点体力与混乱
 </text><!--[燕的子安贝]常驻加成文本-->
-<text id="KaguyaBuf_Nt5">若累计造成{0}点伤害,则抽取1张书页恢复1点光芒
+<text id="KaguyaBuf_Nt5">使用3+骰子书页时所有骰子提升2点威力
 </text><!--[蓬莱玉枝]常驻加成文本--><!--每次触发后清空累计,并且触发要求上限+7,初始为7点伤害-->
 
 </localize>

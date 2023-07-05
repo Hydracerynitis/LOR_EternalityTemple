@@ -72,7 +72,31 @@
 <!--完成[火鼠的皮衣]获得[被施加烧伤时层数-1]-->
 <!--完成[燕的子安贝]获得[每幕结束时恢复10点体力与混乱]-->
 <!--完成[蓬莱玉枝]获得[若累计造成7点伤害,则抽取1张书页恢复1点光芒]--><!--每次触发后清空累计,并且触发上限+7-->
-
+    <BattleEffectText ID="KaguyaPuzzle1">
+      <Name>[难题]龙颈之玉</Name>
+      <Desc>[条件]持有时施加30层[负面状态]
+现已施加{0}层[负面状态]</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="KaguyaPuzzle2">
+      <Name>[难题]佛御石之钵</Name>
+      <Desc>[条件]持有时以[防御型]骰子取得拼点胜利10次
+现已拼点胜利{0}次</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="KaguyaPuzzle3">
+      <Name>[难题]火鼠的皮衣</Name>
+      <Desc>[条件]持有时施加20层[烧伤]
+现已施加{0}层[烧伤]</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="KaguyaPuzzle4">
+      <Name>[难题]燕的子安贝</Name>
+      <Desc>[条件]持有时恢复50点体力
+现已恢复{0}点体力</Desc>
+    </BattleEffectText>
+    <BattleEffectText ID="KaguyaPuzzle5">
+      <Name>[难题]蓬莱玉枝</Name>
+      <Desc>[条件]投掷70次骰子
+现已投掷{0}次</Desc>
+    </BattleEffectText>
 <!--八意永琳-->
 	<BattleEffectText ID="YagokoroBuf1">
       <Name>残月</Name>

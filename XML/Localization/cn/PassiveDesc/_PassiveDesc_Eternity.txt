@@ -98,6 +98,6 @@
 	<PassiveDesc ID="226769012"><!--来宾限定-->
 		<Name>情感激发</Name>
 		<Desc>每一幕开始时,使司书方情感提升1级
-(至多“已结束舞台数”的次数)</Desc>
+(提升的次数无法高于已结束的舞台数)</Desc>
 	</PassiveDesc>
 </PassiveDescRoot>

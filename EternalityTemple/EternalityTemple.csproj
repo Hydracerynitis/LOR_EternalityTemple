@@ -70,6 +70,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EternalityTempleInitializer.cs" />
+    <Compile Include="Inaba\Inaba Dice.cs" />
+    <Compile Include="Inaba\InabaExtraCardAbility.cs" />
     <Compile Include="Inaba\PassiveAbility_226769010.cs" />
     <Compile Include="Inaba\Inaba Buf.cs" />
     <Compile Include="Kaguya\KaguyaPuzzle.cs" />

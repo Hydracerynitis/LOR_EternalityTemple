@@ -200,7 +200,7 @@
       <Name>疯狂</Name>
       <Desc>本幕内速度最高的速度骰子更改为“疯狂”骰子
 疯狂-使用书页时所有骰子威力+2
-(每拥有1层则使“失控”的速度骰子数量+1)</Desc>
+(每拥有1层则使“疯狂”的速度骰子数量+1)</Desc>
     </BattleEffectText>
 	
 	<BattleEffectText ID="InabaBuf4">
@@ -209,33 +209,30 @@
 受到伤害时层数-1</Desc>
     </BattleEffectText>
 	
-	<BattleEffectText ID="InabaBuf5">
+	<BattleEffectText ID="InabaBuf5_Txt1">
       <Name>国士无双</Name><!--1层的时候-->
       <Desc>受到的伤害-1
 造成的伤害+1
 (至多3层)</Desc>
     </BattleEffectText>
-	<BattleEffectText ID="InabaBuf5_Txt1">
+	<BattleEffectText ID="InabaBuf5_Txt2">
       <Name>国士无双</Name><!--2层的时候-->
       <Desc>受到的伤害-2
 造成的伤害+2
 (至多3层)</Desc>
     </BattleEffectText>
-	<BattleEffectText ID="InabaBuf5_Txt2">
+	<BattleEffectText ID="InabaBuf5_Txt3">
       <Name>国士无双</Name><!--3层的时候-->
       <Desc>受到的伤害-4
 造成的伤害+4
 (至多3层)</Desc>
     </BattleEffectText>
-	
-	
+
 	<BattleEffectText ID="InabaBuf6">
       <Name>怠惰</Name>
       <Desc>本幕内免疫“正面状态”且无法获得“正面状态”</Desc>
     </BattleEffectText>
-	
-	
-	
+
 	<BattleEffectText ID="InabaBuf7">
       <Name>狂视</Name>
       <Desc>每一幕开始对所有敌方施加1层“疯狂”并对自身施加2层“疯狂”

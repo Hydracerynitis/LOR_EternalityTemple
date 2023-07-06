@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DiceCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Version>1.1</Version>
-  <Card ID="226769000">
+  <Card ID="226769100">
     <Name>月之都市</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>OnlyPage</Option>
-    <Spec Range="Far" Cost="0"/>
-    <Script></Script>
+    <Spec Range="Near" Cost="0"/>
+    <Script>EternityCard1</Script>
+    <ScriptDesc>辉夜用</ScriptDesc>
     <BehaviourList>
-     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="MoLisa_Proj1" Script="yaleiyalei" ActionScript="MoLisaAction2"  Desc =""/>
+     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="5" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769200">
+    <Name>月之都市</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="0"/>
+    <Script>EternityTs_Card1</Script>
+    <ScriptDesc>永林用</ScriptDesc>
+    <BehaviourList>
+     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="5" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769300">
+    <Name>月之都市</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="0"/>
+    <Script>EternityXS_Card1</Script>
+    <ScriptDesc>铃仙用</ScriptDesc>
+    <BehaviourList>
+     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="5" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -73,4 +103,83 @@
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
+  <Card ID="226769028">
+    <Name>弱心[丧心丧意]</Name>
+    <Artwork>铃仙-赤眼催眠.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="2"/>
+    <Script>InabaCard1</Script>
+    <BehaviourList>
+     <Behaviour Min="1" Dice="1" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="InabaDice1" ActionScript=""  Desc =""/>
+     <Behaviour Min="1" Dice="1" Type="Atk" Detail="Slash" Motion="J" EffectRes="" Script="InabaDice1" ActionScript=""  Desc =""/>
+     <Behaviour Min="15" Dice="20" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769029">
+    <Name>障壁波动</Name>
+    <Artwork>铃仙-障壁波动.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="1"/>
+    <Script>InabaCard2</Script>
+    <BehaviourList>
+     <Behaviour Min="4" Dice="10" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="7" Dice="11" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769030">
+    <Name>生药[国士无双之药]</Name>
+    <Artwork>铃仙-国士无双之药.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="3"/>
+    <Script>InabaCard3</Script>
+    <BehaviourList>
+     <Behaviour Min="1" Dice="1" Type="Def" Detail="Guard" Motion="S5" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769031">
+    <Name>幻胧月睨</Name>
+    <Artwork>铃仙-幻胧月睨.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="FarAreaEach" Cost="7" Affection="Team"/>
+    <Script>InabaCard4</Script>
+    <BehaviourList>
+     <Behaviour Min="5" Dice="5" Type="Atk" Detail="Penetrate" Motion="J" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
+     <Behaviour Min="5" Dice="5" Type="Atk" Detail="Hit" Motion="J" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
+     <Behaviour Min="5" Dice="5" Type="Atk" Detail="Hit" Motion="J" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
+     <Behaviour Min="5" Dice="5" Type="Atk" Detail="Slash" Motion="J" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769032">
+    <Name>幻兔[平行交差]</Name>
+    <Artwork>铃仙-平行交差.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="5"/>
+    <Script>InabaCard5</Script>
+    <BehaviourList>
+     <Behaviour Min="20" Dice="40" Type="Atk" Detail="Hit" Motion="J" EffectRes="" Script="InabaDice3" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769033">
+    <Name>丧心疮痍</Name>
+    <Artwork>铃仙-丧心疮痍.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="3"/>
+    <Script>InabaCard6</Script>
+    <BehaviourList>
+     <Behaviour Min="17" Dice="23" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="InabaDice4" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
 </DiceCardXmlRoot>

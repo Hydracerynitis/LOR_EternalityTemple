@@ -3,8 +3,8 @@
   <Version>1.1</Version>
 <!--蓬莱山辉夜--> 
   <Deck ID="226769000">
-    <Card>226769000</Card>
-    <Card>226769000</Card>
+    <Card>226769100</Card>
+    <Card>226769100</Card>
     <Card>226769001</Card>
 	
     <Card>226769001</Card>
@@ -19,8 +19,8 @@
   
 <!--八意永琳--> 
    <Deck ID="226769001">
-    <Card>226769000</Card>
-    <Card>226769000</Card>
+    <Card>226769200</Card>
+    <Card>226769200</Card>
     <Card>226769016</Card>
 	
     <Card>226769016</Card>
@@ -36,9 +36,9 @@
   
 <!--铃仙--> 
    <Deck ID="226769002">
-    <Card>226769000</Card>
-    <Card>226769000</Card>
-    <Card>226769000</Card>
+    <Card>226769300</Card>
+    <Card>226769300</Card>
+    <Card>226769300</Card>
 	
     <Card>226769028</Card>
     <Card>226769029</Card>

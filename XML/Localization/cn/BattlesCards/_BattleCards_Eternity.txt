@@ -2,7 +2,13 @@
 <BattleCardDescRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <cardDescList>
 <!--永远亭通用-->
-    <BattleCardDesc ID="226769000">
+    <BattleCardDesc ID="226769100">
+      <LocalizedName>月之都市</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="226769200">
+      <LocalizedName>月之都市</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="226769300">
       <LocalizedName>月之都市</LocalizedName>
     </BattleCardDesc>
 <!--蓬莱山辉夜--> 

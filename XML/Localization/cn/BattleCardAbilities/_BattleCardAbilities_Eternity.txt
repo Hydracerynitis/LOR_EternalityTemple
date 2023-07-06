@@ -212,7 +212,7 @@
 	
 	
 	<BattleCardAbility ID="InabaCard2"><!--障壁波动-->
-		<Desc>[(疯狂)]-[使用时]使所有友方获得1层[障壁]</Desc>
+		<Desc>[(疯狂)]-[使用时]使所有我方角色获得1层[障壁]</Desc>
 		<!--这里的意思是在[疯狂]骰子使用的时候-->
 		<!--然后效果是-后面的-->
 	</BattleCardAbility>
@@ -220,8 +220,8 @@
 	
 	<BattleCardAbility ID="InabaCard3"><!--生药[国士无双之药]-->
 		<Desc>[使用时]获得1层[国士无双]
-[(疯狂)]-本书页效果改为
-“若[国士无双]至少为3层则将其移除并对[自身]与[所有敌方]造成40点伤害”</Desc>
+[(疯狂)]-若[国士无双]至少为3层则将本书页效果改为
+“移除所有[国士无双]并对自身与所有敌方造成40点伤害”</Desc>
 		<!--这里的意思是在[疯狂]骰子使用的时候-->
 		<!--然后效果是-后面的-->
 	</BattleCardAbility>
@@ -234,7 +234,7 @@
 		<!--然后效果是-后面的-->
 	</BattleCardAbility>
 	<BattleCardAbility ID="InabaDice2"><!--幻胧月睨-->
-		<Desc>本骰子造成的[混乱伤害]*2</Desc>
+		<Desc>本骰子造成的混乱伤害*2</Desc>
 	</BattleCardAbility>
 	
 	
@@ -249,7 +249,7 @@
 	
 	
 	<BattleCardAbility ID="InabaCard6"><!--丧心疮痍-->
-		<Desc>[(疯狂)]-[命中时]丢弃目标2张书页</Desc>
+		<Desc>[(疯狂)]-本书页击中目标时使其丢弃2张书页</Desc>
 		<!--这里的意思是在[疯狂]骰子使用的时候-->
 		<!--然后效果是-后面的-->
 	</BattleCardAbility>

@@ -19,5 +19,9 @@ namespace EternalityTemple.Kaguya
             owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769014));
             owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769015));
         }
+        public override void OnRoundEndTheLast_ignoreDead()
+        {
+            EternalityInitializer.ResetSpeedDiceColor();
+        }
     }
 }

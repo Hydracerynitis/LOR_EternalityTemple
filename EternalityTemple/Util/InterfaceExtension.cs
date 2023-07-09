@@ -18,4 +18,8 @@ namespace EternalityTemple.Util
     {
         void OnHeal(int num);
     }
+    internal interface OnAddOtherBuf
+    {
+        void OnAddBuf(BattleUnitBuf buf, int stack);
+    }
 }

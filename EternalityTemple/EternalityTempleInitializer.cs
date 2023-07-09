@@ -11,6 +11,10 @@ using UI;
 using TMPro;
 using EternalityTemple.Util;
 using System.Collections;
+using LOR_BattleUnit_UI;
+using EternalityTemple.Kaguya;
+using LOR_DiceSystem;
+using Diagonis = System.Diagnostics;
 
 namespace EternalityTemple
 {
@@ -20,6 +24,7 @@ namespace EternalityTemple
         public static string ModPath;
         public static Dictionary<string, Sprite> ArtWorks;
         public const string packageId= "TheWorld_Eternity";
+        private static List<(SpeedDiceUI, Color)> ChangedSpeedDiceUI = new List<(SpeedDiceUI, Color)>();
         public static LorId GetLorId(int id) => new LorId(packageId, id);
         public override void OnInitializeMod()
         {
@@ -129,9 +134,14 @@ namespace EternalityTemple
         }
         private static void TriggerOnGiveBuff(BattleUnitModel actor,BattleUnitBuf buf,int stack)
         {
+            if (buf == null)
+                return;
             List<BattleUnitBuf> BufInterface = actor.bufListDetail.GetActivatedBufList().FindAll(x => x is OnGiveOtherBuf);
             foreach (BattleUnitBuf BufAbility in BufInterface)
                 (BufAbility as OnGiveOtherBuf).OnGiveBuf(buf, stack);
+            BufInterface = buf._owner.bufListDetail.GetActivatedBufList().FindAll(x => x is OnAddOtherBuf);
+            foreach (BattleUnitBuf BufAbility in BufInterface)
+                (BufAbility as OnAddOtherBuf).OnAddBuf(buf, stack);
         }
         [HarmonyPatch(typeof(BattleUnitModel),nameof(BattleUnitModel.OnRecoverHp))]
         [HarmonyPostfix]
@@ -140,6 +150,91 @@ namespace EternalityTemple
             List<BattleUnitBuf> BufInterface = __instance.bufListDetail.GetActivatedBufList().FindAll(x => x is OnRecoverHP);
             foreach (BattleUnitBuf BufAbility in BufInterface)
                 (BufAbility as OnRecoverHP).OnHeal(recoverAmount);
+        }
+        [HarmonyPatch(typeof(BattleUnitModel), nameof(BattleUnitModel.RollSpeedDice))]
+        [HarmonyPostfix]
+        public static void BattleUnitModel_RollSpeedDice_Post(BattleUnitModel __instance)
+        {
+            if (__instance.IsBreakLifeZero() || __instance.IsKnockout() || __instance.turnState==BattleUnitTurnState.BREAK || __instance.bufListDetail.HasStun())
+                return;
+            if(__instance.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_PuzzleBuf) is BattleUnitBuf_PuzzleBuf puzzlebuf)
+            {
+                SpeedDiceSetter SDS = __instance.view.speedDiceSetterUI;
+                int unavailable = __instance.speedDiceResult.FindAll(x => x.breaked).Count;
+                if (puzzlebuf.CompletePuzzle.Contains(1) && __instance.speedDiceCount - unavailable >= 1)
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+0),Color.blue);
+                if (puzzlebuf.CompletePuzzle.Contains(2) && __instance.speedDiceCount - unavailable >= 2)
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+1), Color.magenta);
+                if (puzzlebuf.CompletePuzzle.Contains(3) && __instance.speedDiceCount - unavailable >= 3)
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+2), Color.red);
+                if (puzzlebuf.CompletePuzzle.Contains(4) && __instance.speedDiceCount - unavailable >= 4)
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+3), Color.green);
+                if (puzzlebuf.CompletePuzzle.Contains(5) && __instance.speedDiceCount - unavailable >= 5)
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+4), Color.yellow);
+            }
+        }
+        [HarmonyPatch(typeof(BattleAllyCardDetail),nameof(BattleAllyCardDetail.GetHand))]
+        [HarmonyPostfix]
+        public static void BattleUnitCardsInHandUI_UpdateCardList_BattleAllyCardDetail_GetHand_Post(BattleAllyCardDetail __instance, List<BattleDiceCardModel> __result)
+        {
+            string name = new Diagonis.StackTrace().GetFrame(2).GetMethod().FullDescription();
+            if (!name.Contains("BattleUnitCardsInHandUI::UpdateCardList"))
+                return;
+            BattleUnitCardsInHandUI CardUI = BattleManagerUI.Instance.ui_unitCardsInHand;
+            BattleUnitModel displayed = CardUI.SelectedModel;
+            if (CardUI.CurrentHandState != BattleUnitCardsInHandUI.HandState.BattleCard || __instance._self!=displayed || !displayed.passiveDetail.HasPassive<PassiveAbility_226769001>())
+                return;
+            SpeedDiceUI speedDice = BattleManagerUI.Instance.selectedAllyDice;
+            if (speedDice == null)
+                return;
+            if (displayed.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_PuzzleBuf) is BattleUnitBuf_PuzzleBuf puzzlebuf)
+            {
+                int unavailable = displayed.speedDiceResult.FindAll(x => x.breaked).Count;
+                DiceCardXmlInfo xml=null;
+                if (puzzlebuf.CompletePuzzle.Contains(1) && speedDice._speedDiceIndex == unavailable + 0)
+                    xml = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, 226769006));
+                if (puzzlebuf.CompletePuzzle.Contains(2) && speedDice._speedDiceIndex == unavailable + 1)
+                    xml = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, 226769007));
+                if (puzzlebuf.CompletePuzzle.Contains(3) && speedDice._speedDiceIndex == unavailable + 2)
+                    xml = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, 226769008));
+                if (puzzlebuf.CompletePuzzle.Contains(4) && speedDice._speedDiceIndex == unavailable + 3)
+                    xml = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, 226769009));
+                if (puzzlebuf.CompletePuzzle.Contains(5) && speedDice._speedDiceIndex == unavailable + 4)
+                    xml = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, 226769010));
+                if (xml == null)
+                    return;
+                BattleDiceCardModel card=BattleDiceCardModel.CreatePlayingCard(xml);
+                card.temporary = true;
+                card.owner = displayed;
+                __result.Add(card);
+            }
+        }
+        [HarmonyPatch(typeof(BattleAllyCardDetail), nameof(BattleAllyCardDetail.ReturnCardToHand))]
+        [HarmonyPrefix]
+        public static bool BattleAllyCardDetail_ReturnCardToHand_Pre(BattleDiceCardModel appliedCard)
+        {
+            LorId id = appliedCard.GetID();
+            if (id.packageId == packageId && id.id <= 226769010 && id.id >= 226769006)
+                return false;
+            return true;
+        }
+        private static void ChangeSpeedDiceColor(SpeedDiceUI ui, Color DiceColor,bool reset=false)
+        {
+            if (ui == null)
+                return;
+            if (!reset)
+                ChangedSpeedDiceUI.Add((ui, ui.img_normalFrame.color));
+            ui._txtSpeedRange.color = DiceColor;
+            ui._rouletteImg.color = DiceColor;
+            ui._txtSpeedMax.color = DiceColor;
+            ui.img_tensNum.color = DiceColor;
+            ui.img_unitsNum.color = DiceColor;
+            ui.img_normalFrame.color = DiceColor;
+        }
+        public static void ResetSpeedDiceColor()
+        {
+            ChangedSpeedDiceUI.ForEach(x => ChangeSpeedDiceColor(x.Item1, x.Item2, true));
+            ChangedSpeedDiceUI.Clear();
         }
     }
 }

@@ -79,6 +79,7 @@
     <Compile Include="Inaba\PassiveAbility_226769010.cs" />
     <Compile Include="Inaba\Inaba Buf.cs" />
     <Compile Include="Kaguya\KaguyaPuzzle.cs" />
+    <Compile Include="Kaguya\KaguyaPuzzleBuf.cs" />
     <Compile Include="Kaguya\Kaguya_Buf.cs" />
     <Compile Include="Kaguya\PassiveAbility_226769002.cs" />
     <Compile Include="Kaguya\PassiveAbility_226769001.cs" />

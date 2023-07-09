@@ -1,7 +1,37 @@
 ﻿using System;
+using LOR_DiceSystem;
+using System.Collections.Generic;
 
 namespace EternalityTemple.Inaba
 {
+	public class DiceCardSelfAbility_EternityXS_Card1 : InabaExtraCardAbility
+	{
+        public override void OnInabaBuf()
+        {
+            base.OnInabaBuf();
+			DiceCardXmlInfo xmlData = this.card.card.XmlData;
+			DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769311), false);
+			xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+		}
+        public override void OnUseCard()
+		{
+			owner.cardSlotDetail.RecoverPlayPointByCard(1);
+		}
+        public override void OnEnterCardPhase(BattleUnitModel unit, BattleDiceCardModel self)
+        {
+            base.OnEnterCardPhase(unit, self);
+			DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769300), false);
+			self.XmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+		}
+	}
+	public class DiceCardSelfAbility_InabaCard1 : InabaExtraCardAbility
+	{
+		public override void OnUseCard()
+		{
+			firstDiceLoseParrying = false;
+		}
+		public bool firstDiceLoseParrying;
+	}
 	public class DiceCardSelfAbility_InabaCard2 : InabaExtraCardAbility
 	{
 		public override void OnUseCard()
@@ -56,6 +86,18 @@ namespace EternalityTemple.Inaba
 			{
 				card.target.allyCardDetail.DiscardACardRandomlyByAbility(2);
 			}
+		}
+	}
+	public class DiceCardSelfAbility_InabaCard7 : InabaExtraCardAbility
+	{
+		public override void OnUseCard()
+		{
+			if(BattleUnitBuf_InabaBuf1.GetStack(owner)<150)
+            {
+				return;
+            }
+			BattleUnitBuf_InabaBuf1.AddStack(owner, -150);
+			BattleUnitBuf_InabaBuf7.AddReadyStack(owner, 2);
 		}
 	}
 }

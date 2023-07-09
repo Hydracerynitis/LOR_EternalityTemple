@@ -83,6 +83,18 @@ namespace EternalityTemple.Inaba
 			}
 			battleUnitBuf.Add(value);
 		}
+		public static void AddReadyStack(BattleUnitModel model, int value)
+		{
+			BattleUnitBuf_InabaBuf2 battleUnitBuf = model.bufListDetail.GetReadyBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_InabaBuf2) as BattleUnitBuf_InabaBuf2;
+			if (battleUnitBuf == null)
+			{
+				battleUnitBuf = new BattleUnitBuf_InabaBuf2(model);
+				battleUnitBuf.stack = value;
+				model.bufListDetail.AddReadyBuf(battleUnitBuf);
+				return;
+			}
+			battleUnitBuf.Add(value);
+		}
 		// Token: 0x0600020D RID: 525 RVA: 0x0001429C File Offset: 0x0001249C
 		public static int GetStack(BattleUnitModel model)
 		{
@@ -128,6 +140,10 @@ namespace EternalityTemple.Inaba
 					this._owner.speedDiceResult[idx].isControlable = false;
 				}
 				List<BattleDiceCardModel> list = _owner.allyCardDetail.GetHand().FindAll((BattleDiceCardModel x) => x.GetSpec().Ranged != CardRange.Instance);
+				if (list.Count <= 0)
+				{
+					break;
+				}
 				BattleDiceCardModel card = RandomUtil.SelectOne<BattleDiceCardModel>(list);
 				_owner.allyCardDetail.GetHand().Remove(card);
 				_owner.allyCardDetail.AddNewCardToDeck(card.GetID());
@@ -363,7 +379,30 @@ namespace EternalityTemple.Inaba
 				BattleUnitBuf_InabaBuf2.AddStack(battleUnitModel, 1);
 			}
 		}
-
+		public BattleUnitBuf_InabaBuf7(BattleUnitModel model)
+		{
+			this._owner = model;
+		}
+		public void Add(int add)
+		{
+			this.stack += add;
+			if (this.stack <= 0)
+			{
+				this.Destroy();
+			}
+		}
+		public static void AddReadyStack(BattleUnitModel model, int value)
+		{
+			BattleUnitBuf_InabaBuf7 battleUnitBuf = model.bufListDetail.GetReadyBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_InabaBuf7) as BattleUnitBuf_InabaBuf7;
+			if (battleUnitBuf == null)
+			{
+				battleUnitBuf = new BattleUnitBuf_InabaBuf7(model);
+				battleUnitBuf.stack = value;
+				model.bufListDetail.AddReadyBuf(battleUnitBuf);
+				return;
+			}
+			battleUnitBuf.Add(value);
+		}
 		public override void OnRoundEnd()
 		{
 			stack--;

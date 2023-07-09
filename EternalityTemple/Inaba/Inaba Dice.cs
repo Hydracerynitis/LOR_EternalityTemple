@@ -10,6 +10,16 @@ namespace EternalityTemple.Inaba
 			{
 				power = 5
 			});
+			DiceCardSelfAbility_InabaCard1 diceCardSelfAbility = base.card.cardAbility as DiceCardSelfAbility_InabaCard1;
+			if (diceCardSelfAbility != null)
+			{
+				if (diceCardSelfAbility.firstDiceLoseParrying && base.card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
+				{
+					card.target.currentDiceAction.DestroyDice(DiceMatch.AllDice, DiceUITiming.Start);
+					return;
+				}
+				diceCardSelfAbility.firstDiceLoseParrying = true;
+			}
 		}
 	}
 	public class DiceCardAbility_InabaDice2 : DiceCardAbilityBase
@@ -30,7 +40,7 @@ namespace EternalityTemple.Inaba
 			BattlePlayingCardDataInUnitModel card = base.card;
 			if(card != null && card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
             {
-				BattleUnitBuf_InabaBuf2.AddStack(target, owner.history.damageAtOneRoundByDice / 5);
+				BattleUnitBuf_InabaBuf2.AddReadyStack(target, owner.history.damageAtOneRoundByDice / 5);
             }
 		}
 	}
@@ -38,7 +48,7 @@ namespace EternalityTemple.Inaba
 	{
 		public override void OnSucceedAttack(BattleUnitModel target)
 		{
-			target.bufListDetail.AddBuf(new BattleUnitBuf_InabaBuf6());
+			target.bufListDetail.AddReadyBuf(new BattleUnitBuf_InabaBuf6());
 		}
 	}
 	public class DiceCardAbility_InabaDice5 : DiceCardAbilityBase

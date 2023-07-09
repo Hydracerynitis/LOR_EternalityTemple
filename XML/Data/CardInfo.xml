@@ -43,6 +43,21 @@
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
+  <Card ID="226769311">
+    <Name>月之都市</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Uncommon</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="0"/>
+    <Script>EternityXS_Card1</Script>
+    <ScriptDesc>铃仙用-疯狂</ScriptDesc>
+    <BehaviourList>
+     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="Z" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="5" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
   <Card ID="226769011">
     <Name>难题-龙颈之玉</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>

@@ -20,6 +20,8 @@ namespace EternalityTemple.Kaguya
                     if (((owner.faction == Faction.Enemy && EnemySet.Contains(bookId.id)) || (owner.faction == Faction.Player && LibrarySet.Contains(bookId.id))) && !trio.Exists(x => x.Book.ClassInfo.id == bookId))
                         trio.Add(unit);
             }
+            if (trio.Count < 3)
+                return;
             trio.ForEach(x => x.bufListDetail.AddBuf(new BattleUnitBuf_KaguyaBuf1()));
         }
     }

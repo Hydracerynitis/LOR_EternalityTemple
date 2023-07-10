@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using System.Reflection;
-using System.Security.Policy;
-using System.Text;
 using HarmonyLib;
 using Mod;
 using UI;
 using TMPro;
-using EternalityTemple.Util;
-using System.Collections;
 using LOR_BattleUnit_UI;
-using EternalityTemple.Kaguya;
 using LOR_DiceSystem;
 using Diagonis = System.Diagnostics;
+using UnityObject = UnityEngine.Object;
+using EternalityTemple.Universal;
+using EternalityTemple.Kaguya;
+using EternalityTemple.Util;
+using System.Linq;
 
 namespace EternalityTemple
 {
@@ -173,6 +173,24 @@ namespace EternalityTemple
                     ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+4), Color.yellow);
             }
         }
+        private static void ChangeSpeedDiceColor(SpeedDiceUI ui, Color DiceColor, bool reset = false)
+        {
+            if (ui == null)
+                return;
+            if (!reset)
+                ChangedSpeedDiceUI.Add((ui, ui.img_normalFrame.color));
+            ui._txtSpeedRange.color = DiceColor;
+            ui._rouletteImg.color = DiceColor;
+            ui._txtSpeedMax.color = DiceColor;
+            ui.img_tensNum.color = DiceColor;
+            ui.img_unitsNum.color = DiceColor;
+            ui.img_normalFrame.color = DiceColor;
+        }
+        public static void ResetSpeedDiceColor()
+        {
+            ChangedSpeedDiceUI.ForEach(x => ChangeSpeedDiceColor(x.Item1, x.Item2, true));
+            ChangedSpeedDiceUI.Clear();
+        }
         [HarmonyPatch(typeof(BattleAllyCardDetail),nameof(BattleAllyCardDetail.GetHand))]
         [HarmonyPostfix]
         public static void BattleUnitCardsInHandUI_UpdateCardList_BattleAllyCardDetail_GetHand_Post(BattleAllyCardDetail __instance, List<BattleDiceCardModel> __result)
@@ -218,23 +236,60 @@ namespace EternalityTemple
                 return false;
             return true;
         }
-        private static void ChangeSpeedDiceColor(SpeedDiceUI ui, Color DiceColor,bool reset=false)
+        [HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.CreateSelectableList))]
+        [HarmonyPrefix]
+        public static bool StageLibraryFloorModel_CreateSelectableList_Pre(StageLibraryFloorModel __instance, ref List<EmotionCardXmlInfo> __result, int emotionLevel)
         {
-            if (ui == null)
-                return;
-            if (!reset)
-                ChangedSpeedDiceUI.Add((ui, ui.img_normalFrame.color));
-            ui._txtSpeedRange.color = DiceColor;
-            ui._rouletteImg.color = DiceColor;
-            ui._txtSpeedMax.color = DiceColor;
-            ui.img_tensNum.color = DiceColor;
-            ui.img_unitsNum.color = DiceColor;
-            ui.img_normalFrame.color = DiceColor;
+            if (BattleObjectManager.instance.GetAliveList().FindAll(x => x.passiveDetail.HasPassive<PassiveAbility_226769004>()).Count > 0)
+            {
+                int PosCoin = 0;
+                int NegCoin = 0;
+                foreach (UnitBattleDataModel unit in __instance._unitList)
+                {
+                    if (unit.IsAddedBattle)
+                    {
+                        PosCoin += unit.emotionDetail.totalPositiveCoins.Count;
+                        NegCoin += unit.emotionDetail.totalNegativeCoins.Count;
+                    }
+                }
+                int floorLevel = 0;
+                LibraryFloorModel floor = LibraryModel.Instance.GetFloor(Singleton<StageController>.Instance.CurrentFloor);
+                if (floor != null)
+                    floorLevel = !Singleton<StageController>.Instance.IsRebattle ? floor.Level : floor.TemporaryLevel;
+                int EmotionTier = emotionLevel > 2 ? (emotionLevel > 4 ? 3 : 2) : 1;
+                List<EmotionCardXmlInfo> dataList = EmotionCardXmlList.Instance.GetDataList(StageController.Instance.CurrentFloor, floorLevel, EmotionTier);
+                foreach (EmotionCardXmlInfo selected in __instance._selectedList)
+                    dataList.Remove(selected);
+                int center = 0;
+                int TotalCoin = PosCoin + NegCoin;
+                float ratio = 0.5f;
+                if (TotalCoin > 0)
+                    ratio = (float)(PosCoin - NegCoin) / (float)TotalCoin;
+                float f = ratio / (float)((11.0 - (double)emotionLevel) / 10.0);
+                center = (double)Mathf.Abs(f) >= 0.1 ? ((double)Mathf.Abs(f) >= 0.3 ? ((double)f <= 0.0 ? -2 : 2) : ((double)f <= 0.0 ? -1 : 1)) : 0;
+                dataList.Sort((x, y) => Mathf.Abs(x.EmotionRate - center) - Mathf.Abs(y.EmotionRate - center));
+                __result = dataList.Take(5).ToList();
+                return false;
+            }
+            return true;
         }
-        public static void ResetSpeedDiceColor()
+        [HarmonyPatch(typeof(LevelUpUI),nameof(LevelUpUI.Init))]
+        [HarmonyPrefix]
+        public static void LevelUpUI_Init_Pre(LevelUpUI __instance, int count, List<EmotionCardXmlInfo> cardList)
         {
-            ChangedSpeedDiceUI.ForEach(x => ChangeSpeedDiceColor(x.Item1, x.Item2, true));
-            ChangedSpeedDiceUI.Clear();
+            if (cardList.Count > 3)
+            {
+                LevelUpUIScroller UIScroller= __instance.gameObject.AddComponent<LevelUpUIScroller>();
+                UIScroller.Init(__instance, cardList);
+            }
+        }
+        [HarmonyPatch(typeof(LevelUpUI),nameof(LevelUpUI.OnSelectPassive))]
+        [HarmonyPostfix]
+        public static void LevelUpUI_OnSelectPassive_Post(LevelUpUI __instance)
+        {
+            LevelUpUIScroller UIScroller = __instance.gameObject.GetComponent<LevelUpUIScroller>();
+            if (UIScroller != null)
+                UnityObject.Destroy(UIScroller);
         }
     }
 }

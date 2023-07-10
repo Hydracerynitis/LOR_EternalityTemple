@@ -118,6 +118,66 @@
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
+  <Card ID="226769006">
+    <Name>神宝[耀眼的龙玉]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Far" Cost="0"/>
+    <Script></Script>
+    <BehaviourList>
+     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="MoLisa_Proj1" Script="yaleiyalei" ActionScript="MoLisaAction2"  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769007">
+    <Name>神宝[佛体的金刚石]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Far" Cost="0"/>
+    <Script></Script>
+    <BehaviourList>
+     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="MoLisa_Proj1" Script="yaleiyalei" ActionScript="MoLisaAction2"  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769008">
+    <Name>神宝[火蜥蜴之盾]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Far" Cost="0"/>
+    <Script></Script>
+    <BehaviourList>
+     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="MoLisa_Proj1" Script="yaleiyalei" ActionScript="MoLisaAction2"  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769009">
+    <Name>神宝[无限的生命之泉]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Far" Cost="0"/>
+    <Script></Script>
+    <BehaviourList>
+     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="MoLisa_Proj1" Script="yaleiyalei" ActionScript="MoLisaAction2"  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769010">
+    <Name>神宝[蓬莱的弹枝-七色的弹幕-]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Far" Cost="0"/>
+    <Script></Script>
+    <BehaviourList>
+     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="MoLisa_Proj1" Script="yaleiyalei" ActionScript="MoLisaAction2"  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
   <Card ID="226769028">
     <Name>弱心[丧心丧意]</Name>
     <Artwork>铃仙-赤眼催眠.png</Artwork>

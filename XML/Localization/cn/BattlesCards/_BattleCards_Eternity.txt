@@ -28,17 +28,17 @@
       <LocalizedName>永远与须臾</LocalizedName>
     </BattleCardDesc>
 	<!--宝物书页--> 
-	<BattleCardDesc ID="226769006"><!--由[火鼠的皮衣]获得--> 
-      <LocalizedName>神宝[火蜥蜴之盾]</LocalizedName>
-    </BattleCardDesc>
-	<BattleCardDesc ID="226769007"><!--由[龙颈之玉]获得--> 
+	<BattleCardDesc ID="226769006"><!--由[龙颈之玉]获得--> 
       <LocalizedName>神宝[耀眼的龙玉]</LocalizedName>
     </BattleCardDesc>
-	<BattleCardDesc ID="226769008"><!--由[燕的子安贝]获得--> 
-      <LocalizedName>神宝[无限的生命之泉]</LocalizedName>
-    </BattleCardDesc>
-	<BattleCardDesc ID="226769009"><!--由[佛御石之钵]获得--> 
+  <BattleCardDesc ID="226769007"><!--由[佛御石之钵]获得--> 
       <LocalizedName>神宝[佛体的金刚石]</LocalizedName>
+    </BattleCardDesc>
+  <BattleCardDesc ID="226769008"><!--由[火鼠的皮衣]获得--> 
+      <LocalizedName>神宝[火蜥蜴之盾]</LocalizedName>
+    </BattleCardDesc>
+  <BattleCardDesc ID="226769009"><!--由[燕的子安贝]获得--> 
+      <LocalizedName>神宝[无限的生命之泉]</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="226769010"><!--由[蓬莱玉枝]获得--> 
       <LocalizedName>神宝[蓬莱的弹枝-七色的弹幕-]</LocalizedName>

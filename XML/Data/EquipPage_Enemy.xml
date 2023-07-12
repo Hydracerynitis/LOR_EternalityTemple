@@ -20,7 +20,7 @@
 	  <StartPlayPoint>8</StartPlayPoint>
       <MaxPlayPoint>8</MaxPlayPoint>
 	  
-      <Passive Pid="@origin">10004</Passive>
+      <Passive Pid="@origin">10008</Passive>
       <Passive>226769000</Passive>
       <Passive>226769001</Passive>
       <Passive>226769002</Passive>
@@ -63,7 +63,7 @@
 	  <StartPlayPoint>8</StartPlayPoint>
       <MaxPlayPoint>8</MaxPlayPoint>
 	  
-      <Passive Pid="@origin">10004</Passive>
+      <Passive Pid="@origin">10008</Passive>
       <Passive>226769005</Passive>
       <Passive>226769006</Passive>
       <Passive>226769003</Passive><!--通用-->
@@ -105,7 +105,7 @@
 	  <StartPlayPoint>8</StartPlayPoint>
       <MaxPlayPoint>8</MaxPlayPoint>
 	  
-      <Passive Pid="@origin">10004</Passive>
+      <Passive Pid="@origin">10008</Passive>
       <Passive>226769009</Passive>
       <Passive>226769010</Passive>
       <Passive>226769003</Passive><!--通用-->

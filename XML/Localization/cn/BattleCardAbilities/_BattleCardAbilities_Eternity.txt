@@ -44,29 +44,33 @@
 		<Desc>[命中时]下一幕对目标施加1层[疯狂]</Desc>
 	</BattleCardAbility>
 <!--宝物书页--> 
+	<BattleCardAbility ID="EternityDice3"><!--耀眼的龙玉-->
+		<Desc>[命中时]使目标所有[负面状态]层数+1</Desc>
+	</BattleCardAbility>
+	
+	<BattleCardAbility ID="EternityCard7"><!--佛体的金刚石-->
+		<Desc>[战斗开始]摧毁该书页并使所有友方[反击池]共享该书页所有骰子</Desc>
+	</BattleCardAbility>
+	
+
 	<BattleCardAbility ID="EternityCard5"><!--火蜥蜴之盾-->
-		<Desc>[使用时]本幕结束时使所有友方转移至自身并移除[烧伤]
+		<Desc>[使用时]本幕结束时吸收并移除所有场上的[烧伤]
 每移除5层[烧伤]下一幕开始获得1层[强壮]</Desc>
 	</BattleCardAbility>
+	<BattleCardAbility ID="EternityDice2"><!--火蜥蜴之盾-->
+		<Desc>[拼点胜利]对所有敌方施加1层[烧伤]</Desc>
+	</BattleCardAbility>
+
 	<BattleCardAbility ID="EternityCard6"><!--无限的生命之泉-->
 		<Desc>[使用时]本幕结束时若本书页仍有骰子未使用
 则恢复所有友方[已损失体力的10%]点体力</Desc>
 	</BattleCardAbility>
-	<BattleCardAbility ID="EternityCard7"><!--佛体的金刚石-->
-		<Desc>[使用时]使所有友方[反击池]共享本书页骰子</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="EternityCard8"><!--神宝[蓬莱的弹枝-七色的弹幕-]-->
-		<Desc>本书页3颗骰子分别重复投掷2/2/3次</Desc>
-	</BattleCardAbility>
-	
-	<BattleCardAbility ID="EternityDice2"><!--火蜥蜴之盾-->
-		<Desc>[拼点胜利]对所有敌方施加1层[烧伤]</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="EternityDice3"><!--耀眼的龙玉-->
-		<Desc>[命中时]使目标所有[负面状态]层数+1</Desc>
-	</BattleCardAbility>
 	<BattleCardAbility ID="EternityDice4"><!--无限的生命之泉-->
 		<Desc>[拼点胜利]使所有友方恢复2点体力</Desc>
+	</BattleCardAbility>
+
+	<BattleCardAbility ID="EternityDice5"><!--神宝[蓬莱的弹枝-七色的弹幕-]-->
+		<Desc>[命中时]改为连续7次使用打击5-7的骰子对目标造成伤害</Desc>
 	</BattleCardAbility>
 <!--难题书页-E.G.O槽--> 
 	<BattleCardAbility ID="KaguyaPuzzle1"><!--龙颈之玉-->

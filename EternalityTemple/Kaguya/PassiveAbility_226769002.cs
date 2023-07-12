@@ -40,6 +40,11 @@ namespace EternalityTemple.Kaguya
                 return d1.value < d2.value ? 1 : 0;
             });
         }
+        public override void OnStartBattle()
+        {
+            base.OnStartBattle();
+            ImmuneActive = false;
+        }
         public override void OnStartTargetedOneSide(BattlePlayingCardDataInUnitModel attackerCard)
         {
             ImmuneActive = checkIsImmune(attackerCard.targetSlotOrder);
@@ -59,6 +64,16 @@ namespace EternalityTemple.Kaguya
                 return true;
             else
                 return false;
+        }
+        public override void OnEndParrying()
+        {
+            base.OnEndParrying();
+            ImmuneActive = false;
+        }
+        public override void OnEndOneSideVictim(BattlePlayingCardDataInUnitModel attackerCard)
+        {
+            base.OnEndOneSideVictim(attackerCard);
+            ImmuneActive = false;
         }
     }
 }

@@ -74,6 +74,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Kaguya\BattleVoidBehaviour.cs" />
     <Compile Include="EternalityTempleInitializer.cs" />
     <Compile Include="Inaba\Inaba Card.cs" />
     <Compile Include="Inaba\PassiveAbility_226769011.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Inaba\InabaExtraCardAbility.cs" />
     <Compile Include="Inaba\PassiveAbility_226769010.cs" />
     <Compile Include="Inaba\Inaba Buf.cs" />
+    <Compile Include="Kaguya\KaguyaDiceAbility.cs" />
     <Compile Include="Kaguya\KaguyaPuzzle.cs" />
     <Compile Include="Kaguya\KaguyaPuzzleBuf.cs" />
     <Compile Include="Kaguya\Kaguya_Buf.cs" />

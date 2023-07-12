@@ -58,6 +58,7 @@
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
+  <!--蓬莱山难题-->
   <Card ID="226769011">
     <Name>难题-龙颈之玉</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
@@ -118,15 +119,18 @@
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
+  <!--蓬莱山神宝-->
   <Card ID="226769006">
     <Name>神宝[耀眼的龙玉]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	<Option>OnlyPage</Option>
-    <Spec Range="Far" Cost="0"/>
+	  <Option>Basic</Option>
+    <Spec Range="Far" Cost="4"/>
     <Script></Script>
     <BehaviourList>
-     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="MoLisa_Proj1" Script="yaleiyalei" ActionScript="MoLisaAction2"  Desc =""/>
+     <Behaviour Min="10" Dice="15" Type="Atk" Detail="Slash" Motion="F" EffectRes="" Script="EternityDice3" ActionScript=""  Desc =""/>
+     <Behaviour Min="10" Dice="15" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="" Script="EternityDice3" ActionScript=""  Desc =""/>
+     <Behaviour Min="10" Dice="15" Type="Atk" Detail="Hit" Motion="F" EffectRes="" Script="EternityDice3" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -134,11 +138,14 @@
     <Name>神宝[佛体的金刚石]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	<Option>OnlyPage</Option>
-    <Spec Range="Far" Cost="0"/>
-    <Script></Script>
+	  <Option>Basic</Option>
+    <Spec Range="Near" Cost="4"/>
+    <Script>EternityCard7</Script>
     <BehaviourList>
-     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="MoLisa_Proj1" Script="yaleiyalei" ActionScript="MoLisaAction2"  Desc =""/>
+      <Behaviour Min="14" Dice="16" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="Shared" ActionScript=""  Desc =""/>
+      <Behaviour Min="12" Dice="18" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="Shared" ActionScript=""  Desc =""/>
+      <Behaviour Min="10" Dice="20" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="Shared" ActionScript=""  Desc =""/>
+      <Behaviour Min="8" Dice="22" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="Shared" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -146,11 +153,13 @@
     <Name>神宝[火蜥蜴之盾]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	<Option>OnlyPage</Option>
-    <Spec Range="Far" Cost="0"/>
-    <Script></Script>
+	  <Option>Basic</Option>
+    <Spec Range="Near" Cost="3"/>
+    <Script>EternityCard5</Script>
     <BehaviourList>
-     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="MoLisa_Proj1" Script="yaleiyalei" ActionScript="MoLisaAction2"  Desc =""/>
+     <Behaviour Min="8" Dice="13" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="EternityDice2" ActionScript=""  Desc =""/>
+     <Behaviour Min="7" Dice="14" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="EternityDice2" ActionScript=""  Desc =""/>
+     <Behaviour Min="5" Dice="10" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="EternityDice2" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -158,11 +167,13 @@
     <Name>神宝[无限的生命之泉]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	<Option>OnlyPage</Option>
-    <Spec Range="Far" Cost="0"/>
-    <Script></Script>
+	  <Option>Basic</Option>
+    <Spec Range="Near" Cost="4"/>
+    <Script>EternityCard6</Script>
     <BehaviourList>
-     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="MoLisa_Proj1" Script="yaleiyalei" ActionScript="MoLisaAction2"  Desc =""/>
+      <Behaviour Min="10" Dice="17" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="EternityDice4" ActionScript=""  Desc =""/>
+      <Behaviour Min="10" Dice="18" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="EternityDice4" ActionScript=""  Desc =""/>
+      <Behaviour Min="10" Dice="19" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="EternityDice4" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -170,14 +181,15 @@
     <Name>神宝[蓬莱的弹枝-七色的弹幕-]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	<Option>OnlyPage</Option>
-    <Spec Range="Far" Cost="0"/>
+	  <Option>Basic</Option>
+    <Spec Range="FarArea" Cost="7"/>
     <Script></Script>
     <BehaviourList>
-     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="MoLisa_Proj1" Script="yaleiyalei" ActionScript="MoLisaAction2"  Desc =""/>
+     <Behaviour Min="20" Dice="27" Type="Atk" Detail="Hit" Motion="F" EffectRes="" Script="EternityDice5" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
+  <!--铃仙-->
   <Card ID="226769028">
     <Name>弱心[丧心丧意]</Name>
     <Artwork>铃仙-赤眼催眠.png</Artwork>

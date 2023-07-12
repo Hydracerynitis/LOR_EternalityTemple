@@ -229,11 +229,16 @@ namespace EternalityTemple
         }
         [HarmonyPatch(typeof(BattleAllyCardDetail), nameof(BattleAllyCardDetail.ReturnCardToHand))]
         [HarmonyPrefix]
-        public static bool BattleAllyCardDetail_ReturnCardToHand_Pre(BattleDiceCardModel appliedCard)
+        public static bool BattleAllyCardDetail_ReturnCardToHand_Pre(BattleAllyCardDetail __instance, BattleDiceCardModel appliedCard)
         {
             LorId id = appliedCard.GetID();
             if (id.packageId == packageId && id.id <= 226769010 && id.id >= 226769006)
+            {
+                __instance._self.cardSlotDetail.ReserveCost(-appliedCard.GetCost());
+                __instance._cardInUse.Remove(appliedCard);
+                __instance._cardInReserved.Remove(appliedCard);
                 return false;
+            }
             return true;
         }
         [HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.CreateSelectableList))]
@@ -291,5 +296,15 @@ namespace EternalityTemple
             if (UIScroller != null)
                 UnityObject.Destroy(UIScroller);
         }
+/*        [HarmonyPatch(typeof(ItemXmlDataList),nameof(ItemXmlDataList.GetBasicCardList))]
+        [HarmonyPostfix]
+        public static void LoadBasicCardForTesting(ItemXmlDataList __instance, List<DiceCardXmlInfo> __result)
+        {
+            __result.Add(__instance.GetCardItem(new LorId(packageId, 226769006)));
+            __result.Add(__instance.GetCardItem(new LorId(packageId, 226769007)));
+            __result.Add(__instance.GetCardItem(new LorId(packageId, 226769008)));
+            __result.Add(__instance.GetCardItem(new LorId(packageId, 226769009)));
+            __result.Add(__instance.GetCardItem(new LorId(packageId, 226769010)));
+        }*/
     }
 }

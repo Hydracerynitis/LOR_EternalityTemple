@@ -94,7 +94,7 @@
     </BattleEffectText>
     <BattleEffectText ID="KaguyaPuzzle5">
       <Name>[难题]蓬莱玉枝</Name>
-      <Desc>[条件]投掷70次骰子
+      <Desc>[条件]投掷35次骰子
 现已投掷{0}次</Desc>
     </BattleEffectText>
 <!--八意永琳-->

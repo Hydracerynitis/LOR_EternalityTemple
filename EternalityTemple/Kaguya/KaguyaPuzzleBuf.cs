@@ -88,7 +88,7 @@ namespace EternalityTemple.Kaguya
                 card.GetDiceBehaviorList().ForEach(x => x.AddAbility(new PuzzleDiceAbility3() { behavior = x }));
             if (CompletePuzzle.Contains(4) && card.slotOrder == unavailable + 3)
                 card.GetDiceBehaviorList().ForEach(x => x.AddAbility(new PuzzleDiceAbility4() { behavior = x }));
-            if (CompletePuzzle.Contains(5) && card.slotOrder == unavailable + 4)
+            if (CompletePuzzle.Contains(5) && card.slotOrder == unavailable + 4/* && card.card.GetID()!=new LorId(EternalityInitializer.packageId, 226769010)*/)
                 card.GetDiceBehaviorList().ForEach(x => x.AddAbility(new PuzzleDiceAbility5() { behavior = x }));
         }
         public override void OnRoundStart()
@@ -190,7 +190,7 @@ namespace EternalityTemple.Kaguya
             if (active)
                 return;
             BattleDiceCardModel card = RandomUtil.SelectOne(owner.allyCardDetail.GetHand());
-            card.AddBuf(new DiceCardSelfAbility_costDown1self.CostDownSelfBuf());
+            card.AddBuf(new CostDownSelfBuf());
             active = true;
         }
         public class CostDownSelfBuf : BattleDiceCardBuf

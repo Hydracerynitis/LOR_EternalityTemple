@@ -1,4 +1,5 @@
-﻿using LOR_DiceSystem;
+﻿using EternalityTemple.Inaba;
+using LOR_DiceSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,136 @@ using UnityEngine.EventSystems;
 
 namespace EternalityTemple.Kaguya
 {
+    public class DiceCardSelfAbility_EternityCard1 : DiceCardSelfAbilityBase
+    {
+        public override void OnUseCard()
+        {
+            owner.cardSlotDetail.RecoverPlayPointByCard(1);
+        }
+    }
+    public class DiceCardSelfAbility_EternityCard2 : DiceCardSelfAbilityBase
+    {
+        public override void OnUseCard()
+        {
+            BattleUnitBuf buf = owner.bufListDetail.GetActivatedBufList().Find(x => x is KaguyaBuf);
+            if (buf != null)
+                card.ApplyDiceStatBonus(DiceMatch.AllDice,new DiceStatBonus() { power = -buf.stack });
+        }
+    }
+    public class DiceCardAbility_RedStone : DiceCardAbilityBase
+    {
+        public override void OnSucceedAttack(BattleUnitModel target)
+        {
+            int burnstack = 4;
+            BattleUnitBuf buf = owner.bufListDetail.GetActivatedBufList().Find(x => x is KaguyaBuf);
+            if (buf != null)
+                burnstack -= buf.stack / 2;
+            target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Burn, burnstack,owner);
+        }
+    }
+    public class DiceCardSelfAbility_EternityCard3 : InabaExtraCardAbility
+    {
+        public override void OnUseCard()
+        {
+            card.GetDiceBehaviorList().ForEach(x => x.abilityList.Add(new Mysterium() { behavior = x }));
+        }
+        public override void OnEnterCardPhase(BattleUnitModel unit, BattleDiceCardModel self)
+        {
+            base.OnEnterCardPhase(unit, self);
+            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769002), false);
+            self.XmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+        }
+        public override void OnInabaBuf()
+        {
+            base.OnInabaBuf();
+            DiceCardXmlInfo xmlData = this.card.card.XmlData;
+            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769003), false);
+            xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+        }
+        class Mysterium: DiceCardAbilityBase
+        {
+            public override void OnWinParrying()
+            {
+                KeywordBuf keyword = RandomUtil.SelectOne(KeywordBuf.Strength, KeywordBuf.Endurance, KeywordBuf.Protection);
+                owner.bufListDetail.AddKeywordBufThisRoundByCard(keyword, 1);
+            }
+            public override void OnSucceedAttack()
+            {
+                KeywordBuf keyword = RandomUtil.SelectOne(KeywordBuf.Weak, KeywordBuf.Disarm, KeywordBuf.Vulnerable, KeywordBuf.Binding);
+                behavior.card.target.bufListDetail.AddKeywordBufByCard(keyword, 1,owner);
+            }
+        }
+    }
+    public class DiceCardAbility_EternityDice1 : DiceCardAbilityBase
+    {
+        public override void OnSucceedAttack()
+        {
+            BattleUnitBuf_InabaBuf2.AddReadyStack(behavior.card.target, 1);
+        }
+    }
+    public class DiceCardSelfAbility_EternityCard4 : DiceCardSelfAbilityBase
+    {
+        public override bool IsTargetableAllUnit()
+        {
+            return true;
+        }
+        public override void OnUseInstance(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
+        {
+            BattleUnitModel benifitial = unit;
+            if (unit.faction == targetUnit.faction)
+                benifitial = targetUnit;
+            benifitial.bufListDetail.AddBuf(new Recast());
+            List<(KeywordBuf, int)> Buffs=new List<(KeywordBuf, int)>();
+            foreach(BattleUnitBuf buf in benifitial.bufListDetail.GetActivatedBufList())
+            {
+                if (buf.bufType != KeywordBuf.None)
+                    Buffs.Add((buf.bufType, buf.stack));
+            }
+            benifitial.bufListDetail.AddBuf(new Statis((int)benifitial.hp, benifitial.breakDetail.IsBreakLifeZero(), benifitial.breakDetail.breakGauge, benifitial.cardSlotDetail.PlayPoint, Buffs));
+        }
+        public class Recast : BattleUnitBuf
+        {
+            public override void OnEndBattle(BattlePlayingCardDataInUnitModel curCard)
+            {
+                List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList_opponent(_owner.faction);
+                if (aliveList.Count <= 0)
+                    return;
+                StageController.Instance.AddAllCardListInBattle(curCard, RandomUtil.SelectOne(aliveList));
+                Destroy();
+            }
+        }
+        public class Statis : BattleUnitBuf
+        {
+            private int hp;
+            private bool isBreaked;
+            private int bp;
+            private int light;
+            private List<(KeywordBuf, int)> Buffs = new List<(KeywordBuf, int)> ();
+            public Statis(int hp,bool isBreaklifeZero, int bp, int light, List<(KeywordBuf,int)> buffs)
+            {
+                this.hp = hp;
+                isBreaked = isBreaklifeZero;
+                this.bp = bp;
+                this.light = light;
+                Buffs.AddRange(buffs);
+            }
+            public override void OnRoundEnd()
+            {
+                _owner.bufListDetail._readyBufList.Clear();
+                _owner.SetHp(hp);
+                if(!isBreaked && _owner.breakDetail.IsBreakLifeZero())
+                {
+                    _owner.RecoverBreakLife(this._owner.MaxBreakLife);
+                    _owner.breakDetail.nextTurnBreak = false;
+                }
+                _owner.breakDetail.breakGauge=bp;
+                _owner.cardSlotDetail.RecoverPlayPoint(light - _owner.cardSlotDetail.PlayPoint);
+                _owner.bufListDetail._readyBufList.Clear();
+                Buffs.ForEach(x => _owner.bufListDetail.AddKeywordBufByEtc(x.Item1,x.Item2));
+                Destroy(); 
+            }
+        }
+    }
     public class DiceCardSelfAbility_EternityCard5: DiceCardSelfAbilityBase
     {
         public override void OnUseCard()
@@ -32,6 +163,13 @@ namespace EternalityTemple.Kaguya
                 _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Burn, burn_stack);
                 Destroy();
             }
+        }
+    }
+    public class DiceCardAbility_EternityDice2 : DiceCardAbilityBase
+    {
+        public override void OnWinParrying()
+        {
+            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).ForEach(x => x.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Burn, 1));
         }
     }
     public class DiceCardSelfAbility_EternityCard6 : DiceCardSelfAbilityBase
@@ -73,13 +211,12 @@ namespace EternalityTemple.Kaguya
             List<BattleUnitModel> ally = BattleObjectManager.instance.GetAliveList(owner.faction);
             card.GetDiceBehaviorList().ForEach(b => ally.ForEach(x => x.cardSlotDetail.keepCard.AddBehaviour(card.card, b)));
         }
-
     }
-    public class DiceCardAbility_EternityDice2 : DiceCardAbilityBase
+    public class DiceCardAbility_Shared : DiceCardAbilityBase
     {
-        public override void OnWinParrying()
+        public override void AfterAction()
         {
-            BattleObjectManager.instance.GetAliveList_opponent(owner.faction).ForEach(x => x.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Burn, 1));
+            behavior.DestroyDice(DiceUITiming.AttackAfter);
         }
     }
     public class DiceCardAbility_EternityDice3 : DiceCardAbilityBase
@@ -125,13 +262,6 @@ namespace EternalityTemple.Kaguya
                 for (int i = 0; i < 7; i++)
                     BattleVoidBehaviour.ExtraHit(b, card,BulletsStorm);
             }
-        }
-    }
-    public class DiceCardAbility_Shared : DiceCardAbilityBase
-    {
-        public override void AfterAction()
-        {
-            behavior.DestroyDice(DiceUITiming.AttackAfter);
         }
     }
 }

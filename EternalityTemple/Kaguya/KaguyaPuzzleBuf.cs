@@ -144,26 +144,39 @@ namespace EternalityTemple.Kaguya
                     buf.Destroy();
             }
         }
+        public static bool IsPuzzlePage(LorId pageId)
+        {
+            return pageId.packageId == EternalityInitializer.packageId && pageId.id == 226769100;
+        }
     }
     public class PuzzleDiceAbility1 : DiceCardAbilityBase
     {
         public override void BeforeRollDice()
         {
-            behavior.ApplyDiceStatBonus(new DiceStatBonus() { min = 1, max = 1 });
+            if(BattleUnitBuf_PuzzleBuf.IsPuzzlePage(card.card.GetID()))
+                behavior.ApplyDiceStatBonus(new DiceStatBonus() { min = 2, max = 2 });
+            else
+                behavior.ApplyDiceStatBonus(new DiceStatBonus() { min = 1, max = 1 });
         }
     }
     public class PuzzleDiceAbility2 : DiceCardAbilityBase
     {
         public override void OnLoseParrying()
         {
-            behavior.TargetDice.ApplyDiceStatBonus(new DiceStatBonus() { dmg = -2 });
+            if (BattleUnitBuf_PuzzleBuf.IsPuzzlePage(card.card.GetID()))
+                behavior.TargetDice?.ApplyDiceStatBonus(new DiceStatBonus() { dmg = -4 });
+            else
+                behavior.TargetDice?.ApplyDiceStatBonus(new DiceStatBonus() { dmg = -2 });
         }
     }
     public class PuzzleDiceAbility3 : DiceCardAbilityBase
     {
         public override void OnWinParrying()
         {
-            behavior.card.target.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Burn, 2);
+            if (BattleUnitBuf_PuzzleBuf.IsPuzzlePage(card.card.GetID()))
+                card.target.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Burn, 4);
+            else
+                card.target.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Burn, 2);
         }
     }
     public class PuzzleDiceAbility4 : DiceCardAbilityBase
@@ -178,8 +191,16 @@ namespace EternalityTemple.Kaguya
                 else if (LeastHp.hp > unit.hp)
                     LeastHp = unit;
             }
-            LeastHp.RecoverHP(3);
-            LeastHp.breakDetail.RecoverBreak(3);
+            if (BattleUnitBuf_PuzzleBuf.IsPuzzlePage(card.card.GetID()))
+            {
+                LeastHp.RecoverHP(6);
+                LeastHp.breakDetail.RecoverBreak(6);
+            }
+            else
+            {
+                LeastHp.RecoverHP(3);
+                LeastHp.breakDetail.RecoverBreak(3);
+            }    
         }
     }
     public class PuzzleDiceAbility5 : DiceCardAbilityBase
@@ -190,7 +211,13 @@ namespace EternalityTemple.Kaguya
             if (active)
                 return;
             BattleDiceCardModel card = RandomUtil.SelectOne(owner.allyCardDetail.GetHand());
-            card.AddBuf(new CostDownSelfBuf());
+            if (BattleUnitBuf_PuzzleBuf.IsPuzzlePage(this.card.card.GetID()))
+            {
+                card.AddBuf(new CostDownSelfBuf());
+                card.AddBuf(new CostDownSelfBuf());
+            }
+            else
+                card.AddBuf(new CostDownSelfBuf());
             active = true;
         }
         public class CostDownSelfBuf : BattleDiceCardBuf

@@ -6,9 +6,12 @@ using System.Text;
 
 namespace EternalityTemple.Kaguya
 {
-    public class BattleUnitBuf_KaguyaBuf1: BattleUnitBuf
+    public class KaguyaBuf : BattleUnitBuf
     {
         public override string keywordIconId => "Silence_StopTime";
+    }
+    public class BattleUnitBuf_KaguyaBuf1: KaguyaBuf
+    {
         public override string keywordId => "KaguyaBuf1";
         public override void Init(BattleUnitModel owner)
         {
@@ -24,9 +27,8 @@ namespace EternalityTemple.Kaguya
             Destroy();
         }
     }
-    public class BattleUnitBuf_KaguyaBuf2: BattleUnitBuf
+    public class BattleUnitBuf_KaguyaBuf2: KaguyaBuf
     {
-        public override string keywordIconId => "Silence_StopTime";
         public override string keywordId => "KaguyaBuf2";
         public override void Init(BattleUnitModel owner)
         {
@@ -46,9 +48,8 @@ namespace EternalityTemple.Kaguya
             Destroy();
         }
     }
-    public class BattleUnitBuf_KaguyaBuf3 : BattleUnitBuf
+    public class BattleUnitBuf_KaguyaBuf3 : KaguyaBuf
     {
-        public override string keywordIconId => "Silence_StopTime";
         public override string keywordId => "KaguyaBuf3";
         public override void Init(BattleUnitModel owner)
         {
@@ -64,9 +65,8 @@ namespace EternalityTemple.Kaguya
             Destroy();
         }
     }
-    public class BattleUnitBuf_KaguyaBuf4 : BattleUnitBuf
+    public class BattleUnitBuf_KaguyaBuf4 : KaguyaBuf
     {
-        public override string keywordIconId => "Silence_StopTime";
         public override string keywordId => "KaguyaBuf4";
         public override void Init(BattleUnitModel owner)
         {
@@ -82,9 +82,8 @@ namespace EternalityTemple.Kaguya
             Destroy();
         }
     }
-    public class BattleUnitBuf_KaguyaBuf5 : BattleUnitBuf
+    public class BattleUnitBuf_KaguyaBuf5 : KaguyaBuf
     {
-        public override string keywordIconId => "Silence_StopTime";
         public override string keywordId => "KaguyaBuf5";
         public override void Init(BattleUnitModel owner)
         {
@@ -100,9 +99,8 @@ namespace EternalityTemple.Kaguya
             Destroy();
         }
     }
-    public class BattleUnitBuf_KaguyaBuf6 : BattleUnitBuf
+    public class BattleUnitBuf_KaguyaBuf6 : KaguyaBuf
     {
-        public override string keywordIconId => "Silence_StopTime";
         public override string keywordId => "KaguyaBuf6";
         public override void Init(BattleUnitModel owner)
         {
@@ -118,9 +116,8 @@ namespace EternalityTemple.Kaguya
             Destroy();
         }
     }
-    public class BattleUnitBuf_KaguyaBuf7 : BattleUnitBuf
+    public class BattleUnitBuf_KaguyaBuf7 : KaguyaBuf
     {
-        public override string keywordIconId => "Silence_StopTime";
         public override string keywordId => "KaguyaBuf7";
         public override void Init(BattleUnitModel owner)
         {

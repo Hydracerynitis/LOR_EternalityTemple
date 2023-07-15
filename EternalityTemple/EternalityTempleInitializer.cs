@@ -15,6 +15,7 @@ using EternalityTemple.Universal;
 using EternalityTemple.Kaguya;
 using EternalityTemple.Util;
 using System.Linq;
+using EternalityTemple.Yagokoro;
 
 namespace EternalityTemple
 {
@@ -171,6 +172,10 @@ namespace EternalityTemple
                     ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+3), Color.green);
                 if (puzzlebuf.CompletePuzzle.Contains(5) && __instance.speedDiceCount - unavailable >= 5)
                     ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+4), Color.yellow);
+            }
+            if(__instance.passiveDetail.PassiveList.Find(x => x is PassiveAbility_226769005) is PassiveAbility_226769005 passive && passive.isActiavted)
+            {
+                __instance.view.speedDiceSetterUI._speedDices.ForEach(sd => ChangeSpeedDiceColor(sd, Color.cyan));
             }
         }
         private static void ChangeSpeedDiceColor(SpeedDiceUI ui, Color DiceColor, bool reset = false)

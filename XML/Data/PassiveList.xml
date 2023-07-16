@@ -57,7 +57,7 @@
 	<Script>226769005</Script>
 	<CanGivePassive>false</CanGivePassive>
 	<Name>月相轮转</Name><!--未生效-->
-	<Desc>若时间为“午时”,本被动生效
+	<Desc>若时间为“子时”,本被动生效
 “疯狂”效果改变
 (无法转移)</Desc>
 </Passive>

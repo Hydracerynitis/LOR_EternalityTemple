@@ -58,6 +58,76 @@
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
+  <!--蓬莱山-->
+  <Card ID="226769001">
+    <Name>新难题[艾哲红石]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Uncommon</Rarity>
+	  <Option>OnlyPage</Option>
+    <Spec Range="Far" Cost="2"/>
+    <Script>EternityCard2</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+     <Behaviour Min="10" Dice="13" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="" Script="RedStone" ActionScript=""  Desc =""/>
+     <Behaviour Min="9" Dice="15" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="" Script="RedStone" ActionScript=""  Desc =""/>
+     <Behaviour Min="7" Dice="18" Type="Atk" Detail="Hit" Motion="F" EffectRes="" Script="RedStone" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769002">
+    <Name>新难题[Mysterium]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Rare</Rarity>
+	  <Option>OnlyPage</Option>
+    <Spec Range="Far" Cost="1"/>
+    <Script>EternityCard3</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+     <Behaviour Min="1" Dice="5" Type="Atk" Detail="Slash" Motion="F" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="4" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="1" Dice="4" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769003">
+    <Name>恐惧[崔斯特姆的诅咒]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Rare</Rarity>
+	  <Option>OnlyPage</Option>
+    <Spec Range="Far" Cost="1"/>
+    <Script></Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+     <Behaviour Min="10" Dice="16" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="" Script="EternityDice1" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769004">
+    <Name>新难题[金阁寺的天花板]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Rare</Rarity>
+	  <Option>OnlyPage</Option>
+    <Spec Range="Far" Cost="3"/>
+    <Script></Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+     <Behaviour Min="10" Dice="20" Type="Atk" Detail="Hit" Motion="F" EffectRes="" Script="destroynextdice" ActionScript=""  Desc =""/>
+      <Behaviour Min="8" Dice="10" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769005">
+    <Name>永远与须臾</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	  <Option>OnlyPage</Option>
+    <Spec Range="Instance" Cost="3"/>
+    <Script>EternityCard4</Script>
+    <ScriptDesc></ScriptDesc>
+    <BehaviourList>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
   <!--蓬莱山难题-->
   <Card ID="226769011">
     <Name>难题-龙颈之玉</Name>

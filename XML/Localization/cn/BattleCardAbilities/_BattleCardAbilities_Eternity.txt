@@ -7,7 +7,7 @@
 若为[满月]额外恢复1点光芒</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="EternityTs_Card1"><!--八意永琳版月之都市-->
-		<Desc>[(难题)][使用时]恢复1点光芒
+		<Desc>[使用时]恢复1点光芒
 若处于[子时]额外抽取1张书页
 若为[满月]额外恢复1点光芒
 [月相](1)-本书页第1颗骰子[威力]+1
@@ -31,18 +31,25 @@
 每经过2个时辰,本书页施加[烧伤]层数-1
 若[永夜]未触发,则本书页[骰子威力]与[施加烧伤]减至最低</Desc>
 	</BattleCardAbility>
+	<BattleCardAbility ID="RedStone"><!--新难题[艾哲红石]-->
+		<Desc>[命中时] 施加4层[烧伤]</Desc>
+	</BattleCardAbility>
+
 	<BattleCardAbility ID="EternityCard3"><!--新难题[Mysterium]-->
 		<Desc>[(疯狂)]本书页[拼点胜利]自身获得随机1层[正面状态]
 [命中时]下一幕对目标随机施加1层[负面状态]</Desc><!--本书页在“疯狂”骰子使用时改变为 恐惧[崔斯特姆的诅咒]-->
 	</BattleCardAbility>
+
+<BattleCardAbility ID="EternityDice1"><!--恐惧[崔斯特姆的诅咒]-->
+		<Desc>[命中时]下一幕对目标施加1层[疯狂]</Desc>
+	</BattleCardAbility>
+
 	<BattleCardAbility ID="EternityCard4"><!--永远与须臾-->
-		<Desc>[可指向友方][使用时]若目标为[友方]则下一幕开始时将其状态还原至上一幕
+		<Desc>[可指向友方][使用时]若目标为[友方]则使其重复使用第一张书页下一幕开始时将其状态还原至上一幕
 若目标为[敌方]则使其[负面状态]延续至下一幕</Desc>
 	</BattleCardAbility>
 	
-	<BattleCardAbility ID="EternityDice1"><!--恐惧[崔斯特姆的诅咒]-->
-		<Desc>[命中时]下一幕对目标施加1层[疯狂]</Desc>
-	</BattleCardAbility>
+	
 <!--宝物书页--> 
 	<BattleCardAbility ID="EternityDice3"><!--耀眼的龙玉-->
 		<Desc>[命中时]使目标所有[负面状态]层数+1</Desc>

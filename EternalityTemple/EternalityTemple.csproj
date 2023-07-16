@@ -74,6 +74,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Inaba\InabaBufAbility.cs" />
     <Compile Include="Kaguya\BattleVoidBehaviour.cs" />
     <Compile Include="EternalityTempleInitializer.cs" />
     <Compile Include="Inaba\Inaba Card.cs" />

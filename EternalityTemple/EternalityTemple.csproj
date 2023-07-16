@@ -81,7 +81,6 @@
     <Compile Include="Inaba\PassiveAbility_226769011.cs" />
     <Compile Include="Inaba\PassiveAbility_226769012.cs" />
     <Compile Include="Inaba\Inaba Dice.cs" />
-    <Compile Include="Inaba\InabaExtraCardAbility.cs" />
     <Compile Include="Inaba\PassiveAbility_226769010.cs" />
     <Compile Include="Inaba\Inaba Buf.cs" />
     <Compile Include="Kaguya\KaguyaDiceAbility.cs" />

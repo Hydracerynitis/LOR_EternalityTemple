@@ -149,10 +149,6 @@ namespace EternalityTemple.Inaba
 				_owner.allyCardDetail.GetHand().Remove(card);
 				_owner.allyCardDetail.AddNewCardToDeck(card.GetID());
 				DiceCardSelfAbilityBase diceCardSelfAbilityBase = card.CreateDiceCardSelfAbilityScript();
-				if (diceCardSelfAbilityBase != null && diceCardSelfAbilityBase is InabaExtraCardAbility)
-				{
-					((InabaExtraCardAbility)diceCardSelfAbilityBase).OnInabaBuf();
-				}
 				card.AddBuf(new BattleDiceCardBuf_checkInaba());
 				BattleUnitModel target = this.GetTarget_player();
 				if (target != null)

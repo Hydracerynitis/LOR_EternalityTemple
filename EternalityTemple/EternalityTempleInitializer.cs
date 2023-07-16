@@ -16,6 +16,7 @@ using EternalityTemple.Kaguya;
 using EternalityTemple.Util;
 using System.Linq;
 using EternalityTemple.Yagokoro;
+using EternalityTemple.Inaba;
 
 namespace EternalityTemple
 {
@@ -301,15 +302,43 @@ namespace EternalityTemple
             if (UIScroller != null)
                 UnityObject.Destroy(UIScroller);
         }
-/*        [HarmonyPatch(typeof(ItemXmlDataList),nameof(ItemXmlDataList.GetBasicCardList))]
+
+        [HarmonyPatch(typeof(StageController), nameof(StageController.ActivateStartBattleEffectPhase))]
         [HarmonyPostfix]
-        public static void LoadBasicCardForTesting(ItemXmlDataList __instance, List<DiceCardXmlInfo> __result)
+        public static void ActivateStartBattleEffectPhase_Post()
         {
-            __result.Add(__instance.GetCardItem(new LorId(packageId, 226769006)));
-            __result.Add(__instance.GetCardItem(new LorId(packageId, 226769007)));
-            __result.Add(__instance.GetCardItem(new LorId(packageId, 226769008)));
-            __result.Add(__instance.GetCardItem(new LorId(packageId, 226769009)));
-            __result.Add(__instance.GetCardItem(new LorId(packageId, 226769010)));
-        }*/
+            foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(false))
+            {
+                foreach (BattleUnitBuf battleUnitBuf in battleUnitModel.bufListDetail.GetActivatedBufList())
+                {
+                    if (battleUnitBuf != null && battleUnitBuf is InabaBufAbility)
+                    {
+                        ((InabaBufAbility)battleUnitBuf).OnStartBattle();
+                    }
+                }
+            }
+        }
+        [HarmonyPatch(typeof(BattleUnitModel), nameof(BattleUnitModel.CanChangeAttackTarget))]
+        [HarmonyPrefix]
+        public static bool CanChangeAttackTarget(BattleUnitModel __instance, ref bool __result , int myIndex = 0)
+        {
+            if (myIndex< BattleUnitBuf_InabaBuf2.GetStack(__instance))
+            {
+                __result = false;
+                return false;
+            }
+            return true;
+        }
+
+        /*        [HarmonyPatch(typeof(ItemXmlDataList),nameof(ItemXmlDataList.GetBasicCardList))]
+                [HarmonyPostfix]
+                public static void LoadBasicCardForTesting(ItemXmlDataList __instance, List<DiceCardXmlInfo> __result)
+                {
+                    __result.Add(__instance.GetCardItem(new LorId(packageId, 226769006)));
+                    __result.Add(__instance.GetCardItem(new LorId(packageId, 226769007)));
+                    __result.Add(__instance.GetCardItem(new LorId(packageId, 226769008)));
+                    __result.Add(__instance.GetCardItem(new LorId(packageId, 226769009)));
+                    __result.Add(__instance.GetCardItem(new LorId(packageId, 226769010)));
+                }*/
     }
 }

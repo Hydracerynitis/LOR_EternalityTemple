@@ -25,7 +25,7 @@
       <Passive>226769002</Passive>
       <Passive>226769003</Passive><!--通用-->
 	  
-	  <OnlyCard>226769000</OnlyCard>  
+	  <OnlyCard>226769100</OnlyCard>  
 	  <OnlyCard>226769001</OnlyCard>  
 	  <OnlyCard>226769002</OnlyCard>  
 	  <OnlyCard>226769003</OnlyCard>  
@@ -72,7 +72,7 @@
       <Passive>226769003</Passive><!--通用-->
       <Passive>226769008</Passive>
 
-	  <OnlyCard>226769000</OnlyCard>  
+	  <OnlyCard>226769200</OnlyCard>  
 	  <OnlyCard>226769016</OnlyCard>  
 	  <OnlyCard>226769017</OnlyCard>  
 	  <OnlyCard>226769018</OnlyCard>  
@@ -121,7 +121,7 @@
       <Passive>226769003</Passive><!--通用-->
       <Passive>226769011</Passive>
 
-	  <OnlyCard>226769000</OnlyCard>  
+	  <OnlyCard>226769300</OnlyCard>  
 	  <OnlyCard>226769028</OnlyCard>  
 	  <OnlyCard>226769029</OnlyCard>  
 	  <OnlyCard>226769030</OnlyCard>  
@@ -134,7 +134,7 @@
     <BookIcon>TheWorld_Eternity</BookIcon>
     <Rarity>Unique</Rarity>
 	
-    <CharacterSkin>Inaba</CharacterSkin>
+    <CharacterSkin>Reisen</CharacterSkin>
     <CharacterSkinType>Custom</CharacterSkinType>
     <SkinGender>N</SkinGender>
     <Chapter>7</Chapter>

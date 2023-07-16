@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace EternalityTemple.Inaba
 {
-	public class DiceCardSelfAbility_EternityXS_Card1 : InabaExtraCardAbility
+	public class DiceCardSelfAbility_EternityXS_Card1 : DiceCardSelfAbilityBase
 	{
         public override void OnApplyCard()
         {
@@ -55,7 +55,7 @@ namespace EternalityTemple.Inaba
 			xmlData.DiceBehaviourList = list;
 		}
     }
-	public class DiceCardSelfAbility_InabaCard1 : InabaExtraCardAbility
+	public class DiceCardSelfAbility_InabaCard1 : DiceCardSelfAbilityBase
 	{
 		public override void OnUseCard()
 		{
@@ -63,7 +63,7 @@ namespace EternalityTemple.Inaba
 		}
 		public bool firstDiceLoseParrying;
 	}
-	public class DiceCardSelfAbility_InabaCard2 : InabaExtraCardAbility
+	public class DiceCardSelfAbility_InabaCard2 : DiceCardSelfAbilityBase
 	{
 		public override void OnUseCard()
 		{
@@ -85,7 +85,7 @@ namespace EternalityTemple.Inaba
 			}
 		}
 	}
-	public class DiceCardSelfAbility_InabaCard3 : InabaExtraCardAbility
+	public class DiceCardSelfAbility_InabaCard3 : DiceCardSelfAbilityBase
 	{
 		public override void OnUseCard()
 		{
@@ -102,7 +102,7 @@ namespace EternalityTemple.Inaba
 			BattleUnitBuf_InabaBuf5.AddStack(owner, 1);
 		}
 	}
-	public class DiceCardSelfAbility_InabaCard4 : InabaExtraCardAbility
+	public class DiceCardSelfAbility_InabaCard4 : DiceCardSelfAbilityBase
 	{
 		public override void OnUseCard()
 		{
@@ -115,10 +115,10 @@ namespace EternalityTemple.Inaba
 			}
 		}
 	}
-	public class DiceCardSelfAbility_InabaCard5 : InabaExtraCardAbility
+	public class DiceCardSelfAbility_InabaCard5 : DiceCardSelfAbilityBase
 	{
 	}
-	public class DiceCardSelfAbility_InabaCard6 : InabaExtraCardAbility
+	public class DiceCardSelfAbility_InabaCard6 : DiceCardSelfAbilityBase
 	{
         public override void OnSucceedAttack()
 		{
@@ -128,7 +128,7 @@ namespace EternalityTemple.Inaba
 			}
 		}
 	}
-	public class DiceCardSelfAbility_InabaCard7 : InabaExtraCardAbility
+	public class DiceCardSelfAbility_InabaCard7 : DiceCardSelfAbilityBase
 	{
 		public override void OnUseCard()
 		{

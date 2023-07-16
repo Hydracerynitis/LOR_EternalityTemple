@@ -37,24 +37,54 @@ namespace EternalityTemple.Kaguya
             target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Burn, burnstack,owner);
         }
     }
-    public class DiceCardSelfAbility_EternityCard3 : InabaExtraCardAbility
+    public class DiceCardSelfAbility_EternityCard3 : DiceCardSelfAbilityBase
     {
-        public override void OnUseCard()
+        public override void OnApplyCard()
         {
-            card.GetDiceBehaviorList().ForEach(x => x.abilityList.Add(new Mysterium() { behavior = x }));
+            base.OnApplyCard();
+            if (this.owner.cardOrder + 1 < BattleUnitBuf_InabaBuf2.GetStack(owner))
+            {
+                DiceCardXmlInfo xmlData = this.card.card.XmlData;
+                List<DiceBehaviour> list = new List<DiceBehaviour>();
+                DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769003), false);
+                foreach (DiceBehaviour diceBehaviour in cardItem.DiceBehaviourList)
+                {
+                    DiceBehaviour diceBehaviour2 = diceBehaviour.Copy();
+                    list.Add(diceBehaviour2);
+                }
+                xmlData.DiceBehaviourList = list;
+            }
+
         }
         public override void OnEnterCardPhase(BattleUnitModel unit, BattleDiceCardModel self)
         {
             base.OnEnterCardPhase(unit, self);
+            DiceCardXmlInfo xmlData = self.XmlData;
+            List<DiceBehaviour> list = new List<DiceBehaviour>();
             DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769002), false);
-            self.XmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+            foreach (DiceBehaviour diceBehaviour in cardItem.DiceBehaviourList)
+            {
+                DiceBehaviour diceBehaviour2 = diceBehaviour.Copy();
+                list.Add(diceBehaviour2);
+            }
+            xmlData.DiceBehaviourList = list;
         }
-        public override void OnInabaBuf()
+        public override void OnReleaseCard()
         {
-            base.OnInabaBuf();
+            base.OnReleaseCard();
             DiceCardXmlInfo xmlData = this.card.card.XmlData;
-            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769003), false);
-            xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+            List<DiceBehaviour> list = new List<DiceBehaviour>();
+            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769002), false);
+            foreach (DiceBehaviour diceBehaviour in cardItem.DiceBehaviourList)
+            {
+                DiceBehaviour diceBehaviour2 = diceBehaviour.Copy();
+                list.Add(diceBehaviour2);
+            }
+            xmlData.DiceBehaviourList = list;
+        }
+        public override void OnUseCard()
+        {
+            card.GetDiceBehaviorList().ForEach(x => x.abilityList.Add(new Mysterium() { behavior = x }));
         }
         class Mysterium: DiceCardAbilityBase
         {

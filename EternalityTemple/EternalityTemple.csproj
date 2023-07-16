@@ -81,7 +81,6 @@
     <Compile Include="Inaba\PassiveAbility_226769011.cs" />
     <Compile Include="Inaba\PassiveAbility_226769012.cs" />
     <Compile Include="Inaba\Inaba Dice.cs" />
-    <Compile Include="Inaba\InabaExtraCardAbility.cs" />
     <Compile Include="Inaba\PassiveAbility_226769010.cs" />
     <Compile Include="Inaba\Inaba Buf.cs" />
     <Compile Include="Kaguya\KaguyaDiceAbility.cs" />
@@ -98,7 +97,11 @@
     <Compile Include="Universal\PassiveAbility_226769003.cs" />
     <Compile Include="Util\InterfaceExtension.cs" />
     <Compile Include="Util\LevelUpUIScroller.cs" />
+    <Compile Include="Yagokoro\PassiveAbility_226769008.cs" />
+    <Compile Include="Yagokoro\PassiveAbility_226769007.cs" />
+    <Compile Include="Yagokoro\PassiveAbility_226769006.cs" />
     <Compile Include="Yagokoro\PassiveAbility_226769005.cs" />
+    <Compile Include="Yagokoro\YagokoroBuf.cs" />
     <Compile Include="Yagokoro\YagokoroExtraAbility.cs" />
   </ItemGroup>
   <ItemGroup>

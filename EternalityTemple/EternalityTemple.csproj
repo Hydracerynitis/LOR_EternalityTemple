@@ -97,7 +97,11 @@
     <Compile Include="Universal\PassiveAbility_226769003.cs" />
     <Compile Include="Util\InterfaceExtension.cs" />
     <Compile Include="Util\LevelUpUIScroller.cs" />
+    <Compile Include="Yagokoro\PassiveAbility_226769008.cs" />
+    <Compile Include="Yagokoro\PassiveAbility_226769007.cs" />
+    <Compile Include="Yagokoro\PassiveAbility_226769006.cs" />
     <Compile Include="Yagokoro\PassiveAbility_226769005.cs" />
+    <Compile Include="Yagokoro\YagokoroBuf.cs" />
     <Compile Include="Yagokoro\YagokoroExtraAbility.cs" />
   </ItemGroup>
   <ItemGroup>

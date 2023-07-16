@@ -21,7 +21,7 @@
     <Chapter>7</Chapter>
 	<DropItemState>All</DropItemState>
 	<DropItem Type="Equip">226769003</DropItem>
-	<DropItem Type="Card">226769000</DropItem>
+	<DropItem Type="Card">226769100</DropItem>
 	<DropItem Type="Card">226769001</DropItem>
 	<DropItem Type="Card">226769002</DropItem>
 	<DropItem Type="Card">226769004</DropItem>
@@ -35,7 +35,7 @@
     <Chapter>7</Chapter>
 	<DropItemState>All</DropItemState>
 	<DropItem Type="Equip">226769004</DropItem>
-	<DropItem Type="Card">226769000</DropItem>
+	<DropItem Type="Card">226769200</DropItem>
 	<DropItem Type="Card">226769016</DropItem>
 	<DropItem Type="Card">226769018</DropItem>
 	<DropItem Type="Card">226769019</DropItem>
@@ -52,7 +52,7 @@
     <Chapter>7</Chapter>
 	<DropItemState>All</DropItemState>
 	<DropItem Type="Equip">226769005</DropItem>
-	<DropItem Type="Card">226769000</DropItem>
+	<DropItem Type="Card">226769300</DropItem>
 	<DropItem Type="Card">226769028</DropItem>
 	<DropItem Type="Card">226769029</DropItem>
 	<DropItem Type="Card">226769030</DropItem>

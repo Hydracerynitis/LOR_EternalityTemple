@@ -1,17 +1,28 @@
 ﻿using System;
 using LOR_DiceSystem;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace EternalityTemple.Inaba
 {
 	public class DiceCardSelfAbility_EternityXS_Card1 : InabaExtraCardAbility
 	{
-        public override void OnInabaBuf()
+        public override void OnApplyCard()
         {
-            base.OnInabaBuf();
-			DiceCardXmlInfo xmlData = this.card.card.XmlData;
-			DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769311), false);
-			xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+			base.OnApplyCard();
+			if(this.owner.cardOrder+1 < BattleUnitBuf_InabaBuf2.GetStack(owner))
+               {
+				DiceCardXmlInfo xmlData = this.card.card.XmlData;
+				List<DiceBehaviour> list = new List<DiceBehaviour>();
+				DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769311), false);
+				foreach (DiceBehaviour diceBehaviour in cardItem.DiceBehaviourList)
+				{
+					DiceBehaviour diceBehaviour2 = diceBehaviour.Copy();
+					list.Add(diceBehaviour2);
+				}
+				xmlData.DiceBehaviourList = list;
+			}
+			
 		}
         public override void OnUseCard()
 		{
@@ -20,10 +31,30 @@ namespace EternalityTemple.Inaba
         public override void OnEnterCardPhase(BattleUnitModel unit, BattleDiceCardModel self)
         {
             base.OnEnterCardPhase(unit, self);
+			DiceCardXmlInfo xmlData = self.XmlData;
+			List<DiceBehaviour> list = new List<DiceBehaviour>();
 			DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769300), false);
-			self.XmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+			foreach (DiceBehaviour diceBehaviour in cardItem.DiceBehaviourList)
+			{
+				DiceBehaviour diceBehaviour2 = diceBehaviour.Copy();
+				list.Add(diceBehaviour2);
+			}
+			xmlData.DiceBehaviourList = list;
 		}
-	}
+        public override void OnReleaseCard()
+        {
+            base.OnReleaseCard();
+			DiceCardXmlInfo xmlData = this.card.card.XmlData;
+			List<DiceBehaviour> list = new List<DiceBehaviour>();
+			DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769300), false);
+			foreach (DiceBehaviour diceBehaviour in cardItem.DiceBehaviourList)
+			{
+				DiceBehaviour diceBehaviour2 = diceBehaviour.Copy();
+				list.Add(diceBehaviour2);
+			}
+			xmlData.DiceBehaviourList = list;
+		}
+    }
 	public class DiceCardSelfAbility_InabaCard1 : InabaExtraCardAbility
 	{
 		public override void OnUseCard()
@@ -36,11 +67,20 @@ namespace EternalityTemple.Inaba
 	{
 		public override void OnUseCard()
 		{
-			if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
+			foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(owner.faction))
 			{
-				foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(owner.faction))
-				{
-					BattleUnitBuf_InabaBuf4.AddStack(battleUnitModel, 1);
+				BattleUnitBuf_InabaBuf4.AddStack(battleUnitModel, 1);
+			}
+		}
+		public override void OnStartBattle()
+		{
+			base.OnStartBattle();
+			foreach (BattlePlayingCardDataInUnitModel battlePlayingCardDataInUnitModel in Singleton<StageController>.Instance.GetAllCards())
+            {
+				if(battlePlayingCardDataInUnitModel.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
+                {
+					battlePlayingCardDataInUnitModel.target = owner;
+					battlePlayingCardDataInUnitModel.targetSlotOrder = -1;
 				}
 			}
 		}

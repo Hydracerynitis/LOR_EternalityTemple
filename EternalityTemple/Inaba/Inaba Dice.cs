@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace EternalityTemple.Inaba
 {
@@ -37,10 +38,10 @@ namespace EternalityTemple.Inaba
 		public override void OnSucceedAttack(BattleUnitModel target)
 		{
 			target.TakeDamage(owner.history.damageAtOneRoundByDice);
-			BattlePlayingCardDataInUnitModel card = base.card;
-			if(card != null && card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
+			if(card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
             {
 				BattleUnitBuf_InabaBuf2.AddReadyStack(target, owner.history.damageAtOneRoundByDice / 5);
+				Debug.Log("aaaaa");
             }
 		}
 	}

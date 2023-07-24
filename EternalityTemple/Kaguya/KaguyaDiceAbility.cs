@@ -42,7 +42,7 @@ namespace EternalityTemple.Kaguya
         public override void OnApplyCard()
         {
             base.OnApplyCard();
-            if (this.owner.cardOrder + 1 < BattleUnitBuf_InabaBuf2.GetStack(owner))
+            if (this.owner.cardOrder + 1 < BattleUnitBuf_InabaBuf2.GetStack(owner) || this.owner.cardOrder + 1 == BattleUnitBuf_InabaBuf3.GetStack(owner))
             {
                 DiceCardXmlInfo xmlData = this.card.card.XmlData;
                 List<DiceBehaviour> list = new List<DiceBehaviour>();

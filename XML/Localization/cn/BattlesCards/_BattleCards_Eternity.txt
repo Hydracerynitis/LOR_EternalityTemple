@@ -137,5 +137,15 @@
 	<BattleCardDesc ID="226769036">
       <LocalizedName>调整波长</LocalizedName>
     </BattleCardDesc>
+	<!--敌方使用版本-->
+	<BattleCardDesc ID="226769134">
+      <LocalizedName>多重疯狂</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769135">
+      <LocalizedName>疯狂回声</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769136">
+      <LocalizedName>调整波长</LocalizedName>
+    </BattleCardDesc>
 </cardDescList>
 </BattleCardDescRoot>

@@ -12,6 +12,7 @@ namespace EternalityTemple.Inaba
         {
             base.OnRoundStart();
             BattleUnitBuf_InabaBuf2.AddStack(owner, 1);
+            this.target_226769135 = null;
         }
         public override void OnWaveStart()
         {
@@ -35,5 +36,57 @@ namespace EternalityTemple.Inaba
                 BattleUnitBuf_InabaBuf1.AddStack(battleUnitModel, dmg);
             }
         }
+		private void AddNewCard(int id)
+		{
+			BattleDiceCardModel battleDiceCardModel = this.owner.allyCardDetail.AddTempCard(new LorId(EternalityInitializer.packageId,id));
+			if (battleDiceCardModel != null)
+			{
+				battleDiceCardModel.SetPriorityAdder(9999);
+			}
+		}
+		public override void OnRollSpeedDice()
+		{
+            if(owner.faction == Faction.Player)
+            {
+                return;
+            }
+            if (BattleUnitBuf_InabaBuf1.GetStack(owner)>=150)
+            {
+                this.AddNewCard(226769134);
+            }
+            List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList(base.owner.faction);
+            if (aliveList.Find((BattleUnitModel x) => x.breakDetail.breakGauge <= 130) != null && RandomUtil.valueForProb <= 0.4f)
+            {
+                aliveList.Sort((BattleUnitModel x, BattleUnitModel y) => (int)(x.breakDetail.breakGauge - y.breakDetail.breakGauge));
+                this.target_226769135 = aliveList[0];
+                this.AddNewCard(226769136);
+            }
+            else if(RandomUtil.valueForProb <= 0.4f)
+            {
+                this.AddNewCard(226769135);
+            }
+		}
+        public override BattleUnitModel ChangeAttackTarget(BattleDiceCardModel card, int idx)
+        {
+            BattleUnitModel result = null;
+            if(card.GetID().packageId != EternalityInitializer.packageId)
+            {
+                return result;
+            }
+            if (card.GetID().id==226769136)
+            {
+                result = target_226769135;
+            }
+            if (card.GetID().id==226769135)
+            {
+                List<BattleUnitModel> aliveList2 = BattleObjectManager.instance.GetAliveList(Faction.Player);
+                if (aliveList2.Count > 0)
+                {
+                    result = RandomUtil.SelectOne<BattleUnitModel>(aliveList2);
+                }
+            }
+            return result;
+        }
+        private BattleUnitModel target_226769135;
     }
 }

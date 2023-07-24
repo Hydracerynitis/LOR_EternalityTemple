@@ -338,5 +338,80 @@
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
+  <Card ID="226769034">
+    <Name>多重疯狂</Name>
+    <Artwork>铃仙-多重疯狂.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>Personal</Option>
+    <Spec Range="Near" Cost="0"/>
+    <Script>InabaCard7</Script>
+    <BehaviourList>
+     <Behaviour Min="3" Dice="6" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="6" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769134">
+    <Name>多重疯狂</Name>
+    <Artwork>铃仙-多重疯狂.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Near" Cost="0"/>
+    <Script>InabaCard7</Script>
+    <BehaviourList>
+     <Behaviour Min="3" Dice="6" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="6" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769035">
+    <Name>疯狂回声</Name>
+    <Artwork>铃仙-疯狂回声.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>Personal</Option>
+    <Spec Range="Near" Cost="1"/>
+    <Script>InabaCard8</Script>
+    <BehaviourList>
+     <Behaviour Min="4" Dice="7" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice5" ActionScript=""  Desc =""/>
+     <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice6" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769135">
+    <Name>疯狂回声</Name>
+    <Artwork>铃仙-疯狂回声.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Near" Cost="1"/>
+    <Script>InabaCard8</Script>
+    <BehaviourList>
+     <Behaviour Min="4" Dice="7" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice5" ActionScript=""  Desc =""/>
+     <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice6" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769036">
+    <Name>调整波长</Name>
+    <Artwork>铃仙-调整波长.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>Personal</Option>
+    <Spec Range="Near" Cost="1"/>
+    <Script>InabaCard9</Script>
+    <BehaviourList>
+     <Behaviour Min="3" Dice="8" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="6" Dice="7" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769136">
+    <Name>调整波长</Name>
+    <Artwork>铃仙-调整波长.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Near" Cost="1"/>
+    <Script>InabaCard9</Script>
+    <BehaviourList>
+     <Behaviour Min="3" Dice="8" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="6" Dice="7" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
 
 </DiceCardXmlRoot>

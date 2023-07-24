@@ -10,7 +10,7 @@ namespace EternalityTemple.Inaba
         public override void OnApplyCard()
         {
 			base.OnApplyCard();
-			if(this.owner.cardOrder+1 < BattleUnitBuf_InabaBuf2.GetStack(owner) || this.owner.cardOrder + 1 == BattleUnitBuf_InabaBuf3.GetStack(owner))
+			if(this.owner.cardOrder + 1 < BattleUnitBuf_InabaBuf2.GetStack(owner) || this.owner.cardOrder + 1 == BattleUnitBuf_InabaBuf3.GetStack(owner))
                {
 				DiceCardXmlInfo xmlData = this.card.card.XmlData;
 				List<DiceBehaviour> list = new List<DiceBehaviour>();
@@ -22,7 +22,6 @@ namespace EternalityTemple.Inaba
 				}
 				xmlData.DiceBehaviourList = list;
 			}
-			
 		}
         public override void OnUseCard()
 		{
@@ -138,6 +137,56 @@ namespace EternalityTemple.Inaba
             }
 			BattleUnitBuf_InabaBuf1.AddStack(owner, -150);
 			BattleUnitBuf_InabaBuf7.AddReadyStack(owner, 2);
+		}
+	}
+	public class DiceCardSelfAbility_InabaCard8 : DiceCardSelfAbilityBase
+	{
+		public override void OnUseCard()
+		{
+			BattleUnitBuf_InabaBuf3.AddReadyStack(card.target, card.targetSlotOrder + 1);
+			if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
+			{
+				BattleUnitModel battleUnitModel = RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(owner.faction));
+				if (battleUnitModel != null)
+                {
+					BattleUnitBuf_InabaBuf2.AddReadyStack(battleUnitModel, 1);
+				}
+			}
+		}
+		public override bool IsValidTarget(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
+		{
+			return targetUnit != null && targetUnit.faction == unit.faction;
+		}
+		public override bool IsOnlyAllyUnit()
+		{
+			return true;
+		}
+	}
+	public class DiceCardSelfAbility_InabaCard9 : DiceCardSelfAbilityBase
+	{
+		public override void OnUseCard()
+		{
+			int num = owner.breakDetail.breakGauge;
+			int num2 = owner.breakDetail.GetDefaultBreakGauge();
+			owner.breakDetail.RecoverBreak((num2 - num) / 2);
+			int num3 = card.target.breakDetail.breakGauge;
+			int num4 = card.target.breakDetail.GetDefaultBreakGauge();
+			card.target.breakDetail.RecoverBreak((num4 - num3) / 2);
+			if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
+			{
+				foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList_opponent(owner.faction))
+				{
+					battleUnitModel.TakeBreakDamage((num2 + num4 - num - num3) / 4);
+				}
+			}
+		}
+		public override bool IsValidTarget(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
+		{
+			return targetUnit != null && targetUnit.faction == unit.faction;
+		}
+		public override bool IsOnlyAllyUnit()
+		{
+			return true;
 		}
 	}
 }

@@ -15,7 +15,9 @@ namespace EternalityTemple.Yagokoro
         public override void OnRoundEndTheLast()
         {
             if (owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf7) != null)
-                IsActivate = true;
+            { 
+            IsActivate = true;
+            }
         }
         public override void OnStartBattle()
         {

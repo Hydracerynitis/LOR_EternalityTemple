@@ -27,6 +27,7 @@ namespace EternalityTemple.Inaba
 		public static void AddStack(BattleUnitModel model, int value)
 		{
 			BattleUnitBuf_InabaBuf1 battleUnitBuf = model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_InabaBuf1) as BattleUnitBuf_InabaBuf1;
+			EternalityInitializer.InabaBufGainNum += value;
 			if (battleUnitBuf == null)
 			{
 				battleUnitBuf = new BattleUnitBuf_InabaBuf1(model);
@@ -192,8 +193,20 @@ namespace EternalityTemple.Inaba
 				{
 					break;
 				}
-				BattleDiceCardModel card = _owner.cardSlotDetail.cardAry[idx].card;
-				card.AddBuf(new BattleDiceCardBuf_checkInaba());
+				BattlePlayingCardDataInUnitModel card = _owner.cardSlotDetail.cardAry[idx];
+				if (card.card.GetID().id != 226769135 && card.card.GetID().id != 226769136)
+				{
+					BattleUnitModel target = this.GetTarget_player();
+					card.target = target;
+					int targetSlotOrder = UnityEngine.Random.Range(0, target.speedDiceResult.Count);
+					card.targetSlotOrder = targetSlotOrder;
+					if (target.cardSlotDetail.cardAry[targetSlotOrder] != null && target.faction != _owner.faction)
+					{
+						target.cardSlotDetail.cardAry[targetSlotOrder].target = _owner;
+						target.cardSlotDetail.cardAry[targetSlotOrder].targetSlotOrder = idx;
+					}
+				}
+				card.card.AddBuf(new BattleDiceCardBuf_checkInaba());
 			}
 		}
 		public override void OnRoundEndTheLast()
@@ -300,15 +313,11 @@ namespace EternalityTemple.Inaba
 			this._owner.SetCurrentOrder(this.stack);
 			this._owner.speedDiceResult[this.stack].isControlable = false;
 			List<BattleDiceCardModel> list = _owner.allyCardDetail.GetHand().FindAll((BattleDiceCardModel x) => x.GetSpec().Ranged != CardRange.Instance);
-			if (list.Count <= 0)
-			{
-				break;
-			}
 			BattleDiceCardModel card = RandomUtil.SelectOne<BattleDiceCardModel>(list);
 			_owner.allyCardDetail.GetHand().Remove(card);
 			_owner.allyCardDetail.AddNewCardToDeck(card.GetID());
 			DiceCardSelfAbilityBase diceCardSelfAbilityBase = card.CreateDiceCardSelfAbilityScript();
-			card.AddBuf(new BattleDiceCardBuf_checkInaba());
+			card.AddBuf(new BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba());
 			BattleUnitModel target = this.GetTarget_player();
 			if (target != null)
 			{
@@ -317,7 +326,7 @@ namespace EternalityTemple.Inaba
 				if (target.cardSlotDetail.cardAry[targetSlot] != null && target.faction != _owner.faction)
 				{
 					target.cardSlotDetail.cardAry[targetSlot].target = _owner;
-					target.cardSlotDetail.cardAry[targetSlot].targetSlotOrder = idx;
+					target.cardSlotDetail.cardAry[targetSlot].targetSlotOrder = this.stack;
 				}
 			}
 
@@ -331,32 +340,32 @@ namespace EternalityTemple.Inaba
 				return;
 			}
 			BattleDiceCardModel card = _owner.cardSlotDetail.cardAry[this.stack].card;
-			card.AddBuf(new BattleDiceCardBuf_checkInaba());
+			card.AddBuf(new BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba());
 		}
 
-	public override void OnRoundEndTheLast()
-	{
-		base.OnRoundEndTheLast();
-		this.Destroy();
-	}
-	private bool isEnemy()
-	{
-		return _owner.passiveDetail.HasPassive<PassiveAbility_226769010>() || _owner.passiveDetail.HasPassive<PassiveAbility_226769001>();
-
-	}
-	private BattleUnitModel GetTarget_player()
-	{
-		BattleUnitModel result = null;
-		List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList(false);
-		aliveList.Remove(this._owner);
-		aliveList.RemoveAll((BattleUnitModel x) => !x.IsTargetable(this._owner));
-		if (aliveList.Count > 0)
+		public override void OnRoundEndTheLast()
 		{
-			result = RandomUtil.SelectOne<BattleUnitModel>(aliveList);
+			base.OnRoundEndTheLast();
+			this.Destroy();
 		}
-		return result;
+		private bool isEnemy()
+		{
+			return _owner.passiveDetail.HasPassive<PassiveAbility_226769010>() || _owner.passiveDetail.HasPassive<PassiveAbility_226769001>();
+
+		}
+		private BattleUnitModel GetTarget_player()
+		{
+			BattleUnitModel result = null;
+			List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList(false);
+			aliveList.Remove(this._owner);
+			aliveList.RemoveAll((BattleUnitModel x) => !x.IsTargetable(this._owner));
+			if (aliveList.Count > 0)
+			{
+				result = RandomUtil.SelectOne<BattleUnitModel>(aliveList);
+			}
+			return result;
+		}
 	}
-}
         public class BattleUnitBuf_InabaBuf4 : BattleUnitBuf
 	{
 		public override string keywordIconId => "Resistance";

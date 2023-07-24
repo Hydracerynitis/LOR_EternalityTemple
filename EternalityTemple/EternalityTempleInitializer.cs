@@ -25,6 +25,7 @@ namespace EternalityTemple
     {
         public static string ModPath;
         public static Dictionary<string, Sprite> ArtWorks;
+        public static int InabaBufGainNum;
         public const string packageId= "TheWorld_Eternity";
         private static List<(SpeedDiceUI, Color)> ChangedSpeedDiceUI = new List<(SpeedDiceUI, Color)>();
         public static LorId GetLorId(int id) => new LorId(packageId, id);
@@ -40,6 +41,7 @@ namespace EternalityTemple
             harmony.PatchAll(typeof(LocalizeManager));
             RemoveError();
             LocalizeManager.LocalizedTextLoader_LoadOthers_Post(TextDataModel.CurrentLanguage);
+            EternalityInitializer.InitPublicValue();
         }
         public static void RemoveError()
         {
@@ -328,6 +330,16 @@ namespace EternalityTemple
                 return false;
             }
             return true;
+        }
+        [HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.Init))]
+        [HarmonyPostfix]
+        public static void StageLibraryFloorModel_Init(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor)
+        {
+            EternalityInitializer.InitPublicValue();
+        }
+        private static void InitPublicValue()
+        {
+            EternalityInitializer.InabaBufGainNum = 0;
         }
 
         /*        [HarmonyPatch(typeof(ItemXmlDataList),nameof(ItemXmlDataList.GetBasicCardList))]

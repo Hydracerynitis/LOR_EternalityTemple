@@ -112,10 +112,10 @@ namespace EternalityTemple.Inaba
 		}
 		public override void OnAfterRollSpeedDice()
 		{
-			if(isEnemy())
-            {
+			if (isEnemy())
+			{
 				return;
-            }
+			}
 			base.OnAfterRollSpeedDice();
 			int count = this._owner.speedDiceResult.Count;
 			int num = Mathf.Min(this.stack, count);
@@ -155,8 +155,8 @@ namespace EternalityTemple.Inaba
 				{
 					int targetSlot = UnityEngine.Random.Range(0, target.speedDiceResult.Count);
 					this._owner.cardSlotDetail.AddCard(card, target, targetSlot, false);
-					if(target.cardSlotDetail.cardAry[targetSlot] != null && target.faction != _owner.faction)
-                    {
+					if (target.cardSlotDetail.cardAry[targetSlot] != null && target.faction != _owner.faction)
+					{
 						target.cardSlotDetail.cardAry[targetSlot].target = _owner;
 						target.cardSlotDetail.cardAry[targetSlot].targetSlotOrder = idx;
 					}
@@ -164,13 +164,13 @@ namespace EternalityTemple.Inaba
 			}
 			SingletonBehavior<BattleManagerUI>.Instance.ui_TargetArrow.UpdateTargetList();
 		}
-        public override void OnStartBattle()
-        {
-            base.OnStartBattle();
-			if(!isEnemy())
-            {
+		public override void OnStartBattle()
+		{
+			base.OnStartBattle();
+			if (!isEnemy())
+			{
 				return;
-            }
+			}
 			int count = this._owner.speedDiceResult.Count;
 			int num = Mathf.Min(this.stack, count);
 			for (int i = 0; i < num; i++)
@@ -196,13 +196,13 @@ namespace EternalityTemple.Inaba
 				card.AddBuf(new BattleDiceCardBuf_checkInaba());
 			}
 		}
-        public override void OnRoundEndTheLast()
+		public override void OnRoundEndTheLast()
 		{
 			base.OnRoundEndTheLast();
 			this.Destroy();
 		}
 		private bool isEnemy()
-        {
+		{
 			return _owner.passiveDetail.HasPassive<PassiveAbility_226769010>() || _owner.passiveDetail.HasPassive<PassiveAbility_226769001>();
 
 		}
@@ -224,17 +224,140 @@ namespace EternalityTemple.Inaba
 			{
 				Destroy();
 			}
-            public override void OnUseCard(BattleUnitModel owner, BattlePlayingCardDataInUnitModel playingCard)
-            {
-                base.OnUseCard(owner, playingCard);
+			public override void OnUseCard(BattleUnitModel owner, BattlePlayingCardDataInUnitModel playingCard)
+			{
+				base.OnUseCard(owner, playingCard);
 				playingCard.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus
 				{
 					power = 2
 				});
 			}
-        }
+		}
 	}
-	public class BattleUnitBuf_InabaBuf4 : BattleUnitBuf
+	public class BattleUnitBuf_InabaBuf3 : InabaBufAbility
+	{
+		public override string keywordIconId => "Roland_4th_Gaze";
+		public override string keywordId => "InabaBuf3";
+
+		public BattleUnitBuf_InabaBuf3(BattleUnitModel model)
+		{
+			this._owner = model;
+		}
+		public void Add(int add)
+		{
+			this.stack += add;
+			if (this.stack <= 0)
+			{
+				this.Destroy();
+			}
+		}
+		public static void AddStack(BattleUnitModel model, int value)
+		{
+			BattleUnitBuf_InabaBuf3 battleUnitBuf = model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_InabaBuf3) as BattleUnitBuf_InabaBuf3;
+			if (battleUnitBuf == null)
+			{
+				battleUnitBuf = new BattleUnitBuf_InabaBuf3(model);
+				battleUnitBuf.stack = value;
+				model.bufListDetail.AddBuf(battleUnitBuf);
+				return;
+			}
+			battleUnitBuf.Add(value);
+		}
+		public static void AddReadyStack(BattleUnitModel model, int value)
+		{
+			BattleUnitBuf_InabaBuf3 battleUnitBuf = model.bufListDetail.GetReadyBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_InabaBuf3) as BattleUnitBuf_InabaBuf3;
+			if (battleUnitBuf == null)
+			{
+				battleUnitBuf = new BattleUnitBuf_InabaBuf3(model);
+				battleUnitBuf.stack = value;
+				model.bufListDetail.AddReadyBuf(battleUnitBuf);
+				return;
+			}
+			battleUnitBuf.Add(value);
+		}
+		// Token: 0x0600020D RID: 525 RVA: 0x0001429C File Offset: 0x0001249C
+		public static int GetStack(BattleUnitModel model)
+		{
+			BattleUnitBuf_InabaBuf3 battleUnitBuf = model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_InabaBuf3) as BattleUnitBuf_InabaBuf3;
+			int result;
+			if (battleUnitBuf == null)
+			{
+				result = 0;
+			}
+			else
+			{
+				result = battleUnitBuf.stack;
+			}
+			return result;
+		}
+		public override void OnAfterRollSpeedDice()
+		{
+			if (isEnemy())
+			{
+				return;
+			}
+			base.OnAfterRollSpeedDice();
+			this._owner.SetCurrentOrder(this.stack);
+			this._owner.speedDiceResult[this.stack].isControlable = false;
+			List<BattleDiceCardModel> list = _owner.allyCardDetail.GetHand().FindAll((BattleDiceCardModel x) => x.GetSpec().Ranged != CardRange.Instance);
+			if (list.Count <= 0)
+			{
+				break;
+			}
+			BattleDiceCardModel card = RandomUtil.SelectOne<BattleDiceCardModel>(list);
+			_owner.allyCardDetail.GetHand().Remove(card);
+			_owner.allyCardDetail.AddNewCardToDeck(card.GetID());
+			DiceCardSelfAbilityBase diceCardSelfAbilityBase = card.CreateDiceCardSelfAbilityScript();
+			card.AddBuf(new BattleDiceCardBuf_checkInaba());
+			BattleUnitModel target = this.GetTarget_player();
+			if (target != null)
+			{
+				int targetSlot = UnityEngine.Random.Range(0, target.speedDiceResult.Count);
+				this._owner.cardSlotDetail.AddCard(card, target, targetSlot, false);
+				if (target.cardSlotDetail.cardAry[targetSlot] != null && target.faction != _owner.faction)
+				{
+					target.cardSlotDetail.cardAry[targetSlot].target = _owner;
+					target.cardSlotDetail.cardAry[targetSlot].targetSlotOrder = idx;
+				}
+			}
+
+			SingletonBehavior<BattleManagerUI>.Instance.ui_TargetArrow.UpdateTargetList();
+		}
+		public override void OnStartBattle()
+		{
+			base.OnStartBattle();
+			if (!isEnemy())
+			{
+				return;
+			}
+			BattleDiceCardModel card = _owner.cardSlotDetail.cardAry[this.stack].card;
+			card.AddBuf(new BattleDiceCardBuf_checkInaba());
+		}
+
+	public override void OnRoundEndTheLast()
+	{
+		base.OnRoundEndTheLast();
+		this.Destroy();
+	}
+	private bool isEnemy()
+	{
+		return _owner.passiveDetail.HasPassive<PassiveAbility_226769010>() || _owner.passiveDetail.HasPassive<PassiveAbility_226769001>();
+
+	}
+	private BattleUnitModel GetTarget_player()
+	{
+		BattleUnitModel result = null;
+		List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList(false);
+		aliveList.Remove(this._owner);
+		aliveList.RemoveAll((BattleUnitModel x) => !x.IsTargetable(this._owner));
+		if (aliveList.Count > 0)
+		{
+			result = RandomUtil.SelectOne<BattleUnitModel>(aliveList);
+		}
+		return result;
+	}
+}
+        public class BattleUnitBuf_InabaBuf4 : BattleUnitBuf
 	{
 		public override string keywordIconId => "Resistance";
 		public override string keywordId => "InabaBuf4";

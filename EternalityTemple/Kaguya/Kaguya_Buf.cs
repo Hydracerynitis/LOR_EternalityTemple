@@ -42,6 +42,10 @@ namespace EternalityTemple.Kaguya
         {
             return -1;
         }
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+            behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmg = 1, breakDmg = 1 });
+        }
         public override void OnRoundEnd()
         {
             _owner.bufListDetail.AddBuf(new BattleUnitBuf_KaguyaBuf3());
@@ -59,6 +63,18 @@ namespace EternalityTemple.Kaguya
         {
             _owner.cardSlotDetail.RecoverPlayPoint(1);
         }
+        public override int GetDamageReduction(BattleDiceBehavior behavior)
+        {
+            return -1;
+        }
+        public override int GetBreakDamageReduction(BehaviourDetail behaviourDetail)
+        {
+            return -1;
+        }
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+            behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmg = 1, breakDmg = 1 });
+        }
         public override void OnRoundEnd()
         {
             _owner.bufListDetail.AddBuf(new BattleUnitBuf_KaguyaBuf4());
@@ -75,6 +91,19 @@ namespace EternalityTemple.Kaguya
         public override void OnRoundStart()
         {
             _owner.allyCardDetail.DrawCards(1);
+            _owner.cardSlotDetail.RecoverPlayPointByCard(1);
+        }
+        public override int GetDamageReduction(BattleDiceBehavior behavior)
+        {
+            return -1;
+        }
+        public override int GetBreakDamageReduction(BehaviourDetail behaviourDetail)
+        {
+            return -1;
+        }
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+            behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmg = 1, breakDmg = 1 });
         }
         public override void OnRoundEnd()
         {
@@ -92,6 +121,20 @@ namespace EternalityTemple.Kaguya
         public override void OnRoundStart()
         {
             _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Endurance, 1);
+            _owner.allyCardDetail.DrawCards(1);
+            _owner.cardSlotDetail.RecoverPlayPointByCard(1);
+        }
+        public override int GetDamageReduction(BattleDiceBehavior behavior)
+        {
+            return -1;
+        }
+        public override int GetBreakDamageReduction(BehaviourDetail behaviourDetail)
+        {
+            return -1;
+        }
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+            behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmg = 1, breakDmg = 1 });
         }
         public override void OnRoundEnd()
         {
@@ -109,6 +152,21 @@ namespace EternalityTemple.Kaguya
         public override void OnRoundStart()
         {
             _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 1);
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Endurance, 1);
+            _owner.allyCardDetail.DrawCards(1);
+            _owner.cardSlotDetail.RecoverPlayPointByCard(1);
+        }
+        public override int GetDamageReduction(BattleDiceBehavior behavior)
+        {
+            return -1;
+        }
+        public override int GetBreakDamageReduction(BehaviourDetail behaviourDetail)
+        {
+            return -1;
+        }
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+            behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmg = 1, breakDmg = 1 });
         }
         public override void OnRoundEnd()
         {
@@ -125,7 +183,22 @@ namespace EternalityTemple.Kaguya
         }
         public override void OnRoundStart()
         {
-            _owner.allyCardDetail.DrawCards(1);
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 1);
+            _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Endurance, 1);
+            _owner.allyCardDetail.DrawCards(2);
+            _owner.cardSlotDetail.RecoverPlayPointByCard(1);
+        }
+        public override int GetDamageReduction(BattleDiceBehavior behavior)
+        {
+            return -1;
+        }
+        public override int GetBreakDamageReduction(BehaviourDetail behaviourDetail)
+        {
+            return -1;
+        }
+        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        {
+            behavior.ApplyDiceStatBonus(new DiceStatBonus() { dmg = 1, breakDmg = 1 });
         }
         public override int SpeedDiceNumAdder()
         {

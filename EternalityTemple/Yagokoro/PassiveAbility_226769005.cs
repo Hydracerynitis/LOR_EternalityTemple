@@ -10,13 +10,14 @@ namespace EternalityTemple.Yagokoro
 {
     public class PassiveAbility_226769005: PassiveAbilityBase
     {
-        private bool IsActivate=false;
+        public bool IsActivate=false;
         private int moonStack;
         public override void OnRoundEndTheLast()
         {
-            if (owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf7) != null)
-            { 
-            IsActivate = true;
+            if (owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf7) != null && owner.speedDiceResult.Count >= 5)
+            {
+                IsActivate = true;
+                this.desc = Singleton<PassiveDescXmlList>.Instance.GetDesc(new LorId(EternalityInitializer.packageId, 226769105));
             }
         }
         public override void OnStartBattle()
@@ -32,12 +33,12 @@ namespace EternalityTemple.Yagokoro
                 MoonCardAbility moonAbility = card.cardAbility as MoonCardAbility;
                 if(moonAbility.CanActivateMoon(moonStack+1))
                     moonAbility.ActivateMoonAbility=moonStack+1;
-                moonStack++;
+                    moonStack++;
             }
         }
         public override void OnRoundEnd()
         {
-            if (!IsActivate || moonStack < 4)
+            if (!IsActivate || moonStack <= 4)
                 return;
             MoonBuf moonBuf = owner.bufListDetail.GetActivatedBufList().Find(x => x is MoonBuf) as MoonBuf;
             if (moonBuf != null)

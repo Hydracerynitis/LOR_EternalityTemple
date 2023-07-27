@@ -74,6 +74,14 @@
 “疯狂”效果改变
 (无法转移)</Desc>
 </Passive>
+<Passive ID="226769205">
+	<Rarity>Unique</Rarity>
+	<Cost>0</Cost>
+	<Script>226769105</Script>
+	<CanGivePassive>false</CanGivePassive>
+	<Name>月相轮转</Name>
+	<Desc>每一幕结束时，触发1次“轮转”</Desc>
+</Passive>
 <Passive ID="226769006">
 	<Rarity>Unique</Rarity>
 	<Cost>8</Cost>

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using EternalityTemple.Yagokoro;
 
 namespace EternalityTemple.Kaguya
 {
@@ -15,6 +16,14 @@ namespace EternalityTemple.Kaguya
         public override void OnUseCard()
         {
             owner.cardSlotDetail.RecoverPlayPointByCard(1);
+            if (owner.bufListDetail.HasBuf<BattleUnitBuf_KaguyaBuf7>())
+            {
+                owner.allyCardDetail.DrawCards(1);
+            }
+            if (BattleObjectManager.instance.GetAliveList(base.owner.faction).Find((BattleUnitModel x) => x.bufListDetail.HasBuf<BattleUnitBuf_Moon3>()) != null)
+            {
+                owner.cardSlotDetail.RecoverPlayPointByCard(1);
+            }
         }
     }
     public class DiceCardSelfAbility_EternityCard2 : DiceCardSelfAbilityBase
@@ -45,42 +54,11 @@ namespace EternalityTemple.Kaguya
             if (this.owner.cardOrder + 1 < BattleUnitBuf_InabaBuf2.GetStack(owner) || this.owner.cardOrder + 1 == BattleUnitBuf_InabaBuf3.GetStack(owner))
             {
                 DiceCardXmlInfo xmlData = this.card.card.XmlData;
-                List<DiceBehaviour> list = new List<DiceBehaviour>();
                 DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769003), false);
-                foreach (DiceBehaviour diceBehaviour in cardItem.DiceBehaviourList)
-                {
-                    DiceBehaviour diceBehaviour2 = diceBehaviour.Copy();
-                    list.Add(diceBehaviour2);
-                }
-                xmlData.DiceBehaviourList = list;
+                xmlData.workshopName = cardItem.Name;
+                xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+                xmlData.Script = cardItem.Script;
             }
-
-        }
-        public override void OnEnterCardPhase(BattleUnitModel unit, BattleDiceCardModel self)
-        {
-            base.OnEnterCardPhase(unit, self);
-            DiceCardXmlInfo xmlData = self.XmlData;
-            List<DiceBehaviour> list = new List<DiceBehaviour>();
-            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769002), false);
-            foreach (DiceBehaviour diceBehaviour in cardItem.DiceBehaviourList)
-            {
-                DiceBehaviour diceBehaviour2 = diceBehaviour.Copy();
-                list.Add(diceBehaviour2);
-            }
-            xmlData.DiceBehaviourList = list;
-        }
-        public override void OnReleaseCard()
-        {
-            base.OnReleaseCard();
-            DiceCardXmlInfo xmlData = this.card.card.XmlData;
-            List<DiceBehaviour> list = new List<DiceBehaviour>();
-            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769002), false);
-            foreach (DiceBehaviour diceBehaviour in cardItem.DiceBehaviourList)
-            {
-                DiceBehaviour diceBehaviour2 = diceBehaviour.Copy();
-                list.Add(diceBehaviour2);
-            }
-            xmlData.DiceBehaviourList = list;
         }
         public override void OnUseCard()
         {
@@ -98,6 +76,27 @@ namespace EternalityTemple.Kaguya
                 KeywordBuf keyword = RandomUtil.SelectOne(KeywordBuf.Weak, KeywordBuf.Disarm, KeywordBuf.Vulnerable, KeywordBuf.Binding);
                 behavior.card.target.bufListDetail.AddKeywordBufByCard(keyword, 1,owner);
             }
+        }
+    }
+    public class DiceCardSelfAbility_EternityCard3_1 : DiceCardSelfAbilityBase
+    {
+        public override void OnEnterCardPhase(BattleUnitModel unit, BattleDiceCardModel self)
+        {
+            base.OnEnterCardPhase(unit, self);
+            DiceCardXmlInfo xmlData = self.XmlData;
+            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769002), false);
+            xmlData.workshopName = cardItem.Name;
+            xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+            xmlData.Script = cardItem.Script;
+        }
+        public override void OnReleaseCard()
+        {
+            base.OnReleaseCard();
+            DiceCardXmlInfo xmlData = this.card.card.XmlData;
+            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769002), false);
+            xmlData.workshopName = cardItem.Name;
+            xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+            xmlData.Script = cardItem.Script;
         }
     }
     public class DiceCardAbility_EternityDice1 : DiceCardAbilityBase

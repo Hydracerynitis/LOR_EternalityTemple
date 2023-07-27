@@ -17,32 +17,43 @@
 <!--蓬莱山辉夜-->	  
     <BattleEffectText ID="KaguyaBuf1">
       <Name>午时</Name>
-      <Desc>本幕内造成伤害与混乱伤害+1</Desc>
+      <Desc>造成伤害与混乱伤害+1</Desc>
     </BattleEffectText>
 	<BattleEffectText ID="KaguyaBuf2">
       <Name>未时</Name>
-      <Desc>本幕内受到伤害与混乱伤害-1</Desc>
+      <Desc>造成伤害与混乱伤害+1
+受到伤害与混乱伤害-1</Desc>
     </BattleEffectText>
 	<BattleEffectText ID="KaguyaBuf3">
       <Name>申时</Name>
-      <Desc>每一幕开始恢复1点光芒</Desc>
+      <Desc>造成伤害与混乱伤害+1
+受到伤害与混乱伤害-1
+每一幕开始恢复1点光芒</Desc>
     </BattleEffectText>
 	<BattleEffectText ID="KaguyaBuf4">
       <Name>酉时</Name>
-      <Desc>每一幕开始抽取1张书页</Desc>
+      <Desc>造成伤害与混乱伤害+1
+受到伤害与混乱伤害-1
+每一幕开始恢复1点光芒，抽取1张书页</Desc>
     </BattleEffectText>
 	<BattleEffectText ID="KaguyaBuf5">
       <Name>戌时</Name>
-      <Desc>每一幕开始获得1层“忍耐”</Desc>
+      <Desc>造成伤害与混乱伤害+1
+受到伤害与混乱伤害-1
+每一幕开始恢复1点光芒，抽取1张书页，获得1层“忍耐”</Desc>
     </BattleEffectText>
 	<BattleEffectText ID="KaguyaBuf6">
       <Name>亥时</Name>
-      <Desc>每一幕开始获得1层“强壮”</Desc>
+      <Desc>造成伤害与混乱伤害+1
+受到伤害与混乱伤害-1
+每一幕开始恢复1点光芒，抽取1张书页，获得1层“忍耐”与“强壮”</Desc>
     </BattleEffectText>
 	<BattleEffectText ID="KaguyaBuf7">
       <Name>子时</Name>
-      <Desc>速度骰子+1
-每一幕开始抽取1张书页</Desc>
+      <Desc>造成伤害与混乱伤害+1
+受到伤害与混乱伤害-1
+每一幕开始恢复1点光芒，抽取2张书页，获得1层“忍耐”与“强壮”
+速度骰子+1</Desc>
     </BattleEffectText>
 	
 	<!--难题任务完成后获得的Buff-->
@@ -104,36 +115,39 @@
     </BattleEffectText>
 	<BattleEffectText ID="YagokoroBuf2">
       <Name>半月</Name>
-      <Desc>所有骰子上限与下限+1</Desc>
+      <Desc>每一幕开始获得1层“迅捷”
+所有骰子上限与下限+1</Desc>
     </BattleEffectText>
 	<BattleEffectText ID="YagokoroBuf3">
       <Name>满月</Name>
-      <Desc>光芒上限+1
+      <Desc>每一幕开始获得1层“迅捷”
+所有骰子上限与下限+1
+光芒上限+1
 每一幕开始恢复1点光芒</Desc>
     </BattleEffectText>
 	
 	<BattleEffectText ID="YagokoroBuf4">
       <Name>入梦</Name>
-      <Desc>无法行动且无法被选中</Desc>
+      <Desc>这一幕中无法行动且无法被选中</Desc>
     </BattleEffectText>
 	<BattleEffectText ID="YagokoroBuf5">
       <Name>美梦</Name>
-      <Desc>无法行动且无法被选中
+      <Desc>这一幕中无法行动且无法被选中
 本幕结束时恢复100点体力与全部混乱抗性</Desc>
     </BattleEffectText>
 	<BattleEffectText ID="YagokoroBuf6">
       <Name>噩梦</Name>
-      <Desc>无法行动且无法被选中
+      <Desc>这一幕中无法行动且无法被选中
 本幕结束时受到20点混乱伤害且下一幕所有骰子最大值与最小值-2</Desc>
     </BattleEffectText>
 	<BattleEffectText ID="YagokoroBuf7">
       <Name>狂梦</Name>
-      <Desc>无法行动且无法被选中
+      <Desc>这一幕中无法行动且无法被选中
 本幕结束时对自身施加{0}层“疯狂”</Desc>
     </BattleEffectText>
 	<BattleEffectText ID="CardBuf_YagokoroCardBuf1">
       <Name>蓄力</Name>
-      <Desc>[使用时]若持有“蓄力”则使本书页所有骰子威力+5</Desc>
+      <Desc>本书页所有骰子威力+5</Desc>
     </BattleEffectText>
 	
 	<BattleEffectText ID="YagokoroBuf8">

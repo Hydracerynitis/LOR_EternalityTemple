@@ -95,7 +95,7 @@
     <Rarity>Rare</Rarity>
 	  <Option>OnlyPage</Option>
     <Spec Range="Far" Cost="1"/>
-    <Script></Script>
+    <Script>EternityCard3_1</Script>
     <ScriptDesc></ScriptDesc>
     <BehaviourList>
      <Behaviour Min="10" Dice="16" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="" Script="EternityDice1" ActionScript=""  Desc =""/>
@@ -111,7 +111,7 @@
     <Script></Script>
     <ScriptDesc></ScriptDesc>
     <BehaviourList>
-     <Behaviour Min="10" Dice="20" Type="Atk" Detail="Hit" Motion="F" EffectRes="" Script="destroynextdice" ActionScript=""  Desc =""/>
+     <Behaviour Min="10" Dice="20" Type="Atk" Detail="Hit" Motion="F" EffectRes="" Script="yanOnly2Dice" ActionScript=""  Desc =""/>
       <Behaviour Min="8" Dice="10" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>

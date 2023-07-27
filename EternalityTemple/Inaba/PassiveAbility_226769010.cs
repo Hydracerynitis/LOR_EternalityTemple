@@ -46,7 +46,8 @@ namespace EternalityTemple.Inaba
 		}
 		public override void OnRollSpeedDice()
 		{
-            if(owner.faction == Faction.Player)
+            specialCardColdDown--;
+            if (owner.faction == Faction.Player)
             {
                 return;
             }
@@ -55,15 +56,21 @@ namespace EternalityTemple.Inaba
                 this.AddNewCard(226769134);
             }
             List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList(base.owner.faction);
+            if(aliveList.Count<=1)
+            {
+                return;
+            }
             if (aliveList.Find((BattleUnitModel x) => x.breakDetail.breakGauge <= 130) != null && RandomUtil.valueForProb <= 0.4f)
             {
+                aliveList.Remove(owner);
                 aliveList.Sort((BattleUnitModel x, BattleUnitModel y) => (int)(x.breakDetail.breakGauge - y.breakDetail.breakGauge));
                 this.target_226769135 = aliveList[0];
                 this.AddNewCard(226769136);
             }
-            else if(RandomUtil.valueForProb <= 0.4f)
+            else if(RandomUtil.valueForProb <= 0.3f && specialCardColdDown <= 0)
             {
                 this.AddNewCard(226769135);
+                specialCardColdDown = 2;
             }
 		}
         public override BattleUnitModel ChangeAttackTarget(BattleDiceCardModel card, int idx)
@@ -79,7 +86,8 @@ namespace EternalityTemple.Inaba
             }
             if (card.GetID().id==226769135)
             {
-                List<BattleUnitModel> aliveList2 = BattleObjectManager.instance.GetAliveList(Faction.Player);
+                List<BattleUnitModel> aliveList2 = BattleObjectManager.instance.GetAliveList(owner.faction);
+                aliveList2.Remove(owner);
                 if (aliveList2.Count > 0)
                 {
                     result = RandomUtil.SelectOne<BattleUnitModel>(aliveList2);
@@ -88,5 +96,6 @@ namespace EternalityTemple.Inaba
             return result;
         }
         private BattleUnitModel target_226769135;
+        private int specialCardColdDown;
     }
 }

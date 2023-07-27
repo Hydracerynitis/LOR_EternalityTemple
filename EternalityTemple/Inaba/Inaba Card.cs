@@ -2,6 +2,8 @@
 using LOR_DiceSystem;
 using System.Collections.Generic;
 using UnityEngine;
+using EternalityTemple.Kaguya;
+using EternalityTemple.Yagokoro;
 
 namespace EternalityTemple.Inaba
 {
@@ -10,8 +12,8 @@ namespace EternalityTemple.Inaba
         public override void OnApplyCard()
         {
 			base.OnApplyCard();
-			if(this.owner.cardOrder + 1 < BattleUnitBuf_InabaBuf2.GetStack(owner) || this.owner.cardOrder + 1 == BattleUnitBuf_InabaBuf3.GetStack(owner))
-               {
+			if (this.owner.cardOrder + 1 < BattleUnitBuf_InabaBuf2.GetStack(owner) || this.owner.cardOrder + 1 == BattleUnitBuf_InabaBuf3.GetStack(owner))
+            {
 				DiceCardXmlInfo xmlData = this.card.card.XmlData;
 				List<DiceBehaviour> list = new List<DiceBehaviour>();
 				DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769311), false);
@@ -26,6 +28,14 @@ namespace EternalityTemple.Inaba
         public override void OnUseCard()
 		{
 			owner.cardSlotDetail.RecoverPlayPointByCard(1);
+			if(owner.bufListDetail.HasBuf<BattleUnitBuf_KaguyaBuf7>())
+            {
+				owner.allyCardDetail.DrawCards(1);
+			}
+			if (BattleObjectManager.instance.GetAliveList(base.owner.faction).Find((BattleUnitModel x) => x.bufListDetail.HasBuf<BattleUnitBuf_Moon3>()) != null)
+            {
+				owner.cardSlotDetail.RecoverPlayPointByCard(1);
+			}
 		}
         public override void OnEnterCardPhase(BattleUnitModel unit, BattleDiceCardModel self)
         {
@@ -161,7 +171,11 @@ namespace EternalityTemple.Inaba
 		{
 			return true;
 		}
-	}
+        public override bool IsTargetChangable(BattleUnitModel attacker)
+        {
+            return false;
+        }
+    }
 	public class DiceCardSelfAbility_InabaCard9 : DiceCardSelfAbilityBase
 	{
 		public override void OnUseCard()
@@ -187,6 +201,10 @@ namespace EternalityTemple.Inaba
 		public override bool IsOnlyAllyUnit()
 		{
 			return true;
+		}
+		public override bool IsTargetChangable(BattleUnitModel attacker)
+		{
+			return false;
 		}
 	}
 }

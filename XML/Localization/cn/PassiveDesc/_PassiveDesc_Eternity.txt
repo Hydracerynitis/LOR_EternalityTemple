@@ -51,6 +51,10 @@
 “疯狂”的效果改变
 (无法转移)</Desc>
 	</PassiveDesc>
+	<PassiveDesc ID="226769205"><!--敌人特供-->
+		<Name>阴晴圆缺</Name>
+		<Desc>如果月相轮转被动已生效，则每一幕结束时立即触发1次“轮转”</Desc>
+	</PassiveDesc>
 	
 	<PassiveDesc ID="226769006">
 		<Name>投掷药剂</Name>

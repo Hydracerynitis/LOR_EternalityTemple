@@ -65,6 +65,7 @@
 	  
       <Passive Pid="@origin">10008</Passive>
       <Passive>226769005</Passive>
+      <Passive>226769205</Passive>
       <Passive>226769006</Passive>
       <Passive>226769003</Passive><!--通用-->
       <Passive>226769007</Passive>

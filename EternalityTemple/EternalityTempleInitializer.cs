@@ -161,9 +161,9 @@ namespace EternalityTemple
         {
             if (__instance.IsBreakLifeZero() || __instance.IsKnockout() || __instance.turnState==BattleUnitTurnState.BREAK || __instance.bufListDetail.HasStun())
                 return;
-            if(__instance.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_PuzzleBuf) is BattleUnitBuf_PuzzleBuf puzzlebuf)
+            SpeedDiceSetter SDS = __instance.view.speedDiceSetterUI;
+            if (__instance.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_PuzzleBuf) is BattleUnitBuf_PuzzleBuf puzzlebuf)
             {
-                SpeedDiceSetter SDS = __instance.view.speedDiceSetterUI;
                 int unavailable = __instance.speedDiceResult.FindAll(x => x.breaked).Count;
                 if (puzzlebuf.CompletePuzzle.Contains(1) && __instance.speedDiceCount - unavailable >= 1)
                     ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+0),Color.blue);
@@ -176,9 +176,24 @@ namespace EternalityTemple
                 if (puzzlebuf.CompletePuzzle.Contains(5) && __instance.speedDiceCount - unavailable >= 5)
                     ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+4), Color.yellow);
             }
-            if(__instance.passiveDetail.PassiveList.Find(x => x is PassiveAbility_226769005) is PassiveAbility_226769005 passive && passive.isActiavted)
+            PassiveAbility_226769005 passive = __instance.passiveDetail.PassiveList.Find((PassiveAbilityBase x) => x is PassiveAbility_226769005) as PassiveAbility_226769005;
+            if (passive != null)
             {
-                __instance.view.speedDiceSetterUI._speedDices.ForEach(sd => ChangeSpeedDiceColor(sd, Color.cyan));
+                if (passive.IsActivate)
+                { 
+                    __instance.view.speedDiceSetterUI._speedDices.ForEach(sd => ChangeSpeedDiceColor(sd, Color.cyan));
+                }
+            }
+            if (BattleUnitBuf_InabaBuf2.GetStack(__instance)>0)
+            {
+                for(int i = 0;i< BattleUnitBuf_InabaBuf2.GetStack(__instance);i++)
+                {
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(i), Color.white);
+                }
+                if(BattleUnitBuf_InabaBuf3.GetStack(__instance)>0)
+                {
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(BattleUnitBuf_InabaBuf3.GetStack(__instance) - 1), Color.white);
+                }
             }
         }
         private static void ChangeSpeedDiceColor(SpeedDiceUI ui, Color DiceColor, bool reset = false)
@@ -249,7 +264,7 @@ namespace EternalityTemple
             }
             return true;
         }
-        [HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.CreateSelectableList))]
+        /*[HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.CreateSelectableList))]
         [HarmonyPrefix]
         public static bool StageLibraryFloorModel_CreateSelectableList_Pre(StageLibraryFloorModel __instance, ref List<EmotionCardXmlInfo> __result, int emotionLevel)
         {
@@ -303,7 +318,7 @@ namespace EternalityTemple
             LevelUpUIScroller UIScroller = __instance.gameObject.GetComponent<LevelUpUIScroller>();
             if (UIScroller != null)
                 UnityObject.Destroy(UIScroller);
-        }
+        }*/
 
         [HarmonyPatch(typeof(StageController), nameof(StageController.ActivateStartBattleEffectPhase))]
         [HarmonyPostfix]
@@ -324,7 +339,7 @@ namespace EternalityTemple
         [HarmonyPrefix]
         public static bool CanChangeAttackTarget(BattleUnitModel __instance, ref bool __result , int myIndex = 0)
         {
-            if (myIndex< BattleUnitBuf_InabaBuf2.GetStack(__instance))
+            if (myIndex < BattleUnitBuf_InabaBuf2.GetStack(__instance))
             {
                 __result = false;
                 return false;
@@ -341,6 +356,7 @@ namespace EternalityTemple
         {
             EternalityInitializer.InabaBufGainNum = 0;
         }
+
 
         /*        [HarmonyPatch(typeof(ItemXmlDataList),nameof(ItemXmlDataList.GetBasicCardList))]
                 [HarmonyPostfix]

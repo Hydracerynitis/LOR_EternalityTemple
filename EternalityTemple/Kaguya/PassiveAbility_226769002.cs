@@ -20,7 +20,7 @@ namespace EternalityTemple.Kaguya
         public override void OnRollSpeedDice()
         {
             foreach (Dice dice in this.owner.speedDiceResult.FindAll(x => x.value >=4))
-                dice.value = 999;
+                dice.value = 99;
             foreach (Dice dice in owner.speedDiceResult.FindAll(x => x.value <= 3 && !x.breaked))
                 dice.value = 1;
             this.owner.speedDiceResult.Sort((d1, d2) =>

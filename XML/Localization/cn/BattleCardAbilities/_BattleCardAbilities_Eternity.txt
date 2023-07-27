@@ -36,8 +36,8 @@
 	</BattleCardAbility>
 
 	<BattleCardAbility ID="EternityCard3"><!--新难题[Mysterium]-->
-		<Desc>[(疯狂)]本书页[拼点胜利]自身获得随机1层[正面状态]
-[命中时]下一幕对目标随机施加1层[负面状态]</Desc><!--本书页在“疯狂”骰子使用时改变为 恐惧[崔斯特姆的诅咒]-->
+		<Desc>[(疯狂)]-该书页变为恐惧 崔斯特姆的诅咒
+本书页拼点胜利时自身获得随机1层[正面状态]，击中目标时下一幕对目标随机施加1层[负面状态]</Desc>
 	</BattleCardAbility>
 
 <BattleCardAbility ID="EternityDice1"><!--恐惧[崔斯特姆的诅咒]-->
@@ -106,10 +106,11 @@
 	
 <!--八意永琳-->
 	<BattleCardAbility ID="YagokoroCard1"><!--药符[蝴蝶梦丸]-->
-		<Desc>[(疯狂)][月相](1)-本书页施加[入梦]更改为[美梦]
+		<Desc>[(疯狂)]-该书页变为疯狂的梦
+[月相](1)-本书页施加[入梦]更改为[美梦]
 [月相](5)-本书页施加[入梦]更改为[噩梦]
 本书页可指向友方且不受[满月]影响</Desc>
-	</BattleCardAbility><!--本书页在“疯狂”骰子使用时改变为 疯狂的梦-->
+	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroDice1"><!--药符[蝴蝶梦丸]-->
 		<Desc>[命中时]下一幕对目标施加1层[入梦]</Desc>
 	</BattleCardAbility>

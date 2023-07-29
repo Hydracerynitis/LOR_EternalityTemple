@@ -4,7 +4,7 @@
   <Card ID="226769100">
     <Name>月之都市</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
-    <Rarity>Unique</Rarity>
+    <Rarity>Uncommon</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="0"/>
     <Script>EternityCard1</Script>
@@ -18,7 +18,7 @@
   <Card ID="226769200">
     <Name>月之都市</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
-    <Rarity>Unique</Rarity>
+    <Rarity>Uncommon</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="0"/>
     <Script>EternityTs_Card1</Script>
@@ -194,7 +194,7 @@
     <Name>神宝[耀眼的龙玉]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	  <Option>Basic</Option>
+	<Option>OnlyPage</Option>
     <Spec Range="Far" Cost="4"/>
     <Script></Script>
     <BehaviourList>
@@ -208,7 +208,7 @@
     <Name>神宝[佛体的金刚石]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	  <Option>Basic</Option>
+	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="4"/>
     <Script>EternityCard7</Script>
     <BehaviourList>
@@ -223,7 +223,7 @@
     <Name>神宝[火蜥蜴之盾]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	  <Option>Basic</Option>
+	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="3"/>
     <Script>EternityCard5</Script>
     <BehaviourList>
@@ -237,7 +237,7 @@
     <Name>神宝[无限的生命之泉]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	  <Option>Basic</Option>
+	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="4"/>
     <Script>EternityCard6</Script>
     <BehaviourList>
@@ -251,7 +251,7 @@
     <Name>神宝[蓬莱的弹枝-七色的弹幕-]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	  <Option>Basic</Option>
+	<Option>OnlyPage</Option>
     <Spec Range="FarArea" Cost="7"/>
     <Script></Script>
     <BehaviourList>
@@ -259,6 +259,99 @@
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
+  <!--永林-->
+  <Card ID="226769016">
+    <Name>药符[蝴蝶梦丸]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Rare</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="3"/>
+    <Script>YagokoroCard1</Script>
+    <BehaviourList>
+     <Behaviour Min="12" Dice="21" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="YagokoroDice1" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769017">
+    <Name>疯狂的梦</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Rare</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="3"/>
+    <Script>YagokoroCard2</Script>
+    <BehaviourList>
+     <Behaviour Min="14" Dice="23" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="YagokoroDice2" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769018">
+    <Name>箭</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Rare</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Far" Cost="2"/>
+    <Script>YagokoroCard3</Script>
+    <BehaviourList>
+     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769019">
+    <Name>秘药[仙香玉兔]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Uncommon</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="2"/>
+    <Script>YagokoroCard4</Script>
+    <BehaviourList>
+     <Behaviour Min="5" Dice="10" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="YagokoroDice3" ActionScript=""  Desc =""/>
+     <Behaviour Min="6" Dice="12" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="YagokoroDice4" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769020">
+    <Name>炼丹[水银之海]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="Near" Cost="4"/>
+    <Script>YagokoroCard5</Script>
+    <BehaviourList>
+     <Behaviour Min="8" Dice="13" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="6" Dice="15" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769021">
+    <Name>药符[壶中的大银河]</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="FarAreaEach" Cost="5" Affection="Team"/>
+    <Script>YagokoroCard6</Script>
+    <BehaviourList>
+     <Behaviour Min="3" Dice="8" Type="Atk" Detail="Slash" Motion="J" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="8" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769022">
+    <Name>天网蛛网捕蝶之法</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>OnlyPage</Option>
+    <Spec Range="FarAreaEach" Cost="7" Affection="Team"/>
+    <Script>YagokoroCard7</Script>
+    <BehaviourList>
+     <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="YagokoroDice_aoe1" ActionScript=""  Desc =""/>
+     <Behaviour Min="4" Dice="9" Type="Atk" Detail="Slash" Motion="J" EffectRes="" Script="YagokoroDice_aoe2" ActionScript=""  Desc =""/>
+     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="YagokoroDice_aoe3" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
   <!--铃仙-->
   <Card ID="226769028">
     <Name>弱心[丧心丧意]</Name>
@@ -279,7 +372,7 @@
     <Artwork>铃仙-障壁波动.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>OnlyPage</Option>
-    <Spec Range="Near" Cost="1"/>
+    <Spec Range="Near" Cost="2"/>
     <Script>InabaCard2</Script>
     <BehaviourList>
      <Behaviour Min="4" Dice="10" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
@@ -307,10 +400,10 @@
     <Spec Range="FarAreaEach" Cost="7" Affection="Team"/>
     <Script>InabaCard4</Script>
     <BehaviourList>
-     <Behaviour Min="5" Dice="5" Type="Atk" Detail="Penetrate" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
-     <Behaviour Min="5" Dice="5" Type="Atk" Detail="Hit" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
-     <Behaviour Min="5" Dice="5" Type="Atk" Detail="Hit" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
-     <Behaviour Min="5" Dice="5" Type="Atk" Detail="Slash" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Penetrate" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Hit" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Hit" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -319,10 +412,10 @@
     <Artwork>铃仙-平行交差.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>OnlyPage</Option>
-    <Spec Range="Near" Cost="5"/>
+    <Spec Range="Far" Cost="5"/>
     <Script>InabaCard5</Script>
     <BehaviourList>
-     <Behaviour Min="20" Dice="40" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="InabaDice3" ActionScript=""  Desc =""/>
+     <Behaviour Min="17" Dice="34" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="InabaDice3" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -331,10 +424,10 @@
     <Artwork>铃仙-丧心疮痍.png</Artwork>
     <Rarity>Rare</Rarity>
 	<Option>OnlyPage</Option>
-    <Spec Range="Near" Cost="3"/>
+    <Spec Range="Far" Cost="3"/>
     <Script>InabaCard6</Script>
     <BehaviourList>
-     <Behaviour Min="17" Dice="23" Type="Atk" Detail="Penetrate" Motion="S4" EffectRes="" Script="InabaDice4" ActionScript=""  Desc =""/>
+     <Behaviour Min="9" Dice="18" Type="Atk" Detail="Penetrate" Motion="S4" EffectRes="" Script="InabaDice4" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>

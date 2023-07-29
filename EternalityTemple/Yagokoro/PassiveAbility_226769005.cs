@@ -12,12 +12,12 @@ namespace EternalityTemple.Yagokoro
     {
         public bool IsActivate=false;
         private int moonStack;
-        public override void OnRoundEndTheLast()
+        public override void OnRoundStartAfter()
         {
             if (owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf7) != null && owner.speedDiceResult.Count >= 5)
             {
                 IsActivate = true;
-                this.desc = Singleton<PassiveDescXmlList>.Instance.GetDesc(new LorId(EternalityInitializer.packageId, 226769105));
+                this.desc = Singleton<PassiveDescXmlList>.Instance.GetDesc(226769105);
             }
         }
         public override void OnStartBattle()
@@ -51,6 +51,15 @@ namespace EternalityTemple.Yagokoro
             if (!IsActivate || curCard.cardAbility == null || !(curCard.cardAbility is MoonCardAbility))
                 return;
             MoonCardAbility moonAbility = curCard.cardAbility as MoonCardAbility;
+            if(owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_Moon3) as BattleUnitBuf_Moon3 != null && curCard.card.XmlData.Script != "YagokoroCard1")
+            {
+                moonAbility.OnFirstMoon();
+                moonAbility.OnSecondMoon();
+                moonAbility.OnThirdMoon();
+                moonAbility.OnForthMoon();
+                moonAbility.OnFifthMoon();
+                return;
+            }
             switch (moonAbility.ActivateMoonAbility)
             {
                 case 1:

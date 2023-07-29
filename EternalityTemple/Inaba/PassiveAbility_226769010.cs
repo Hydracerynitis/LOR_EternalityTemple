@@ -51,7 +51,7 @@ namespace EternalityTemple.Inaba
             {
                 return;
             }
-            if (BattleUnitBuf_InabaBuf1.GetStack(owner)>=150)
+            if (BattleUnitBuf_InabaBuf1.GetStack(owner)>=150 && BattleUnitBuf_InabaBuf7.GetStack(owner) <= 0)
             {
                 this.AddNewCard(226769134);
             }

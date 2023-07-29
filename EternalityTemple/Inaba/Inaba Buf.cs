@@ -448,10 +448,14 @@ namespace EternalityTemple.Inaba
 			}
 			return result;
 		}
-		public override int GetMinHp()
-		{
-			return (int)_owner.hp;
-		}
+        public override bool IsImmuneDmg()
+        {
+			return true;
+        }
+        public override bool IsImmuneBreakDmg(DamageType type)
+        {
+            return true;
+        }
         public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
         {
 			stack--;
@@ -592,11 +596,26 @@ namespace EternalityTemple.Inaba
 			}
 			battleUnitBuf.Add(value);
 		}
+		public static int GetStack(BattleUnitModel model)
+		{
+			BattleUnitBuf_InabaBuf7 battleUnitBuf = model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_InabaBuf7) as BattleUnitBuf_InabaBuf7;
+			int result;
+			if (battleUnitBuf == null)
+			{
+				result = 0;
+			}
+			else
+			{
+				result = battleUnitBuf.stack;
+			}
+			return result;
+		}
 		public override void OnRoundEnd()
 		{
 			stack--;
 			if (this.stack <= 0)
 			{
+				_owner.view.ChangeSkin("Reisen");
 				this.Destroy();
 			}
 		}

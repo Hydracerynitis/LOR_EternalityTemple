@@ -119,7 +119,7 @@ namespace EternalityTemple.Inaba
 			{
 				this.card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus
 				{
-					power = 5
+					power = 3
 				});
 			}
 		}
@@ -147,6 +147,7 @@ namespace EternalityTemple.Inaba
             }
 			BattleUnitBuf_InabaBuf1.AddStack(owner, -150);
 			BattleUnitBuf_InabaBuf7.AddReadyStack(owner, 2);
+			owner.view.ChangeSkin("Reisen2");
 		}
 	}
 	public class DiceCardSelfAbility_InabaCard8 : DiceCardSelfAbilityBase
@@ -190,7 +191,7 @@ namespace EternalityTemple.Inaba
 			{
 				foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList_opponent(owner.faction))
 				{
-					battleUnitModel.TakeBreakDamage((num2 + num4 - num - num3) / 4);
+					battleUnitModel.TakeBreakDamage(Mathf.Min((num2 + num4 - num - num3) / 4, 20));
 				}
 			}
 		}

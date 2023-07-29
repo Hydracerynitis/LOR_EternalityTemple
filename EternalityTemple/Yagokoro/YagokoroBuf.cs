@@ -64,6 +64,21 @@ namespace EternalityTemple.Yagokoro
             behavior.ApplyDiceStatBonus(new DiceStatBonus() { min = 1, max = 1 });
         }
     }
+    public class BattleDiceCardBuf_YagokoroCardBuf1 : BattleDiceCardBuf
+    {
+        public override string keywordIconId => "YagokoroCardBuf1";
+        public override string keywordId => "YagokoroCardBuf1";
+        public override void OnUseCard(BattleUnitModel owner, BattlePlayingCardDataInUnitModel playingCard)
+        {
+            base.OnUseCard(owner, playingCard);
+            playingCard.ApplyDiceStatBonus(DiceMatch.AllDice,new DiceStatBonus() { power = 5 });
+            this.Destroy();
+        }
+        public BattleDiceCardBuf_YagokoroCardBuf1()
+        {
+            this._priority = 1;
+        }
+    }
     public class YagokoroBuf4 : BattleUnitBuf
     {
         public override string keywordIconId => "Stun";
@@ -127,6 +142,51 @@ namespace EternalityTemple.Yagokoro
             base.OnRoundEnd();
             BattleUnitBuf_InabaBuf2.AddReadyStack(_owner, stack);
         }
-        
+        public YagokoroBuf7(int stack)
+        {
+            this.stack = stack;
+        }
+    }
+    public class YagokoroBuf8 : BattleUnitBuf
+    {
+        public override string keywordIconId => "Stun";
+        public override string keywordId => "YagokoroBuf8";
+        public override void OnUseCard(BattlePlayingCardDataInUnitModel card)
+        {
+            base.OnUseCard(card);
+            card.DestroyDice((DiceMatch x) => x.abiliity.behaviourInCard.Detail == LOR_DiceSystem.BehaviourDetail.Penetrate);
+        }
+        public override void OnRoundEnd()
+        {
+            Destroy();
+        }
+    }
+    public class YagokoroBuf9 : BattleUnitBuf
+    {
+        public override string keywordIconId => "Stun";
+        public override string keywordId => "YagokoroBuf9";
+        public override void OnUseCard(BattlePlayingCardDataInUnitModel card)
+        {
+            base.OnUseCard(card);
+            card.DestroyDice((DiceMatch x) => x.abiliity.behaviourInCard.Detail == LOR_DiceSystem.BehaviourDetail.Slash);
+        }
+        public override void OnRoundEnd()
+        {
+            Destroy();
+        }
+    }
+    public class YagokoroBuf10 : BattleUnitBuf
+    {
+        public override string keywordIconId => "Stun";
+        public override string keywordId => "YagokoroBuf10";
+        public override void OnUseCard(BattlePlayingCardDataInUnitModel card)
+        {
+            base.OnUseCard(card);
+            card.DestroyDice((DiceMatch x) => x.abiliity.behaviourInCard.Detail == LOR_DiceSystem.BehaviourDetail.Hit);
+        }
+        public override void OnRoundEnd()
+        {
+            Destroy();
+        }
     }
 }

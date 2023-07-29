@@ -123,7 +123,8 @@
       <Desc>每一幕开始获得1层“迅捷”
 所有骰子上限与下限+1
 光芒上限+1
-每一幕开始恢复1点光芒</Desc>
+每一幕开始恢复1点光芒
+专属书页将会发动所有月相效果</Desc>
     </BattleEffectText>
 	
 	<BattleEffectText ID="YagokoroBuf4">

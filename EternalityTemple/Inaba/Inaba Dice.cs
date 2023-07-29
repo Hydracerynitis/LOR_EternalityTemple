@@ -37,10 +37,11 @@ namespace EternalityTemple.Inaba
 	{
 		public override void OnSucceedAttack(BattleUnitModel target)
 		{
-			target.TakeDamage(Mathf.Min(40, owner.history.damageAtOneRoundByDice));
+			int num = owner.history.damageAtOneRoundByDice;
+			target.TakeDamage(Mathf.Min(40, num));
 			if(card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
             {
-				BattleUnitBuf_InabaBuf2.AddReadyStack(target, Mathf.Min(owner.history.damageAtOneRoundByDice / 5, 8));
+				BattleUnitBuf_InabaBuf2.AddReadyStack(target, Mathf.Min(num / 5, 8));
 				Debug.Log("aaaaa");
             }
 		}
@@ -68,6 +69,4 @@ namespace EternalityTemple.Inaba
 			card.target.allyCardDetail.DrawCards(1);
 		}
 	}
-
-
 }

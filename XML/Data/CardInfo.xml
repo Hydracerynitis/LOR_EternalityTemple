@@ -351,6 +351,33 @@
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
+  <Card ID="226769024">
+    <Name>裁云断月</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+	<Option>Personal</Option>
+    <Spec Range="Near" Cost="1"/>
+    <Script>YagokoroCard13</Script>
+    <BehaviourList>
+     <Behaviour Min="3" Dice="8" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="InabaDice5" ActionScript=""  Desc =""/>
+     <Behaviour Min="4" Dice="6" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice6" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="6" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice6" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+  <Card ID="226769124">
+    <Name>裁云断月</Name>
+    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Rarity>Unique</Rarity>
+    <Spec Range="Near" Cost="1"/>
+    <Script>YagokoroCard13</Script>
+    <BehaviourList>
+     <Behaviour Min="3" Dice="8" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="InabaDice5" ActionScript=""  Desc =""/>
+     <Behaviour Min="4" Dice="6" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice6" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="6" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice6" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
 
   <!--铃仙-->
   <Card ID="226769028">

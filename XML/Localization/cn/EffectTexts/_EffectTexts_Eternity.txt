@@ -191,7 +191,10 @@
 若层数为正数则受到其“数值*2”的伤害
 若层数为负数则恢复其“数值*2.5”的体力</Desc>
     </BattleEffectText>
-	
+		<BattleEffectText ID="YagokoroBuf12">
+      <Name>裁云断月</Name>
+      <Desc>本幕内所有骰子临时改为月相骰且无法使用裁云断月</Desc>
+    </BattleEffectText>
 	
 <!--铃仙-->
 	<BattleEffectText ID="InabaBuf1">

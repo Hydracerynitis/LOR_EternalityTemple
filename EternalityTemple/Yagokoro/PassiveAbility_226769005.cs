@@ -11,13 +11,24 @@ namespace EternalityTemple.Yagokoro
     public class PassiveAbility_226769005: PassiveAbilityBase
     {
         public bool IsActivate=false;
+        public bool TempActivate = false;
         private int moonStack;
         public override void OnRoundStartAfter()
         {
+            if (TempActivate)
+            {
+                IsActivate = false;
+                TempActivate = false;
+            }
             if (owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf7) != null && owner.speedDiceResult.Count >= 5)
             {
                 IsActivate = true;
                 this.desc = Singleton<PassiveDescXmlList>.Instance.GetDesc(226769105);
+            }
+            else if (owner.bufListDetail.GetActivatedBufList().Find(x => x is YagokoroBuf12) != null && !IsActivate)
+            {
+                IsActivate = true;
+                TempActivate = true;
             }
         }
         public override void OnStartBattle()

@@ -189,4 +189,13 @@ namespace EternalityTemple.Yagokoro
             Destroy();
         }
     }
+    public class YagokoroBuf12 : BattleUnitBuf
+    {
+        public override string keywordIconId => "GalaxyBoy_Stone";
+        public override string keywordId => "YagokoroBuf12";
+        public override void OnRoundEnd()
+        {
+            Destroy();
+        }
+    }
 }

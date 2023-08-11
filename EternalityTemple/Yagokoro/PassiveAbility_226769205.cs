@@ -12,7 +12,8 @@ namespace EternalityTemple.Yagokoro
     {
         public override void OnRoundEnd()
         {
-            if (owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf7) == null || owner.speedDiceResult.Count < 5)
+            PassiveAbility_226769005 passive = owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_226769005) as PassiveAbility_226769005;
+            if (!passive.IsActivate || passive.TempActivate)
                 return;
             MoonBuf moonBuf = owner.bufListDetail.GetActivatedBufList().Find(x => x is MoonBuf) as MoonBuf;
             if (moonBuf != null)
@@ -26,6 +27,14 @@ namespace EternalityTemple.Yagokoro
             if(BattleObjectManager.instance.GetAliveList(owner.faction).Find((BattleUnitModel x)=>x.emotionDetail.EmotionLevel >= 4) != null && owner.emotionDetail.EmotionLevel < 4)
             {
                 owner.emotionDetail.SetEmotionLevel(owner.emotionDetail.EmotionLevel + 1);
+            }
+        }
+        public override void OnRollSpeedDice()
+        {
+            base.OnRollSpeedDice();
+            if(Singleton<StageController>.Instance.RoundTurn % 2 == 1 && Singleton<StageController>.Instance.RoundTurn < 7)
+            {
+                owner.allyCardDetail.AddNewCard(new LorId(EternalityInitializer.packageId, 226769124)).SetPriorityAdder(9999);
             }
         }
     }

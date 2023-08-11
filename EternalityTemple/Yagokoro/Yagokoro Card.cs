@@ -355,4 +355,17 @@ namespace EternalityTemple.Yagokoro
 		public bool thirdMoon;
 		public bool fifthMoon;
 	}
+
+	public class DiceCardSelfAbility_YagokoroCard13 : MoonCardAbility
+	{
+        public override bool OnChooseCard(BattleUnitModel owner)
+        {
+			return !owner.bufListDetail.HasBuf<YagokoroBuf12>();
+        }
+        public override void OnUseCard()
+        {
+            base.OnUseCard();
+			owner.bufListDetail.AddReadyBuf(new YagokoroBuf12());
+        }
+    }
 }

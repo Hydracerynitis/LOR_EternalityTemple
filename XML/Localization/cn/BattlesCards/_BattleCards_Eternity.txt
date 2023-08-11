@@ -93,17 +93,26 @@
 	
 	<!--E.G.O槽--> 
 	<BattleCardDesc ID="226769024">
-      <LocalizedName>敌之尖刀</LocalizedName><!--装备卡--> 
+      <LocalizedName>裁云断月</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="226769124">
+      <LocalizedName>裁云断月</LocalizedName>
+    </BattleCardDesc>
+
+<!--
+	<BattleCardDesc ID="226769024">
+      <LocalizedName>敌之尖刀</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="226769025">
-      <LocalizedName>我之伤药</LocalizedName><!--装备卡--> 
+      <LocalizedName>我之伤药</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="226769026">
-      <LocalizedName>死地后生</LocalizedName><!--装备卡--> 
+      <LocalizedName>死地后生</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="226769027">
-      <LocalizedName>回光反照</LocalizedName><!--装备卡--> 
+      <LocalizedName>回光反照</LocalizedName>
     </BattleCardDesc>
+--> 
 	
 	
 	

@@ -12,14 +12,14 @@ namespace EternalityTemple.Yagokoro
             {
 				if (diceCardSelfAbility.dreamType == 1)
                 {
-					target.bufListDetail.AddBuf(new YagokoroBuf5());
+					target.bufListDetail.AddReadyBuf(new YagokoroBuf5());
 				}
 				if (diceCardSelfAbility.dreamType == 2)
 				{
-					target.bufListDetail.AddBuf(new YagokoroBuf6());
+					target.bufListDetail.AddReadyBuf(new YagokoroBuf6());
 				}
 			}
-			target.bufListDetail.AddBuf(new YagokoroBuf4());
+			target.bufListDetail.AddReadyBuf(new YagokoroBuf4());
 		}
 	}
 	public class DiceCardAbility_YagokoroDice2 : DiceCardAbilityBase

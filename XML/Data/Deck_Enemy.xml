@@ -23,14 +23,13 @@
     <Card>226769200</Card>
     <Card>226769016</Card>
 	
-    <Card>226769016</Card>
     <Card>226769018</Card>
     <Card>226769018</Card>
+    <Card>226769021</Card>
 	
     <Card>226769019</Card>
     <Card>226769020</Card>
     <Card>226769022</Card>
-    <Card>226769023</Card>
   </Deck>
   
   
@@ -48,4 +47,243 @@
     <Card>226769032</Card>
     <Card>226769033</Card>
   </Deck>
+
+
+<!--蓬莱山辉夜--> 
+  <Deck ID="226769103">
+    <Card>226769100</Card>
+    <Card>226769100</Card>
+    <Card>226769001</Card>
+	
+    <Card>226769001</Card>
+    <Card>226769002</Card>
+    <Card>226769002</Card>
+	
+    <Card>226769004</Card>
+    <Card>226769004</Card>
+    <Card>226769005</Card>
+  </Deck>
+  
+  
+<!--八意永琳--> 
+   <Deck ID="226769104">
+    <Card>226769200</Card>
+    <Card>226769200</Card>
+    <Card>226769016</Card>
+	
+    <Card>226769018</Card>
+    <Card>226769018</Card>
+    <Card>226769021</Card>
+	
+    <Card>226769019</Card>
+    <Card>226769020</Card>
+    <Card>226769022</Card>
+  </Deck>
+  
+  
+<!--铃仙--> 
+   <Deck ID="226769105">
+    <Card>226769300</Card>
+    <Card>226769300</Card>
+    <Card>226769300</Card>
+	
+    <Card>226769028</Card>
+    <Card>226769029</Card>
+    <Card>226769030</Card>
+	
+    <Card>226769031</Card>
+    <Card>226769032</Card>
+    <Card>226769033</Card>
+  </Deck>
+
+   <Deck ID="226769011">
+    <Card Pid="@origin">608014</Card>
+    <Card Pid="@origin">701011</Card><!--全面进攻--> 
+    <Card Pid="@origin">701012</Card><!--平心静气--> 
+	
+    <Card Pid="@origin">605007</Card><!--乱剑劈砍--> 
+    <Card Pid="@origin">611007</Card><!--都市之意--> 
+    <Card Pid="@origin">601004</Card>
+	
+    <Card Pid="@origin">505004</Card><!--指令之意--> 
+    <Card Pid="@origin">606003</Card>
+    <Card Pid="@origin">606004</Card>
+  </Deck>
+
+   <Deck ID="226769012">
+    <Card Pid="@origin">608014</Card>
+    <Card Pid="@origin">701011</Card>
+    <Card Pid="@origin">701012</Card>
+	
+    <Card Pid="@origin">605007</Card>
+    <Card Pid="@origin">611007</Card>
+    <Card Pid="@origin">601004</Card>
+	
+    <Card Pid="@origin">601001</Card>
+    <Card Pid="@origin">610008</Card>
+    <Card Pid="@origin">606004</Card>
+  </Deck>
+
+   <Deck ID="226769013">
+    <Card Pid="@origin">608014</Card>
+    <Card Pid="@origin">701011</Card>
+    <Card Pid="@origin">701012</Card>
+	
+    <Card Pid="@origin">605007</Card>
+    <Card Pid="@origin">611007</Card>
+    <Card Pid="@origin">601004</Card>
+	
+    <Card Pid="@origin">601001</Card>
+    <Card Pid="@origin">606003</Card>
+    <Card Pid="@origin">610010</Card>
+  </Deck>
+
+   <Deck ID="226769014">
+    <Card Pid="@origin">608014</Card>
+    <Card Pid="@origin">701011</Card>
+    <Card Pid="@origin">701012</Card>
+	
+    <Card Pid="@origin">605007</Card>
+    <Card Pid="@origin">611007</Card>
+    <Card Pid="@origin">601004</Card>
+	
+    <Card Pid="@origin">606002</Card>
+    <Card Pid="@origin">606003</Card>
+    <Card Pid="@origin">610010</Card>
+  </Deck>
+
+   <Deck ID="226769015">
+    <Card Pid="@origin">608014</Card>
+    <Card Pid="@origin">701011</Card>
+    <Card Pid="@origin">701012</Card>
+	
+    <Card Pid="@origin">605007</Card>
+    <Card Pid="@origin">611007</Card>
+    <Card Pid="@origin">601004</Card>
+	
+    <Card Pid="@origin">601001</Card>
+    <Card Pid="@origin">606003</Card>
+    <Card Pid="@origin">610010</Card>
+  </Deck>
+
+   <Deck ID="226769016">
+    <Card Pid="@origin">701011</Card><!--全面进攻--> 
+    <Card Pid="@origin">605010</Card><!--剑刃解放--> 
+    <Card Pid="@origin">605007</Card><!--乱剑劈砍--> 
+    <Card Pid="@origin">611007</Card><!--都市之意--> 
+    <Card Pid="@origin">505004</Card><!--指令之意--> 
+    <Card Pid="@origin">616001</Card>
+    <Card Pid="@origin">610010</Card><!--烨龍烈斩--> 
+    <Card Pid="@origin">610008</Card>
+    <Card Pid="@origin">610004</Card><!--邵强壮--> 
+  </Deck>
+
+   <Deck ID="226769017">
+    <Card Pid="@origin">701011</Card><!--全面进攻--> 
+    <Card Pid="@origin">601007</Card><!--长驱直入--> 
+    <Card Pid="@origin">605007</Card><!--乱剑劈砍--> 
+    <Card Pid="@origin">611007</Card><!--都市之意--> 
+    <Card Pid="@origin">505004</Card><!--指令之意--> 
+    <Card Pid="@origin">404001</Card>
+    <Card Pid="@origin">701005</Card><!--hana上挑--> 
+    <Card Pid="@origin">701001</Card><!--真挂--> 
+    <Card Pid="@origin">610004</Card><!--邵强壮--> 
+  </Deck>
+
+   <Deck ID="226769018">
+    <Card Pid="@origin">603007</Card><!--能量转换--> 
+    <Card Pid="@origin">608014</Card><!--兔子吃草--> 
+    <Card Pid="@origin">605007</Card><!--乱剑劈砍--> 
+    <Card Pid="@origin">506007</Card><!--能源循环--> 
+    <Card Pid="@origin">505004</Card><!--指令之意--> 
+    <Card Pid="@origin">608013</Card>
+    <Card Pid="@origin">608004</Card>
+    <Card Pid="@origin">608009</Card>
+    <Card Pid="@origin">608015</Card>
+  </Deck>
+
+   <Deck ID="226769019">
+    <Card Pid="@origin">701011</Card><!--全面进攻--> 
+    <Card Pid="@origin">605010</Card><!--剑刃解放--> 
+    <Card Pid="@origin">605007</Card><!--乱剑劈砍--> 
+    <Card Pid="@origin">611007</Card><!--都市之意--> 
+    <Card Pid="@origin">505004</Card><!--指令之意--> 
+    <Card Pid="@origin">502003</Card>
+    <Card Pid="@origin">701005</Card><!--hana上挑--> 
+    <Card Pid="@origin">602008</Card>
+    <Card Pid="@origin">608017</Card>
+  </Deck>
+
+   <Deck ID="226769020">
+    <Card Pid="@origin">701011</Card><!--全面进攻--> 
+    <Card Pid="@origin">605010</Card><!--剑刃解放--> 
+    <Card Pid="@origin">605007</Card><!--乱剑劈砍--> 
+    <Card Pid="@origin">611007</Card><!--都市之意--> 
+    <Card Pid="@origin">505004</Card><!--指令之意--> 
+    <Card Pid="@origin">602008</Card>
+    <Card Pid="@origin">611003</Card>
+    <Card Pid="@origin">611001</Card>
+    <Card Pid="@origin">610004</Card><!--邵强壮--> 
+  </Deck>
+
+   <Deck ID="226769021">
+    <Card Pid="@origin">501007</Card>
+    <Card Pid="@origin">501007</Card>
+    <Card Pid="@origin">501007</Card>
+    <Card Pid="@origin">608016</Card><!--克隆复制--> 
+    <Card Pid="@origin">608016</Card><!--克隆复制--> 
+    <Card Pid="@origin">608016</Card><!--克隆复制--> 
+    <Card Pid="@origin">606007</Card>
+    <Card Pid="@origin">606007</Card>
+    <Card Pid="@origin">606007</Card>
+  </Deck>
+
+   <Deck ID="226769022">
+    <Card Pid="@origin">701012</Card><!--平心静气--> 
+    <Card Pid="@origin">701012</Card><!--平心静气--> 
+    <Card Pid="@origin">608016</Card><!--克隆复制--> 
+    <Card Pid="@origin">608016</Card><!--克隆复制--> 
+    <Card Pid="@origin">608016</Card><!--克隆复制--> 
+    <Card Pid="@origin">501001</Card>
+    <Card Pid="@origin">608012</Card>
+    <Card Pid="@origin">608012</Card>
+    <Card Pid="@origin">608012</Card>
+  </Deck>
+
+   <Deck ID="226769023">
+    <Card Pid="@origin">601007</Card><!--长驱直入--> 
+    <Card Pid="@origin">608014</Card><!--兔子吃草--> 
+    <Card Pid="@origin">701012</Card><!--平心静气--> 
+    <Card Pid="@origin">605007</Card><!--乱剑劈砍--> 
+    <Card Pid="@origin">616001</Card><!--长楔冲刺--> 
+    <Card Pid="@origin">505004</Card><!--指令之意--> 
+    <Card Pid="@origin">601010</Card>
+    <Card Pid="@origin">605004</Card>
+    <Card Pid="@origin">613005</Card>
+  </Deck>
+
+   <Deck ID="226769024">
+    <Card Pid="@origin">701011</Card><!--全面进攻--> 
+    <Card Pid="@origin">701012</Card><!--平心静气--> 
+    <Card Pid="@origin">608014</Card><!--兔子吃草--> 
+    <Card Pid="@origin">605007</Card><!--乱剑劈砍--> 
+    <Card Pid="@origin">611007</Card><!--都市之意--> 
+    <Card Pid="@origin">505004</Card><!--指令之意--> 
+    <Card Pid="@origin">608013</Card><!--快速压制--> 
+    <Card Pid="@origin">606003</Card>
+    <Card Pid="@origin">606004</Card>
+  </Deck>
+
+   <Deck ID="226769025">
+    <Card Pid="@origin">701011</Card><!--全面进攻--> 
+    <Card Pid="@origin">701012</Card><!--平心静气--> 
+    <Card Pid="@origin">605007</Card><!--乱剑劈砍--> 
+    <Card Pid="@origin">602008</Card><!--15连坐--> 
+    <Card Pid="@origin">505004</Card><!--指令之意--> 
+    <Card Pid="@origin">701005</Card><!--hana上挑--> 
+    <Card Pid="@origin">701001</Card><!--真挂--> 
+    <Card Pid="@origin">701002</Card>
+    <Card Pid="@origin">701003</Card>
+  </Deck>
+
 </DeckXmlRoot>

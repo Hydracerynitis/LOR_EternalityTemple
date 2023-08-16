@@ -37,5 +37,23 @@ namespace EternalityTemple.Yagokoro
                 owner.allyCardDetail.AddNewCard(new LorId(EternalityInitializer.packageId, 226769124)).SetPriorityAdder(9999);
             }
         }
+        public override BattleUnitModel ChangeAttackTarget(BattleDiceCardModel card, int idx)
+        {
+            BattleUnitModel result = null;
+            if (card.GetID().packageId != EternalityInitializer.packageId)
+            {
+                return result;
+            }
+            if (card.GetID().id == 226769016 && idx == 0)
+            {
+                List<BattleUnitModel> aliveList2 = BattleObjectManager.instance.GetAliveList(owner.faction);
+                aliveList2.Remove(owner);
+                if (aliveList2.Count > 0)
+                {
+                    result = RandomUtil.SelectOne<BattleUnitModel>(aliveList2);
+                }
+            }
+            return result;
+        }
     }
 }

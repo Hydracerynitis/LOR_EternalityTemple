@@ -5,4 +5,21 @@
 	<Name ID="226769001">八意永琳</Name>
 	<Name ID="226769002">铃仙</Name>
 
+	<Name ID="226769103">蓬莱山辉夜</Name>
+	<Name ID="226769104">八意永琳</Name>
+	<Name ID="226769105">铃仙</Name>
+
+	<Name ID="226769011">Malkuth</Name>
+	<Name ID="226769012">伊登</Name>
+	<Name ID="226769013">约书亚</Name>
+	<Name ID="226769014">朱利安</Name>
+	<Name ID="226769015">卡蒂亚</Name>
+
+	<Name ID="226769016">Yesod</Name>
+	<Name ID="226769017">萨摩</Name>
+	<Name ID="226769018">罗根</Name>
+	<Name ID="226769019">麦斯威尔</Name>
+	<Name ID="226769020">尼古拉斯</Name>
+
+
 </CharactersNameRoot>

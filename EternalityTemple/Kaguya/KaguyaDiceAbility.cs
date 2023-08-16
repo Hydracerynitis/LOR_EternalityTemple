@@ -98,6 +98,38 @@ namespace EternalityTemple.Kaguya
             xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
             xmlData.Script = cardItem.Script;
         }
+        public override void OnSucceedAttack()
+        {
+            if(!card.target.bufListDetail.HasBuf<secondAttack>() && card.target.bufListDetail.HasBuf<firstAttack>())
+            {
+                card.target.bufListDetail.AddBuf(new secondAttack(owner));
+            }
+            if(!card.target.bufListDetail.HasBuf<firstAttack>())
+            {
+                card.target.bufListDetail.AddBuf(new firstAttack());
+            }
+        }
+        public class firstAttack : BattleUnitBuf
+        {
+            public override void OnRoundStart()
+            {
+                base.OnRoundStart();
+                _owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Weak, 1);
+            }
+        }
+        public class secondAttack : BattleUnitBuf
+        {
+            public override void OnRoundStart()
+            {
+                base.OnRoundStart();
+                _kaguya.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, 1);
+            }
+            public secondAttack(BattleUnitModel Kaguya)
+            {
+                _kaguya = Kaguya;
+            }
+            private BattleUnitModel _kaguya;
+        }
     }
     public class DiceCardAbility_EternityDice1 : DiceCardAbilityBase
     {

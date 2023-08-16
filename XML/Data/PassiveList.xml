@@ -156,4 +156,30 @@
 	<Desc>每一幕开始时,使司书方情感提升1级
 (至多“已结束舞台数”的次数)</Desc>
 </Passive>
+
+
+
+
+
+<Passive ID="226769020">
+	<Rarity>Unique</Rarity>
+	<Cost>0</Cost>
+	<Script>226769020</Script>
+	<Name></Name>
+	<Desc></Desc>
+</Passive>
+<Passive ID="226769021">
+	<Rarity>Unique</Rarity>
+	<Cost>0</Cost>
+	<Script>226769021</Script>
+	<Name></Name>
+	<Desc></Desc>
+</Passive>
+<Passive ID="226769022">
+	<Rarity>Unique</Rarity>
+	<Cost>0</Cost>
+	<Script>226769022</Script>
+	<Name></Name>
+	<Desc></Desc>
+</Passive>
 </PassiveXmlRoot>

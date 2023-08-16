@@ -91,7 +91,12 @@ namespace EternalityTemple.Yagokoro
 		public override void OnFirstMoon()
 		{
 			base.OnFirstMoon();
-			dreamType = 1;
+			if (card.target.faction == owner.faction)
+			{
+				dreamType = 1;
+				return;
+			}
+			dreamType = 0;
 		}
 		public override void OnFifthMoon()
 		{
@@ -307,11 +312,11 @@ namespace EternalityTemple.Yagokoro
 			{
 				if(firstMoon)
                 {
-					battleUnitModel.bufListDetail.AddKeywordBufByCard(KeywordBuf.Strength, 1, owner);
+					battleUnitModel.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Strength, 1, owner);
 				}
 				if(fifthMoon)
                 {
-					battleUnitModel.bufListDetail.AddKeywordBufByCard(KeywordBuf.BreakProtection, 1, owner);
+					battleUnitModel.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.BreakProtection, 1, owner);
 				}
 			}
 			if (secondMoon)

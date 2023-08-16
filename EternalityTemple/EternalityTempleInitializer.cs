@@ -21,13 +21,14 @@ using EternalityTemple.Inaba;
 namespace EternalityTemple
 {
     [HarmonyPatch]
-    public class EternalityInitializer: ModInitializer
+    public class EternalityInitializer : ModInitializer
     {
         public static string ModPath;
         public static Dictionary<string, Sprite> ArtWorks;
         public static int InabaBufGainNum;
-        public const string packageId= "TheWorld_Eternity";
+        public const string packageId = "TheWorld_Eternity";
         private static List<(SpeedDiceUI, Color)> ChangedSpeedDiceUI = new List<(SpeedDiceUI, Color)>();
+        private static bool EgoColdDown;
         public static LorId GetLorId(int id) => new LorId(packageId, id);
         public override void OnInitializeMod()
         {
@@ -45,7 +46,7 @@ namespace EternalityTemple
         }
         public static void RemoveError()
         {
-            List<string> LoadMod = new List<string>() { "0Harmony"};
+            List<string> LoadMod = new List<string>() { "0Harmony" };
             List<string> ErrorLogs = new List<string>();
             foreach (string errorLog in Singleton<ModContentManager>.Instance.GetErrorLogs())
             {
@@ -78,26 +79,26 @@ namespace EternalityTemple
             if (Singleton<DropBookInventoryModel>.Instance.GetBookCount(bookId) == 0)
                 ___txt_bookNum.text = "∞";
         }
-        [HarmonyPatch(typeof(DropBookInventoryModel),nameof(DropBookInventoryModel.GetBookList_invitationBookList))]
+        [HarmonyPatch(typeof(DropBookInventoryModel), nameof(DropBookInventoryModel.GetBookList_invitationBookList))]
         [HarmonyPostfix]
         public static void DropBookInventoryModel_GetBookList_invitationBookList(List<LorId> __result)
         {
             __result.Add(GetLorId(226769000));
         }
-        [HarmonyPatch(typeof(BattleUnitBufListDetail),nameof(BattleUnitBufListDetail.CanAddBuf))]
+        [HarmonyPatch(typeof(BattleUnitBufListDetail), nameof(BattleUnitBufListDetail.CanAddBuf))]
         [HarmonyPostfix]
-        public static void BattleUnitBufListDetail_CanAddBuf(BattleUnitBufListDetail __instance,ref bool __result, BattleUnitBuf buf)
+        public static void BattleUnitBufListDetail_CanAddBuf(BattleUnitBufListDetail __instance, ref bool __result, BattleUnitBuf buf)
         {
             List<PassiveAbilityBase> passiveInterface = __instance._self.passiveDetail.PassiveList.FindAll(x => x is IsBufImmune);
-            foreach(PassiveAbilityBase passiveAbility in passiveInterface)
+            foreach (PassiveAbilityBase passiveAbility in passiveInterface)
             {
                 if ((passiveAbility as IsBufImmune).IsImmune(buf))
                     __result = false;
             }
         }
-        [HarmonyPatch(typeof(BattleUnitBufListDetail),nameof(BattleUnitBufListDetail.AddKeywordBufByCard))]
+        [HarmonyPatch(typeof(BattleUnitBufListDetail), nameof(BattleUnitBufListDetail.AddKeywordBufByCard))]
         [HarmonyPostfix]
-        public static void BattleUnitBufListDetail_AddKeywordBufByCard_Post(BattleUnitBufListDetail __instance, KeywordBuf bufType,ref int stack, BattleUnitModel actor)
+        public static void BattleUnitBufListDetail_AddKeywordBufByCard_Post(BattleUnitBufListDetail __instance, KeywordBuf bufType, ref int stack, BattleUnitModel actor)
         {
             if (bufType == KeywordBuf.Burn)
                 return;
@@ -136,7 +137,7 @@ namespace EternalityTemple
             BattleUnitBuf buf = __instance.AddNewKeywordBufInList(BufReadyType.NextNextRound, bufType);
             TriggerOnGiveBuff(actor, buf, stack);
         }
-        private static void TriggerOnGiveBuff(BattleUnitModel actor,BattleUnitBuf buf,int stack)
+        private static void TriggerOnGiveBuff(BattleUnitModel actor, BattleUnitBuf buf, int stack)
         {
             if (buf == null)
                 return;
@@ -147,7 +148,7 @@ namespace EternalityTemple
             foreach (BattleUnitBuf BufAbility in BufInterface)
                 (BufAbility as OnAddOtherBuf).OnAddBuf(buf, stack);
         }
-        [HarmonyPatch(typeof(BattleUnitModel),nameof(BattleUnitModel.OnRecoverHp))]
+        [HarmonyPatch(typeof(BattleUnitModel), nameof(BattleUnitModel.OnRecoverHp))]
         [HarmonyPostfix]
         public static void BattleUnitModel_OnRecoverHp_Post(BattleUnitModel __instance, int recoverAmount)
         {
@@ -159,38 +160,38 @@ namespace EternalityTemple
         [HarmonyPostfix]
         public static void BattleUnitModel_RollSpeedDice_Post(BattleUnitModel __instance)
         {
-            if (__instance.IsBreakLifeZero() || __instance.IsKnockout() || __instance.turnState==BattleUnitTurnState.BREAK || __instance.bufListDetail.HasStun())
+            if (__instance.IsBreakLifeZero() || __instance.IsKnockout() || __instance.turnState == BattleUnitTurnState.BREAK || __instance.bufListDetail.HasStun())
                 return;
             SpeedDiceSetter SDS = __instance.view.speedDiceSetterUI;
             if (__instance.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_PuzzleBuf) is BattleUnitBuf_PuzzleBuf puzzlebuf)
             {
                 int unavailable = __instance.speedDiceResult.FindAll(x => x.breaked).Count;
                 if (puzzlebuf.CompletePuzzle.Contains(1) && __instance.speedDiceCount - unavailable >= 1)
-                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+0),Color.blue);
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 0), Color.blue);
                 if (puzzlebuf.CompletePuzzle.Contains(2) && __instance.speedDiceCount - unavailable >= 2)
-                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+1), Color.magenta);
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 1), Color.magenta);
                 if (puzzlebuf.CompletePuzzle.Contains(3) && __instance.speedDiceCount - unavailable >= 3)
-                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+2), Color.red);
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 2), Color.red);
                 if (puzzlebuf.CompletePuzzle.Contains(4) && __instance.speedDiceCount - unavailable >= 4)
-                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+3), Color.green);
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 3), Color.green);
                 if (puzzlebuf.CompletePuzzle.Contains(5) && __instance.speedDiceCount - unavailable >= 5)
-                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable+4), Color.yellow);
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 4), Color.yellow);
             }
             PassiveAbility_226769005 passive = __instance.passiveDetail.PassiveList.Find((PassiveAbilityBase x) => x is PassiveAbility_226769005) as PassiveAbility_226769005;
             if (passive != null)
             {
                 if (passive.IsActivate)
-                { 
+                {
                     __instance.view.speedDiceSetterUI._speedDices.ForEach(sd => ChangeSpeedDiceColor(sd, Color.cyan));
                 }
             }
-            if (BattleUnitBuf_InabaBuf2.GetStack(__instance)>0)
+            if (BattleUnitBuf_InabaBuf2.GetStack(__instance) > 0)
             {
-                for(int i = 0;i< BattleUnitBuf_InabaBuf2.GetStack(__instance);i++)
+                for (int i = 0; i < BattleUnitBuf_InabaBuf2.GetStack(__instance); i++)
                 {
                     ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(i), Color.white);
                 }
-                if(BattleUnitBuf_InabaBuf3.GetStack(__instance)>0)
+                if (BattleUnitBuf_InabaBuf3.GetStack(__instance) > 0)
                 {
                     ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(BattleUnitBuf_InabaBuf3.GetStack(__instance) - 1), Color.white);
                 }
@@ -214,7 +215,7 @@ namespace EternalityTemple
             ChangedSpeedDiceUI.ForEach(x => ChangeSpeedDiceColor(x.Item1, x.Item2, true));
             ChangedSpeedDiceUI.Clear();
         }
-        [HarmonyPatch(typeof(BattleAllyCardDetail),nameof(BattleAllyCardDetail.GetHand))]
+        [HarmonyPatch(typeof(BattleAllyCardDetail), nameof(BattleAllyCardDetail.GetHand))]
         [HarmonyPostfix]
         public static void BattleUnitCardsInHandUI_UpdateCardList_BattleAllyCardDetail_GetHand_Post(BattleAllyCardDetail __instance, List<BattleDiceCardModel> __result)
         {
@@ -223,7 +224,7 @@ namespace EternalityTemple
                 return;
             BattleUnitCardsInHandUI CardUI = BattleManagerUI.Instance.ui_unitCardsInHand;
             BattleUnitModel displayed = CardUI.SelectedModel;
-            if (CardUI.CurrentHandState != BattleUnitCardsInHandUI.HandState.BattleCard || __instance._self!=displayed || !displayed.passiveDetail.HasPassive<PassiveAbility_226769001>())
+            if (CardUI.CurrentHandState != BattleUnitCardsInHandUI.HandState.BattleCard || __instance._self != displayed || !displayed.passiveDetail.HasPassive<PassiveAbility_226769001>())
                 return;
             SpeedDiceUI speedDice = BattleManagerUI.Instance.selectedAllyDice;
             if (speedDice == null)
@@ -231,7 +232,7 @@ namespace EternalityTemple
             if (displayed.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_PuzzleBuf) is BattleUnitBuf_PuzzleBuf puzzlebuf)
             {
                 int unavailable = displayed.speedDiceResult.FindAll(x => x.breaked).Count;
-                DiceCardXmlInfo xml=null;
+                DiceCardXmlInfo xml = null;
                 if (puzzlebuf.CompletePuzzle.Contains(1) && speedDice._speedDiceIndex == unavailable + 0)
                     xml = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, 226769006));
                 if (puzzlebuf.CompletePuzzle.Contains(2) && speedDice._speedDiceIndex == unavailable + 1)
@@ -244,7 +245,7 @@ namespace EternalityTemple
                     xml = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, 226769010));
                 if (xml == null)
                     return;
-                BattleDiceCardModel card=BattleDiceCardModel.CreatePlayingCard(xml);
+                BattleDiceCardModel card = BattleDiceCardModel.CreatePlayingCard(xml);
                 card.temporary = true;
                 card.owner = displayed;
                 __result.Add(card);
@@ -337,7 +338,7 @@ namespace EternalityTemple
         }
         [HarmonyPatch(typeof(BattleUnitModel), nameof(BattleUnitModel.CanChangeAttackTarget))]
         [HarmonyPrefix]
-        public static bool CanChangeAttackTarget(BattleUnitModel __instance, ref bool __result , int myIndex = 0)
+        public static bool CanChangeAttackTarget(BattleUnitModel __instance, ref bool __result, int myIndex = 0)
         {
             if (myIndex < BattleUnitBuf_InabaBuf2.GetStack(__instance))
             {
@@ -354,8 +355,181 @@ namespace EternalityTemple
         }
         private static void InitPublicValue()
         {
+            EgoColdDown = false;
             EternalityInitializer.InabaBufGainNum = 0;
         }
+        public static UnitBattleDataModel AddCustomFixUnitModel(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor, int EquipID)
+        {
+            LorId lorId = new LorId(EternalityInitializer.packageId, EquipID);
+            UnitDataModel unitDataModel = new UnitDataModel(lorId, floor.Sephirah, true);
+            unitDataModel.SetTemporaryPlayerUnitByBook(lorId);
+            unitDataModel.SetCustomName(unitDataModel.bookItem.Name);
+            unitDataModel.CreateDeckByDeckInfo();
+            unitDataModel.forceItemChangeLock = true;
+            UnitBattleDataModel unitBattleDataModel = new UnitBattleDataModel(stage, unitDataModel);
+            unitBattleDataModel.Init();
+            return unitBattleDataModel;
+        }
+        public static void UnitModelList(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor, List<int> battleUnits)
+        {
+            List<UnitBattleDataModel> list = new List<UnitBattleDataModel>();
+            foreach (int equipID in battleUnits)
+            {
+                list.Add(EternalityInitializer.AddCustomFixUnitModel(__instance, stage, floor, equipID));
+            }
+            Traverse.Create(__instance).Field("_unitList").SetValue(list);
+        }
+        [HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.InitUnitList))]
+        [HarmonyPrefix]
+        public static bool StageLibraryFloorModel_InitUnitList(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor)
+        {
+            bool flag = stage.ClassInfo.id.packageId != EternalityInitializer.packageId || stage.ClassInfo.id.id != 226769001/* || Singleton<StageController>.Instance.CurrentWave != 1 */;
+            bool result;
+            if (flag)
+            {
+                result = true;
+            }
+            else
+            {
+                EternalityInitializer.UnitModelList(__instance, stage, floor, new List<int>
+                        {
+                            226769103,
+                            226769104,
+                            226769105
+                        });
+                result = false;
+            }
+            return result;
+        }
+        [HarmonyPatch(typeof(LibraryFloorModel), nameof(LibraryFloorModel.GetFormationPosition))]
+        [HarmonyPostfix]
+        public static void LibraryFloorModel_GetFormationPosition_Post(int i, ref FormationPosition __result)
+        {
+            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id == new LorId(EternalityInitializer.packageId, 226769001))
+            {
+                FormationModel formationModel = new FormationModel(Singleton<FormationXmlList>.Instance.GetData(226768));
+                __result = formationModel.PostionList[i];
+            }
+        }
+        [HarmonyPatch(typeof(BookModel), nameof(BookModel.SetXmlInfo))]
+        [HarmonyPostfix]
+        public static void BookModel_SetXmlInfo_Post(BookModel __instance, global::BookXmlInfo ____classInfo, ref List<DiceCardXmlInfo> ____onlyCards)
+        {
+            if (__instance.BookId.packageId == EternalityInitializer.packageId)
+            {
+                foreach (int id in ____classInfo.EquipEffect.OnlyCard)
+                {
+                    DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, id), false);
+                    ____onlyCards.Add(cardItem);
+                }
+            }
+        }
+        [HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.HasSkillPoint))]
+        [HarmonyPostfix]
+        public static void StageLibraryFloorModel_HasSkillPoint(ref bool __result)
+        {
+            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id == new LorId(EternalityInitializer.packageId, 226769001))
+            {
+                __result = false;
+            }
+        }
+        [HarmonyPatch(typeof(EmotionCardXmlList), nameof(EmotionCardXmlList.GetDataList), new Type[]{
+                    typeof(SephirahType),
+                    typeof(int),
+                    typeof(int)})]
+        [HarmonyPrefix]
+        public static bool EmotionCardXmlList_GetDataList(List<EmotionCardXmlInfo> ____list, ref List<EmotionCardXmlInfo> __result)
+        {
+            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id != new LorId(EternalityInitializer.packageId, 226769001))
+            {
+                return true;
+            }
+            __result = (from x in ____list
+                        where x.Sephirah > SephirahType.None
+                        select x).ToList<EmotionCardXmlInfo>();
+            return false;
+        }
+        [HarmonyPatch(typeof(StageController), nameof(StageController.ApplyEnemyCardPhase))]
+        [HarmonyPostfix]
+        public static void StageController_ApplyEnemyCardPhase()
+        {
+            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id != new LorId(EternalityInitializer.packageId, 226769001))
+            {
+                return;
+            }
+            if(EgoColdDown)
+            {
+                EgoColdDown = false;
+                return;
+            }
+            List<BattleUnitModel> list = Singleton<StageController>.Instance.GetActionableEnemyList().FindAll((BattleUnitModel x) => x.emotionDetail.EmotionLevel >= 3 && x.turnState != BattleUnitTurnState.BREAK);
+            if (list.Count == 0)
+            {
+                return;
+            }
+            BattleUnitModel egoTarget = RandomUtil.SelectOne<BattleUnitModel>(list);
+            IEnumerable<BattleUnitModel> source = from x in BattleObjectManager.instance.GetAliveList(Faction.Player)
+                                                  where x.IsTargetable(egoTarget)
+                                                  select x;
+            if (source.Count<BattleUnitModel>() == 0)
+            {
+                return;
+            }
+            int cardOrder = egoTarget.cardOrder;
+            int num = -1;
+            for (int i = 0; i < egoTarget.cardSlotDetail.cardAry.Count; i++)
+            {
+                if (egoTarget.cardSlotDetail.cardAry[i] == null && !egoTarget.speedDiceResult[i].breaked)
+                {
+                    num = i;
+                    break;
+                }
+            }
+            if (num == -1)
+            {
+                num = egoTarget.speedDiceResult.FindLastIndex((SpeedDice x) => !x.breaked);
+            }
+            if (num == -1)
+            {
+                return;
+            }
+            List<EmotionEgoXmlInfo> list2 = Singleton<EmotionEgoXmlList>.Instance.GetDataList(Singleton<StageController>.Instance.CurrentFloor);
+            if (list2 == null || list2.Count == 0)
+            {
+                return;
+            }
+            List<DiceCardXmlInfo> list3 = (from x in list2
+                                           where x.CardId != 910015 && x.CardId != 910031 && x.CardId != 910050
+                                           select ItemXmlDataList.instance.GetCardItem(x.CardId, false)).ToList<DiceCardXmlInfo>();
+            list3.RemoveAll((DiceCardXmlInfo x) => x.Spec.Ranged == CardRange.Instance);
+            DiceCardXmlInfo cardInfo = RandomUtil.SelectOne<DiceCardXmlInfo>(list3);
+            egoTarget.SetCurrentOrder(num);
+            BattleDiceCardModel battleDiceCardModel = BattleDiceCardModel.CreatePlayingCard(cardInfo);
+            battleDiceCardModel.SetCostToZero();
+            EgoColdDown = true;
+            egoTarget.cardSlotDetail.AddCard(null, null, 0, false);
+            egoTarget.cardSlotDetail.AddCard(battleDiceCardModel, RandomUtil.SelectOne<BattleUnitModel>(source.ToList<BattleUnitModel>()), 0, false);
+            try
+            {
+                SingletonBehavior<BattleManagerUI>.Instance.ui_TargetArrow.ClearCloneArrows();
+                SingletonBehavior<BattleManagerUI>.Instance.ui_TargetArrow.ActiveTargetParent(true);
+                if (SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.autoCardButton != null)
+                {
+                    SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.autoCardButton.SetActivate(true);
+                }
+                if (SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.unequipcardallButton != null)
+                {
+                    SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.unequipcardallButton.SetActivate(true);
+                }
+                SingletonBehavior<BattleManagerUI>.Instance.ui_TargetArrow.UpdateTargetList();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+
+
 
 
         /*        [HarmonyPatch(typeof(ItemXmlDataList),nameof(ItemXmlDataList.GetBasicCardList))]

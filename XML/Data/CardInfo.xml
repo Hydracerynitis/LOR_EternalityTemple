@@ -318,8 +318,8 @@
     <Spec Range="Near" Cost="4"/>
     <Script>YagokoroCard5</Script>
     <BehaviourList>
-     <Behaviour Min="8" Dice="13" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="" ActionScript=""  Desc =""/>
-     <Behaviour Min="6" Dice="15" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="8" Dice="13" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="YagokoroDice5" ActionScript=""  Desc =""/>
+     <Behaviour Min="6" Dice="15" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="YagokoroDice5" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>

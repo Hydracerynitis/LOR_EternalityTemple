@@ -149,7 +149,11 @@ namespace EternalityTemple.Inaba
 			BattleUnitBuf_InabaBuf7.AddReadyStack(owner, 2);
 			owner.view.ChangeSkin("Reisen2");
 		}
-	}
+        public override bool OnChooseCard(BattleUnitModel owner)
+        {
+			return BattleUnitBuf_InabaBuf1.GetStack(owner) >= 150;
+		}
+    }
 	public class DiceCardSelfAbility_InabaCard8 : DiceCardSelfAbilityBase
 	{
 		public override void OnUseCard()

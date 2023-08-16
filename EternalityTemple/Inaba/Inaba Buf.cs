@@ -140,18 +140,22 @@ namespace EternalityTemple.Inaba
 				{
 					break;
 				}
-				this._owner.SetCurrentOrder(idx);
-				this._owner.speedDiceResult[idx].isControlable = false;
+				if(_owner.faction == Faction.Player)
+				{
+					this._owner.SetCurrentOrder(idx);
+					this._owner.speedDiceResult[idx].isControlable = false;
+				}
 				List<BattleDiceCardModel> list = _owner.allyCardDetail.GetHand().FindAll((BattleDiceCardModel x) => x.GetSpec().Ranged != CardRange.Instance);
 				list.RemoveAll((BattleDiceCardModel x) => !_owner.IsCardChoosable(x));
+				list.RemoveAll((BattleDiceCardModel x) => x.GetSpec().Cost > _owner.cardSlotDetail.PlayPoint);
+				list.RemoveAll((BattleDiceCardModel x) => x.GetSpec().Ranged == CardRange.FarArea);
+				list.RemoveAll((BattleDiceCardModel x) => x.GetSpec().Ranged == CardRange.FarAreaEach);
 				if (list.Count <= 0)
 				{
 					break;
 				}
 				BattleDiceCardModel card = RandomUtil.SelectOne<BattleDiceCardModel>(list);
 				_owner.allyCardDetail.ExhaustACardAnywhere(card);
-				_owner.allyCardDetail.AddNewCardToDeck(card.GetID());
-				DiceCardSelfAbilityBase diceCardSelfAbilityBase = card.CreateDiceCardSelfAbilityScript();
 				card.AddBuf(new BattleDiceCardBuf_checkInaba());
 				BattleUnitModel target = this.GetTarget_player();
 				if (target != null)
@@ -196,7 +200,7 @@ namespace EternalityTemple.Inaba
 					break;
 				}
 				BattlePlayingCardDataInUnitModel card = _owner.cardSlotDetail.cardAry[idx];
-				if (card.card.GetID().id != 226769135 && card.card.GetID().id != 226769136)
+				if (card.card.GetID().id != 226769135 && card.card.GetID().id != 226769136 && card.card.XmlData.Spec.Ranged != CardRange.FarArea && card.card.XmlData.Spec.Ranged != CardRange.FarAreaEach)
 				{
 					BattleUnitModel target = this.GetTarget_enemy();
 					card.target = target;
@@ -328,10 +332,10 @@ namespace EternalityTemple.Inaba
 			this._owner.speedDiceResult[this.stack - 1].isControlable = false;
 			List<BattleDiceCardModel> list = _owner.allyCardDetail.GetHand().FindAll((BattleDiceCardModel x) => x.GetSpec().Ranged != CardRange.Instance);
 			list.RemoveAll((BattleDiceCardModel x) => !_owner.IsCardChoosable(x));
+			list.RemoveAll((BattleDiceCardModel x) => x.GetSpec().Ranged == CardRange.FarArea);
+			list.RemoveAll((BattleDiceCardModel x) => x.GetSpec().Ranged == CardRange.FarAreaEach);
 			BattleDiceCardModel card = RandomUtil.SelectOne<BattleDiceCardModel>(list);
 			_owner.allyCardDetail.ExhaustACardAnywhere(card);
-			_owner.allyCardDetail.AddNewCardToDeck(card.GetID());
-			DiceCardSelfAbilityBase diceCardSelfAbilityBase = card.CreateDiceCardSelfAbilityScript();
 			card.AddBuf(new BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba());
 			BattleUnitModel target = this.GetTarget_player();
 			if (target != null)
@@ -355,7 +359,7 @@ namespace EternalityTemple.Inaba
 				return;
 			}
 			BattlePlayingCardDataInUnitModel card = _owner.cardSlotDetail.cardAry[this.stack - 1];
-			if (card.card.GetID().id != 226769135 && card.card.GetID().id != 226769136)
+			if (card.card.GetID().id != 226769135 && card.card.GetID().id != 226769136 && card.card.XmlData.Spec.Ranged != CardRange.FarArea && card.card.XmlData.Spec.Ranged != CardRange.FarAreaEach)
 			{
 				BattleUnitModel target = this.GetTarget_enemy();
 				card.target = target;

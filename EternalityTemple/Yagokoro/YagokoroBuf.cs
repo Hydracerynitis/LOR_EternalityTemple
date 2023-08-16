@@ -198,4 +198,43 @@ namespace EternalityTemple.Yagokoro
             Destroy();
         }
     }
+    public class YagokoroBuf13 : BattleUnitBuf
+    {
+        public override string keywordIconId => "GalaxyBoy_Stone";
+        public override string keywordId => "YagokoroBuf13";
+        public void Add(int add)
+        {
+            this.stack += add;
+            if (this.stack <= 0)
+            {
+                this.Destroy();
+            }
+        }
+        public static void SetStack(BattleUnitModel model, int value)
+        {
+            YagokoroBuf13 battleUnitBuf = model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is YagokoroBuf13) as YagokoroBuf13;
+            if (battleUnitBuf == null)
+            {
+                battleUnitBuf = new YagokoroBuf13();
+                model.bufListDetail.AddBuf(battleUnitBuf);
+            }
+            battleUnitBuf.stack = value;
+        }
+
+        // Token: 0x0600020D RID: 525 RVA: 0x0001429C File Offset: 0x0001249C
+        public static int GetStack(BattleUnitModel model)
+        {
+            YagokoroBuf13 battleUnitBuf = model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is YagokoroBuf13) as YagokoroBuf13;
+            int result;
+            if (battleUnitBuf == null)
+            {
+                result = 0;
+            }
+            else
+            {
+                result = battleUnitBuf.stack;
+            }
+            return result;
+        }
+    }
 }

@@ -76,7 +76,7 @@ namespace EternalityTemple.Inaba
         public override BattleUnitModel ChangeAttackTarget(BattleDiceCardModel card, int idx)
         {
             BattleUnitModel result = null;
-            if(card.GetID().packageId != EternalityInitializer.packageId)
+            if(card.GetID().packageId != EternalityInitializer.packageId || owner.faction == Faction.Player)
             {
                 return result;
             }

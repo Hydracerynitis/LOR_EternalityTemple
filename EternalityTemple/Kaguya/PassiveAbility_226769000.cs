@@ -9,7 +9,7 @@ namespace EternalityTemple.Kaguya
     public class PassiveAbility_226769000: PassiveAbilityBase
     {
         private static int[] EnemySet = new int[] { 226769000, 226769001, 226769002 };
-        private static int[] LibrarySet = new int[] { 226769003, 226769004, 226769006 };
+        private static int[] LibrarySet = new int[] { 226769003, 226769004, 226769005 , 226769103 ,226769104, 226769105 };
         public override void OnWaveStart()
         {
             List<BattleUnitModel> trio=new List<BattleUnitModel>();

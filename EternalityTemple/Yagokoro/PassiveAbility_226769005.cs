@@ -23,7 +23,7 @@ namespace EternalityTemple.Yagokoro
             if (owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf7) != null && owner.speedDiceResult.Count >= 5)
             {
                 IsActivate = true;
-                this.desc = Singleton<PassiveDescXmlList>.Instance.GetDesc(226769105);
+                this.desc = Singleton<PassiveDescXmlList>.Instance.GetDesc(new LorId(EternalityInitializer.packageId,226769105));
             }
             else if (owner.bufListDetail.GetActivatedBufList().Find(x => x is YagokoroBuf12) != null && !IsActivate)
             {
@@ -35,7 +35,7 @@ namespace EternalityTemple.Yagokoro
         {
             if (!IsActivate)
                 return;
-            moonStack = 0;
+            moonStack = YagokoroBuf13.GetStack(owner);
             while (moonStack < owner.cardSlotDetail.cardAry.Count)
             {
                 BattlePlayingCardDataInUnitModel card = owner.cardSlotDetail.cardAry[moonStack];
@@ -46,6 +46,9 @@ namespace EternalityTemple.Yagokoro
                     moonAbility.ActivateMoonAbility=moonStack+1;
                     moonStack++;
             }
+            if (TempActivate)
+                return;
+            YagokoroBuf13.SetStack(owner,moonStack);
         }
         public override void OnRoundEnd()
         {
@@ -56,6 +59,7 @@ namespace EternalityTemple.Yagokoro
                 moonBuf.Update();
             else
                 owner.bufListDetail.AddBuf(new BattleUnitBuf_Moon1());
+            YagokoroBuf13.SetStack(owner, 0);
         }
         public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
         {
@@ -94,6 +98,10 @@ namespace EternalityTemple.Yagokoro
         {
             if(isActiavted)
                 EternalityInitializer.ResetSpeedDiceColor();
+        }
+        public override void OnWaveStart()
+        {
+            owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769024));
         }
     }
 }

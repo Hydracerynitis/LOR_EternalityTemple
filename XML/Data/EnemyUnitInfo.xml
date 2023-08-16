@@ -6,7 +6,6 @@
 		<NameID>226769000</NameID>
 		<MinHeight>160</MinHeight>
 		<MaxHeight>160</MaxHeight>
-		<Retreat>true</Retreat>
 
 		<BookId>226769000</BookId>
 		<DeckId>226769000</DeckId>
@@ -21,7 +20,6 @@
 		<NameID>226769000</NameID>
 		<MinHeight>180</MinHeight>
 		<MaxHeight>180</MaxHeight>
-		<Retreat>true</Retreat>
 
 		<BookId>226769001</BookId>
 		<DeckId>226769001</DeckId>
@@ -36,7 +34,6 @@
 		<NameID>226769002</NameID>
 		<MinHeight>150</MinHeight>
 		<MaxHeight>150</MaxHeight>
-		<Retreat>true</Retreat>
 
 		<BookId>226769002</BookId>
 		<DeckId>226769002</DeckId>
@@ -44,5 +41,228 @@
 		<Unknown>false</Unknown>
 		<Gender>F</Gender>
 		<Retreat>false</Retreat>
+	</Enemy> 
+
+
+    <Enemy ID="226769103">
+		<Name>蓬莱山辉夜</Name>
+		<NameID>226769000</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769103</BookId>
+		<DeckId>226769103</DeckId>
+		<FaceType>Skin</FaceType>
+		<Unknown>false</Unknown>
+		<Gender>F</Gender>
+		<Retreat>false</Retreat>
+	</Enemy>  
+	
+	 <Enemy ID="226769104">
+		<Name>八意永琳</Name>
+		<NameID>226769000</NameID>
+		<MinHeight>180</MinHeight>
+		<MaxHeight>180</MaxHeight>
+
+		<BookId>226769104</BookId>
+		<DeckId>226769104</DeckId>
+		<FaceType>Skin</FaceType>
+		<Unknown>false</Unknown>
+		<Gender>F</Gender>
+		<Retreat>false</Retreat>
+	</Enemy> 
+	
+	 <Enemy ID="226769105">
+		<Name>铃仙</Name>
+		<NameID>226769002</NameID>
+		<MinHeight>150</MinHeight>
+		<MaxHeight>150</MaxHeight>
+
+		<BookId>226769105</BookId>
+		<DeckId>226769105</DeckId>
+		<FaceType>Skin</FaceType>
+		<Unknown>false</Unknown>
+		<Gender>F</Gender>
+		<Retreat>false</Retreat>
+	</Enemy> 
+
+	 <Enemy ID="226769011">
+		<Name>Malkuth</Name>
+		<NameID>226769011</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769011</BookId>
+		<DeckId>226769011</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769012">
+		<Name></Name>
+		<NameID>226769012</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769012</BookId>
+		<DeckId>226769012</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769013">
+		<Name></Name>
+		<NameID>226769013</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769013</BookId>
+		<DeckId>226769013</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769014">
+		<Name></Name>
+		<NameID>226769014</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769014</BookId>
+		<DeckId>226769014</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769015">
+		<Name></Name>
+		<NameID>226769015</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769015</BookId>
+		<DeckId>226769015</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769016">
+		<Name>Yesod</Name>
+		<NameID>226769016</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769016</BookId>
+		<DeckId>226769016</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769017">
+		<Name></Name>
+		<NameID>226769017</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769017</BookId>
+		<DeckId>226769017</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769018">
+		<Name></Name>
+		<NameID>226769018</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769018</BookId>
+		<DeckId>226769018</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769019">
+		<Name></Name>
+		<NameID>226769019</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769019</BookId>
+		<DeckId>226769019</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769020">
+		<Name></Name>
+		<NameID>226769020</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769020</BookId>
+		<DeckId>226769020</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769021">
+		<Name></Name>
+		<NameID>226769021</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769021</BookId>
+		<DeckId>226769021</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769022">
+		<Name></Name>
+		<NameID>226769022</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769022</BookId>
+		<DeckId>226769022</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769023">
+		<Name></Name>
+		<NameID>226769023</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769023</BookId>
+		<DeckId>226769023</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769024">
+		<Name></Name>
+		<NameID>226769024</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769024</BookId>
+		<DeckId>226769024</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769025">
+		<Name></Name>
+		<NameID>226769025</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769025</BookId>
+		<DeckId>226769025</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
 	</Enemy> 
 </EnemyUnitClassRoot>

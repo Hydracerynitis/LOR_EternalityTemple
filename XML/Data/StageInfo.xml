@@ -15,7 +15,7 @@
 		<emotionCardList />
 		</Wave>
 		<StageType>Invitation</StageType>
-		<FloorNum>1</FloorNum>
+		<FloorNum>10</FloorNum>
 		<Chapter>7</Chapter>
 		<Invitation Combine="BookRecipe">
 			<Book>226769000</Book>
@@ -28,6 +28,63 @@
 		<!--<Story Condition="End">战后剧情.xml</Story>-->
 		<IsChapterLast>false</IsChapterLast>
 		<invitationtype>false</invitationtype>
+  </Stage>
+
+   <Stage id="226769001">
+		<Name>永远之亭</Name>
+		<Wave>
+			<Unit>226769011</Unit>
+			<Unit>226769012</Unit>
+			<Unit>226769013</Unit>
+			<Unit>226769014</Unit>
+			<Unit>226769015</Unit>
+			<Formation>226769</Formation>
+			<FormationType>Default</FormationType>
+			<AvailableUnit>3</AvailableUnit>
+
+		<emotionCardList />
+		</Wave>
+		<Wave>
+			<Unit>226769016</Unit>
+			<Unit>226769017</Unit>
+			<Unit>226769018</Unit>
+			<Unit>226769019</Unit>
+			<Unit>226769020</Unit>
+			<Formation>226769</Formation>
+			<FormationType>Default</FormationType>
+			<AvailableUnit>3</AvailableUnit>
+
+		<emotionCardList />
+		</Wave>
+		<Wave>
+			<Unit>226769021</Unit>
+			<Unit>226769022</Unit>
+			<Unit>226769023</Unit>
+			<Unit>226769024</Unit>
+			<Unit>226769025</Unit>
+			<Formation>226769</Formation>
+			<FormationType>Default</FormationType>
+			<AvailableUnit>3</AvailableUnit>
+
+		<emotionCardList />
+		</Wave>
+		<StageType>Invitation</StageType>
+		<FloorNum>1</FloorNum>
+		<Chapter>7</Chapter>
+		<Invitation Combine="BookRecipe">
+			<Book>226769001</Book>
+			<Book>226769002</Book>
+			<Book>226769003</Book>
+		</Invitation>
+		<!--<MapInfo>地图名字</MapInfo>-->
+		<!--<MapInfo>Philip1</MapInfo>-->
+		<StoryType>TheWorld_Eternity</StoryType>
+		
+		<!--<Story Condition="Start">战前剧情.xml</Story>-->
+		<!--<Story Condition="End">战后剧情.xml</Story>-->
+		<IsChapterLast>false</IsChapterLast>
+		<invitationtype>false</invitationtype>
+    <FloorOnly>Malkuth</FloorOnly>
   </Stage>
   
 </StageXmlRoot>

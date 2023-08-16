@@ -21,6 +21,7 @@ namespace EternalityTemple
         {
             if (language != "cn")
                 language = "cn"; //en
+            LoadFormation();
             LoadStageName(language);
             LoadCharacter(language);
             LoadDropBook(language);
@@ -30,6 +31,15 @@ namespace EternalityTemple
             LoadCard(language);
             LoadExtra(language);
             LoadBook(language);
+        }
+        public static void LoadFormation()
+        {
+                FormationXmlRoot formationXmlRoot;
+                using (StringReader stringReader = new StringReader(File.ReadAllText(EternalityInitializer.ModPath + "/Data//FormationInfo.txt")))
+                {
+                    formationXmlRoot = (FormationXmlRoot)new XmlSerializer(typeof(FormationXmlRoot)).Deserialize(stringReader);
+                }
+                ((List<FormationXmlInfo>)typeof(FormationXmlList).GetField("_list", AccessTools.all).GetValue(Singleton<FormationXmlList>.Instance)).AddRange(formationXmlRoot.list);
         }
         public static void LoadStageName(string language)
         {

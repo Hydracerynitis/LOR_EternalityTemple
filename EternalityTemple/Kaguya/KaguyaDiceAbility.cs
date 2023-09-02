@@ -16,7 +16,7 @@ namespace EternalityTemple.Kaguya
         public override void OnUseCard()
         {
             owner.cardSlotDetail.RecoverPlayPointByCard(1);
-            if (owner.bufListDetail.HasBuf<BattleUnitBuf_KaguyaBuf7>())
+            if (BattleUnitBuf_KaguyaBuf.GetStack(owner)>=7)
             {
                 owner.allyCardDetail.DrawCards(1);
             }
@@ -30,7 +30,7 @@ namespace EternalityTemple.Kaguya
     {
         public override void OnUseCard()
         {
-            BattleUnitBuf buf = owner.bufListDetail.GetActivatedBufList().Find(x => x is KaguyaBuf);
+            BattleUnitBuf buf = owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf);
             if (buf != null)
                 card.ApplyDiceStatBonus(DiceMatch.AllDice,new DiceStatBonus() { power = -buf.stack });
         }
@@ -40,7 +40,7 @@ namespace EternalityTemple.Kaguya
         public override void OnSucceedAttack(BattleUnitModel target)
         {
             int burnstack = 4;
-            BattleUnitBuf buf = owner.bufListDetail.GetActivatedBufList().Find(x => x is KaguyaBuf);
+            BattleUnitBuf buf = owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf);
             if (buf != null)
                 burnstack -= buf.stack / 2;
             target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Burn, burnstack,owner);

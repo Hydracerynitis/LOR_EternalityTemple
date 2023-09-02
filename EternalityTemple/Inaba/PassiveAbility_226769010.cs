@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EternalityTemple.Universal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,15 +13,14 @@ namespace EternalityTemple.Inaba
         {
             base.OnRoundStart();
             BattleUnitBuf_InabaBuf2.AddStack(owner, 1);
-            this.target_226769135 = null;
+            target_226769135 = null;
         }
         public override void OnWaveStart()
         {
             base.OnWaveStart();
             foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(false))
-            {
                 battleUnitModel.bufListDetail.AddBuf(new BattleUnitBuf_InabaDmgCheck());
-            }
+            BattleUnitBuf_InabaBuf1.AddStack(owner, EternalityParam.InabaBufGainNum);
         }
         public class BattleUnitBuf_InabaDmgCheck : BattleUnitBuf
         {
@@ -89,9 +89,7 @@ namespace EternalityTemple.Inaba
                 List<BattleUnitModel> aliveList2 = BattleObjectManager.instance.GetAliveList(owner.faction);
                 aliveList2.Remove(owner);
                 if (aliveList2.Count > 0)
-                {
-                    result = RandomUtil.SelectOne<BattleUnitModel>(aliveList2);
-                }
+                    result = RandomUtil.SelectOne(aliveList2);
             }
             return result;
         }

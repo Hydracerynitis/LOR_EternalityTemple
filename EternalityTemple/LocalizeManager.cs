@@ -70,7 +70,11 @@ namespace EternalityTemple
                     {
                         CharactersNameRoot charactersNameRoot = (CharactersNameRoot)new XmlSerializer(typeof(CharactersNameRoot)).Deserialize(stringReader);
                         foreach (EnemyUnitClassInfo enemyUnitClassInfo in Singleton<EnemyUnitClassInfoList>.Instance.GetAllWorkshopData()[EI.packageId])
-                            enemyUnitClassInfo.name = charactersNameRoot.nameList.Find(x => x.ID == enemyUnitClassInfo.id.id).name;
+                        {
+                            CharacterName CN = charactersNameRoot.nameList.Find(x => x.ID == enemyUnitClassInfo.id.id);
+                            if(CN != null)
+                                enemyUnitClassInfo.name = CN.name;
+                        }
                     }
                 }
                 catch (Exception ex)

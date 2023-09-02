@@ -6,6 +6,8 @@ using UnityEngine;
 using System.Text;
 using EternalityTemple.Kaguya;
 using EternalityTemple.Yagokoro;
+using System.Security.Policy;
+using EternalityTemple.Universal;
 
 namespace EternalityTemple.Inaba
 {
@@ -16,7 +18,7 @@ namespace EternalityTemple.Inaba
 		public BattleUnitBuf_InabaBuf1(BattleUnitModel model)
 		{
 			this._owner = model;
-		}
+        }
 		public void Add(int add)
 		{
 			this.stack += add;
@@ -25,10 +27,10 @@ namespace EternalityTemple.Inaba
 				this.Destroy();
 			}
 		}
-		public static void AddStack(BattleUnitModel model, int value)
+        
+        public static void AddStack(BattleUnitModel model, int value)
 		{
 			BattleUnitBuf_InabaBuf1 battleUnitBuf = model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is BattleUnitBuf_InabaBuf1) as BattleUnitBuf_InabaBuf1;
-			EternalityInitializer.InabaBufGainNum += value;
 			if (battleUnitBuf == null)
 			{
 				battleUnitBuf = new BattleUnitBuf_InabaBuf1(model);
@@ -200,6 +202,8 @@ namespace EternalityTemple.Inaba
 					break;
 				}
 				BattlePlayingCardDataInUnitModel card = _owner.cardSlotDetail.cardAry[idx];
+				if (card == null)
+					continue;
 				if (card.card.GetID().id != 226769135 && card.card.GetID().id != 226769136 && card.card.XmlData.Spec.Ranged != CardRange.FarArea && card.card.XmlData.Spec.Ranged != CardRange.FarAreaEach)
 				{
 					BattleUnitModel target = this.GetTarget_enemy();
@@ -359,6 +363,8 @@ namespace EternalityTemple.Inaba
 				return;
 			}
 			BattlePlayingCardDataInUnitModel card = _owner.cardSlotDetail.cardAry[this.stack - 1];
+			if (card == null)
+				return;
 			if (card.card.GetID().id != 226769135 && card.card.GetID().id != 226769136 && card.card.XmlData.Spec.Ranged != CardRange.FarArea && card.card.XmlData.Spec.Ranged != CardRange.FarAreaEach)
 			{
 				BattleUnitModel target = this.GetTarget_enemy();

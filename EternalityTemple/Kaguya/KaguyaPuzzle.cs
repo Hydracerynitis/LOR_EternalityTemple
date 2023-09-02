@@ -107,7 +107,7 @@ namespace EternalityTemple.Kaguya
             if (buf.positiveType == BufPositiveType.Negative)
             {
                 count += stack;
-                if (count >= 30)
+                if (count >= 20)
                     CompletePuzzle();
             }
         }
@@ -124,7 +124,7 @@ namespace EternalityTemple.Kaguya
             if (IsDefenseDice(behavior.Detail))
             {
                 count++;
-                if (count >= 10)
+                if (count >= 5)
                     CompletePuzzle();
             }
         }
@@ -141,7 +141,7 @@ namespace EternalityTemple.Kaguya
             if (buf is BattleUnitBuf_burn)
             {
                 count += stack;
-                if (count >= 20)
+                if (count >= 15)
                     CompletePuzzle();
             }
         }
@@ -156,7 +156,7 @@ namespace EternalityTemple.Kaguya
         public void OnHeal(int num)
         {
             count +=num;
-            if (count >= 50)
+            if (count >= 20)
                 CompletePuzzle();
         }
     }
@@ -170,7 +170,7 @@ namespace EternalityTemple.Kaguya
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
             count ++;
-            if (count >= 70)
+            if (count >= 35)
                 CompletePuzzle();
         }
     }

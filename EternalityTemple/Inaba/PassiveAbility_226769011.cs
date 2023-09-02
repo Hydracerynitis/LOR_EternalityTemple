@@ -10,7 +10,7 @@ namespace EternalityTemple.Inaba
     {
         public override bool BeforeTakeDamage(BattleUnitModel attacker, int dmg)
         {
-            if(attacker.currentDiceAction.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
+            if(attacker!=null && attacker.currentDiceAction!=null && attacker.currentDiceAction.card!=null && attacker.currentDiceAction.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
             {
                 attacker.TakeDamage(dmg / 2,DamageType.Passive);
                 return true;

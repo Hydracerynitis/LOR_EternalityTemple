@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EternalityTemple.Universal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,7 @@ namespace EternalityTemple.Kaguya
             }
             if (trio.Count < 3)
                 return;
-            trio.ForEach(x => x.bufListDetail.AddBuf(new BattleUnitBuf_KaguyaBuf1()));
+            trio.ForEach(x => x.bufListDetail.AddBuf(new BattleUnitBuf_KaguyaBuf(EternalityParam.KaguyaStack)));
         }
     }
 }

@@ -23,5 +23,10 @@ namespace EternalityTemple.Kaguya
         {
             EternalityInitializer.ResetSpeedDiceColor();
         }
+        public override void OnDie()
+        {
+            BattleObjectManager.instance.GetAliveList(owner.faction).ForEach(x => x.bufListDetail.RemoveBufAll(typeof(BattleUnitBuf_PuzzleBuf)));
+            BattleObjectManager.instance.GetAliveList(owner.faction).ForEach(x => x.bufListDetail.RemoveBufAll(typeof(KaguyaPuzzle)));
+        }
     }
 }

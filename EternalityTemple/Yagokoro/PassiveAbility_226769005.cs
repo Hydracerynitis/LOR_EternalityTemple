@@ -13,19 +13,22 @@ namespace EternalityTemple.Yagokoro
         public bool IsActivate=false;
         public bool TempActivate = false;
         private int moonStack;
-        public override void OnRoundStartAfter()
+        public override void OnRoundEndTheLast()
         {
             if (TempActivate)
             {
                 IsActivate = false;
                 TempActivate = false;
             }
-            if (owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf7) != null && owner.speedDiceResult.Count >= 5)
+            if (BattleUnitBuf_KaguyaBuf.GetStack(owner) >= 7 && owner.emotionDetail.EmotionLevel >= 4)
             {
                 IsActivate = true;
-                this.desc = Singleton<PassiveDescXmlList>.Instance.GetDesc(new LorId(EternalityInitializer.packageId,226769105));
+                desc = Singleton<PassiveXmlList>.Instance.GetData(new LorId(EternalityInitializer.packageId, 226769105)).desc;
             }
-            else if (owner.bufListDetail.GetActivatedBufList().Find(x => x is YagokoroBuf12) != null && !IsActivate)
+        }
+        public override void OnRoundStartAfter()
+        {
+            if (owner.bufListDetail.GetActivatedBufList().Find(x => x is YagokoroBuf12) != null && !IsActivate)
             {
                 IsActivate = true;
                 TempActivate = true;

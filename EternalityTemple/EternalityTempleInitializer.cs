@@ -25,10 +25,10 @@ namespace EternalityTemple
     {
         public static string ModPath;
         public static Dictionary<string, Sprite> ArtWorks;
-        public static int InabaBufGainNum;
+        
         public const string packageId = "TheWorld_Eternity";
-        private static List<(SpeedDiceUI, Color)> ChangedSpeedDiceUI = new List<(SpeedDiceUI, Color)>();
-        private static bool EgoColdDown;
+        private static Dictionary<SpeedDiceUI, Color> ChangedSpeedDiceUI = new Dictionary<SpeedDiceUI, Color>();
+        
         public static LorId GetLorId(int id) => new LorId(packageId, id);
         public override void OnInitializeMod()
         {
@@ -42,11 +42,11 @@ namespace EternalityTemple
             harmony.PatchAll(typeof(LocalizeManager));
             RemoveError();
             LocalizeManager.LocalizedTextLoader_LoadOthers_Post(TextDataModel.CurrentLanguage);
-            EternalityInitializer.InitPublicValue();
+            //InitPublicValue();
         }
         public static void RemoveError()
         {
-            List<string> LoadMod = new List<string>() { "0Harmony" };
+            List<string> LoadMod = new List<string>() { "0Harmony","Mono.Cecil","MonoMod" };
             List<string> ErrorLogs = new List<string>();
             foreach (string errorLog in Singleton<ModContentManager>.Instance.GetErrorLogs())
             {
@@ -181,28 +181,30 @@ namespace EternalityTemple
             if (passive != null)
             {
                 if (passive.IsActivate)
-                {
                     __instance.view.speedDiceSetterUI._speedDices.ForEach(sd => ChangeSpeedDiceColor(sd, Color.cyan));
-                }
             }
             if (BattleUnitBuf_InabaBuf2.GetStack(__instance) > 0)
             {
                 for (int i = 0; i < BattleUnitBuf_InabaBuf2.GetStack(__instance); i++)
-                {
-                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(i), Color.white);
-                }
+                    ChangeSpeedNumColor(SDS.GetSpeedDiceByIndex(i), Color.red);
                 if (BattleUnitBuf_InabaBuf3.GetStack(__instance) > 0)
-                {
-                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(BattleUnitBuf_InabaBuf3.GetStack(__instance) - 1), Color.white);
-                }
+                    ChangeSpeedNumColor(SDS.GetSpeedDiceByIndex(BattleUnitBuf_InabaBuf3.GetStack(__instance) - 1), Color.red);
             }
         }
-        private static void ChangeSpeedDiceColor(SpeedDiceUI ui, Color DiceColor, bool reset = false)
+        [HarmonyPatch(typeof(SpeedDiceUI), nameof(SpeedDiceUI.SetLightOn))]
+        [HarmonyPrefix]
+        public static bool SpeedDiceUI_SetLightOn_Pre(bool b)
+        {
+            if (b==true && StageController.Instance.Phase != StageController.StagePhase.ApplyLibrarianCardPhase)
+                return false;
+            return true;
+        }
+        private static void ChangeSpeedDiceColor(SpeedDiceUI ui, Color DiceColor, bool reset = false) //DiceColor不能是白色，因为白色只会让数字变成白色，骰子框仍为原来颜色
         {
             if (ui == null)
                 return;
-            if (!reset)
-                ChangedSpeedDiceUI.Add((ui, ui.img_normalFrame.color));
+            if (!reset && !ChangedSpeedDiceUI.ContainsKey(ui))
+                ChangedSpeedDiceUI.Add(ui, ui.img_normalFrame.color);
             ui._txtSpeedRange.color = DiceColor;
             ui._rouletteImg.color = DiceColor;
             ui._txtSpeedMax.color = DiceColor;
@@ -210,9 +212,20 @@ namespace EternalityTemple
             ui.img_unitsNum.color = DiceColor;
             ui.img_normalFrame.color = DiceColor;
         }
+        private static void ChangeSpeedNumColor(SpeedDiceUI ui,Color NumColor, bool reset = false)
+        {
+            if (ui == null)
+                return;
+            if (!reset && !ChangedSpeedDiceUI.ContainsKey(ui))
+                ChangedSpeedDiceUI.Add(ui, ui.img_normalFrame.color);
+            ui.img_tensNum.color = NumColor;
+            ui.img_unitsNum.color = NumColor;
+            ui._txtSpeedMax.color = NumColor;
+        }
         public static void ResetSpeedDiceColor()
         {
-            ChangedSpeedDiceUI.ForEach(x => ChangeSpeedDiceColor(x.Item1, x.Item2, true));
+            foreach (SpeedDiceUI ui in ChangedSpeedDiceUI.Keys)
+                ChangeSpeedDiceColor(ui, ChangedSpeedDiceUI[ui], true);
             ChangedSpeedDiceUI.Clear();
         }
         [HarmonyPatch(typeof(BattleAllyCardDetail), nameof(BattleAllyCardDetail.GetHand))]
@@ -326,15 +339,9 @@ namespace EternalityTemple
         public static void ActivateStartBattleEffectPhase_Post()
         {
             foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(false))
-            {
                 foreach (BattleUnitBuf battleUnitBuf in battleUnitModel.bufListDetail.GetActivatedBufList())
-                {
                     if (battleUnitBuf != null && battleUnitBuf is InabaBufAbility)
-                    {
                         ((InabaBufAbility)battleUnitBuf).OnStartBattle();
-                    }
-                }
-            }
         }
         [HarmonyPatch(typeof(BattleUnitModel), nameof(BattleUnitModel.CanChangeAttackTarget))]
         [HarmonyPrefix]
@@ -347,20 +354,21 @@ namespace EternalityTemple
             }
             return true;
         }
-        [HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.Init))]
+        [HarmonyPatch(typeof(StageController), nameof(StageController.InitCommon))]
         [HarmonyPostfix]
-        public static void StageLibraryFloorModel_Init(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor)
+        public static void StageLibraryFloorModel_Init(StageLibraryFloorModel __instance, StageClassInfo stage)
         {
-            EternalityInitializer.InitPublicValue();
-        }
-        private static void InitPublicValue()
-        {
-            EgoColdDown = false;
-            EternalityInitializer.InabaBufGainNum = 0;
+            if (stage.id.packageId == packageId)
+            {
+                EternalityParam.KaguyaStack = 1;
+                EternalityParam.InabaBufGainNum = 0;
+                EternalityParam.EgoCoolDown = false;
+                EternalityParam.Puzzle.Clear();
+            }
         }
         public static UnitBattleDataModel AddCustomFixUnitModel(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor, int EquipID)
         {
-            LorId lorId = new LorId(EternalityInitializer.packageId, EquipID);
+            LorId lorId = new LorId(packageId, EquipID);
             UnitDataModel unitDataModel = new UnitDataModel(lorId, floor.Sephirah, true);
             unitDataModel.SetTemporaryPlayerUnitByBook(lorId);
             unitDataModel.SetCustomName(unitDataModel.bookItem.Name);
@@ -375,15 +383,15 @@ namespace EternalityTemple
             List<UnitBattleDataModel> list = new List<UnitBattleDataModel>();
             foreach (int equipID in battleUnits)
             {
-                list.Add(EternalityInitializer.AddCustomFixUnitModel(__instance, stage, floor, equipID));
+                list.Add(AddCustomFixUnitModel(__instance, stage, floor, equipID));
             }
-            Traverse.Create(__instance).Field("_unitList").SetValue(list);
+            __instance._unitList= list;
         }
         [HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.InitUnitList))]
         [HarmonyPrefix]
         public static bool StageLibraryFloorModel_InitUnitList(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor)
         {
-            bool flag = stage.ClassInfo.id.packageId != EternalityInitializer.packageId || stage.ClassInfo.id.id != 226769001/* || Singleton<StageController>.Instance.CurrentWave != 1 */;
+            bool flag = stage.ClassInfo.id.packageId != packageId || stage.ClassInfo.id.id != 226769001/* || Singleton<StageController>.Instance.CurrentWave != 1 */;
             bool result;
             if (flag)
             {
@@ -391,12 +399,7 @@ namespace EternalityTemple
             }
             else
             {
-                EternalityInitializer.UnitModelList(__instance, stage, floor, new List<int>
-                        {
-                            226769103,
-                            226769104,
-                            226769105
-                        });
+                UnitModelList(__instance, stage, floor, new List<int>{226769103,226769104,226769105});
                 result = false;
             }
             return result;
@@ -405,7 +408,7 @@ namespace EternalityTemple
         [HarmonyPostfix]
         public static void LibraryFloorModel_GetFormationPosition_Post(int i, ref FormationPosition __result)
         {
-            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id == new LorId(EternalityInitializer.packageId, 226769001))
+            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id == new LorId(packageId, 226769001))
             {
                 FormationModel formationModel = new FormationModel(Singleton<FormationXmlList>.Instance.GetData(226768));
                 __result = formationModel.PostionList[i];
@@ -415,11 +418,11 @@ namespace EternalityTemple
         [HarmonyPostfix]
         public static void BookModel_SetXmlInfo_Post(BookModel __instance, global::BookXmlInfo ____classInfo, ref List<DiceCardXmlInfo> ____onlyCards)
         {
-            if (__instance.BookId.packageId == EternalityInitializer.packageId)
+            if (__instance.BookId.packageId == packageId)
             {
                 foreach (int id in ____classInfo.EquipEffect.OnlyCard)
                 {
-                    DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, id), false);
+                    DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, id), false);
                     ____onlyCards.Add(cardItem);
                 }
             }
@@ -428,10 +431,8 @@ namespace EternalityTemple
         [HarmonyPostfix]
         public static void StageLibraryFloorModel_HasSkillPoint(ref bool __result)
         {
-            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id == new LorId(EternalityInitializer.packageId, 226769001))
-            {
+            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id == new LorId(packageId, 226769001))
                 __result = false;
-            }
         }
         [HarmonyPatch(typeof(EmotionCardXmlList), nameof(EmotionCardXmlList.GetDataList), new Type[]{
                     typeof(SephirahType),
@@ -440,41 +441,31 @@ namespace EternalityTemple
         [HarmonyPrefix]
         public static bool EmotionCardXmlList_GetDataList(List<EmotionCardXmlInfo> ____list, ref List<EmotionCardXmlInfo> __result)
         {
-            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id != new LorId(EternalityInitializer.packageId, 226769001))
-            {
+            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id != new LorId(packageId, 226769001))
                 return true;
-            }
             __result = (from x in ____list
                         where x.Sephirah > SephirahType.None
-                        select x).ToList<EmotionCardXmlInfo>();
+                        select x).ToList();
             return false;
         }
         [HarmonyPatch(typeof(StageController), nameof(StageController.ApplyEnemyCardPhase))]
         [HarmonyPostfix]
         public static void StageController_ApplyEnemyCardPhase()
         {
-            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id != new LorId(EternalityInitializer.packageId, 226769001))
-            {
+            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id != new LorId(packageId, 226769001))
                 return;
-            }
-            if(EgoColdDown)
+            if(EternalityParam.EgoCoolDown)
             {
-                EgoColdDown = false;
+                EternalityParam.EgoCoolDown = false;
                 return;
             }
             List<BattleUnitModel> list = Singleton<StageController>.Instance.GetActionableEnemyList().FindAll((BattleUnitModel x) => x.emotionDetail.EmotionLevel >= 3 && x.turnState != BattleUnitTurnState.BREAK);
             if (list.Count == 0)
-            {
                 return;
-            }
-            BattleUnitModel egoTarget = RandomUtil.SelectOne<BattleUnitModel>(list);
-            IEnumerable<BattleUnitModel> source = from x in BattleObjectManager.instance.GetAliveList(Faction.Player)
-                                                  where x.IsTargetable(egoTarget)
-                                                  select x;
-            if (source.Count<BattleUnitModel>() == 0)
-            {
+            BattleUnitModel egoTarget = RandomUtil.SelectOne(list);
+            List<BattleUnitModel> source=BattleObjectManager.instance.GetAliveList(Faction.Player).FindAll(x => x.IsTargetable(egoTarget));
+            if (source.Count() <= 0)
                 return;
-            }
             int cardOrder = egoTarget.cardOrder;
             int num = -1;
             for (int i = 0; i < egoTarget.cardSlotDetail.cardAry.Count; i++)
@@ -486,41 +477,32 @@ namespace EternalityTemple
                 }
             }
             if (num == -1)
-            {
                 num = egoTarget.speedDiceResult.FindLastIndex((SpeedDice x) => !x.breaked);
-            }
             if (num == -1)
-            {
                 return;
-            }
-            List<EmotionEgoXmlInfo> list2 = Singleton<EmotionEgoXmlList>.Instance.GetDataList(Singleton<StageController>.Instance.CurrentFloor);
+            List<EmotionEgoXmlInfo> list2 = Singleton<EmotionEgoXmlList>.Instance.GetDataList(StageController.Instance.CurrentFloor);
             if (list2 == null || list2.Count == 0)
-            {
                 return;
-            }
             List<DiceCardXmlInfo> list3 = (from x in list2
                                            where x.CardId != 910015 && x.CardId != 910031 && x.CardId != 910050
-                                           select ItemXmlDataList.instance.GetCardItem(x.CardId, false)).ToList<DiceCardXmlInfo>();
-            list3.RemoveAll((DiceCardXmlInfo x) => x.Spec.Ranged == CardRange.Instance);
-            DiceCardXmlInfo cardInfo = RandomUtil.SelectOne<DiceCardXmlInfo>(list3);
+                                           select ItemXmlDataList.instance.GetCardItem(x.CardId, false)).ToList();
+            list3.RemoveAll(x => x.Spec.Ranged == CardRange.Instance);
+            DiceCardXmlInfo cardInfo = RandomUtil.SelectOne(list3);
             egoTarget.SetCurrentOrder(num);
             BattleDiceCardModel battleDiceCardModel = BattleDiceCardModel.CreatePlayingCard(cardInfo);
+            battleDiceCardModel.owner = egoTarget;
             battleDiceCardModel.SetCostToZero();
-            EgoColdDown = true;
+            EternalityParam.EgoCoolDown = true;
             egoTarget.cardSlotDetail.AddCard(null, null, 0, false);
-            egoTarget.cardSlotDetail.AddCard(battleDiceCardModel, RandomUtil.SelectOne<BattleUnitModel>(source.ToList<BattleUnitModel>()), 0, false);
+            egoTarget.cardSlotDetail.AddCard(battleDiceCardModel, RandomUtil.SelectOne(source), 0, false);
             try
             {
                 SingletonBehavior<BattleManagerUI>.Instance.ui_TargetArrow.ClearCloneArrows();
                 SingletonBehavior<BattleManagerUI>.Instance.ui_TargetArrow.ActiveTargetParent(true);
                 if (SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.autoCardButton != null)
-                {
                     SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.autoCardButton.SetActivate(true);
-                }
                 if (SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.unequipcardallButton != null)
-                {
                     SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.unequipcardallButton.SetActivate(true);
-                }
                 SingletonBehavior<BattleManagerUI>.Instance.ui_TargetArrow.UpdateTargetList();
             }
             catch (Exception)

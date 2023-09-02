@@ -16,7 +16,7 @@ namespace EternalityTemple.Yagokoro
 		public override void OnUseCard()
 		{
 			owner.cardSlotDetail.RecoverPlayPointByCard(1);
-			if (owner.bufListDetail.HasBuf<BattleUnitBuf_KaguyaBuf7>())
+			if (BattleUnitBuf_KaguyaBuf.GetStack(owner)>=7)
 			{
 				owner.allyCardDetail.DrawCards(1);
 			}

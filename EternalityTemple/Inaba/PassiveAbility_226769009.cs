@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EternalityTemple.Universal;
 using EternalityTemple.Yagokoro;
 
 namespace EternalityTemple.Inaba
@@ -13,9 +14,9 @@ namespace EternalityTemple.Inaba
         {
             if (BattleObjectManager.instance.GetAliveList(base.owner.faction).Find((BattleUnitModel x) => x.bufListDetail.HasBuf<BattleUnitBuf_Moon3>()) != null)
             {
-                if (EternalityInitializer.InabaBufGainNum >= 900)
+                if (EternalityParam.InabaBufGainNum >= 900)
                 {
-                    BattleUnitBuf_InabaBuf2.AddReadyStack(RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList_opponent(owner.faction)), 1);
+                    BattleUnitBuf_InabaBuf2.AddReadyStack(RandomUtil.SelectOne(BattleObjectManager.instance.GetAliveList_opponent(owner.faction)), 1);
                 }
             }
         }

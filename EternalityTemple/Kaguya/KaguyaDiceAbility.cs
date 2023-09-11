@@ -138,6 +138,7 @@ namespace EternalityTemple.Kaguya
             BattleUnitBuf_InabaBuf2.AddReadyStack(behavior.card.target, 1);
         }
     }
+    //永远与须臾
     public class DiceCardSelfAbility_EternityCard4 : DiceCardSelfAbilityBase
     {
         public override bool IsTargetableAllUnit()
@@ -162,6 +163,9 @@ namespace EternalityTemple.Kaguya
         {
             public override void OnEndBattle(BattlePlayingCardDataInUnitModel curCard)
             {
+                DiceCardSpec DCS = curCard.card.XmlData.Spec;
+                if (DCS.Ranged == CardRange.FarArea || DCS.Ranged == CardRange.FarAreaEach || DCS.affection == CardAffection.TeamNear)
+                    return;
                 List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList_opponent(_owner.faction);
                 if (aliveList.Count <= 0)
                     return;
@@ -194,7 +198,7 @@ namespace EternalityTemple.Kaguya
                     _owner.breakDetail.nextTurnBreak = false;
                 }
                 _owner.breakDetail.breakGauge=bp;
-                _owner.cardSlotDetail.RecoverPlayPoint(light - _owner.cardSlotDetail.PlayPoint);
+                _owner.cardSlotDetail._playPoint = light;
                 _owner.bufListDetail._readyBufList.Clear();
                 Buffs.ForEach(x => _owner.bufListDetail.AddKeywordBufByEtc(x.Item1,x.Item2));
                 Destroy(); 

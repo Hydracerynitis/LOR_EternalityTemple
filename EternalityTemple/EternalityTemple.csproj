@@ -74,6 +74,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EternalityParam.cs" />
     <Compile Include="Inaba\PassiveAbility_226769009.cs" />
     <Compile Include="Inaba\InabaBufAbility.cs" />
     <Compile Include="Kaguya\BattleVoidBehaviour.cs" />

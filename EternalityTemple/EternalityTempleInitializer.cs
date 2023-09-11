@@ -42,8 +42,8 @@ namespace EternalityTemple
             harmony.PatchAll(typeof(LocalizeManager));
             RemoveError();
             LocalizeManager.LocalizedTextLoader_LoadOthers_Post(TextDataModel.CurrentLanguage);
-            //InitPublicValue();
         }
+        //移除重复加载同一DLL的错误提示
         public static void RemoveError()
         {
             List<string> LoadMod = new List<string>() { "0Harmony","Mono.Cecil","MonoMod" };
@@ -56,6 +56,7 @@ namespace EternalityTemple
             foreach (string str in ErrorLogs)
                 ModContentManager.Instance.GetErrorLogs().Remove(str);
         }
+        //额外加载美术资源
         public static void GetArtWorks(DirectoryInfo dir)
         {
             if (dir.GetDirectories().Length != 0)
@@ -72,6 +73,7 @@ namespace EternalityTemple
                 ArtWorks[withoutExtension] = sprite;
             }
         }
+        //mod战斗需要的基础书和无限数字显示
         [HarmonyPatch(typeof(UIInvitationDropBookSlot), nameof(UIInvitationDropBookSlot.SetData_DropBook))]
         [HarmonyPostfix]
         public static void UIInvitationDropBookSlot_SetData_DropBook_Post(ref TextMeshProUGUI ___txt_bookNum, LorId bookId)
@@ -85,6 +87,7 @@ namespace EternalityTemple
         {
             __result.Add(GetLorId(226769000));
         }
+        //被动额外扳机 IsBufImmune 是否免疫特定buff
         [HarmonyPatch(typeof(BattleUnitBufListDetail), nameof(BattleUnitBufListDetail.CanAddBuf))]
         [HarmonyPostfix]
         public static void BattleUnitBufListDetail_CanAddBuf(BattleUnitBufListDetail __instance, ref bool __result, BattleUnitBuf buf)
@@ -96,6 +99,7 @@ namespace EternalityTemple
                     __result = false;
             }
         }
+        //Buf额外扳机 OnAddOtherBuf和OnGiveOtherBuf  获取或施加其他buff时会触发此扳机
         [HarmonyPatch(typeof(BattleUnitBufListDetail), nameof(BattleUnitBufListDetail.AddKeywordBufByCard))]
         [HarmonyPostfix]
         public static void BattleUnitBufListDetail_AddKeywordBufByCard_Post(BattleUnitBufListDetail __instance, KeywordBuf bufType, ref int stack, BattleUnitModel actor)
@@ -148,6 +152,7 @@ namespace EternalityTemple
             foreach (BattleUnitBuf BufAbility in BufInterface)
                 (BufAbility as OnAddOtherBuf).OnAddBuf(buf, stack);
         }
+        //Buf额外扳机 OnRecoverHP  恢复生命时额外触发此扳机
         [HarmonyPatch(typeof(BattleUnitModel), nameof(BattleUnitModel.OnRecoverHp))]
         [HarmonyPostfix]
         public static void BattleUnitModel_OnRecoverHp_Post(BattleUnitModel __instance, int recoverAmount)
@@ -156,6 +161,7 @@ namespace EternalityTemple
             foreach (BattleUnitBuf BufAbility in BufInterface)
                 (BufAbility as OnRecoverHP).OnHeal(recoverAmount);
         }
+        //速度骰染色： 涉及此功能的有 谜题骰，疯狂骰和月相骰
         [HarmonyPatch(typeof(BattleUnitModel), nameof(BattleUnitModel.RollSpeedDice))]
         [HarmonyPostfix]
         public static void BattleUnitModel_RollSpeedDice_Post(BattleUnitModel __instance)
@@ -191,14 +197,6 @@ namespace EternalityTemple
                     ChangeSpeedNumColor(SDS.GetSpeedDiceByIndex(BattleUnitBuf_InabaBuf3.GetStack(__instance) - 1), Color.red);
             }
         }
-        [HarmonyPatch(typeof(SpeedDiceUI), nameof(SpeedDiceUI.SetLightOn))]
-        [HarmonyPrefix]
-        public static bool SpeedDiceUI_SetLightOn_Pre(bool b)
-        {
-            if (b==true && StageController.Instance.Phase != StageController.StagePhase.ApplyLibrarianCardPhase)
-                return false;
-            return true;
-        }
         private static void ChangeSpeedDiceColor(SpeedDiceUI ui, Color DiceColor, bool reset = false) //DiceColor不能是白色，因为白色只会让数字变成白色，骰子框仍为原来颜色
         {
             if (ui == null)
@@ -222,12 +220,22 @@ namespace EternalityTemple
             ui.img_unitsNum.color = NumColor;
             ui._txtSpeedMax.color = NumColor;
         }
-        public static void ResetSpeedDiceColor()
+        public static void ResetSpeedDiceColor() //重制所有染色的速度骰，任何要有染色的被动都需要有引用这个方法
         {
             foreach (SpeedDiceUI ui in ChangedSpeedDiceUI.Keys)
                 ChangeSpeedDiceColor(ui, ChangedSpeedDiceUI[ui], true);
             ChangedSpeedDiceUI.Clear();
         }
+        //修复不可控制的速度骰不会高亮的问题
+        [HarmonyPatch(typeof(SpeedDiceUI), nameof(SpeedDiceUI.SetLightOn))]
+        [HarmonyPrefix]
+        public static bool SpeedDiceUI_SetLightOn_Pre(bool b)
+        {
+            if (b == true && StageController.Instance.Phase != StageController.StagePhase.ApplyLibrarianCardPhase)
+                return false;
+            return true;
+        }
+        //谜题骰额外添加宝具卡，这个会重做宝具卡的时候会删除
         [HarmonyPatch(typeof(BattleAllyCardDetail), nameof(BattleAllyCardDetail.GetHand))]
         [HarmonyPostfix]
         public static void BattleUnitCardsInHandUI_UpdateCardList_BattleAllyCardDetail_GetHand_Post(BattleAllyCardDetail __instance, List<BattleDiceCardModel> __result)
@@ -264,6 +272,7 @@ namespace EternalityTemple
                 __result.Add(card);
             }
         }
+        //阻止卸载宝具卡时会使其返回至牌库里，会在重做宝具卡后删除
         [HarmonyPatch(typeof(BattleAllyCardDetail), nameof(BattleAllyCardDetail.ReturnCardToHand))]
         [HarmonyPrefix]
         public static bool BattleAllyCardDetail_ReturnCardToHand_Pre(BattleAllyCardDetail __instance, BattleDiceCardModel appliedCard)
@@ -278,62 +287,26 @@ namespace EternalityTemple
             }
             return true;
         }
-        /*[HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.CreateSelectableList))]
-        [HarmonyPrefix]
-        public static bool StageLibraryFloorModel_CreateSelectableList_Pre(StageLibraryFloorModel __instance, ref List<EmotionCardXmlInfo> __result, int emotionLevel)
-        {
-            if (BattleObjectManager.instance.GetAliveList().FindAll(x => x.passiveDetail.HasPassive<PassiveAbility_226769004>()).Count > 0)
-            {
-                int PosCoin = 0;
-                int NegCoin = 0;
-                foreach (UnitBattleDataModel unit in __instance._unitList)
-                {
-                    if (unit.IsAddedBattle)
-                    {
-                        PosCoin += unit.emotionDetail.totalPositiveCoins.Count;
-                        NegCoin += unit.emotionDetail.totalNegativeCoins.Count;
-                    }
-                }
-                int floorLevel = 0;
-                LibraryFloorModel floor = LibraryModel.Instance.GetFloor(Singleton<StageController>.Instance.CurrentFloor);
-                if (floor != null)
-                    floorLevel = !Singleton<StageController>.Instance.IsRebattle ? floor.Level : floor.TemporaryLevel;
-                int EmotionTier = emotionLevel > 2 ? (emotionLevel > 4 ? 3 : 2) : 1;
-                List<EmotionCardXmlInfo> dataList = EmotionCardXmlList.Instance.GetDataList(StageController.Instance.CurrentFloor, floorLevel, EmotionTier);
-                foreach (EmotionCardXmlInfo selected in __instance._selectedList)
-                    dataList.Remove(selected);
-                int center = 0;
-                int TotalCoin = PosCoin + NegCoin;
-                float ratio = 0.5f;
-                if (TotalCoin > 0)
-                    ratio = (float)(PosCoin - NegCoin) / (float)TotalCoin;
-                float f = ratio / (float)((11.0 - (double)emotionLevel) / 10.0);
-                center = (double)Mathf.Abs(f) >= 0.1 ? ((double)Mathf.Abs(f) >= 0.3 ? ((double)f <= 0.0 ? -2 : 2) : ((double)f <= 0.0 ? -1 : 1)) : 0;
-                dataList.Sort((x, y) => Mathf.Abs(x.EmotionRate - center) - Mathf.Abs(y.EmotionRate - center));
-                __result = dataList.Take(5).ToList();
-                return false;
-            }
-            return true;
-        }
-        [HarmonyPatch(typeof(LevelUpUI),nameof(LevelUpUI.Init))]
-        [HarmonyPrefix]
-        public static void LevelUpUI_Init_Pre(LevelUpUI __instance, int count, List<EmotionCardXmlInfo> cardList)
-        {
-            if (cardList.Count > 3)
-            {
-                LevelUpUIScroller UIScroller= __instance.gameObject.AddComponent<LevelUpUIScroller>();
-                UIScroller.Init(__instance, cardList);
-            }
-        }
-        [HarmonyPatch(typeof(LevelUpUI),nameof(LevelUpUI.OnSelectPassive))]
+        //观测被动，玩家额外选取2个异想体
+        [HarmonyPatch(typeof(StageLibraryFloorModel),nameof(StageLibraryFloorModel.OnPickPassiveCard))]
         [HarmonyPostfix]
-        public static void LevelUpUI_OnSelectPassive_Post(LevelUpUI __instance)
+        public static void StageLibraryFloorModel_OnPickPassiveCard_Post(StageLibraryFloorModel __instance)
         {
-            LevelUpUIScroller UIScroller = __instance.gameObject.GetComponent<LevelUpUIScroller>();
-            if (UIScroller != null)
-                UnityObject.Destroy(UIScroller);
-        }*/
-
+            if (EternalityParam.PickedEmotionCard > 0)
+            {
+                EternalityParam.PickedEmotionCard--;
+                __instance.team.currentSelectEmotionLevel --;
+            }
+        }
+        //修复观测被动而导致的UI问题
+        [HarmonyPatch(typeof(LevelUpUI),nameof(LevelUpUI.InitBase))]
+        [HarmonyPrefix]
+        public static void LevelUpUI_InitBase(LevelUpUI __instance, ref int selectedCount)
+        {
+            if (selectedCount > __instance._emotionLevels.Length - 1)
+                selectedCount = __instance._emotionLevels.Length - 1;
+        }
+        //Buf额外扳机，给InabaBufAbility在战斗开始时触发OnStartBattle
         [HarmonyPatch(typeof(StageController), nameof(StageController.ActivateStartBattleEffectPhase))]
         [HarmonyPostfix]
         public static void ActivateStartBattleEffectPhase_Post()
@@ -343,6 +316,7 @@ namespace EternalityTemple
                     if (battleUnitBuf != null && battleUnitBuf is InabaBufAbility)
                         ((InabaBufAbility)battleUnitBuf).OnStartBattle();
         }
+        //阻止疯狂速度骰切换目标骰的攻击敌人 好像没生效
         [HarmonyPatch(typeof(BattleUnitModel), nameof(BattleUnitModel.CanChangeAttackTarget))]
         [HarmonyPrefix]
         public static bool CanChangeAttackTarget(BattleUnitModel __instance, ref bool __result, int myIndex = 0)
@@ -354,39 +328,49 @@ namespace EternalityTemple
             }
             return true;
         }
+        //设定Malkuth，Yesod，Hod的外观，让他们穿上对应的衣服
+        [HarmonyPatch(typeof(UnitDataModel),nameof(UnitDataModel.Init))]
+        [HarmonyPostfix]
+        public static void UnitDataModel_Init_Post(UnitDataModel __instance, LorId defaultBook)
+        {
+            if (defaultBook.packageId==packageId && (defaultBook.id== 226769011 || defaultBook.id == 226769016 || defaultBook.id == 226769021))
+            {
+                switch(defaultBook.id) 
+                {
+                    case 226769011:
+                        __instance._defaultBook=new BookModel(BookXmlList.Instance.GetData(1));
+                        __instance._customizeData = new UnitCustomizingData(new LorId(1));
+                        break;
+                    case 226769016:
+                        __instance._defaultBook = new BookModel(BookXmlList.Instance.GetData(2));
+                        __instance._customizeData = new UnitCustomizingData(new LorId(2));
+                        break;
+                    case 226769021:
+                        __instance._defaultBook = new BookModel(BookXmlList.Instance.GetData(3));
+                        __instance._customizeData = new UnitCustomizingData(new LorId(3));
+                        break;
+                }
+            }
+        }
+        //开始接待时重设跨幕的参数
         [HarmonyPatch(typeof(StageController), nameof(StageController.InitCommon))]
         [HarmonyPostfix]
         public static void StageLibraryFloorModel_Init(StageLibraryFloorModel __instance, StageClassInfo stage)
         {
-            if (stage.id.packageId == packageId)
-            {
-                EternalityParam.KaguyaStack = 1;
-                EternalityParam.InabaBufGainNum = 0;
-                EternalityParam.EgoCoolDown = false;
-                EternalityParam.Puzzle.Clear();
-            }
+            EternalityParam.Librarian.Reset();
+            EternalityParam.Enemy.Reset();
+            EternalityParam.PickedEmotionCard = 0;
+            EternalityParam.EgoCoolDown = false;
         }
-        public static UnitBattleDataModel AddCustomFixUnitModel(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor, int EquipID)
+        //每一幕结束时记录下双方阵营的时辰狂气(以及未来谜题的进度)
+        [HarmonyPatch(typeof(StageController),nameof(StageController.RoundEndPhase_ExpandMap))]
+        [HarmonyPostfix]
+        public static void StageController_RoundEndPhase_ExpandMap()
         {
-            LorId lorId = new LorId(packageId, EquipID);
-            UnitDataModel unitDataModel = new UnitDataModel(lorId, floor.Sephirah, true);
-            unitDataModel.SetTemporaryPlayerUnitByBook(lorId);
-            unitDataModel.SetCustomName(unitDataModel.bookItem.Name);
-            unitDataModel.CreateDeckByDeckInfo();
-            unitDataModel.forceItemChangeLock = true;
-            UnitBattleDataModel unitBattleDataModel = new UnitBattleDataModel(stage, unitDataModel);
-            unitBattleDataModel.Init();
-            return unitBattleDataModel;
+            EternalityParam.Librarian.RoundEndRecord();
+            EternalityParam.Enemy.RoundEndRecord();
         }
-        public static void UnitModelList(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor, List<int> battleUnits)
-        {
-            List<UnitBattleDataModel> list = new List<UnitBattleDataModel>();
-            foreach (int equipID in battleUnits)
-            {
-                list.Add(AddCustomFixUnitModel(__instance, stage, floor, equipID));
-            }
-            __instance._unitList= list;
-        }
+        //第二战设置友方司书
         [HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.InitUnitList))]
         [HarmonyPrefix]
         public static bool StageLibraryFloorModel_InitUnitList(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor)
@@ -404,6 +388,28 @@ namespace EternalityTemple
             }
             return result;
         }
+        public static void UnitModelList(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor, List<int> battleUnits)
+        {
+            List<UnitBattleDataModel> list = new List<UnitBattleDataModel>();
+            foreach (int equipID in battleUnits)
+            {
+                list.Add(AddCustomFixUnitModel(__instance, stage, floor, equipID));
+            }
+            __instance._unitList = list;
+        }
+        public static UnitBattleDataModel AddCustomFixUnitModel(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor, int EquipID)
+        {
+            LorId lorId = new LorId(packageId, EquipID);
+            UnitDataModel unitDataModel = new UnitDataModel(lorId, floor.Sephirah, true);
+            unitDataModel.SetTemporaryPlayerUnitByBook(lorId);
+            unitDataModel.SetCustomName(unitDataModel.bookItem.Name);
+            unitDataModel.CreateDeckByDeckInfo();
+            unitDataModel.forceItemChangeLock = true;
+            UnitBattleDataModel unitBattleDataModel = new UnitBattleDataModel(stage, unitDataModel);
+            unitBattleDataModel.Init();
+            return unitBattleDataModel;
+        }
+        //获取第二战敌人的列队参数
         [HarmonyPatch(typeof(LibraryFloorModel), nameof(LibraryFloorModel.GetFormationPosition))]
         [HarmonyPostfix]
         public static void LibraryFloorModel_GetFormationPosition_Post(int i, ref FormationPosition __result)
@@ -414,9 +420,10 @@ namespace EternalityTemple
                 __result = formationModel.PostionList[i];
             }
         }
+        //设置专属书页
         [HarmonyPatch(typeof(BookModel), nameof(BookModel.SetXmlInfo))]
         [HarmonyPostfix]
-        public static void BookModel_SetXmlInfo_Post(BookModel __instance, global::BookXmlInfo ____classInfo, ref List<DiceCardXmlInfo> ____onlyCards)
+        public static void BookModel_SetXmlInfo_Post(BookModel __instance, BookXmlInfo ____classInfo, ref List<DiceCardXmlInfo> ____onlyCards)
         {
             if (__instance.BookId.packageId == packageId)
             {
@@ -427,6 +434,7 @@ namespace EternalityTemple
                 }
             }
         }
+        //第二战禁用异想体
         [HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.HasSkillPoint))]
         [HarmonyPostfix]
         public static void StageLibraryFloorModel_HasSkillPoint(ref bool __result)
@@ -434,6 +442,7 @@ namespace EternalityTemple
             if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id == new LorId(packageId, 226769001))
                 __result = false;
         }
+        //第二战获取异想体？这个根本没有用处，上一个Patch你早就禁用了玩家司书的异想体了
         [HarmonyPatch(typeof(EmotionCardXmlList), nameof(EmotionCardXmlList.GetDataList), new Type[]{
                     typeof(SephirahType),
                     typeof(int),
@@ -448,6 +457,7 @@ namespace EternalityTemple
                         select x).ToList();
             return false;
         }
+        //第二战设定敌人的EGO书页
         [HarmonyPatch(typeof(StageController), nameof(StageController.ApplyEnemyCardPhase))]
         [HarmonyPostfix]
         public static void StageController_ApplyEnemyCardPhase()

@@ -23,7 +23,7 @@ namespace EternalityTemple.Kaguya
             }
             if (trio.Count < 3)
                 return;
-            trio.ForEach(x => x.bufListDetail.AddBuf(new BattleUnitBuf_KaguyaBuf(EternalityParam.KaguyaStack)));
+            trio.ForEach(x => x.bufListDetail.AddBuf(new BattleUnitBuf_KaguyaBuf(EternalityParam.GetFaction(owner.faction).KaguyaStack)));
         }
     }
 }

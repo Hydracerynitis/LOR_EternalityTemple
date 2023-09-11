@@ -8,6 +8,11 @@ namespace EternalityTemple.Universal
 {
     public class PassiveAbility_226769004: PassiveAbilityBase
     {
-
+        public override void OnRoundStart()
+        {
+            base.OnRoundStart();
+            if (EternalityParam.PickedEmotionCard < 2)
+                EternalityParam.PickedEmotionCard = 2;
+        }
     }
 }

@@ -169,7 +169,7 @@
     </EquipEffect>
     <BookIcon>ClassOneFixer</BookIcon>
     <Chapter>6</Chapter>
-    <CharacterSkin>Malkuth</CharacterSkin>
+    <CharacterSkin>ClassOneFixer</CharacterSkin>
     <Rarity>Unique</Rarity>
   </Book>
 
@@ -362,7 +362,7 @@
     <Chapter>6</Chapter>
 
     <Rarity>Unique</Rarity>
-    <CharacterSkin>Yesod</CharacterSkin>
+    <CharacterSkin>Shyao</CharacterSkin>
     <SkinGender>F</SkinGender>
   </Book>
 
@@ -546,7 +546,7 @@
     <Chapter>5</Chapter>
     <Episode>40001</Episode>
     <Rarity>Unique</Rarity>
-    <CharacterSkin>Hod</CharacterSkin>
+    <CharacterSkin>Yujin</CharacterSkin>
 
   </Book>
 

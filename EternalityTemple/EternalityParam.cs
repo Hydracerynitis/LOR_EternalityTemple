@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static UnityEngine.UI.GridLayoutGroup;
 
 namespace EternalityTemple
 {
@@ -13,7 +14,8 @@ namespace EternalityTemple
         //这个是司书敌人都会有的跨幕数据 （时辰，狂气，谜题）
         public int InabaBufGainNum = 0;
         public int KaguyaStack = 1;
-        public Dictionary<UnitBattleDataModel, List<int>> Puzzle = new Dictionary<UnitBattleDataModel, List<int>>();
+        public List<(UnitBattleDataModel,int)> PuzzleLog=new List<(UnitBattleDataModel, int)>();
+        public List<PuzzleQuestData> QuestLog =new List<PuzzleQuestData> ();
         public Faction faction;
         //这个是战斗机制需要的跨幕数据，所以并不需要创建多个个体
         public static int PickedEmotionCard = 0;
@@ -35,12 +37,14 @@ namespace EternalityTemple
         {
             KaguyaStack = 1;
             InabaBufGainNum = 0;
-            Puzzle.Clear();
+            PuzzleLog.Clear();
+            QuestLog.Clear();
         }
-        public void RoundEndRecord()
+        public void EndBattleRecord()
         {
             RecordKaguyaStack();
             RecordInabaGain();
+            RecordProgress();
         }
         private void RecordKaguyaStack()
         {
@@ -66,5 +70,27 @@ namespace EternalityTemple
                 }
             }
         }
+        private void RecordProgress()
+        {
+            List<PuzzleQuestData> removal= new List<PuzzleQuestData>();
+            foreach (BattleUnitModel unit in BattleObjectManager.instance.GetAliveList(faction))
+            {
+                foreach (PuzzleQuestData PQD in QuestLog.FindAll(x => x.questGiver == unit.UnitData))
+                {
+                    KaguyaPuzzle KP = unit.bufListDetail.GetActivatedBufList().Find(x => x is KaguyaPuzzle && (x as KaguyaPuzzle).getPuzzleId() == PQD.QuestId) as KaguyaPuzzle;
+                    if (KP == null)
+                        removal.Add(PQD);
+                    else
+                        PQD.QuestProgress = KP.stack;
+                }
+            }
+            QuestLog.RemoveAll(x => removal.Contains(x));
+        }
+    }
+    public class PuzzleQuestData
+    {
+        public int QuestId;
+        public int QuestProgress;
+        public UnitBattleDataModel questGiver;
     }
 }

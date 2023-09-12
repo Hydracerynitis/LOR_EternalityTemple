@@ -18,10 +18,33 @@ namespace EternalityTemple.Kaguya
             base.Init(owner);
             stack = 0;
         }
-        public void AddPuzzle(int i)
+        public void AddPuzzle(int i, bool replay=false)
         {
             if (!CompletePuzzle.Contains(i))
+            {
                 CompletePuzzle.Add(i);
+                if (!replay)
+                    EternalityParam.GetFaction(_owner.faction).PuzzleLog.Add((_owner.UnitData, i));
+                switch(i)
+                {
+                    case 1:
+                        _owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769006));
+                        break;
+                    case 2:
+                        _owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769007));
+                        break;
+                    case 3:
+                        _owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769008));
+                        break;
+                    case 4:
+                        _owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769009));
+                        break;
+                    case 5:
+                        _owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769010));
+                        break;
+                }
+            }
+                
         }
         public override string bufActivatedText => String.Format(BattleEffectTextsXmlList.Instance.GetEffectTextDesc(keywordId), CompletePuzzle.Count, getPuzzleName(), getPuzzleDiceDesc(), getPuzzleBonus());
         private string getPuzzleName()

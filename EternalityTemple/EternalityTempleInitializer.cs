@@ -17,6 +17,7 @@ using EternalityTemple.Util;
 using System.Linq;
 using EternalityTemple.Yagokoro;
 using EternalityTemple.Inaba;
+using System.Security.Cryptography;
 
 namespace EternalityTemple
 {
@@ -25,7 +26,7 @@ namespace EternalityTemple
     {
         public static string ModPath;
         public static Dictionary<string, Sprite> ArtWorks;
-        
+        public static List<UnitBattleDataModel> SecondBattleLibrarians=new List<UnitBattleDataModel>();
         public const string packageId = "TheWorld_Eternity";
         private static Dictionary<SpeedDiceUI, Color> ChangedSpeedDiceUI = new Dictionary<SpeedDiceUI, Color>();
         
@@ -235,58 +236,6 @@ namespace EternalityTemple
                 return false;
             return true;
         }
-        //谜题骰额外添加宝具卡，这个会重做宝具卡的时候会删除
-        [HarmonyPatch(typeof(BattleAllyCardDetail), nameof(BattleAllyCardDetail.GetHand))]
-        [HarmonyPostfix]
-        public static void BattleUnitCardsInHandUI_UpdateCardList_BattleAllyCardDetail_GetHand_Post(BattleAllyCardDetail __instance, List<BattleDiceCardModel> __result)
-        {
-            string name = new Diagonis.StackTrace().GetFrame(2).GetMethod().FullDescription();
-            if (!name.Contains("BattleUnitCardsInHandUI::UpdateCardList"))
-                return;
-            BattleUnitCardsInHandUI CardUI = BattleManagerUI.Instance.ui_unitCardsInHand;
-            BattleUnitModel displayed = CardUI.SelectedModel;
-            if (CardUI.CurrentHandState != BattleUnitCardsInHandUI.HandState.BattleCard || __instance._self != displayed || !displayed.passiveDetail.HasPassive<PassiveAbility_226769001>())
-                return;
-            SpeedDiceUI speedDice = BattleManagerUI.Instance.selectedAllyDice;
-            if (speedDice == null)
-                return;
-            if (displayed.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_PuzzleBuf) is BattleUnitBuf_PuzzleBuf puzzlebuf)
-            {
-                int unavailable = displayed.speedDiceResult.FindAll(x => x.breaked).Count;
-                DiceCardXmlInfo xml = null;
-                if (puzzlebuf.CompletePuzzle.Contains(1) && speedDice._speedDiceIndex == unavailable + 0)
-                    xml = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, 226769006));
-                if (puzzlebuf.CompletePuzzle.Contains(2) && speedDice._speedDiceIndex == unavailable + 1)
-                    xml = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, 226769007));
-                if (puzzlebuf.CompletePuzzle.Contains(3) && speedDice._speedDiceIndex == unavailable + 2)
-                    xml = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, 226769008));
-                if (puzzlebuf.CompletePuzzle.Contains(4) && speedDice._speedDiceIndex == unavailable + 3)
-                    xml = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, 226769009));
-                if (puzzlebuf.CompletePuzzle.Contains(5) && speedDice._speedDiceIndex == unavailable + 4)
-                    xml = ItemXmlDataList.instance.GetCardItem(new LorId(packageId, 226769010));
-                if (xml == null)
-                    return;
-                BattleDiceCardModel card = BattleDiceCardModel.CreatePlayingCard(xml);
-                card.temporary = true;
-                card.owner = displayed;
-                __result.Add(card);
-            }
-        }
-        //阻止卸载宝具卡时会使其返回至牌库里，会在重做宝具卡后删除
-        [HarmonyPatch(typeof(BattleAllyCardDetail), nameof(BattleAllyCardDetail.ReturnCardToHand))]
-        [HarmonyPrefix]
-        public static bool BattleAllyCardDetail_ReturnCardToHand_Pre(BattleAllyCardDetail __instance, BattleDiceCardModel appliedCard)
-        {
-            LorId id = appliedCard.GetID();
-            if (id.packageId == packageId && id.id <= 226769010 && id.id >= 226769006)
-            {
-                __instance._self.cardSlotDetail.ReserveCost(-appliedCard.GetCost());
-                __instance._cardInUse.Remove(appliedCard);
-                __instance._cardInReserved.Remove(appliedCard);
-                return false;
-            }
-            return true;
-        }
         //观测被动，玩家额外选取2个异想体
         [HarmonyPatch(typeof(StageLibraryFloorModel),nameof(StageLibraryFloorModel.OnPickPassiveCard))]
         [HarmonyPostfix]
@@ -355,7 +304,7 @@ namespace EternalityTemple
         //开始接待时重设跨幕的参数
         [HarmonyPatch(typeof(StageController), nameof(StageController.InitCommon))]
         [HarmonyPostfix]
-        public static void StageLibraryFloorModel_Init(StageLibraryFloorModel __instance, StageClassInfo stage)
+        public static void StageController_InitCommon(StageController __instance, StageClassInfo stage)
         {
             EternalityParam.Librarian.Reset();
             EternalityParam.Enemy.Reset();
@@ -363,54 +312,120 @@ namespace EternalityTemple
             EternalityParam.EgoCoolDown = false;
         }
         //每一幕结束时记录下双方阵营的时辰狂气(以及未来谜题的进度)
-        [HarmonyPatch(typeof(StageController),nameof(StageController.RoundEndPhase_ExpandMap))]
-        [HarmonyPostfix]
-        public static void StageController_RoundEndPhase_ExpandMap()
+        [HarmonyPatch(typeof(StageController),nameof(StageController.ClearResources))]
+        [HarmonyPrefix]
+        public static void StageController_ClearResources()
         {
-            EternalityParam.Librarian.RoundEndRecord();
-            EternalityParam.Enemy.RoundEndRecord();
+            EternalityParam.Librarian.EndBattleRecord();
+            EternalityParam.Enemy.EndBattleRecord();
+        }
+        //禁用mod的核心书页检查xml里重复的被动
+        [HarmonyPatch(typeof(BookModel),nameof(BookModel.TryGainUniquePassive))]
+        [HarmonyPrefix]
+        public static bool BookModel_TryGainUniquePassive(BookModel __instance)
+        {
+            if (__instance.ClassInfo.id.packageId != packageId)
+                return true;
+            List<PassiveModel> passiveList = new List<PassiveModel>();
+            //passiveList.AddRange(__instance._activatedAllPassives.FindAll(x => x.originpassive != null));
+            foreach (LorId lorId in __instance._classInfo.EquipEffect.PassiveList.FindAll(x => PassiveXmlList.Instance.GetData(x) != null))
+            {
+                PassiveModel passiveModel = new PassiveModel(lorId, __instance.instanceId);
+                int index = passiveList.FindIndex(x => x.originpassive.id == 9999999);
+                if (index > 0)
+                    passiveList.Insert(index, passiveModel);
+                else
+                    passiveList.Add(passiveModel);
+            }
+            List<PassiveModel> removal = new List<PassiveModel>();
+            foreach (PassiveModel passiveModel in passiveList)
+            {
+                PassiveModel pmodel = passiveModel;
+                if (pmodel.originpassive == null)
+                    removal.Add(pmodel);
+                else if (__instance._classInfo.EquipEffect.PassiveList.Find(x => x == pmodel.originpassive.id) == null && !(pmodel.originpassive.id == 9999999))
+                    removal.Add(pmodel);
+            }
+            foreach (PassiveModel passiveModel in removal)
+                passiveList.Remove(passiveModel);
+            if (passiveList.Count < __instance.ClassInfo.SuccessionPossibleNumber)
+            {
+                int num = __instance.ClassInfo.SuccessionPossibleNumber - passiveList.Count;
+                for (int index = 0; index < num; ++index)
+                {
+                    PassiveModel passiveModel = new PassiveModel(LorId.None, __instance.instanceId, 1);
+                    passiveList.Add(passiveModel);
+                }
+            }
+            __instance.SortPassive(passiveList);
+            if (passiveList.Count > __instance.ClassInfo.SuccessionPossibleNumber)
+            {
+                while (passiveList.Count > __instance.ClassInfo.SuccessionPossibleNumber)
+                {
+                    int lastIndex = passiveList.FindLastIndex(x => x.originpassive.id == 9999999);
+                    if (lastIndex != -1)
+                        passiveList.RemoveAt(lastIndex);
+                    else
+                        break;
+                }
+            }
+            __instance._activatedAllPassives.Clear();
+            __instance._activatedAllPassives.AddRange(passiveList);
+            return false;
+        }
+        //第二战更改UI的方向
+        [HarmonyPatch(typeof(StageController),nameof(StageController.IsKeterFinalBattle))]//修改这个方式好在_allyFormationDirection被赋值后又在其被其他方法引用前修改其数值
+        [HarmonyPostfix]
+        public static void StageController_ChangeAllyForamtionDirection(StageController __instance)
+        {
+            if (__instance.GetStageModel().ClassInfo.id == new LorId(packageId, 226769001))
+                __instance._allyFormationDirection = Direction.LEFT;
         }
         //第二战设置友方司书
+        [HarmonyPatch(typeof(StageModel),nameof(StageModel.Init))]
+        [HarmonyPrefix]
+        public static void StageModel_Init(StageModel __instance, StageClassInfo classInfo)
+        {
+            if(classInfo.id==new LorId(packageId, 226769001))
+            {
+                __instance._classInfo = classInfo;
+                SecondBattleLibrarians.Clear();
+                SecondBattleLibrarians.AddRange(GetCustomLibrarianUnit(__instance, new List<int> { 226769103, 226769104, 226769105 }));
+            }
+        }
         [HarmonyPatch(typeof(StageLibraryFloorModel), nameof(StageLibraryFloorModel.InitUnitList))]
         [HarmonyPrefix]
         public static bool StageLibraryFloorModel_InitUnitList(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor)
         {
-            bool flag = stage.ClassInfo.id.packageId != packageId || stage.ClassInfo.id.id != 226769001/* || Singleton<StageController>.Instance.CurrentWave != 1 */;
             bool result;
-            if (flag)
-            {
+            if (stage.ClassInfo.id.packageId != packageId || stage.ClassInfo.id.id != 226769001/* || Singleton<StageController>.Instance.CurrentWave != 1 */)
                 result = true;
-            }
             else
             {
-                UnitModelList(__instance, stage, floor, new List<int>{226769103,226769104,226769105});
+                __instance._unitList.AddRange(SecondBattleLibrarians);
                 result = false;
             }
             return result;
         }
-        public static void UnitModelList(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor, List<int> battleUnits)
+        public static List<UnitBattleDataModel> GetCustomLibrarianUnit(StageModel stage,  List<int> battleUnits)
         {
             List<UnitBattleDataModel> list = new List<UnitBattleDataModel>();
             foreach (int equipID in battleUnits)
             {
-                list.Add(AddCustomFixUnitModel(__instance, stage, floor, equipID));
+                LorId lorId = new LorId(packageId, equipID);
+                UnitDataModel unitDataModel = new UnitDataModel(lorId, SephirahType.Malkuth, true);
+                unitDataModel.SetTemporaryPlayerUnitByBook(lorId);
+                unitDataModel.SetCustomName(unitDataModel.bookItem.Name);
+                unitDataModel.CreateDeckByDeckInfo();
+                unitDataModel.forceItemChangeLock = true;
+                UnitBattleDataModel unitBattleDataModel = new UnitBattleDataModel(stage, unitDataModel);
+                unitBattleDataModel.Init();
+                list.Add(unitBattleDataModel);
             }
-            __instance._unitList = list;
+            return list;
         }
-        public static UnitBattleDataModel AddCustomFixUnitModel(StageLibraryFloorModel __instance, StageModel stage, LibraryFloorModel floor, int EquipID)
-        {
-            LorId lorId = new LorId(packageId, EquipID);
-            UnitDataModel unitDataModel = new UnitDataModel(lorId, floor.Sephirah, true);
-            unitDataModel.SetTemporaryPlayerUnitByBook(lorId);
-            unitDataModel.SetCustomName(unitDataModel.bookItem.Name);
-            unitDataModel.CreateDeckByDeckInfo();
-            unitDataModel.forceItemChangeLock = true;
-            UnitBattleDataModel unitBattleDataModel = new UnitBattleDataModel(stage, unitDataModel);
-            unitBattleDataModel.Init();
-            return unitBattleDataModel;
-        }
-        //获取第二战敌人的列队参数
-        [HarmonyPatch(typeof(LibraryFloorModel), nameof(LibraryFloorModel.GetFormationPosition))]
+        //获取第二战敌人的列队参数没有用处，所以已经弃用，包括FormationInfo.txt
+        /*[HarmonyPatch(typeof(LibraryFloorModel), nameof(LibraryFloorModel.GetFormationPosition))]
         [HarmonyPostfix]
         public static void LibraryFloorModel_GetFormationPosition_Post(int i, ref FormationPosition __result)
         {
@@ -419,7 +434,7 @@ namespace EternalityTemple
                 FormationModel formationModel = new FormationModel(Singleton<FormationXmlList>.Instance.GetData(226768));
                 __result = formationModel.PostionList[i];
             }
-        }
+        }*/
         //设置专属书页
         [HarmonyPatch(typeof(BookModel), nameof(BookModel.SetXmlInfo))]
         [HarmonyPostfix]

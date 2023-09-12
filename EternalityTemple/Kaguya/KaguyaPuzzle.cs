@@ -24,19 +24,19 @@ namespace EternalityTemple.Kaguya
             switch (getPuzzleId())
             {
                 case 1:
-                    buf = new KaguyaPuzzle1(unit);
+                    buf = new KaguyaPuzzle1(unit) { stack=0};
                     break;
                 case 2:
-                    buf = new KaguyaPuzzle2(unit);
+                    buf = new KaguyaPuzzle2(unit) { stack = 0 };
                     break;
                 case 3:
-                    buf = new KaguyaPuzzle3(unit);
+                    buf = new KaguyaPuzzle3(unit) { stack = 0 };
                     break;
                 case 4:
-                    buf = new KaguyaPuzzle4(unit);
+                    buf = new KaguyaPuzzle4(unit) { stack = 0 };
                     break;
                 case 5:
-                    buf = new KaguyaPuzzle5(unit);
+                    buf = new KaguyaPuzzle5(unit) { stack = 0 };
                     break;
             }
             if (buf != null)
@@ -71,17 +71,18 @@ namespace EternalityTemple.Kaguya
     public class KaguyaPuzzle: BattleUnitBuf
     {
         private BattleUnitModel Kaguya;
-        protected int count = 0;
+        private bool replay;
         public override string keywordIconId => RandomUtil.SelectOne("PlutoUnfairAtk", "PlutoUnfairLight", "PlutoUnfairProtect");
-        public override int paramInBufDesc => count;
-        public KaguyaPuzzle(BattleUnitModel kaguya)
+        public KaguyaPuzzle(BattleUnitModel kaguya, bool replay=false)
         {
             Kaguya = kaguya;
+            this.replay = replay;
         }
         public override void Init(BattleUnitModel owner)
         {
             base.Init(owner);
-            stack = 0;
+            if(!replay)
+                EternalityParam.GetFaction(owner.faction).QuestLog.Add(new PuzzleQuestData() { QuestId = getPuzzleId(), QuestProgress = stack, questGiver = owner.UnitData });
         }
         private BattleUnitBuf_PuzzleBuf getPuzzleBuf(BattleUnitModel unit) => unit.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_PuzzleBuf) as BattleUnitBuf_PuzzleBuf;
 
@@ -94,10 +95,12 @@ namespace EternalityTemple.Kaguya
         }
         public virtual int getPuzzleId() => -1;
     }
+    //[难题]龙颈之玉
+    //[条件]持有时施加X层[负面状态]
     public class KaguyaPuzzle1: KaguyaPuzzle, OnGiveOtherBuf
     {
         
-        public KaguyaPuzzle1(BattleUnitModel kaguya) : base(kaguya)
+        public KaguyaPuzzle1(BattleUnitModel kaguya, bool replay = false) : base(kaguya, replay)
         {
         }
         public override int getPuzzleId() => 1;
@@ -106,15 +109,17 @@ namespace EternalityTemple.Kaguya
         {
             if (buf.positiveType == BufPositiveType.Negative)
             {
-                count += stack;
-                if (count >= 20)
+                this.stack += stack;
+                if (this.stack >= 20) //修改这里的数值来修改任务的需求
                     CompletePuzzle();
             }
         }
     }
+    //[难题]佛御石之钵
+    //[条件]持有时以[防御型]骰子取得拼点胜利X次
     public class KaguyaPuzzle2 : KaguyaPuzzle
     {
-        public KaguyaPuzzle2(BattleUnitModel kaguya) : base(kaguya)
+        public KaguyaPuzzle2(BattleUnitModel kaguya, bool replay = false) : base(kaguya, replay)
         {
         }
         public override int getPuzzleId() => 2;
@@ -123,15 +128,17 @@ namespace EternalityTemple.Kaguya
         {
             if (IsDefenseDice(behavior.Detail))
             {
-                count++;
-                if (count >= 5)
+                stack++;
+                if (stack >= 5)//修改这里的数值来修改任务的需求
                     CompletePuzzle();
             }
         }
     }
+    //[难题]火鼠的皮衣
+    //[条件]持有时施加X层[烧伤]
     public class KaguyaPuzzle3 : KaguyaPuzzle, OnGiveOtherBuf
     {
-        public KaguyaPuzzle3(BattleUnitModel kaguya) : base(kaguya)
+        public KaguyaPuzzle3(BattleUnitModel kaguya, bool replay = false) : base(kaguya, replay)
         {
         }
         public override int getPuzzleId() => 3;
@@ -140,37 +147,41 @@ namespace EternalityTemple.Kaguya
         {
             if (buf is BattleUnitBuf_burn)
             {
-                count += stack;
-                if (count >= 15)
+                this.stack += stack;
+                if (this.stack >= 15)//修改这里的数值来修改任务的需求
                     CompletePuzzle();
             }
         }
     }
+    //[难题]燕的子安贝
+    //[条件]持有时恢复X点体力
     public class KaguyaPuzzle4 : KaguyaPuzzle, OnRecoverHP
     {
-        public KaguyaPuzzle4(BattleUnitModel kaguya) : base(kaguya)
+        public KaguyaPuzzle4(BattleUnitModel kaguya, bool replay = false) : base(kaguya, replay)
         {
         }
         public override int getPuzzleId() => 4;
         public override string keywordId => "KaguyaPuzzle4";
         public void OnHeal(int num)
         {
-            count +=num;
-            if (count >= 20)
+            stack +=num;
+            if (stack >= 20)//修改这里的数值来修改任务的需求
                 CompletePuzzle();
         }
     }
+    //[难题]蓬莱玉枝
+    //[条件]投掷X次骰子
     public class KaguyaPuzzle5 : KaguyaPuzzle
     {
-        public KaguyaPuzzle5(BattleUnitModel kaguya) : base(kaguya)
+        public KaguyaPuzzle5(BattleUnitModel kaguya, bool replay = false) : base(kaguya, replay)
         {
         }
         public override int getPuzzleId() => 5;
         public override string keywordId => "KaguyaPuzzle5";
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
-            count ++;
-            if (count >= 35)
+            stack ++;
+            if (stack >= 35)//修改这里的数值来修改任务的需求
                 CompletePuzzle();
         }
     }

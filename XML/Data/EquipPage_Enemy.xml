@@ -535,10 +535,10 @@
       <StartPlayPoint>4</StartPlayPoint>
       <MaxPlayPoint>4</MaxPlayPoint>
 
-			<Passive Level="1">10004</Passive>
+			<Passive Pid="@origin">10004</Passive>
       <Passive>226769021</Passive>
       <Passive>226769022</Passive>
-      <Passive Level="10">240101</Passive>
+      <Passive Pid="@origin">240101</Passive>
 
       <OnlyCard>501001</OnlyCard>
     </EquipEffect>

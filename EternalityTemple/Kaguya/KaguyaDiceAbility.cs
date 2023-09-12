@@ -8,9 +8,12 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using EternalityTemple.Yagokoro;
+using LOR_BattleUnit_UI;
+using HyperCard;
 
 namespace EternalityTemple.Kaguya
 {
+    //月之都市 书页
     public class DiceCardSelfAbility_EternityCard1 : DiceCardSelfAbilityBase
     {
         public override void OnUseCard()
@@ -26,6 +29,7 @@ namespace EternalityTemple.Kaguya
             }
         }
     }
+    //新难题[艾哲红石] 书页
     public class DiceCardSelfAbility_EternityCard2 : DiceCardSelfAbilityBase
     {
         public override void OnUseCard()
@@ -35,6 +39,7 @@ namespace EternalityTemple.Kaguya
                 card.ApplyDiceStatBonus(DiceMatch.AllDice,new DiceStatBonus() { power = -buf.stack });
         }
     }
+    //新难题[艾哲红石] 骰子
     public class DiceCardAbility_RedStone : DiceCardAbilityBase
     {
         public override void OnSucceedAttack(BattleUnitModel target)
@@ -46,6 +51,7 @@ namespace EternalityTemple.Kaguya
             target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Burn, burnstack,owner);
         }
     }
+    //新难题[Mysterium] 书页
     public class DiceCardSelfAbility_EternityCard3 : DiceCardSelfAbilityBase
     {
         public override void OnApplyCard()
@@ -78,6 +84,7 @@ namespace EternalityTemple.Kaguya
             }
         }
     }
+    //恐惧[崔斯特姆的诅咒] 书页
     public class DiceCardSelfAbility_EternityCard3_1 : DiceCardSelfAbilityBase
     {
         public override void OnEnterCardPhase(BattleUnitModel unit, BattleDiceCardModel self)
@@ -101,13 +108,9 @@ namespace EternalityTemple.Kaguya
         public override void OnSucceedAttack()
         {
             if(!card.target.bufListDetail.HasBuf<secondAttack>() && card.target.bufListDetail.HasBuf<firstAttack>())
-            {
                 card.target.bufListDetail.AddBuf(new secondAttack(owner));
-            }
-            if(!card.target.bufListDetail.HasBuf<firstAttack>())
-            {
+            if (!card.target.bufListDetail.HasBuf<firstAttack>())
                 card.target.bufListDetail.AddBuf(new firstAttack());
-            }
         }
         public class firstAttack : BattleUnitBuf
         {
@@ -131,6 +134,7 @@ namespace EternalityTemple.Kaguya
             private BattleUnitModel _kaguya;
         }
     }
+    //恐惧[崔斯特姆的诅咒] 骰子
     public class DiceCardAbility_EternityDice1 : DiceCardAbilityBase
     {
         public override void OnSucceedAttack()
@@ -205,8 +209,21 @@ namespace EternalityTemple.Kaguya
             }
         }
     }
-    public class DiceCardSelfAbility_EternityCard5: DiceCardSelfAbilityBase
+    //耀眼的龙玉 书页
+    public class DiceCardSelfAbility_PrizeCard : DiceCardSelfAbilityBase
     {
+        public virtual int index => 0;
+        public override bool OnChooseCard(BattleUnitModel owner)
+        {
+            SpeedDiceUI SDUI = BattleManagerUI.Instance.selectedAllyDice;
+            int unavailable = owner.speedDiceResult.FindAll(x => x.breaked).Count;
+            return SDUI != null && SDUI._speedDiceIndex == unavailable + index;
+        }
+    }
+    //火蜥蜴之盾 书页
+    public class DiceCardSelfAbility_EternityCard5: DiceCardSelfAbility_PrizeCard
+    {
+        public override int index => 2;
         public override void OnUseCard()
         {
             owner.bufListDetail.AddBuf(new RejunateBurn());
@@ -237,8 +254,10 @@ namespace EternalityTemple.Kaguya
             BattleObjectManager.instance.GetAliveList_opponent(owner.faction).ForEach(x => x.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Burn, 1));
         }
     }
-    public class DiceCardSelfAbility_EternityCard6 : DiceCardSelfAbilityBase
+    //无限的生命之泉 书页
+    public class DiceCardSelfAbility_EternityCard6 : DiceCardSelfAbility_PrizeCard
     {
+        public override int index => 3;
         public override void OnUseCard()
         {
             owner.bufListDetail.AddBuf(new CheckUnused(card.GetDiceBehaviorList()));
@@ -267,8 +286,10 @@ namespace EternalityTemple.Kaguya
             }
         }
     }
-    public class DiceCardSelfAbility_EternityCard7 : DiceCardSelfAbilityBase
+    //佛体的金刚石 书页
+    public class DiceCardSelfAbility_EternityCard7 : DiceCardSelfAbility_PrizeCard
     {
+        public override int index => 1;
         public override void OnStartBattle()
         {
             base.OnStartBattle();
@@ -277,6 +298,7 @@ namespace EternalityTemple.Kaguya
             card.GetDiceBehaviorList().ForEach(b => ally.ForEach(x => x.cardSlotDetail.keepCard.AddBehaviour(card.card, b)));
         }
     }
+    //佛体的金刚石 骰子
     public class DiceCardAbility_Shared : DiceCardAbilityBase
     {
         public override void AfterAction()
@@ -303,6 +325,18 @@ namespace EternalityTemple.Kaguya
             BattleObjectManager.instance.GetAliveList(owner.faction).ForEach(x => x.RecoverHP(2));
         }
     }
+    //神宝[蓬莱的弹枝-七色的弹幕-] 书页
+    public class DiceCardSelfAbility_EternityCard8 : DiceCardSelfAbility_PrizeCard
+    {
+        public override int index => 4;
+        public override bool OnChooseCard(BattleUnitModel owner)
+        {
+            SpeedDiceUI SDUI = BattleManagerUI.Instance.selectedAllyDice;
+            int unavailable = owner.speedDiceResult.FindAll(x => x.breaked).Count;
+            return SDUI != null && SDUI._speedDiceIndex == unavailable + index;
+        }
+    }
+    //神宝[蓬莱的弹枝-七色的弹幕-] 骰子
     public class DiceCardAbility_EternityDice5 : DiceCardAbilityBase
     {
         private static DiceBehaviour BulletsStorm = new DiceBehaviour() { 
@@ -329,4 +363,5 @@ namespace EternalityTemple.Kaguya
             }
         }
     }
+
 }

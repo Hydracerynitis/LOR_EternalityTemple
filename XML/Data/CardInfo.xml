@@ -194,9 +194,9 @@
     <Name>神宝[耀眼的龙玉]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	<Option>OnlyPage</Option>
+	  <Option>Personal</Option>
     <Spec Range="Far" Cost="4"/>
-    <Script></Script>
+    <Script>PrizeCard</Script>
     <BehaviourList>
      <Behaviour Min="10" Dice="15" Type="Atk" Detail="Slash" Motion="F" EffectRes="" Script="EternityDice3" ActionScript=""  Desc =""/>
      <Behaviour Min="10" Dice="15" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="" Script="EternityDice3" ActionScript=""  Desc =""/>
@@ -208,7 +208,7 @@
     <Name>神宝[佛体的金刚石]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	<Option>OnlyPage</Option>
+	<Option>Personal</Option>
     <Spec Range="Near" Cost="4"/>
     <Script>EternityCard7</Script>
     <BehaviourList>
@@ -223,7 +223,7 @@
     <Name>神宝[火蜥蜴之盾]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	<Option>OnlyPage</Option>
+	<Option>Personal</Option>
     <Spec Range="Near" Cost="3"/>
     <Script>EternityCard5</Script>
     <BehaviourList>
@@ -237,7 +237,7 @@
     <Name>神宝[无限的生命之泉]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	<Option>OnlyPage</Option>
+	<Option>Personal</Option>
     <Spec Range="Near" Cost="4"/>
     <Script>EternityCard6</Script>
     <BehaviourList>
@@ -251,9 +251,9 @@
     <Name>神宝[蓬莱的弹枝-七色的弹幕-]</Name>
     <Artwork>TheWorld_Eternity.png</Artwork>
     <Rarity>Unique</Rarity>
-	<Option>OnlyPage</Option>
+	<Option>Personal</Option>
     <Spec Range="FarArea" Cost="7"/>
-    <Script></Script>
+    <Script>EternityCard8</Script>
     <BehaviourList>
      <Behaviour Min="20" Dice="27" Type="Atk" Detail="Hit" Motion="F" EffectRes="" Script="EternityDice5" ActionScript=""  Desc =""/>
     </BehaviourList>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using BaseMod;
 public class PassiveAbility_226769022 : PassiveAbilityBase
 {
 	public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
@@ -26,10 +27,9 @@ public class PassiveAbility_226769022 : PassiveAbilityBase
 	{
 		this._stack = 0;
 	}
-
-	// Token: 0x060056F4 RID: 22260 RVA: 0x001CA7F8 File Offset: 0x001C89F8
 	public override void OnRoundStart()
 	{
+		owner.allyCardDetail.DrawCardSpecified((BattleDiceCardModel x) => x.GetID() == 501001);
 		if (this._stack > 0)
 		{
 			this.owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, this._stack, this.owner);

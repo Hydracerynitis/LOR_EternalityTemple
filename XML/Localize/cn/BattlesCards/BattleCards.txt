@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BattleCardDescRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cardDescList>
+    <BattleCardDesc ID="1101501">
+      <LocalizedName>恶意</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1101005">
+      <LocalizedName>第七枚子弹</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1103501">
+      <LocalizedName>破伞</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1110001">
+      <LocalizedName>鲜血</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1104401">
+      <LocalizedName>邪恶的化身！！！</LocalizedName>
+    </BattleCardDesc>
+    <BattleCardDesc ID="1104402">
+      <LocalizedName>邪恶的化身！！！</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="1106201">
+      <LocalizedName>狼的角色</LocalizedName>
+    </BattleCardDesc>
+	<BattleCardDesc ID="1108401">
+      <LocalizedName>洗礼</LocalizedName>
+    </BattleCardDesc>
+  </cardDescList>
+</BattleCardDescRoot>

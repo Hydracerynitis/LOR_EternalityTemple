@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleCardAbilityDescRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<BattleCardAbility ID="Execute_Eternal">
+		<Desc>对目标造成该骰子威力的伤害</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="Reflect_Eternal">
+		<Desc>[拼点胜利]对目标造成目标骰子威力的伤害和混乱伤害</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="invalid">
+		<Desc>该骰子无法投掷出任何数值</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="BlessingPlague">
+		<Desc>[战斗开始]使目标在这一幕获得1层忍耐并恢复6点血量</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="BlessingPlagueUpGraded">
+		<Desc>[战斗开始]使目标在这一幕获得2层忍耐并恢复12点血量</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="PlagueDoctor_Eternal">
+		<Desc>[我会治愈所有的疾病，你将重获新生]</Desc>
+	</BattleCardAbility>
+</BattleCardAbilityDescRoot>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<EmotionCard ID="190701">
+		<Name>ScareCrow_Wisdom_Enemy</Name>
+		<Artwork>ScareCrow_Wisdom</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>-2</EmotionRate>    
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_scarecrow1</Script>
+	</EmotionCard>  
+	<EmotionCard ID="190702">
+		<Name>Scarecrow_Harvest_Enemy</Name>
+		<Artwork>Scarecrow_Harvest</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>1</EmotionRate>		
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_scarecrow2</Script>
+	</EmotionCard>
+	<EmotionCard ID="190703">
+		<Name>Scarecrow_Rake_Enemy</Name>
+		<Artwork>Scarecrow_Rake</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>3</EmotionRate>  
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_scarecrow3</Script>
+	</EmotionCard>
+	<EmotionCard ID="190704">
+		<Name>LumberJack_Cut_Enemy</Name>
+		<Artwork>LumberJack_Cut</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-1</EmotionRate> 
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_lumberjack1</Script>
+	</EmotionCard>
+	<EmotionCard ID="190705">
+		<Name>LumberJack_Heart_Enemy</Name>
+		<Artwork>LumberJack_Heart</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>2</EmotionRate> 
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_lumberjack2</Script>
+	</EmotionCard>
+	<EmotionCard ID="190706">
+		<Name>LumberJack_Tree_Enemy</Name>
+		<Artwork>LumberJack_Tree</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>-1</EmotionRate> 
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_lumberjack3</Script>
+	</EmotionCard>
+	<EmotionCard ID="190707">
+		<Name>House_LionAtk_Enemy</Name>
+		<Artwork>House_LionAtk</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>4</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>0</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_waybackhome1</Script>
+	</EmotionCard>
+	<EmotionCard ID="190708">
+		<Name>House_BigHouse_Enemy</Name>
+		<Artwork>House_BigHouse</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>4</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>0</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_waybackhome2</Script>
+	</EmotionCard>
+	<EmotionCard ID="190709">
+		<Name>House_Home_Enemy</Name>
+		<Artwork>House_Home</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>4</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_waybackhome3</Script>
+	</EmotionCard>
+	<EmotionCard ID="190710">
+		<Name>Ozma_Boom_Enemy</Name>
+		<Artwork>Ozma_Boom</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_ozma1</Script>
+	</EmotionCard> 
+	<EmotionCard ID="190711">
+		<Name>Ozma_forgotten_Enemy</Name>
+		<Artwork>Ozma_forgotten</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>0</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_ozma2</Script>
+	</EmotionCard>
+	<EmotionCard ID="190712">
+		<Name>Ozma_Immortal_Enemy</Name>
+		<Artwork>Ozma_Immortal</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>3</EmotionLevel>
+		<EmotionRate>0</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_ozma3</Script>
+	</EmotionCard>
+	<EmotionCard ID="190713">
+		<Name>Oz_Emerald_Enemy</Name>
+		<Artwork>Oz_Emerald</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>6</Level>
+		<EmotionLevel>3</EmotionLevel>
+		<EmotionRate>2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_wizard1</Script>
+	</EmotionCard>
+	<EmotionCard ID="190714">
+		<Name>Oz_Gift_Enemy</Name>
+		<Artwork>Oz_Gift</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>6</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_wizard2</Script>
+	</EmotionCard>
+	<EmotionCard ID="190715">
+		<Name>Oz_Control_Enemy</Name>
+		<Artwork>Oz_Control</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>6</Level>
+		<EmotionLevel>3</EmotionLevel>
+		<EmotionRate>1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>chesed_wizard3</Script>
+	</EmotionCard>
+</EmotionCardXmlRoot>

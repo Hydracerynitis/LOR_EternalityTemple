@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Sephirah SephirahType="None">
+		<AbnormalityCard ID="QueenOfHatred_Laser_Enemy">
+			<Abnormality>憎恶皇后</Abnormality>
+			<CardName>博爱</CardName>
+			<AbilityDesc>该来宾以“进攻型”骰子取得拼点胜利时将随机为1名来宾恢复3~5点体力。
+该来宾以“防御型”骰子取得拼点胜利时将随机为1名来宾恢复2~4点混乱抗性。</AbilityDesc>
+			<FlaborText>以爱与正义之名~魔法少女闪亮登场！</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我来了，别担心，你们安全啦！</Dialogue>
+				<Dialogue ID="2">相信我，我会保护你们！</Dialogue>
+				<Dialogue ID="3">真正的魔法少女永远不会退缩！</Dialogue>
+				<Dialogue ID="4">出事了要马上告诉我哦？我会帮助大家。</Dialogue>
+				<Dialogue ID="5">一有危险就要大声呼唤我噢！</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="QueenOfHatred_Gun_Enemy">
+			<Abnormality>憎恶皇后</Abnormality>
+			<CardName>正义</CardName>
+			<AbilityDesc>每一幕中通过直接攻击对来宾方造成最多伤害的司书将被标记为“坏蛋”。
+该来宾击中“坏蛋”时伤害+3~5</AbilityDesc>
+			<FlaborText>如果我与正义同在，就一定有人与邪恶同在。没有坏蛋，我就失去了存在的意义。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">坏蛋终于现身了！大家小心！</Dialogue>
+				<Dialogue ID="2">不要怕，我来打败这些坏蛋！</Dialogue>
+				<Dialogue ID="3">以爱与正义之名，魔法少女现身~！</Dialogue>
+				<Dialogue ID="4">破坏和平之人，定要绳之以法。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="QueenOfHatred_Snake_Enemy">
+			<Abnormality>憎恶皇后</Abnormality>
+			<CardName>憎恶</CardName>
+			<AbilityDesc>该司书拼点失败时将追加承受2~4点混乱伤害并在下一幕中获得1层“强壮”(每一幕至多获得2次)
+若1幕之内拼点失败3次，则失去10%混乱抗性再次使用当前书页(每一幕至多触发1次)</AbilityDesc>
+			<FlaborText>我发誓要用爱去对待世间万物，然而最终只剩下一颗伤痕累累的，破碎的心。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">为什么大家都那么幸福？这样我就没有存在的理由了……</Dialogue>
+				<Dialogue ID="2">我被选中了，没了我，这世界又有谁能守护？</Dialogue>
+				<Dialogue ID="3">我最终也没能守住……</Dialogue>
+				<Dialogue ID="4">我讨厌和平的世界……我……我好像没必要存在了……</Dialogue>
+				<Dialogue ID="5">我有资格成为大家的英雄……我就是为此而生的……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="KnightOfDespair_Gaho_Enemy">
+			<Abnormality>绝望骑士</Abnormality>
+			<CardName>加护</CardName>
+			<AbilityDesc>每一幕开始时“加护”血量最低的来宾。被“加护”的司书将减少30%所受伤害和混乱伤害持续一幕</AbilityDesc>
+			<FlaborText>即使身陷桎梏，她依然狂热地试图守护他人，一如既往。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">饱经风霜的骑士，如今只剩下空洞的自尊。</Dialogue>
+				<Dialogue ID="2">如果我仍有机会守护他人……</Dialogue>
+				<Dialogue ID="3">别担心，这次我会全力守护你。</Dialogue>
+				<Dialogue ID="4">安心地，睡吧……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="KnightOfDespair_Despair_Enemy">
+			<Abnormality>绝望骑士</Abnormality>
+			<CardName>绝望</CardName>
+			<AbilityDesc>其他来宾死亡时将在下一幕中使该来宾获得2~3层“强壮”和2~3层伤害增加并失去25%最大混乱抗性。</AbilityDesc>
+			<FlaborText>越是与人倾诉，越会削其锋芒。一如她的哀伤。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">无法承受的绝望，自眼眶与胸口满溢而出……</Dialogue>
+				<Dialogue ID="2">这深不见底的绝望……对我有何意义？</Dialogue>
+				<Dialogue ID="3">我为何，注定要失去……为何……</Dialogue>
+				<Dialogue ID="4">无尽的绝望，再度填满胸膛……</Dialogue>
+				<Dialogue ID="5">我曾誓言守护，可我再三辜负他人……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="KnightOfDespair_Sword_Enemy">
+			<Abnormality>绝望骑士</Abnormality>
+			<CardName>泪剑</CardName>
+			<AbilityDesc>若该来宾拼点时进攻骰子全部命中则对目标追加造成其最大生命值10%(至多12点)的伤害</AbilityDesc>
+			<FlaborText>若是再度被正义背叛，数十把利剑便将迷茫地四处飘荡，最终指向无法守护之人。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">以泪水和绝望磨砺的剑锋，永远精准。</Dialogue>
+				<Dialogue ID="2">向这把以绝望与泪水磨就的利剑，宣誓。</Dialogue>
+				<Dialogue ID="3">忌用卑劣手段，不得心存怜悯……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Greed_Break_Enemy">
+			<Abnormality>贪婪国王</Abnormality>
+			<CardName>放纵</CardName>
+			<AbilityDesc>该来宾使用书页时若第1颗骰子取得拼点胜利，则有25%的概率摧毁目标当前书页的所有骰子</AbilityDesc>
+			<FlaborText>第一颗欲望之种源于对幸福的纯粹向往。小小的种子不甘于现状，逐渐变得又大又硬。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">小小的声音于脑海中回响，要我沉浸在追求幸福的贪欲之中……</Dialogue>
+				<Dialogue ID="2">花开之时贪恋蜜糖，又有什么不好的？</Dialogue>
+				<Dialogue ID="3">起初，这纯粹是对幸福的向往。</Dialogue>
+				<Dialogue ID="4">对幸福的渴望，永恒不变。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Greed_Protect_Enemy">
+			<Abnormality>贪婪国王</Abnormality>
+			<CardName>幸福之路</CardName>
+			<AbilityDesc>该来宾每取得1次拼点胜利，便在下一幕中使自身获得1层随机增益(“忍耐”,"强壮"，“敏捷”)。(每种增益一幕至多触发3次)</AbilityDesc>
+			<FlaborText>幸福化作痴迷，痴迷又化成贪婪，而贪婪则永远凝结为金黄的琥珀。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">最终，纯洁的欲望化作金色的琥珀，变得无比坚硬。</Dialogue>
+				<Dialogue ID="2">这份贪欲，必将永放光芒。</Dialogue>
+				<Dialogue ID="3">如此耀眼之物，为何要拒绝？</Dialogue>
+				<Dialogue ID="4">期盼着每个人都能幸福，我的幸福自然也包含在内……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Greed_Eat_Enemy">
+			<Abnormality>贪婪国王</Abnormality>
+			<CardName>贪婪</CardName>
+			<AbilityDesc>该司书拼点胜利时若点数超出目标4点，则追加3~7点伤害并为自身恢复2~5点体力。
+拼点失败时若点数低于目标4点，则失去3~7点体力并为目标恢复2~5点体力。</AbilityDesc>
+			<FlaborText>不再是魔法少女的女孩吃掉了许多东西。权力，金钱，名誉，以及其他形式的欢愉。她将目光所及的一切吞噬殆尽，如今只剩下本能的贪婪。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">宝石加剧了欲望的饥渴。</Dialogue>
+				<Dialogue ID="2">然而欲望想要永生，渴求那深邃的永恒。</Dialogue>
+				<Dialogue ID="3">我的篮子很大，怎么也装不满。</Dialogue>
+				<Dialogue ID="4">四周已然空无一物，唯有发自心底的贪婪。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+				<AbnormalityCard ID="Angry_Angry_Enemy">
+			<Abnormality>愤怒侍从</Abnormality>
+			<CardName>愤怒</CardName>
+			<AbilityDesc>该来宾会额外使用一张不分敌我的范围杀伤书页“邪恶的化身！！！”</AbilityDesc>
+			<FlaborText>侍从摒弃了信念，意图全心全意地信任某人，然却遭到背叛。如今的她被自己的愤怒所驱使。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">呃呃呃！！！</Dialogue>
+				<Dialogue ID="2">呃呃呃……啊啊啊！！！</Dialogue>
+				<Dialogue ID="3">啊啊啊啊！！！！！</Dialogue>
+				<Dialogue ID="4">异界的罪人！！！邪恶的化身！！！</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Angry_Friend_Enemy">
+			<Abnormality>愤怒侍从</Abnormality>
+			<CardName>朋友</CardName>
+			<AbilityDesc>应用该异想体书页后，该来宾击中的第1名司书将被标记为“朋友”。
+若该来宾击杀“朋友”，则为所有来宾恢复3点光芒及10%最大体力与最大混乱抗性。
+“朋友”死亡后，该来宾可将其余司书标记为“朋友”。</AbilityDesc>
+			<FlaborText>尽管愤怒侍从比任何人都注重正义与均衡，却仍与她们的敌人“隐士”分享学识，暗中成为了朋友。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">请呼唤我……请呼唤我的名字……</Dialogue>
+				<Dialogue ID="2">朋友……我的朋友……互相依赖的朋友……</Dialogue>
+				<Dialogue ID="3">我们……是真正的朋友。对不对？</Dialogue>
+				<Dialogue ID="4">比任何人都珍贵的羁绊，就这么……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Angry_Poison_Enemy">
+			<Abnormality>愤怒侍从</Abnormality>
+			<CardName>毒液</CardName>
+			<AbilityDesc>对所有司书施加5层“腐蚀”。</AbilityDesc>
+			<FlaborText>终于，在那相遇之日，隐士带领一众手下毁灭了侍从的世界。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">均衡崩坏，正义消亡……</Dialogue>
+				<Dialogue ID="2">所以我失败了。被心爱的朋友所击溃。</Dialogue>
+				<Dialogue ID="3">利用与被利用的存在。这便是我们。</Dialogue>
+				<Dialogue ID="4">曾经发生过同样的事……为他推翻了一切……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+				<AbnormalityCard ID="NihilClown_Card_Enemy">
+			<Abnormality>虚无弄臣</Abnormality>
+			<CardName>魔法少女</CardName>
+			<AbilityDesc>若累计取得25次拼点失败后，则自下一幕起该司书将免疫所有负面状态并在每一幕开始时获得5层“守护”。
+该效果触发后，该司书拼点失败或被击中时将在下一幕中对目标施加1层“腐蚀”与“易损”(每一幕至多触发2次)</AbilityDesc>
+			<FlaborText>弄臣沿着每个人来时的路往回走，却发现路的尽头总会出现祂自己。也不知是她们合在一起变成了祂，还是祂正逐渐变成她们了呢。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">究竟是你们成就了我，还是我成就了你们。</Dialogue>
+				<Dialogue ID="2">我长得像所有人，所有人合在一起也长得像我。</Dialogue>
+				<Dialogue ID="3">慢慢追溯，你来时的路罢。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="NihilClown_Nihil_Enemy">
+			<Abnormality>虚无弄臣</Abnormality>
+			<CardName>空虚</CardName>
+			<AbilityDesc>命中时移除目标随机一张书页(每张书页只触发一次)
+因此被移除书页的司书将永久获得2层强壮与忍耐</AbilityDesc>
+			<FlaborText>沉思的弄臣。可悲的小丑。祂甚至没有那只指明方向的勇敢的毛孩，只是毫无意义地迈出步伐。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">哪一条才是正确的路。我该去往何处？</Dialogue>
+				<Dialogue ID="2">前方究竟是悬崖还是深渠，我一无所知。</Dialogue>
+				<Dialogue ID="3">为我指明方向的，那只聪明的毛孩，你在哪里？</Dialogue>
+				<Dialogue ID="4">心灵空虚，思想空虚。越是如此，恐惧便会消失。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="NihilClown_fusion_Enemy">
+			<Abnormality>虚无弄臣</Abnormality>
+			<CardName>虚无</CardName>
+			<AbilityDesc>该异想体书页仅可对同时应用“贪婪”，“憎恶”，“绝望”与“愤怒”这4张异想体书页的来宾生效。
+移除“贪婪”，“憎恶”与“愤怒”的负面效果。
+每一幕开始时对除该司书外的所有角色施加3层“虚弱”，“破绽”与“束缚”</AbilityDesc>
+			<FlaborText>决定相信自己的直觉后，弄臣边走边说出了在这条路上遇见的每一个人的名字。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">愚昧指引前路，除此再无他物。</Dialogue>
+				<Dialogue ID="2">被感官的欲望蒙蔽双眼，一脚坠下悬崖。</Dialogue>
+				<Dialogue ID="3">倘若无法找到正确的方法，即便心烦意乱，也要相信自己的直觉！</Dialogue>
+				<Dialogue ID="4">所有人的苦痛，融为一体罢。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+  	</Sephirah>
+</AbnormalityCardsRoot>

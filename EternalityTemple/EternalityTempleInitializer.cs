@@ -74,6 +74,13 @@ namespace EternalityTemple
                 ArtWorks[withoutExtension] = sprite;
             }
         }
+        [HarmonyPatch(typeof(EmotionCardXmlList), nameof(EmotionCardXmlList.GetEnemyEmotionNeutralCardList))]
+        [HarmonyPostfix]
+        public static void EmotionCardXmlList_GetEnemyEmotionNeutralCardList(ref List<EmotionCardXmlInfo> __result)
+        {
+            __result.Remove(Singleton<EmotionCardXmlList>.Instance.GetData(1, SephirahType.None));
+            __result.Remove(Singleton<EmotionCardXmlList>.Instance.GetData(4, SephirahType.None));
+        }
         //mod战斗需要的基础书和无限数字显示
         [HarmonyPatch(typeof(UIInvitationDropBookSlot), nameof(UIInvitationDropBookSlot.SetData_DropBook))]
         [HarmonyPostfix]
@@ -277,12 +284,12 @@ namespace EternalityTemple
             }
             return true;
         }
-        //设定Malkuth，Yesod，Hod的外观，让他们穿上对应的衣服
+        //设定Malkuth，Yesod，Hod...的外观，让他们穿上对应的衣服
         [HarmonyPatch(typeof(UnitDataModel),nameof(UnitDataModel.Init))]
         [HarmonyPostfix]
         public static void UnitDataModel_Init_Post(UnitDataModel __instance, LorId defaultBook)
         {
-            if (defaultBook.packageId==packageId && (defaultBook.id== 226769011 || defaultBook.id == 226769016 || defaultBook.id == 226769021))
+            if (defaultBook.packageId == packageId) 
             {
                 switch(defaultBook.id) 
                 {
@@ -297,6 +304,36 @@ namespace EternalityTemple
                     case 226769021:
                         __instance._defaultBook = new BookModel(BookXmlList.Instance.GetData(3));
                         __instance._customizeData = new UnitCustomizingData(new LorId(3));
+                        break;
+                    case 226769026:
+                        __instance._defaultBook = new BookModel(BookXmlList.Instance.GetData(4));
+                        __instance._customizeData = new UnitCustomizingData(new LorId(4));
+                        break;
+                    case 226769031:
+                        __instance._defaultBook = new BookModel(BookXmlList.Instance.GetData(5));
+                        __instance._customizeData = new UnitCustomizingData(new LorId(5));
+                        break;
+                    case 226769036:
+                        __instance._defaultBook = new BookModel(BookXmlList.Instance.GetData(6));
+                        __instance._customizeData = new UnitCustomizingData(new LorId(6));
+                        break;
+                    case 226769041:
+                        __instance._defaultBook = new BookModel(BookXmlList.Instance.GetData(7));
+                        __instance._customizeData = new UnitCustomizingData(new LorId(7));
+                        break;
+                    case 226769046:
+                        __instance._defaultBook = new BookModel(BookXmlList.Instance.GetData(8));
+                        __instance._customizeData = new UnitCustomizingData(new LorId(8));
+                        break;
+                    case 226769051:
+                        __instance._defaultBook = new BookModel(BookXmlList.Instance.GetData(9));
+                        __instance._customizeData = new UnitCustomizingData(new LorId(9));
+                        break;
+                    case 226769056:
+                        __instance._defaultBook = new BookModel(BookXmlList.Instance.GetData(10));
+                        __instance._customizeData = new UnitCustomizingData(new LorId(10));
+                        break;
+                    default:
                         break;
                 }
             }

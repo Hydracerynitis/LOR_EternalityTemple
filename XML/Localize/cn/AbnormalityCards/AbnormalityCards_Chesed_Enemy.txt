@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Sephirah SephirahType="None">
+		<AbnormalityCard ID="ScareCrow_Wisdom_Enemy">
+			<Abnormality>求知的草人</Abnormality>
+			<CardName>被扯出的智慧</CardName>
+			<AbilityDesc>减少所有骰子威力-1-3点，并投掷后有25%的几率再次重投 (每个骰子最多触发一次)</AbilityDesc>
+			<FlaborText>归来之时，他的前额多了一道长长的疤痕。当被人问及是否痊愈时，他只答道觉得脑袋变轻了。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">智慧……我所缺乏的东西……快把智慧给我……</Dialogue>
+				<Dialogue ID="2">我的脑袋空空如也……只是一堆不起眼的稻草……</Dialogue>
+				<Dialogue ID="3">人们说话总是不过脑……我能让那些脑子物尽其用……</Dialogue>
+				<Dialogue ID="4">成为一名智者……会是什么样的感觉……应该无所不知吧……？</Dialogue>
+				<Dialogue ID="5">如果能恢复原状……我不介意把脑袋扯下来……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Scarecrow_Harvest_Enemy">
+			<Abnormality>求知的草人</Abnormality>
+			<CardName>收割</CardName>
+			<AbilityDesc>该来宾击中目标时恢复2~5点混乱抗性，如果目标混乱抗性高于自身则追加2~4点混乱伤害</AbilityDesc>
+			<FlaborText>它会对特定职员表现出攻击性，并试图夺走对方的大脑。这类职员在IQ测试中普遍成绩优异。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我好像，真的变聪明了……现在我什么都知道了……</Dialogue>
+				<Dialogue ID="2">好……太好了……吃得越多，就会越聪明……对不对？</Dialogue>
+				<Dialogue ID="3">我变聪明了吗……？也许我不单单是一堆稻草了……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Scarecrow_Rake_Enemy">
+			<Abnormality>求知的草人</Abnormality>
+			<CardName>钉耙</CardName>
+			<AbilityDesc>该来宾命中目标时将目标手牌随机一个骰子加入其书页中(每张书页只能触发1次)</AbilityDesc>
+			<FlaborText>本该耕耘田地的农具却被用于破开大脑，我们当中有多少聪明才子惨死在这杆钉耙之下？</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">把你的智慧，给我……</Dialogue>
+				<Dialogue ID="2">我也想，变得和其他人一样聪明……</Dialogue>
+				<Dialogue ID="3">那引领人类前进的智慧……我好想要……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="LumberJack_Cut_Enemy">
+			<Abnormality>热心的樵夫</Abnormality>
+			<CardName>温暖的心</CardName>
+			<AbilityDesc>若该来宾攻击剩余光芒数高于2点的目标，则使自身的“进攻型”骰子威力+1~2</AbilityDesc>
+			<FlaborText>一怒之下，它抡起斧头砍穿了巫师的心脏。那颗心正温暖而有力地跳动着。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">这就是……心跳的感觉……</Dialogue>
+				<Dialogue ID="2">心跳得越快……速度也会越快……</Dialogue>
+				<Dialogue ID="3">这个人越是热心……我的动作就越是灵敏……</Dialogue>
+				<Dialogue ID="4">心是个神奇的东西……我终于……可以笑了……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="LumberJack_Heart_Enemy">
+			<Abnormality>热心的樵夫</Abnormality>
+			<CardName>心脏</CardName>
+			<AbilityDesc>若该来宾在1幕之内至少造成15点伤害，则随机使手中2张费用最高的书页费用-1
+该来宾使用费用低于2的书页时额外造成25%伤害</AbilityDesc>
+			<FlaborText>再多的心脏也无法填补空缺，那台曾是樵夫的机器不再劈砍树木，而是采伐人类。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">需要……塞满……空腔……</Dialogue>
+				<Dialogue ID="2">我不想再感受……那空虚寂寞的心……</Dialogue>
+				<Dialogue ID="3">铅心……又硬……又冷……</Dialogue>
+				<Dialogue ID="4">怀抱空洞的心……独自悲伤……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="LumberJack_Tree_Enemy">
+			<Abnormality>热心的樵夫</Abnormality>
+			<CardName>伐木</CardName>
+			<AbilityDesc>该来宾命中时吸取目标1点光芒 (每一幕至多触发2次)</AbilityDesc>
+			<FlaborText>在那拥有无数心脏的森林之中，无论怎么砍伐，树木依然青翠如常。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">砍倒了更多的树……可这片森林……依旧葱郁……</Dialogue>
+				<Dialogue ID="2">想变得温暖……需要更强的……</Dialogue>
+				<Dialogue ID="3">随手填满这个空腔……可还是……觉得冷……</Dialogue>
+				<Dialogue ID="4">为了砍倒更多的树……要一刻不停地磨斧……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="House_LionAtk_Enemy">
+			<Abnormality>归家的路途</Abnormality>
+			<CardName>勇气</CardName>
+			<AbilityDesc>每一幕开始时该来宾将获得“存活来宾数-2”层“强壮”与“守护”。
+(若数值为负则改为获得“虚弱”与“易损”)</AbilityDesc>
+			<FlaborText>今后能一直跟着你喵？这样我就有勇气撕碎他们……</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">朋友呀，有你在，我就什么也不怕！</Dialogue>
+				<Dialogue ID="2">大家聚在一起走的路~跳起舞来走的路！</Dialogue>
+				<Dialogue ID="3">朋友呀，朋友们啊~！不要犹豫啦！</Dialogue>
+				<Dialogue ID="4">没有什么能阻挡我们！</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="House_BigHouse_Enemy">
+			<Abnormality>归家的路途</Abnormality>
+			<CardName>家</CardName>
+			<AbilityDesc>每一幕开始时至多为3名司书赋予数字。
+该来宾会根据数字顺序攻击司书并使自身的“进攻型”骰子伤害+3
+			</AbilityDesc>
+			<FlaborText>就这样，我开始了无尽的冒险，永远回不了家了。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">别再阻挠我们了！快让我回家！</Dialogue>
+				<Dialogue ID="2">啊~是那个家伙！那个坏巫师！</Dialogue>
+				<Dialogue ID="3">那个坏巫师，竟把我的朋友们……！</Dialogue>
+				<Dialogue ID="4">朋友啊，朋友们呐。一起回家吧？</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="House_Home_Enemy">
+			<Abnormality>归家的路途</Abnormality>
+			<CardName>同行之路</CardName>
+			<AbilityDesc>该来宾攻击其指定目标时(也就是未能通过转移其攻击目标保护目标司书)，该来宾当前书页的所有骰子威力+1~2
+			</AbilityDesc>
+			<FlaborText>一同出发吧。美丽的世界。梦的世界……</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我正在睡午觉……可突然之间……</Dialogue>
+				<Dialogue ID="2">呼哟~大家一起走吧~</Dialogue>
+				<Dialogue ID="3">跳起舞来，一起回家吧！</Dialogue>
+				<Dialogue ID="4">这条路的尽头，会有无比美丽的……梦的世界。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Ozma_Boom_Enemy">
+			<Abnormality>奥兹玛</Abnormality>
+			<CardName>过去的力量</CardName>
+			<AbilityDesc>该来宾的所有书页费用+1且所有骰子威力+3~4</AbilityDesc>
+			<FlaborText>奥兹玛举起削南瓜的小刀，不顾一切地冲向巫师的所在地。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">吾名奥兹玛……被何人夺走了一切……</Dialogue>
+				<Dialogue ID="2">不想再过着被掠夺的人生……</Dialogue>
+				<Dialogue ID="3">尔等也来亲历这般感受吧……遗忘一切……失去之痛……</Dialogue>
+				<Dialogue ID="4">这一次，轮到吾来掠夺了……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Ozma_forgotten_Enemy">
+			<Abnormality>奥兹玛</Abnormality>
+			<CardName>遗忘</CardName>
+			<AbilityDesc>选中时下一幕中使自身陷入[眩晕]并无法行动且无法被指定为攻击目标
+这一幕结束时恢复40%的体力.</AbilityDesc>
+			<FlaborText>一位非常善良美丽的人，正用难以置信的表情看着自己，不是么？</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">为何更易相信他人……为何……</Dialogue>
+				<Dialogue ID="2">畏惧至此……不愿触摸脸庞……</Dialogue>
+				<Dialogue ID="3">此种人生，仅是一息尚存……</Dialogue>
+				<Dialogue ID="4">被遗忘在地下……为何只得如此……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Ozma_Immortal_Enemy">
+			<Abnormality>奥兹玛</Abnormality>
+			<CardName>生命的粉末</CardName>
+			<AbilityDesc>该来宾承受致死伤害时将无视此次伤害并恢复50%体力和所有混乱抗性.(该来宾整场接待至多触发1次)</AbilityDesc>
+			<FlaborText>最后撒上自己最爱的肉桂粉，将南瓜紧紧抱在怀中。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">如今，在吾身侧……空余这些稚子。</Dialogue>
+				<Dialogue ID="2">呜呼……赐予汝新生吧。</Dialogue>
+				<Dialogue ID="3">不要再让吾孤单，常回来吧……</Dialogue>
+				<Dialogue ID="4">不要……不要再夺去吾的一切……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Oz_Emerald_Enemy">
+			<Abnormality>说谎的大人</Abnormality>
+			<CardName>翡翠</CardName>
+			<AbilityDesc>选中情感卡后下一幕消耗3点光芒在战斗开始时使摧毁随机司书的两张战斗书页(优先摧毁并未拼点的书页)
+之后每隔5幕该效果会再次触发一次。(该异想体效果仅会在有足够光芒时触发)</AbilityDesc>
+			<FlaborText>奥兹想到一个奇妙的主意，那翡翠般的双眼似乎愈发闪耀。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">翡翠般的道路依然闪烁着美丽的光芒。</Dialogue>
+				<Dialogue ID="2">可怜的孩子……眼神与我相仿的孩子。</Dialogue>
+				<Dialogue ID="3">沿着这条路来，或许就能找到想要的东西。</Dialogue>
+				<Dialogue ID="4">我将实现你们的愿望。你们想要什么？</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Oz_Gift_Enemy">
+			<Abnormality>说谎的大人</Abnormality>
+			<CardName>虚假的礼物</CardName>
+			<AbilityDesc>该来宾会随机且不重复地获得“激发勇气的药水”，“装有锯末的布袋”，“用铅制成的心脏”，“永远回不去的家”与“催生变异的粉末”这5种效果中的1种。</AbilityDesc>
+			<FlaborText>可怜的奥兹玛。也许她并不知道，说谎的大人不会无缘无故靠近她。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">到我这来，我会帮你忘掉所有烦恼和忧愁。</Dialogue>
+				<Dialogue ID="2">你就是台机器，不是吗？机器是不需要心的。</Dialogue>
+				<Dialogue ID="3">喝下这能激发勇气的药水吧，你将变得比任何人都要勇猛。</Dialogue>
+				<Dialogue ID="4">穿上这双鞋再上路吧，朝着你心念的故乡。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Oz_Control_Enemy">
+			<Abnormality>说谎的大人</Abnormality>
+			<CardName>巫术</CardName>
+			<AbilityDesc>选中情感卡后下一幕消耗4点光芒使手中的所有书页费用减为0(使用后复原).如果这些书页原本费用为0费则提高其威力1-2点.
+之后每隔4幕该效果会再次触发一次。(该异想体效果仅会在有足够光芒时触发)</AbilityDesc>
+			<FlaborText>不久之后，奥兹被人们称为“大巫师”。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">可怜的稻草啊。赐予你无所不知，无所不晓的智慧。</Dialogue>
+				<Dialogue ID="2">冰冷的樵夫啊。赐予你宽宏大量，慈悲为怀的爱心。</Dialogue>
+				<Dialogue ID="3">胆小的狮子啊。赐予你勇往直前，无所畏惧的勇气。</Dialogue>
+				<Dialogue ID="4">最后，彷徨的路途啊。我将送你归家。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+  	</Sephirah>
+</AbnormalityCardsRoot>

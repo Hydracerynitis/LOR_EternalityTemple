@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleEffectTextRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<effectTextList>
+		<!--Malkuth-->
+		<BattleEffectText ID="EF_Ember_Eternal">
+      		<Name>火苗</Name>
+      		<Desc>使用书页时第一颗骰子的最大值+{0},命中时该骰子施加{0}层烧伤</Desc>
+    	</BattleEffectText>
+    	<BattleEffectText ID="EF_Memory_Eternal">
+      		<Name>记忆</Name>
+      		<Desc>带有“幸福的记忆”的来宾与自身拼点时所有骰子威力+{0}</Desc>
+    	</BattleEffectText>
+    	<BattleEffectText ID="EF_Malice_Eternal">
+      		<Name>恶意</Name>
+      		<Desc>每回合开始时施加{0}层缠绕</Desc>
+    	</BattleEffectText>
+		<!--Yesod-->
+		<BattleEffectText ID="EF_HitDebuff_Eternal">
+      		<Name>回声</Name>
+      		<Desc>下{0}个进攻骰的伤害和混乱伤害-50%</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Rhythm_Eternal">
+      		<Name>节奏</Name>
+      		<Desc>每一幕开始开始时施加{0}层强壮，每一幕结束时清空层数</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_SealGauge_Eternal">
+      		<Name>棺柩</Name>
+      		<Desc>目前{0}%进度，如果达到100%则会封印目标一个速度骰</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_ButterflySeal_Eternal">
+			<Name>封印</Name>
+			<Desc>这一幕中{0}颗速度骰子无法使用。</Desc>
+		</BattleEffectText>
+		<BattleEffectText ID="EF_Bullet_Eternal">
+      		<Name>魔法子弹</Name>
+      		<Desc>每层伤害+1，每2层威力+1</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Flame_Eternal">
+      		<Name>黑焰</Name>
+      		<Desc>该角色的耐性/抵抗攻击抗性已变为脆弱/致命</Desc>
+    	</BattleEffectText>
+		<!--Hod-->
+		<BattleEffectText ID="EF_ShinyShoes_Eternal">
+      		<Name>闪亮亮鞋子</Name>
+      		<Desc>进攻威力+1~3并且速度提升1~2，受到的伤害的混乱伤害提升50%</Desc>
+    	</BattleEffectText>	
+		<BattleEffectText ID="EF_Gift_Eternal">
+      		<Name>小小礼物</Name>
+      		<Desc>该角色与{0}外的敌人拼点时有50%的概率承受3~8点伤害并在下一幕中获得2层“流血”。</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Gift_indicator_Eternal">
+      		<Name>小朋友</Name>
+      		<Desc>该司书有{0}张书页有“伙伴标记”</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Nettle_Eternal">
+      		<Name>荨麻衣</Name>
+      		<Desc>每一幕开始时所有友方单位获得{0}的“守护”,“振奋”
+每一幕结束时失去1层</Desc>
+    	</BattleEffectText>
+		<!--Netzach-->
+		<BattleEffectText ID="EF_Pebble">
+      		<Name>卵石</Name>
+      		<Desc>卵石现在与{0}攻击方式共鸣</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Thrill">
+      		<Name>快感</Name>
+      		<Desc>当快感达到3层时受到2~7伤害和混乱伤害并层数清零</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Enthusiastic">
+      		<Name>狂热崇拜</Name>
+      		<Desc>角色已失去控制若陷入混乱则在下一幕开始时解除此状态。被没失去理智的司书击中时该角色将只承受混乱伤害并且该混乱伤害提高100%。并被来宾击中时所受伤害+2~4</Desc>
+    	</BattleEffectText>
+		<!--Keter-->
+		<BattleEffectText ID="EF_SlashProtect"> 
+      		<Name>疤痕-斩击</Name>
+      		<Desc>被斩击骰子击中时减少2~5伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_HitProtect">
+      		<Name>疤痕-打击</Name>
+      		<Desc>被打击骰子击中时减少2~5伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_PenetrateProtect">
+      		<Name>疤痕-穿刺</Name>
+      		<Desc>被穿刺骰子击中时减少2~5伤害</Desc>
+    	</BattleEffectText>
+    	<BattleEffectText ID="EF_BloodbathHands">
+      		<Name>瘆白之手</Name>
+      		<Desc>被应用异想体书页-“瘆白之手”的来宾连续击中3次时将追加承受3~12点混乱伤害并重置该计数。</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_HeartExhaust">
+      		<Name>疲倦</Name>
+      		<Desc>这一幕内无法行动并且受到伤害提高2</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Lie">
+      		<Name>谎言</Name>
+      		<Desc>该司书手中书页的费用被随机调整(仅对初始费用为0~3费的书页生效)</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Nail">
+			<Name>钉</Name> 
+			<Desc>若被未获得“钉与锤”的来宾命中，则承受“‘钉’层数x5”的伤害并重置该层数。</Desc>
+		</BattleEffectText>
+		<!--Tiphereth-->
+		<BattleEffectText ID="EF_Gaho">
+      		<Name>加护</Name>
+      		<Desc>减少30%所受伤害和混乱伤害</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Tear">
+      		<Name>泪剑</Name>
+      		<Desc>拼点时进攻骰子全部命中则对目标追加造成其最大生命值10%的伤害(至多12点)</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Berserk">
+      		<Name>愤怒</Name>
+      		<Desc>该来宾会额外使用一张不分敌我的范围杀伤书页“邪恶的化身！！！”</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Nihil">
+      		<Name>虚无</Name>
+      		<Desc>移除异想体书页“贪婪”，“憎恶”，与“愤怒”的负面效果。
+每一幕开始时对除该司书外的其余角色施加3层“虚弱”，“破绽”与“束缚”。
+“贪婪”- 效果仅对自身生效。
+“憎恶”- 拼点失败不再失去混乱。
+“愤怒”- “邪恶的化身！！！”不再指定友方单位为目标</Desc>
+    	</BattleEffectText>
+		<!--Chesed-->
+    	<BattleEffectText ID="EF_WayBackHome">
+      		<Name>回家吧</Name>
+      		<Desc>应用异想体书页-“家”的来宾按1-2-3的顺序攻击对应司书时将使其“进攻型”骰子伤害+3</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Lion">
+      		<Name>同行之路</Name>
+      		<Desc>该来宾攻击其指定目标时(也就是未能通过转移其攻击目标保护目标司书)，该来宾当前书页的所有骰子威力+1~2</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_OzmaRevive">
+      		<Name>生命的粉末</Name>
+      		<Desc>异想体书页-“生命的粉末”可生效。
+承受致死伤害时将无视此次伤害并恢复所有体力和混乱抗性，并在之后清空其所有的光芒。</Desc>
+    	</BattleEffectText>
+		<!--Binah-->
+		<BattleEffectText ID="EF_Beak">
+      		<Name>责罚之喙</Name>
+      		<Desc>这一幕伤害提高3~7</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Longbird">
+      		<Name>长臂</Name>
+      		<Desc>免疫原版的负面状态</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Bigbird">
+      		<Name>巨目</Name>
+      		<Desc>每一幕开始时使随机一位司书的本幕内威力加成减半</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_HalfPower">
+      		<Name>威力减半</Name>
+      		<Desc>这一幕内威力加成减半</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="EF_Smallbird">
+      		<Name>小喙</Name>
+      		<Desc>每一幕开始时使这一幕内随机一个司书的2张手牌费用+1</Desc>
+    	</BattleEffectText>
+		<BattleEffectText ID="BloodyTree_Emotion_Damage">
+      		<Name>不要转移视线</Name>
+      		<Desc>与非应用“他人的视线”的异想体的角色拼点时对双方造成1~8伤害和混乱伤害</Desc>
+    	</BattleEffectText>
+	</effectTextList>
+</BattleEffectTextRoot>

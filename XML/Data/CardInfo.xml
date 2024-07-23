@@ -534,4 +534,117 @@
     <Chapter>7</Chapter>
   </Card>
 
+
+
+	<Card ID="1101501">
+		<Name>恶意</Name>
+		<Artwork>SnowWhite_malice</Artwork>
+		<Rarity>Rare</Rarity>
+		<Spec Range="FarAreaEach" Cost="0"/>
+		<Script></Script>
+		<ScriptDesc></ScriptDesc>
+		<BehaviourList>
+			<Behaviour Min="3" Dice="6" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="" ActionScript="malkuthboss_whitesnow_strongvine" Desc=""/>
+		</BehaviourList>
+		<Chapter>0</Chapter>
+		<Priority>0</Priority>
+	</Card>
+	<Card ID="1101005">
+		<Name>第七颗子弹</Name>
+		<Artwork>Matan_Seven</Artwork>
+		<Rarity>Rare</Rarity>
+		<Spec Range="Far" Cost="0"/>
+		<Script></Script>
+		<ScriptDesc></ScriptDesc>
+		<BehaviourList>
+			<Behaviour Min="1" Dice="1" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="EGO_Freischutz_NormalFarAtk" Script="Execute_Eternal" ActionScript="yesodboss_freischutz_faratk" Desc=""/>
+		</BehaviourList>
+		<Chapter>0</Chapter>
+		<Priority>0</Priority>
+	</Card>
+	<Card ID="1103501">
+		<Name>破伞</Name>
+		<Artwork>BlackSwan_Umbrella</Artwork>
+		<Rarity>Rare</Rarity>
+		<Spec Range="Near" Cost="0"/>
+		<Script></Script>
+		<ScriptDesc></ScriptDesc>
+		<BehaviourList>
+			<Behaviour Min="6" Dice="10" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="Reflect_Eternal" ActionScript="" Desc=""/>
+			<Behaviour Min="6" Dice="10" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="Reflect_Eternal" ActionScript="" Desc=""/>
+		</BehaviourList>
+		<Chapter>0</Chapter>
+		<Priority>0</Priority>
+	</Card>
+	<Card ID="1110001">
+		<Name>鲜血</Name>
+		<Artwork>Bloodbath_Blood</Artwork>
+		<Rarity>Unique</Rarity>
+		<Spec Range="Near" Cost="0"/>
+		<Script></Script>
+		<ScriptDesc></ScriptDesc>
+		<BehaviourList>
+			<Behaviour Min="1" Dice="1" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="" ActionScript="" Desc=""/>
+		</BehaviourList>
+		<Chapter>0</Chapter>
+		<Priority>100</Priority>
+	</Card>
+	<Card ID="1104401">
+		<Name>邪恶的化身</Name>
+		<Artwork>Angry_Angry</Artwork>
+		<Rarity>Rare</Rarity>
+		<Spec Range="FarAreaEach" Cost="0" Affection="All"/>
+		<Script></Script>
+		<ScriptDesc></ScriptDesc>
+		<BehaviourList>
+			<Behaviour Min="3" Dice="8" Type="Atk" Detail="Hit" Motion="J" EffectRes="" Script="" ActionScript="servantofwrath_1st" Desc=""/>
+			<Behaviour Min="3" Dice="8" Type="Atk" Detail="Hit" Motion="J" EffectRes="" Script="" ActionScript="servantofwrath_1st" Desc=""/>
+			<Behaviour Min="3" Dice="8" Type="Atk" Detail="Hit" Motion="J" EffectRes="" Script="" ActionScript="servantofwrath_2nd" Desc=""/>
+		</BehaviourList>
+		<Chapter>0</Chapter>
+		<Priority>100</Priority>
+	</Card>
+	<Card ID="1104402">
+		<Name>邪恶的化身</Name>
+		<Artwork>Angry_Angry</Artwork>
+		<Rarity>Rare</Rarity>
+		<Spec Range="FarAreaEach" Cost="0" Affection="Team"/>
+		<Script></Script>
+		<ScriptDesc></ScriptDesc>
+		<BehaviourList>
+			<Behaviour Min="3" Dice="8" Type="Atk" Detail="Hit" Motion="J" EffectRes="" Script="" ActionScript="servantofwrath_1st" Desc=""/>
+			<Behaviour Min="3" Dice="8" Type="Atk" Detail="Hit" Motion="J" EffectRes="" Script="" ActionScript="servantofwrath_1st" Desc=""/>
+			<Behaviour Min="3" Dice="8" Type="Atk" Detail="Hit" Motion="J" EffectRes="" Script="" ActionScript="servantofwrath_2nd" Desc=""/>
+		</BehaviourList>
+		<Chapter>0</Chapter>
+		<Priority>100</Priority>
+	</Card>
+	<Card ID="1106201">
+		<Name>狼的角色</Name>
+		<Artwork>BigBadWolf_Change</Artwork>
+		<Rarity>Uncommon</Rarity>
+		<Spec Range="Near" Cost="0"/>
+		<Script></Script>
+		<ScriptDesc></ScriptDesc>
+		<BehaviourList>
+			<Behaviour Min="4" Dice="7" Type="Standby" Detail="Slash" Motion="H" EffectRes="" Script="" ActionScript="" Desc=""/>
+			<Behaviour Min="4" Dice="7" Type="Standby" Detail="Slash" Motion="H" EffectRes="" Script="" ActionScript="" Desc=""/>
+		</BehaviourList>
+		<Chapter>0</Chapter>
+		<Priority>0</Priority>
+	</Card>
+	<Card ID="1108401">
+		<Name>洗礼</Name>
+		<Artwork>WhiteNight_Bless</Artwork>
+		<Rarity>Unique</Rarity>
+		<Spec Range="Far" Cost="0"/>
+		<Script></Script>
+		<ScriptDesc></ScriptDesc>
+		<BehaviourList>
+			<Behaviour Min="1" Dice="1" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="PlagueDoctor_Eternal" ActionScript="" Desc=""/>
+		</BehaviourList>
+		<Chapter>0</Chapter>
+		<Priority>100</Priority>
+	</Card>
+
 </DiceCardXmlRoot>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Sephirah SephirahType="None">
+		<AbnormalityCard ID="ForsakenMurderer_Metal_Enemy">
+			<Abnormality>被遗弃的杀人魔</Abnormality>
+			<CardName>铁块的回声</CardName>
+			<AbilityDesc>该来宾击中目标时将使目标下一个进攻骰减少50%的伤害和混乱伤害。</AbilityDesc>
+			<FlaborText>“脑袋……铁块……大脑上的褶皱……变光滑了……”</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">俺的脑袋又在嗡嗡响了，又吵又闹的……铁块，敲击声……</Dialogue>
+				<Dialogue ID="2">感觉就像，脑袋变成了冰冷的铁块。</Dialogue>
+				<Dialogue ID="3">俺的脑袋，真就变成铁块了？</Dialogue>
+				<Dialogue ID="4">脑袋一碰，就会响起清脆的声音。</Dialogue>
+				<Dialogue ID="5">大脑变成铁块的话，上面的褶皱也会消失吧。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="ForsakenMurderer_Tie_Enemy">
+			<Abnormality>被遗弃的杀人魔</Abnormality>
+			<CardName>受缚的愤怒</CardName>
+			<AbilityDesc>该来宾的进攻骰子威力+1-2
+速度固定为1点。</AbilityDesc>
+			<FlaborText>即使全身遭到束缚，他仍比任何人都要自由。这还远远无法阻止他施暴。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">就算绑住俺的身体……俺照样能动弹。</Dialogue>
+				<Dialogue ID="2">放开俺……凭啥绑着俺！</Dialogue>
+				<Dialogue ID="3">别用那种眼神盯着俺，可怜的家伙是你们才对……</Dialogue>
+				<Dialogue ID="4">这东西绑不住俺！！！</Dialogue>
+				<Dialogue ID="5">就算被绑成这副鸟样，你们也照样会怕俺。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="ForsakenMurderer_Violence_Enemy">
+			<Abnormality>被遗弃的杀人魔</Abnormality>
+			<CardName>极端暴力</CardName>
+			<AbilityDesc>该来宾的所有骰子最小值-1，最大值+3</AbilityDesc>
+			<FlaborText>“最可怜的明明是你们，道貌岸然的伪君子，死在俺手里的小人。”</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">不要以为，把俺绑起来，就万事大吉了……</Dialogue>
+				<Dialogue ID="2">……</Dialogue>
+				<Dialogue ID="3">结束了……开始了……又结束了……又开始了……</Dialogue>
+				<Dialogue ID="4">脑袋一碰，就会嗡嗡乱响。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="LittleHelper_Rest_Enemy">
+			<Abnormality>小帮手</Abnormality>
+			<CardName>充能</CardName>
+			<AbilityDesc>每一幕开始时若该来宾的光芒全满，则获得1~2层“迅捷”且击中目标时伤害+2~7。</AbilityDesc>
+			<FlaborText>机械臂上本应配备的清洁用具被全部替换成极度锋利的切割工具。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">哔啵……哔……电量不足了喵……</Dialogue>
+				<Dialogue ID="2">需要……充电……正在前往最近的插座……</Dialogue>
+				<Dialogue ID="3">请手动关闭电源……小帮手的电源将在数秒后自动关闭……</Dialogue>
+				<Dialogue ID="4">切换为充能状态，暂时无法接收指令。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="LittleHelper_Pattern_Enemy">
+			<Abnormality>小帮手</Abnormality>
+			<CardName>反复识别功能</CardName>
+			<AbilityDesc>该来宾每取得3次拼点胜利，便恢复1点光芒并在下一幕中使自身获得1~2层“迅捷”。</AbilityDesc>
+			<FlaborText>搬进新家的第一天，我将那个人期盼已久的礼物转交给了他们。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">清洁完毕后，人们总会称赞小帮手！</Dialogue>
+				<Dialogue ID="2">识别到高分贝称赞，小帮手将继续清洁工作。</Dialogue>
+				<Dialogue ID="3">哔哔~哔！模式切换完毕。</Dialogue>
+				<Dialogue ID="4">小帮手喜欢人们的高分贝称赞！</Dialogue>
+				<Dialogue ID="5">一切归功于小帮手出色的学习反馈系统。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="LittleHelper_Clean_Enemy">
+			<Abnormality>小帮手</Abnormality>
+			<CardName>清洁</CardName>
+			<AbilityDesc>该来宾攻击速度低于自身的目标时将使自身的“进攻型”骰子威力+1~2</AbilityDesc>
+			<FlaborText>若是将周遭的环境识别为脏乱差，它的坏情绪指示灯会迅速亮起并进入全面清洁模式。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">小帮手是可以为您代劳任何事情的帮手机器人！</Dialogue>
+				<Dialogue ID="2">需要帮忙喵？小帮手可以为您做任何事情。</Dialogue>
+				<Dialogue ID="3">检测到污染，开始清洁工作。</Dialogue>
+				<Dialogue ID="4">哔哔哔~嘀。发现污染对象！启动清洁模式。</Dialogue>
+				<Dialogue ID="5">小帮手内置的上百种工具为您解决一切烦恼！</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="SingingMachine_Music_Enemy">
+			<Abnormality>歌唱机</Abnormality>
+			<CardName>音乐</CardName>
+			<AbilityDesc>该来宾击中目标时伤害+4~8，被击中时将追加承受4~8点混乱伤害。</AbilityDesc>
+			<FlaborText>此乃，旋律。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">由一个活人制造出的旋律是最美妙的。</Dialogue>
+				<Dialogue ID="2">想不想听听美妙的音乐呢？你知道该怎么做的。</Dialogue>
+				<Dialogue ID="3">没关系的，他肯定愿意成为一件好乐器。</Dialogue>
+				<Dialogue ID="4">人人都有音乐天赋。</Dialogue>
+				<Dialogue ID="5">勇敢的人儿呐，快来靠近我呀，和我一起演奏吧。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="SingingMachine_Rhythm_Enemy">
+			<Abnormality>歌唱机</Abnormality>
+			<CardName>旋律</CardName>
+			<AbilityDesc>每一幕开始时该来宾将获得1层“节奏”。拥有“节奏”的角色每击中目标3次便在下一幕中随机使1名角色获得1层“节奏”。
+(节奏: “进攻型”骰子威力+1)</AbilityDesc>
+			<FlaborText>这世上再也没有比“人”更加动听的旋律了。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">大家都想再听我唱歌呢。</Dialogue>
+				<Dialogue ID="2">各种各样的声音混合在一起，就形成了音乐。</Dialogue>
+				<Dialogue ID="3">你和我都想成为乐器呀……</Dialogue>
+				<Dialogue ID="4">如果人人都愿意献出自身，那一定可以产生更加甜美的音色。</Dialogue>
+				<Dialogue ID="5">其他旋律再也传不进你的耳朵里啦。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="SingingMachine_Atk_Enemy">
+			<Abnormality>歌唱机</Abnormality>
+			<CardName>成瘾</CardName>
+			<AbilityDesc>该来宾的“进攻型”骰子威力+1~3“但防御型”骰子威力-1~3。</AbilityDesc>
+			<FlaborText>艺术本就是绝望与苦痛之魔施舍的礼物，不要停止演奏，直到你的身体已如碎肉一般破烂不堪。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">其他音乐对我而言，不过是吵闹的噪音罢了……</Dialogue>
+				<Dialogue ID="2">指引我的脚步……用那歌声照亮我的前路！</Dialogue>
+				<Dialogue ID="3">嘻嘻嘻……嘻……我该怎么办？我能怎么办？嘻嘻……</Dialogue>
+				<Dialogue ID="4">倘若这段旋律能永远响彻，那我便将得到亘古不灭的幸福……</Dialogue>
+				<Dialogue ID="5">没错！就是这……就是这激昂的曲调！！</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Butterfly_White_Enemy">
+			<Abnormality>亡蝶葬仪</Abnormality>
+			<CardName>安息</CardName>
+			<AbilityDesc>该来宾击中目标时根据所损失的体力，伤害与混乱伤害提高0~5</AbilityDesc>
+			<FlaborText>人死后会化作有着小小翅膀的美妙存在，这实在荒谬。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">永恒的长眠……愿你安息。</Dialogue>
+				<Dialogue ID="2">我相信，人死后会化作有着小小翅膀的美妙存在。</Dialogue>
+				<Dialogue ID="3">请不要折磨自己了，我会帮你解脱。</Dialogue>
+				<Dialogue ID="4">带着得来的一切，满怀希望地回归安息之所。</Dialogue>
+				<Dialogue ID="5">死亡再可怖，会比这现实更可怖吗？死后唯有解脱。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Butterfly_Fly_Enemy">
+			<Abnormality>亡蝶葬仪</Abnormality>
+			<CardName>哀悼</CardName>
+			<AbilityDesc>该司书击中拥有负面状态的来宾时伤害+2~7
+每一幕开始时若该司书拥有负面状态。则获得1~2层“强壮”</AbilityDesc>
+			<FlaborText>身负重担的悼念者，前来此地救赎众生。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">向那些深陷悲伤的可怜灵魂……致以深切的哀悼。</Dialogue>
+				<Dialogue ID="2">向逝者寄托哀思，向生者致以哀悼。</Dialogue>
+				<Dialogue ID="3">悲伤的泪水，只是无谓地浸透翅膀。</Dialogue>
+				<Dialogue ID="4">葬礼只消肃穆，无需招摇。</Dialogue>
+				<Dialogue ID="5">这里连一朵像样的鲜花都不曾拥有。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Butterfly_Casket_Enemy">
+			<Abnormality>亡蝶葬仪</Abnormality>
+			<CardName>棺柩</CardName>
+			<AbilityDesc>该来宾击中目标时会根据目标所损失的体力施加棺柩进度(0~50%)
+棺柩进度到100%时会封印其1颗速度骰子</AbilityDesc>
+			<FlaborText>背负棺柩的他，只为悼念无处可去的职员，但这远不足以安抚那些无辜的替罪羔羊。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">这具棺柩，承载着空洞的信仰，只为悼念那无家可归之人……</Dialogue>
+				<Dialogue ID="2">人死后会去往何方？</Dialogue>
+				<Dialogue ID="3">你承受不了，这蝴蝶的分量。</Dialogue>
+				<Dialogue ID="4">连这巨大的棺柩，都不足以抚慰那些无辜的牺牲者。</Dialogue>
+				<Dialogue ID="5">轻柔地拍动翅膀，静候那终将到来的永眠。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Matan_Request_Enemy">
+			<Abnormality>魔弹射手</Abnormality>
+			<CardName>委托</CardName>
+			<AbilityDesc>应用该异想体书页后，该司书击中的第1名来宾将被标记为“委托目标”。
+该司书击中“委托目标”时伤害+3~5
+若该司书击杀“委托目标”，则恢复所有混乱抗性.
+“委托目标”死亡后，该司书可将其余来宾标记为“委托目标”。</AbilityDesc>
+			<FlaborText>恶魔的子弹会穿透你指定的任何目标，直到永远。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">有人称其为正义的猎手。也有人，称其为血腥的屠夫。</Dialogue>
+				<Dialogue ID="2">子弹总是不偏不倚地向前挺进。</Dialogue>
+				<Dialogue ID="3">随意瞄准即可，枪口自会搜寻目标。</Dialogue>
+				<Dialogue ID="4">飞驰的子弹不分善恶。</Dialogue>
+				<Dialogue ID="5">他有时会帮助深陷困境的人们，亦或是与邪恶作斗争。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Matan_Seven_Enemy">
+			<Abnormality>魔弹射手</Abnormality>
+			<CardName>第七颗子弹</CardName>
+			<AbilityDesc>该来宾每使用1张书页，便获得1层“魔法子弹”(每层伤害+1，每2层威力+1).
+该来宾使用的第七张书页里所有骰子将会用于灌注射向自身的魔法子弹。</AbilityDesc>
+			<FlaborText>那恶魔开出一条幼稚的契约: 最后一颗子弹将穿透心爱之人的头颅。射手听罢，便将心爱的人们一一射杀。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">最后一颗子弹会穿透心爱之人的头颅。</Dialogue>
+				<Dialogue ID="2">当真如此……这是能击中任何人的魔弹，一切如你所言。</Dialogue>
+				<Dialogue ID="3">子弹会穿透你指定的任何目标，直到永远。</Dialogue>
+				<Dialogue ID="4">让那最后一颗子弹，永远无法出现。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Matan_Flame_Enemy">
+			<Abnormality>魔弹射手</Abnormality>
+			<CardName>黑焰</CardName>
+			<AbilityDesc>[仅限本舞台] 所有角色的“耐性”或“抵抗”攻击抗性将变为“脆弱”或“致命”
+每一幕开始时该来宾将获得2层“强壮”与3层“敏捷”。</AbilityDesc>
+			<FlaborText>射手察觉，那终日如影随形的恶魔此刻竟已离他而去。他试着追寻原因，而后意识到自己的灵魂从一开始便已堕入地狱。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">恶魔窥觑着绝望。</Dialogue>
+				<Dialogue ID="2">我的灵魂徐徐燃烧，而后堕入地狱。</Dialogue>
+				<Dialogue ID="3">察觉到眼前空无一物的那一瞬间，灵魂便已随之死去。</Dialogue>
+				<Dialogue ID="4">绝望的心无法焚毁，只是冰冷地燃烧。</Dialogue>
+				<Dialogue ID="5">绝望永远伴我左右，不离不弃。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+  	</Sephirah>
+</AbnormalityCardsRoot>

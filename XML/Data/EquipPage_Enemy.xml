@@ -6,8 +6,8 @@
     <TextId>226769000</TextId>
 	<Option>Basic</Option>
     <EquipEffect>
-      <HP>700</HP>
-      <Break>200</Break>
+      <HP>600</HP>
+      <Break>300</Break>
       <SpeedMin>1</SpeedMin>
       <Speed>6</Speed>
       <SResist>Endure</SResist>
@@ -49,8 +49,8 @@
     <TextId>226769001</TextId>
 	<Option>Basic</Option>
     <EquipEffect>
-      <HP>700</HP>
-      <Break>200</Break>
+      <HP>600</HP>
+      <Break>300</Break>
       <SpeedMin>3</SpeedMin>
       <Speed>6</Speed>
       <SResist>Normal</SResist>
@@ -92,8 +92,8 @@
     <TextId>226769002</TextId>
 	<Option>Basic</Option>
     <EquipEffect>
-      <HP>700</HP>
-      <Break>200</Break>
+      <HP>600</HP>
+      <Break>300</Break>
       <SpeedMin>4</SpeedMin>
       <Speed>6</Speed>
       <SResist>Normal</SResist>
@@ -540,6 +540,11 @@
       <Passive>226769022</Passive>
       <Passive Pid="@origin">240101</Passive>
 
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
+
       <OnlyCard>501001</OnlyCard>
     </EquipEffect>
     <BookIcon>ShiAssociation</BookIcon>
@@ -574,8 +579,8 @@
       <Passive Pid="@origin">230024</Passive>
       <Passive Pid="@origin">243003</Passive>
 
-      <Passive Pid="@origin">231001</Passive>
-      <Passive Pid="@origin">220003</Passive>
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
 
       <Passive Pid="@origin">234001</Passive>
       <Passive Pid="@origin">234002</Passive>
@@ -613,6 +618,11 @@
       <Passive Pid="@origin">252002</Passive>
       <Passive Pid="@origin">252003</Passive>
 
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
+
       <OnlyCard>612006</OnlyCard>
 
     </EquipEffect>
@@ -646,6 +656,11 @@
       <Passive Pid="@origin">243005</Passive>
       <Passive Pid="@origin">243105</Passive>
       <Passive Pid="@origin">243205</Passive>
+
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
     </EquipEffect>
     <BookIcon>ClassOneFixer</BookIcon>
     <Chapter>6</Chapter>
@@ -674,6 +689,11 @@
       <Passive Pid="@origin">260001</Passive>
       <Passive Pid="@origin">260003</Passive>
       <Passive Pid="@origin">260004</Passive>
+
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
+      <Passive Pid="@origin">230020</Passive>
 
       <StartPlayPoint>4</StartPlayPoint>
       <MaxPlayPoint>4</MaxPlayPoint>

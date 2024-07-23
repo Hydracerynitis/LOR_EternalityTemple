@@ -19,6 +19,7 @@ namespace EternalityTemple
         [HarmonyPostfix]
         public static void LocalizedTextLoader_LoadOthers_Post(string language)
         {
+            /*
             if (language != "cn")
                 language = "cn"; //en
             LoadFormation();
@@ -31,7 +32,92 @@ namespace EternalityTemple
             LoadCard(language);
             LoadExtra(language);
             LoadBook(language);
+            Dictionary<string, AbnormalityCard> dictionary10 = Singleton<AbnormalityCardDescXmlList>.Instance._dictionary;
+            Dictionary<string, AbnormalityAbilityText> dictionary11 = Singleton<AbnormalityAbilityTextXmlList>.Instance._dictionary;
+            string moddingPath = EI.ModPath + "/Localization/" + language + "/AbnormalityCards/";
+            DirectoryInfo dir = new DirectoryInfo(moddingPath);
+            bool flag13 = Directory.Exists(moddingPath);
+            if (flag13)
+            {
+                LocalizeManager.LoadAbnormalityCardDescriptions_MOD(dir, dictionary10);
+            }
+            moddingPath = EI.ModPath + "/Localization/" + language + "/AbnormalityAbilities/";
+            dir = new DirectoryInfo(moddingPath);
+            bool flag14 = Directory.Exists(moddingPath);
+            if (flag14)
+            {
+                LocalizeManager.LoadAbnormalityAbilityDescription_MOD(dir, dictionary11);
+            }
+            */
         }
+        /*
+        private static void LoadAbnormalityCardDescriptions_MOD(DirectoryInfo dir, Dictionary<string, AbnormalityCard> root)
+        {
+            LocalizeManager.LoadAbnormalityCardDescriptions_MOD_Checking(dir, root);
+            bool flag = dir.GetDirectories().Length != 0;
+            if (flag)
+            {
+                DirectoryInfo[] directories = dir.GetDirectories();
+                for (int i = 0; i < directories.Length; i++)
+                {
+                    LocalizeManager.LoadAbnormalityCardDescriptions_MOD(directories[i], root);
+                }
+            }
+        }
+        private static void LoadAbnormalityCardDescriptions_MOD_Checking(DirectoryInfo dir, Dictionary<string, AbnormalityCard> root)
+        {
+            Dictionary<string, AbnormalityCard> dictionary = new Dictionary<string, AbnormalityCard>();
+            foreach (FileInfo fileInfo in dir.GetFiles())
+            {
+                using (StringReader stringReader = new StringReader(File.ReadAllText(fileInfo.FullName)))
+                {
+                    foreach (Sephirah sephirah in ((AbnormalityCardsRoot)new XmlSerializer(typeof(AbnormalityCardsRoot)).Deserialize(stringReader)).sephirahList)
+                    {
+                        foreach (AbnormalityCard abnormalityCard in sephirah.list)
+                        {
+                            dictionary.Add(abnormalityCard.id, abnormalityCard);
+                        }
+                    }
+                }
+            }
+            foreach (KeyValuePair<string, AbnormalityCard> keyValuePair in dictionary)
+            {
+                root[keyValuePair.Key] = keyValuePair.Value;
+            }
+        }
+        private static void LoadAbnormalityAbilityDescription_MOD(DirectoryInfo dir, Dictionary<string, AbnormalityAbilityText> root)
+        {
+            LocalizeManager.LoadAbnormalityAbilityDescription_MOD_Checking(dir, root);
+            bool flag = dir.GetDirectories().Length != 0;
+            if (flag)
+            {
+                DirectoryInfo[] directories = dir.GetDirectories();
+                for (int i = 0; i < directories.Length; i++)
+                {
+                    LocalizeManager.LoadAbnormalityAbilityDescription_MOD(directories[i], root);
+                }
+            }
+        }
+
+        private static void LoadAbnormalityAbilityDescription_MOD_Checking(DirectoryInfo dir, Dictionary<string, AbnormalityAbilityText> root)
+        {
+            Dictionary<string, AbnormalityAbilityText> dictionary = new Dictionary<string, AbnormalityAbilityText>();
+            foreach (FileInfo fileInfo in dir.GetFiles())
+            {
+                using (StringReader stringReader = new StringReader(File.ReadAllText(fileInfo.FullName)))
+                {
+                    foreach (AbnormalityAbilityText abnormalityAbilityText in ((AbnormalityAbilityRoot)new XmlSerializer(typeof(AbnormalityAbilityRoot)).Deserialize(stringReader)).abnormalityList)
+                    {
+                        dictionary.Add(abnormalityAbilityText.id, abnormalityAbilityText);
+                    }
+                }
+            }
+            foreach (KeyValuePair<string, AbnormalityAbilityText> keyValuePair in dictionary)
+            {
+                root[keyValuePair.Key] = keyValuePair.Value;
+            }
+        }
+        */
         public static void LoadFormation()
         {
                 FormationXmlRoot formationXmlRoot;

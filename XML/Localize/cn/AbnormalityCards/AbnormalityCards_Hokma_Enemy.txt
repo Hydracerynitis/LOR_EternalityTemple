@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Sephirah SephirahType="None">
+		<AbnormalityCard ID="Bloodytree_Wing_Enemy">
+			<Abnormality>渗透天堂</Abnormality>
+			<CardName>萎缩的血翼</CardName>
+			<AbilityDesc>该来宾造成反震伤害时将追加一半于招架骰子点数的伤害。</AbilityDesc>
+			<FlaborText>一旦它意识到你的关注已被切断，便会展开翅膀。宛若一位天使，它的翅膀将伸向天空，继而遮蔽太阳。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">在所有人的关注与视线中……终于结出果实，展翅翱翔。</Dialogue>
+				<Dialogue ID="2">那展开翅膀之人，献出了一切……</Dialogue>
+				<Dialogue ID="3">如有一日再度睁开双眼，能否在那视线中看到结果？</Dialogue>
+				<Dialogue ID="4">别来这里……这儿只有一棵满是尖刺的树。这并非你的安息之处……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Bloodytree_Gaze_Enemy">
+			<Abnormality>渗透天堂</Abnormality>
+			<CardName>他人的视线</CardName>
+			<AbilityDesc>该来宾单方面攻击击中目标时伤害+2~4
+拼点时招架骰子威力+1~3，击中目标时伤害-3~6。</AbilityDesc>
+			<FlaborText>所谓视线正是如此。关注。无形之连接。完全集中。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">你只需闭上双眼。没错，就像那样……</Dialogue>
+				<Dialogue ID="2">无法目视之物，亦无法触及。</Dialogue>
+				<Dialogue ID="3">遥不可及的欲望终将膨胀……如同踏上荆棘丛生之路。</Dialogue>
+				<Dialogue ID="4">一旦它进入你的视野……便会重回这阴暗幽邃的地下。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Bloodytree_Forcus_Enemy">
+			<Abnormality>渗透天堂</Abnormality>
+			<CardName>关注与集中</CardName>
+			<AbilityDesc>该来宾将造成并承受双倍反震伤害。</AbilityDesc>
+			<FlaborText>不要转移视线，一直盯着它，将它收容在你的视线之中。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">如此惊人的景象，你不会想要眨眼的。</Dialogue>
+				<Dialogue ID="2">一直盯着它……冷静……只要看着它就不会死……</Dialogue>
+				<Dialogue ID="3">将它收容在你的视线之中……</Dialogue>
+				<Dialogue ID="4">你凝视着我……我亦凝视着你……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Clock_Time_Enemy">
+			<Abnormality>沉默的代价</Abnormality>
+			<CardName>时间</CardName>
+			<AbilityDesc>每一幕若战前准备阶段大于30秒，该来宾的所有骰子威力+1~2</AbilityDesc>
+			<FlaborText>时流若生，生逝如时。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">所谓时间不足，仅是无谓牢骚。</Dialogue>
+				<Dialogue ID="2">明日可至，亦可不至。</Dialogue>
+				<Dialogue ID="3">汝遗失之时，吾成倍奉予。</Dialogue>
+				<Dialogue ID="4">时间给予公平，命运催生不公。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Clock_Thirteen_Enemy">
+			<Abnormality>沉默的代价</Abnormality>
+			<CardName>第十三声钟响</CardName>
+			<AbilityDesc>每当该来宾使用第13张书页时将使其中的所有骰子威力+1~2并赋予“进攻型”骰子额外效果“[命中时] 追加等同于‘目标体力上限x(骰子点数)%’的伤害”</AbilityDesc>
+			<FlaborText>吾知晓绝对的孤独。分享沉默，应得果报。待到原主归来之时，汝当偿付代价。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">灾难般的钟声再度响彻。</Dialogue>
+				<Dialogue ID="2">钟声鸣响，悲鸣打破沉默……</Dialogue>
+				<Dialogue ID="3">终末之声徐徐响起，然则无人得以听闻。</Dialogue>
+				<Dialogue ID="4">吾分享沉默，汝偿付代价。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Clock_Kill_Enemy">
+			<Abnormality>沉默的代价</Abnormality>
+			<CardName>沉默</CardName>
+			<AbilityDesc>每三幕使该来宾与随机司书获得眩晕</AbilityDesc>
+			<FlaborText>时而产生时间停止的错觉，时而出现刹那般的沉默。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">沉默，不止带来和平。</Dialogue>
+				<Dialogue ID="2">刹那般的沉默，时间宛若静止。</Dialogue>
+				<Dialogue ID="3">时间停止，沉默随之降临。何来二者有别之说。</Dialogue>
+				<Dialogue ID="4">纵使万物静止，灵魂亦无法消亡。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="BlueStar_martyrdom_Enemy">
+			<Abnormality>碧蓝新星</Abnormality>
+			<CardName>殉教</CardName>
+			<AbilityDesc>该来宾造成伤害前自己失去2~4点体力；自身每损失7.5%最大生命值便提高10%造成的混乱伤害(至多100%)</AbilityDesc>
+			<FlaborText>让我们化作星辰再会吧。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">在那宇宙的彼端，一同沉浸于永恒的幸福当中吧。</Dialogue>
+				<Dialogue ID="2">与生俱来，无法违逆的本能，我们终有一日会回归那个地方。</Dialogue>
+				<Dialogue ID="3">我们不会死去。只是动身前往那应去之地。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="BlueStar_Atonement_Enemy">
+			<Abnormality>碧蓝新星</Abnormality>
+			<CardName>赎罪</CardName>
+			<AbilityDesc>每一幕开始时若舞台中存在处于“混乱”状态的角色，该来宾承受3~7点伤害并在这一幕中使所有来宾获得1层“强壮”。(至多1层)</AbilityDesc>
+			<FlaborText>我们的“碧蓝新星”是接纳罪人的唯一之地，我们会在那里洗去一切罪孽。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">舍弃肮脏的皮囊，迸发闪耀的光芒。</Dialogue>
+				<Dialogue ID="2">忘却罪孽也无需烦躁不安。</Dialogue>
+				<Dialogue ID="3">我们终能回归那里，洗清所有罪恶。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="BlueStar_Melody_Enemy">
+			<Abnormality>碧蓝新星</Abnormality>
+			<CardName>思念之声</CardName>
+			<AbilityDesc>这一幕中该来宾击中目标时混乱伤害+2~4
+(此后每3幕触发1次)</AbilityDesc>
+			<FlaborText>冉冉升起的新星意味着全新的开始。你听不见那悠扬的号声吗？</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">你听到了吗？你感受到我苦苦寻觅的思念之声了吗？</Dialogue>
+				<Dialogue ID="2">啊啊啊……终于……！终于呼唤我们了！！！</Dialogue>
+				<Dialogue ID="3">只有那声呼唤，才能将我们引向接纳罪人的唯一之地……！</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="WhiteNight_Bless_Enemy">
+			<Abnormality>瘟疫医生</Abnormality>
+			<CardName>洗礼</CardName>
+			<AbilityDesc>该来宾每一幕开始时会额外随机指定2个不同的其他来宾使用洗礼
+效果为“[战斗开始] 使该来宾在这一幕中获得1层‘忍耐’,恢复6点体力”</AbilityDesc>
+			<FlaborText>“我将治愈你的一切疾病，使你重获新生。”</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我是来治病的。</Dialogue>
+				<Dialogue ID="2">相信我。只有我能帮助你。</Dialogue>
+				<Dialogue ID="3">额上有伤，为何不治？</Dialogue>
+				<Dialogue ID="4">所有病痛，都可治愈。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+        <AbnormalityCard ID="WhiteNight_Red_Enemy">
+			<Abnormality>白夜</Abnormality>
+			<CardName>降临</CardName>
+			<AbilityDesc>每一幕开始时该来宾将额外恢复1点光芒。
+将该来宾的“洗礼”效果强化为“[战斗开始] 使该来宾在这一幕中获得2层‘忍耐’且恢复12点体力”</AbilityDesc>
+			<FlaborText>我乃死，我乃生。我为暗，我亦为光。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">浸染罪孽之人。起身迎接我吧。</Dialogue>
+				<Dialogue ID="2">我以此副姿态现身，并非为了审判。</Dialogue>
+				<Dialogue ID="3">解除限制于此的桎梏，将每个人引向乐园。</Dialogue>
+				<Dialogue ID="4">我与你们同在，摆脱对可怖死亡的恐惧。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="WhiteNight_Confess_Enemy">
+			<Abnormality>一罪与百善</Abnormality>
+			<CardName>告解</CardName>
+			<AbilityDesc>该来宾复所有混乱抗性并移除负面状态。(包含“混乱”状态)
+该来宾被击中时所受混乱伤害-2</AbilityDesc>
+			<FlaborText>仅是承受痛苦，便可洗刷一半罪孽。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">……</Dialogue>
+				<Dialogue ID="2">………</Dialogue>
+				<Dialogue ID="3">…………</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="WhiteNight_Guard_Enemy">
+			<Abnormality>白夜</Abnormality>
+			<CardName>护卫</CardName>
+			<AbilityDesc>该来宾将无法被指定为攻击目标。(若其余非应用护卫的来宾全部死亡则不生效)</AbilityDesc>
+			<FlaborText>您是他的儿子，您生来为王。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">欢呼吧，满怀恩宠之人，我与你们同在。</Dialogue>
+				<Dialogue ID="2">将每个人引向乐园。</Dialogue>
+				<Dialogue ID="3">我与你们同在，摆脱对死亡的恐惧。</Dialogue>
+				<Dialogue ID="4">谁也不会离去，我们将一同沐浴在永恒的幸福之中。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="WhiteNight_White_Enemy">
+			<Abnormality>白夜</Abnormality>
+			<CardName>权能</CardName>
+			<AbilityDesc>每一幕开始时使除该来宾外的所有来宾吸收不低于3点的伤害。(若该司书已死亡则不生效)</AbilityDesc>
+			<FlaborText>不要惊慌，我是你的救主，我与你同在。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">安心吧，任何灾祸都无法阻挡你们。</Dialogue>
+				<Dialogue ID="2">摆脱这堕落的肉体，何尝不是救赎。</Dialogue>
+				<Dialogue ID="3">信奉我，便可永不堕入黑暗。</Dialogue>
+				<Dialogue ID="4">我为圣，你们亦为圣。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="WhiteNight_Apostle_Enemy">
+			<Abnormality>白夜</Abnormality>
+			<CardName>使徒</CardName>
+			<AbilityDesc>除该来宾外的所有来宾击中目标时伤害+2~7(若该司书已死亡则不生效)
+该来宾累计使用12张“洗礼”后将追加“所有骰子威力+1”效果。</AbilityDesc>
+			<FlaborText>我不是拣选了你们12个么。起来吧，我的仆从，迎接我的到来。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">追求和平与神圣。否则便无法看见我。</Dialogue>
+				<Dialogue ID="2">恒久不渝之人，方能向前迈进。</Dialogue>
+				<Dialogue ID="3">接受我的恩典，我便可忘却你们的罪孽。</Dialogue>
+				<Dialogue ID="4">服从我，享受无尽的欢呼与生命。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+  	</Sephirah>
+</AbnormalityCardsRoot>

@@ -158,8 +158,8 @@
     <TextId>226769000</TextId>
     <Category>DeckFixed</Category>
     <EquipEffect>
-      <HP>450</HP>
-      <Break>130</Break>
+      <HP>600</HP>
+      <Break>300</Break>
       <SpeedMin>1</SpeedMin>
       <Speed>6</Speed>
       <SResist>Endure</SResist>
@@ -206,8 +206,8 @@
     <TextId>226769001</TextId>
     <Category>DeckFixed</Category>
     <EquipEffect>
-      <HP>450</HP>
-      <Break>130</Break>
+      <HP>600</HP>
+      <Break>300</Break>
       <SpeedMin>3</SpeedMin>
       <Speed>6</Speed>
       <SResist>Normal</SResist>
@@ -256,8 +256,8 @@
     <TextId>226769002</TextId>
     <Category>DeckFixed</Category>
     <EquipEffect>
-      <HP>450</HP>
-      <Break>130</Break>
+      <HP>600</HP>
+      <Break>300</Break>
       <SpeedMin>4</SpeedMin>
       <Speed>6</Speed>
       <SResist>Normal</SResist>

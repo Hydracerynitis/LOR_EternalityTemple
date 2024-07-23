@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Sephirah SephirahType="None">
+		<AbnormalityCard ID="Bloodbath_Blood_Enemy">
+			<Abnormality>血浴缸</Abnormality>
+			<CardName>鲜血</CardName>
+			<AbilityDesc>该来宾的“防御型”骰子威力+1~2，被击中时所受混乱伤害+3~5
+每一幕结束时保留反击池里所有防御骰</AbilityDesc>
+			<FlaborText>望向浴缸内部，你会莫名感到无法承受的忧郁。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">他只是无法直面这悲惨的现实。</Dialogue>
+				<Dialogue ID="2">你能承受，这深切的绝望吗？</Dialogue>
+				<Dialogue ID="3">快来，泡进这血池中。</Dialogue>
+				<Dialogue ID="4">放下一切，闭上双眼，没入无尽。</Dialogue>
+				<Dialogue ID="5">无论添入多少，缸中的鲜血都不曾溢出。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Bloodbath_Scar_Enemy">
+			<Abnormality>血浴缸</Abnormality>
+			<CardName>疤痕</CardName>
+			<AbilityDesc>根据上一幕所受伤害该来宾被造成最多伤害类型的骰子受到击中时所受伤害-2~5</AbilityDesc>
+			<FlaborText>当我注视着她那伤痕累累的手腕时，我想起了我们的酒窖。那一夜，我把最后一瓶喝得精光。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">要想割开手腕，必须拥有强大的勇气与意志。</Dialogue>
+				<Dialogue ID="2">请不要称这些人愚蠢，你才是那个最胆小的懦夫。</Dialogue>
+				<Dialogue ID="3">疤痕是失败的印记，却也并非一文不值。</Dialogue>
+				<Dialogue ID="4">轻柔地抚平这伤痛。</Dialogue>
+				<Dialogue ID="5">伤口的深度取决于那一瞬间的精神与意志。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Bloodbath_Hands_Enemy">
+			<Abnormality>血浴缸</Abnormality>
+			<CardName>瘆白之手</CardName>
+			<AbilityDesc>若该来宾连续3次击中同一目标，则追加3~12点混乱伤害。
+(攻击其他角色时重置此计数)</AbilityDesc>
+			<FlaborText>我触碰到了冰冷而僵硬的手。
+——我曾深爱之人的手。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">你，或者说，我们所爱之人的手，都在此处。</Dialogue>
+				<Dialogue ID="2">那满怀希望向你伸出的手，你会去握住吗？</Dialogue>
+				<Dialogue ID="3">想要牢牢抓住从指间流去的事物……</Dialogue>
+				<Dialogue ID="4">没人会看向那些渴求帮助的手。</Dialogue>
+				<Dialogue ID="5">她一定在不住地发抖，想要甩落手中的刀刃。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="HeartofAspiration_Heart_Enemy">
+			<Abnormality>渴望之心</Abnormality>
+			<CardName>脉动</CardName>
+			<AbilityDesc>每一幕开始时改将在这一幕中获得1-2层“强壮”，若一幕内未使用“进攻型”骰子造成伤害则失去5%的最大血量。</AbilityDesc>
+			<FlaborText>过度的渴望会使人发狂。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">过度的渴望将使人发狂。</Dialogue>
+				<Dialogue ID="2">明明获得了力量，却没有催生出欲望？</Dialogue>
+				<Dialogue ID="3">获得力量之人，必行正确之事。</Dialogue>
+				<Dialogue ID="4">没错，你能感受到心跳正在疯狂加速。</Dialogue>
+				<Dialogue ID="5">我们都殷切地期盼着某物，所以理应互相帮助。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="HeartofAspiration_Doki_Enemy">
+			<Abnormality>渴望之心</Abnormality>
+			<CardName>渴望</CardName>
+			<AbilityDesc>该来宾的速度+1~2，体力上限+15%并恢复等量体力。</AbilityDesc>
+			<FlaborText>携带者的心率瞬间提升至2倍以上，并获得惊人的肌肉活力与力量。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">渴望着，期盼着，直到心脏应答的那一刻。</Dialogue>
+				<Dialogue ID="2">你不愿直面那即将崩溃的结局吗？</Dialogue>
+				<Dialogue ID="3">为我们期盼的一切赋予意义。</Dialogue>
+				<Dialogue ID="4">在这炽热而激烈的脉动中，与我融为一体吧。</Dialogue>
+				<Dialogue ID="5">正如你渴望的那样，心跳将会愈发猛烈。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="HeartofAspiration_Atk_Enemy">
+			<Abnormality>渴望之心</Abnormality>
+			<CardName>剧烈搏动</CardName>
+			<AbilityDesc>该来宾将在下一幕获得4层“强壮”，“忍耐”，“迅捷”与“守护”
+下一幕结束时，该来宾将在下一幕获得"疲倦"(这一幕内无法行动并且受到伤害和混乱伤害提高2点)</AbilityDesc>
+			<FlaborText>一颗无主之心，即使与身体分离也从未停止跳动。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">没错，你能感受到心跳正在疯狂加速。</Dialogue>
+				<Dialogue ID="2">盲目摄入的渴望，终有一日会撑破心脏。</Dialogue>
+				<Dialogue ID="3">在这炽热而激烈的脉动中，与我融为一体吧。</Dialogue>
+				<Dialogue ID="4">明知终有一日会爆炸，我也愿意见到这结局。</Dialogue>
+				<Dialogue ID="5">正如你渴望的那样，心跳将会愈发猛烈。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Pinocchio_Learn_Enemy">
+			<Abnormality>匹诺曹</Abnormality>
+			<CardName>学习</CardName>
+			<AbilityDesc>每一幕开始的抽牌时将随机一张司书方上一幕所使用的牌该来宾置入手牌(个人牌除外)</AbilityDesc>
+			<FlaborText>这家伙只会跟在别人身后“学习”，而这就是问题所在。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我今天也在努力学习，要向你展示一下吗？</Dialogue>
+				<Dialogue ID="2">人们教我如何说话。</Dialogue>
+				<Dialogue ID="3">学习太慢了，干脆模仿别人吧。</Dialogue>
+				<Dialogue ID="4">模仿别人并不难，这不需要动脑。</Dialogue>
+				<Dialogue ID="5">我明明学了不少东西，却总是在原地踏步。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Pinocchio_Lie_Enemy">
+			<Abnormality>匹诺曹</Abnormality>
+			<CardName>谎言</CardName>
+			<AbilityDesc>每一幕开始时随机调整随机一名司书手中书页的费用。(仅调整0~3费书页)</AbilityDesc>
+			<FlaborText>人人都在说谎，这有啥不好的？</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">人们总是说着相反的话。</Dialogue>
+				<Dialogue ID="2">不是为了自己，而是为了全人类的那种谎言……</Dialogue>
+				<Dialogue ID="3">啦啦啦……我唱起了人人都在唱的谎言之歌。</Dialogue>
+				<Dialogue ID="4">就像人们教导的那样，我颠倒着看待这个世界。</Dialogue>
+				<Dialogue ID="5">你们每个人都在撒谎，为啥说撒谎是错的啊？</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Pinocchio_Curious_Enemy">
+			<Abnormality>匹诺曹</Abnormality>
+			<CardName>好奇</CardName>
+			<AbilityDesc>每一幕开始所有司书洗回随机一张手中书页并从牌库中再抽取一张书页</AbilityDesc>
+			<FlaborText>我今天也在努力学习，要向你展示一下吗？</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我要多多学习，我还有很多想看，想了解的东西。</Dialogue>
+				<Dialogue ID="2">光是看看……就能全部学会吗？</Dialogue>
+				<Dialogue ID="3">这也好奇……那也好奇……这又是啥玩意？</Dialogue>
+				<Dialogue ID="4">是生面孔呢……你从哪儿来的？</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="TheSnowQueen_Sord_Enemy">
+			<Abnormality>冰雪女皇</Abnormality>
+			<CardName>凌剑</CardName>
+			<AbilityDesc>该来宾拼点胜利时有50%的概率在下一幕中对目标施加1~3层“束缚”。
+该来宾击中处于“束缚”状态下的目标时将追加2~5点混乱伤害。</AbilityDesc>
+			<FlaborText>寒冷的冬林中，唯有一位女皇。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">锐利的剑锋冰冷无比。</Dialogue>
+				<Dialogue ID="2">唯有温暖的春日，方能使剑消融。</Dialogue>
+				<Dialogue ID="3">笔直延伸的剑锋将指向何方。</Dialogue>
+				<Dialogue ID="4">在冰雪消融的温暖中，这把剑也将一并融化。</Dialogue>
+				<Dialogue ID="5">被这把武器穿透心脏之时，你将短暂地忘却自我。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="TheSnowQueen_Chu_Enemy">
+			<Abnormality>冰雪女皇</Abnormality>
+			<CardName>亲吻</CardName>
+			<AbilityDesc>若该来宾以1张战斗书页至少取得2次拼点胜利，则对目标施加1层“霜凌”。
+每一幕结束时“霜凌”层数大于2的司书将在下一幕中陷入“眩晕”并重置该层数。</AbilityDesc>
+			<FlaborText>冰雪女皇的吻冰封了他的内心，使他不再寒冷。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">唯有知晓玫瑰芬芳之人，方能了结这一切。</Dialogue>
+				<Dialogue ID="2">你一定是位胸怀热心之人。</Dialogue>
+				<Dialogue ID="3">忘却寒冷，失去记忆，直至最后……</Dialogue>
+				<Dialogue ID="4">不识寒冷的冰封之心，终有一日能够融化吗？</Dialogue>
+				<Dialogue ID="5">唯有内心坚强之人，方能拯救冰封之物。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="TheSnowQueen_Snow_Enemy">
+			<Abnormality>冰雪女皇</Abnormality>
+			<CardName>雪暴</CardName>
+			<AbilityDesc>这一幕中使除该来宾外的其余角色陷入“眩晕”。</AbilityDesc>
+			<FlaborText>玫瑰盛开，雪宫崩塌。欢笑的人们不曾记得，在那有位沉睡的美人。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我沉睡于此，无人知晓。</Dialogue>
+				<Dialogue ID="2">如若冰雪消去，我亦就此忘却。</Dialogue>
+				<Dialogue ID="3">究竟是我在消融，还是春天即将到来……</Dialogue>
+				<Dialogue ID="4">玫瑰芬芳馥郁，向世人宣告春日的到来。</Dialogue>
+				<Dialogue ID="5">他再也不愿回想那刺骨严寒。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+        <AbnormalityCard ID="QuietKid_Hammer_Enemy">
+			<Abnormality>噤默处子</Abnormality>
+      		<CardName>钉与锤</CardName>
+      		<AbilityDesc>该来宾击中目标时将对其施加1层“钉”。
+拥有“钉”的角色被未获得“钉与锤”的来宾击中时将承受“‘钉’层数x5”的伤害并重置该层数。</AbilityDesc>
+      		<FlaborText>当她用锤敲入钉时，心中的裂痕将持续增大，最终支离破碎。</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">在你心中，有能敲入钉子的缝隙吗？</Dialogue>
+        		<Dialogue ID="2">朝裂隙敲入钉子，裂隙就会成倍扩大。</Dialogue>
+        		<Dialogue ID="3">内心的污秽，最好及时倾倒。</Dialogue>
+        		<Dialogue ID="4">如若心灵出现裂痕，便已无可挽回。</Dialogue>
+      		</Dialogues>
+    	</AbnormalityCard>
+    	<AbnormalityCard ID="QuietKid_Eyeshine_Enemy">
+      		<Abnormality>噤默处子</Abnormality>
+      		<CardName>目光</CardName>
+      		<AbilityDesc>该来宾击中目标时伤害x2
+该司书被击中时所受伤害x2</AbilityDesc>
+      		<FlaborText>少女一言不发，只是用那深邃的双眼洞察人们的心。</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">……</Dialogue>
+        		<Dialogue ID="2">…………</Dialogue>
+        		<Dialogue ID="3">………………</Dialogue>
+        		<Dialogue ID="4">究竟是什么，令你瑟瑟发抖？</Dialogue>
+      		</Dialogues>
+    	</AbnormalityCard>
+    	<AbnormalityCard ID="QuietKid_Guilty_Enemy">
+      		<Abnormality>噤默处子</Abnormality>
+      		<CardName>负罪感</CardName>
+      		<AbilityDesc>该来宾被击中时所受混乱伤害-1~3
+被来宾击中时承受伤害减少该司书这一幕累计攻击伤害的1/5</AbilityDesc>
+      		<FlaborText>然而，若是遇见心中怀有“负罪感”或“恐惧”的人，她便会取出藏在身后的钉与锤。</FlaborText>
+      		<Dialogues>
+        		<Dialogue ID="1">带着如此痛苦的记忆活到现在……可怜的朋友。</Dialogue>
+        		<Dialogue ID="2">别想推卸责任，苦痛只能由自己承担。</Dialogue>
+        		<Dialogue ID="3">你只是在，忙于逃避罢了？</Dialogue>
+        		<Dialogue ID="4">喂，你看起来……非常害怕？</Dialogue>
+      		</Dialogues>
+    	</AbnormalityCard>
+  	</Sephirah>
+</AbnormalityCardsRoot>

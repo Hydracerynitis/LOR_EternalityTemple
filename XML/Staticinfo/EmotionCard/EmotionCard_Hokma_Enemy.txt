@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<EmotionCard ID="190901">
+		<Name>Bloodytree_Wing_Enemy</Name>
+		<Artwork>Bloodytree_Wing</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_bloodytree1</Script>
+	</EmotionCard>
+	<EmotionCard ID="190902">
+		<Name>Bloodytree_Gaze_Enemy</Name>
+		<Artwork>Bloodytree_Gaze</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>-2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_bloodytree2</Script>
+	</EmotionCard>
+	<EmotionCard ID="190903">
+		<Name>Bloodytree_Forcus_Enemy</Name>
+		<Artwork>Bloodytree_Forcus</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>0</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_bloodytree3</Script>
+	</EmotionCard>
+	<EmotionCard ID="190904">
+		<Name>Clock_Time_Enemy</Name>
+		<Artwork>Clock_Time</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>-1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_silence1</Script>
+	</EmotionCard>
+	<EmotionCard ID="190905">
+		<Name>Clock_Thirteen_Enemy</Name>
+		<Artwork>Clock_Thirteen</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_silence2</Script>
+	</EmotionCard>
+	<EmotionCard ID="190906">
+		<Name>Clock_Kill_Enemy</Name>
+		<Artwork>Clock_Kill</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_silence3</Script>
+	</EmotionCard>
+	<EmotionCard ID="190907">
+		<Name>BlueStar_martyrdom_Enemy</Name>
+		<Artwork>BlueStar_martyrdom</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>4</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_bluestar1</Script>
+	</EmotionCard>
+	<EmotionCard ID="190908">
+		<Name>BlueStar_Atonement_Enemy</Name>
+		<Artwork>BlueStar_Atonement</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>4</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>0</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_bluestar2</Script>
+	</EmotionCard>
+	<EmotionCard ID="190909">
+		<Name>BlueStar_Melody_Enemy</Name>
+		<Artwork>BlueStar_Melody</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>4</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>1</EmotionRate>
+		<TargetType>All</TargetType>
+		<Script>hokma_bluestar3</Script>
+	</EmotionCard>
+	<EmotionCard ID="190910">
+		<Name>WhiteNight_Confess_Enemy</Name>
+		<Artwork>WhiteNight_Confess</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>1</EmotionRate>
+		<TargetType>All</TargetType>
+		<Script>hokma_onebadmanygood1</Script>
+	</EmotionCard>
+	<EmotionCard ID="190911">
+		<Name>WhiteNight_Bless_Enemy</Name>
+		<Artwork>WhiteNight_Bless</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>3</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_plaguedoctor1</Script>
+	</EmotionCard>
+	<EmotionCard ID="190912">
+		<Name>WhiteNight_Red_Enemy</Name>
+		<Artwork>WhiteNight_Red</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_whitenight1</Script>
+	</EmotionCard>
+	<EmotionCard ID="190913">
+		<Name>WhiteNight_Guard_Enemy</Name>
+		<Artwork>WhiteNight_Guard</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>6</Level>
+		<EmotionLevel>3</EmotionLevel>
+		<EmotionRate>3</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_whitenight2</Script>
+	</EmotionCard>
+	<EmotionCard ID="190914">
+		<Name>WhiteNight_White_Enemy</Name>
+		<Artwork>WhiteNight_White</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>6</Level>
+		<EmotionLevel>3</EmotionLevel>
+		<EmotionRate>1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_whitenight3</Script>
+	</EmotionCard>
+	<EmotionCard ID="190915">
+		<Name>WhiteNight_Apostle_Enemy</Name>
+		<Artwork>WhiteNight_Apostle</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>6</Level>
+		<EmotionLevel>3</EmotionLevel>
+		<EmotionRate>1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>hokma_whitenight4</Script>
+	</EmotionCard>
+</EmotionCardXmlRoot>

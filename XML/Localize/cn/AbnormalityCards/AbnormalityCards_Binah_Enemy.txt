@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Sephirah SephirahType="None">
+		<AbnormalityCard ID="Bigbird_Eye_Enemy">
+			<Abnormality>大鸟</Abnormality>
+			<CardName>监视之眼</CardName>
+			<AbilityDesc>应用该异想体书页后，该司书将恢复所有光芒且光芒恢复量+1
+每一幕开始时除该司书外的随机1名司书将无法恢复光芒。</AbilityDesc>
+			<FlaborText>鸟儿的眼睛总是闪闪发光，像夜空中的繁星那般璀璨。但为了守护森林，它将眼睛赠予了大鸟。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">每拯救一只动物，就会多出一颗眼睛。</Dialogue>
+				<Dialogue ID="2">为了守护这里的安全，一定要仔细检查。</Dialogue>
+				<Dialogue ID="3">一只都不能漏掉……</Dialogue>
+				<Dialogue ID="4">别担心，有我来替你守护……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Bigbird_Lamp_Enemy">
+			<Abnormality>大鸟</Abnormality>
+			<CardName>永燃灯</CardName>
+			<AbilityDesc>该来宾的攻击无法被转移</AbilityDesc>
+			<FlaborText>只要我先杀掉动物，就不会有动物被怪兽杀掉了呀！</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我来救你们了，快跟着我的灯光走。</Dialogue>
+				<Dialogue ID="2">以我的毛毛为代价……换取永不熄灭的光芒。</Dialogue>
+				<Dialogue ID="3">到我这儿来，我会帮你的。</Dialogue>
+				<Dialogue ID="4">照亮前方，看清需要我拯救的生灵。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Bigbird_Save_Enemy">
+			<Abnormality>大鸟</Abnormality>
+			<CardName>拯救</CardName>
+			<AbilityDesc>该来宾与速度高于自身的目标拼点时将使自身的所有骰子威力+1
+若目标体力低于25%，则拼点胜利时将摧毁其当前书页的所有骰子。</AbilityDesc>
+			<FlaborText>对这只鸟而言，死亡本身即是救赎。 </FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">只要杀光它们，就不会有动物死在怪物手里！</Dialogue>
+				<Dialogue ID="2">危险！森林里有只可怕的大怪兽！</Dialogue>
+				<Dialogue ID="3">那孩子有危险，我要去救他！</Dialogue>
+				<Dialogue ID="4">为了那些可怜无助之人……我必须站出来。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="SmallBird_Punishment_Enemy">
+			<Abnormality>惩戒鸟</Abnormality>
+			<CardName>惩戒</CardName>
+			<AbilityDesc>若该来宾承受伤害，则下一幕中自身使用书页的第1颗骰子威力+2~4</AbilityDesc>
+			<FlaborText>一定是因为没人惩罚那些干坏事的人。只要有人来扮演这个角色，世上就再也不会发生坏事了。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">只要我来施加惩罚，坏人就会消失的吧？</Dialogue>
+				<Dialogue ID="2">毋须宽恕，你干坏事了。</Dialogue>
+				<Dialogue ID="3">没错！因为世上没有惩罚坏人的人，所以才会变成这样的。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="SmallBird_Beak_Enemy">
+			<Abnormality>惩戒鸟</Abnormality>
+			<CardName>责罚之喙</CardName>
+			<AbilityDesc>若上一幕该来宾未受到伤害则其在这一幕造成的伤害+3~7</AbilityDesc>
+			<FlaborText>很久以前人们就犯下累累罪行。即使他们明知这是错的，却为何还要执意这么做呢？</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">明知不对却执意要做，这究竟是为什么？</Dialogue>
+				<Dialogue ID="2">我要教训你。不许再干坏事了。</Dialogue>
+				<Dialogue ID="3">别再干坏事了啦！</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Smallbird_Fly_Enemy">
+			<Abnormality>惩戒鸟</Abnormality>
+			<CardName>小翅儿扑扑</CardName>
+			<AbilityDesc>该来宾的闪避骰子威力+1~2
+以闪避骰子取得拼点胜利时将使自身当前书页的下一颗“进攻型”骰子威力+1~2</AbilityDesc>
+			<FlaborText>这是一只惩罚恶徒，罪犯以及一切不敬之人的自信小小鸟。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我离开了森林，再也没有回去。</Dialogue>
+				<Dialogue ID="2">奋力飞翔吧，愿这世界更加美好。</Dialogue>
+				<Dialogue ID="3">扑腾的小翅膀说不定能改变世界！</Dialogue>
+				<Dialogue ID="4">心儿怦怦直跳，我要更加努力才行。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="LongBird_Sin_Enemy">
+			<Abnormality>审判鸟</Abnormality>
+			<CardName>罪孽的分量</CardName>
+			<AbilityDesc>该来宾骰出最小值时,失去5%最大血量并使其威力提升2-3点</AbilityDesc>
+			<FlaborText>它的天秤永远不会忽略任何罪孽的分量。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我来衡量你的罪孽。</Dialogue>
+				<Dialogue ID="2">从不忽略任何罪孽的重量。</Dialogue>
+				<Dialogue ID="3">按罪孽轻重执行惩罚。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="LongBird_Judgement_Enemy">
+			<Abnormality>审判鸟</Abnormality>
+			<CardName>审判</CardName>
+			<AbilityDesc>每一幕开始时所有角色有50%的概率获得1层“罪孽”
+每一幕结束时若“罪孽”层数到达5，则失去10%的体力并重置该层数。
+所有角色击中目标时将向其转移1层“罪孽”。(每张书页至多转移1层)</AbilityDesc>
+			<FlaborText>“但是，如果天秤不偏向任何一边，那该怎么办呀？”高鸟听后很担心，于是它举起那杆“无论何时都能作出明确判决”的歪斜天秤。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">高举天秤之时，我愿永生审判罪恶。</Dialogue>
+				<Dialogue ID="2">一定要做出明辨善恶的公正判决……</Dialogue>
+				<Dialogue ID="3">为了守护森林而高举天秤。给予罪人永恒的审判。</Dialogue>
+				<Dialogue ID="4">为能审判森林里的所有怪兽……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+        <AbnormalityCard ID="LongBird_Scale_Enemy">
+			<Abnormality>审判鸟</Abnormality>
+			<CardName>歪斜的天秤</CardName>
+			<AbilityDesc>该来宾击中体力最高的司书时将为体力最低的来宾恢复其5%最大血量。(每一幕至多触发3次，无法对群体攻击书页生效)</AbilityDesc>
+			<FlaborText>而今，高鸟只剩下那杆不公正的天秤，可它的审判仍未停止。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">这杆天秤总会得出明确的结果，能够严正判决。</Dialogue>
+				<Dialogue ID="2">我的主观意识可能会影响判决的公正。</Dialogue>
+				<Dialogue ID="3">如果天秤不偏向任何一边……那可不行。</Dialogue>
+				<Dialogue ID="4">也许直到恶人全部消失的那一刻，这杆天秤才终能停止。</Dialogue>
+		</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="ApocalypseBird_BigEye_Enemy">
+			<Abnormality>终末鸟</Abnormality>
+			<CardName>巨目</CardName>
+			<AbilityDesc>每一幕开始时使随机一位司书的本幕内威力加成减半</AbilityDesc>
+			<FlaborText>巨目遮蔽了光线。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">囚禁光亮。</Dialogue>
+				<Dialogue ID="2">解脱吧，在面对恐怖之前。</Dialogue>
+				<Dialogue ID="3">没入安息，一劳永逸。</Dialogue>
+				<Dialogue ID="4">我们必须监视，快找找有没有入侵者。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="ApocalypseBird_SmallPeak_Enemy">
+			<Abnormality>终末鸟</Abnormality>
+			<CardName>小喙</CardName>
+			<AbilityDesc>每一幕开始时随机一个司书的2张手牌费用+1</AbilityDesc>
+			<FlaborText>小喙窃窃私语。
+喋喋不休……</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">窃窃私语。喋喋不休……</Dialogue>
+				<Dialogue ID="2">我们的罪业纵然受到了惩罚，但罪孽的根源必将再度滋长。</Dialogue>
+				<Dialogue ID="3">正因如此，唯有惩戒方能铲除罪恶的萌芽。</Dialogue>
+				<Dialogue ID="4">用小而倔强的喙去惩罚他们吧。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+        <AbnormalityCard ID="ApocalypseBird_LongArm_Enemy">
+			<Abnormality>终末鸟</Abnormality>
+			<CardName>长臂</CardName>
+			<AbilityDesc>该来宾将免疫原版的负面状态</AbilityDesc>
+			<FlaborText>长臂掩藏了时间。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">隐藏时间。</Dialogue>
+				<Dialogue ID="2">哪怕将你定罪，罪孽仍会再度堆积，无穷无尽。</Dialogue>
+				<Dialogue ID="3">自此以后，审判高台再无公平之日。</Dialogue>
+				<Dialogue ID="4">用公正的天秤来判断谁更凶狠吧。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="ApocalypseBird_Apocalypse_Enemy">
+			<Abnormality>终末鸟</Abnormality>
+			<CardName>怪兽</CardName>
+			<AbilityDesc>选中时该来宾获得长臂，小喙，巨目的效果并将0费的目灯，惩戒，正义裁决者置入其牌库
+如果已经应用了这些异想体则清楚该异想体书页并重新应用一个随机的相同情感等级的异想体书页。</AbilityDesc>
+			<FlaborText>大鸟那能够看清数百里外的眼睛，高鸟那能够审判任何罪孽的天秤，小鸟那能够吞噬一切生物的巨口合为一体的那天，灾难降临了这片森林。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">可不能让坏人夺走所有珍贵的东西。</Dialogue>
+				<Dialogue ID="2">如果能吞噬周围的一切……</Dialogue>
+				<Dialogue ID="3">为了守护更多的人，我们才会合为一体。</Dialogue>
+				<Dialogue ID="4">必须尽快找到。不能让怪兽在这里乱蹿……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="ApocalypseBird_Gate_Enemy">
+			<Abnormality>终末鸟</Abnormality>
+			<CardName>森林的守望者</CardName>
+			<AbilityDesc>该来宾将永久获得2层“迅捷”。
+若所有来宾达到5级情感等级，则额外获得2层“强壮”与“忍耐”。</AbilityDesc>
+			<FlaborText>它们决定代替大家成为森林的守望者。比谁都热爱这片森林的它们，想要守护森林里的动物，维持森林的和平。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">为了守护比任何人都热爱的这个地方。</Dialogue>
+				<Dialogue ID="2">希冀着一个弱小生灵也能安心生活的世界。</Dialogue>
+				<Dialogue ID="3">能够守护这个地方的，只有我们了。</Dialogue>
+				<Dialogue ID="4">我们要代替它们，成为守望者，守护生命。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="ApocalypseBird_Atk_Enemy">
+			<Abnormality>终末鸟</Abnormality>
+			<CardName>和平</CardName>
+			<AbilityDesc>应用该异想体书页后，若舞台中不存在“入侵者”，则被该来宾击中的第1名司书将成为“入侵者”。
+(造成伤害和混乱伤害减少2-4且所受伤害提高1~2)</AbilityDesc>
+			<FlaborText>鸟儿在森林中徘徊，四处张望着寻找那头怪兽。可那儿已经什么都没有了，没有动物，没有日月，也没有怪兽。只剩下那只鸟，还有一片“黑森林”。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">忍受恐惧之人，终将迈入和平……</Dialogue>
+				<Dialogue ID="2">绝不会让任何事物加害于你。</Dialogue>
+				<Dialogue ID="3">到了最后，诸如恐怖之物也将不复存在。</Dialogue>
+				<Dialogue ID="4">森林，又恢复了安静平和。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+  	</Sephirah>
+</AbnormalityCardsRoot>

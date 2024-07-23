@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Sephirah SephirahType="None">
+		<AbnormalityCard ID="ShyLookToday_Face_Enemy">
+			<Abnormality>今天也很害羞</Abnormality>
+			<CardName>今日的表情</CardName>
+			<AbilityDesc>该来宾的骰子威力取决于当前表情。(最小-2，最大+2)</AbilityDesc>
+			<FlaborText>某一天，又是一个阳光明媚的好日子，我就像很久以前小心翼翼地晾干衣服那样，晾起了自己的脸皮。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">因为害羞，我很怕羞……</Dialogue>
+				<Dialogue ID="2">悲伤的神情与这座都市格格不入。</Dialogue>
+				<Dialogue ID="3">要更加清晰地表达你自己……这一点非常重要。</Dialogue>
+				<Dialogue ID="4">你知道，应该摆出什么样的表情吗？</Dialogue>
+				<Dialogue ID="5">你也像我一样开怀大笑吧，来嘛，这有什么难的？</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="ShyLookToday_Shy_Enemy">
+			<Abnormality>今天也很害羞</Abnormality>
+			<CardName>害羞</CardName>
+			<AbilityDesc>该来宾的招架骰子威力+1~2
+反震伤害+2~7</AbilityDesc>
+			<FlaborText>不要窥探她隐藏在脸皮后的真实容貌，这不会有什么好结果的。巨大的脸皮之后是她仅有的私人空间，确保她的隐私不受侵犯是都市留给她的最后一项特权。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我很害羞，只是害羞罢了……</Dialogue>
+				<Dialogue ID="2">对不起，时间一长自然会习惯的……</Dialogue>
+				<Dialogue ID="3">我这么做，也许只是为了保护自己。</Dialogue>
+				<Dialogue ID="4">有时，难以言喻的情感会如潮水一般涌上心头。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="ShyLookToday_Normalface_Enemy">
+			<Abnormality>今天也很害羞</Abnormality>
+			<CardName>社交距离</CardName>
+			<AbilityDesc>该来宾使用的书页中每有1颗“防御型”骰子，便使招架骰子威力+1</AbilityDesc>
+			<FlaborText>也许是因为害羞才会执意藏起面容，当无法隐忍的情感涌上心头之际，最好遮住你的脸。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">请不要向后窥探，这是最起码的礼貌……</Dialogue>
+				<Dialogue ID="2">只要距离适当，彼此之间就不会有负担。</Dialogue>
+				<Dialogue ID="3">你我之间有一条线，请你至少，不要越过这条线……</Dialogue>
+				<Dialogue ID="4">请不要再靠近了，别踏进我这里……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="RedShoes_Kirakira_Enemy">
+			<Abnormality>红舞鞋</Abnormality>
+			<CardName>闪亮</CardName>
+			<AbilityDesc>该来宾会获得”闪亮亮鞋子“(进攻威力+1~3并且速度提升1~2，受到的伤害和混乱伤害提升50%)
+被击杀时击杀者会获得”闪亮亮鞋子“，若无击杀者则击杀方随机1个角色会获得”闪亮亮鞋子“</AbilityDesc>
+			<FlaborText>这双鞋是无色的。不过很快就会染红了。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">红得太鲜艳了，会觉得晃眼吗？</Dialogue>
+				<Dialogue ID="2">杀掉这个人……鞋子就是你的了。</Dialogue>
+				<Dialogue ID="3">没关系，砍断脚踝就能轻松摘下鞋子了。</Dialogue>
+				<Dialogue ID="4">想不想成为最靓的仔？</Dialogue>
+				<Dialogue ID="5">这份华丽，只有你配得上。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="RedShoes_Desire_Enemy">
+			<Abnormality>红舞鞋</Abnormality>
+			<CardName>血之渴望</CardName>
+			<AbilityDesc>该来宾施加的流血层数X2</AbilityDesc>
+			<FlaborText>我要砍断你的狗腿，这辈子都别想跳舞。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">最受关注的人必须是我！</Dialogue>
+				<Dialogue ID="2">只有我才能跳出优美的舞蹈……</Dialogue>
+				<Dialogue ID="3">我要让你永远无法起舞。</Dialogue>
+				<Dialogue ID="4">只要废掉那双腿，我就能成为主角吧？</Dialogue>
+				<Dialogue ID="5">让我瞧瞧你的最后一支舞吧。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="RedShoes_Cut_Enemy">
+			<Abnormality>红舞鞋</Abnormality>
+			<CardName>利斧</CardName>
+			<AbilityDesc>该来宾的进攻骰子威力+1~2
+该来宾使用斩击骰子时若未能击中目标，则承受2~5点混乱伤害</AbilityDesc>
+			<FlaborText>前辈突然换上舞鞋，颇为满意地露出微笑。她的笑容有些奇怪，不……那根本不是在笑……</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">把斧刃磨快……一下就能砍断……</Dialogue>
+				<Dialogue ID="2">积蓄的欲望……压抑的情感……全部……全部释放出来！！！</Dialogue>
+				<Dialogue ID="3">猩红的斧子……还有比这更美丽的事物吗？</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="SpiderBud_Cocoon_Enemy">
+			<Abnormality>蜘蛛巢</Abnormality>
+			<CardName>茧缚</CardName>
+			<AbilityDesc>若该来宾击中目标且掷出最大值，则下一幕中对目标施加3层“麻痹”，“束缚”与“易损”. (每一幕最多触发1次)</AbilityDesc>
+			<FlaborText>没有人自愿取回茧中的尸体。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">是哪个不长眼的踩死了我的宝宝？</Dialogue>
+				<Dialogue ID="2">那个包裹在茧中的员工其实并没有死，但不会有人知道的。</Dialogue>
+				<Dialogue ID="3">蜘蛛的毒液非常特别，它不会让猎物立刻死去。</Dialogue>
+				<Dialogue ID="4">注意脚下，一旦出了岔子，就要当心头顶。</Dialogue>
+				<Dialogue ID="5">没人会狠下心去解救他们。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="SpiderBud_BabyAtk_Enemy">
+			<Abnormality>蜘蛛巢</Abnormality>
+			<CardName>进食</CardName>
+			<AbilityDesc>该来宾击中处于混乱状态的目标时将为所有来宾恢复3~7点体力。</AbilityDesc>
+			<FlaborText>成为茧后，员工彼得被倒吊在收容单元的天花板上，为蜘蛛可爱的子女们献上丰盛的一餐。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">感到欢喜吧，你会让我的宝宝们更加幸福。</Dialogue>
+				<Dialogue ID="2">成长期的宝宝们总是饥肠辘辘。</Dialogue>
+				<Dialogue ID="3">进食，生存，天经地义。</Dialogue>
+				<Dialogue ID="4">食物充足，无所忧虑。</Dialogue>
+				<Dialogue ID="5">我们有了可口的食物……宝宝们，聚过来。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="SpiderBud_Dinner_Enemy">
+			<Abnormality>蜘蛛巢</Abnormality>
+			<CardName>警戒</CardName>
+			<AbilityDesc>该来宾拼点时目标的骰子威力-1
+该来宾拼点胜利时有50%的概率在下一幕中对目标施加1层“束缚”与“易损”。</AbilityDesc>
+			<FlaborText>为了饥肠辘辘的孩子们，于黑暗中觅食的眼瞳发出阵阵红光。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">身处黑暗，也能看得一清二楚……</Dialogue>
+				<Dialogue ID="2">如果放跑了猎物，那就麻烦了。</Dialogue>
+				<Dialogue ID="3">视线一刻也不能移开，天知道他会对我的宝宝做些什么……</Dialogue>
+				<Dialogue ID="4">这一次，我会死死盯着你……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Laetitia_Present_Enemy">
+			<Abnormality>蕾蒂希娅</Abnormality>
+			<CardName>惊喜礼物</CardName>
+			<AbilityDesc>第1名与该来宾拼点的司书将被赠予1份“小小礼物”。
+拥有礼物的司书与非赠礼者拼点时有50%的概率失去3~8点体力并在下一幕中获得2层“流血”。
+拥有礼物的司书死亡后，该来宾可向其余司书赠予礼物。</AbilityDesc>
+			<FlaborText>如果遇见喜欢的人，她会把亲手制作的礼物送给他们。但礼物的内容是绝对保密的！</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">打开礼物后，你会吓一跳的哦！真的会跳起来哟？</Dialogue>
+				<Dialogue ID="2">礼物里装着什么？这是秘密，告诉你可就没意思哩~</Dialogue>
+				<Dialogue ID="3">这是我亲手制作的礼物，希望你能接受！</Dialogue>
+				<Dialogue ID="4">啊偶……我把小秘密说出来了。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Laetitia_Friend_Enemy">
+			<Abnormality>蕾蒂希娅</Abnormality>
+			<CardName>小伙伴</CardName>
+			<AbilityDesc>每一幕随机为一个随机司书手中的1张书页赋予“伙伴标记”。
+“伙伴书页”中的所有骰子威力+1。
+若“伙伴书页”在2幕内未被使用，则弃置该书页抽取一张书页并使该司书失去3~8点体力。</AbilityDesc>
+			<FlaborText>小不点儿很伤心，她舍不得离开亲爱的朋友们。小眼珠子咕噜一转，她想出了一个绝妙的主意！</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">不能就这么丢下重要的朋友们……所以，我想出了一个绝妙的主意！</Dialogue>
+				<Dialogue ID="2">不用担心~只有坏孩子才会让朋友伤心难过。</Dialogue>
+				<Dialogue ID="3">朋友越多，这里就越是热闹！</Dialogue>
+				<Dialogue ID="4">希望能在这里交到许多朋友~</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Laetitia_HeartGift_Enemy">
+			<Abnormality>蕾蒂希娅</Abnormality>
+			<CardName>奇趣恶作剧</CardName>
+			<AbilityDesc>该来宾使用书页时第1颗骰子必定掷出最小值或最大值。
+若掷出最小值，则该来宾将失去2~7点体力。</AbilityDesc>
+			<FlaborText>小不点儿决定留下来，直到为每个人带来欢声和笑语！</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">来和我玩吧！和我的朋友一起哈哈大笑吧！</Dialogue>
+				<Dialogue ID="2">喜欢我的小小恶作剧吗？很有意思吧？对吧对吧？就是那种表情！</Dialogue>
+				<Dialogue ID="3">这里没有笑声……大家看起来都好难过哦。</Dialogue>
+				<Dialogue ID="4">希望我的小小恶作剧能让大家绽放笑容！</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="BlackSwan_Feather_Enemy">
+			<Abnormality>黑天鹅之梦</Abnormality>
+			<CardName>污秽</CardName>
+			<AbilityDesc>该来宾每一幕开始时获得3层随机负面buff(“束缚”,“易损”,“虚弱”,"破绽"或者“麻痹”)，命中时对所有敌人施加1层自身拥有的随机负面buff</AbilityDesc>
+			<FlaborText>艾丽莎痛苦地跪倒在地，也如旁人那般呕吐不止……</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">徐徐水波划过湖面，仿佛有一群天鹅刚刚起飞……</Dialogue>
+				<Dialogue ID="2">面对这丑恶的现实，内心的情感无法遏制地爆发。</Dialogue>
+				<Dialogue ID="3">我也和其他人一样，无法控制地呕吐……</Dialogue>
+				<Dialogue ID="4">我的肺像被刺中数刀，污物紧随呼吸喷涌而出。</Dialogue>
+				<Dialogue ID="5">鲜血……与绿色污秽的混合……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="BlackSwan_Umbrella_Enemy">
+			<Abnormality>黑天鹅之梦</Abnormality>
+			<CardName>破伞</CardName>
+			<AbilityDesc>该来宾被单方面攻击时以2个6-10反击防御骰迎战
+(效果为拼点胜利对目标造成等同于目标骰子威力的伤害和混乱伤害)</AbilityDesc>
+			<FlaborText>心怀美梦的黑天鹅试图通过荨麻解除自身的诅咒，可如今的她只剩下那把珍爱的破伞。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">当黑天鹅从成为白天鹅的美梦中苏醒时，会发生什么呢？</Dialogue>
+				<Dialogue ID="2">留给我的，只有这把珍贵的阳伞……还有胸针……</Dialogue>
+				<Dialogue ID="3">阳光……太过刺眼，我只能缩在伞下。</Dialogue>
+				<Dialogue ID="4">我渴望着永不醒来的梦，可现实始终是那样残酷。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="BlackSwan_Family_Enemy">
+			<Abnormality>黑天鹅之梦</Abnormality>
+			<CardName>亲爱的家人</CardName>
+			<AbilityDesc>该来宾将获得6层“荨麻衣”，每一幕开始时所有敌人获得“荨麻衣”层数的“守护”,“振奋”，每一幕结束时失去1层“荨麻衣”</AbilityDesc>
+			<FlaborText>艾丽莎动身寻找她的哥哥们。她期盼着用荨麻衣解除家人的诅咒，与他们一同分享幸福的梦。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">虽然没有值钱的东西能传给他们，可他们人人怀揣着名为“勤奋”与“真诚”的珍贵宝石。</Dialogue>
+				<Dialogue ID="2">我一直坚信……一定能让大家幸福……</Dialogue>
+				<Dialogue ID="3">只要再努力一些……就能好起来……</Dialogue>
+				<Dialogue ID="4">我的家人，本该穿上荨麻衣获得自由……</Dialogue>
+				<Dialogue ID="5">我们也曾一同分享幸福的梦。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+  	</Sephirah>
+</AbnormalityCardsRoot>

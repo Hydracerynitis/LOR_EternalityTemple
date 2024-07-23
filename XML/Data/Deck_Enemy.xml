@@ -227,18 +227,6 @@
   </Deck>
 
    <Deck ID="226769021">
-    <Card Pid="@origin">501007</Card>
-    <Card Pid="@origin">501007</Card>
-    <Card Pid="@origin">501007</Card>
-    <Card Pid="@origin">608016</Card><!--克隆复制--> 
-    <Card Pid="@origin">608016</Card><!--克隆复制--> 
-    <Card Pid="@origin">608016</Card><!--克隆复制--> 
-    <Card Pid="@origin">606007</Card>
-    <Card Pid="@origin">606007</Card>
-    <Card Pid="@origin">606007</Card>
-  </Deck>
-
-   <Deck ID="226769022">
     <Card Pid="@origin">701012</Card><!--平心静气--> 
     <Card Pid="@origin">701012</Card><!--平心静气--> 
     <Card Pid="@origin">608016</Card><!--克隆复制--> 
@@ -248,6 +236,18 @@
     <Card Pid="@origin">608012</Card>
     <Card Pid="@origin">608012</Card>
     <Card Pid="@origin">608012</Card>
+  </Deck>
+
+   <Deck ID="226769022">
+    <Card Pid="@origin">501007</Card>
+    <Card Pid="@origin">501007</Card>
+    <Card Pid="@origin">501007</Card>
+    <Card Pid="@origin">608016</Card><!--克隆复制--> 
+    <Card Pid="@origin">608016</Card><!--克隆复制--> 
+    <Card Pid="@origin">608016</Card><!--克隆复制--> 
+    <Card Pid="@origin">606007</Card>
+    <Card Pid="@origin">606007</Card>
+    <Card Pid="@origin">606007</Card>
   </Deck>
 
    <Deck ID="226769023">

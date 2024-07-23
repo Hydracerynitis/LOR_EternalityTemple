@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbnormalityCardsRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Sephirah SephirahType="None">
+		<AbnormalityCard ID="Redhood_Hunt_Enemy">
+			<Abnormality>小红帽雇佣兵</Abnormality>
+			<CardName>猎物</CardName>
+			<AbilityDesc>应用该异想体书页后，该来宾击中的第1名司书将被标记为“猎物”。
+该来宾击中“猎物”时伤害+2~6,"猎物"死亡后，该来宾可将其余司书标记为“猎物”。</AbilityDesc>
+			<FlaborText>那头狼的惨死，是我生命中唯一喜爱的事。</FlaborText>
+			<Dialogues>
+			<Dialogue ID="1">狩猎这块儿我可是行家，那种猎物手到擒来。</Dialogue>
+				<Dialogue ID="2">别眨眼，盯紧那畜生的每一个举动。</Dialogue>
+				<Dialogue ID="3">一旦定下目标，就要与之拼杀到底，永不言弃。</Dialogue>
+				<Dialogue ID="4">死死盯住你的猎物，抱着必杀无疑的决心踏出脚步。</Dialogue>
+				<Dialogue ID="5">你要是委托我，那我可以考虑帮忙。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Redhood_Revenge_Enemy">
+			<Abnormality>小红帽雇佣兵</Abnormality>
+			<CardName>复仇</CardName>
+			<AbilityDesc>该来宾每承受最大生命值10%的伤害(包括直接攻击伤害与负面状态伤害)，便在下一幕中获得1层“强壮”。(至多4层)</AbilityDesc>
+			<FlaborText>我们之间不会有任何一方胜出，更谈不上庆祝。我只想用比前一回更残忍，更痛苦的手段撕烂那头狗杂种。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">这阵子我一直在磨刀，不为别的，只为斩下那畜生的头。</Dialogue>
+				<Dialogue ID="2">把那头阴险的杂种留给我。</Dialogue>
+				<Dialogue ID="3">我要把那杂种的脑袋挂在床头，如此我才能安心睡个好觉。</Dialogue>
+				<Dialogue ID="4">所有伤痛都是为了更好地了解对手。现在，是时候偿债了。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Redhood_RedScar_Enemy">
+			<Abnormality>小红帽雇佣兵</Abnormality>
+			<CardName>伤疤</CardName>
+			<AbilityDesc>应用该异想体书页时，将该来宾的最大体力会设定为其当前体力。
+因此每损失20%的最大生命值便永久获得1点“强壮”</AbilityDesc>
+			<FlaborText>15岁时，磨斧子取代了采野花，成为我生命中习以为常的一部分。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">这并非幸存者的勋章，而是求生意志的证明。</Dialogue>
+				<Dialogue ID="2">伤疤越多，求生的意志就越是强大。</Dialogue>
+				<Dialogue ID="3">可别以此为荣，每一道伤疤都在诉说你的无能。</Dialogue>
+				<Dialogue ID="4">……这些伤疤让我毛骨悚然，牙齿打颤。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="BigBadWolf_Eat_Enemy">
+			<Abnormality>又大又可能很坏的狼</Abnormality>
+			<CardName>掠食本能</CardName>
+			<AbilityDesc>该来宾拼点胜利时将使自身当前书页的最后一颗骰子威力+1~2(不计入反击骰子)
+若以该骰子击中目标便为自身恢复3~7点体力。</AbilityDesc>
+			<FlaborText>好久没吃到，如此鲜美的肉了。从那时起，想要自律变得越来越难。不过没关系，我是一头又大又“坏”的狼。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">有股难闻的气息……在呼唤着我……</Dialogue>
+				<Dialogue ID="2">正如黑暗填满新月，我的胃也要被填满……</Dialogue>
+				<Dialogue ID="3">你们让我……口水直流……</Dialogue>
+				<Dialogue ID="4">只要填饱肚子……我就满足了……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="BigBadWolf_Claw_Enemy">
+			<Abnormality>又大又可能很坏的狼</Abnormality>
+			<CardName>凶残利爪</CardName>
+			<AbilityDesc>若该来宾在1幕之内承受超出其体力上限50%的伤害，则下一幕中自身将无法被指定为攻击目标。
+在此状态下，该来宾将获得2层“强壮”且击中目标时将在下一幕中对其施加1层“流血”。</AbilityDesc>
+			<FlaborText>很久以前，这对利爪曾破开无数生物的肚囊，将其内脏一一撕裂。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">我的爪子又大又利，能让我更好地扮演天生的角色……</Dialogue>
+				<Dialogue ID="2">因为狼是坏事做尽，且理应受到惩罚的存在……</Dialogue>
+				<Dialogue ID="3">凶暴的爪子会突入皮肉，将其撕烂……</Dialogue>
+				<Dialogue ID="4">要想撕裂内脏，没有什么能比这对爪子更好……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="BigBadWolf_Change_Enemy">
+			<Abnormality>又大又可能很坏的狼</Abnormality>
+			<CardName>狼的角色</CardName>
+			<AbilityDesc>该来宾被单方面攻击时以两个4~7斩击的反击骰迎战</AbilityDesc>
+			<FlaborText>狼做坏事时绝不能越界，狼理应受到惩罚，狼永远是坏榜样……</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">没关系……谁叫我是一头又大又坏的狼……</Dialogue>
+				<Dialogue ID="2">既然人们都这么称呼我，那我就该是这样的存在……古老的童话绝不会错……</Dialogue>
+				<Dialogue ID="3">狼不需要名字，只要依照生来被赋予的角色，苟且偷生就好。</Dialogue>
+				<Dialogue ID="4">没人愿意接近这头可怕的狼……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Mountain_Eat_Enemy">
+			<Abnormality>微笑的尸山</Abnormality>
+			<CardName>死尸吸收</CardName>
+			<AbilityDesc>场上其他单位死亡时该来宾恢复20%血量(上限为50)并恢复1点光芒</AbilityDesc>
+			<FlaborText>它唯一想要的，就是浸泡在鲜血中的人肉。一闻到血腥便会狂奔而来。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">肉……好吃的……日……欧……</Dialogue>
+				<Dialogue ID="2">味道……是在……这边吗……</Dialogue>
+				<Dialogue ID="3">还……不够……继续……吃……咳……</Dialogue>
+				<Dialogue ID="4">身体，变大……就能……更强……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Mountain_Shout_Enemy">
+			<Abnormality>微笑的尸山</Abnormality>
+			<CardName>尸体在笑</CardName>
+			<AbilityDesc>当司书死亡时将死亡司书牌库里3张随机书页置入该来宾的手牌并下一幕额外获得一个速度骰</AbilityDesc>
+			<FlaborText>一座尸山。那些死尸面带微笑，成为互相分享残肢的一个整体。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">咕噜噜……咕噜……嗝……</Dialogue>
+				<Dialogue ID="2">互相……帮助……变成手……脚……</Dialogue>
+				<Dialogue ID="3">大家……笑脸……好……幸福……</Dialogue>
+				<Dialogue ID="4">一起……来……帮忙……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Mountain_Vomit_Enemy">
+			<Abnormality>微笑的尸山</Abnormality>
+			<CardName>尸山</CardName>
+			<AbilityDesc>每击杀1名司书，该来宾便永久获得1层“强壮”，“守护”与“迅捷”且光芒上限与光芒恢复量+1</AbilityDesc>
+			<FlaborText>尸体越多，它的体型就越是庞大。而且永不满足。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">必须……重新……合为……一体……</Dialogue>
+				<Dialogue ID="2">要赶快……回去……咳……</Dialogue>
+				<Dialogue ID="3">这样……不行……危……险……</Dialogue>
+				<Dialogue ID="4">不要离开……再贴回来……我们……是一体的……</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+	    <AbnormalityCard ID="Nosferatu_BloodHope_Enemy">
+			<Abnormality>诺斯费拉图</Abnormality>
+			<CardName>恐水症</CardName>
+			<AbilityDesc>该来宾击中目标时失去2-7点血量，提高造成伤害+3~7点并在下一幕中对其施加2层“流血”.</AbilityDesc>
+			<FlaborText>他们彷徨着。像在寻找什么，却又不明白自己究竟想要什么。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">血……我要血！！！</Dialogue>
+				<Dialogue ID="2">所有欲望都被允许的夜晚……无尽的血染之夜。</Dialogue>
+				<Dialogue ID="3">无可比拟的鲜血！赐予我永生的福祉！</Dialogue>
+				<Dialogue ID="4">死亡将与诸位共舞！被吞噬的命运人人平等！</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Nosferatu_Wine_Enemy">
+			<Abnormality>诺斯费拉图</Abnormality>
+			<CardName>红酒</CardName>
+			<AbilityDesc>若该来宾击杀司书，则为所有来宾恢复10点体力且下一幕开始时该司书将获得2层强壮,其他来宾获得2层虚弱。</AbilityDesc>
+			<FlaborText>虽维持着人类的身姿，但只要有一滴血就会化为凶暴的怪物，度过狂乱的一夜。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">啊……忍受饥渴的痛苦绝非美妙之事。</Dialogue>
+				<Dialogue ID="2">午休为时尚早……来尽情享乐吧？</Dialogue>
+				<Dialogue ID="3">舍去虚幻的希望，忘却人类的皮囊……</Dialogue>
+				<Dialogue ID="4">如饥似渴，一饮而尽。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="Nosferatu_Vampire_Enemy">
+			<Abnormality>诺斯费拉图</Abnormality>
+			<CardName>吸血</CardName>
+			<AbilityDesc>该来宾击中低于50%最大血量的目标时伤害+2~4将恢复2~5点体力。</AbilityDesc>
+			<FlaborText>……饥渴，永不满足。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">死亡将与诸位共舞！被吞噬的命运也是公平的！</Dialogue>
+				<Dialogue ID="2">愉悦的用餐时间到！纵情享受被疯狂染化的血红之夜！</Dialogue>
+				<Dialogue ID="3">这份饥渴无从摆脱！</Dialogue>
+				<Dialogue ID="4">全部撕碎，直至最后一滴！</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="NothingThere_Goodbye_Enemy">
+			<Abnormality>一无所有</Abnormality>
+			<CardName>咕德拜</CardName>
+			<AbilityDesc>[选择一名司书]
+该司书在每一幕中使用的最后1颗骰子威力x2</AbilityDesc>
+			<FlaborText>一旦证实它能直立行走，那么你们只有一件事可做。端正姿势，双手合十，向信仰的神明祈祷，而后静观其变吧。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">叽噫……呕窝……叽噫呕……救救我！！！</Dialogue>
+				<Dialogue ID="2">呦仁……滋哎……吗！？有人在吗！！！</Dialogue>
+				<Dialogue ID="3">窝哦……卟……兮……兮昂……我不想死……</Dialogue>
+				<Dialogue ID="4">你好。你好。妮……薅。你好。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="NothingThere_Hello_Enemy">
+			<Abnormality>一无所有</Abnormality>
+			<CardName>哈啰？</CardName>
+			<AbilityDesc>该司书在每一幕中使用的第1颗骰子将被赋予额外效果“[命中时] 恢复等同于伤害量的体力”</AbilityDesc>
+			<FlaborText>更恐怖的是，它正在模仿人类。照镜子，喃喃自语，调整骨骼结构。无论哪种都像在模仿“我们”。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">咕哎……呜。纳葛……怪物……为甚莫……</Dialogue>
+				<Dialogue ID="2">……叽噫！！！……叽噫！！！救救我！</Dialogue>
+				<Dialogue ID="3">纳……葛……咳啪的……怪呜……怪物……</Dialogue>
+				<Dialogue ID="4">薅……妮……薅？妮……你好？</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+		<AbnormalityCard ID="NothingThere_Skin_Enemy">
+			<Abnormality>一无所有</Abnormality>
+			<CardName>躯壳</CardName>
+			<AbilityDesc>该来宾被击中时不再承受混乱伤害。 </AbilityDesc>
+			<FlaborText>尽管拥有人类的相貌，但它绝不是人类。每隔一定时间，它便会吞噬与其互动的职员，然后披上他们的躯壳。
+在此过程中，它的骨骼和脏器将被扭成一团，呈现出极度怪诞的形状。</FlaborText>
+			<Dialogues>
+				<Dialogue ID="1">窝哦……哎……泥……我爱你……</Dialogue>
+				<Dialogue ID="2">想要……一具……躯壳……</Dialogue>
+				<Dialogue ID="3">兮液……兮液……谢谢。谢谢。</Dialogue>
+				<Dialogue ID="4">库呜……酷。酷。</Dialogue>
+			</Dialogues>
+		</AbnormalityCard>
+  	</Sephirah>
+</AbnormalityCardsRoot>

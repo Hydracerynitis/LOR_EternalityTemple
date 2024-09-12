@@ -11,8 +11,7 @@ namespace EternalityTemple.Universal
         public override void OnRoundStart()
         {
             base.OnRoundStart();
-            if (EternalityParam.PickedEmotionCard < 2)
-                EternalityParam.PickedEmotionCard = 2;
+            EternalityParam.PickedEmotionCard = -5;
         }
     }
 }

@@ -245,14 +245,23 @@ namespace EternalityTemple
         }
         //观测被动，玩家额外选取2个异想体
         [HarmonyPatch(typeof(StageLibraryFloorModel),nameof(StageLibraryFloorModel.OnPickPassiveCard))]
-        [HarmonyPostfix]
-        public static void StageLibraryFloorModel_OnPickPassiveCard_Post(StageLibraryFloorModel __instance)
+        [HarmonyPrefix]
+        public static void StageLibraryFloorModel_OnPickPassiveCard_Pre(StageLibraryFloorModel __instance)
         {
+            int skillPoint = __instance.team.emotionLevel - __instance.team.currentSelectEmotionLevel;
+            if (IsEternalityBattle() && EternalityParam.PickedEmotionCard==-5 && skillPoint >= 0)
+            {
+                EternalityParam.PickedEmotionCard = 2 * (skillPoint+1);
+            }
             if (EternalityParam.PickedEmotionCard > 0)
             {
                 EternalityParam.PickedEmotionCard--;
                 __instance.team.currentSelectEmotionLevel --;
             }
+        }
+        public static bool IsEternalityBattle()
+        {
+            return BattleObjectManager.instance.GetAliveList(Faction.Enemy).Exists(x => x.passiveDetail.HasPassive<PassiveAbility_226769004>());
         }
         //修复观测被动而导致的UI问题
         [HarmonyPatch(typeof(LevelUpUI),nameof(LevelUpUI.InitBase))]

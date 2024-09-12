@@ -25,5 +25,10 @@ namespace EternalityTemple.Kaguya
                 return;
             trio.ForEach(x => x.bufListDetail.AddBuf(new BattleUnitBuf_KaguyaBuf(EternalityParam.GetFaction(owner.faction).KaguyaStack)));
         }
+
+        public override void OnDie()
+        {
+            BattleObjectManager.instance.GetAliveList(owner.faction).ForEach(x => x.bufListDetail.RemoveBufAll(typeof(BattleUnitBuf_KaguyaBuf)));
+        }
     }
 }

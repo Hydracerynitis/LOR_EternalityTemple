@@ -10,10 +10,10 @@ namespace EternalityTemple.Inaba
     {
         public override void OnRoundStart()
         {
-            int num = Singleton<StageModel>.Instance.GetUsedFloorList().Count - Singleton<StageController>.Instance.RoundTurn;
-            foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList_opponent(this.owner.faction))
+            int num = Singleton<StageController>.Instance.GetStageModel().GetUsedFloorList().Count-1;
+            foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList_opponent(owner.faction))
             {
-                if (num >= 0)
+                if (battleUnitModel.emotionDetail.EmotionLevel <num)
                 {
                     battleUnitModel.emotionDetail.SetEmotionLevel(battleUnitModel.emotionDetail.EmotionLevel + 1);
                 }

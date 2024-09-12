@@ -41,8 +41,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\packages\Reference\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="BaseMod">
-      <HintPath>D:\Steam\steamapps\workshop\content\1256670\2603522001\Assemblies\BaseMod.dll</HintPath>
+    <Reference Include="BaseMod, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Library of ruina custom\BaseMod.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

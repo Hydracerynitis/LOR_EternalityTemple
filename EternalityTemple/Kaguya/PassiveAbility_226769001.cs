@@ -18,7 +18,11 @@ namespace EternalityTemple.Kaguya
             {
                 BattleUnitBuf_PuzzleBuf puzzleBuf = new BattleUnitBuf_PuzzleBuf();
                 unit.bufListDetail.AddBuf(puzzleBuf);
-                puzzleLog.FindAll(x => x.Item1 == unit.UnitData).ForEach(x => puzzleBuf.AddPuzzle(x.Item2, true));
+                puzzleLog.FindAll(x => x.Item1 == unit.UnitData).ForEach(x =>
+                {
+                    puzzleBuf.AddPuzzle(x.Item2, true);
+                    remainingQuest.Remove(x.Item2);
+                });
                 foreach(PuzzleQuestData PQD in questLog.FindAll(x => x.questGiver == unit.UnitData))
                 {
                     BattleUnitBuf buf = null;

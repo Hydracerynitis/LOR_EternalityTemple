@@ -25,6 +25,8 @@ namespace EternalityTemple.Kaguya
                 CompletePuzzle.Add(i);
                 if (!replay)
                     EternalityParam.GetFaction(_owner.faction).PuzzleLog.Add((_owner.UnitData, i));
+                if (!_owner.passiveDetail.HasPassive<PassiveAbility_226769001>())
+                    return;
                 switch(i)
                 {
                     case 1:

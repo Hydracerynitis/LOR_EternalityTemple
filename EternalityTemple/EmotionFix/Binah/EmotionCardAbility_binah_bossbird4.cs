@@ -10,7 +10,7 @@ using System.IO;
 using System.Xml;
 using EmotionalFix;
 
-namespace EmotionalFix.Binah
+namespace EmotionalFix
 {
     /*public class EmotionCardAbility_binah_bossbird4 : EmotionCardAbilityBase
     {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Guard = EmotionCardAbility_whitenight2.BattleUnitBuf_Emotion_WhiteNight_Guard;
 
-namespace EmotionalFix.Hokma
+namespace EmotionalFix
 {
     public class EmotionCardAbility_hokma_whitenight2 : EmotionCardAbilityBase
     {

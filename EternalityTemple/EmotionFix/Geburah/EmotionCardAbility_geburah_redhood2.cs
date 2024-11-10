@@ -4,7 +4,7 @@ using LOR_DiceSystem;
 using System.Collections.Generic;
 using Sound;
 
-namespace EmotionalFix.Geburah
+namespace EmotionalFix
 {
     public class EmotionCardAbility_geburah_redhood2 : EmotionCardAbilityBase
     {

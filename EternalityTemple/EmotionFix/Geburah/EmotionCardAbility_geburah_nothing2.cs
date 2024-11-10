@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix.Geburah
+namespace EmotionalFix
 {
     public class EmotionCardAbility_geburah_nothing2 : EmotionCardAbilityBase
     {

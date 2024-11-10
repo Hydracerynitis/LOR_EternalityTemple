@@ -1,7 +1,7 @@
 ﻿using Sound;
 using UnityEngine;
 
-namespace EmotionalFix.Hokma
+namespace EmotionalFix
 {
     public class EmotionCardAbility_hokma_silence1 : EmotionCardAbilityBase
     {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LOR_DiceSystem;
 
-namespace EmotionalFix.Yesod
+namespace EmotionalFix
 {
     public class EmotionCardAbility_yesod_helper3 : EmotionCardAbilityBase
     {

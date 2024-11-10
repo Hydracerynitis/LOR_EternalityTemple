@@ -8,9 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BaseMod;
 
-namespace EmotionalFix.Keter
+namespace EmotionalFix
 {
     public class EmotionCardAbility_keter_bloodbath3 : EmotionCardAbilityBase
     {
@@ -33,7 +32,7 @@ namespace EmotionalFix.Keter
             {
                 _target = behavior.card.target;
                 _stack = 1;
-                BloodBathHand bloodBathHandDebuf=_target.bufListDetail.AddBufByEtc<BloodBathHand>(0);
+                BloodBathHand bloodBathHandDebuf = Helper.AddBuf<BloodBathHand>(_target, 0);
                 bloodBathHandDebuf.OnHit();
             }
             else

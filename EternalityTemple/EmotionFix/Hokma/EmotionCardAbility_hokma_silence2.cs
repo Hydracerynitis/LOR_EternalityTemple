@@ -1,7 +1,7 @@
 ﻿using System;
 using Bell = EmotionCardAbility_silence2.BattleUnitBuf_Emotion_Silence_Bell;
 
-namespace EmotionalFix.Hokma
+namespace EmotionalFix
 {
     public class EmotionCardAbility_hokma_silence2 : EmotionCardAbilityBase
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using BaseMod;
+using EmotionalFix;
 public class PassiveAbility_226769022 : PassiveAbilityBase
 {
 	public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
@@ -29,7 +29,7 @@ public class PassiveAbility_226769022 : PassiveAbilityBase
 	}
 	public override void OnRoundStart()
 	{
-		owner.allyCardDetail.DrawCardSpecified((BattleDiceCardModel x) => x.GetID() == 501001);
+		Helper.DrawCardSpecified(owner, (BattleDiceCardModel x) => x.GetID() == 501001);
 		if (this._stack > 0)
 		{
 			this.owner.bufListDetail.AddKeywordBufThisRoundByEtc(KeywordBuf.Strength, this._stack, this.owner);

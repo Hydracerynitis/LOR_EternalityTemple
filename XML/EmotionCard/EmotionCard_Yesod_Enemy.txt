@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<EmotionCard ID="90201">
+		<Name>ForsakenMurderer_Metal_Enemy</Name>
+		<Artwork>ForsakenMurderer_Metal</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>0</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_murderer1</Script>
+	</EmotionCard> 
+	<EmotionCard ID="90202">
+		<Name>ForsakenMurderer_Tie_Enemy</Name>
+		<Artwork>ForsakenMurderer_Tie</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-3</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_murderer2</Script>
+	</EmotionCard>  
+	<EmotionCard ID="90203">
+		<Name>ForsakenMurderer_Violence_Enemy</Name>
+		<Artwork>ForsakenMurderer_Violence</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>2</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>-2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_murderer3</Script>
+	</EmotionCard>
+	<EmotionCard ID="90204">
+		<Name>LittleHelper_Rest_Enemy</Name>
+		<Artwork>LittleHelper_Rest</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_helper1</Script>
+	</EmotionCard>
+	<EmotionCard ID="90205">
+		<Name>LittleHelper_Pattern_Enemy</Name>
+		<Artwork>LittleHelper_Pattern</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_helper2</Script>
+	</EmotionCard>  
+	<EmotionCard ID="90206">
+		<Name>LittleHelper_Clean_Enemy</Name>
+		<Artwork>LittleHelper_Clean</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>3</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>0</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_helper3</Script>
+	</EmotionCard>
+	<EmotionCard ID="90207">
+		<Name>SingingMachine_Music_Enemy</Name>
+		<Artwork>SingingMachine_Music</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>4</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-1</EmotionRate>、
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_singingMachine1</Script>
+	</EmotionCard>
+	<EmotionCard ID="90208">
+		<Name>SingingMachine_Rhythm_Enemy</Name>
+		<Artwork>SingingMachine_Rhythm</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>4</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>-1</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_singingMachine2</Script>
+	</EmotionCard>
+	<EmotionCard ID="90209">
+		<Name>SingingMachine_Atk_Enemy</Name>
+		<Artwork>SingingMachine_Atk</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>4</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>-2</EmotionRate>
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_singingMachine3</Script>
+	</EmotionCard>
+	<EmotionCard ID="90210">
+		<Name>Butterfly_White_Enemy</Name>
+		<Artwork>Butterfly_White</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>1</EmotionRate> 
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_butterfly1</Script>
+	</EmotionCard>
+	<EmotionCard ID="90211">
+		<Name>Butterfly_Fly_Enemy</Name>
+		<Artwork>Butterfly_Fly</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>2</EmotionLevel>
+		<EmotionRate>1</EmotionRate>   
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_butterfly2</Script>
+	</EmotionCard>
+	<EmotionCard ID="90212">
+		<Name>Butterfly_Casket_Enemy</Name>
+		<Artwork>Butterfly_Casket</Artwork>
+		<State>Positive</State>
+		<Sephirah>None</Sephirah>
+		<Level>5</Level>
+		<EmotionLevel>3</EmotionLevel>
+		<EmotionRate>2</EmotionRate>   
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_butterfly3</Script>
+	</EmotionCard>
+	<EmotionCard ID="90213">
+		<Name>Matan_Request_Enemy</Name>
+		<Artwork>Matan_Request</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>6</Level>
+		<EmotionLevel>1</EmotionLevel>
+		<EmotionRate>0</EmotionRate>   
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_freischutz1</Script>
+	</EmotionCard>
+	<EmotionCard ID="90214">
+		<Name>Matan_Seven_Enemy</Name>
+		<Artwork>Matan_Seven</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>6</Level>
+		<EmotionLevel>3</EmotionLevel>
+		<EmotionRate>-2</EmotionRate>   
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_freischutz2</Script>
+	</EmotionCard>
+	<EmotionCard ID="90215">
+		<Name>Matan_Flame_Enemy</Name>
+		<Artwork>Matan_Flame</Artwork>
+		<State>Negative</State>
+		<Sephirah>None</Sephirah>
+		<Level>6</Level>
+		<EmotionLevel>3</EmotionLevel>
+		<EmotionRate>-2</EmotionRate>   
+		<TargetType>SelectOne</TargetType>
+		<Script>yesod_freischutz3</Script>
+	</EmotionCard>
+</EmotionCardXmlRoot>

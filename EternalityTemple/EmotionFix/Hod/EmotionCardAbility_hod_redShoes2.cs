@@ -5,7 +5,7 @@ using Sound;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix.Hod
+namespace EmotionalFix
 {
     public class EmotionCardAbility_hod_redShoes2 : EmotionCardAbilityBase
     {

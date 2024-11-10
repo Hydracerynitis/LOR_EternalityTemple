@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Sound;
 using System.Data.SqlTypes;
 
-namespace EmotionalFix.Tiphereth
+namespace EmotionalFix
 {
     public class EmotionCardAbility_tiphereth_kingofgreed3 : EmotionCardAbilityBase
     {

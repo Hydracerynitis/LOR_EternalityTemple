@@ -4,9 +4,8 @@ using LOR_DiceSystem;
 using HarmonyLib;
 using System.Collections.Generic;
 using Sound;
-using BaseMod;
 
-namespace EmotionalFix.Tiphereth
+namespace EmotionalFix
 {
     public class EmotionCardAbility_tiphereth_clownofnihil1 : EmotionCardAbilityBase
     {

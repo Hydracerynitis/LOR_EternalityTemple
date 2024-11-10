@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix.Keter
+namespace EmotionalFix
 {
     public class EmotionCardAbility_keter_quietKid3: EmotionCardAbilityBase
     {

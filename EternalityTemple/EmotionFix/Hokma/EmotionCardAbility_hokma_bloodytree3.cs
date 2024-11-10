@@ -7,7 +7,7 @@ using HarmonyLib;
 using System.Collections.Generic;
 using System.IO;
 
-namespace EmotionalFix.Hokma
+namespace EmotionalFix
 {
     public class EmotionCardAbility_hokma_bloodytree3 : EmotionCardAbilityBase
     {

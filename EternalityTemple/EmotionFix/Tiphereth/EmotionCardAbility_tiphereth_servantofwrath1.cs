@@ -1,12 +1,8 @@
 ﻿using System;
 using UnityEngine;
-using LOR_DiceSystem;
-using HarmonyLib;
-using System.Collections.Generic;
-using Sound;
-using BaseMod;
+using EI = EternalityTemple.EternalityInitializer;
 
-namespace EmotionalFix.Tiphereth
+namespace EmotionalFix
 {
     public class EmotionCardAbility_tiphereth_servantofwrath1 : EmotionCardAbilityBase
     {
@@ -29,7 +25,7 @@ namespace EmotionalFix.Tiphereth
                 int id = 1104401;
                 if (Helper.SearchEmotion(_owner, "NihilClown_fusion_Enemy") != null)
                     id = 1104402;
-                BattleDiceCardModel card = _owner.allyCardDetail.AddNewCard(Tools.MakeLorId(id));
+                BattleDiceCardModel card = _owner.allyCardDetail.AddNewCard(new LorId(EI.packageId,id));
                 card.SetPriorityAdder(1000);
                 card.temporary = true;
             }

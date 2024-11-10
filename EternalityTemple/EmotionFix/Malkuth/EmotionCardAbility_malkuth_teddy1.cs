@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace EmotionalFix.Malkuth
+namespace EmotionalFix
 {
     public class EmotionCardAbility_malkuth_teddy1: EmotionCardAbilityBase
     {

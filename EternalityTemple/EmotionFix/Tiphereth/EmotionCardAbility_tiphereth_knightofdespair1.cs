@@ -4,7 +4,7 @@ using LOR_DiceSystem;
 using System.Collections.Generic;
 using Sound;
 
-namespace EmotionalFix.Tiphereth
+namespace EmotionalFix
 {
     public class EmotionCardAbility_tiphereth_knightofdespair1 : EmotionCardAbilityBase
     {

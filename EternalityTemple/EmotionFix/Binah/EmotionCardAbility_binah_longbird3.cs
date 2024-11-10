@@ -5,7 +5,7 @@ using Sound;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix.Binah
+namespace EmotionalFix
 {
     public class EmotionCardAbility_binah_longbird3 : EmotionCardAbilityBase
     {

@@ -5,7 +5,7 @@ using HarmonyLib;
 using Punish = EmotionCardAbility_smallbird1.BattleUnitBuf_Emotion_SmallBird_Punish;
 using Sound;
 
-namespace EmotionalFix.Binah
+namespace EmotionalFix
 {
     public class EmotionCardAbility_smallbird1 : EmotionCardAbilityBase
     {

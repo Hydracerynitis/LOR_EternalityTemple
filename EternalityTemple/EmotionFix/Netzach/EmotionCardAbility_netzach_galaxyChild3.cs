@@ -7,7 +7,7 @@ using Sound;
 using UnityEngine;
 using System.Collections;
 
-namespace EmotionalFix.Netzach
+namespace EmotionalFix
 {
     public class EmotionCardAbility_netzach_galaxyChild3 : EmotionCardAbilityBase
     {

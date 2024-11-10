@@ -3,9 +3,8 @@ using UnityEngine;
 using LOR_DiceSystem;
 using System.Collections.Generic;
 using Sound;
-using BaseMod;
 
-namespace EmotionalFix.Tiphereth
+namespace EmotionalFix
 {
     public class EmotionCardAbility_tiphereth_kingofgreed2 : EmotionCardAbilityBase
     {
@@ -64,13 +63,13 @@ namespace EmotionalFix.Tiphereth
         public List<KeywordBuf> GetAvailableBuf()
         {
             List<KeywordBuf> output=new List<KeywordBuf>();
-            BattleUnitBuf_strength strength = _owner.bufListDetail.FindBuf<BattleUnitBuf_strength>(BufReadyType.NextRound);
+            BattleUnitBuf strength = _owner.bufListDetail.GetReadyBuf(KeywordBuf.Strength);
             if (strength==null || strength.stack<3)
                 output.Add(KeywordBuf.Strength);
-            BattleUnitBuf_endurance endurance = _owner.bufListDetail.FindBuf<BattleUnitBuf_endurance>(BufReadyType.NextRound);
+            BattleUnitBuf endurance = _owner.bufListDetail.GetReadyBuf(KeywordBuf.Endurance);
             if (endurance==null || endurance.stack < 3)
                 output.Add(KeywordBuf.Endurance);
-            BattleUnitBuf_quickness quickness = _owner.bufListDetail.FindBuf<BattleUnitBuf_quickness>(BufReadyType.NextRound);
+            BattleUnitBuf quickness = _owner.bufListDetail.GetReadyBuf(KeywordBuf.Quickness);
             if (quickness==null || quickness.stack < 3)
                 output.Add(KeywordBuf.Quickness);
             return output;

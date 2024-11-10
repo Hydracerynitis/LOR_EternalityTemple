@@ -5,7 +5,7 @@ using Sound;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix.Chesed
+namespace EmotionalFix
 {
     public class EmotionCardAbility_chesed_lumberjack3 : EmotionCardAbilityBase
     {

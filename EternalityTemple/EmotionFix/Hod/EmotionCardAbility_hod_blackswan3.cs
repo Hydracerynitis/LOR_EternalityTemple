@@ -5,22 +5,21 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using System.Threading.Tasks;
-using BaseMod;
 
-namespace EmotionalFix.Hod
+namespace EmotionalFix
 {
     public class EmotionCardAbility_hod_blackswan3 : EmotionCardAbilityBase
     {
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
-            _owner.bufListDetail.AddBufByEtc<Nettle>(6);
+            Helper.AddBuf<Nettle>(_owner, 6);
             new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/BlackSwan_Filter_Nettle", false, 2f);
         }
         public override void OnWaveStart()
         {
             base.OnWaveStart();
-            _owner.bufListDetail.AddBufByEtc<Nettle>(6);
+            Helper.AddBuf<Nettle>(_owner, 6);
             new GameObject().AddComponent<SpriteFilter_Gaho>().Init("EmotionCardFilter/BlackSwan_Filter_Nettle", false, 2f);
         }
         public class Nettle : BattleUnitBuf

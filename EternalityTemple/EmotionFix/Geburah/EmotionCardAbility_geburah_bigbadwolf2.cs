@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Claw = EmotionCardAbility_bigbadwolf2.BattleUnitBuf_Emotion_Wolf_Claw;
 
-namespace EmotionalFix.Geburah
+namespace EmotionalFix
 {
     public class EmotionCardAbility_geburah_bigbadwolf2 : EmotionCardAbilityBase
     {

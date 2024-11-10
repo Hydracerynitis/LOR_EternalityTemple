@@ -4,9 +4,8 @@ using System.Collections.Generic;
 using Sound;
 using Battle.CreatureEffect;
 using UnityEngine;
-using BaseMod;
 
-namespace EmotionalFix.Yesod
+namespace EmotionalFix
 {
     public class EmotionCardAbility_yesod_freischutz1 : EmotionCardAbilityBase
     {

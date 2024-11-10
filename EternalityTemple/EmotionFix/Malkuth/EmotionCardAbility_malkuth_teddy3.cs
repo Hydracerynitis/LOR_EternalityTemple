@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Sound;
 
-namespace EmotionalFix.Malkuth
+namespace EmotionalFix
 {
     public class EmotionCardAbility_malkuth_teddy3 : EmotionCardAbilityBase
     {

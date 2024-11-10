@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Sound;
 using Friend = EmotionCardAbility_servantofwrath2.BattleUnitBuf_Emotion_Wrath_Friend;
 
-namespace EmotionalFix.Tiphereth
+namespace EmotionalFix
 {
     public class EmotionCardAbility_tiphereth_servantofwrath2 : EmotionCardAbilityBase
     {

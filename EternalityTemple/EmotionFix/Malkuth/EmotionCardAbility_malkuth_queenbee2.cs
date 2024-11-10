@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix.Malkuth
+namespace EmotionalFix
 {
     public class EmotionCardAbility_malkuth_queenbee2 : EmotionCardAbilityBase
     {

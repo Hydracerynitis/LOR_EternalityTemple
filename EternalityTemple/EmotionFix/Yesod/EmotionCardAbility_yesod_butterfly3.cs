@@ -6,7 +6,7 @@ using Sound;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix.Yesod
+namespace EmotionalFix
 {
     public class EmotionCardAbility_yesod_butterfly3 : EmotionCardAbilityBase
     {

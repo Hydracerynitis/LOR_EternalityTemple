@@ -6,7 +6,7 @@ using HarmonyLib;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix.Keter
+namespace EmotionalFix
 {
     public class EmotionCardAbility_keter_pinocchio1 : EmotionCardAbilityBase
     {

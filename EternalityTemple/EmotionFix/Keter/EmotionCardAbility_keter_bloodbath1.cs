@@ -1,14 +1,11 @@
 ﻿using System;
-using BaseMod;
 using UI;
 using Sound;
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using EI = EternalityTemple.EternalityInitializer;
 
-namespace EmotionalFix.Keter
+namespace EmotionalFix
 {
     public class EmotionCardAbility_keter_bloodbath1 : EmotionCardAbilityBase
     {
@@ -40,7 +37,7 @@ namespace EmotionalFix.Keter
         {
             base.OnStartBattle();
             if (DefenseDice.Count > 0)
-                _owner.cardSlotDetail.keepCard.AddBehaviours(BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(Tools.MakeLorId(1110001))), DefenseDice);
+                _owner.cardSlotDetail.keepCard.AddBehaviours(BattleDiceCardModel.CreatePlayingCard(ItemXmlDataList.instance.GetCardItem(new LorId(EI.packageId,1110001))), DefenseDice);
         }
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {

@@ -5,7 +5,7 @@ using HarmonyLib;
 using System.Collections.Generic;
 using Sound;
 
-namespace EmotionalFix.Binah
+namespace EmotionalFix
 {
     public class EmotionCardAbility_binah_smallbird3 : EmotionCardAbilityBase
     {

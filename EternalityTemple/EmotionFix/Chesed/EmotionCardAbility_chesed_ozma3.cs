@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix.Chesed
+namespace EmotionalFix
 {
     public class EmotionCardAbility_chesed_ozma3 : EmotionCardAbilityBase
     {

@@ -3,7 +3,7 @@ using System;
 using UnityEngine;
 using SoundBuf = EmotionCardAbility_bluestar3.BattleUnitBuf_Emotion_BlueStar_SoundBuf;
 
-namespace EmotionalFix.Hokma
+namespace EmotionalFix
 {
     public class EmotionCardAbility_hokma_bluestar3 : EmotionCardAbilityBase
     {

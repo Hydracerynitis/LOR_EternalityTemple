@@ -6,7 +6,7 @@ using HarmonyLib;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix.Chesed
+namespace EmotionalFix
 {
     public class EmotionCardAbility_chesed_waybackhome2 : EmotionCardAbilityBase
     {

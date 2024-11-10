@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix.Tiphereth
+namespace EmotionalFix
 {
     public class DiceCardAbility_Tear: DiceCardAbilityBase
     {

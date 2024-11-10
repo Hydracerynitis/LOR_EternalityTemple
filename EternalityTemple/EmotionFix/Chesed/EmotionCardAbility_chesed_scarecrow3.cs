@@ -5,7 +5,7 @@ using HarmonyLib;
 using System.Collections.Generic;
 using Sound;
 
-namespace EmotionalFix.Chesed
+namespace EmotionalFix
 {
     public class EmotionCardAbility_chesed_scarecrow3 : EmotionCardAbilityBase
     {

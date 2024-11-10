@@ -6,7 +6,7 @@ using System.IO;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix.Hod
+namespace EmotionalFix
 {
     public class EmotionCardAbility_hod_redShoes3 : EmotionCardAbilityBase
     {

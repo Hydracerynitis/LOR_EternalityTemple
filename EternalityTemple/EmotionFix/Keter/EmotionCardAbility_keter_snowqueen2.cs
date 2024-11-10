@@ -4,9 +4,8 @@ using LOR_DiceSystem;
 using HarmonyLib;
 using System.Collections.Generic;
 using Sound;
-using BaseMod;
 
-namespace EmotionalFix.Keter
+namespace EmotionalFix
 {
     public class EmotionCardAbility_keter_snowqueen2 : EmotionCardAbilityBase
     {
@@ -29,7 +28,9 @@ namespace EmotionalFix.Keter
             target.battleCardResultLog?.SetCreatureEffectSound("Creature/SnowQueen_Guard");
             if (cnt != 2)
                 return;
-            EmotionCardAbility_snowqueen2.BattleUnitBuf_Emotion_SnowQueen_Shard buf = target.bufListDetail.FindBuf<EmotionCardAbility_snowqueen2.BattleUnitBuf_Emotion_SnowQueen_Shard>();
+            EmotionCardAbility_snowqueen2.BattleUnitBuf_Emotion_SnowQueen_Shard buf =
+                target.bufListDetail.GetActivatedBufList().Find(x => x.GetType()==typeof(EmotionCardAbility_snowqueen2.BattleUnitBuf_Emotion_SnowQueen_Shard)) 
+                    as EmotionCardAbility_snowqueen2.BattleUnitBuf_Emotion_SnowQueen_Shard;
             if (buf == null)
             {
                 buf = new EmotionCardAbility_snowqueen2.BattleUnitBuf_Emotion_SnowQueen_Shard(_owner);

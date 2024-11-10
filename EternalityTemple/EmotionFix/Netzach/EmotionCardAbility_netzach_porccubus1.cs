@@ -6,7 +6,7 @@ using Sound;
 using UnityEngine;
 using System.Collections;
 
-namespace EmotionalFix.Netzach
+namespace EmotionalFix
 {
     public class EmotionCardAbility_netzach_porccubus1 : EmotionCardAbilityBase
     {

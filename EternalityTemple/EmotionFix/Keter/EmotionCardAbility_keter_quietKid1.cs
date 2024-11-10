@@ -1,5 +1,4 @@
-﻿using BaseMod;
-using Battle.CreatureEffect;
+﻿using Battle.CreatureEffect;
 using Sound;
 using System;
 using System.Collections.Generic;
@@ -7,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix.Keter
+namespace EmotionalFix
 {
     public class EmotionCardAbility_keter_quietKid1: EmotionCardAbilityBase
     {
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
-            behavior.card.target?.bufListDetail.AddBufByEtc<Nail>(1);
+            Helper.AddBuf<Nail>(behavior.card.target, 1);
             behavior.card.target?.battleCardResultLog?.SetCreatureEffectSound("Creature/Slientgirl_Volt");
         }
 

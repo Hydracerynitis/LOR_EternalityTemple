@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http.Headers;
 
-namespace EmotionalFix.Hod
+namespace EmotionalFix
 {
     public class EmotionCardAbility_hod_blackswan1 : EmotionCardAbilityBase
     {

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix.Netzach
+namespace EmotionalFix
 {
     public class EmotionCardAbility_netzach_alriune1 : EmotionCardAbilityBase
     {

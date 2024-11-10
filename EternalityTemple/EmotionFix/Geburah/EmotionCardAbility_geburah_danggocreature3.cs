@@ -5,7 +5,7 @@ using Sound;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix.Geburah
+namespace EmotionalFix
 {
     public class EmotionCardAbility_geburah_danggocreature3 : EmotionCardAbilityBase
     {

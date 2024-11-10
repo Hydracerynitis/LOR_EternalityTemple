@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using Sound;
 using Debuff = EmotionCardAbility_clownofnihil3.BattleUnitBuf_Emotion_Nihil_Debuf;
 
-namespace EmotionalFix.Tiphereth
+namespace EmotionalFix
 {
     public class EmotionCardAbility_tiphereth_clownofnihil3 : EmotionCardAbilityBase
     {

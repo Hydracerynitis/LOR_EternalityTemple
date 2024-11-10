@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmotionalFix.Hokma
+namespace EmotionalFix
 {
     public class DiceCardSelfAbility_BlessingPlagueUpGraded : DiceCardSelfAbilityBase
     {

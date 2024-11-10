@@ -5,7 +5,7 @@ using HarmonyLib;
 using System.Collections.Generic;
 using Sound;
 
-namespace EmotionalFix.Keter
+namespace EmotionalFix
 {
     public class EmotionCardAbility_keter_snowqueen1 : EmotionCardAbilityBase
     {

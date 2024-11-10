@@ -557,7 +557,7 @@
 		<Script></Script>
 		<ScriptDesc></ScriptDesc>
 		<BehaviourList>
-			<Behaviour Min="1" Dice="1" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="EGO_Freischutz_NormalFarAtk" Script="Execute_Eternal" ActionScript="yesodboss_freischutz_faratk" Desc=""/>
+			<Behaviour Min="1" Dice="1" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="EGO_Freischutz_NormalFarAtk" Script="Execute" ActionScript="yesodboss_freischutz_faratk" Desc=""/>
 		</BehaviourList>
 		<Chapter>0</Chapter>
 		<Priority>0</Priority>
@@ -570,8 +570,8 @@
 		<Script></Script>
 		<ScriptDesc></ScriptDesc>
 		<BehaviourList>
-			<Behaviour Min="6" Dice="10" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="Reflect_Eternal" ActionScript="" Desc=""/>
-			<Behaviour Min="6" Dice="10" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="Reflect_Eternal" ActionScript="" Desc=""/>
+			<Behaviour Min="6" Dice="10" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="Reflect" ActionScript="" Desc=""/>
+			<Behaviour Min="6" Dice="10" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="Reflect" ActionScript="" Desc=""/>
 		</BehaviourList>
 		<Chapter>0</Chapter>
 		<Priority>0</Priority>
@@ -641,10 +641,11 @@
 		<Script></Script>
 		<ScriptDesc></ScriptDesc>
 		<BehaviourList>
-			<Behaviour Min="1" Dice="1" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="PlagueDoctor_Eternal" ActionScript="" Desc=""/>
+			<Behaviour Min="1" Dice="1" Type="Atk" Detail="Slash" Motion="H" EffectRes="" Script="PlagueDoctor" ActionScript="" Desc=""/>
 		</BehaviourList>
 		<Chapter>0</Chapter>
 		<Priority>100</Priority>
 	</Card>
+
 
 </DiceCardXmlRoot>

@@ -7,9 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BaseMod;
 
-namespace EmotionalFix.Netzach
+namespace EmotionalFix
 {
     public class EmotionCardAbility_netzach_orchestra1 : EmotionCardAbilityBase
     {

@@ -5,7 +5,6 @@ using LOR_DiceSystem;
 using HarmonyLib;
 using System.Collections.Generic;
 using Sound;
-using BaseMod;
 
 namespace EmotionalFix
 {
@@ -15,7 +14,7 @@ namespace EmotionalFix
         {
             base.OnSucceedAttack(behavior);
             behavior.card.target.allyCardDetail.ExhaustACard(RandomUtil.SelectOne(behavior.card.target.allyCardDetail.GetHand()));
-            if(behavior.card.target.bufListDetail.FindBuf<VoidBuf>()==null)
+            if(behavior.card.target.bufListDetail.GetActivatedBufList().Find(x => x.GetType() == typeof(VoidBuf))==null)
                 behavior.card.target.bufListDetail.AddBuf(new VoidBuf());
         }
         public class VoidBuf: BattleUnitBuf

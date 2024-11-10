@@ -4,12 +4,9 @@ using UI;
 using UnityEngine;
 using Sound;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BaseMod;
+using EI = EternalityTemple.EternalityInitializer;
 
-namespace EmotionalFix.Geburah
+namespace EmotionalFix
 {
     public class EmotionCardAbility_geburah_bigbadwolf3 : EmotionCardAbilityBase
     {
@@ -20,7 +17,7 @@ namespace EmotionalFix.Geburah
         }
         public override void OnStartBattle()
         {
-            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(Tools.MakeLorId(1106201));
+            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EI.packageId, 1106201));
             List<BattleDiceBehavior> behaviourList = new List<BattleDiceBehavior>();
             int num = 0;
             foreach (DiceBehaviour diceBehaviour2 in cardItem.DiceBehaviourList)

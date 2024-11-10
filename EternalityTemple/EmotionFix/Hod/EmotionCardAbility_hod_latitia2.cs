@@ -2,11 +2,10 @@
 using LOR_DiceSystem;
 using System.Collections.Generic;
 using Sound;
-using BaseMod;
 using UnityEngine;
 using HyperCard;
 
-namespace EmotionalFix.Hod
+namespace EmotionalFix
 {
     public class EmotionCardAbility_hod_latitia2 : EmotionCardAbilityBase
     {
@@ -19,9 +18,9 @@ namespace EmotionalFix.Hod
             BattleDiceCardModel randomCardInHand = RandomUtil.SelectOne(giftee.allyCardDetail.GetHand().FindAll(x => !x.GetBufList().Exists(y => y is Gift)));
             randomCardInHand.AddBuf(new Gift());
             randomCardInHand.SetAddedIcon("Latitia_Heart");
-            GiftIndicator GI = giftee.bufListDetail.FindBuf<GiftIndicator>();
+            GiftIndicator GI = giftee.bufListDetail.GetActivatedBufList().Find(x => x.GetType()==typeof(GiftIndicator)) as GiftIndicator;
             if (GI == null)
-                GI = giftee.bufListDetail.AddBufByEtc<GiftIndicator>(1);
+                GI = Helper.AddBuf<GiftIndicator>(giftee,1);
             GI.CheckGiftCount();
         }
         public class GiftIndicator: BattleUnitBuf

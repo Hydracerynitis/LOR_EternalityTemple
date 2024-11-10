@@ -5,7 +5,7 @@ using Sound;
 using Battle.CreatureEffect;
 using UnityEngine;
 
-namespace EmotionalFix.Malkuth
+namespace EmotionalFix
 {
     public class EmotionCardAbility_malkuth_fairy2 : EmotionCardAbilityBase
     {

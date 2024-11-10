@@ -17,13 +17,13 @@ using EternalityTemple.Util;
 using System.Linq;
 using EternalityTemple.Yagokoro;
 using EternalityTemple.Inaba;
-using System.Security.Cryptography;
 
 namespace EternalityTemple
 {
     [HarmonyPatch]
     public class EternalityInitializer : ModInitializer
     {
+        public static bool BMexist = false;
         public static string ModPath;
         public static Dictionary<string, Sprite> ArtWorks;
         public static List<UnitBattleDataModel> SecondBattleLibrarians=new List<UnitBattleDataModel>();
@@ -35,14 +35,30 @@ namespace EternalityTemple
         {
             base.OnInitializeMod();
             string AssemblyPath = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
+            BMexist = checkBaseMod();
+            Debug.Log("Eternality: Found BaseMod " + BMexist.ToString());
             ModPath = AssemblyPath.Substring(0, AssemblyPath.Length - 11);
             Debug.Log("Eternality: ModPath " + ModPath);
             GetArtWorks(new DirectoryInfo(ModPath + "/Resource/ExtraArtWork"));
             Harmony harmony = new Harmony("Eternality");
             harmony.PatchAll(typeof(EternalityInitializer));
             harmony.PatchAll(typeof(LocalizeManager));
+            if (!BMexist)
+            {
+                AbnormalityLoader.LoadEmotion();
+                harmony.PatchAll(typeof(AbnormalityLoader));
+            }
             RemoveError();
             LocalizeManager.LocalizedTextLoader_LoadOthers_Post(TextDataModel.CurrentLanguage);
+        }
+        private bool checkBaseMod()
+        {
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                if (assembly.GetName().Name == "BaseMod")
+                    return true;
+            }
+            return false;
         }
         //移除重复加载同一DLL的错误提示
         public static void RemoveError()
@@ -580,20 +596,5 @@ namespace EternalityTemple
             {
             }
         }
-
-
-
-
-
-        /*        [HarmonyPatch(typeof(ItemXmlDataList),nameof(ItemXmlDataList.GetBasicCardList))]
-                [HarmonyPostfix]
-                public static void LoadBasicCardForTesting(ItemXmlDataList __instance, List<DiceCardXmlInfo> __result)
-                {
-                    __result.Add(__instance.GetCardItem(new LorId(packageId, 226769006)));
-                    __result.Add(__instance.GetCardItem(new LorId(packageId, 226769007)));
-                    __result.Add(__instance.GetCardItem(new LorId(packageId, 226769008)));
-                    __result.Add(__instance.GetCardItem(new LorId(packageId, 226769009)));
-                    __result.Add(__instance.GetCardItem(new LorId(packageId, 226769010)));
-                }*/
     }
 }

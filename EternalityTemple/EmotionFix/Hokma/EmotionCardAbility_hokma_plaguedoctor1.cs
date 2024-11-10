@@ -1,13 +1,9 @@
 ﻿using System;
 using LOR_DiceSystem;
 using System.Collections.Generic;
-using Sound;
-using HarmonyLib;
-using Battle.CreatureEffect;
-using UnityEngine;
-using BaseMod;
+using EI = EternalityTemple.EternalityInitializer;
 
-namespace EmotionalFix.Hokma
+namespace EmotionalFix
 {
     public class EmotionCardAbility_hokma_plaguedoctor1 : EmotionCardAbilityBase
     {
@@ -55,7 +51,7 @@ namespace EmotionalFix.Hokma
                 base.OnDrawCard();
                 for (int i = 1; i < bless + 1; i++)
                 {
-                    DiceCardXmlInfo bless = ItemXmlDataList.instance.GetCardItem(Tools.MakeLorId(1108401)).Copy(true);
+                    DiceCardXmlInfo bless = ItemXmlDataList.instance.GetCardItem(new LorId(EI.packageId,1108401)).Copy(true);
                     bless.Script = "BlessingPlague";
                     if (Helper.SearchEmotion(_owner, "WhiteNight_Red_Enemy") != null)
                         bless.Script = "BlessingPlagueUpGraded";

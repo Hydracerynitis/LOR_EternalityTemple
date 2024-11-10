@@ -12,7 +12,7 @@ public class PassiveAbility_226769021 : PassiveAbility_226769019
 		emotionFloor = new List<EmotionCardXmlInfo>();
 		for (int i = 1; i <= 15; i++) 
         {
-			int id = 190000 + (int)Singleton<StageController>.Instance.CurrentFloor * 100 + i;
+			int id = 90000 + (int)Singleton<StageController>.Instance.CurrentFloor * 100 + i;
 			emotionFloor.Add(EmotionCardXmlList.Instance.GetData(id, SephirahType.None));
 		}
 		emotionFloor.Sort((EmotionCardXmlInfo x, EmotionCardXmlInfo y) => (int)(x.EmotionLevel - y.EmotionLevel));
@@ -64,15 +64,15 @@ public class PassiveAbility_226769021 : PassiveAbility_226769019
 			BattleUnitModel battleUnitModel;
 			EmotionCardXmlInfo xmlInfo = emotionFloor[0];
 			emotionFloor.RemoveAt(0);
-			if (xmlInfo.id == 190101 || xmlInfo.id == 190102 || xmlInfo.id == 190108 || xmlInfo.id == 190110 || xmlInfo.id == 190112 || xmlInfo.id == 190114 || xmlInfo.id == 190115)
+			if (xmlInfo.id == 90101 || xmlInfo.id == 90102 || xmlInfo.id == 90108 || xmlInfo.id == 90110 || xmlInfo.id == 90112 || xmlInfo.id == 90114 || xmlInfo.id == 90115)
             {
 				battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769011);
 			}
-			else if(xmlInfo.id == 190103 || xmlInfo.id == 190104 || xmlInfo.id == 190105 || xmlInfo.id == 190106)
+			else if(xmlInfo.id == 90103 || xmlInfo.id == 90104 || xmlInfo.id == 90105 || xmlInfo.id == 90106)
             {
 				battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769012);
 			}
-			else if(xmlInfo.id == 190107)
+			else if(xmlInfo.id == 90107)
             {
 				battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769013);
 			}
@@ -84,7 +84,9 @@ public class PassiveAbility_226769021 : PassiveAbility_226769019
             {
 				battleUnitModel = BattleObjectManager.instance.GetAliveList_random(Faction.Enemy, 1)[0];
 			}
-			battleUnitModel.emotionDetail.ApplyEmotionCard(xmlInfo);
+            if (battleUnitModel == null | battleUnitModel.IsDead())
+                return;
+            battleUnitModel.emotionDetail.ApplyEmotionCard(xmlInfo);
 		}
     }
 	public void ChooseEmotionCard_Yesod()
@@ -94,11 +96,11 @@ public class PassiveAbility_226769021 : PassiveAbility_226769019
 			BattleUnitModel battleUnitModel;
 			EmotionCardXmlInfo xmlInfo = emotionFloor[0];
 			emotionFloor.RemoveAt(0);
-			if (xmlInfo.id == 190201 || xmlInfo.id == 190202 || xmlInfo.id == 190209)
+			if (xmlInfo.id == 90201 || xmlInfo.id == 90202 || xmlInfo.id == 90209)
 			{
 				battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769019);
 			}
-			else if (xmlInfo.id == 190208)
+			else if (xmlInfo.id == 90208)
 			{
 				battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769020);
 			}
@@ -110,7 +112,9 @@ public class PassiveAbility_226769021 : PassiveAbility_226769019
 			{
 				battleUnitModel = BattleObjectManager.instance.GetAliveList_random(Faction.Enemy, 1)[0];
 			}
-			battleUnitModel.emotionDetail.ApplyEmotionCard(xmlInfo);
+            if (battleUnitModel == null | battleUnitModel.IsDead())
+                return;
+            battleUnitModel.emotionDetail.ApplyEmotionCard(xmlInfo);
 		}
 	}
 	public void ChooseEmotionCard_Hod()
@@ -120,23 +124,23 @@ public class PassiveAbility_226769021 : PassiveAbility_226769019
 			BattleUnitModel battleUnitModel;
 			EmotionCardXmlInfo xmlInfo = emotionFloor[0];
 			emotionFloor.RemoveAt(0);
-			if (xmlInfo.id == 190302 || xmlInfo.id == 190303)
+			if (xmlInfo.id == 90302 || xmlInfo.id == 90303)
 			{
 				battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769025);
 			}
-			else if (xmlInfo.id == 190312)
+			else if (xmlInfo.id == 90312)
 			{
 				battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769021);
 			}
-			else if (xmlInfo.id == 190306 || xmlInfo.id == 190311 || xmlInfo.id == 190313)
+			else if (xmlInfo.id == 90306 || xmlInfo.id == 90311 || xmlInfo.id == 90313)
 			{
 				battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769022);
 			}
-			else if (xmlInfo.id == 190314 || xmlInfo.id == 190315)
+			else if (xmlInfo.id == 90314 || xmlInfo.id == 90315)
 			{
 				battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769024);
 			}
-			else if(xmlInfo.id == 190305)
+			else if(xmlInfo.id == 90305)
             {
 				foreach(BattleUnitModel model in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
                 {
@@ -144,7 +148,7 @@ public class PassiveAbility_226769021 : PassiveAbility_226769019
 				}
 				continue;
             }
-			else if (xmlInfo.id == 190301)
+			else if (xmlInfo.id == 90301)
 			{
 				foreach (BattleUnitModel model in BattleObjectManager.instance.GetAliveList())
 				{
@@ -160,6 +164,8 @@ public class PassiveAbility_226769021 : PassiveAbility_226769019
 			{
 				battleUnitModel = BattleObjectManager.instance.GetAliveList_random(Faction.Enemy, 1)[0];
 			}
+			if (battleUnitModel == null | battleUnitModel.IsDead())
+				return;
 			battleUnitModel.emotionDetail.ApplyEmotionCard(xmlInfo);
 		}
 	}

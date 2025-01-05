@@ -168,7 +168,12 @@ namespace EternalityTemple
                     {
                         Dictionary<string, BattleEffectText> dict = BattleEffectTextsXmlList.Instance._dictionary;
                         foreach (BattleEffectText effectText in ((BattleEffectTextRoot)new XmlSerializer(typeof(BattleEffectTextRoot)).Deserialize(stringReader)).effectTextList)
+                        {
+                            if(dict.Keys.Contains(effectText.ID))
+                                dict[effectText.ID] = effectText;
                             dict.Add(effectText.ID, effectText);
+                        }
+                            
                     }
                 }
                 catch (Exception ex)

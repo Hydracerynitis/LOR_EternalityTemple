@@ -1,5 +1,4 @@
-﻿using EternalityTemple.Util;
-using LOR_DiceSystem;
+﻿using LOR_DiceSystem;
 using System;
 using System.Collections.Generic;
 using System.Linq;

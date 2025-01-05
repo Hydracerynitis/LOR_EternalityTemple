@@ -7,7 +7,6 @@ using System.Text;
 using EternalityTemple.Kaguya;
 using EternalityTemple.Yagokoro;
 using System.Security.Policy;
-using EternalityTemple.Universal;
 
 namespace EternalityTemple.Inaba
 {

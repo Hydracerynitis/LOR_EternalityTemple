@@ -11,9 +11,7 @@ using LOR_BattleUnit_UI;
 using LOR_DiceSystem;
 using Diagonis = System.Diagnostics;
 using UnityObject = UnityEngine.Object;
-using EternalityTemple.Universal;
 using EternalityTemple.Kaguya;
-using EternalityTemple.Util;
 using System.Linq;
 using EternalityTemple.Yagokoro;
 using EternalityTemple.Inaba;
@@ -23,9 +21,8 @@ namespace EternalityTemple
     [HarmonyPatch]
     public class EternalityInitializer : ModInitializer
     {
-        public static bool BMexist = false;
         public static string ModPath;
-        public static Dictionary<string, Sprite> ArtWorks;
+        public static Dictionary<string, Sprite> ArtWorks= new Dictionary<string, Sprite>();
         public static List<UnitBattleDataModel> SecondBattleLibrarians=new List<UnitBattleDataModel>();
         public const string packageId = "TheWorld_Eternity";
         private static Dictionary<SpeedDiceUI, Color> ChangedSpeedDiceUI = new Dictionary<SpeedDiceUI, Color>();
@@ -35,30 +32,17 @@ namespace EternalityTemple
         {
             base.OnInitializeMod();
             string AssemblyPath = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
-            BMexist = checkBaseMod();
-            Debug.Log("Eternality: Found BaseMod " + BMexist.ToString());
             ModPath = AssemblyPath.Substring(0, AssemblyPath.Length - 11);
             Debug.Log("Eternality: ModPath " + ModPath);
             GetArtWorks(new DirectoryInfo(ModPath + "/Resource/ExtraArtWork"));
             Harmony harmony = new Harmony("Eternality");
             harmony.PatchAll(typeof(EternalityInitializer));
             harmony.PatchAll(typeof(LocalizeManager));
-            if (!BMexist)
-            {
-                AbnormalityLoader.LoadEmotion();
-                harmony.PatchAll(typeof(AbnormalityLoader));
-            }
+            harmony.PatchAll(typeof(AbnormalityLoader));
+            harmony.PatchAll(typeof(ExtraArtworkPatch));
             RemoveError();
+            AbnormalityLoader.LoadEmotion();
             LocalizeManager.LocalizedTextLoader_LoadOthers_Post(TextDataModel.CurrentLanguage);
-        }
-        private bool checkBaseMod()
-        {
-            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                if (assembly.GetName().Name == "BaseMod")
-                    return true;
-            }
-            return false;
         }
         //移除重复加载同一DLL的错误提示
         public static void RemoveError()

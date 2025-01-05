@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_hokma_whitenight4 : EmotionCardAbilityBase
     {

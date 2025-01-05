@@ -4,7 +4,7 @@ using System.Reflection;
 using System.IO;
 using EI = EternalityTemple.EternalityInitializer;
 
-namespace EmotionalFix
+namespace EternalityTemple
 {
 	public static class Helper
 	{

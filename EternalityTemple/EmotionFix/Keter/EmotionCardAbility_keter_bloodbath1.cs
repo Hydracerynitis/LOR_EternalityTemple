@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using EI = EternalityTemple.EternalityInitializer;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_keter_bloodbath1 : EmotionCardAbilityBase
     {

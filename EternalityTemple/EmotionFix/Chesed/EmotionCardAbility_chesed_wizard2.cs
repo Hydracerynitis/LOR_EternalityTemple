@@ -9,7 +9,7 @@ using Heart = EmotionCardAbility_wizard2.BattleUnitBuf_heart;
 using Home = EmotionCardAbility_wizard2.BattleUnitBuf_home;
 using Change = EmotionCardAbility_wizard2.BattleUnitBuf_change;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_chesed_wizard2: EmotionCardAbilityBase
     {

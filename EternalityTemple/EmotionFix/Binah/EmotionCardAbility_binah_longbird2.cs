@@ -5,7 +5,7 @@ using Sound;
 using Battle.CreatureEffect;
 using Sin = EmotionCardAbility_longbird2.BattleUnitBuf_LongBird_Emotion_Sin;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_binah_longbird2 : EmotionCardAbilityBase
     {

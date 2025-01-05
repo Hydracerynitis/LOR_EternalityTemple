@@ -6,7 +6,7 @@ using Battle.CreatureEffect;
 using UnityEngine;
 using System.IO;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_yesod_singingMachine1 : EmotionCardAbilityBase
     {

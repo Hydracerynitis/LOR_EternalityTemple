@@ -7,7 +7,7 @@ using LOR_DiceSystem;
 using Sound;
 using UnityEngine;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_yesod_helper1: EmotionCardAbilityBase
     {

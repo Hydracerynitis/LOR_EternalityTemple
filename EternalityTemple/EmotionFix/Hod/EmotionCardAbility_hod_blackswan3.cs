@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using System.Threading.Tasks;
+using EternalityTemple;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_hod_blackswan3 : EmotionCardAbilityBase
     {

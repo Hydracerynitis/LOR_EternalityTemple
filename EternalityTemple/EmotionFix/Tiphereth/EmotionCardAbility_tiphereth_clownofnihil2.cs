@@ -6,7 +6,7 @@ using HarmonyLib;
 using System.Collections.Generic;
 using Sound;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_tiphereth_clownofnihil2 : EmotionCardAbilityBase
     {

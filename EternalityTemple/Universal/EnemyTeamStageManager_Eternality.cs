@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using EI = EternalityTemple.EternalityInitializer;
 
-namespace EternalityTemple.Universal
+namespace EternalityTemple
 {
     public class EnemyTeamStageManager_Eternality: EnemyTeamStageManager
     {

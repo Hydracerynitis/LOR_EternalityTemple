@@ -2,13 +2,13 @@
 using System;
 using UnityEngine;
 using SoundBuf = EmotionCardAbility_bluestar3.BattleUnitBuf_Emotion_BlueStar_SoundBuf;
+using EternalityTemple;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_hokma_bluestar3 : EmotionCardAbilityBase
     {
         private int round;
-        private SoundEffectPlayer _loop;
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
@@ -34,13 +34,6 @@ namespace EmotionalFix
             autoDestruct.time = 5f;
             autoDestruct.DestroyWhenDisable();
             SoundEffectPlayer.PlaySound("Creature/BlueStar_Atk");
-            //No BlueStar Silence Mod Compatibility
-            if (Helper.CheckOtherMod("NoBlueStarSilence"))
-                return;
-            BattleSoundManager.Instance.EndBgm();
-            if (_loop == null)
-                return;
-            _loop = SoundEffectManager.Instance.PlayClip("Creature/BlueStar_Bgm", true, parent: BattleSceneRoot.Instance.currentMapObject.transform);
         }
 
         public override void OnWaveStart()
@@ -56,7 +49,6 @@ namespace EmotionalFix
             round--;
             if (round <= 0)
                 round = 3;
-            DestroyLoopSound();
         }
         public override void OnEndBattlePhase()
         {
@@ -68,17 +60,8 @@ namespace EmotionalFix
             base.OnDie(killer);
             Destroy();
         }
-        private void DestroyLoopSound()
-        {
-            if (_loop == null || Helper.CheckOtherMod("NoBlueStarSilence"))
-                return;
-            BattleSoundManager.Instance.StartBgm();
-            _loop.ManualDestroy();
-            _loop = null;
-        }
         public void Destroy()
         {
-            DestroyLoopSound();
             BattleUnitBuf Buff = _owner.bufListDetail.GetActivatedBufList().Find(x => x is SoundBuf);
             if (Buff != null)
                 Buff.Destroy();

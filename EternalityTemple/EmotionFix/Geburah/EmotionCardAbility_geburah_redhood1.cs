@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Sound;
 using Prey = EmotionCardAbility_redhood1.BattleUnitBuf_redhood_prey;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_geburah_redhood1 : EmotionCardAbilityBase
     {

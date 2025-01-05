@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Collections.Generic;
 using Creature = EmotionCardAbility_bossbird6.BattleUnitBuf_Emotion_BossBird_Creature;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_binah_bossbird6 : EmotionCardAbilityBase
     {

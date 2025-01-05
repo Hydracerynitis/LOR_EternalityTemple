@@ -3,9 +3,9 @@ using Sound;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using EternalityTemple;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_malkuth_queenbee2 : EmotionCardAbilityBase
     {

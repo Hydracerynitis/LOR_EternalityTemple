@@ -6,7 +6,7 @@ using Battle.CreatureEffect;
 using UnityEngine;
 using LowCost = EmotionCardAbility_lumberjack2.BattleDiceCardBuf_Lumberjack_Emotion;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_chesed_lumberjack2 : EmotionCardAbilityBase
     {

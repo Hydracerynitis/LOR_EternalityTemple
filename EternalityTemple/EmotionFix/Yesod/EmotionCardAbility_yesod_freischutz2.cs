@@ -2,7 +2,7 @@
 using LOR_DiceSystem;
 using EI = EternalityTemple.EternalityInitializer;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_yesod_freischutz2 : EmotionCardAbilityBase
     {

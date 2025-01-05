@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EternalityTemple.Universal
+namespace EternalityTemple
 {
     public class PassiveAbility_226769003: PassiveAbilityBase
     {

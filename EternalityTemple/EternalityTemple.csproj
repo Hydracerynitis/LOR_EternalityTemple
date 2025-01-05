@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbnormalityLoader.cs" />
+    <Compile Include="ExtraArtworkPatch.cs" />
     <Compile Include="EmotionFix\Binah\EmotionCardAbility_binah_bigbird1.cs" />
     <Compile Include="EmotionFix\Binah\EmotionCardAbility_binah_bigbird2.cs" />
     <Compile Include="EmotionFix\Binah\EmotionCardAbility_binah_bigbird3.cs" />

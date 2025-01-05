@@ -6,7 +6,7 @@ using Sound;
 using UnityEngine;
 using System.Collections;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_netzach_fragmentSpace1 : EmotionCardAbilityBase
     {

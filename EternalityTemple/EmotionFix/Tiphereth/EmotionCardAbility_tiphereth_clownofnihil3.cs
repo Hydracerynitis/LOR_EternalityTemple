@@ -2,11 +2,11 @@
 using UnityEngine;
 using LOR_DiceSystem;
 using HarmonyLib;
-using System.Collections.Generic;
+using EternalityTemple;
 using Sound;
 using Debuff = EmotionCardAbility_clownofnihil3.BattleUnitBuf_Emotion_Nihil_Debuf;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_tiphereth_clownofnihil3 : EmotionCardAbilityBase
     {

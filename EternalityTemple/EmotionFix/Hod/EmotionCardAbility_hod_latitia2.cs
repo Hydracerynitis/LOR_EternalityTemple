@@ -3,9 +3,10 @@ using LOR_DiceSystem;
 using System.Collections.Generic;
 using Sound;
 using UnityEngine;
-using HyperCard;
+using EternalityTemple;
 
-namespace EmotionalFix
+
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_hod_latitia2 : EmotionCardAbilityBase
     {

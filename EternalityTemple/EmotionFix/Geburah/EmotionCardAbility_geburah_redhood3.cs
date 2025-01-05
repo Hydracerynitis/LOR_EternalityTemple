@@ -5,7 +5,7 @@ using HarmonyLib;
 using System.Collections.Generic;
 using Sound;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_geburah_redhood3 : EmotionCardAbilityBase
     {

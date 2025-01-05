@@ -1,8 +1,9 @@
 ﻿using System;
 using UnityEngine;
 using EI = EternalityTemple.EternalityInitializer;
+using EternalityTemple;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_tiphereth_servantofwrath1 : EmotionCardAbilityBase
     {

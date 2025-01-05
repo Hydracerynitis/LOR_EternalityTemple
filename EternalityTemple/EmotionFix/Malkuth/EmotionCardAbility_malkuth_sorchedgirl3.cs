@@ -4,7 +4,7 @@ using UnityEngine;
 using LOR_DiceSystem;
 using Sound;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_malkuth_sorchedgirl3 : EmotionCardAbilityBase
     {

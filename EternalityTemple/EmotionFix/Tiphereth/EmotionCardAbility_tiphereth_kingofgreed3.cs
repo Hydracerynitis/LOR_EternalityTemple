@@ -4,8 +4,9 @@ using LOR_DiceSystem;
 using System.Collections.Generic;
 using Sound;
 using System.Data.SqlTypes;
+using EternalityTemple;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_tiphereth_kingofgreed3 : EmotionCardAbilityBase
     {

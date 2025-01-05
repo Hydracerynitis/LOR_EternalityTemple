@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using EI = EternalityTemple.EternalityInitializer;
 using LOR_DiceSystem;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_malkuth_snowwhite3: EmotionCardAbilityBase
     {

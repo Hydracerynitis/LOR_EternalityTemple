@@ -6,7 +6,7 @@ using Sound;
 using System.Collections.Generic;
 using EI = EternalityTemple.EternalityInitializer;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_geburah_bigbadwolf3 : EmotionCardAbilityBase
     {

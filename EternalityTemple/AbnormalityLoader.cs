@@ -97,10 +97,10 @@ namespace EternalityTemple
             {
                 name = (string)null;
             }
-            System.Type ability = System.Type.GetType("EmotionalFix.EmotionCardAbility_" + name.Trim());
+            System.Type ability = System.Type.GetType("EternalityEmotion.EmotionCardAbility_" + name.Trim());
             if (ability != null)
             {
-                Debug.Log("Eternality Abnormality: " + "EmotionalFix.EmotionCardAbility_" + name.Trim() + " Found");
+                Debug.Log("Eternality Abnormality: " + "EternalityEmotion.EmotionCardAbility_" + name.Trim() + " Found");
                 return ability;
             }
                 
@@ -115,8 +115,6 @@ namespace EternalityTemple
         }
         public static void LoadAbnormality(string language)
         {
-            if (EI.BMexist)
-                return;
             Dictionary<string, AbnormalityCard> dict = Singleton<AbnormalityCardDescXmlList>.Instance._dictionary;
             Debug.Log("Eternality: Localization Path " + EI.ModPath + "/Localization/" + language + "/AbnormalityCards/");
             foreach (FileInfo file in new DirectoryInfo(EI.ModPath + "/Localization/" + language + "/AbnormalityCards/").GetFiles())

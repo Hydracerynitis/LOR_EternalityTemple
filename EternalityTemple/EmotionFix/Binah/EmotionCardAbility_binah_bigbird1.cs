@@ -7,7 +7,7 @@ using HarmonyLib;
 using System.Collections.Generic;
 using System.IO;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_binah_bigbird1 : EmotionCardAbilityBase
     {

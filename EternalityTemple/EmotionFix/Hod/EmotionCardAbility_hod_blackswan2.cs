@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EI = EternalityTemple.EternalityInitializer;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_hod_blackswan2 : EmotionCardAbilityBase
     {

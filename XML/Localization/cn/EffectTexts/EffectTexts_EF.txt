@@ -155,9 +155,5 @@
       		<Name>小喙</Name>
       		<Desc>每一幕开始时使这一幕内随机一个司书的2张手牌费用+1</Desc>
     	</BattleEffectText>
-		<!--   <BattleEffectText ID="BloodyTree_Emotion_Damage">
-      		<Name>不要转移视线</Name>
-      		<Desc>与非应用“他人的视线”的异想体的角色拼点时对双方造成1~8伤害和混乱伤害</Desc>
-    	</BattleEffectText>   -->
 	</effectTextList>
 </BattleEffectTextRoot>

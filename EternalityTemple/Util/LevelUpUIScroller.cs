@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace EternalityTemple.Util
+namespace EternalityTemple
 {
     public class LevelUpUIScroller: MonoBehaviour
     {

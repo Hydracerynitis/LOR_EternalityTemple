@@ -4,11 +4,9 @@ using UI;
 using Sound;
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using EternalityTemple;
 
-namespace EmotionalFix
+namespace EternalityEmotion
 {
     public class EmotionCardAbility_netzach_orchestra2 : EmotionCardAbilityBase
     {

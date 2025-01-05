@@ -151,8 +151,9 @@
 		<AbnormalityCard ID="ApocalypseBird_Apocalypse_Enemy">
 			<Abnormality>终末鸟</Abnormality>
 			<CardName>怪兽</CardName>
-			<AbilityDesc>选中时该来宾获得长臂，小喙，巨目的效果并将0费的目灯，惩戒，正义裁决者置入其牌库
-如果已经应用了这些异想体则清楚该异想体书页并重新应用一个随机的相同情感等级的异想体书页。</AbilityDesc>
+			<AbilityDesc>该异想体书页仅可对同时应用“巨目”，“小喙”与“长臂”这3张异想体书页的来宾生效。
+该司书拼点时及被单方面攻击时将使目标当前书页的所有骰子最小值与最大值-3且不受威力增减效果影响
+每一幕结束时该司书将恢复所有光芒并对除自身外的所有角色造成15点伤害。</AbilityDesc>
 			<FlaborText>大鸟那能够看清数百里外的眼睛，高鸟那能够审判任何罪孽的天秤，小鸟那能够吞噬一切生物的巨口合为一体的那天，灾难降临了这片森林。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">可不能让坏人夺走所有珍贵的东西。</Dialogue>

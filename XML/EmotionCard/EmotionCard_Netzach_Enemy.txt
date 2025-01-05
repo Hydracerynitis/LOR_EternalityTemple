@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<EmotionCard ID="90401">
+	<EmotionCard ID="190401">
 		<Name>UniverseZogak_Echo_Enemy</Name>
 		<Artwork>UniverseZogak_Echo</Artwork>
 		<State>Positive</State>
@@ -11,7 +11,7 @@
 		<TargetType>SelectOne</TargetType>   
 		<Script>netzach_fragmentSpace1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90402">
+	<EmotionCard ID="190402">
 		<Name>UniverseZogak_Tentacle_Enemy</Name>
 		<Artwork>UniverseZogak_Tentacle</Artwork>
 		<State>Positive</State>
@@ -22,7 +22,7 @@
 		<TargetType>SelectOne</TargetType>  
 		<Script>netzach_fragmentSpace2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90403">
+	<EmotionCard ID="190403">
 		<Name>UniverseZogak_Sing_Enemy</Name>
 		<Artwork>UniverseZogak_Sing</Artwork>
 		<State>Negative</State>
@@ -33,7 +33,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>netzach_fragmentSpace3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90404">
+	<EmotionCard ID="190404">
 		<Name>ChildofGalaxy_Token_Enemy</Name>
 		<Artwork>ChildofGalaxy_Token</Artwork>
 		<State>Negative</State>
@@ -44,7 +44,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>netzach_galaxyChild1</Script>
 	</EmotionCard> 
-	<EmotionCard ID="90405">
+	<EmotionCard ID="190405">
 		<Name>ChildofGalaxy_Tear_Enemy</Name>
 		<Artwork>ChildofGalaxy_Tear</Artwork>
 		<State>Negative</State>
@@ -55,7 +55,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>netzach_galaxyChild2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90406">
+	<EmotionCard ID="190406">
 		<Name>ChildofGalaxy_Friend_Enemy</Name>
 		<Artwork>ChildofGalaxy_Friend</Artwork>
 		<State>Positive</State>
@@ -66,7 +66,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>netzach_galaxyChild3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90407">
+	<EmotionCard ID="190407">
 		<Name>Porccubus_Thorn_Enemy</Name>
 		<Artwork>Porccubus_Thorn</Artwork>
 		<State>Positive</State>
@@ -77,7 +77,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>netzach_porccubus1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90408">
+	<EmotionCard ID="190408">
 		<Name>Porccubus_Boom_Enemy</Name>
 		<Artwork>Porccubus_Boom</Artwork>
 		<State>Negative</State>
@@ -88,7 +88,7 @@
 		<TargetType>SelectOne</TargetType>	
 		<Script>netzach_porccubus2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90409">
+	<EmotionCard ID="190409">
 		<Name>Porccubus_Happy_Enemy</Name>
 		<Artwork>Porccubus_Happy</Artwork>
 		<State>Positive</State>
@@ -99,7 +99,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>netzach_porccubus3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90410">
+	<EmotionCard ID="190410">
 		<Name>Alriune_flower_Enemy</Name>
 		<Artwork>Alriune_flower</Artwork>
 		<State>Negative</State>
@@ -110,7 +110,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>netzach_alriune1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90411">
+	<EmotionCard ID="190411">
 		<Name>Alriune_Bush_Enemy</Name>
 		<Artwork>Alriune_Bush</Artwork>
 		<State>Positive</State>
@@ -121,7 +121,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>netzach_alriune2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90412">
+	<EmotionCard ID="190412">
 		<Name>Alriune_Doll_Enemy</Name>
 		<Artwork>Alriune_Doll</Artwork>
 		<State>Positive</State>
@@ -132,7 +132,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>netzach_alriune3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90413">
+	<EmotionCard ID="190413">
 		<Name>SilentOrchestra_Music_Enemy</Name>
 		<Artwork>SilentOrchestra_Music</Artwork>
 		<State>Positive</State>
@@ -143,7 +143,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>netzach_orchestra1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90414">
+	<EmotionCard ID="190414">
 		<Name>SilentOrchestra_Affect_Enemy</Name>
 		<Artwork>SilentOrchestra_Affect</Artwork>
 		<State>Positive</State>
@@ -154,7 +154,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>netzach_orchestra2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90415">
+	<EmotionCard ID="190415">
 		<Name>SilentOrchestra_Finale_Enemy</Name>
 		<Artwork>SilentOrchestra_Finale</Artwork>
 		<State>Positive</State>

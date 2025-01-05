@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<EmotionCard ID="90801">
+	<EmotionCard ID="190801">
 		<Name>Bigbird_Eye_Enemy</Name>
 		<Artwork>Bigbird_Eye</Artwork>
 		<State>Negative</State>
@@ -11,7 +11,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_bigbird1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90802">
+	<EmotionCard ID="190802">
 		<Name>Bigbird_Lamp_Enemy</Name>
 		<Artwork>Bigbird_Lamp</Artwork>
 		<State>Positive</State>
@@ -22,7 +22,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_bigbird2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90803">
+	<EmotionCard ID="190803">
 		<Name>Bigbird_Save_Enemy</Name>
 		<Artwork>Bigbird_Save</Artwork>
 		<State>Positive</State>
@@ -33,7 +33,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_bigbird3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90804">
+	<EmotionCard ID="190804">
 		<Name>SmallBird_Punishment_Enemy</Name>
 		<Artwork>SmallBird_Punishment</Artwork>
 		<State>Positive</State>
@@ -44,7 +44,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_smallbird1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90805">
+	<EmotionCard ID="190805">
 		<Name>SmallBird_Beak_Enemy</Name>
 		<Artwork>SmallBird_Beak</Artwork>
 		<State>Positive</State>
@@ -55,7 +55,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_smallbird2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90806">
+	<EmotionCard ID="190806">
 		<Name>Smallbird_Fly_Enemy</Name>
 		<Artwork>Smallbird_Fly</Artwork>
 		<State>Positive</State>
@@ -66,7 +66,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_smallbird3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90807">
+	<EmotionCard ID="190807">
 		<Name>LongBird_Sin_Enemy</Name>
 		<Artwork>LongBird_Sin</Artwork>
 		<State>Negative</State>
@@ -77,7 +77,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_longbird1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90808">
+	<EmotionCard ID="190808">
 		<Name>LongBird_Judgement_Enemy</Name>
 		<Artwork>LongBird_Judgement</Artwork>
 		<State>Negative</State>
@@ -88,7 +88,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_longbird2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90809">
+	<EmotionCard ID="190809">
 		<Name>LongBird_Scale_Enemy</Name>
 		<Artwork>LongBird_Scale</Artwork>
 		<State>Positive</State>
@@ -99,7 +99,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_longbird3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90810">
+	<EmotionCard ID="190810">
 		<Name>ApocalypseBird_LongArm_Enemy</Name>
 		<Artwork>ApocalypseBird_LongArm</Artwork>
 		<State>Positive</State>
@@ -110,7 +110,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_bossbird1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90811">
+	<EmotionCard ID="190811">
 		<Name>ApocalypseBird_BigEye_Enemy</Name>
 		<Artwork>ApocalypseBird_BigEye</Artwork>
 		<State>Positive</State>
@@ -121,7 +121,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_bossbird2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90812">
+	<EmotionCard ID="190812">
 		<Name>ApocalypseBird_SmallPeak_Enemy</Name>
 		<Artwork>ApocalypseBird_SmallPeak</Artwork>
 		<State>Positive</State>
@@ -132,7 +132,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_bossbird3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90813">
+	<EmotionCard ID="190813">
 		<Name>ApocalypseBird_Apocalypse_Enemy</Name>
 		<Artwork>ApocalypseBird_Apocalypse</Artwork>
 		<State>Positive</State>
@@ -143,7 +143,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_bossbird4</Script>
 	</EmotionCard>
-	<EmotionCard ID="90814">
+	<EmotionCard ID="190814">
 		<Name>ApocalypseBird_Gate_Enemy</Name>
 		<Artwork>ApocalypseBird_Gate</Artwork>
 		<State>Positive</State>
@@ -154,7 +154,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>binah_bossbird5</Script>
 	</EmotionCard>
-	<EmotionCard ID="90815">
+	<EmotionCard ID="190815">
 		<Name>ApocalypseBird_Atk_Enemy</Name>
 		<Artwork>ApocalypseBird_Atk</Artwork>
 		<State>Positive</State>

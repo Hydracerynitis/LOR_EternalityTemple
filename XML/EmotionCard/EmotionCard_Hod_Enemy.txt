@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<EmotionCard ID="90301">
+	<EmotionCard ID="190301">
 		<Name>ShyLookToday_Face_Enemy</Name>
 		<Artwork>ShyLookToday_Face</Artwork>
 		<State>Negative</State>
@@ -11,7 +11,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_shyLook1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90302">
+	<EmotionCard ID="190302">
 		<Name>ShyLookToday_Shy_Enemy</Name>
 		<Artwork>ShyLookToday_Shy</Artwork>
 		<State>Positive</State>
@@ -22,7 +22,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_shyLook2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90303">
+	<EmotionCard ID="190303">
 		<Name>ShyLookToday_Normalface_Enemy</Name>
 		<Artwork>ShyLookToday_Normalface</Artwork>
 		<State>Positive</State>
@@ -33,7 +33,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_shyLook3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90304">
+	<EmotionCard ID="190304">
 		<Name>RedShoes_Kirakira_Enemy</Name>
 		<Artwork>RedShoes_Kirakira</Artwork>
 		<State>Negative</State>
@@ -44,7 +44,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_redShoes1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90305">
+	<EmotionCard ID="190305">
 		<Name>RedShoes_Desire_Enemy</Name>
 		<Artwork>RedShoes_Desire</Artwork>
 		<State>Negative</State>
@@ -55,7 +55,7 @@
 		<TargetType>AllIncludingEnemy</TargetType>
 		<Script>hod_redShoes2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90306">
+	<EmotionCard ID="190306">
 		<Name>RedShoes_Cut_Enemy</Name>
 		<Artwork>RedShoes_Cut</Artwork>
 		<State>Positive</State>
@@ -66,7 +66,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_redShoes3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90307">
+	<EmotionCard ID="190307">
 		<Name>SpiderBud_Cocoon_Enemy</Name>
 		<Artwork>SpiderBud_Cocoon</Artwork>
 		<State>Positive</State>
@@ -77,7 +77,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_spiderBud1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90308">
+	<EmotionCard ID="190308">
 		<Name>SpiderBud_BabyAtk_Enemy</Name>
 		<Artwork>SpiderBud_BabyAtk</Artwork>
 		<State>Positive</State>
@@ -88,7 +88,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_spiderBud2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90309">
+	<EmotionCard ID="190309">
 		<Name>SpiderBud_Dinner_Enemy</Name>
 		<Artwork>SpiderBud_Dinner</Artwork>
 		<State>Positive</State>
@@ -99,7 +99,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_spiderBud3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90310">
+	<EmotionCard ID="190310">
 		<Name>Laetitia_Present_Enemy</Name>
 		<Artwork>Laetitia_Present</Artwork>
 		<State>Positive</State>
@@ -110,7 +110,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_latitia1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90311">
+	<EmotionCard ID="190311">
 		<Name>Laetitia_Friend_Enemy</Name>
 		<Artwork>Laetitia_Friend</Artwork>
 		<State>Negative</State>
@@ -121,7 +121,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_latitia2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90312">
+	<EmotionCard ID="190312">
 		<Name>Laetitia_HeartGift_Enemy</Name>
 		<Artwork>Laetitia_HeartGift</Artwork>
 		<State>Negative</State>
@@ -132,7 +132,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_latitia3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90313">
+	<EmotionCard ID="190313">
 		<Name>BlackSwan_Feather_Enemy</Name>
 		<Artwork>BlackSwan_Feather</Artwork>
 		<State>Negative</State>
@@ -143,7 +143,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_blackswan1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90314">
+	<EmotionCard ID="190314">
 		<Name>BlackSwan_Umbrella_Enemy</Name>
 		<Artwork>BlackSwan_Umbrella</Artwork>
 		<State>Positive</State>
@@ -154,7 +154,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>hod_blackswan2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90315">
+	<EmotionCard ID="190315">
 		<Name>BlackSwan_Family_Enemy</Name>
 		<Artwork>BlackSwan_Family</Artwork>
 		<State>Positive</State>

@@ -286,4 +286,60 @@
     <Card Pid="@origin">701003</Card>
   </Deck>
 
+   <Deck ID="226769026">
+    <Card Pid="@origin">605010</Card><!--剑解--> 
+    <Card Pid="@origin">605010</Card> 
+    <Card Pid="@origin">605010</Card> 
+    <Card Pid="@origin">407007</Card><!--血红音符--> 
+    <Card Pid="@origin">407007</Card> 
+    <Card Pid="@origin">407007</Card>
+    <Card Pid="@origin">407002</Card><!--绕梁-->
+    <Card Pid="@origin">407002</Card>
+    <Card Pid="@origin">407002</Card>
+  </Deck>
+   <Deck ID="226769027">
+    <Card Pid="@origin">605010</Card><!--剑解--> 
+    <Card Pid="@origin">605010</Card> 
+    <Card Pid="@origin">605010</Card> 
+    <Card Pid="@origin">407007</Card><!--血红音符--> 
+    <Card Pid="@origin">407007</Card> 
+    <Card Pid="@origin">407007</Card>
+    <Card Pid="@origin">407002</Card><!--绕梁-->
+    <Card Pid="@origin">407002</Card>
+    <Card Pid="@origin">407002</Card>
+  </Deck>
+   <Deck ID="226769028">
+    <Card Pid="@origin">605010</Card><!--剑解--> 
+    <Card Pid="@origin">605010</Card> 
+    <Card Pid="@origin">605010</Card> 
+    <Card Pid="@origin">407007</Card><!--血红音符--> 
+    <Card Pid="@origin">407007</Card> 
+    <Card Pid="@origin">407007</Card>
+    <Card Pid="@origin">407002</Card><!--绕梁-->
+    <Card Pid="@origin">407002</Card>
+    <Card Pid="@origin">407002</Card>
+  </Deck>
+   <Deck ID="226769029">
+    <Card Pid="@origin">605010</Card><!--剑解--> 
+    <Card Pid="@origin">605010</Card> 
+    <Card Pid="@origin">605010</Card> 
+    <Card Pid="@origin">407007</Card><!--血红音符--> 
+    <Card Pid="@origin">407007</Card> 
+    <Card Pid="@origin">407007</Card>
+    <Card Pid="@origin">407002</Card><!--绕梁-->
+    <Card Pid="@origin">407002</Card>
+    <Card Pid="@origin">407002</Card>
+  </Deck>
+   <Deck ID="226769030">
+    <Card Pid="@origin">605010</Card><!--剑解--> 
+    <Card Pid="@origin">605010</Card> 
+    <Card Pid="@origin">605010</Card> 
+    <Card Pid="@origin">407007</Card><!--血红音符--> 
+    <Card Pid="@origin">407007</Card> 
+    <Card Pid="@origin">407007</Card>
+    <Card Pid="@origin">407002</Card><!--绕梁-->
+    <Card Pid="@origin">407002</Card>
+    <Card Pid="@origin">407002</Card>
+  </Deck>
+
 </DeckXmlRoot>

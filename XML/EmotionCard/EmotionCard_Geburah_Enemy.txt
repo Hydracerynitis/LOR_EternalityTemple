@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<EmotionCard ID="90601">
+	<EmotionCard ID="190601">
 		<Name>Redhood_Hunt_Enemy</Name>
 		<Artwork>Redhood_Hunt</Artwork>
 		<State>Positive</State>
@@ -11,7 +11,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_redhood1</Script>
 	</EmotionCard> 
-	<EmotionCard ID="90602">
+	<EmotionCard ID="190602">
 		<Name>Redhood_Revenge_Enemy</Name>
 		<Artwork>Redhood_Revenge</Artwork>
 		<State>Negative</State>
@@ -22,7 +22,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_redhood2</Script>
 	</EmotionCard> 
-	<EmotionCard ID="90603">
+	<EmotionCard ID="190603">
 		<Name>Redhood_RedScar_Enemy</Name>
 		<Artwork>Redhood_RedScar</Artwork>
 		<State>Negative</State>
@@ -33,7 +33,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_redhood3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90604">
+	<EmotionCard ID="190604">
 		<Name>BigBadWolf_Eat_Enemy</Name>
 		<Artwork>BigBadWolf_Eat</Artwork>
 		<State>Positive</State>
@@ -44,7 +44,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_bigbadwolf1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90605">
+	<EmotionCard ID="190605">
 		<Name>BigBadWolf_Claw_Enemy</Name>
 		<Artwork>BigBadWolf_Claw</Artwork>
 		<State>Negative</State>
@@ -55,7 +55,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_bigbadwolf2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90606">
+	<EmotionCard ID="190606">
 		<Name>BigBadWolf_Change_Enemy</Name>
 		<Artwork>BigBadWolf_Change</Artwork>
 		<State>Positive</State>
@@ -66,7 +66,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_bigbadwolf3</Script>
 	</EmotionCard>  
-	<EmotionCard ID="90607">
+	<EmotionCard ID="190607">
 		<Name>Mountain_Eat_Enemy</Name>
 		<Artwork>Mountain_Eat</Artwork>
 		<State>Positive</State>
@@ -77,7 +77,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_danggocreature1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90608">
+	<EmotionCard ID="190608">
 		<Name>Mountain_Shout_Enemy</Name>
 		<Artwork>Mountain_Shout</Artwork>
 		<State>Negative</State>
@@ -88,7 +88,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_danggocreature2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90609">
+	<EmotionCard ID="190609">
 		<Name>Mountain_Vomit_Enemy</Name>
 		<Artwork>Mountain_Vomit</Artwork>
 		<State>Negative</State>
@@ -99,7 +99,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_danggocreature3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90610">
+	<EmotionCard ID="190610">
 		<Name>Nosferatu_BloodHope_Enemy</Name>
 		<Artwork>Nosferatu_BloodHope</Artwork>
 		<State>Negative</State>
@@ -110,7 +110,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_nosferatu1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90611">
+	<EmotionCard ID="190611">
 		<Name>Nosferatu_Wine_Enemy</Name>
 		<Artwork>Nosferatu_Wine</Artwork>
 		<State>Negative</State>
@@ -121,7 +121,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_nosferatu2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90612">
+	<EmotionCard ID="190612">
 		<Name>Nosferatu_Vampire_Enemy</Name>
 		<Artwork>Nosferatu_Vampire</Artwork>
 		<State>Positive</State>
@@ -132,7 +132,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_nosferatu3</Script>
 	</EmotionCard>
-	<EmotionCard ID="90613">
+	<EmotionCard ID="190613">
 		<Name>NothingThere_Goodbye_Enemy</Name>
 		<Artwork>NothingThere_Goodbye</Artwork>
 		<State>Positive</State>
@@ -143,7 +143,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_nothing1</Script>
 	</EmotionCard>
-	<EmotionCard ID="90614">
+	<EmotionCard ID="190614">
 		<Name>NothingThere_Hello_Enemy</Name>
 		<Artwork>NothingThere_Hello</Artwork>
 		<State>Positive</State>
@@ -154,7 +154,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>geburah_nothing2</Script>
 	</EmotionCard>
-	<EmotionCard ID="90615">
+	<EmotionCard ID="190615">
 		<Name>NothingThere_Skin_Enemy</Name>
 		<Artwork>NothingThere_Skin</Artwork>
 		<State>Positive</State>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <EmotionCardXmlRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<EmotionCard ID="91001">
+	<EmotionCard ID="191001">
 		<Name>Bloodbath_Blood_Enemy</Name>
 		<Artwork>Bloodbath_Blood</Artwork>
 		<State>Negative</State>
@@ -11,7 +11,7 @@
 		<TargetType>SelectOne</TargetType>   
 		<Script>keter_bloodbath1</Script>
 	</EmotionCard>
-	<EmotionCard ID="91002">
+	<EmotionCard ID="191002">
 		<Name>Bloodbath_Scar_Enemy</Name>
 		<Artwork>Bloodbath_Scar</Artwork>
 		<State>Positive</State>
@@ -22,7 +22,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>keter_bloodbath2</Script>
 	</EmotionCard>
-	<EmotionCard ID="91003">
+	<EmotionCard ID="191003">
 		<Name>Bloodbath_Hands_Enemy</Name>
 		<Artwork>Bloodbath_Hands</Artwork>
 		<State>Positive</State>
@@ -33,7 +33,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>keter_bloodbath3</Script>
 	</EmotionCard>
-	<EmotionCard ID="91004">
+	<EmotionCard ID="191004">
 		<Name>HeartofAspiration_Heart_Enemy</Name>
 		<Artwork>HeartofAspiration_Heart</Artwork>
 		<State>Negative</State>
@@ -44,7 +44,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>keter_heart1</Script>
 	</EmotionCard>
-	<EmotionCard ID="91005">
+	<EmotionCard ID="191005">
 		<Name>HeartofAspiration_Doki_Enemy</Name>
 		<Artwork>HeartofAspiration_Doki</Artwork>
 		<State>Positive</State>
@@ -55,7 +55,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>keter_heart2</Script>
 	</EmotionCard>
-	<EmotionCard ID="91006">
+	<EmotionCard ID="191006">
 		<Name>HeartofAspiration_Atk_Enemy</Name>
 		<Artwork>HeartofAspiration_Atk</Artwork>
 		<State>Negative</State>
@@ -66,7 +66,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>keter_heart3</Script>
 	</EmotionCard>
-	<EmotionCard ID="91007">
+	<EmotionCard ID="191007">
 		<Name>Pinocchio_Learn_Enemy</Name>
 		<Artwork>Pinocchio_Learn</Artwork>
 		<State>Positive</State>
@@ -77,7 +77,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>keter_pinocchio1</Script>
 	</EmotionCard>  
-	<EmotionCard ID="91008">
+	<EmotionCard ID="191008">
 		<Name>Pinocchio_Lie_Enemy</Name>
 		<Artwork>Pinocchio_Lie</Artwork>
 		<State>Negative</State>
@@ -88,7 +88,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>keter_pinocchio2</Script>
 	</EmotionCard>
-	<EmotionCard ID="91009">
+	<EmotionCard ID="191009">
 		<Name>Pinocchio_Curious_Enemy</Name>
 		<Artwork>Pinocchio_Curious</Artwork>
 		<State>Negative</State>
@@ -99,7 +99,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>keter_pinocchio3</Script>
 	</EmotionCard>
-	<EmotionCard ID="91010">
+	<EmotionCard ID="191010">
 		<Name>TheSnowQueen_Sord_Enemy</Name>
 		<Artwork>TheSnowQueen_Sord</Artwork>
 		<State>Positive</State>
@@ -110,7 +110,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>keter_snowqueen1</Script>
 	</EmotionCard>
-	<EmotionCard ID="91011">
+	<EmotionCard ID="191011">
 		<Name>TheSnowQueen_Chu_Enemy</Name>
 		<Artwork>TheSnowQueen_Chu</Artwork>
 		<State>Positive</State>
@@ -121,7 +121,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>keter_snowqueen2</Script>
 	</EmotionCard>
-	<EmotionCard ID="91012">
+	<EmotionCard ID="191012">
 		<Name>TheSnowQueen_Snow_Enemy</Name>
 		<Artwork>TheSnowQueen_Snow</Artwork>
 		<State>Negative</State>
@@ -132,7 +132,7 @@
 		<TargetType>SelectOne</TargetType>
 		<Script>keter_snowqueen3</Script>
   	</EmotionCard>
-  	<EmotionCard ID="91013">
+  	<EmotionCard ID="191013">
 		<Name>QuietKid_Hammer_Enemy</Name>
 		<Artwork>QuietKid_Hammer</Artwork>
     	<State>Positive</State>
@@ -143,7 +143,7 @@
     	<TargetType>SelectOne</TargetType>
     	<Script>keter_quietKid1</Script>
   	</EmotionCard>
-  	<EmotionCard ID="91014">
+  	<EmotionCard ID="191014">
     	<Name>QuietKid_Eyeshine_Enemy</Name>
 		<Artwork>QuietKid_Eyeshine</Artwork>
     	<State>Negative</State>
@@ -154,7 +154,7 @@
     	<TargetType>SelectOne</TargetType>
     	<Script>keter_quietKid2</Script>
   	</EmotionCard>
-  	<EmotionCard ID="91015">
+  	<EmotionCard ID="191015">
     	<Name>QuietKid_Guilty_Enemy</Name>
 		<Artwork>QuietKid_Guilty</Artwork>
     	<State>Negative</State>

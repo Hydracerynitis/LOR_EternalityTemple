@@ -318,4 +318,9 @@
 		<!--这里的意思是在[疯狂]骰子使用的时候-->
 		<!--然后效果是-后面的-->
 	</BattleCardAbility>
+
+	<BattleCardAbility ID="ETpassfloor"><!--绀珠之药-->
+		<Desc>[装备时]立即击破本楼层并使所有我方角色承受记录下来的战损程度伤害</Desc>
+	</BattleCardAbility>
+
 </BattleCardAbilityDescRoot>

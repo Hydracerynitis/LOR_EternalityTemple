@@ -15,6 +15,7 @@ using EternalityTemple.Kaguya;
 using System.Linq;
 using EternalityTemple.Yagokoro;
 using EternalityTemple.Inaba;
+using GameSave;
 
 namespace EternalityTemple
 {
@@ -43,6 +44,10 @@ namespace EternalityTemple
             RemoveError();
             AbnormalityLoader.LoadEmotion();
             LocalizeManager.LocalizedTextLoader_LoadOthers_Post(TextDataModel.CurrentLanguage);
+            if (Singleton<EternalityTempleSaveManager>.Instance.LoadData("passFloor") == null) 
+            {
+                Singleton<EternalityTempleSaveManager>.Instance.SaveData(new SaveData(SaveDataType.Dictionary), "passFloor");
+            }
         }
         //移除重复加载同一DLL的错误提示
         public static void RemoveError()

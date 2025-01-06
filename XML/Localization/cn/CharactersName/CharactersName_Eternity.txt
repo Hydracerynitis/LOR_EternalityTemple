@@ -47,14 +47,14 @@
 
 	<Name ID="226769041">Chesed</Name>
 	<Name ID="226769042">苏珊</Name>
-	<Name ID="226769043">苏西</Name>
-	<Name ID="226769044">苏苏</Name>
-	<Name ID="226769045">苏妲己</Name>
+	<Name ID="226769043">拉斯坦丁</Name>
+	<Name ID="226769044">木灵</Name>
+	<Name ID="226769045">阿姆</Name>
 
 	<Name ID="226769046">Binah</Name>
 	<Name ID="226769047">蒂凡尼</Name>
 	<Name ID="226769048">辛恩</Name>
-	<Name ID="226769049">卡米拉</Name>
+	<Name ID="226769049">晓</Name>
 	<Name ID="226769050">巴兹尔</Name>
 
 	<Name ID="226769051">Hokma</Name>

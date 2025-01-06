@@ -265,4 +265,64 @@
 		<FaceType>Skin</FaceType>
 		<Gender>F</Gender>
 	</Enemy> 
+
+	 <Enemy ID="226769026">
+		<Name></Name>
+		<NameID>226769026</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769026</BookId>
+		<DeckId>226769026</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769027">
+		<Name></Name>
+		<NameID>226769027</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769027</BookId>
+		<DeckId>226769027</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769028">
+		<Name></Name>
+		<NameID>226769028</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769028</BookId>
+		<DeckId>226769028</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769029">
+		<Name></Name>
+		<NameID>226769029</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769029</BookId>
+		<DeckId>226769029</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
+
+	 <Enemy ID="226769030">
+		<Name></Name>
+		<NameID>226769030</NameID>
+		<MinHeight>160</MinHeight>
+		<MaxHeight>160</MaxHeight>
+
+		<BookId>226769030</BookId>
+		<DeckId>226769030</DeckId>
+		<FaceType>Skin</FaceType>
+		<Gender>F</Gender>
+	</Enemy> 
 </EnemyUnitClassRoot>

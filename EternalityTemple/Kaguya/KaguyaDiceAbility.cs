@@ -10,6 +10,7 @@ using UnityEngine.EventSystems;
 using EternalityTemple.Yagokoro;
 using LOR_BattleUnit_UI;
 using HyperCard;
+using GameSave;
 
 namespace EternalityTemple.Kaguya
 {
@@ -361,6 +362,25 @@ namespace EternalityTemple.Kaguya
                 for (int i = 0; i < 7; i++)
                     BattleVoidBehaviour.ExtraHit(b, card,BulletsStorm);
             }
+        }
+    }
+    public class DiceCardSelfAbility_ETpassfloor : DiceCardSelfAbilityBase
+    {
+        public override void OnUseInstance(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
+        {
+            base.OnUseInstance(unit, self, targetUnit);
+            SaveData saveData = Singleton<EternalityTempleSaveManager>.Instance.LoadData("passFloor");
+            int dmg1 = saveData.GetInt(Singleton<StageController>.Instance.CurrentFloor.ToString() + "Kaguya");
+            int dmg2 = saveData.GetInt(Singleton<StageController>.Instance.CurrentFloor.ToString() + "Yagokoro");
+            int dmg3 = saveData.GetInt(Singleton<StageController>.Instance.CurrentFloor.ToString() + "Inaba");
+            BattleObjectManager.instance.GetAliveList(Faction.Player).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769103).TakeDamage(dmg1);
+            BattleObjectManager.instance.GetAliveList(Faction.Player).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769104).TakeDamage(dmg2);
+            BattleObjectManager.instance.GetAliveList(Faction.Player).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769105).TakeDamage(dmg3);
+            foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
+            {
+                battleUnitModel.Die(null, true);
+            }
+            Singleton<StageController>.Instance.CheckEndBattle();
         }
     }
 

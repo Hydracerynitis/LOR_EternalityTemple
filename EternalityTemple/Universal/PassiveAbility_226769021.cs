@@ -20,24 +20,25 @@ namespace EternalityTemple
             }
             emotionFloor.Sort((EmotionCardXmlInfo x, EmotionCardXmlInfo y) => (int)(x.EmotionLevel - y.EmotionLevel));
         }
-        public override void OnBattleEnd()
+        public override void OnRoundStart()
         {
-            if (BattleObjectManager.instance.GetAliveList_opponent(owner.faction).Count <= 0)
+            if (Singleton<StageController>.Instance.CurrentFloor == SephirahType.Netzach)
             {
-                foreach (StageLibraryFloorModel stageLibraryFloorModel in Singleton<StageController>.Instance.GetStageModel().floorList)
+                foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(owner.faction))
                 {
-                    stageLibraryFloorModel.Defeat();
+                    foreach (BattleDiceCardModel battleDiceCardModel in battleUnitModel.allyCardDetail.GetAllDeck())
+                    {
+                        if (battleDiceCardModel.GetID() == 407007)
+                            battleDiceCardModel.XmlData.Script = "ally2strength1thisRound";
+                    }
                 }
-                Singleton<StageController>.Instance.EndBattle();
-                Singleton<StageController>.Instance.GetStageModel().ClassInfo.floorNum = 1;
-                Singleton<StageController>.Instance.GetStageModel().ClassInfo.floorOnlyList = new List<SephirahType> { SephirahType.Malkuth };
-                return;
             }
-            SephirahType sephirah = Singleton<StageController>.Instance.CurrentFloor + 1;
-            Singleton<StageController>.Instance._currentFloor = sephirah;
-            Singleton<StageController>.Instance.GetStageModel().ClassInfo.floorOnlyList = new List<SephirahType> { sephirah };
         }
-        public override void OnRoundEndTheLast()
+        public override BattleUnitModel ChangeAttackTarget(BattleDiceCardModel card, int idx)
+        {
+            return BattleObjectManager.instance.GetAliveList(Faction.Player).Find((BattleUnitModel x) => x.bufListDetail.HasBuf<EmotionCardAbility_alriune3.BattleUnitBuf_Emotion_Alriune>());
+        }
+        public override void OnRoundEndTheLast_ignoreDead()
         {
             while (Singleton<StageController>.Instance.GetCurrentWaveModel().team.emotionLevel > teamEmotionLevel)
             {
@@ -181,7 +182,47 @@ namespace EternalityTemple
         }
         public void ChooseEmotionCard_Netzach()
         {
+            for (int i = 0; i < 3; i++)
+            {
+                BattleUnitModel battleUnitModel;
+                EmotionCardXmlInfo xmlInfo = emotionFloor[0];
+                emotionFloor.RemoveAt(0);
+                if (xmlInfo.id == 190402 || xmlInfo.id == 190403 || xmlInfo.id == 190407)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769030);
+                }
+                else if (xmlInfo.id == 190401 || xmlInfo.id == 190404 || xmlInfo.id == 190408 || xmlInfo.id == 190410)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769029);
+                }
+                else if (xmlInfo.id == 190405)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769027);
+                }
+                else if (xmlInfo.id == 190411)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769028);
+                }
+                else if (xmlInfo.id == 190409 || xmlInfo.id == 190406)
+                {
+                    foreach (BattleUnitModel model in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
+                    {
+                        model.emotionDetail.ApplyEmotionCard(xmlInfo);
+                    }
+                    continue;
+                }
+                else
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769026);
+                }
+                if (battleUnitModel == null)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList_random(Faction.Enemy, 1)[0];
+                }
+                if (battleUnitModel == null | battleUnitModel.IsDead())
+                    return;
+                battleUnitModel.emotionDetail.ApplyEmotionCard(xmlInfo);
+            }
         }
-
     }
 }

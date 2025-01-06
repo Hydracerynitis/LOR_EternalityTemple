@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbnormalityLoader.cs" />
+    <Compile Include="EternalityTempleSaveManager.cs" />
     <Compile Include="ExtraArtworkPatch.cs" />
     <Compile Include="EmotionFix\Binah\EmotionCardAbility_binah_bigbird1.cs" />
     <Compile Include="EmotionFix\Binah\EmotionCardAbility_binah_bigbird2.cs" />
@@ -248,6 +249,7 @@
     <Compile Include="Inaba\Inaba Dice.cs" />
     <Compile Include="Inaba\PassiveAbility_226769010.cs" />
     <Compile Include="Inaba\Inaba Buf.cs" />
+    <Compile Include="Kaguya\PassiveAbility_226769013.cs" />
     <Compile Include="Kaguya\KaguyaDiceAbility.cs" />
     <Compile Include="Kaguya\KaguyaPuzzle.cs" />
     <Compile Include="Kaguya\KaguyaPuzzleBuf.cs" />

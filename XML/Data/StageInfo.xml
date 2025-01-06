@@ -68,6 +68,18 @@
 
 		<emotionCardList />
 		</Wave>
+		<Wave>
+			<Unit>226769026</Unit>
+			<Unit>226769027</Unit>
+			<Unit>226769028</Unit>
+			<Unit>226769029</Unit>
+			<Unit>226769030</Unit>
+			<Formation>1</Formation>
+			<FormationType>Default</FormationType>
+			<AvailableUnit>3</AvailableUnit>
+
+		<emotionCardList />
+		</Wave>
 		<StageType>Invitation</StageType>
 		<FloorNum>1</FloorNum>
 		<Chapter>7</Chapter>

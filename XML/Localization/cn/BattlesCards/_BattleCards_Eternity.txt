@@ -156,5 +156,11 @@
 	<BattleCardDesc ID="226769136">
       <LocalizedName>调整波长</LocalizedName>
     </BattleCardDesc>
+
+
+	<BattleCardDesc ID="226769137">
+      <LocalizedName>绀珠之药</LocalizedName>
+    </BattleCardDesc>
+
 </cardDescList>
 </BattleCardDescRoot>

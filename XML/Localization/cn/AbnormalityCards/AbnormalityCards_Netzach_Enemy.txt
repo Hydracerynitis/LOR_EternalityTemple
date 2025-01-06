@@ -162,7 +162,7 @@
 		<AbnormalityCard ID="SilentOrchestra_Music_Enemy">
 			<Abnormality>沉默乐团</Abnormality>
 			<CardName>返始咏叹调</CardName>
-			<AbilityDesc>如果该来宾在一幕内承受超过25%体力的伤害则恢复所有光芒将体力与混乱抗性恢复至获得本书页时的状态(每一舞台只能触发一次)</AbilityDesc>
+			<AbilityDesc>如果该来宾在一幕内承受超过25%体力的伤害则恢复所有光芒将体力与混乱抗性恢复至应用本异想体书页时的状态(每一舞台只能触发一次)</AbilityDesc>
 			<FlaborText>演出仍未谢幕。Da Capo。Da Capo al fine。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">最华丽的演出，于毁灭拉开序幕。</Dialogue>

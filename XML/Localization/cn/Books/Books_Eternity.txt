@@ -55,7 +55,6 @@
       </TextList>
     </BookDesc>
 
-
     <BookDesc BookID="226769017">
       <BookName>美里奈之页</BookName>
       <TextList>
@@ -101,6 +100,25 @@
     </BookDesc>
     <BookDesc BookID="226769025">
       <BookName>奥利维耶之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+
+    <BookDesc BookID="226769027">
+      <BookName>哈罗德之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769029">
+      <BookName>鲁道夫之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769030">
+      <BookName>卡洛之页</BookName>
       <TextList>
         <Desc>... ...</Desc>
       </TextList>

@@ -96,6 +96,16 @@ namespace EternalityTemple.Inaba
 	}
 	public class DiceCardSelfAbility_InabaCard3 : DiceCardSelfAbilityBase
 	{
+        public override void OnApplyCard()
+        {
+            base.OnApplyCard();
+			owner.view.charAppearance.ChangeMotion(ActionDetail.S5);
+        }
+		public override void OnReleaseCard()
+		{
+			base.OnReleaseCard();
+			owner.view.charAppearance.ChangeMotion(ActionDetail.Default);
+		}
 		public override void OnUseCard()
 		{
 			if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>() && BattleUnitBuf_InabaBuf5.GetStack(owner) >= 3)

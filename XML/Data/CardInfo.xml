@@ -61,7 +61,7 @@
   <!--蓬莱山-->
   <Card ID="226769001">
     <Name>新难题[艾哲红石]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>新难题-艾哲红石.png</Artwork>
     <Rarity>Uncommon</Rarity>
 	  <Option>OnlyPage</Option>
     <Spec Range="Far" Cost="2"/>
@@ -76,7 +76,7 @@
   </Card>
   <Card ID="226769002">
     <Name>新难题[Mysterium]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>恐惧-崔斯特姆的诅咒.png</Artwork>
     <Rarity>Rare</Rarity>
 	  <Option>OnlyPage</Option>
     <Spec Range="Far" Cost="1"/>
@@ -91,7 +91,7 @@
   </Card>
   <Card ID="226769003">
     <Name>恐惧[崔斯特姆的诅咒]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>恐惧-崔斯特姆的诅咒.png</Artwork>
     <Rarity>Rare</Rarity>
 	  <Option>OnlyPage</Option>
     <Spec Range="Far" Cost="1"/>
@@ -104,7 +104,7 @@
   </Card>
   <Card ID="226769004">
     <Name>新难题[金阁寺的天花板]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>新难题-金阁寺的天花板.png</Artwork>
     <Rarity>Rare</Rarity>
 	  <Option>OnlyPage</Option>
     <Spec Range="Far" Cost="3"/>
@@ -131,7 +131,7 @@
   <!--蓬莱山难题-->
   <Card ID="226769011">
     <Name>难题-龙颈之玉</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>耀眼的龙玉.png</Artwork>
     <Rarity>Special</Rarity>
 	  <Option>Personal</Option>
     <Spec Range="Instance" Cost="0"/>
@@ -143,7 +143,7 @@
   </Card>
   <Card ID="226769012">
     <Name>难题-佛御石之钵</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>佛御石之钵.png</Artwork>
     <Rarity>Special</Rarity>
 	  <Option>Personal</Option>
     <Spec Range="Instance" Cost="0"/>
@@ -155,7 +155,7 @@
   </Card>
   <Card ID="226769013">
     <Name>难题-火鼠的皮衣</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>火鼠的皮衣.png</Artwork>
     <Rarity>Special</Rarity>
 	  <Option>Personal</Option>
     <Spec Range="Instance" Cost="0"/>
@@ -167,7 +167,7 @@
   </Card>
   <Card ID="226769014">
     <Name>难题-燕的子安贝</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>燕的子安贝.png</Artwork>
     <Rarity>Special</Rarity>
 	  <Option>Personal</Option>
     <Spec Range="Instance" Cost="0"/>
@@ -179,7 +179,7 @@
   </Card>
   <Card ID="226769015">
     <Name>难题-蓬莱玉枝</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>蓬莱的弹枝.png</Artwork>
     <Rarity>Special</Rarity>
 	  <Option>Personal</Option>
     <Spec Range="Instance" Cost="0"/>
@@ -192,7 +192,7 @@
   <!--蓬莱山神宝-->
   <Card ID="226769006">
     <Name>神宝[耀眼的龙玉]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>耀眼的龙玉.png</Artwork>
     <Rarity>Unique</Rarity>
 	  <Option>Personal</Option>
     <Spec Range="Far" Cost="4"/>
@@ -206,7 +206,7 @@
   </Card>
   <Card ID="226769007">
     <Name>神宝[佛体的金刚石]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>佛御石之钵.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>Personal</Option>
     <Spec Range="Near" Cost="4"/>
@@ -221,7 +221,7 @@
   </Card>
   <Card ID="226769008">
     <Name>神宝[火蜥蜴之盾]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>火鼠的皮衣.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>Personal</Option>
     <Spec Range="Near" Cost="3"/>
@@ -235,7 +235,7 @@
   </Card>
   <Card ID="226769009">
     <Name>神宝[无限的生命之泉]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>燕的子安贝.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>Personal</Option>
     <Spec Range="Near" Cost="4"/>
@@ -249,7 +249,7 @@
   </Card>
   <Card ID="226769010">
     <Name>神宝[蓬莱的弹枝-七色的弹幕-]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>蓬莱的弹枝.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>Personal</Option>
     <Spec Range="FarArea" Cost="7"/>
@@ -286,7 +286,7 @@
   </Card>
   <Card ID="226769018">
     <Name>箭</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>永琳箭.png</Artwork>
     <Rarity>Rare</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="Far" Cost="2"/>
@@ -312,7 +312,7 @@
   </Card>
   <Card ID="226769020">
     <Name>炼丹[水银之海]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>炼丹-水银之海.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="4"/>
@@ -325,7 +325,7 @@
   </Card>
   <Card ID="226769021">
     <Name>药符[壶中的大银河]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>药符-壶中的大银河.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="FarAreaEach" Cost="5" Affection="Team"/>
@@ -339,7 +339,7 @@
   </Card>
   <Card ID="226769022">
     <Name>天网蛛网捕蝶之法</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>天网蛛网捕蝶之法.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="FarAreaEach" Cost="7" Affection="Team"/>
@@ -412,10 +412,11 @@
     <Artwork>铃仙-国士无双之药.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>OnlyPage</Option>
-    <Spec Range="Near" Cost="3"/>
+    <Spec Range="Near" Cost="2"/>
     <Script>InabaCard3</Script>
     <BehaviourList>
-     <Behaviour Min="1" Dice="1" Type="Def" Detail="Guard" Motion="S5" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="5" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="5" Dice="7" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -530,6 +531,18 @@
     <BehaviourList>
      <Behaviour Min="3" Dice="8" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
      <Behaviour Min="6" Dice="7" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+    </BehaviourList>
+    <Chapter>7</Chapter>
+  </Card>
+
+  <Card ID="226769137">
+    <Name>绀珠之药</Name>
+    <Artwork>绀珠之药.png</Artwork>
+    <Rarity>Unique</Rarity>
+	  <Option>Personal</Option>
+    <Spec Range="Instance" Cost="0"/>
+    <Script>ETpassfloor</Script>
+    <BehaviourList>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>

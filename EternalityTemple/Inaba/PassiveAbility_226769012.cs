@@ -16,6 +16,7 @@ namespace EternalityTemple.Inaba
                 if (battleUnitModel.emotionDetail.EmotionLevel <num)
                 {
                     battleUnitModel.emotionDetail.SetEmotionLevel(battleUnitModel.emotionDetail.EmotionLevel + 1);
+                    battleUnitModel.cardSlotDetail.RecoverPlayPoint(9);
                 }
             }
         }

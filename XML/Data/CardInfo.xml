@@ -3,7 +3,7 @@
   <Version>1.1</Version>
   <Card ID="226769100">
     <Name>月之都市</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>月之都市.png</Artwork>
     <Rarity>Uncommon</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="0"/>
@@ -17,7 +17,7 @@
   </Card>
   <Card ID="226769200">
     <Name>月之都市</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>月之都市.png</Artwork>
     <Rarity>Uncommon</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="0"/>
@@ -31,7 +31,7 @@
   </Card>
   <Card ID="226769300">
     <Name>月之都市</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>月之都市.png</Artwork>
     <Rarity>Uncommon</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="0"/>
@@ -45,7 +45,7 @@
   </Card>
   <Card ID="226769311">
     <Name>月之都市</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>月之都市.png</Artwork>
     <Rarity>Uncommon</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="0"/>
@@ -76,7 +76,7 @@
   </Card>
   <Card ID="226769002">
     <Name>新难题[Mysterium]</Name>
-    <Artwork>恐惧-崔斯特姆的诅咒.png</Artwork>
+    <Artwork>新难题-Mysterium.png</Artwork>
     <Rarity>Rare</Rarity>
 	  <Option>OnlyPage</Option>
     <Spec Range="Far" Cost="1"/>
@@ -118,7 +118,7 @@
   </Card>
   <Card ID="226769005">
     <Name>永远与须臾</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>永远与须臾.png</Artwork>
     <Rarity>Unique</Rarity>
 	  <Option>OnlyPage</Option>
     <Spec Range="Instance" Cost="3"/>
@@ -262,7 +262,7 @@
   <!--永林-->
   <Card ID="226769016">
     <Name>药符[蝴蝶梦丸]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>药符-蝴蝶梦丸.png</Artwork>
     <Rarity>Rare</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="3"/>
@@ -274,7 +274,7 @@
   </Card>
   <Card ID="226769017">
     <Name>疯狂的梦</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>疯狂的梦.png</Artwork>
     <Rarity>Rare</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="3"/>
@@ -299,7 +299,7 @@
   </Card>
   <Card ID="226769019">
     <Name>秘药[仙香玉兔]</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>秘药-仙香玉兔.png</Artwork>
     <Rarity>Uncommon</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="2"/>
@@ -353,7 +353,7 @@
   </Card>
   <Card ID="226769024">
     <Name>裁云断月</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>裁云断月.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>Personal</Option>
     <Spec Range="Near" Cost="1"/>
@@ -367,7 +367,7 @@
   </Card>
   <Card ID="226769124">
     <Name>裁云断月</Name>
-    <Artwork>TheWorld_Eternity.png</Artwork>
+    <Artwork>裁云断月.png</Artwork>
     <Rarity>Unique</Rarity>
     <Spec Range="Near" Cost="1"/>
     <Script>YagokoroCard13</Script>

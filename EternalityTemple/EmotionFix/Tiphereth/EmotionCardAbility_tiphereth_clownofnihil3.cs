@@ -40,9 +40,9 @@ namespace EternalityEmotion
                 {
                     if (alive != _owner)
                     {
-                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Weak, 3, _owner);
-                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Disarm, 3, _owner);
-                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Binding, 3, _owner);
+                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Weak, 5, _owner);
+                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Disarm, 5, _owner);
+                        alive.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Binding, 5, _owner);
                         if(alive.bufListDetail.GetActivatedBufList().Find(x => x is Debuff) ==null)
                             alive.bufListDetail.AddBuf(new Debuff());
                     }

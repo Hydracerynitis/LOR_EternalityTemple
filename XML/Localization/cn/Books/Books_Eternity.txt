@@ -124,5 +124,67 @@
       </TextList>
     </BookDesc>
 
+    <BookDesc BookID="226769031">
+      <BookName>马克西姆之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769032">
+      <BookName>卡洛之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769033">
+      <BookName>巴亚尔之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769034">
+      <BookName>八重之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769035">
+      <BookName>伊里纳之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+
+    <BookDesc BookID="226769031">
+      <BookName>殷红迷雾之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769032">
+      <BookName>瓦吉特之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769033">
+      <BookName>瓦吉特之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769034">
+      <BookName>瓦吉特之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769035">
+      <BookName>瓦吉特之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+
   </bookDescList>
 </BookDescRoot>

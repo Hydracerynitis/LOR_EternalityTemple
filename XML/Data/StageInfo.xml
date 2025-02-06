@@ -80,6 +80,30 @@
 
 		<emotionCardList />
 		</Wave>
+		<Wave>
+			<Unit>226769031</Unit>
+			<Unit>226769032</Unit>
+			<Unit>226769033</Unit>
+			<Unit>226769034</Unit>
+			<Unit>226769035</Unit>
+			<Formation>1</Formation>
+			<FormationType>Default</FormationType>
+			<AvailableUnit>3</AvailableUnit>
+
+		<emotionCardList />
+		</Wave>
+		<Wave>
+			<Unit>226769036</Unit>
+			<Unit>226769037</Unit>
+			<Unit>226769038</Unit>
+			<Unit>226769039</Unit>
+			<Unit>226769040</Unit>
+			<Formation>1</Formation>
+			<FormationType>Default</FormationType>
+			<AvailableUnit>3</AvailableUnit>
+
+		<emotionCardList />
+		</Wave>
 		<StageType>Invitation</StageType>
 		<FloorNum>1</FloorNum>
 		<Chapter>7</Chapter>

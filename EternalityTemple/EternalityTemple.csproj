@@ -259,6 +259,7 @@
     <Compile Include="Kaguya\PassiveAbility_226769000.cs" />
     <Compile Include="LocalizeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Universal\PassiveAbility_226769024.cs" />
     <Compile Include="Universal\PassiveAbility_226769022.cs" />
     <Compile Include="Universal\PassiveAbility_226769021.cs" />
     <Compile Include="Universal\PassiveAbility_226769020.cs" />

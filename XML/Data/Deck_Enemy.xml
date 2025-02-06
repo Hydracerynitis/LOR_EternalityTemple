@@ -342,4 +342,145 @@
     <Card Pid="@origin">407002</Card>
   </Deck>
 
+   <Deck ID="226769031">
+    <Card Pid="@origin">608014</Card><!--撕咬鲜草-->
+    <Card Pid="@origin">701011</Card><!--全面进攻--> 
+    <Card Pid="@origin">603006</Card><!--能量护盾--> 
+	
+    <Card Pid="@origin">605007</Card><!--乱剑劈砍--> 
+    <Card Pid="@origin">611007</Card><!--都市之意--> 
+    <Card Pid="@origin">608011</Card><!--蛮力冲撞--> 
+	
+    <Card Pid="@origin">505004</Card><!--指令之意--> 
+    <Card Pid="@origin">608015</Card><!--心神凝聚--> 
+    <Card Pid="@origin">608006</Card><!--犀牛突击-->
+  </Deck>
+
+   <Deck ID="226769032">
+    <Card Pid="@origin">602001</Card><!--子弹装填-->
+    <Card Pid="@origin">701011</Card><!--全面进攻--> 
+    <Card Pid="@origin">701012</Card><!--平心静气--> 
+	
+    <Card Pid="@origin">605007</Card><!--乱剑劈砍--> 
+    <Card Pid="@origin">602003</Card><!--牵制射击--> 
+    <Card Pid="@origin">602012</Card><!--阶级礼仪--> 
+	
+    <Card Pid="@origin">505004</Card><!--指令之意--> 
+    <Card Pid="@origin">602002</Card><!--枪刺拼杀--> 
+    <Card Pid="@origin">602009</Card><!--即决审判-->
+  </Deck>
+
+   <Deck ID="226769033">
+    <Card Pid="@origin">404002</Card><!--把握时机-->
+    <Card Pid="@origin">404002</Card>
+    <Card Pid="@origin">404002</Card>
+	
+    <Card Pid="@origin">601013</Card><!--一决雌雄--> 
+    <Card Pid="@origin">601013</Card>
+    <Card Pid="@origin">601013</Card>
+	
+    <Card Pid="@origin">403007</Card><!--愤怨烙印--> 
+    <Card Pid="@origin">403007</Card>
+    <Card Pid="@origin">403007</Card>
+  </Deck>
+
+   <Deck ID="226769034">
+    <Card Pid="@origin">404002</Card><!--把握时机-->
+    <Card Pid="@origin">404002</Card>
+    <Card Pid="@origin">404002</Card>
+	
+    <Card Pid="@origin">601013</Card><!--一决雌雄--> 
+    <Card Pid="@origin">601013</Card>
+    <Card Pid="@origin">601013</Card>
+	
+    <Card Pid="@origin">403007</Card><!--愤怨烙印--> 
+    <Card Pid="@origin">403007</Card>
+    <Card Pid="@origin">403007</Card>
+  </Deck>
+
+   <Deck ID="226769035">
+    <Card Pid="@origin">404002</Card><!--把握时机-->
+    <Card Pid="@origin">404002</Card>
+    <Card Pid="@origin">404002</Card>
+	
+    <Card Pid="@origin">601013</Card><!--一决雌雄--> 
+    <Card Pid="@origin">601013</Card>
+    <Card Pid="@origin">601013</Card>
+	
+    <Card Pid="@origin">403007</Card><!--愤怨烙印--> 
+    <Card Pid="@origin">403007</Card>
+    <Card Pid="@origin">403007</Card>
+  </Deck>
+
+   <Deck ID="226769036">
+    <Card Pid="@origin">607003</Card>
+    <Card Pid="@origin">607003</Card>
+
+    <Card Pid="@origin">607004</Card>
+    <Card Pid="@origin">607004</Card>
+ 
+    <Card Pid="@origin">607005</Card>
+    <Card Pid="@origin">607005</Card>
+	
+    <Card Pid="@origin">607006</Card> 
+    <Card Pid="@origin">607006</Card>
+    <Card Pid="@origin">607007</Card>
+  </Deck>
+
+   <Deck ID="226769037">
+    <Card Pid="@origin">701011</Card><!--全面进攻/平心静气-->
+    <Card Pid="@origin">701011</Card>
+    <Card Pid="@origin">701012</Card>
+	
+    <Card Pid="@origin">301003</Card><!--以身为盾--> 
+    <Card Pid="@origin">301003</Card>
+    <Card Pid="@origin">301003</Card>
+	
+    <Card Pid="@origin">701010</Card><!--一触即发--> 
+    <Card Pid="@origin">701010</Card>
+    <Card Pid="@origin">701010</Card>
+  </Deck>
+
+   <Deck ID="226769038">
+    <Card Pid="@origin">701011</Card><!--全面进攻/平心静气-->
+    <Card Pid="@origin">701011</Card>
+    <Card Pid="@origin">701012</Card>
+	
+    <Card Pid="@origin">301003</Card><!--以身为盾--> 
+    <Card Pid="@origin">301003</Card>
+    <Card Pid="@origin">301003</Card>
+	
+    <Card Pid="@origin">701010</Card><!--一触即发--> 
+    <Card Pid="@origin">701010</Card>
+    <Card Pid="@origin">701010</Card>
+  </Deck>
+
+   <Deck ID="226769039">
+    <Card Pid="@origin">701011</Card><!--全面进攻/平心静气-->
+    <Card Pid="@origin">701011</Card>
+    <Card Pid="@origin">701012</Card>
+	
+    <Card Pid="@origin">301003</Card><!--以身为盾--> 
+    <Card Pid="@origin">301003</Card>
+    <Card Pid="@origin">301003</Card>
+	
+    <Card Pid="@origin">701010</Card><!--一触即发--> 
+    <Card Pid="@origin">701010</Card>
+    <Card Pid="@origin">701010</Card>
+  </Deck>
+
+   <Deck ID="226769040">
+    <Card Pid="@origin">701011</Card><!--全面进攻/平心静气-->
+    <Card Pid="@origin">701011</Card>
+    <Card Pid="@origin">701012</Card>
+	
+    <Card Pid="@origin">301003</Card><!--以身为盾--> 
+    <Card Pid="@origin">301003</Card>
+    <Card Pid="@origin">301003</Card>
+	
+    <Card Pid="@origin">701010</Card><!--一触即发--> 
+    <Card Pid="@origin">701010</Card>
+    <Card Pid="@origin">701010</Card>
+  </Deck>
+
 </DeckXmlRoot>

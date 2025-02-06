@@ -9,70 +9,47 @@ namespace EternalityEmotion
 {
     public class EmotionCardAbility_geburah_danggocreature2 : EmotionCardAbilityBase
     {
-        private bool _effect;
-        List<BattleUnitModel> dead=new List<BattleUnitModel>();
-        List<BattleDiceCardModel> remain = new List<BattleDiceCardModel>();
-        public override void OnSelectEmotion()
-        {
-            base.OnSelectEmotion();
-            _effect = false;
-        }
-        public override void OnDieOtherUnit(BattleUnitModel unit)
-        {
-            if (unit == _owner || _owner.faction==unit.faction)
-                return;
-            _effect = true;
-            dead.Add(unit);
-        }
-        public override void OnDrawCard()
-        {
-            foreach(BattleUnitModel corpse in dead)
-            {
-                List<BattleDiceCardModel> deadman = corpse.allyCardDetail.GetAllDeck();
-                for (int i = 0; i < 3; i++)
-                {
-                    BattleDiceCardModel deadcard = RandomUtil.SelectOne(deadman);
-                    deadman.Remove(deadcard);
-                    _owner.allyCardDetail.AddCardToHand(deadcard);
-                    remain.Add(deadcard);
-                }
-            }
-            dead.Clear();
-        }
-        public override void OnRoundStart()
-        {
-            base.OnRoundStart();
-            if (_effect)
-            {
-                _effect = false;
-                _owner.bufListDetail.AddBuf(new SpeedDiceBonus(dead.Count));
-                DiceEffectManager.Instance.CreateNewFXCreatureEffect("6_G/FX_IllusionCard_6_G_Shout", 1f, _owner.view, _owner.view, 3f);
-                CameraFilterUtil.EarthQuake(0.08f, 0.02f, 50f, 0.3f);
-                SoundEffectManager.Instance.PlayClip("Creature/Danggo_Lv2_Shout");
-            }
-        }
-        public override void OnWaveStart()
-        {
-            base.OnWaveStart();
-            _owner.allyCardDetail.AddCardToDeck(remain);
-            _owner.allyCardDetail.Shuffle();
-        }
-        public class SpeedDiceBonus : BattleUnitBuf
-        {
-            private int count;
-            public SpeedDiceBonus(int count)
-            {
-                this.count= count;
-            }
-            public override int SpeedDiceNumAdder()
-            {
-                return count;
-            }
-            public override void OnRoundEnd()
-            {
-                base.OnRoundEnd();
-                Destroy();
-            }
-        }
-    }
+		public override void OnRoundStart()
+		{
+			base.OnRoundStart();
+			this.cnt = 0;
+		}
+		public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
+		{
+			base.OnTakeDamageByAttack(atkDice, dmg);
+			if (this.cnt < 3 && this.CheckHP())
+			{
+				this.cnt++;
+				foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList((base._owner.faction == Faction.Player) ? Faction.Enemy : Faction.Player))
+				{
+					if (!battleUnitModel.IsExtinction())
+					{
+						battleUnitModel.TakeBreakDamage(EmotionCardAbility_danggocreature2.BDmg, DamageType.Emotion, base._owner, AtkResist.Normal, KeywordBuf.None);
+						battleUnitModel.bufListDetail.AddKeywordBufByEtc(KeywordBuf.Vulnerable, 1, base._owner);
+					}
+				}
+				BattleCardTotalResult battleCardResultLog = base._owner.battleCardResultLog;
+				if (battleCardResultLog != null)
+				{
+					battleCardResultLog.SetNewCreatureAbilityEffect("6_G/FX_IllusionCard_6_G_Shout", 3f);
+				}
+				BattleCardTotalResult battleCardResultLog2 = base._owner.battleCardResultLog;
+				if (battleCardResultLog2 == null)
+				{
+					return;
+				}
+				battleCardResultLog2.SetTakeDamagedEvent(new BattleCardBehaviourResult.BehaviourEvent(this.Damaged));
+			}
+		}
+		public void Damaged()
+		{
+			CameraFilterUtil.EarthQuake(0.08f, 0.02f, 50f, 0.3f);
+			SingletonBehavior<SoundEffectManager>.Instance.PlayClip("Creature/Danggo_Lv2_Shout", false, 1f, null);
+		}
+		private bool CheckHP()
+		{
+			return base._owner.hp <= (float)base._owner.MaxHp * 0.5f;
+		}
+		private int cnt;
+	}
 }

@@ -56,7 +56,7 @@
 		<AbnormalityCard ID="BigBadWolf_Claw_Enemy">
 			<Abnormality>又大又可能很坏的狼</Abnormality>
 			<CardName>凶残利爪</CardName>
-			<AbilityDesc>若该来宾在1幕之内承受超出其体力上限50%的伤害，则下一幕中自身将无法被指定为攻击目标。
+			<AbilityDesc>若该来宾在1幕之内承受超出其体力上限30%的伤害，则下一幕中自身将无法被指定为攻击目标。
 在此状态下，该来宾将获得2层“强壮”且击中目标时将在下一幕中对其施加1层“流血”。</AbilityDesc>
 			<FlaborText>很久以前，这对利爪曾破开无数生物的肚囊，将其内脏一一撕裂。</FlaborText>
 			<Dialogues>
@@ -81,7 +81,8 @@
 		<AbnormalityCard ID="Mountain_Eat_Enemy">
 			<Abnormality>微笑的尸山</Abnormality>
 			<CardName>死尸吸收</CardName>
-			<AbilityDesc>场上其他单位死亡时该来宾恢复20%血量(上限为50)并恢复1点光芒</AbilityDesc>
+			<AbilityDesc>该司书击杀来宾时将恢复20%的体力。(至多20点)
+每一幕开始时该司书在本舞台中每恢复10%的体力，便获得1层“强壮”。(至多3层)</AbilityDesc>
 			<FlaborText>它唯一想要的，就是浸泡在鲜血中的人肉。一闻到血腥便会狂奔而来。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">肉……好吃的……日……欧……</Dialogue>
@@ -93,7 +94,7 @@
 		<AbnormalityCard ID="Mountain_Shout_Enemy">
 			<Abnormality>微笑的尸山</Abnormality>
 			<CardName>尸体在笑</CardName>
-			<AbilityDesc>当司书死亡时将死亡司书牌库里3张随机书页置入该来宾的手牌并下一幕额外获得一个速度骰</AbilityDesc>
+			<AbilityDesc>若该司书的体力不高于50%，则被击中时将对所有来宾造成2~5点混乱伤害并在下一幕中对其施加1层“易损”。(每一幕至多触发3次)</AbilityDesc>
 			<FlaborText>一座尸山。那些死尸面带微笑，成为互相分享残肢的一个整体。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">咕噜噜……咕噜……嗝……</Dialogue>
@@ -105,7 +106,8 @@
 		<AbnormalityCard ID="Mountain_Vomit_Enemy">
 			<Abnormality>微笑的尸山</Abnormality>
 			<CardName>尸山</CardName>
-			<AbilityDesc>每击杀1名司书，该来宾便永久获得1层“强壮”，“守护”与“迅捷”且光芒上限与光芒恢复量+1</AbilityDesc>
+			<AbilityDesc>直接击杀除该司书外的所有司书。
+每击杀1名司书，该司书便永久获得1层“强壮”，“守护”与“迅捷”且光芒上限与光芒恢复量+1</AbilityDesc>
 			<FlaborText>尸体越多，它的体型就越是庞大。而且永不满足。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">必须……重新……合为……一体……</Dialogue>

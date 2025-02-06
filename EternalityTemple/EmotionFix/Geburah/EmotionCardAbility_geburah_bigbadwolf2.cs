@@ -38,7 +38,7 @@ namespace EternalityEmotion
         {
             base.OnRoundEnd();
             DestroyAura();
-            if (_owner.history.takeDamageAtOneRound >= _owner.MaxHp * 0.5)
+            if (_owner.history.takeDamageAtOneRound >= _owner.MaxHp * 0.3)
                 trigger = true;
         }
         public override void OnDie(BattleUnitModel killer)

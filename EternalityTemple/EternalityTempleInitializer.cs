@@ -539,7 +539,7 @@ namespace EternalityTemple
             if (list.Count == 0)
                 return;
             BattleUnitModel egoTarget = RandomUtil.SelectOne(list);
-            List<BattleUnitModel> source=BattleObjectManager.instance.GetAliveList(Faction.Player).FindAll(x => x.IsTargetable(egoTarget));
+            List<BattleUnitModel> source = BattleObjectManager.instance.GetAliveList(Faction.Player).FindAll(x => x.IsTargetable(egoTarget));
             if (source.Count() <= 0)
                 return;
             int cardOrder = egoTarget.cardOrder;

@@ -9,32 +9,16 @@ namespace EternalityEmotion
 {
     public class EmotionCardAbility_chesed_scarecrow1 : EmotionCardAbilityBase
     {
-        List<BattleDiceBehavior> usedDice=new List<BattleDiceBehavior>();
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();
             SetFilter();
         }
-        public override void BeforeRollDice(BattleDiceBehavior behavior)
+        public override void OnUseCard(BattlePlayingCardDataInUnitModel curCard)
         {
-            base.BeforeRollDice(behavior);
-            behavior.ApplyDiceStatBonus(new DiceStatBonus() { power = -RandomUtil.Range(1, 3) });
-        }
-        public override void AfterDiceAction(BattleDiceBehavior behavior)
-        {
-            if (usedDice.Contains(behavior))
-                return;
-            usedDice.Add(behavior);
-            if (RandomUtil.valueForProb <= 0.25)
-            {
-                behavior.isBonusAttack = true;
-                _owner.battleCardResultLog?.SetEndCardActionEvent(new BattleCardBehaviourResult.BehaviourEvent(PrintSound));
-            }      
-        }
-        public override void OnRoundStart()
-        {
-            base.OnRoundStart();
-            usedDice.Clear();
+            base.OnUseCard(curCard);
+            _owner.allyCardDetail.DisCardACardRandom();
+            _owner.cardSlotDetail.RecoverPlayPoint(2);
         }
         private void PrintSound() => SoundEffectManager.Instance.PlayClip("Creature/Scarecrow_Special");
         private void SetFilter()

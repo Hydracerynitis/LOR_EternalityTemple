@@ -273,6 +273,38 @@ namespace EternalityTemple.Yagokoro
 	}
 	public class DiceCardSelfAbility_YagokoroCard6 : MoonCardAbility
 	{
+		public override bool OnChooseCard(BattleUnitModel owner)
+		{
+			return Singleton<StageController>.Instance.RoundTurn >= 5 && base.OnChooseCard(owner);
+		}
+		public void ExhaustAndReturn()
+		{
+			this.card.card.exhaust = true;
+			base.owner.bufListDetail.AddBuf(new BattleUnitBuf_addAfter(this.card.card.GetID(), 4));
+		}
+		public override void OnUseCard()
+		{
+			this.ExhaustAndReturn();
+		}
+		public class BattleUnitBuf_addAfter : BattleUnitBuf
+		{
+			public BattleUnitBuf_addAfter(LorId cardId, int turnCount)
+			{
+				this._cardId = cardId;
+				this._count = turnCount;
+			}
+			public override void OnRoundStart()
+			{
+				this._count--;
+				if (this._count <= 0)
+				{
+					this._owner.allyCardDetail.AddNewCard(this._cardId, false);
+					this.Destroy();
+				}
+			}
+			private int _count;
+			private LorId _cardId = LorId.None;
+		}
 		public override bool CanActivateMoon(int slot)
 		{
 			return slot >= 1 && slot <= 5;
@@ -340,6 +372,38 @@ namespace EternalityTemple.Yagokoro
 	}
 	public class DiceCardSelfAbility_YagokoroCard7 : MoonCardAbility
 	{
+		public override bool OnChooseCard(BattleUnitModel owner)
+		{
+			return Singleton<StageController>.Instance.RoundTurn >= 5 && base.OnChooseCard(owner);
+		}
+		public void ExhaustAndReturn()
+		{
+			this.card.card.exhaust = true;
+			base.owner.bufListDetail.AddBuf(new BattleUnitBuf_addAfter(this.card.card.GetID(), 4));
+		}
+		public override void OnUseCard()
+		{
+			this.ExhaustAndReturn();
+		}
+		public class BattleUnitBuf_addAfter : BattleUnitBuf
+		{
+			public BattleUnitBuf_addAfter(LorId cardId, int turnCount)
+			{
+				this._cardId = cardId;
+				this._count = turnCount;
+			}
+			public override void OnRoundStart()
+			{
+				this._count--;
+				if (this._count <= 0)
+				{
+					this._owner.allyCardDetail.AddNewCard(this._cardId, false);
+					this.Destroy();
+				}
+			}
+			private int _count;
+			private LorId _cardId = LorId.None;
+		}
 		public override bool CanActivateMoon(int slot)
 		{
 			return slot == 1 || slot == 3 || slot == 5;

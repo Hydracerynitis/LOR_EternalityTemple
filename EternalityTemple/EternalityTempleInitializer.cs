@@ -16,6 +16,7 @@ using System.Linq;
 using EternalityTemple.Yagokoro;
 using EternalityTemple.Inaba;
 using GameSave;
+using Battle.DiceAttackEffect;
 
 namespace EternalityTemple
 {
@@ -23,11 +24,13 @@ namespace EternalityTemple
     public class EternalityInitializer : ModInitializer
     {
         public static string ModPath;
-        public static Dictionary<string, Sprite> ArtWorks= new Dictionary<string, Sprite>();
-        public static List<UnitBattleDataModel> SecondBattleLibrarians=new List<UnitBattleDataModel>();
+        public static Dictionary<string, Sprite> ArtWorks = new Dictionary<string, Sprite>();
+        public static List<UnitBattleDataModel> SecondBattleLibrarians = new List<UnitBattleDataModel>();
         public const string packageId = "TheWorld_Eternity";
         private static Dictionary<SpeedDiceUI, Color> ChangedSpeedDiceUI = new Dictionary<SpeedDiceUI, Color>();
-        
+        public static Dictionary<string, AssetBundle> assetBundle;
+        public static Dictionary<string, Type> CustomEffects;
+
         public static LorId GetLorId(int id) => new LorId(packageId, id);
         public override void OnInitializeMod()
         {
@@ -44,10 +47,64 @@ namespace EternalityTemple
             RemoveError();
             AbnormalityLoader.LoadEmotion();
             LocalizeManager.LocalizedTextLoader_LoadOthers_Post(TextDataModel.CurrentLanguage);
+            EternalityInitializer.assetBundle = new Dictionary<string, AssetBundle>();
+            EternalityInitializer.CustomEffects = new Dictionary<string, Type>();
+            EternalityInitializer.AddAssets();
             if (Singleton<EternalityTempleSaveManager>.Instance.LoadData("passFloor") == null) 
             {
                 Singleton<EternalityTempleSaveManager>.Instance.SaveData(new SaveData(SaveDataType.Dictionary), "passFloor");
             }
+        }
+        //添加特效AB包
+        public static void AddAssets()
+        {
+            EternalityInitializer.AddAsset("Eternality", EternalityInitializer.ModPath + "/AB/EternalityFX.ab");
+        }
+        public static void AddAsset(string name, string path)
+        {
+            AssetBundle value = AssetBundle.LoadFromFile(path);
+            EternalityInitializer.assetBundle.Add(name, value);
+        }
+        //加载骰子特效
+        [HarmonyPatch(typeof(DiceEffectManager), nameof(DiceEffectManager.CreateBehaviourEffect))]
+        [HarmonyPrefix]
+        public static bool DiceEffectManager_CreateBehaviourEffect_Pre(DiceEffectManager __instance, ref DiceAttackEffect __result, string resource, float scaleFactor, BattleUnitView self, BattleUnitView target, float time = 1f)
+        {
+            bool result;
+            if (resource == null)
+            {
+                __result = null;
+                result = false;
+            }
+            else
+            {
+                if (!EternalityInitializer.CustomEffects.ContainsKey(resource) && resource != string.Empty)
+                {
+                    foreach (Type type in Assembly.LoadFrom(EternalityInitializer.ModPath + "/Assemblies/EternalityTemple.dll").GetTypes())
+                    {
+                        if (type.Name == "DiceAttackEffect_" + resource)
+                        {
+                            Type value = type;
+                            EternalityInitializer.CustomEffects[resource] = value;
+                            break;
+                        }
+                    }
+                }
+                if (EternalityInitializer.CustomEffects.ContainsKey(resource))
+                {
+                    Type componentType = EternalityInitializer.CustomEffects[resource];
+                    DiceAttackEffect diceAttackEffect = new GameObject(resource).AddComponent(componentType) as DiceAttackEffect;
+                    diceAttackEffect.Initialize(self, target, 1f);
+                    diceAttackEffect.SetScale(scaleFactor);
+                    __result = diceAttackEffect;
+                    result = false;
+                }
+                else
+                {
+                    result = true;
+                }
+            }
+            return result;
         }
         //移除重复加载同一DLL的错误提示
         public static void RemoveError()

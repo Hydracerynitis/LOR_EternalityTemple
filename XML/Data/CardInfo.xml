@@ -68,9 +68,9 @@
     <Script>EternityCard2</Script>
     <ScriptDesc></ScriptDesc>
     <BehaviourList>
-     <Behaviour Min="10" Dice="13" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="" Script="RedStone" ActionScript=""  Desc =""/>
-     <Behaviour Min="9" Dice="15" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="" Script="RedStone" ActionScript=""  Desc =""/>
-     <Behaviour Min="7" Dice="18" Type="Atk" Detail="Hit" Motion="F" EffectRes="" Script="RedStone" ActionScript=""  Desc =""/>
+     <Behaviour Min="10" Dice="13" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="Neet_RS" Script="RedStone" ActionScript=""  Desc =""/>
+     <Behaviour Min="9" Dice="15" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="Neet_RS" Script="RedStone" ActionScript=""  Desc =""/>
+     <Behaviour Min="7" Dice="18" Type="Atk" Detail="Hit" Motion="F" EffectRes="Neet_RS" Script="RedStone" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -255,7 +255,7 @@
     <Spec Range="FarArea" Cost="7"/>
     <Script>EternityCard8</Script>
     <BehaviourList>
-     <Behaviour Min="20" Dice="27" Type="Atk" Detail="Hit" Motion="F" EffectRes="" Script="EternityDice5" ActionScript=""  Desc =""/>
+     <Behaviour Min="20" Dice="27" Type="Atk" Detail="Hit" Motion="F" EffectRes="" Script="EternityDice5" ActionScript="Neet_AOE"  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -345,9 +345,9 @@
     <Spec Range="FarAreaEach" Cost="7" Affection="Team"/>
     <Script>YagokoroCard7</Script>
     <BehaviourList>
-     <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="YagokoroDice_aoe1" ActionScript=""  Desc =""/>
-     <Behaviour Min="4" Dice="9" Type="Atk" Detail="Slash" Motion="J" EffectRes="" Script="YagokoroDice_aoe2" ActionScript=""  Desc =""/>
-     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="YagokoroDice_aoe3" ActionScript=""  Desc =""/>
+     <Behaviour Min="4" Dice="9" Type="Atk" Detail="Penetrate" Motion="Z" EffectRes="" Script="YagokoroDice_aoe1" ActionScript="Doc_AOE"  Desc =""/>
+     <Behaviour Min="4" Dice="9" Type="Atk" Detail="Slash" Motion="J" EffectRes="" Script="YagokoroDice_aoe2" ActionScript="Doc_AOE"  Desc =""/>
+     <Behaviour Min="4" Dice="8" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="YagokoroDice_aoe3" ActionScript="Doc_AOE"  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -388,8 +388,8 @@
     <Spec Range="Near" Cost="2"/>
     <Script>InabaCard1</Script>
     <BehaviourList>
-     <Behaviour Min="1" Dice="1" Type="Atk" Detail="Hit" Motion="H" EffectRes="" Script="InabaDice1" ActionScript=""  Desc =""/>
-     <Behaviour Min="1" Dice="1" Type="Atk" Detail="Slash" Motion="J" EffectRes="" Script="InabaDice1" ActionScript=""  Desc =""/>
+     <Behaviour Min="1" Dice="1" Type="Atk" Detail="Hit" Motion="F" EffectRes="Udong_Fire" Script="InabaDice1" ActionScript=""  Desc =""/>
+     <Behaviour Min="1" Dice="1" Type="Atk" Detail="Slash" Motion="F" EffectRes="Udong_Fire" Script="InabaDice1" ActionScript=""  Desc =""/>
      <Behaviour Min="15" Dice="20" Type="Atk" Detail="Penetrate" Motion="S3" EffectRes="" Script="" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
@@ -428,10 +428,10 @@
     <Spec Range="FarAreaEach" Cost="7" Affection="Team"/>
     <Script>InabaCard4</Script>
     <BehaviourList>
-     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Penetrate" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
-     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Hit" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
-     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Hit" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
-     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Penetrate" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript="Udong_AOE"  Desc =""/>
+     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Hit" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript="Udong_AOE"  Desc =""/>
+     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Hit" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript="Udong_AOE"  Desc =""/>
+     <Behaviour Min="3" Dice="4" Type="Atk" Detail="Slash" Motion="S6" EffectRes="" Script="InabaDice2" ActionScript="Udong_AOE"  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -455,7 +455,7 @@
     <Spec Range="Far" Cost="3"/>
     <Script>InabaCard6</Script>
     <BehaviourList>
-     <Behaviour Min="9" Dice="18" Type="Atk" Detail="Penetrate" Motion="S4" EffectRes="" Script="InabaDice4" ActionScript=""  Desc =""/>
+     <Behaviour Min="9" Dice="18" Type="Atk" Detail="Penetrate" Motion="S4" EffectRes="" Script="InabaDice4" ActionScript="Udong_Eye"  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>

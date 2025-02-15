@@ -7,6 +7,41 @@ using EternalityTemple.Yagokoro;
 
 namespace EternalityTemple.Inaba
 {
+	public class DiceCardSelfAbility_EternityBase : DiceCardSelfAbilityBase
+	{
+		public override bool OnChooseCard(BattleUnitModel owner)
+		{
+			return Singleton<StageController>.Instance.RoundTurn >= 5 && base.OnChooseCard(owner);
+		}
+		public void ExhaustAndReturn()
+		{
+			this.card.card.exhaust = true;
+			base.owner.bufListDetail.AddBuf(new BattleUnitBuf_addAfter(this.card.card.GetID(), 4));
+		}
+		public override void OnUseCard()
+		{
+			this.ExhaustAndReturn();
+		}
+		public class BattleUnitBuf_addAfter : BattleUnitBuf
+		{
+			public BattleUnitBuf_addAfter(LorId cardId, int turnCount)
+			{
+				this._cardId = cardId;
+				this._count = turnCount;
+			}
+			public override void OnRoundStart()
+			{
+				this._count--;
+				if (this._count <= 0)
+				{
+					this._owner.allyCardDetail.AddNewCard(this._cardId, false);
+					this.Destroy();
+				}
+			}
+			private int _count;
+			private LorId _cardId = LorId.None;
+		}
+	}
 	public class DiceCardSelfAbility_EternityXS_Card1 : DiceCardSelfAbilityBase
 	{
         public override void OnApplyCard()
@@ -121,7 +156,7 @@ namespace EternalityTemple.Inaba
 			BattleUnitBuf_InabaBuf5.AddStack(owner, 1);
 		}
 	}
-	public class DiceCardSelfAbility_InabaCard4 : DiceCardSelfAbilityBase
+	public class DiceCardSelfAbility_InabaCard4 : DiceCardSelfAbility_EternityBase
 	{
 		public override void OnUseCard()
 		{

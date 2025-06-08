@@ -725,7 +725,7 @@
 			
 			
       <Passive Pid="@origin">10008</Passive>
-      <Passive>226769020</Passive>
+      <Passive>226769021</Passive>
       <Passive Pid="@origin">260001</Passive>
       <Passive Pid="@origin">260002</Passive>
 
@@ -888,7 +888,7 @@
     <TextId>226769031</TextId>
     <EquipEffect>
       <HP>275</HP>
-      <Break>112</Break>
+      <Break>132</Break>
       <SpeedMin>3</SpeedMin>
       <Speed>6</Speed>
       <SResist>Normal</SResist>
@@ -1049,8 +1049,8 @@
     <Name>붉은안개의 책장</Name>
     <TextId>226769036</TextId>
     <EquipEffect>
-      <HP>500</HP>
-      <Break>250</Break>
+      <HP>250</HP>
+      <Break>150</Break>
       <SpeedMin>1</SpeedMin>
       <Speed>8</Speed>
       <SResist>Normal</SResist>
@@ -1064,9 +1064,10 @@
       <MaxPlayPoint>4</MaxPlayPoint>
 
       <Passive>226769024</Passive>
-      <Passive Pid="@origin">250022</Passive>
+      <Passive>226769025</Passive>
       <Passive Pid="@origin">250222</Passive>
       <Passive Pid="@origin">250322</Passive>
+      <Passive Pid="@origin">10008</Passive>
 
     </EquipEffect>
     <BookIcon>TheRedMist</BookIcon>
@@ -1189,6 +1190,720 @@
     <Chapter>6</Chapter>
     <Rarity>Rare</Rarity>
     <CharacterSkin>Usett</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+  <Book ID="226769041">
+    <Name>니콜라이</Name>
+    <TextId>226769018</TextId>
+    <EquipEffect>
+      <HP>271</HP>
+      <Break>143</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>7</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Endure</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Endure</PBResist>
+      <HBResist>Normal</HBResist>
+      
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769024</Passive>
+      <Passive Pid="@origin">250123</Passive>
+      <Passive Pid="@origin">250023</Passive>
+      <Passive Pid="@origin">250223</Passive>
+    
+      <OnlyCard>608004</OnlyCard>
+      <OnlyCard>608009</OnlyCard>
+    </EquipEffect>
+    <BookIcon>RCorp1</BookIcon>
+    <Chapter>6</Chapter>
+    <Episode>50010</Episode>
+
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>Nicolai</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+  <Book ID="226769042">
+    <Name>묘</Name>
+    <TextId>226769042</TextId>
+    <EquipEffect>
+      <HP>127</HP>
+      <Break>73</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>7</Speed>
+      <SResist>Endure</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Endure</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+      
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">250322</Passive>
+      <Passive Pid="@origin">250123</Passive>
+      <Passive Pid="@origin">251001</Passive>
+      <Passive Pid="@origin">251101</Passive>
+      <Passive Pid="@origin">251201</Passive>
+      <Passive Pid="@origin">250024</Passive>
+      <Passive Pid="@origin">234001</Passive>
+      <Passive Pid="@origin">220006</Passive>
+
+    </EquipEffect>
+    <RangeType>Hybrid</RangeType>
+    <BookIcon>RCorp1</BookIcon>
+    <Chapter>6</Chapter>
+    <Episode>50010</Episode>
+
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>Myo1</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+  <Book ID="226769043">
+    <Name>막심</Name>
+    <TextId>226769031</TextId>
+    <EquipEffect>
+      <HP>129</HP>
+      <Break>76</Break>
+      <SpeedMin>3</SpeedMin>
+      <Speed>6</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Endure</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Endure</HBResist>
+      
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+
+      <Passive Pid="@origin">10001</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">250123</Passive>
+      <Passive Pid="@origin">251002</Passive>
+      <Passive Pid="@origin">251102</Passive>
+      <Passive Pid="@origin">250025</Passive>
+
+      <OnlyCard>608003</OnlyCard>
+      <OnlyCard>608006</OnlyCard>
+    </EquipEffect>
+    <BookIcon>RCorp1</BookIcon>
+    <Chapter>6</Chapter>
+    <Episode>50010</Episode>
+
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>Maxim</CharacterSkin>
+  </Book>
+
+  <Book ID="226769044">
+    <Name>루돌프</Name>
+    <TextId>226769029</TextId>
+    <EquipEffect>
+      <HP>128</HP>
+      <Break>83</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>7</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Endure</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Endure</PBResist>
+      <HBResist>Normal</HBResist>
+      
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+
+      <Passive Pid="@origin">10001</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">250123</Passive>
+      <Passive Pid="@origin">251003</Passive>
+      <Passive Pid="@origin">251103</Passive>
+      <Passive Pid="@origin">250026</Passive>
+    
+      <OnlyCard>608002</OnlyCard>
+      <OnlyCard>608005</OnlyCard>
+    </EquipEffect>
+    <BookIcon>RCorp1</BookIcon>
+    <Chapter>6</Chapter>
+    <Episode>50010</Episode>
+
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>Rudolph</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+  <Book ID="226769045">
+    <Name>네모</Name>
+    <TextId>226769045</TextId>
+    <EquipEffect>
+      <HP>124</HP>
+      <Break>73</Break>
+      <SpeedMin>4</SpeedMin>
+      <Speed>6</Speed>
+      <SResist>Endure</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Endure</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+
+      <Passive Pid="@origin">10001</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">250010</Passive>
+      <Passive Pid="@origin">250110</Passive>
+      <Passive Pid="@origin">250210</Passive>
+
+    </EquipEffect>
+    <BookIcon>CaneOffice</BookIcon>
+    <Chapter>6</Chapter>
+    <Episode>50005</Episode>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>Nemo</CharacterSkin>
+    <SpeedDiceNum>1</SpeedDiceNum>
+  </Book>
+
+  <Book ID="226769046">
+    <Name>비나</Name>
+    <TextId Pid="@origin">8</TextId>
+    <EquipEffect>
+      <HP>330</HP>
+      <Break>155</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>7</Speed>
+      
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+      
+      <SResist>Endure</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Resist</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769024</Passive>
+      <Passive Pid="@origin">10010</Passive>
+      <Passive Pid="@origin">10011</Passive>
+      <Passive Pid="@origin">250003</Passive>
+      <Passive Pid="@origin">250004</Passive>
+    </EquipEffect>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>Binah</CharacterSkin>
+  </Book>
+
+  <Book ID="226769047">
+    <Name>올리비에</Name>
+    <TextId Pid="@origin">260004</TextId>
+    <EquipEffect>
+      <HP>166</HP>
+      <Break>75</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>7</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Endure</HResist>
+      <SBResist>Endure</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">260001</Passive>
+      <Passive Pid="@origin">260003</Passive>
+      <Passive Pid="@origin">260004</Passive>
+      <Passive Pid="@origin">230018</Passive>
+      <Passive Pid="@origin">251003</Passive>
+      <Passive Pid="@origin">260004</Passive>
+      <Passive Pid="@origin">256001</Passive>
+      <Passive Pid="@origin">250214</Passive>
+
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+
+      <OnlyCard>701001</OnlyCard>
+    </EquipEffect>
+    <BookIcon>HanaAssociation</BookIcon>
+    <Chapter>7</Chapter>
+    <Episode>60002</Episode>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>Olivier</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+  <Book ID="226769048">
+    <Name>야에</Name>
+    <TextId Pid="@origin">255001</TextId>
+    <EquipEffect>
+      <HP>164</HP>
+      <Break>70</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>6</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Endure</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Endure</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">240026</Passive>
+      <Passive Pid="@origin">255001</Passive>
+      <Passive Pid="@origin">255002</Passive>
+      <Passive Pid="@origin">255003</Passive>
+      <Passive Pid="@origin">255004</Passive>
+      <Passive Pid="@origin">230018</Passive>
+      <Passive Pid="@origin">240023</Passive>
+      <Passive Pid="@origin">233001</Passive>
+      <Passive Pid="@origin">256001</Passive>
+      
+    </EquipEffect>
+    <BookIcon>Workshop</BookIcon>
+    <Chapter>6</Chapter>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>CorNamedLibrarian</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+  <Book ID="226769049">
+    <Name>해롤드</Name>
+    <TextId Pid="@origin">260003</TextId>
+    <EquipEffect>
+      <HP>173</HP>
+      <Break>71</Break>
+      <SpeedMin>1</SpeedMin>
+      <Speed>8</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Endure</HResist>
+      <SBResist>Endure</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">260001</Passive>
+      <Passive Pid="@origin">260003</Passive>
+      <Passive Pid="@origin">250003</Passive>
+      <Passive Pid="@origin">250004</Passive>
+      <Passive Pid="@origin">240127</Passive>
+      <Passive Pid="@origin">253002</Passive>
+      <Passive Pid="@origin">250007</Passive>
+
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+
+    </EquipEffect>
+    <BookIcon>HanaAssociation</BookIcon>
+    <Chapter>7</Chapter>
+    <Episode>60001</Episode>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>Harold</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+
+  <Book ID="226769050">
+    <Name>김삿갓</Name>
+    <TextId Pid="@origin">243003</TextId>
+    <EquipEffect>
+      <HP>168</HP>
+      <Break>70</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>6</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Endure</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+
+      <Passive Pid="@origin">10001</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">240002</Passive>
+      <Passive Pid="@origin">230024</Passive>
+      <Passive Pid="@origin">243003</Passive>
+
+      <Passive Pid="@origin">231001</Passive>
+      <Passive Pid="@origin">220003</Passive>
+
+      <Passive Pid="@origin">240023</Passive>
+      <Passive Pid="@origin">240026</Passive>
+      <Passive Pid="@origin">230018</Passive>
+      <Passive Pid="@origin">250114</Passive>
+      <Passive Pid="@origin">250014</Passive>
+      
+    </EquipEffect>
+    <BookIcon>Sword</BookIcon>
+    <Chapter>5</Chapter>
+    <CharacterSkin>Kimsatgat</CharacterSkin>
+    <Rarity>Unique</Rarity>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+
+  <Book ID="226769051">
+    <Name>에스더</Name>
+    <TextId Pid="@origin">250015</TextId>
+    <Category>TheIndex</Category>
+    <EquipEffect>
+      <HP>351</HP>
+      <Break>183</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>7</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Endure</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Endure</HBResist>
+
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769024</Passive>
+      <Passive Pid="@origin">250115</Passive>
+      <Passive Pid="@origin">250015</Passive>
+      <Passive Pid="@origin">250017</Passive>
+
+      <Passive Pid="@origin">250003</Passive>
+      <Passive Pid="@origin">250004</Passive>
+
+      <Passive Pid="@origin">230018</Passive>
+      <Passive Pid="@origin">250002</Passive>
+
+    </EquipEffect>
+    <BookIcon>TheIndex2</BookIcon>
+    <Chapter>6</Chapter>
+    <Episode>50007</Episode>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>Esther</CharacterSkin>
+  </Book>
+
+
+  <Book ID="226769052">
+    <Name>네모</Name>
+    <TextId Pid="@origin">250010</TextId>
+    <EquipEffect>
+      <HP>164</HP>
+      <Break>73</Break>
+      <SpeedMin>4</SpeedMin>
+      <Speed>6</Speed>
+      <SResist>Endure</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Endure</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+
+      <Passive Pid="@origin">10001</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">250010</Passive>
+      <Passive Pid="@origin">250110</Passive>
+      <Passive Pid="@origin">250210</Passive>
+
+      <Passive Pid="@origin">230018</Passive>
+      <Passive Pid="@origin">251002</Passive>
+      <Passive Pid="@origin">250123</Passive>
+      <Passive Pid="@origin">220004</Passive>
+      <Passive Pid="@origin">221001</Passive>
+    </EquipEffect>
+    <BookIcon>CaneOffice</BookIcon>
+    <Chapter>6</Chapter>
+    <Episode>50005</Episode>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>Nemo</CharacterSkin>
+    <SpeedDiceNum>1</SpeedDiceNum>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+
+  <Book ID="226769053">
+    <Name>우제트</Name>
+    <TextId Pid="@origin">253001</TextId>
+    <EquipEffect>
+      <HP>169</HP>
+      <Break>76</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>6</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Endure</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Endure</HBResist>
+
+      <Passive Pid="@origin">10001</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">253001</Passive>
+      <Passive Pid="@origin">253002</Passive>
+      <Passive Pid="@origin">253003</Passive>
+
+      <Passive Pid="@origin">250003</Passive>
+      <Passive Pid="@origin">250004</Passive>
+
+      <Passive Pid="@origin">230018</Passive>
+      <Passive Pid="@origin">221001</Passive>
+
+    </EquipEffect>
+    <BookIcon>Usett</BookIcon>
+    <Chapter>6</Chapter>
+    <Rarity>Rare</Rarity>
+    <CharacterSkin>Usett</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+
+  <Book ID="226769054">
+    <Name>알란</Name>
+    <TextId Pid="@origin">252001</TextId>
+    <EquipEffect>
+      <HP>135</HP>
+      <Break>69</Break>
+      <SpeedMin>3</SpeedMin>
+      <Speed>6</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Endure</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Endure</PBResist>
+      <HBResist>Normal</HBResist>
+      
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">252001</Passive>
+      <Passive Pid="@origin">252002</Passive>
+      <Passive Pid="@origin">252003</Passive>
+
+      <Passive Pid="@origin">241301</Passive>
+      <Passive Pid="@origin">230025</Passive>
+      <Passive Pid="@origin">230026</Passive>
+      <Passive Pid="@origin">251003</Passive>
+      <Passive Pid="@origin">230018</Passive>
+      <Passive Pid="@origin">240118</Passive>
+
+    </EquipEffect>
+    <BookIcon>AwlOfNight</BookIcon>
+    <Chapter>6</Chapter>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>AwlOfNight_Named</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+
+  <Book ID="226769055">
+    <Name>알란</Name>
+    <TextId Pid="@origin">252001</TextId>
+    <EquipEffect>
+      <HP>145</HP>
+      <Break>75</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>6</Speed>
+      <SResist>Endure</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Endure</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Normal</HBResist>
+
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">256001</Passive>
+      <Passive Pid="@origin">256002</Passive>
+      <Passive Pid="@origin">256003</Passive>
+      
+    </EquipEffect>
+    <BookIcon>Bayyard</BookIcon>
+    <Chapter>6</Chapter>
+    <Rarity>Unique</Rarity>
+    <CharacterSkin>BayyardNamed</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+  <Book ID="226769056">
+		<Name>롤랑-검은침묵</Name>
+    <TextId Pid="@origin">102</TextId>
+		<EquipEffect>
+      <HP>306</HP>
+      <Break>226</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>7</Speed>
+      
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+      
+      <SResist>Normal</SResist>
+      <PResist>Normal</PResist>
+      <HResist>Endure</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Endure</HBResist>
+    
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769024</Passive>
+      <Passive Pid="@origin">10012</Passive>
+      <Passive Pid="@origin">10013</Passive>
+      <Passive Pid="@origin">250115</Passive>
+      <Passive Pid="@origin">250015</Passive>
+      <Passive Pid="@origin">250015</Passive>
+      <Passive Pid="@origin">250017</Passive>
+      <Passive Pid="@origin">250017</Passive>
+      <Passive Pid="@origin">250017</Passive>
+      <Passive Pid="@origin">250017</Passive>
+		</EquipEffect>
+    <BookIcon>BlackSilence</BookIcon>
+    <Chapter>7</Chapter>
+		<Rarity>Unique</Rarity>
+		<CharacterSkin>BlackSilence</CharacterSkin>
+	</Book>
+
+  <Book ID="226769057">
+    <Name>하나 해결사</Name>
+    <TextId Pid="@origin">260001</TextId>
+    <EquipEffect>
+      <HP>197</HP>
+      <Break>150</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>7</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Endure</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Endure</HBResist>
+			
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">260001</Passive>
+      <Passive Pid="@origin">234001</Passive>
+      <Passive Pid="@origin">234001</Passive>
+      <Passive Pid="@origin">234002</Passive>
+      <Passive Pid="@origin">234002</Passive>
+      <Passive Pid="@origin">234002</Passive>
+      <Passive Pid="@origin">234002</Passive>
+
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+    </EquipEffect>
+    <BookIcon>HanaAssociation</BookIcon>
+    <Chapter>7</Chapter>
+    <Rarity>Rare</Rarity>
+    <CharacterSkin>HanaUnit</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+  <Book ID="226769058">
+    <Name>하나 해결사</Name>
+    <TextId Pid="@origin">260001</TextId>
+    <EquipEffect>
+      <HP>197</HP>
+      <Break>150</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>7</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Endure</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Endure</HBResist>
+			
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">260001</Passive>
+      <Passive Pid="@origin">234001</Passive>
+      <Passive Pid="@origin">234001</Passive>
+      <Passive Pid="@origin">234002</Passive>
+      <Passive Pid="@origin">234002</Passive>
+      <Passive Pid="@origin">234002</Passive>
+      <Passive Pid="@origin">234002</Passive>
+
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+    </EquipEffect>
+    <BookIcon>HanaAssociation</BookIcon>
+    <Chapter>7</Chapter>
+    <Rarity>Rare</Rarity>
+    <CharacterSkin>HanaUnit</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+  <Book ID="226769059">
+    <Name>하나 해결사</Name>
+    <TextId Pid="@origin">260001</TextId>
+    <EquipEffect>
+      <HP>197</HP>
+      <Break>150</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>7</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Endure</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Endure</HBResist>
+			
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">260001</Passive>
+      <Passive Pid="@origin">234001</Passive>
+      <Passive Pid="@origin">234001</Passive>
+      <Passive Pid="@origin">234002</Passive>
+      <Passive Pid="@origin">234002</Passive>
+      <Passive Pid="@origin">234002</Passive>
+      <Passive Pid="@origin">234002</Passive>
+
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+    </EquipEffect>
+    <BookIcon>HanaAssociation</BookIcon>
+    <Chapter>7</Chapter>
+    <Rarity>Rare</Rarity>
+    <CharacterSkin>HanaUnit</CharacterSkin>
+    <RandomFace>true</RandomFace>
+  </Book>
+
+  <Book ID="226769060">
+    <Name>하나 해결사</Name>
+    <TextId Pid="@origin">260001</TextId>
+    <EquipEffect>
+      <HP>197</HP>
+      <Break>150</Break>
+      <SpeedMin>2</SpeedMin>
+      <Speed>7</Speed>
+      <SResist>Normal</SResist>
+      <PResist>Endure</PResist>
+      <HResist>Normal</HResist>
+      <SBResist>Normal</SBResist>
+      <PBResist>Normal</PBResist>
+      <HBResist>Endure</HBResist>
+			
+      <Passive Pid="@origin">10008</Passive>
+      <Passive>226769023</Passive>
+      <Passive Pid="@origin">260001</Passive>
+      <Passive Pid="@origin">234001</Passive>
+      <Passive Pid="@origin">234001</Passive>
+      <Passive Pid="@origin">234002</Passive>
+      <Passive Pid="@origin">234002</Passive>
+
+      <StartPlayPoint>4</StartPlayPoint>
+      <MaxPlayPoint>4</MaxPlayPoint>
+    </EquipEffect>
+    <BookIcon>HanaAssociation</BookIcon>
+    <Chapter>7</Chapter>
+    <Rarity>Rare</Rarity>
+    <CharacterSkin>HanaUnit</CharacterSkin>
     <RandomFace>true</RandomFace>
   </Book>
 

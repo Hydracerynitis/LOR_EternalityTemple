@@ -4,7 +4,7 @@
 		<AbnormalityCard ID="ScareCrow_Wisdom_Enemy">
 			<Abnormality>求知的草人</Abnormality>
 			<CardName>被扯出的智慧</CardName>
-			<AbilityDesc>减少所有骰子威力-1-3点，并投掷后有25%的几率再次重投 (每个骰子最多触发一次)</AbilityDesc>
+			<AbilityDesc>该来宾每使用1张书页，便从手中随机丢弃1张书页以恢复2点光芒。(无法对装备书页生效)</AbilityDesc>
 			<FlaborText>归来之时，他的前额多了一道长长的疤痕。当被人问及是否痊愈时，他只答道觉得脑袋变轻了。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">智慧……我所缺乏的东西……快把智慧给我……</Dialogue>

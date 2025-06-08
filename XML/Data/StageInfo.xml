@@ -104,6 +104,57 @@
 
 		<emotionCardList />
 		</Wave>
+
+        <Wave>
+            <Unit>226769041</Unit>
+            <Unit>226769042</Unit>
+            <Unit>226769043</Unit>
+            <Unit>226769044</Unit>
+            <Unit>226769045</Unit>
+            <Formation>1</Formation>
+            <FormationType>Default</FormationType>
+            <AvailableUnit>3</AvailableUnit>
+
+        <emotionCardList />
+        </Wave>
+
+        <Wave>
+            <Unit>226769046</Unit>
+            <Unit>226769047</Unit>
+            <Unit>226769048</Unit>
+            <Unit>226769049</Unit>
+            <Unit>226769050</Unit>
+            <Formation>1</Formation>
+            <FormationType>Default</FormationType>
+            <AvailableUnit>3</AvailableUnit>
+
+        <emotionCardList />
+        </Wave>
+        <Wave>
+            <Unit>226769051</Unit>
+            <Unit>226769052</Unit>
+            <Unit>226769053</Unit>
+            <Unit>226769054</Unit>
+            <Unit>226769055</Unit>
+            <Formation>1</Formation>
+            <FormationType>Default</FormationType>
+            <AvailableUnit>3</AvailableUnit>
+
+        <emotionCardList />
+        </Wave>
+        <Wave>
+            <Unit>226769056</Unit>
+            <Unit>226769057</Unit>
+            <Unit>226769058</Unit>
+            <Unit>226769059</Unit>
+            <Unit>226769060</Unit>
+            <Formation>1</Formation>
+            <FormationType>Default</FormationType>
+            <AvailableUnit>3</AvailableUnit>
+
+        <emotionCardList />
+        </Wave>
+
 		<StageType>Invitation</StageType>
 		<FloorNum>1</FloorNum>
 		<Chapter>7</Chapter>

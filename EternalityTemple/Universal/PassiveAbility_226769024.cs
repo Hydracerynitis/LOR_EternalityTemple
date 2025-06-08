@@ -36,6 +36,15 @@ namespace EternalityTemple
                     case SephirahType.Chesed:
                         ChooseEmotionCard_Chesed();
                         break;
+                    case SephirahType.Binah:
+                        ChooseEmotionCard_Binah();
+                        break;
+                    case SephirahType.Hokma:
+                        ChooseEmotionCard_Hokma();
+                        break;
+                    case SephirahType.Keter:
+                        ChooseEmotionCard_Keter();
+                        break;
                 }
             }
         }
@@ -135,7 +144,116 @@ namespace EternalityTemple
                 }
                 battleUnitModel.emotionDetail.ApplyEmotionCard(xmlInfo);
             }
-                
+
+        }
+        public void ChooseEmotionCard_Binah()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                BattleUnitModel battleUnitModel;
+                EmotionCardXmlInfo xmlInfo = emotionFloor[0];
+                emotionFloor.RemoveAt(0);
+                if (xmlInfo.id == 190810 || xmlInfo.id == 190811 || xmlInfo.id == 190812 || xmlInfo.id == 190813)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769046);
+                }
+                if (xmlInfo.id == 190807 || xmlInfo.id == 190806 || xmlInfo.id == 190804)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769047);
+                }
+                if (xmlInfo.id == 190801 || xmlInfo.id == 190802 || xmlInfo.id == 190805)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769048);
+                }
+                if (xmlInfo.id == 190814 || xmlInfo.id == 190808)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769049);
+                }
+                if (xmlInfo.id == 190803 || xmlInfo.id == 190815)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769050);
+                }
+                else
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList_random(Faction.Enemy, 1)[0];
+                }
+                if (battleUnitModel == null)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList_random(Faction.Enemy, 1)[0];
+                }
+                if (battleUnitModel == null || battleUnitModel.IsDead())
+                {
+                    return;
+                }
+                battleUnitModel.emotionDetail.ApplyEmotionCard(xmlInfo);
+            }
+        }
+
+        public void ChooseEmotionCard_Hokma()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                BattleUnitModel battleUnitModel;
+                EmotionCardXmlInfo xmlInfo = emotionFloor[0];
+                emotionFloor.RemoveAt(0);
+                if (xmlInfo.id == 190910 || xmlInfo.id == 190911 || xmlInfo.id == 190913 || xmlInfo.id == 190914 || xmlInfo.id == 190915)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769051);
+                }
+                if (xmlInfo.id == 190901 || xmlInfo.id == 190902 || xmlInfo.id == 190903)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769052);
+                }
+                if (xmlInfo.id == 190905)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769053);
+                }
+                if (xmlInfo.id == 190907 || xmlInfo.id == 190908 || xmlInfo.id == 190909)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769054);
+                }
+                if (xmlInfo.id == 190913 || xmlInfo.id == 190906)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList(Faction.Enemy).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769055);
+                }
+                else if (xmlInfo.id == 190904)
+                {
+                    foreach (BattleUnitModel model in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
+                    {
+                        model.emotionDetail.ApplyEmotionCard(xmlInfo);
+                    }
+                    continue;
+                }
+                else
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList_random(Faction.Enemy, 1)[0];
+                }
+                if (battleUnitModel == null)
+                {
+                    battleUnitModel = BattleObjectManager.instance.GetAliveList_random(Faction.Enemy, 1)[0];
+                }
+                if (battleUnitModel == null || battleUnitModel.IsDead())
+                {
+                    return;
+                }
+                battleUnitModel.emotionDetail.ApplyEmotionCard(xmlInfo);
+            }
+        }
+        public void ChooseEmotionCard_Keter()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                BattleUnitModel battleUnitModel;
+                EmotionCardXmlInfo xmlInfo = emotionFloor[0];
+                emotionFloor.RemoveAt(0);
+                if (xmlInfo.id == 191013 || xmlInfo.id == 191014 || xmlInfo.id == 191015) continue;
+                battleUnitModel = BattleObjectManager.instance.GetAliveList_random(Faction.Enemy, 1)[0];
+                if (battleUnitModel == null || battleUnitModel.IsDead())
+                {
+                    return;
+                }
+                battleUnitModel.emotionDetail.ApplyEmotionCard(xmlInfo);
+            }
         }
     }
 }

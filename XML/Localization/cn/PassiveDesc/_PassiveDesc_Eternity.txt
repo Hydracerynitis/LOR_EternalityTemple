@@ -132,15 +132,20 @@
 	</PassiveDesc>
 
 	<PassiveDesc ID="226769023">
-		<Name>助理司书-中层</Name>
+		<Name>助理司书-中下层</Name>
 		<Desc>受到的伤害-1，所有骰子基础值+1，自第4幕起所有骰子威力+1
 情感等级达到3级后使自身的“进攻型”骰子威力+1
 击中目标时恢复2点体力与混乱抗性</Desc>
 	</PassiveDesc>
 	<PassiveDesc ID="226769024">
-		<Name>指定司书-中层</Name>
+		<Name>指定司书-中下层</Name>
 		<Desc>团队情感等级提升时获得情感书页与E.G.O.书页
 受到的伤害-1，所有骰子基础值+1，自第4幕起所有骰子威力+1
 情感等级达到3级后使自身的“进攻型”骰子威力+1</Desc>
+	</PassiveDesc>
+	<PassiveDesc ID="226769025">
+		<Name>红雾传说</Name>
+		<Desc>可使用殷红迷雾固有E.G.O"血雾弥漫"
+每一幕开始时若情感等级已达到4级则恢复所有混乱抗性并展现E.G.O(每一舞台至多触发1次)</Desc>
 	</PassiveDesc>
 </PassiveDescRoot>

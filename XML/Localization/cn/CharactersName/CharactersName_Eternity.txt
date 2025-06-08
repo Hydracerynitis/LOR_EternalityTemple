@@ -29,15 +29,15 @@
 
 	<Name ID="226769026">Netzach</Name>
 	<Name ID="226769027">莱恩</Name>
-	<Name ID="226769028">耀</Name>
+	<Name ID="226769028">以扫</Name>
 	<Name ID="226769029">玛丽</Name>
 	<Name ID="226769030">汤姆</Name>
 
 	<Name ID="226769031">Tiphereth</Name>
 	<Name ID="226769032">偌茹</Name>
 	<Name ID="226769033">Hydracerynitis</Name>
-	<Name ID="226769034">Retarded</Name>
-	<Name ID="226769035">猫漏</Name>
+	<Name ID="226769034">丹</Name>
+	<Name ID="226769035">红桃</Name>
 
 	<Name ID="226769036">Geburah</Name>
 	<Name ID="226769037">卡萨</Name>
@@ -48,25 +48,25 @@
 	<Name ID="226769041">Chesed</Name>
 	<Name ID="226769042">木灵</Name>
 	<Name ID="226769043">晓</Name>
-	<Name ID="226769044">真白</Name>
-	<Name ID="226769045">杯</Name>
+	<Name ID="226769044">艾米丽</Name>
+	<Name ID="226769045">达</Name>
 
 	<Name ID="226769046">Binah</Name>
-	<Name ID="226769047"></Name>
-	<Name ID="226769048"></Name>
-	<Name ID="226769049"></Name>
-	<Name ID="226769050"></Name>
+	<Name ID="226769047">雅各布</Name>
+	<Name ID="226769048">那满</Name>
+	<Name ID="226769049">麦哲伦</Name>
+	<Name ID="226769050">马库斯</Name>
 
 	<Name ID="226769051">Hokma</Name>
-	<Name ID="226769052"></Name>
-	<Name ID="226769053"></Name>
-	<Name ID="226769054"></Name>
-	<Name ID="226769055"></Name>
+	<Name ID="226769052">王娜娜</Name>
+	<Name ID="226769053">朗姆</Name>
+	<Name ID="226769054">莫桑</Name>
+	<Name ID="226769055">尼克</Name>
 
 	<Name ID="226769056">罗兰</Name>
-	<Name ID="226769057"></Name>
-	<Name ID="226769058"></Name>
-	<Name ID="226769059"></Name>
-	<Name ID="226769060"></Name>
+	<Name ID="226769057">约翰</Name>
+	<Name ID="226769058">提普</Name>
+	<Name ID="226769059">乌鲁</Name>
+	<Name ID="226769060">一二三</Name>
 
 </CharactersNameRoot>

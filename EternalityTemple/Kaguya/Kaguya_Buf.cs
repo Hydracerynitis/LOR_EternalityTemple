@@ -10,7 +10,7 @@ namespace EternalityTemple.Kaguya
     public class BattleUnitBuf_KaguyaBuf : BattleUnitBuf
     {
         public override string keywordId => "KaguyaBuf" + stack.ToString();
-        public override string keywordIconId => "Silence_StopTime";
+        public override string keywordIconId => "Kaguya_Buf时辰11";
         public override string bufActivatedText => Singleton<BattleEffectTextsXmlList>.Instance.GetEffectTextDesc("KaguyaBuf" + stack.ToString(), paramInBufDesc);
         public BattleUnitBuf_KaguyaBuf(int stack)
         {
@@ -58,7 +58,11 @@ namespace EternalityTemple.Kaguya
         {
             base.OnRoundEnd();
             if (stack < 7)
+            {
                 stack++;
+                _bufIcon = EternalityInitializer.ArtWorks["Kaguya_Buf时辰" + (9 + stack * 2)];
+            }
+                
         }
         public static int GetStack(BattleUnitModel unit)
         {

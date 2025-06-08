@@ -12,7 +12,7 @@ namespace EternalityTemple.Inaba
 {
 	public class BattleUnitBuf_InabaBuf1 : BattleUnitBuf
 	{
-		public override string keywordIconId => "QueenOfHatred_Hatred";
+		public override string keywordIconId => "Reisen_Buf疯狂";
 		public override string keywordId => "InabaBuf1";
 		public BattleUnitBuf_InabaBuf1(BattleUnitModel model)
 		{
@@ -59,7 +59,7 @@ namespace EternalityTemple.Inaba
 
 	public class BattleUnitBuf_InabaBuf2 : InabaBufAbility
 	{
-		public override string keywordIconId => "Roland_4th_Gaze";
+		public override string keywordIconId => "Reisen_Buf疯狂";
 		public override string keywordId => _owner.passiveDetail.HasPassive<PassiveAbility_226769010>() ? "InabaBuf2_self" : (_owner.passiveDetail.HasPassive<PassiveAbility_226769001>() ? "InabaBuf2_ally" : "InabaBuf2");
 
 		public BattleUnitBuf_InabaBuf2(BattleUnitModel model)
@@ -282,7 +282,7 @@ namespace EternalityTemple.Inaba
 	}
 	public class BattleUnitBuf_InabaBuf3 : InabaBufAbility
 	{
-		public override string keywordIconId => "Roland_4th_Gaze";
+		public override string keywordIconId => "Reisen_Buf疯狂";
 		public override string keywordId => "InabaBuf3";
 
 		public BattleUnitBuf_InabaBuf3(BattleUnitModel model)
@@ -501,7 +501,7 @@ namespace EternalityTemple.Inaba
     }
 	public class BattleUnitBuf_InabaBuf5 : BattleUnitBuf
 	{
-		public override string keywordIconId => "BlackSilenceCardCount";
+		public override string keywordIconId => "Reisen_Buf国士无双";
 		public override string keywordId => "InabaBuf5_Txt" + stack.ToString();
 		public BattleUnitBuf_InabaBuf5(BattleUnitModel model)
 		{
@@ -577,7 +577,7 @@ namespace EternalityTemple.Inaba
 	{
 		// Token: 0x17000489 RID: 1161
 		// (get) Token: 0x06002F10 RID: 12048 RVA: 0x000BD9B2 File Offset: 0x000BBBB2
-		public override string keywordIconId => "BigBird_Sleep";
+		public override string keywordIconId => "Reisen_Buf怠惰";
 		public override string keywordId => "InabaBuf6";
 
 		// Token: 0x06002F12 RID: 12050 RVA: 0x000BD9CB File Offset: 0x000BBBCB
@@ -594,7 +594,7 @@ namespace EternalityTemple.Inaba
 	{
 		// Token: 0x17000489 RID: 1161
 		// (get) Token: 0x06002F10 RID: 12048 RVA: 0x000BD9B2 File Offset: 0x000BBBB2
-		public override string keywordIconId => "WhiteNight_Awe";
+		public override string keywordIconId => "Reisen_Buf狂视";
 		public override string keywordId => "InabaBuf7";
 
         // Token: 0x06002F12 RID: 12050 RVA: 0x000BD9CB File Offset: 0x000BBBCB

@@ -155,32 +155,44 @@
       </TextList>
     </BookDesc>
 
-    <BookDesc BookID="226769031">
+    <BookDesc BookID="226769036">
       <BookName>殷红迷雾之页</BookName>
       <TextList>
         <Desc>... ...</Desc>
       </TextList>
     </BookDesc>
-    <BookDesc BookID="226769032">
+    <BookDesc BookID="226769037">
       <BookName>瓦吉特之页</BookName>
       <TextList>
         <Desc>... ...</Desc>
       </TextList>
     </BookDesc>
-    <BookDesc BookID="226769033">
+    <BookDesc BookID="226769038">
       <BookName>瓦吉特之页</BookName>
       <TextList>
         <Desc>... ...</Desc>
       </TextList>
     </BookDesc>
-    <BookDesc BookID="226769034">
+    <BookDesc BookID="226769039">
       <BookName>瓦吉特之页</BookName>
       <TextList>
         <Desc>... ...</Desc>
       </TextList>
     </BookDesc>
-    <BookDesc BookID="226769035">
+    <BookDesc BookID="226769040">
       <BookName>瓦吉特之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769042">
+      <BookName>缪之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769045">
+      <BookName>尼莫之页</BookName>
       <TextList>
         <Desc>... ...</Desc>
       </TextList>

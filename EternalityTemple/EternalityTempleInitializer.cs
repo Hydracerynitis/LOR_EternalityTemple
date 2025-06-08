@@ -243,44 +243,77 @@ namespace EternalityTemple
             {
                 int unavailable = __instance.speedDiceResult.FindAll(x => x.breaked).Count;
                 if (puzzlebuf.CompletePuzzle.Contains(1) && __instance.speedDiceCount - unavailable >= 1)
-                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 0), Color.blue);
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 0), Color.grey, "ICON_1", "ICON_1Glow", "ICON_NoneHovered");
                 if (puzzlebuf.CompletePuzzle.Contains(2) && __instance.speedDiceCount - unavailable >= 2)
-                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 1), Color.magenta);
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 1), new Color(1f, 0.5f, 0f), "ICON_2", "ICON_2Glow", "ICON_NoneHovered");
                 if (puzzlebuf.CompletePuzzle.Contains(3) && __instance.speedDiceCount - unavailable >= 3)
-                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 2), Color.red);
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 2), Color.magenta, "ICON_3", "ICON_3Glow", "ICON_NoneHovered");
                 if (puzzlebuf.CompletePuzzle.Contains(4) && __instance.speedDiceCount - unavailable >= 4)
-                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 3), Color.green);
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 3), new Color(0.5f, 0f, 0.5f), "ICON_4", "ICON_4Glow", "ICON_NoneHovered");
                 if (puzzlebuf.CompletePuzzle.Contains(5) && __instance.speedDiceCount - unavailable >= 5)
-                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 4), Color.yellow);
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(unavailable + 4), Color.yellow, "ICON_5", "ICON_5Glow", "ICON_NoneHovered");
             }
             PassiveAbility_226769005 passive = __instance.passiveDetail.PassiveList.Find((PassiveAbilityBase x) => x is PassiveAbility_226769005) as PassiveAbility_226769005;
             if (passive != null)
             {
                 if (passive.IsActivate)
-                    __instance.view.speedDiceSetterUI._speedDices.ForEach(sd => ChangeSpeedDiceColor(sd, Color.cyan));
+                {
+                    int i = 1;
+                    foreach (SpeedDiceUI speedDiceUI in __instance.view.speedDiceSetterUI._speedDices)
+                    {
+                        if (Singleton<StageController>.Instance.RoundTurn % 2 == 1) ChangeSpeedDiceColor(speedDiceUI, Color.cyan, "ICON_Eirin月相" + i, "ICON_EirinGlow", "ICON_EirinHovered");
+                        else ChangeSpeedDiceColor(speedDiceUI, Color.cyan, "ICON_Eirin月相" + (6-i), "ICON_EirinGlow", "ICON_EirinHovered");
+                        i++;
+                    }
+                }   
             }
             if (BattleUnitBuf_InabaBuf2.GetStack(__instance) > 0)
             {
                 for (int i = 0; i < BattleUnitBuf_InabaBuf2.GetStack(__instance); i++)
-                    ChangeSpeedNumColor(SDS.GetSpeedDiceByIndex(i), Color.red);
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(i), Color.red, "ICON_Reisen", "ICON_ReisenGlow", "ICON_ReisenHovered");
                 if (BattleUnitBuf_InabaBuf3.GetStack(__instance) > 0)
-                    ChangeSpeedNumColor(SDS.GetSpeedDiceByIndex(BattleUnitBuf_InabaBuf3.GetStack(__instance) - 1), Color.red);
+                    ChangeSpeedDiceColor(SDS.GetSpeedDiceByIndex(BattleUnitBuf_InabaBuf3.GetStack(__instance) - 1), Color.red, "ICON_Reisen", "ICON_ReisenGlow", "ICON_ReisenHovered");
             }
         }
-        private static void ChangeSpeedDiceColor(SpeedDiceUI ui, Color DiceColor, bool reset = false) //DiceColor不能是白色，因为白色只会让数字变成白色，骰子框仍为原来颜色
+        private static Sprite defaultSpeedDice1;
+        private static Sprite defaultSpeedDice2;
+        private static Sprite defaultSpeedDice3;
+        private static void ChangeSpeedDiceColor(SpeedDiceUI ui, Color DiceColor, string normal, string glow, string hovered, bool reset = false) //DiceColor不能是白色，因为白色只会让数字变成白色，骰子框仍为原来颜色
         {
+            if (defaultSpeedDice1 == null)
+            {
+                defaultSpeedDice1 = ui.img_normalFrame.sprite;
+                defaultSpeedDice2 = ui.img_lightFrame.sprite;
+                defaultSpeedDice3 = ui.img_highlightFrame.sprite;
+            }
             if (ui == null)
                 return;
-            if (!reset && !ChangedSpeedDiceUI.ContainsKey(ui))
+            if (!reset)
                 ChangedSpeedDiceUI.Add(ui, ui.img_normalFrame.color);
+            if (normal != "")
+            {
+                ui.img_normalFrame.sprite = EternalityInitializer.ArtWorks[normal];
+                ui.img_lightFrame.sprite = EternalityInitializer.ArtWorks[glow];
+                ui.img_highlightFrame.sprite = EternalityInitializer.ArtWorks[hovered];
+            }
+            else
+            {
+                ui.img_normalFrame.sprite = defaultSpeedDice1;
+                ui.img_lightFrame.sprite = defaultSpeedDice2;
+                ui.img_highlightFrame.sprite = defaultSpeedDice3;
+            }
             ui._txtSpeedRange.color = DiceColor;
             ui._rouletteImg.color = DiceColor;
             ui._txtSpeedMax.color = DiceColor;
             ui.img_tensNum.color = DiceColor;
             ui.img_unitsNum.color = DiceColor;
-            ui.img_normalFrame.color = DiceColor;
+            DiceColor.a -= 0.6f;
+            ui.img_breakedFrame.color = DiceColor;
+            ui.img_breakedLinearDodge.color = DiceColor;
+            ui.img_lockedFrame.color = DiceColor;
+            ui.img_lockedIcon.color = DiceColor;
         }
-        private static void ChangeSpeedNumColor(SpeedDiceUI ui,Color NumColor, bool reset = false)
+        private static void ChangeSpeedNumColor(SpeedDiceUI ui, Color NumColor, bool reset = false)
         {
             if (ui == null)
                 return;
@@ -293,7 +326,7 @@ namespace EternalityTemple
         public static void ResetSpeedDiceColor() //重制所有染色的速度骰，任何要有染色的被动都需要有引用这个方法
         {
             foreach (SpeedDiceUI ui in ChangedSpeedDiceUI.Keys)
-                ChangeSpeedDiceColor(ui, ChangedSpeedDiceUI[ui], true);
+                ChangeSpeedDiceColor(ui, ChangedSpeedDiceUI[ui], "", "", "", true);
             ChangedSpeedDiceUI.Clear();
         }
         //修复不可控制的速度骰不会高亮的问题
@@ -587,6 +620,7 @@ namespace EternalityTemple
         {
             if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id != new LorId(packageId, 226769001))
                 return;
+            if (StageController.Instance.CurrentFloor == SephirahType.Keter) return;
             if(EternalityParam.EgoCoolDown)
             {
                 EternalityParam.EgoCoolDown = false;

@@ -202,4 +202,11 @@
 	<Name></Name>
 	<Desc></Desc>
 </Passive>
+<Passive ID="226769025">
+	<Rarity>Unique</Rarity>
+	<Cost>0</Cost>
+	<Script>226769024</Script>
+	<Name></Name>
+	<Desc></Desc>
+</Passive>
 </PassiveXmlRoot>

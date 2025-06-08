@@ -1,55 +1,65 @@
 <ModInfo>
   <ClothInfo>
-    <Name>八意永琳</Name>
+    <Name>yonling</Name>
     <Default>
       <Direction>Front</Direction>
-      <Pivot pivot_x="0" pivot_y="-303.4001" />
-      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="-13.8" head_y="396" rotation="4" head_enable="False" />
     </Default>
     <Guard>
-      <Direction>Front</Direction>
-      <Pivot pivot_x="0" pivot_y="-303.4001" />
-      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+      <Direction>Side</Direction>
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="-27.6" head_y="354.2" rotation="3" head_enable="False" />
     </Guard>
     <Evade>
       <Direction>Front</Direction>
-      <Pivot pivot_x="0" pivot_y="-303.4001" />
-      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="4.6" head_y="391" rotation="4" head_enable="False" />
     </Evade>
     <Damaged>
       <Direction>Front</Direction>
-      <Pivot pivot_x="0" pivot_y="-188.4" />
-      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="2.3" head_y="331.2" rotation="1" head_enable="False" />
     </Damaged>
     <Slash>
-      <Direction>Front</Direction>
-      <Pivot pivot_x="0" pivot_y="-303.4001" />
-      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+      <Direction>Side</Direction>
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="-20.7" head_y="384.1" rotation="-17" head_enable="False" />
     </Slash>
     <Penetrate>
-      <Direction>Front</Direction>
-      <Pivot pivot_x="0" pivot_y="-303.4001" />
-      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+      <Direction>Side</Direction>
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="-87.4" head_y="354.2" rotation="2" head_enable="False" />
     </Penetrate>
     <Hit>
       <Direction>Front</Direction>
-      <Pivot pivot_x="0" pivot_y="-303.4001" />
-      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="-92" head_y="363.4" rotation="1" head_enable="False" />
     </Hit>
     <Move>
-      <Direction>Front</Direction>
-      <Pivot pivot_x="0" pivot_y="-303.4001" />
-      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+      <Direction>Side</Direction>
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="-101.2" head_y="315.1" rotation="-2" head_enable="False" />
     </Move>
-    <Fire>
-      <Direction>Front</Direction>
-      <Pivot pivot_x="0" pivot_y="-303.4001" />
-      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
-    </Fire>
     <Aim>
-      <Direction>Front</Direction>
-      <Pivot pivot_x="0" pivot_y="-303.4001" />
-      <Head head_x="0" head_y="0" rotation="0" head_enable="False" />
+      <Direction>Side</Direction>
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="-101.2" head_y="315.1" rotation="-2" head_enable="False" />
     </Aim>
+    <Fire>
+      <Direction>Side</Direction>
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="-101.2" head_y="315.1" rotation="-2" head_enable="False" />
+    </Fire>
+    <S1>
+      <Direction>Side</Direction>
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="-119.6" head_y="292.1" rotation="-8" head_enable="False" />
+    </S1>
+    <S2>
+      <Direction>Side</Direction>
+      <Pivot pivot_x="0" pivot_y="-301.1" />
+      <Head head_x="-105.8" head_y="315.1" rotation="-2" head_enable="False" />
+    </S2>
   </ClothInfo>
 </ModInfo>

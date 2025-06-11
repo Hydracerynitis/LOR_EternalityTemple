@@ -17,6 +17,7 @@ using EternalityTemple.Yagokoro;
 using EternalityTemple.Inaba;
 using GameSave;
 using Battle.DiceAttackEffect;
+using UnityEngine.UI;
 
 namespace EternalityTemple
 {
@@ -54,6 +55,17 @@ namespace EternalityTemple
             {
                 Singleton<EternalityTempleSaveManager>.Instance.SaveData(new SaveData(SaveDataType.Dictionary), "passFloor");
             }
+            bool BaseModLoaded = false;
+            foreach(Assembly dll in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                if (dll.GetName().Name == "UnitRenderUtils")
+                {
+                    BaseModLoaded = true;
+                    break;
+                }
+            }
+            if (!BaseModLoaded)
+                harmony.PatchAll(typeof(EternalityInitializer.BaseModPatch));
         }
         //添加特效AB包
         public static void AddAssets()
@@ -674,6 +686,60 @@ namespace EternalityTemple
             }
             catch (Exception)
             {
+            }
+        }
+        [HarmonyPatch]
+        public class BaseModPatch
+        {
+            [HarmonyPatch(typeof(UIBattleSettingWaveList), "SetData")]
+            [HarmonyPrefix]
+            private static void UIBattleSettingWaveList_SetData_Prefix(UIBattleSettingWaveList __instance, StageModel stage)
+            {
+                try
+                {
+                    ScrollRect scrollRect = __instance.transform.parent.GetComponent<ScrollRect>();
+                    if (!(bool)(UnityEngine.Object)scrollRect)
+                    {
+                        RectTransform transform = __instance.gameObject.transform as RectTransform;
+                        GameObject gameObject = new GameObject("[Rect]WaveListView");
+                        RectTransform parent = gameObject.AddComponent<RectTransform>();
+                        parent.SetParent(transform.parent);
+                        parent.localPosition = new Vector3(0.0f, -35f, 0.0f);
+                        parent.localEulerAngles = Vector3.zero;
+                        parent.localScale = Vector3.one;
+                        parent.sizeDelta = Vector2.one * 820f;
+                        gameObject.AddComponent<RectMask2D>();
+                        transform.SetParent((Transform)parent, true);
+                        scrollRect = gameObject.AddComponent<ScrollRect>();
+                        scrollRect.content = transform;
+                        __instance.gameObject.AddComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+                    }
+                    scrollRect.scrollSensitivity = 15f;
+                    scrollRect.horizontal = false;
+                    scrollRect.vertical = true;
+                    scrollRect.movementType = ScrollRect.MovementType.Elastic;
+                    scrollRect.elasticity = 0.1f;
+                    RectTransform transform1 = __instance.transform as RectTransform;
+                    transform1.pivot = stage.waveList.Count <= 5 ? new Vector2(transform1.pivot.x, 0.5f) : new Vector2(transform1.pivot.x, 0.0f);
+                    if (stage.waveList.Count > __instance.waveSlots.Count)
+                    {
+                        List<UIBattleSettingWaveSlot> collection = new List<UIBattleSettingWaveSlot>(stage.waveList.Count - __instance.waveSlots.Count);
+                        for (int count = __instance.waveSlots.Count; count < stage.waveList.Count; ++count)
+                        {
+                            UIBattleSettingWaveSlot battleSettingWaveSlot = UnityEngine.Object.Instantiate<UIBattleSettingWaveSlot>(__instance.waveSlots[0], __instance.waveSlots[0].transform.parent);
+                            battleSettingWaveSlot.name = string.Format("[Rect]WaveSlot ({0})", (object)count);
+                            collection.Add(battleSettingWaveSlot);
+                        }
+                        collection.Reverse();
+                        __instance.waveSlots.InsertRange(0, (IEnumerable<UIBattleSettingWaveSlot>)collection);
+                    }
+                    for (int index = 0; index < __instance.waveSlots.Count; ++index)
+                        __instance.waveSlots[index].gameObject.transform.localScale = Vector3.one;
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogException(ex);
+                }
             }
         }
     }

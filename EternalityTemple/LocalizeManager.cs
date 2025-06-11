@@ -238,8 +238,19 @@ namespace EternalityTemple
                         BookDescRoot bookDescRoot = (BookDescRoot)new XmlSerializer(typeof(BookDescRoot)).Deserialize(stringReader);
                         foreach (BookXmlInfo bookXmlInfo in Singleton<BookXmlList>.Instance.GetList().FindAll(x => x.id.packageId == EI.packageId))
                         {
-                            BookXmlInfo bookXml = bookXmlInfo;
-                            bookXml.InnerName = bookDescRoot.bookDescList.Find(x => x.bookID == bookXml.TextId).bookName;
+                            BookDesc bookDesc = bookDescRoot.bookDescList.Find(x => x.bookID == bookXmlInfo.TextId);
+                            if(bookDesc != null)
+                            {
+                                bookXmlInfo.InnerName = bookDesc.bookName;
+                            }
+                            else
+                            {
+                                string originBookName = BookDescXmlList.Instance.GetBookName(new LorId(bookXmlInfo.TextId));
+                                if (originBookName != string.Empty)
+                                {
+                                    bookXmlInfo.InnerName = originBookName;
+                                }
+                            }
                         }
                         Singleton<BookDescXmlList>.Instance.AddBookTextByMod(EI.packageId, bookDescRoot.bookDescList);
                     }

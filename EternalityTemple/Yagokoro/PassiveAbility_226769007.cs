@@ -16,7 +16,11 @@ namespace EternalityTemple.Yagokoro
             if (owner.IsDead())
                 ratio = 0.2;
             foreach (BattleUnitModel unit in BattleObjectManager.instance.GetList(owner.faction))
+            {
                 unit.RecoverHP((int)(ratio * (unit.MaxHp - (int)unit.hp)));
+                unit.UpdateUnitData();
+            }
+                
         }
     }
 }

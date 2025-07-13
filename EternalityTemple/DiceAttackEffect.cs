@@ -161,7 +161,7 @@ namespace EternalityTemple
 		{
 			AssetBundle assetBundle = EternalityInitializer.assetBundle["Eternality"];
 			this.gameObject = Instantiate<GameObject>(assetBundle.LoadAsset<GameObject>("P3"));
-			this.gameObject.transform.parent = this._targetTransform;
+			this.gameObject.transform.parent = this._selfTransform;
 			this.gameObject.transform.localPosition = new Vector3(1.75f, 1.5f, 0f);
 			this.gameObject.transform.localScale = Vector3.one;
 			this.gameObject.transform.localRotation = Quaternion.identity;
@@ -259,7 +259,7 @@ namespace EternalityTemple
 			{
 				this.state = FarAreaEffect.EffectState.GiveDamage;
 				this._self.view.charAppearance.ChangeMotion(ActionDetail.S1);
-				SingletonBehavior<DiceEffectManager>.Instance.CreateBehaviourEffect("Doc_AOE", 1f, this._self.view, null, 1f);
+				SingletonBehavior<DiceEffectManager>.Instance.CreateBehaviourEffect("Doc_AOE", 1f, _self.view, _self.view, 1f);
 				return;
 			}
 			else if (this.state == FarAreaEffect.EffectState.GiveDamage)
@@ -365,7 +365,7 @@ namespace EternalityTemple
 			if (this.state == FarAreaEffect.EffectState.Start)
 			{
 				this.state = FarAreaEffect.EffectState.GiveDamage;
-				SingletonBehavior<DiceEffectManager>.Instance.CreateBehaviourEffect("Neet_AOE", 1f, this._self.view, null, 1f);
+				SingletonBehavior<DiceEffectManager>.Instance.CreateBehaviourEffect("Neet_AOE", 1f, _self.view, _self.view, 1f);
 				this._self.view.charAppearance.ChangeMotion(ActionDetail.S1);
 				return;
 			}
@@ -466,7 +466,7 @@ namespace EternalityTemple
 			if (this.state == FarAreaEffect.EffectState.Start)
 			{
 				this._self.view.charAppearance.ChangeMotion(ActionDetail.S7);
-				SingletonBehavior<DiceEffectManager>.Instance.CreateBehaviourEffect("Udong_AOE", 1f, this._self.view, null, 1f);
+				SingletonBehavior<DiceEffectManager>.Instance.CreateBehaviourEffect("Udong_AOE", 1f, _self.view, _self.view, 1f);
 				this.state = FarAreaEffect.EffectState.GiveDamage;
 				return;
 			}

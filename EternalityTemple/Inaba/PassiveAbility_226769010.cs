@@ -19,6 +19,7 @@ namespace EternalityTemple.Inaba
             base.OnWaveStart();
             foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(false))
                 battleUnitModel.bufListDetail.AddBuf(new BattleUnitBuf_InabaDmgCheck());
+            BattleUnitBuf_InabaBuf1.AddStack(owner, 0);
             BattleUnitBuf_InabaBuf1.AddStack(owner, EternalityParam.GetFaction(owner.faction).InabaBufGainNum);
         }
         public class BattleUnitBuf_InabaDmgCheck : BattleUnitBuf

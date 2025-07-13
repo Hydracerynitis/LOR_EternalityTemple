@@ -17,11 +17,13 @@ namespace EternalityTemple.Inaba
 		public BattleUnitBuf_InabaBuf1(BattleUnitModel model)
 		{
 			this._owner = model;
-        }
+			_bufIcon = EternalityInitializer.ArtWorks["Reisen_Buf狂气"];
+			_iconInit = true;
+		}
 		public void Add(int add)
 		{
 			this.stack += add;
-			if (this.stack <= 0)
+			if (this.stack < 0)
 			{
 				this.Destroy();
 			}
@@ -65,6 +67,8 @@ namespace EternalityTemple.Inaba
 		public BattleUnitBuf_InabaBuf2(BattleUnitModel model)
 		{
 			this._owner = model;
+			_bufIcon = EternalityInitializer.ArtWorks["Reisen_Buf疯狂"];
+			_iconInit = true;
 		}
 		public void Add(int add)
 		{
@@ -288,6 +292,8 @@ namespace EternalityTemple.Inaba
 		public BattleUnitBuf_InabaBuf3(BattleUnitModel model)
 		{
 			this._owner = model;
+			_bufIcon = EternalityInitializer.ArtWorks["Reisen_Buf疯狂"];
+			_iconInit = true;
 		}
 		public void Add(int add)
 		{
@@ -506,6 +512,8 @@ namespace EternalityTemple.Inaba
 		public BattleUnitBuf_InabaBuf5(BattleUnitModel model)
 		{
 			this._owner = model;
+			_bufIcon = EternalityInitializer.ArtWorks["Reisen_Buf国士无双"];
+			_iconInit = true;
 		}
 		public void Add(int add)
 		{
@@ -575,6 +583,11 @@ namespace EternalityTemple.Inaba
 	// Token: 0x020007EA RID: 2026
 	public class BattleUnitBuf_InabaBuf6 : BattleUnitBuf
 	{
+		public BattleUnitBuf_InabaBuf6()
+        {
+			_bufIcon = EternalityInitializer.ArtWorks["Reisen_Buf怠惰"];
+			_iconInit = true;
+		}
 		// Token: 0x17000489 RID: 1161
 		// (get) Token: 0x06002F10 RID: 12048 RVA: 0x000BD9B2 File Offset: 0x000BBBB2
 		public override string keywordIconId => "Reisen_Buf怠惰";
@@ -592,6 +605,11 @@ namespace EternalityTemple.Inaba
 	}
 	public class BattleUnitBuf_InabaBuf7 : BattleUnitBuf
 	{
+		public BattleUnitBuf_InabaBuf7()
+		{
+			_bufIcon = EternalityInitializer.ArtWorks["Reisen_Buf狂视"];
+			_iconInit = true;
+		}
 		// Token: 0x17000489 RID: 1161
 		// (get) Token: 0x06002F10 RID: 12048 RVA: 0x000BD9B2 File Offset: 0x000BBBB2
 		public override string keywordIconId => "Reisen_Buf狂视";

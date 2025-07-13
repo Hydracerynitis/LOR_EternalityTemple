@@ -15,6 +15,8 @@ namespace EternalityTemple.Kaguya
         public BattleUnitBuf_KaguyaBuf(int stack)
         {
             this.stack = stack;
+            _bufIcon = EternalityInitializer.ArtWorks["Kaguya_Buf时辰11"];
+            _iconInit = true;
         }
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {

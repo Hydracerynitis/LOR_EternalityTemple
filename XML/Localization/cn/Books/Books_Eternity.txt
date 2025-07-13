@@ -197,6 +197,36 @@
         <Desc>... ...</Desc>
       </TextList>
     </BookDesc>
+    <BookDesc BookID="226769046">
+      <BookName>哲学层指定司书之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769049">
+      <BookName>哈罗德之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769051">
+      <BookName>以斯帖之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769056">
+      <BookName>漆黑噤默之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
+    <BookDesc BookID="226769057">
+      <BookName>하나协会3科收尾人之页</BookName>
+      <TextList>
+        <Desc>... ...</Desc>
+      </TextList>
+    </BookDesc>
 
   </bookDescList>
 </BookDescRoot>

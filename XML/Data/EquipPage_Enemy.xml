@@ -1374,7 +1374,7 @@
 
   <Book ID="226769046">
     <Name>비나</Name>
-    <TextId Pid="@origin">8</TextId>
+    <TextId>226769046</TextId>
     <EquipEffect>
       <HP>330</HP>
       <Break>155</Break>
@@ -1404,7 +1404,7 @@
 
   <Book ID="226769047">
     <Name>올리비에</Name>
-    <TextId Pid="@origin">260004</TextId>
+    <TextId>226769025</TextId>
     <EquipEffect>
       <HP>166</HP>
       <Break>75</Break>
@@ -1443,7 +1443,7 @@
 
   <Book ID="226769048">
     <Name>야에</Name>
-    <TextId Pid="@origin">255001</TextId>
+    <TextId>226769034</TextId>
     <EquipEffect>
       <HP>164</HP>
       <Break>70</Break>
@@ -1478,7 +1478,7 @@
 
   <Book ID="226769049">
     <Name>해롤드</Name>
-    <TextId Pid="@origin">260003</TextId>
+    <TextId>226769049</TextId>
     <EquipEffect>
       <HP>173</HP>
       <Break>71</Break>
@@ -1516,7 +1516,7 @@
 
   <Book ID="226769050">
     <Name>김삿갓</Name>
-    <TextId Pid="@origin">243003</TextId>
+    <TextId>226769022</TextId>
     <EquipEffect>
       <HP>168</HP>
       <Break>70</Break>
@@ -1555,7 +1555,7 @@
 
   <Book ID="226769051">
     <Name>에스더</Name>
-    <TextId Pid="@origin">250015</TextId>
+    <TextId>226769051</TextId>
     <Category>TheIndex</Category>
     <EquipEffect>
       <HP>351</HP>
@@ -1595,7 +1595,7 @@
 
   <Book ID="226769052">
     <Name>네모</Name>
-    <TextId Pid="@origin">250010</TextId>
+    <TextId>226769045</TextId>
     <EquipEffect>
       <HP>164</HP>
       <Break>73</Break>
@@ -1632,7 +1632,7 @@
 
   <Book ID="226769053">
     <Name>우제트</Name>
-    <TextId Pid="@origin">253001</TextId>
+    <TextId>226769038</TextId>
     <EquipEffect>
       <HP>169</HP>
       <Break>76</Break>
@@ -1668,7 +1668,7 @@
 
   <Book ID="226769054">
     <Name>알란</Name>
-    <TextId Pid="@origin">252001</TextId>
+    <TextId>226769023</TextId>
     <EquipEffect>
       <HP>135</HP>
       <Break>69</Break>
@@ -1705,7 +1705,7 @@
 
   <Book ID="226769055">
     <Name>알란</Name>
-    <TextId Pid="@origin">252001</TextId>
+    <TextId>226769033</TextId>
     <EquipEffect>
       <HP>145</HP>
       <Break>75</Break>
@@ -1734,7 +1734,7 @@
 
   <Book ID="226769056">
 		<Name>롤랑-검은침묵</Name>
-    <TextId Pid="@origin">102</TextId>
+    <TextId>226769056</TextId>
 		<EquipEffect>
       <HP>306</HP>
       <Break>226</Break>
@@ -1771,7 +1771,7 @@
 
   <Book ID="226769057">
     <Name>하나 해결사</Name>
-    <TextId Pid="@origin">260001</TextId>
+    <TextId>226769057</TextId>
     <EquipEffect>
       <HP>197</HP>
       <Break>150</Break>
@@ -1806,7 +1806,7 @@
 
   <Book ID="226769058">
     <Name>하나 해결사</Name>
-    <TextId Pid="@origin">260001</TextId>
+    <TextId>226769057</TextId>
     <EquipEffect>
       <HP>197</HP>
       <Break>150</Break>
@@ -1841,7 +1841,7 @@
 
   <Book ID="226769059">
     <Name>하나 해결사</Name>
-    <TextId Pid="@origin">260001</TextId>
+    <TextId>226769057</TextId>
     <EquipEffect>
       <HP>197</HP>
       <Break>150</Break>
@@ -1876,7 +1876,7 @@
 
   <Book ID="226769060">
     <Name>하나 해결사</Name>
-    <TextId Pid="@origin">260001</TextId>
+    <TextId>226769057</TextId>
     <EquipEffect>
       <HP>197</HP>
       <Break>150</Break>

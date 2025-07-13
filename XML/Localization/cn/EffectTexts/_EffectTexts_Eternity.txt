@@ -265,6 +265,36 @@
       <Desc>每一幕开始对所有敌方施加1层“疯狂”并对自身施加2层“疯狂”
 每一幕结束时层数-1</Desc>
     </BattleEffectText>
+
+
+	<BattleEffectText ID="YagokoroCard3_1">
+      <Name>月相(1)</Name>
+      <Desc>本书页所有骰子威力-4并末尾置入2颗(4~8)[突刺]骰子</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroCard3_2">
+      <Name>月相(2)/月相(3)</Name>
+      <Desc>本书页所有骰子威力-2并末尾置入1颗(4~8)[突刺]骰子/
+本书页所有骰子威力+1</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroCard3_3">
+      <Name>月相(4)/月相(5)</Name>
+      <Desc>摧毁本书页第1颗骰子并使其余骰子威力+5/
+本书页下一幕获得1层[蓄力]</Desc>
+    </BattleEffectText>
+
+	<BattleEffectText ID="YagokoroCard6_1">
+      <Name>月相(1)/月相(2)/月相(3)</Name>
+      <Desc>使所有友方获得1层[强壮]/
+下一幕对其目标施加1层[破绽]/
+下一幕对其目标施加1层[束缚]</Desc>
+    </BattleEffectText>
+
+	<BattleEffectText ID="YagokoroCard6_2">
+      <Name>月相(4)/月相(5)</Name>
+      <Desc>下一幕对其目标施加1层[虚弱]/
+使所有友方获得1层[振奋]</Desc>
+    </BattleEffectText>
+
 	
 </effectTextList>
 </BattleEffectTextRoot>

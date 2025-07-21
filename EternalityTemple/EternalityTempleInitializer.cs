@@ -18,6 +18,8 @@ using EternalityTemple.Inaba;
 using GameSave;
 using Battle.DiceAttackEffect;
 using UnityEngine.UI;
+using Workshop;
+using FileInfo = System.IO.FileInfo;
 
 namespace EternalityTemple
 {
@@ -369,6 +371,133 @@ namespace EternalityTemple
         public static bool IsEternalityBattle()
         {
             return BattleObjectManager.instance.GetAliveList(Faction.Enemy).Exists(x => x.passiveDetail.HasPassive<PassiveAbility_226769004>());
+        }
+        //修复皮肤切换bug
+        [HarmonyPatch(typeof(BattleUnitView), nameof(BattleUnitView.ChangeSkin))]
+        [HarmonyPrefix]
+        public static bool BattleUnitView_ChangeSkin_Pre(string charName, BattleUnitModel ___model)
+        {
+            bool result;
+            if (charName == "Reisen2")
+            {
+                ((BattleUnitView.SkinInfo)___model.view.GetType().GetField("_skinInfo", AccessTools.all).GetValue(___model.view)).state = BattleUnitView.SkinState.Changed;
+                ((BattleUnitView.SkinInfo)___model.view.GetType().GetField("_skinInfo", AccessTools.all).GetValue(___model.view)).skinName = charName;
+                ActionDetail currentMotionDetail = ___model.view.charAppearance.GetCurrentMotionDetail();
+                ___model.view.DestroySkin();
+                string resourceName;
+                GameObject gameObject = Singleton<AssetBundleManagerRemake>.Instance.LoadCharacterPrefab(charName, "", out resourceName);
+                if (gameObject != null)
+                {
+                    UnitCustomizingData customizeData = ___model.UnitData.unitData.customizeData;
+                    GiftInventory giftInventory = ___model.UnitData.unitData.giftInventory;
+                    GameObject gameObject2 = UnityObject.Instantiate<GameObject>(gameObject, ___model.view.characterRotationCenter);
+                    WorkshopSkinData workshopBookSkinData = Singleton<CustomizingBookSkinLoader>.Instance.GetWorkshopBookSkinData(EternalityInitializer.packageId, charName);
+                    gameObject2.GetComponent<WorkshopSkinDataSetter>().SetData(workshopBookSkinData);
+                    ___model.view.charAppearance = gameObject2.GetComponent<CharacterAppearance>();
+                    ___model.view.charAppearance.Initialize(resourceName);
+                    ___model.view.charAppearance.InitCustomData(customizeData, ___model.UnitData.unitData.defaultBook.GetBookClassInfoId());
+                    ___model.view.charAppearance.InitGiftDataAll(giftInventory.GetEquippedList());
+                    ___model.view.charAppearance.ChangeMotion(currentMotionDetail);
+                    ___model.view.charAppearance.ChangeLayer("Character");
+                    ___model.view.charAppearance.SetLibrarianOnlySprites(___model.faction);
+                    if (customizeData != null)
+                    {
+                        ___model.view.ChangeHeight(customizeData.height);
+                    }
+                }
+                result = false;
+            }
+            else
+            {
+                result = true;
+            }
+            return result;
+        }
+        //修复readyBuf不显示图标
+        [HarmonyPatch(typeof(BattleUnitBufListDetail), "OnRoundStart")]
+        [HarmonyPrefix]
+        private static bool BattleUnitBufListDetail_OnRoundStart_Pre(BattleUnitBufListDetail __instance, BattleUnitModel ____self, List<BattleUnitBuf> ____bufList, List<BattleUnitBuf> ____readyBufList, List<BattleUnitBuf> ____readyReadyBufList)
+        {
+            try
+            {
+                using (List<BattleUnitBuf>.Enumerator enumerator = ____readyBufList.GetEnumerator())
+                {
+                    while (enumerator.MoveNext())
+                    {
+                        BattleUnitBuf ReadyBuf = enumerator.Current;
+                        bool flag = !ReadyBuf.IsDestroyed();
+                        if (flag)
+                        {
+                            BattleUnitBuf battleUnitBuf = ____bufList.Find((BattleUnitBuf x) => x.GetType() == ReadyBuf.GetType() && !x.IsDestroyed());
+                            bool flag2 = battleUnitBuf != null && !ReadyBuf.independentBufIcon && battleUnitBuf.GetBufIcon() != null;
+                            if (flag2)
+                            {
+                                battleUnitBuf.stack += ReadyBuf.stack;
+                                battleUnitBuf.OnAddBuf(ReadyBuf.stack);
+                            }
+                            else
+                            {
+                                __instance.AddBuf(ReadyBuf);
+                                ReadyBuf.OnAddBuf(ReadyBuf.stack);
+                            }
+                        }
+                    }
+                }
+                ____readyBufList.Clear();
+                using (List<BattleUnitBuf>.Enumerator enumerator2 = ____readyReadyBufList.GetEnumerator())
+                {
+                    while (enumerator2.MoveNext())
+                    {
+                        BattleUnitBuf ReadyReadyBuf = enumerator2.Current;
+                        bool flag3 = !ReadyReadyBuf.IsDestroyed();
+                        if (flag3)
+                        {
+                            BattleUnitBuf battleUnitBuf2 = ____readyBufList.Find((BattleUnitBuf x) => x.GetType() == ReadyReadyBuf.GetType() && !x.IsDestroyed());
+                            bool flag4 = battleUnitBuf2 != null && !ReadyReadyBuf.independentBufIcon && battleUnitBuf2.GetBufIcon() != null;
+                            if (flag4)
+                            {
+                                battleUnitBuf2.stack += ReadyReadyBuf.stack;
+                                battleUnitBuf2.OnAddBuf(ReadyReadyBuf.stack);
+                            }
+                            else
+                            {
+                                ____readyBufList.Add(ReadyReadyBuf);
+                                ReadyReadyBuf.OnAddBuf(ReadyReadyBuf.stack);
+                            }
+                        }
+                    }
+                }
+                ____readyReadyBufList.Clear();
+                bool flag5 = ____self.faction == Faction.Player && Singleton<StageController>.Instance.GetStageModel().ClassInfo.chapter == 3;
+                if (flag5)
+                {
+                    int kewordBufStack = __instance.GetKewordBufStack(KeywordBuf.Endurance);
+                    ____self.UnitData.historyInStage.maxEndurance = Mathf.Max(____self.UnitData.historyInStage.maxEndurance, kewordBufStack);
+                }
+                foreach (BattleUnitBuf battleUnitBuf3 in ____bufList.ToArray())
+                {
+                    try
+                    {
+                        bool flag6 = !battleUnitBuf3.IsDestroyed();
+                        if (flag6)
+                        {
+                            battleUnitBuf3.OnRoundStart();
+                        }
+                    }
+                    catch (Exception exception)
+                    {
+                        Debug.LogException(exception);
+                    }
+                }
+                __instance.CheckDestroyedBuf();
+                __instance.CheckAchievements();
+                return false;
+            }
+            catch (Exception ex)
+            {
+                File.WriteAllText(Application.dataPath + "/Mods/ReadyBufFixerror.log", ex.Message + Environment.NewLine + ex.StackTrace);
+            }
+            return true;
         }
         //修复观测被动而导致的UI问题
         [HarmonyPatch(typeof(LevelUpUI),nameof(LevelUpUI.InitBase))]

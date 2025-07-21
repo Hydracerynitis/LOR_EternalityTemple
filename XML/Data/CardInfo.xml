@@ -288,9 +288,6 @@
     <Name>箭</Name>
     <Artwork>永琳箭.png</Artwork>
     <Rarity>Rare</Rarity>
-    <Keyword>YagokoroCard3_1</Keyword>
-    <Keyword>YagokoroCard3_2</Keyword>
-    <Keyword>YagokoroCard3_3</Keyword>
 	<Option>OnlyPage</Option>
     <Spec Range="Far" Cost="2"/>
     <Script>YagokoroCard3</Script>
@@ -330,8 +327,6 @@
     <Name>药符[壶中的大银河]</Name>
     <Artwork>药符-壶中的大银河.png</Artwork>
     <Rarity>Unique</Rarity>
-    <Keyword>YagokoroCard6_1</Keyword>
-    <Keyword>YagokoroCard6_2</Keyword>
 	<Option>OnlyPage</Option>
     <Spec Range="FarAreaEach" Cost="5" Affection="Team"/>
     <Script>YagokoroCard6</Script>

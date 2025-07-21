@@ -9,7 +9,19 @@ namespace EternalityTemple.Yagokoro
 {
 	public class DiceCardSelfAbility_EternityTs_Card1 : MoonCardAbility
 	{
-        public override bool CanActivateMoon(int slot)
+		public override string[] Keywords
+		{
+			get
+			{
+				return new string[]
+				{
+				"EternityCard1_1",
+				"EternityCard1_2",
+				"EternityCard1_3",
+				};
+			}
+		}
+		public override bool CanActivateMoon(int slot)
         {
             return slot >= 1 && slot <= 4;
         }
@@ -142,6 +154,18 @@ namespace EternalityTemple.Yagokoro
 	}
 	public class DiceCardSelfAbility_YagokoroCard3 : MoonCardAbility
 	{
+		public override string[] Keywords
+		{
+			get
+			{
+				return new string[]
+				{
+				"YagokoroCard3_1",
+				"YagokoroCard3_2",
+				"YagokoroCard3_3",
+				};
+			}
+		}
 		public override bool CanActivateMoon(int slot)
 		{
 			return slot >= 1 && slot <= 5;
@@ -273,6 +297,17 @@ namespace EternalityTemple.Yagokoro
 	}
 	public class DiceCardSelfAbility_YagokoroCard6 : MoonCardAbility
 	{
+		public override string[] Keywords
+		{
+			get
+			{
+				return new string[]
+				{
+				"YagokoroCard6_1",
+				"YagokoroCard6_2",
+				};
+			}
+		}
 		public override bool OnChooseCard(BattleUnitModel owner)
 		{
 			return Singleton<StageController>.Instance.RoundTurn >= 5 && base.OnChooseCard(owner);
@@ -372,6 +407,18 @@ namespace EternalityTemple.Yagokoro
 	}
 	public class DiceCardSelfAbility_YagokoroCard7 : MoonCardAbility
 	{
+		public override string[] Keywords
+		{
+			get
+			{
+				return new string[]
+				{
+				"YagokoroCard7_1",
+				"YagokoroCard7_2",
+				"YagokoroCard7_3",
+				};
+			}
+		}
 		public override bool OnChooseCard(BattleUnitModel owner)
 		{
 			return Singleton<StageController>.Instance.RoundTurn >= 5 && base.OnChooseCard(owner);

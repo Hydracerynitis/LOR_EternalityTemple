@@ -588,12 +588,8 @@ namespace EternalityTemple.Inaba
 			_bufIcon = EternalityInitializer.ArtWorks["Reisen_Buf怠惰"];
 			_iconInit = true;
 		}
-		// Token: 0x17000489 RID: 1161
-		// (get) Token: 0x06002F10 RID: 12048 RVA: 0x000BD9B2 File Offset: 0x000BBBB2
 		public override string keywordIconId => "Reisen_Buf怠惰";
 		public override string keywordId => "InabaBuf6";
-
-		// Token: 0x06002F12 RID: 12050 RVA: 0x000BD9CB File Offset: 0x000BBBCB
 		public override bool IsImmune(BufPositiveType posType)
 		{
 			return posType == BufPositiveType.Positive;
@@ -605,18 +601,9 @@ namespace EternalityTemple.Inaba
 	}
 	public class BattleUnitBuf_InabaBuf7 : BattleUnitBuf
 	{
-		public BattleUnitBuf_InabaBuf7()
-		{
-			_bufIcon = EternalityInitializer.ArtWorks["Reisen_Buf狂视"];
-			_iconInit = true;
-		}
-		// Token: 0x17000489 RID: 1161
-		// (get) Token: 0x06002F10 RID: 12048 RVA: 0x000BD9B2 File Offset: 0x000BBBB2
 		public override string keywordIconId => "Reisen_Buf狂视";
 		public override string keywordId => "InabaBuf7";
-
-        // Token: 0x06002F12 RID: 12050 RVA: 0x000BD9CB File Offset: 0x000BBBCB
-        public override void OnRoundStart()
+		public override void OnRoundStart()
         {
 			BattleUnitBuf_InabaBuf2.AddStack(this._owner, 2);
 			foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList_opponent(this._owner.faction))
@@ -626,6 +613,8 @@ namespace EternalityTemple.Inaba
 		}
 		public BattleUnitBuf_InabaBuf7(BattleUnitModel model)
 		{
+			_bufIcon = EternalityInitializer.ArtWorks["Reisen_Buf狂视"];
+			_iconInit = true;
 			this._owner = model;
 		}
 		public void Add(int add)

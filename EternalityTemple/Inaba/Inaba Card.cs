@@ -186,7 +186,7 @@ namespace EternalityTemple.Inaba
 	{
 		public override void OnUseCard()
 		{
-			if(BattleUnitBuf_InabaBuf1.GetStack(owner)<150)
+			if (BattleUnitBuf_InabaBuf1.GetStack(owner) < 150) 
             {
 				return;
             }

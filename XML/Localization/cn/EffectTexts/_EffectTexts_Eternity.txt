@@ -288,11 +288,37 @@
 下一幕对其目标施加1层[破绽]/
 下一幕对其目标施加1层[束缚]</Desc>
     </BattleEffectText>
-
 	<BattleEffectText ID="YagokoroCard6_2">
       <Name>月相(4)/月相(5)</Name>
       <Desc>下一幕对其目标施加1层[虚弱]/
 使所有友方获得1层[振奋]</Desc>
+    </BattleEffectText>
+
+	<BattleEffectText ID="EternityCard1_1">
+      <Name>月相(1)/月相(2)</Name>
+      <Desc>本书页第1颗骰子威力+1/
+本书页末尾置入1颗突刺骰子(1~4)</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="EternityCard1_2">
+      <Name>月相(3)</Name>
+      <Desc>本书页所有骰子威力+1</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="EternityCard1_3">
+      <Name>月相(4)</Name>
+      <Desc>本书页末尾置入1颗防御骰子(1~4)且本书页第2颗骰子威力+3</Desc>
+    </BattleEffectText>
+
+	<BattleEffectText ID="YagokoroCard7_1">
+      <Name>月相(1)</Name>
+      <Desc>第1颗骰子击中目标时对其施加1层[突刺失效]</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroCard7_2">
+      <Name>月相(3)</Name>
+      <Desc>第2颗骰子击中目标时对其施加1层[斩击失效]</Desc>
+    </BattleEffectText>
+	<BattleEffectText ID="YagokoroCard7_3">
+      <Name>月相(5)</Name>
+      <Desc>第3颗骰子击中目标时对其施加1层[打击失效]</Desc>
     </BattleEffectText>
 
 	

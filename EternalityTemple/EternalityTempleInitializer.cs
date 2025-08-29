@@ -303,12 +303,15 @@ namespace EternalityTemple
             if (ui == null)
                 return;
             if (!reset)
-                ChangedSpeedDiceUI.Add(ui, ui.img_normalFrame.color);
+            {
+                if(!ChangedSpeedDiceUI.ContainsKey(ui))
+                    ChangedSpeedDiceUI.Add(ui, ui.img_normalFrame.color);
+            }
             if (normal != "")
             {
-                ui.img_normalFrame.sprite = EternalityInitializer.ArtWorks[normal];
-                ui.img_lightFrame.sprite = EternalityInitializer.ArtWorks[glow];
-                ui.img_highlightFrame.sprite = EternalityInitializer.ArtWorks[hovered];
+                ui.img_normalFrame.sprite = ArtWorks[normal];
+                ui.img_lightFrame.sprite = ArtWorks[glow];
+                ui.img_highlightFrame.sprite = ArtWorks[hovered];
             }
             else
             {

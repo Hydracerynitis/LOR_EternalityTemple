@@ -14,8 +14,6 @@ namespace EternalityEmotion
 {
     public class EmotionCardAbility_binah_bossbird4 : EmotionCardAbilityBase
     {
-        private Battle.CreatureEffect.CreatureEffect _aura;
-        private List<BattleDiceCardModel> egos = new List<BattleDiceCardModel>();
         public override void OnSelectEmotion()
         {
             base.OnSelectEmotion();

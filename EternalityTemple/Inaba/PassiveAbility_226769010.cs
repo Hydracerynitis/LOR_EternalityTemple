@@ -19,8 +19,7 @@ namespace EternalityTemple.Inaba
             base.OnWaveStart();
             foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(false))
                 battleUnitModel.bufListDetail.AddBuf(new BattleUnitBuf_InabaDmgCheck());
-            BattleUnitBuf_InabaBuf1.AddStack(owner, 0);
-            BattleUnitBuf_InabaBuf1.AddStack(owner, EternalityParam.GetFaction(owner.faction).InabaBufGainNum);
+            BattleUnitBuf_InabaBuf1.AddStack(owner, EternalityParam.GetFaction(owner.faction).InabaBufStack+0);
         }
         public class BattleUnitBuf_InabaDmgCheck : BattleUnitBuf
         {
@@ -34,6 +33,7 @@ namespace EternalityTemple.Inaba
                     return;
                 }
                 BattleUnitBuf_InabaBuf1.AddStack(battleUnitModel, dmg);
+                EternalityParam.GetFaction(battleUnitModel.faction).InabaBufGain += dmg;
             }
         }
 		private void AddNewCard(int id)
@@ -53,7 +53,7 @@ namespace EternalityTemple.Inaba
             }
             if (BattleUnitBuf_InabaBuf1.GetStack(owner)>=150 && BattleUnitBuf_InabaBuf7.GetStack(owner) <= 0)
             {
-                this.AddNewCard(226769134);
+                AddNewCard(226769134);
             }
             List<BattleUnitModel> aliveList = BattleObjectManager.instance.GetAliveList(base.owner.faction);
             if(aliveList.Count<=1)
@@ -64,8 +64,8 @@ namespace EternalityTemple.Inaba
             {
                 aliveList.Remove(owner);
                 aliveList.Sort((BattleUnitModel x, BattleUnitModel y) => (int)(x.breakDetail.breakGauge - y.breakDetail.breakGauge));
-                this.target_226769135 = aliveList[0];
-                this.AddNewCard(226769136);
+                target_226769135 = aliveList[0];
+                AddNewCard(226769136);
             }
             else if(RandomUtil.valueForProb <= 0.3f && specialCardColdDown <= 0)
             {

@@ -70,7 +70,7 @@
     <BehaviourList>
      <Behaviour Min="10" Dice="13" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="Neet_RS" Script="RedStone" ActionScript=""  Desc =""/>
      <Behaviour Min="9" Dice="15" Type="Atk" Detail="Penetrate" Motion="F" EffectRes="Neet_RS" Script="RedStone" ActionScript=""  Desc =""/>
-     <Behaviour Min="7" Dice="18" Type="Atk" Detail="Hit" Motion="F" EffectRes="Neet_RS" Script="RedStone" ActionScript=""  Desc =""/>
+     <Behaviour Min="8" Dice="18" Type="Atk" Detail="Hit" Motion="F" EffectRes="Neet_RS" Script="RedStone" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -92,7 +92,7 @@
   <Card ID="226769003">
     <Name>恐惧[崔斯特姆的诅咒]</Name>
     <Artwork>恐惧-崔斯特姆的诅咒.png</Artwork>
-    <Rarity>Rare</Rarity>
+    <Rarity>Unique</Rarity>
 	  <Option>OnlyPage</Option>
     <Spec Range="Far" Cost="1"/>
     <Script>EternityCard3_1</Script>
@@ -275,7 +275,7 @@
   <Card ID="226769017">
     <Name>疯狂的梦</Name>
     <Artwork>疯狂的梦.png</Artwork>
-    <Rarity>Rare</Rarity>
+    <Rarity>Unique</Rarity>
 	<Option>OnlyPage</Option>
     <Spec Range="Near" Cost="3"/>
     <Script>YagokoroCard2</Script>
@@ -398,7 +398,7 @@
     <Name>障壁波动</Name>
     <Artwork>铃仙-障壁波动.png</Artwork>
     <Rarity>Unique</Rarity>
-	<Option>OnlyPage</Option>
+	  <Option>OnlyPage</Option>
     <Spec Range="Near" Cost="2"/>
     <Script>InabaCard2</Script>
     <BehaviourList>
@@ -423,8 +423,9 @@
   <Card ID="226769031">
     <Name>幻胧月睨</Name>
     <Artwork>铃仙-幻胧月睨.png</Artwork>
+    
     <Rarity>Unique</Rarity>
-	<Option>OnlyPage</Option>
+	  <Option>OnlyPage</Option>
     <Spec Range="FarAreaEach" Cost="7" Affection="Team"/>
     <Script>InabaCard4</Script>
     <BehaviourList>
@@ -467,8 +468,8 @@
     <Spec Range="Near" Cost="0"/>
     <Script>InabaCard7</Script>
     <BehaviourList>
-     <Behaviour Min="3" Dice="6" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
-     <Behaviour Min="3" Dice="6" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="6" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="6" Type="Standby" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -479,8 +480,8 @@
     <Spec Range="Near" Cost="0"/>
     <Script>InabaCard7</Script>
     <BehaviourList>
-     <Behaviour Min="3" Dice="6" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
-     <Behaviour Min="3" Dice="6" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="6" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="6" Type="Standby" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -492,8 +493,8 @@
     <Spec Range="Near" Cost="1"/>
     <Script>InabaCard8</Script>
     <BehaviourList>
-     <Behaviour Min="4" Dice="7" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice5" ActionScript=""  Desc =""/>
-     <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice6" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="6" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice5" ActionScript=""  Desc =""/>
+     <Behaviour Min="4" Dice="6" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice6" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -504,8 +505,8 @@
     <Spec Range="Near" Cost="1"/>
     <Script>InabaCard8</Script>
     <BehaviourList>
-     <Behaviour Min="4" Dice="7" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice5" ActionScript=""  Desc =""/>
-     <Behaviour Min="5" Dice="8" Type="Def" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice6" ActionScript=""  Desc =""/>
+     <Behaviour Min="3" Dice="6" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice5" ActionScript=""  Desc =""/>
+     <Behaviour Min="4" Dice="6" Type="Standby" Detail="Guard" Motion="G" EffectRes="" Script="InabaDice6" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -517,8 +518,8 @@
     <Spec Range="Near" Cost="1"/>
     <Script>InabaCard9</Script>
     <BehaviourList>
-     <Behaviour Min="3" Dice="8" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
-     <Behaviour Min="6" Dice="7" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="7" Type="Standby" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="4" Dice="6" Type="Standby" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>
@@ -529,8 +530,8 @@
     <Spec Range="Near" Cost="1"/>
     <Script>InabaCard9</Script>
     <BehaviourList>
-     <Behaviour Min="3" Dice="8" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
-     <Behaviour Min="6" Dice="7" Type="Def" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="2" Dice="7" Type="Standby" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
+     <Behaviour Min="4" Dice="6" Type="Standby" Detail="Evasion" Motion="E" EffectRes="" Script="" ActionScript=""  Desc =""/>
     </BehaviourList>
     <Chapter>7</Chapter>
   </Card>

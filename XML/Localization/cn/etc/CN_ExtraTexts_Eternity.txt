@@ -11,16 +11,22 @@
 <text id="KaguyaBuf_Puzzle4">[燕的子安贝]</text>
 <text id="KaguyaBuf_Puzzle5">[蓬莱玉枝]</text>
 
-<text id="KaguyaBuf_NtDice1">[第1颗速骰子]所有骰子上下限+1
-</text><!--[龙颈之玉]难题骰子加成-->
-<text id="KaguyaBuf_NtDice2">[第2颗速骰子][拼点失败]受到伤害-2
-</text><!--[佛御石之钵]难题骰子加成文本-->
-<text id="KaguyaBuf_NtDice3">[第3颗速骰子][拼点胜利]对目标施加2层[烧伤]
-</text><!--[火鼠的皮衣]难题骰子加成文本-->
-<text id="KaguyaBuf_NtDice4">[第4颗速骰子][拼点胜利]为体力最低的友方恢复3点体力与混乱
-</text><!--[燕的子安贝]难题骰子加成文本-->
-<text id="KaguyaBuf_NtDice5">[第5颗速骰子]进攻骰子若命中敌人则临时减少随机书页1点费用
-</text><!--[蓬莱玉枝]难题骰子加成文本-->
+<!--[龙颈之玉]难题骰子加成-->
+<text id="KaguyaBuf_NtDice1">[第1颗速度骰] 所有骰子上下限+1
+</text>
+<!--[佛御石之钵]难题骰子加成文本-->
+<text id="KaguyaBuf_NtDice2">[第2颗速骰子] [拼点失败]受到伤害-2
+</text>
+<!--[火鼠的皮衣]难题骰子加成文本-->
+<text id="KaguyaBuf_NtDice3">[第3颗速骰子] [拼点胜利]对目标施加2层[烧伤]
+</text>
+<!--[燕的子安贝]难题骰子加成文本-->
+<text id="KaguyaBuf_NtDice4">[第4颗速骰子] [拼点胜利]为体力最低的友方恢复3点体力与混乱抗性
+</text>
+<!--[蓬莱玉枝]难题骰子加成文本-->
+<text id="KaguyaBuf_NtDice5">[第5颗速骰子] 进攻骰若命中敌人则临时减少随机书页1点费用
+</text>
+
 
 <text id="KaguyaBuf_Nt1">施加[负面]时层数+1
 </text><!--[龙颈之玉]常驻加成文本-->

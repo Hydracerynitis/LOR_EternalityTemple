@@ -41,7 +41,7 @@
       <LocalizedName>神宝[无限的生命之泉]</LocalizedName>
     </BattleCardDesc>
 	<BattleCardDesc ID="226769010"><!--由[蓬莱玉枝]获得--> 
-      <LocalizedName>神宝[蓬莱的弹枝-七色的弹幕-]</LocalizedName>
+      <LocalizedName>神宝[蓬莱弹枝-七色弹幕]</LocalizedName>
     </BattleCardDesc>
 	
 	<!--难题书页-E.G.O槽--> 

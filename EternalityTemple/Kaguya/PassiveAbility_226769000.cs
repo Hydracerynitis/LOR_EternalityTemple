@@ -22,7 +22,8 @@ namespace EternalityTemple.Kaguya
             }
             if (trio.Count < 3)
                 return;
-            trio.ForEach(x => x.bufListDetail.AddBuf(new BattleUnitBuf_KaguyaBuf(EternalityParam.GetFaction(owner.faction).KaguyaStack)));
+            int TimeStack = EternalityParam.GetFaction(owner.faction).KaguyaStack;
+            trio.ForEach(x => x.bufListDetail.AddBuf(new BattleUnitBuf_KaguyaBuf(TimeStack)));
         }
 
         public override void OnDie()

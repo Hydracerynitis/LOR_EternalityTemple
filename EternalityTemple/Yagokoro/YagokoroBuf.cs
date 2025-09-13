@@ -18,6 +18,13 @@ namespace EternalityTemple.Yagokoro
     public class BattleUnitBuf_Moon1: MoonBuf
     {
         public override string keywordId => "YagokoroBuf1";
+
+        public BattleUnitBuf_Moon1()
+        {
+            _bufIcon = EternalityInitializer.ArtWorks["ICON_Eirin月相1"]; //有美术资源的话换成别的
+            _iconInit = true;
+            stack = 0;
+        }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
@@ -32,6 +39,13 @@ namespace EternalityTemple.Yagokoro
     public class BattleUnitBuf_Moon2 : MoonBuf
     {
         public override string keywordId => "YagokoroBuf2";
+
+        public BattleUnitBuf_Moon2()
+        {
+            _bufIcon = EternalityInitializer.ArtWorks["ICON_Eirin月相3"]; //有美术资源的话换成别的
+            _iconInit = true;
+            stack = 0;
+        }
         public override void OnRoundStart()
         {
             base.OnRoundStart();
@@ -53,6 +67,12 @@ namespace EternalityTemple.Yagokoro
         public override int MaxPlayPointAdder()
         {
             return 1;
+        }
+        public BattleUnitBuf_Moon3()
+        {
+            _bufIcon = EternalityInitializer.ArtWorks["ICON_Eirin月相5"]; //有美术资源的话换成别的
+            _iconInit = true;
+            stack = 0;
         }
         public override void OnRoundStart()
         {
@@ -106,9 +126,9 @@ namespace EternalityTemple.Yagokoro
         public override string keywordId => "YagokoroBuf5";
         public override void OnRoundEnd()
         {
-            base.OnRoundEnd();
             _owner.RecoverHP(100);
             _owner.breakDetail.RecoverBreak(_owner.breakDetail.GetDefaultBreakGauge());
+            base.OnRoundEnd();
         }
     }
     public class YagokoroBuf6 : YagokoroBuf4
@@ -117,9 +137,9 @@ namespace EternalityTemple.Yagokoro
         public override string keywordId => "YagokoroBuf6";
         public override void OnRoundEnd()
         {
-            base.OnRoundEnd();
             _owner.TakeBreakDamage(20);
             _owner.bufListDetail.AddReadyBuf(new YagokoroBuf6_PowerDown());
+            base.OnRoundEnd();
         }
         public class YagokoroBuf6_PowerDown : BattleUnitBuf
         {
@@ -139,8 +159,8 @@ namespace EternalityTemple.Yagokoro
         public override string keywordId => "YagokoroBuf7";
         public override void OnRoundEnd()
         {
-            base.OnRoundEnd();
             BattleUnitBuf_InabaBuf2.AddReadyStack(_owner, stack);
+            base.OnRoundEnd();
         }
         public YagokoroBuf7(int stack)
         {
@@ -200,41 +220,28 @@ namespace EternalityTemple.Yagokoro
     }
     public class YagokoroBuf13 : BattleUnitBuf
     {
+        
+        public HashSet<int> moonCompletion=new HashSet<int>();
         public override string keywordIconId => "GalaxyBoy_Stone";
         public override string keywordId => "YagokoroBuf13";
-        public void Add(int add)
+        public override string bufActivatedText => BattleEffectTextsXmlList.Instance.GetEffectTextDesc(keywordId,
+                GetCompletionText());
+        private string GetCompletionText()
         {
-            this.stack += add;
-            if (this.stack <= 0)
-            {
-                this.Destroy();
-            }
-        }
-        public static void SetStack(BattleUnitModel model, int value)
-        {
-            YagokoroBuf13 battleUnitBuf = model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is YagokoroBuf13) as YagokoroBuf13;
-            if (battleUnitBuf == null)
-            {
-                battleUnitBuf = new YagokoroBuf13();
-                model.bufListDetail.AddBuf(battleUnitBuf);
-            }
-            battleUnitBuf.stack = value;
-        }
-
-        // Token: 0x0600020D RID: 525 RVA: 0x0001429C File Offset: 0x0001249C
-        public static int GetStack(BattleUnitModel model)
-        {
-            YagokoroBuf13 battleUnitBuf = model.bufListDetail.GetActivatedBufList().Find((BattleUnitBuf x) => x is YagokoroBuf13) as YagokoroBuf13;
-            int result;
-            if (battleUnitBuf == null)
-            {
-                result = 0;
-            }
-            else
-            {
-                result = battleUnitBuf.stack;
-            }
-            return result;
+            string str = "";
+            if (moonCompletion.Contains(1))
+                str += "(1)";
+            if (moonCompletion.Contains(2))
+                str += "(2)";
+            if (moonCompletion.Contains(3))
+                str += "(3)";
+            if (moonCompletion.Contains(4))
+                str += "(4)";
+            if (moonCompletion.Contains(5))
+                str += "(5)";
+            if (str == "")
+                str = TextDataModel.GetText("KaguyaBuf_None");
+            return str;
         }
     }
 }

@@ -184,13 +184,6 @@ namespace EternalityTemple.Kaguya
             this.owner.battleCardResultLog.SetBreakDmgGiven((int)breakdmg);
             target.battleCardResultLog.SetDeathState(target.IsDead());
             this.owner.history.damageAtOneRoundByDice += damage;
-            if (target.faction == Faction.Player)
-            {
-                if (this.owner.UnitData.unitData.EnemyUnitId == 20003 || this.owner.UnitData.unitData.EnemyUnitId == 20002)
-                    ++target.UnitData.historyInStage.damagedByIsadoraJulia;
-                if (target.Book.GetBookClassInfoId() == 200004)
-                    ++target.UnitData.unitData.history.damagedFinnBook;
-            }
             _resultDamage = damage;
             this.RefreshStatBonus();
         }

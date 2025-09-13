@@ -47,7 +47,8 @@ namespace EternalityTemple.Kaguya
             }
                 
         }
-        public override string bufActivatedText => String.Format(BattleEffectTextsXmlList.Instance.GetEffectTextDesc(keywordId), CompletePuzzle.Count, getPuzzleName(), getPuzzleDiceDesc(), getPuzzleBonus());
+        public override string bufActivatedText => BattleEffectTextsXmlList.Instance.GetEffectTextDesc(keywordId
+            , getPuzzleName(), getPuzzleDiceDesc(), getPuzzleBonus());
         private string getPuzzleName()
         {
             string str = "";
@@ -61,23 +62,6 @@ namespace EternalityTemple.Kaguya
                 str += TextDataModel.GetText("KaguyaBuf_Puzzle4");
             if (CompletePuzzle.Contains(5))
                 str += TextDataModel.GetText("KaguyaBuf_Puzzle5");
-            if (str == "")
-                str = TextDataModel.GetText("KaguyaBuf_None");
-            return str;
-        }
-        private string getPuzzleBonus()
-        {
-            string str = "";
-            if (CompletePuzzle.Contains(1))
-                str += TextDataModel.GetText("KaguyaBuf_Nt1");
-            if (CompletePuzzle.Contains(2))
-                str += TextDataModel.GetText("KaguyaBuf_Nt2");
-            if (CompletePuzzle.Contains(3))
-                str += TextDataModel.GetText("KaguyaBuf_Nt3");
-            if (CompletePuzzle.Contains(4))
-                str += TextDataModel.GetText("KaguyaBuf_Nt4");
-            if (CompletePuzzle.Contains(5))
-                str += TextDataModel.GetText("KaguyaBuf_Nt5");
             if (str == "")
                 str = TextDataModel.GetText("KaguyaBuf_None");
             return str;
@@ -97,8 +81,26 @@ namespace EternalityTemple.Kaguya
                 str += TextDataModel.GetText("KaguyaBuf_NtDice5");
             if (str == "")
                 str = TextDataModel.GetText("KaguyaBuf_None");
-            return str;
+            return str.Trim();
         }
+        private string getPuzzleBonus()
+        {
+            string str = "";
+            if (CompletePuzzle.Contains(1))
+                str += TextDataModel.GetText("KaguyaBuf_Nt1");
+            if (CompletePuzzle.Contains(2))
+                str += TextDataModel.GetText("KaguyaBuf_Nt2");
+            if (CompletePuzzle.Contains(3))
+                str += TextDataModel.GetText("KaguyaBuf_Nt3");
+            if (CompletePuzzle.Contains(4))
+                str += TextDataModel.GetText("KaguyaBuf_Nt4");
+            if (CompletePuzzle.Contains(5))
+                str += TextDataModel.GetText("KaguyaBuf_Nt5");
+            if (str == "")
+                str = TextDataModel.GetText("KaguyaBuf_None");
+            return str.Trim();
+        }
+        
         public override void OnUseCard(BattlePlayingCardDataInUnitModel card)
         {
             if (CompletePuzzle.Contains(5) && card.GetDiceBehaviorList().Count >= 3)

@@ -10,30 +10,25 @@ namespace EternalityTemple.Yagokoro
 			DiceCardSelfAbility_YagokoroCard1 diceCardSelfAbility = base.card.cardAbility as DiceCardSelfAbility_YagokoroCard1;
 			if (diceCardSelfAbility != null)
             {
-				if (diceCardSelfAbility.dreamType == 1)
-                {
-					target.bufListDetail.AddReadyBuf(new YagokoroBuf5());
-				}
-				if (diceCardSelfAbility.dreamType == 2)
-				{
-					target.bufListDetail.AddReadyBuf(new YagokoroBuf6());
-				}
-			}
-			target.bufListDetail.AddReadyBuf(new YagokoroBuf4());
+				Debug.Log(diceCardSelfAbility.dreamType);
+				if(diceCardSelfAbility.dreamType== 0) 
+					target.bufListDetail.AddReadyBuf(new YagokoroBuf4());
+                if (diceCardSelfAbility.dreamType == 1)
+                    target.bufListDetail.AddReadyBuf(new YagokoroBuf5());
+                if (diceCardSelfAbility.dreamType == 2)
+                    target.bufListDetail.AddReadyBuf(new YagokoroBuf6());
+                if (diceCardSelfAbility.dreamType == 3)
+                    target.bufListDetail.AddReadyBuf(new YagokoroBuf7(1));
+                if (diceCardSelfAbility.dreamType == 4)
+                    target.bufListDetail.AddReadyBuf(new YagokoroBuf7(2));
+            }
 		}
 	}
-	public class DiceCardAbility_YagokoroDice2 : DiceCardAbilityBase
-	{
-		public override void OnSucceedAttack(BattleUnitModel target)
-		{
-			DiceCardSelfAbility_YagokoroCard2 diceCardSelfAbility = base.card.cardAbility as DiceCardSelfAbility_YagokoroCard2;
-			int num = 1;
-			if (diceCardSelfAbility.stackBoost)
-				num++;
-			target.bufListDetail.AddBuf(new YagokoroBuf7(num));
-		}
-	}
-	public class DiceCardAbility_YagokoroDice3 : DiceCardAbilityBase
+	public class DiceCardAbility_YagokoroDice2 : DiceCardAbility_YagokoroDice1
+    {
+        //描述用,效果全在 DiceCardAbility_YagokoroDice1 里
+    }
+    public class DiceCardAbility_YagokoroDice3 : DiceCardAbilityBase
 	{
 		public override void OnSucceedAttack(BattleUnitModel target)
 		{
@@ -81,21 +76,21 @@ namespace EternalityTemple.Yagokoro
 	}
 	public class DiceCardAbility_YagokoroDice_aoe1 : DiceCardAbilityBase
 	{
-		public override void OnSucceedAttack(BattleUnitModel target)
-		{
-			DiceCardSelfAbility_YagokoroCard7 diceCardSelfAbility = base.card.cardAbility as DiceCardSelfAbility_YagokoroCard7;
-			if (diceCardSelfAbility == null)
-				return;
-			if (behavior.Index == 0 && diceCardSelfAbility.firstMoon)
-			{
-				target.bufListDetail.AddReadyBuf(new YagokoroBuf8());
-				diceCardSelfAbility.firstMoon = false;
-			}
-		}
+        public override void OnSucceedAreaAttack(BattleUnitModel target)
+        {
+            DiceCardSelfAbility_YagokoroCard7 diceCardSelfAbility = base.card.cardAbility as DiceCardSelfAbility_YagokoroCard7;
+            if (diceCardSelfAbility == null)
+                return;
+            if (behavior.Index == 0 && diceCardSelfAbility.firstMoon)
+            {
+                target.bufListDetail.AddReadyBuf(new YagokoroBuf8());
+                diceCardSelfAbility.firstMoon = false;
+            }
+        }
 	}
 	public class DiceCardAbility_YagokoroDice_aoe2 : DiceCardAbilityBase
 	{
-		public override void OnSucceedAttack(BattleUnitModel target)
+		public override void OnSucceedAreaAttack(BattleUnitModel target)
 		{
 			DiceCardSelfAbility_YagokoroCard7 diceCardSelfAbility = base.card.cardAbility as DiceCardSelfAbility_YagokoroCard7;
 			if (diceCardSelfAbility == null)
@@ -109,7 +104,7 @@ namespace EternalityTemple.Yagokoro
 	}
 	public class DiceCardAbility_YagokoroDice_aoe3 : DiceCardAbilityBase
 	{
-		public override void OnSucceedAttack(BattleUnitModel target)
+		public override void OnSucceedAreaAttack(BattleUnitModel target)
 		{
 			DiceCardSelfAbility_YagokoroCard7 diceCardSelfAbility = base.card.cardAbility as DiceCardSelfAbility_YagokoroCard7;
 			if (diceCardSelfAbility == null)

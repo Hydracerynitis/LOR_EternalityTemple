@@ -14,7 +14,7 @@ namespace EternalityTemple.Inaba
 			DiceCardSelfAbility_InabaCard1 diceCardSelfAbility = base.card.cardAbility as DiceCardSelfAbility_InabaCard1;
 			if (diceCardSelfAbility != null)
 			{
-				if (diceCardSelfAbility.firstDiceLoseParrying && base.card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
+				if (diceCardSelfAbility.firstDiceLoseParrying && base.card.card.HasBuf<BattleUnitBuf_InabaBuf2.InabaFrenzyActivate>())
 				{
 					card.target.currentDiceAction.DestroyDice(DiceMatch.AllDice, DiceUITiming.Start);
 					return;
@@ -39,7 +39,7 @@ namespace EternalityTemple.Inaba
 		{
 			int num = owner.history.damageAtOneRoundByDice;
 			target.TakeDamage(Mathf.Min(40, num));
-			if(card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
+			if(card.card.HasBuf<BattleUnitBuf_InabaBuf2.InabaFrenzyActivate>())
             {
 				BattleUnitBuf_InabaBuf2.AddReadyStack(target, Mathf.Min(num / 5, 8));
 				Debug.Log("aaaaa");
@@ -48,6 +48,7 @@ namespace EternalityTemple.Inaba
 	}
 	public class DiceCardAbility_InabaDice4 : DiceCardAbilityBase
 	{
+        public override string[] Keywords => new string[] { "InabaBuf6" };
 		public override void OnSucceedAttack(BattleUnitModel target)
 		{
 			target.bufListDetail.AddReadyBuf(new BattleUnitBuf_InabaBuf6());
@@ -55,18 +56,22 @@ namespace EternalityTemple.Inaba
 	}
 	public class DiceCardAbility_InabaDice5 : DiceCardAbilityBase
 	{
+		int count = 0;
 		public override void OnWinParrying()
 		{
-			card.owner.cardSlotDetail.RecoverPlayPointByCard(1);
-			card.target.cardSlotDetail.RecoverPlayPointByCard(1);
+			count += 1;
+			if(count<=2)
+				card.owner.cardSlotDetail.RecoverPlayPointByCard(1);
 		}
 	}
 	public class DiceCardAbility_InabaDice6 : DiceCardAbilityBase
 	{
-		public override void OnWinParrying()
+        int count = 0;
+        public override void OnWinParrying()
 		{
-			card.owner.allyCardDetail.DrawCards(1);
-			card.target.allyCardDetail.DrawCards(1);
+            count += 1;
+            if (count <= 2)
+                card.owner.allyCardDetail.DrawCards(1);
 		}
 	}
 }

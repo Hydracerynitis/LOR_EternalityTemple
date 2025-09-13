@@ -9,19 +9,44 @@ namespace EternalityTemple.Yagokoro
 {
 	public class DiceCardSelfAbility_EternityTs_Card1 : MoonCardAbility
 	{
-		public override string[] Keywords
-		{
-			get
-			{
-				return new string[]
-				{
-				"EternityCard1_1",
-				"EternityCard1_2",
-				"EternityCard1_3",
-				};
-			}
-		}
-		public override bool CanActivateMoon(int slot)
+        public override List<string> GetMoonKeywords()
+        {
+			List<string> output = base.GetMoonKeywords();
+			output.Add("YagokoroBuf_txt");
+            return output;
+        }
+        public override string GetMoonAbilityText()
+        {
+            string id = "EternityTs_Card1";
+            switch (moonPreview)
+            {
+                case -1:
+                    id = "EternityTs_Card1_NoMoon";
+                    break;
+                case 1:
+                    id = "EternityTs_Card1_Moon1";
+                    break;
+                case 2:
+                    id = "EternityTs_Card1_Moon2";
+                    break;
+                case 3:
+                    id = "EternityTs_Card1_Moon3";
+                    break;
+                case 4:
+                    id = "EternityTs_Card1_Moon4";
+                    break;
+
+            }
+            return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
+        public override string GetFullMoonAbilityText()
+        {
+            string id = "EternityTs_Card1";
+			if (moonPreview != 0)
+				id = "EternityTs_Card1_FullMoon";
+            return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
+        public override bool CanActivateMoon(int slot)
         {
             return slot >= 1 && slot <= 4;
         }
@@ -83,26 +108,122 @@ namespace EternalityTemple.Yagokoro
 	}
 	public class DiceCardSelfAbility_YagokoroCard1 : MoonCardAbility
 	{
-		public override bool CanActivateMoon(int slot)
+        public bool activate;
+        public override bool CanActivateMoon(int slot)
 		{
-			return slot == 1 || slot == 5;
+			if (!activate)
+				return slot == 1 || slot == 5;
+			else
+				return slot == 2;
 		}
+        public override List<string> GetMoonKeywords()
+        {
+			List<string> output = base.GetMoonKeywords();
+			output.AddRange(new string[] { "EternityCard2_Keyword", "YagokoroBuf_txt" });
+			if (!activate)
+			{
+                if (moonPreview == 1)
+                    output.Add("YagokoroBuf5");
+                if (moonPreview == 5)
+                    output.Add("YagokoroBuf6");
+                if (moonPreview == -1)
+                    output.Add("YagokoroBuf4");
+                if (moonPreview == 0)
+                    output.AddRange(new string[] { "YagokoroBuf4", "YagokoroBuf5", "YagokoroBuf6" });
+            }
+			else
+                output.Add("YagokoroBuf7");
+            return output;
+        }
+
+        public override string GetMoonAbilityText()
+        {
+			string id;
+			if (!activate)
+			{
+                id = "YagokoroCard1";
+                switch (moonPreview)
+                {
+                    case -1:
+                        id = "YagokoroCard1_NoMoon";
+                        break;
+                    case 1:
+                        id = "YagokoroCard1_Moon1";
+                        break;
+                    case 5:
+                        id = "YagokoroCard1_Moon5";
+                        break;
+                }
+            }
+			else
+			{
+				id = "YagokoroCard2";
+				switch (moonPreview)
+				{
+                    case -1:
+                        id = "YagokoroCard2_NoMoon";
+                        break;
+                    case 2:
+                        id = "YagokoroCard2_Moon2";
+                        break;
+                }
+            }
+			return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
+        public override string GetFullMoonAbilityText()
+        {
+            return GetMoonAbilityText();
+        }
+        public void SetCardScriptActivate(bool activate)
+		{
+			DiceCardSelfAbility_YagokoroCard1 BattleDiceCardModelAbility = card?.card?._script as DiceCardSelfAbility_YagokoroCard1;
+			if(BattleDiceCardModelAbility != null )
+				BattleDiceCardModelAbility.activate= activate;
+        }
 		public override void OnApplyCard()
 		{
 			base.OnApplyCard();
 			dreamType = 0;
-			if (this.owner.cardOrder + 1 < BattleUnitBuf_InabaBuf2.GetStack(owner) || this.owner.cardOrder + 1 == BattleUnitBuf_InabaBuf3.GetStack(owner))
+            if (BattleUnitBuf_InabaBuf2.CheckFrenzy(owner, owner.cardOrder))
 			{
-				DiceCardXmlInfo xmlData = this.card.card.XmlData;
-				DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769017), false);
-				xmlData.workshopName = cardItem.Name;
-				xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
-				xmlData.Script = cardItem.Script;
-			}
-		}
-		public override void OnFirstMoon()
+                DiceCardXmlInfo xmlData = card.card.XmlData;
+                DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(EternalityInitializer.GetLorId(226769017), false);
+                xmlData.workshopName = cardItem.Name;
+                xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+                xmlData.Rarity = cardItem.Rarity;
+				dreamType = 3;
+                activate = true;
+            }
+			SetCardScriptActivate(activate);
+        }
+        public override void OnReleaseCard()
+        {
+            base.OnReleaseCard();
+            DiceCardXmlInfo xmlData = card.card.XmlData;
+            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(EternalityInitializer.GetLorId(226769016), false);
+            xmlData.workshopName = cardItem.Name;
+            xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+            xmlData.Rarity = cardItem.Rarity;
+			activate = false;
+			dreamType = 0;
+            SetCardScriptActivate(activate);
+        }
+        public override void OnEnterCardPhase(BattleUnitModel unit, BattleDiceCardModel self)
+        {
+            base.OnEnterCardPhase(unit, self);
+            DiceCardXmlInfo xmlData = self.XmlData;
+            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769016), false);
+            xmlData.workshopName = cardItem.Name;
+            xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+            xmlData.Rarity = cardItem.Rarity;
+            activate = false;
+            SetCardScriptActivate(activate);
+        }
+        public override void OnFirstMoon()
 		{
 			base.OnFirstMoon();
+			if (activate)
+				return;
 			if (card.target.faction == owner.faction)
 			{
 				dreamType = 1;
@@ -110,66 +231,80 @@ namespace EternalityTemple.Yagokoro
 			}
 			dreamType = 0;
 		}
+        public override void OnSecondMoon()
+        {
+
+			if (!activate)
+				return;
+			dreamType = 4;
+        }
 		public override void OnFifthMoon()
 		{
 			base.OnFirstMoon();
+			if (activate)
+				return;
 			dreamType = 2;
 		}
-		public override bool IsValidTarget(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
-		{
-			return targetUnit != null && targetUnit != unit;
-		}
-		public int dreamType = 0;
-	}
-	public class DiceCardSelfAbility_YagokoroCard2 : MoonCardAbility
-	{
-		public override void OnEnterCardPhase(BattleUnitModel unit, BattleDiceCardModel self)
-		{
-			base.OnEnterCardPhase(unit, self);
-			DiceCardXmlInfo xmlData = self.XmlData;
-			DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769016), false);
-			xmlData.workshopName = cardItem.Name;
-			xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
-			xmlData.Script = cardItem.Script;
-		}
-		public override void OnReleaseCard()
-		{
-			base.OnReleaseCard();
-			DiceCardXmlInfo xmlData = this.card.card.XmlData;
-			DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769016), false);
-			xmlData.workshopName = cardItem.Name;
-			xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
-			xmlData.Script = cardItem.Script;
-		}
-		public override bool CanActivateMoon(int slot)
-		{
-			return slot == 3;
-		}
-        public override void OnThirdMoon()
+        //public override bool IsValidTarget(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
+        //{
+        //	return targetUnit != null && targetUnit != unit;
+        //}
+        public override bool IsTargetableAllUnit()
         {
-            base.OnThirdMoon();
-			stackBoost = true;
-		}
-		public bool stackBoost = false;
+			return true;
+        }
+        public int dreamType = 0;
+	}
+	public class DiceCardSelfAbility_YagokoroCard2 : DiceCardAbilityBase
+	{
+        //描述用,效果全在 DiceCardSelfAbility_YagokoroCard1 里
 	}
 	public class DiceCardSelfAbility_YagokoroCard3 : MoonCardAbility
 	{
-		public override string[] Keywords
-		{
-			get
-			{
-				return new string[]
-				{
-				"YagokoroCard3_1",
-				"YagokoroCard3_2",
-				"YagokoroCard3_3",
-				};
-			}
-		}
 		public override bool CanActivateMoon(int slot)
 		{
 			return slot >= 1 && slot <= 5;
 		}
+        public override List<string> GetMoonKeywords()
+        {
+			List<string> output = base.GetMoonKeywords();
+			if (moonPreview == 0 || moonPreview == 5 || owner.bufListDetail.HasBuf<BattleUnitBuf_Moon3>())
+				output.Add("CardBuf_YagokoroCardBuf1");
+            return output;
+        }
+        public override string GetMoonAbilityText()
+        {
+            string id = "YagokoroCard3";
+            switch (moonPreview)
+            {
+                case -1:
+                    id = "YagokoroCard3_NoMoon";
+                    break;
+                case 1:
+                    id = "YagokoroCard3_Moon1";
+                    break;
+                case 2:
+                    id = "YagokoroCard3_Moon2";
+                    break;
+                case 3:
+                    id = "YagokoroCard3_Moon3";
+                    break;
+                case 4:
+                    id = "YagokoroCard3_Moon4";
+                    break;
+                case 5:
+                    id = "YagokoroCard3_Moon5";
+                    break;
+            }
+            return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
+        public override string GetFullMoonAbilityText()
+        {
+            string id = "YagokoroCard3";
+            if (moonPreview != 0)
+                id = "YagokoroCard3_FullMoon";
+            return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
 		public override void OnFirstMoon()
 		{
 			DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(613007, false);
@@ -229,7 +364,34 @@ namespace EternalityTemple.Yagokoro
 		{
 			return slot >= 3 && slot <= 5;
 		}
-		public override void OnThirdMoon()
+        public override string GetMoonAbilityText()
+        {
+            string id = "YagokoroCard4";
+            switch (moonPreview)
+            {
+                case -1:
+                    id = "YagokoroCard4_NoMoon";
+                    break;
+                case 3:
+                    id = "YagokoroCard4_Moon3";
+                    break;
+                case 4:
+                    id = "YagokoroCard4_Moon4";
+                    break;
+                case 5:
+                    id = "YagokoroCard4_Moon5";
+                    break;
+            }
+            return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
+        public override string GetFullMoonAbilityText()
+        {
+            string id = "YagokoroCard4";
+            if (moonPreview != 0)
+                id = "YagokoroCard4_FullMoon";
+            return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
+        public override void OnThirdMoon()
 		{
 			this.card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus
 			{
@@ -246,6 +408,7 @@ namespace EternalityTemple.Yagokoro
 		}
         public override void OnApplyCard()
         {
+			base.OnApplyCard();
 			firstDice = false;
 			secondDice = false;
 		}
@@ -258,7 +421,34 @@ namespace EternalityTemple.Yagokoro
 		{
 			return slot >= 1 && slot <= 3;
 		}
-		public override void OnFirstMoon()
+        public override string GetMoonAbilityText()
+        {
+            string id = "YagokoroCard5";
+            switch (moonPreview)
+            {
+                case -1:
+                    id = "YagokoroCard5_NoMoon";
+                    break;
+                case 1:
+                    id = "YagokoroCard5_Moon1";
+                    break;
+                case 2:
+                    id = "YagokoroCard5_Moon2";
+                    break;
+                case 3:
+                    id = "YagokoroCard5_Moon3";
+                    break;
+            }
+            return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
+        public override string GetFullMoonAbilityText()
+        {
+            string id = "YagokoroCard5";
+            if (moonPreview != 0)
+                id = "YagokoroCard5_FullMoon";
+            return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
+        public override void OnFirstMoon()
 		{
 			DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(613007, false);
 			BattleDiceBehavior battleDiceBehavior = new BattleDiceBehavior();
@@ -283,6 +473,7 @@ namespace EternalityTemple.Yagokoro
 		}
 		public override void OnApplyCard()
 		{
+			base.OnApplyCard();
 			secondMoonDecay = false;
 		}
 		public override void OnSucceedAttack(BattleDiceBehavior behavior)
@@ -297,20 +488,43 @@ namespace EternalityTemple.Yagokoro
 	}
 	public class DiceCardSelfAbility_YagokoroCard6 : MoonCardAbility
 	{
-		public override string[] Keywords
+		private int count=0;
+        public override string GetMoonAbilityText()
+        {
+            string id = "YagokoroCard6";
+            switch (moonPreview)
+            {
+                case -1:
+                    id = "YagokoroCard6_NoMoon";
+                    break;
+                case 1:
+                    id = "YagokoroCard6_Moon1";
+                    break;
+                case 2:
+                    id = "YagokoroCard6_Moon2";
+                    break;
+                case 3:
+                    id = "YagokoroCard6_Moon3";
+                    break;
+                case 4:
+                    id = "YagokoroCard6_Moon4";
+                    break;
+                case 5:
+                    id = "YagokoroCard6_Moon5";
+                    break;
+            }
+            return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
+        public override string GetFullMoonAbilityText()
+        {
+            string id = "YagokoroCard6";
+            if (moonPreview != 0)
+                id = "YagokoroCard6_FullMoon";
+            return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
+        public override bool OnChooseCard(BattleUnitModel owner)
 		{
-			get
-			{
-				return new string[]
-				{
-				"YagokoroCard6_1",
-				"YagokoroCard6_2",
-				};
-			}
-		}
-		public override bool OnChooseCard(BattleUnitModel owner)
-		{
-			return Singleton<StageController>.Instance.RoundTurn >= 5 && base.OnChooseCard(owner);
+			return Singleton<StageController>.Instance.RoundTurn >= 5;
 		}
 		public void ExhaustAndReturn()
 		{
@@ -366,39 +580,34 @@ namespace EternalityTemple.Yagokoro
 		}
 		public override void OnApplyCard()
 		{
+			base.OnApplyCard();
 			firstMoon = false;
 			secondMoon = false;
 			thirdMoon = false;
 			forthMoon = false;
 			fifthMoon = false;
 		}
-		public override void OnSucceedAttack(BattleDiceBehavior behavior)
-		{
-			base.OnSucceedAttack(behavior);
-			foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(owner.faction))
-			{
-				if(firstMoon)
-                {
-					battleUnitModel.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Strength, 1, owner);
-				}
-				if(fifthMoon)
-                {
-					battleUnitModel.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.BreakProtection, 1, owner);
-				}
-			}
-			if (secondMoon)
-			{
-				behavior.card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Disarm, 1, owner);
-			}
-			if (thirdMoon)
-			{
-				behavior.card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Binding, 1, owner);
-			}
-			if (forthMoon)
-			{
-				behavior.card.target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Weak, 1, owner);
-			}
-		}
+        public override void OnSucceedAreaAttack(BattleUnitModel target)
+        {
+            foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(owner.faction))
+            {
+                if (firstMoon)
+				{
+					count++;
+					if (count > 3)
+						return;
+                    battleUnitModel.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.Strength, 1, owner);
+                }
+                if (fifthMoon)
+                    battleUnitModel.bufListDetail.AddKeywordBufThisRoundByCard(KeywordBuf.BreakProtection, 1, owner);
+            }
+            if (secondMoon)
+                target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Disarm, 1, owner);
+            if (thirdMoon)
+                target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Binding, 1, owner);
+            if (forthMoon)
+                target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Weak, 1, owner);
+        }
 		private bool firstMoon;
 		private bool secondMoon;
 		private bool thirdMoon;
@@ -407,19 +616,34 @@ namespace EternalityTemple.Yagokoro
 	}
 	public class DiceCardSelfAbility_YagokoroCard7 : MoonCardAbility
 	{
-		public override string[] Keywords
-		{
-			get
-			{
-				return new string[]
-				{
-				"YagokoroCard7_1",
-				"YagokoroCard7_2",
-				"YagokoroCard7_3",
-				};
-			}
-		}
-		public override bool OnChooseCard(BattleUnitModel owner)
+        public override string GetMoonAbilityText()
+        {
+            string id = "YagokoroCard7";
+            switch (moonPreview)
+            {
+                case -1:
+                    id = "YagokoroCard7_NoMoon";
+                    break;
+                case 1:
+                    id = "YagokoroCard7_Moon1";
+                    break;
+                case 3:
+                    id = "YagokoroCard7_Moon3";
+                    break;
+                case 5:
+                    id = "YagokoroCard7_Moon5";
+                    break;
+            }
+            return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
+        public override string GetFullMoonAbilityText()
+        {
+            string id = "YagokoroCard7";
+            if (moonPreview != 0)
+                id = "YagokoroCard7_FullMoon";
+            return string.Join("\n", BattleCardAbilityDescXmlList.Instance.GetAbilityDesc(id));
+        }
+        public override bool OnChooseCard(BattleUnitModel owner)
 		{
 			return Singleton<StageController>.Instance.RoundTurn >= 5 && base.OnChooseCard(owner);
 		}
@@ -481,7 +705,7 @@ namespace EternalityTemple.Yagokoro
         public override void OnUseCard()
         {
             base.OnUseCard();
-			owner.bufListDetail.AddReadyBuf(new YagokoroBuf12());
+			owner.bufListDetail.AddReadyBuf(new YagokoroBuf12() { stack=0});
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LOR_DiceSystem;
+using UnityEngine;
 
 namespace EternalityEmotion
 {
@@ -11,15 +12,22 @@ namespace EternalityEmotion
     {
         public override void BeforeRollDice(BattleDiceBehavior behavior)
         {
-            if (behavior?.card?.target == null)
-                return;
-            int a = behavior.card.speedDiceResultValue - behavior.card.target.speedDiceResult[behavior.card.targetSlotOrder].value;
-            if (a <= 0 || !IsAttackDice(behavior.Detail))
-                return;
-            behavior.ApplyDiceStatBonus(new DiceStatBonus()
+            try
             {
-                power = RandomUtil.Range(1, 2)
-            }) ;
+                if (behavior?.card?.target == null)
+                    return;
+                int a = behavior.card.speedDiceResultValue - behavior.card.target.speedDiceResult[behavior.card.targetSlotOrder].value;
+                if (a <= 0 || !IsAttackDice(behavior.Detail))
+                    return;
+                behavior.ApplyDiceStatBonus(new DiceStatBonus()
+                {
+                    power = RandomUtil.Range(1, 2)
+                });
+            }
+            catch (Exception ex)
+            {
+                Debug.Log($"Eternality: Yesod emotion Helper3 index exception: librarian speed dices -- {behavior.card.target.speedDiceResult.Count}, enemy card targetslot -- {behavior.card.targetSlotOrder}");
+            }
         }
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {

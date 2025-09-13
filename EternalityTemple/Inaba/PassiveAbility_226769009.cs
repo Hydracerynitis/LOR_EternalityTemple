@@ -13,7 +13,7 @@ namespace EternalityTemple.Inaba
         {
             if (BattleObjectManager.instance.GetAliveList(base.owner.faction).Find((BattleUnitModel x) => x.bufListDetail.HasBuf<BattleUnitBuf_Moon3>()) != null)
             {
-                if (EternalityParam.GetFaction(owner.faction).InabaBufGainNum >= 900)
+                if (EternalityParam.GetFaction(owner.faction).InabaBufStack >= 900)
                 {
                     BattleUnitBuf_InabaBuf2.AddReadyStack(RandomUtil.SelectOne(BattleObjectManager.instance.GetAliveList_opponent(owner.faction)), 1);
                 }

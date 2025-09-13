@@ -7,47 +7,13 @@ using EternalityTemple.Yagokoro;
 
 namespace EternalityTemple.Inaba
 {
-	public class DiceCardSelfAbility_EternityBase : DiceCardSelfAbilityBase
-	{
-		public override bool OnChooseCard(BattleUnitModel owner)
-		{
-			return Singleton<StageController>.Instance.RoundTurn >= 5 && base.OnChooseCard(owner);
-		}
-		public void ExhaustAndReturn()
-		{
-			this.card.card.exhaust = true;
-			base.owner.bufListDetail.AddBuf(new BattleUnitBuf_addAfter(this.card.card.GetID(), 4));
-		}
-		public override void OnUseCard()
-		{
-			this.ExhaustAndReturn();
-		}
-		public class BattleUnitBuf_addAfter : BattleUnitBuf
-		{
-			public BattleUnitBuf_addAfter(LorId cardId, int turnCount)
-			{
-				this._cardId = cardId;
-				this._count = turnCount;
-			}
-			public override void OnRoundStart()
-			{
-				this._count--;
-				if (this._count <= 0)
-				{
-					this._owner.allyCardDetail.AddNewCard(this._cardId, false);
-					this.Destroy();
-				}
-			}
-			private int _count;
-			private LorId _cardId = LorId.None;
-		}
-	}
 	public class DiceCardSelfAbility_EternityXS_Card1 : DiceCardSelfAbilityBase
 	{
+        public override string[] Keywords => new string[] { "EternityCard2_Keyword", "YagokoroBuf_txt" };
         public override void OnApplyCard()
         {
 			base.OnApplyCard();
-			if (owner.cardOrder + 1 <= BattleUnitBuf_InabaBuf2.GetStack(owner) || owner.cardOrder + 1 == BattleUnitBuf_InabaBuf3.GetStack(owner))
+			if (BattleUnitBuf_InabaBuf2.CheckFrenzy(owner,owner.cardOrder))
             {
 				DiceCardXmlInfo xmlData = this.card.card.XmlData;
 				List<DiceBehaviour> list = new List<DiceBehaviour>();
@@ -101,7 +67,8 @@ namespace EternalityTemple.Inaba
     }
 	public class DiceCardSelfAbility_InabaCard1 : DiceCardSelfAbilityBase
 	{
-		public override void OnUseCard()
+        public override string[] Keywords => new string[] { "EternityCard2_Keyword"};
+        public override void OnUseCard()
 		{
 			firstDiceLoseParrying = false;
 		}
@@ -109,19 +76,21 @@ namespace EternalityTemple.Inaba
 	}
 	public class DiceCardSelfAbility_InabaCard2 : DiceCardSelfAbilityBase
 	{
-		public override void OnUseCard()
+        public override string[] Keywords => new string[] { "EternityCard2_Keyword", "InabaBuf4" };
+        public override void OnUseCard()
 		{
 			foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(owner.faction))
 			{
 				BattleUnitBuf_InabaBuf4.AddStack(battleUnitModel, 1);
 			}
 		}
-		public override void OnStartBattle()
+		public override void OnStartBattleAfterCreateBehaviour()
 		{
 			base.OnStartBattle();
 			foreach (BattlePlayingCardDataInUnitModel battlePlayingCardDataInUnitModel in Singleton<StageController>.Instance.GetAllCards())
             {
-				if(battlePlayingCardDataInUnitModel.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
+				if(battlePlayingCardDataInUnitModel.card.HasBuf<BattleUnitBuf_InabaBuf2.InabaFrenzyActivate>()
+					&& battlePlayingCardDataInUnitModel.card.owner.faction!=owner.faction)
                 {
 					battlePlayingCardDataInUnitModel.target = owner;
 					battlePlayingCardDataInUnitModel.targetSlotOrder = -1;
@@ -131,6 +100,7 @@ namespace EternalityTemple.Inaba
 	}
 	public class DiceCardSelfAbility_InabaCard3 : DiceCardSelfAbilityBase
 	{
+        public override string[] Keywords => new string[] { "EternityCard2_Keyword", "InabaBuf5_Txt" };
         public override void OnApplyCard()
         {
             base.OnApplyCard();
@@ -143,7 +113,7 @@ namespace EternalityTemple.Inaba
 		}
 		public override void OnUseCard()
 		{
-			if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>() && BattleUnitBuf_InabaBuf5.GetStack(owner) >= 3)
+			if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.InabaFrenzyActivate>() && BattleUnitBuf_InabaBuf5.GetStack(owner) >= 3)
 			{
 				owner.bufListDetail.RemoveBufAll(typeof(BattleUnitBuf_InabaBuf5));
 				owner.TakeDamage(40);
@@ -156,27 +126,55 @@ namespace EternalityTemple.Inaba
 			BattleUnitBuf_InabaBuf5.AddStack(owner, 1);
 		}
 	}
-	public class DiceCardSelfAbility_InabaCard4 : DiceCardSelfAbility_EternityBase
+	public class DiceCardSelfAbility_InabaCard4 : DiceCardSelfAbilityBase
 	{
-		public override void OnUseCard()
-		{
-			if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
-			{
-				this.card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus
-				{
-					power = 3
-				});
-			}
-		}
+        public override string[] Keywords => new string[] { "EternityCard2_Keyword" };
+        public override bool OnChooseCard(BattleUnitModel owner)
+        {
+            return Singleton<StageController>.Instance.RoundTurn >= 5 && base.OnChooseCard(owner);
+        }
+        public override void OnUseCard()
+        {
+            this.card.card.exhaust = true;
+            base.owner.bufListDetail.AddBuf(new BattleUnitBuf_addAfter(this.card.card.GetID(), 4));
+            if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.InabaFrenzyActivate>())
+            {
+                this.card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus
+                {
+                    power = 3
+                });
+            }
+        }
+        public class BattleUnitBuf_addAfter : BattleUnitBuf
+        {
+            public BattleUnitBuf_addAfter(LorId cardId, int turnCount)
+            {
+                this._cardId = cardId;
+                this._count = turnCount;
+            }
+            public override void OnRoundStart()
+            {
+                this._count--;
+                if (this._count <= 0)
+                {
+                    this._owner.allyCardDetail.AddNewCard(this._cardId, false);
+                    this.Destroy();
+                }
+            }
+            private int _count;
+            private LorId _cardId = LorId.None;
+        }
 	}
 	public class DiceCardSelfAbility_InabaCard5 : DiceCardSelfAbilityBase
 	{
-	}
+        public override string[] Keywords => new string[] { "EternityCard2_Keyword" };
+    }
 	public class DiceCardSelfAbility_InabaCard6 : DiceCardSelfAbilityBase
 	{
+        public override string[] Keywords => new string[] { "EternityCard2_Keyword" };
         public override void OnSucceedAttack()
 		{
-			if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
+			if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.InabaFrenzyActivate>())
 			{
 				card.target.allyCardDetail.DiscardACardRandomlyByAbility(2);
 			}
@@ -184,7 +182,8 @@ namespace EternalityTemple.Inaba
 	}
 	public class DiceCardSelfAbility_InabaCard7 : DiceCardSelfAbilityBase
 	{
-		public override void OnUseCard()
+        public override string[] Keywords => new string[] { "InabaBuf7" };
+        public override void OnUseCard()
 		{
 			if (BattleUnitBuf_InabaBuf1.GetStack(owner) < 150) 
             {
@@ -201,17 +200,14 @@ namespace EternalityTemple.Inaba
     }
 	public class DiceCardSelfAbility_InabaCard8 : DiceCardSelfAbilityBase
 	{
-		public override void OnUseCard()
+        public override string[] Keywords => new string[] { "EternityCard2_Keyword" };
+        public override void OnUseCard()
 		{
-			BattleUnitBuf_InabaBuf3.AddReadyStack(card.target, card.targetSlotOrder + 1);
-			if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
-			{
-				BattleUnitModel battleUnitModel = RandomUtil.SelectOne<BattleUnitModel>(BattleObjectManager.instance.GetAliveList(owner.faction));
-				if (battleUnitModel != null)
-                {
-					BattleUnitBuf_InabaBuf2.AddReadyStack(battleUnitModel, 1);
-				}
-			}
+			int frenzyBuf = 1;
+            if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.InabaFrenzyActivate>())
+                frenzyBuf += 1;
+            BattleUnitBuf_InabaBuf2.AddReadyStack(card.target, frenzyBuf);
+			
 		}
 		public override bool IsValidTarget(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
 		{
@@ -221,14 +217,11 @@ namespace EternalityTemple.Inaba
 		{
 			return true;
 		}
-        public override bool IsTargetChangable(BattleUnitModel attacker)
-        {
-            return false;
-        }
     }
 	public class DiceCardSelfAbility_InabaCard9 : DiceCardSelfAbilityBase
 	{
-		public override void OnUseCard()
+        public override string[] Keywords => new string[] { "EternityCard2_Keyword" };
+        public override void OnUseCard()
 		{
 			int num = owner.breakDetail.breakGauge;
 			int num2 = owner.breakDetail.GetDefaultBreakGauge();
@@ -236,7 +229,7 @@ namespace EternalityTemple.Inaba
 			int num3 = card.target.breakDetail.breakGauge;
 			int num4 = card.target.breakDetail.GetDefaultBreakGauge();
 			card.target.breakDetail.RecoverBreak((num4 - num3) / 2);
-			if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.BattleDiceCardBuf_checkInaba>())
+			if (card.card.HasBuf<BattleUnitBuf_InabaBuf2.InabaFrenzyActivate>())
 			{
 				foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList_opponent(owner.faction))
 				{
@@ -251,10 +244,6 @@ namespace EternalityTemple.Inaba
 		public override bool IsOnlyAllyUnit()
 		{
 			return true;
-		}
-		public override bool IsTargetChangable(BattleUnitModel attacker)
-		{
-			return false;
 		}
 	}
 }

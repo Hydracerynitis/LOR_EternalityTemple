@@ -2,123 +2,170 @@
 <BattleCardAbilityDescRoot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <!--永远亭通用-->
 	<BattleCardAbility ID="EternityCard1"><!--月之都市-->
-		<Desc>[(难题)][使用时]恢复1点光芒
-若处于[子时]额外抽取1张书页
-若为[满月]额外恢复1点光芒</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="EternityTs_Card1"><!--八意永琳版月之都市-->
-		<Desc>[使用时]恢复1点光芒
-若处于[子时]额外抽取1张书页
-若为[满月]额外恢复1点光芒
-本书页将根据[月相]触发不同效果</Desc>
-	</BattleCardAbility>
-	<BattleCardAbility ID="EternityXS_Card1"><!--铃仙版月之都市-->
-		<Desc>[(疯狂)]-本书页[防御型]骰子改为[打击]且末尾置入1颗(3~6)[突刺]骰子
+		<Desc>本书页享受双倍来自[难题骰]的加成
 [使用时]恢复1点光芒
 若处于[子时]额外抽取1张书页
 若为[满月]额外恢复1点光芒</Desc>
-<!--上面的意思是在[疯狂]骰子使用的时候-->
-<!--然后效果是-后面的-->
+	</BattleCardAbility>
+
+	<BattleCardAbility ID="EternityTs_Card1"><!--八意永琳版月之都市-->
+		<Desc>[使用时]恢复1点光芒,若处于[子时]额外抽取1张书页,若为[满月]额外恢复1点光芒
+[月相(1)] 第一颗骰子威力+1
+[月相(2)] 末尾置入1颗[突刺]骰(1~4)
+[月相(3)] 所有骰子威力+1
+[月相(4)] 第二课骰子威力+3,末尾置入1颗[招架]骰(1~4)</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="EternityTs_Card1_NoMoon">
+		<Desc>[使用时]恢复1点光芒,若处于[子时]额外抽取1张书页,若为[满月]额外恢复1点光芒</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="EternityTs_Card1_Moon1">
+		<Desc>[使用时]恢复1点光芒,若处于[子时]额外抽取1张书页,若为[满月]额外恢复1点光芒
+[月相(1)] 本书页第一颗骰子威力+1</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="EternityTs_Card1_Moon2">
+		<Desc>[使用时]恢复1点光芒,若处于[子时]额外抽取1张书页,若为[满月]额外恢复1点光芒
+[月相(2)] 末尾置入1颗突刺骰子(1~4)</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="EternityTs_Card1_Moon3">
+		<Desc>[使用时]恢复1点光芒,若处于[子时]额外抽取1张书页,若为[满月]额外恢复1点光芒
+[月相(3)] 所有骰子威力+1</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="EternityTs_Card1_Moon4">
+		<Desc>[使用时]恢复1点光芒,若处于[子时]额外抽取1张书页,若为[满月]额外恢复1点光芒
+[月相(4)] 第二课骰子威力+3,末尾置入1颗[招架]骰子(1~4)</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="EternityTs_Card1_FullMoon">
+		<Desc>[使用时]恢复1点光芒,若处于[子时]额外抽取1张书页,若为[满月]额外恢复1点光芒
+[满月] 所有骰子威力+2,第二颗骰子威力额外+2,末尾置入1颗[突刺]骰(1~4)与1颗[招架]骰(1~4)</Desc>
+	</BattleCardAbility>
+
+
+	<BattleCardAbility ID="EternityXS_Card1"><!--铃仙版月之都市-->
+		<Desc>[狂想] 本书页[防御骰]改为[打击]且末尾置入1颗(3~6)[突刺]骰
+[使用时]恢复1点光芒
+若处于[子时]额外抽取1张书页
+若为[满月]额外恢复1点光芒</Desc>
 	</BattleCardAbility>
 	
 <!--蓬莱山辉夜-->
 	<BattleCardAbility ID="EternityCard2"><!--新难题[艾哲红石]-->
-		<Desc>每经过1个时辰,本书页[所有骰子]威力-1
-每经过2个时辰,本书页施加[烧伤]层数-1
-若[永夜]未触发,则本书页[骰子威力]与[施加烧伤]减至最低</Desc>
+		<Desc>每过1个时辰,所有[骰子]威力-1;每过2个时辰,所有骰子施加[烧伤]层数-1;
+若被动[永夜]未触发,所有骰子[威力]与[烧伤]层数减至最低</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="RedStone"><!--新难题[艾哲红石]-->
 		<Desc>[命中时] 施加4层[烧伤]</Desc>
 	</BattleCardAbility>
 
 	<BattleCardAbility ID="EternityCard3"><!--新难题[Mysterium]-->
-		<Desc>[(疯狂)]-该书页变为恐惧 崔斯特姆的诅咒
-本书页拼点胜利时自身获得随机1层[正面状态]，击中目标时下一幕对目标随机施加1层[负面状态]</Desc>
-	</BattleCardAbility>
-
-<BattleCardAbility ID="EternityDice1"><!--恐惧[崔斯特姆的诅咒]-->
-		<Desc>[命中时]下一幕对目标施加1层[疯狂]</Desc>
-	</BattleCardAbility>
-
-	<BattleCardAbility ID="EternityCard4"><!--永远与须臾-->
-		<Desc>[可指向友方][使用时]若目标为[友方]则使其重复使用第一张书页下一幕开始时将其状态还原至上一幕
-若目标为[敌方]则使其[负面状态]延续至下一幕</Desc>
+		<Desc>[狂想]-该书页变为[恐惧-崔斯特姆的诅咒]
+[拼点胜利]获得随机1层[正面状态]，[命中时]下一幕对目标随机施加1层[负面状态]</Desc>
 	</BattleCardAbility>
 
 	<BattleCardAbility ID="EternityCard3_1"><!--恐惧[崔斯特姆的诅咒]-->
-		<Desc>本书页命中目标时，若为首次命中该目标则永久施加1层[虚弱]，若为第二次命中该目标则自身永久获得1层[强壮]</Desc>
+		<Desc>本书页首次命中目标时对其永久施加1层[虚弱],第二次命中时则使自身永久获得1层[强壮]</Desc>
 	</BattleCardAbility>
-	
+	<BattleCardAbility ID="EternityDice1"><!--恐惧[崔斯特姆的诅咒]-->
+		<Desc>[命中时] 下一幕对目标施加1层[疯狂]</Desc>
+	</BattleCardAbility>
+
+	<BattleCardAbility ID="EternityCard4"><!--永远与须臾-->
+		<Desc>[可指向友方][使用时]若目标为[友方]则使其重复使用第一张书页并在下一幕开始时将其状态还原至上一幕
+若目标为[敌方]则使其[负面状态]延续至下一幕</Desc>
+	</BattleCardAbility>
 	
 <!--宝物书页--> 
 	<BattleCardAbility ID="PrizeCard"><!--耀眼的龙玉-->
-		<Desc>该书页只能在第一个难题骰上使用</Desc>
+		<Desc>只能用在第1颗[难题骰]</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="EternityDice3"><!--耀眼的龙玉-->
-		<Desc>[命中时]使目标所有[负面状态]层数+1</Desc>
+		<Desc>[命中时] 使目标所有[负面状态]层数+1</Desc>
 	</BattleCardAbility>
 	
 	<BattleCardAbility ID="EternityCard7"><!--佛体的金刚石-->
-		<Desc>该书页只能在第二个难题骰上使用</Desc>
-		<Desc>[战斗开始]摧毁该书页并使所有友方[反击池]共享该书页所有骰子</Desc>
+		<Desc>只能用在第2颗[难题骰]</Desc>
+		<Desc>[战斗开始] 摧毁该书页骰子并将其共享到所有友方[反击池]</Desc>
 	</BattleCardAbility>
 	
 
 	<BattleCardAbility ID="EternityCard5"><!--火蜥蜴之盾-->
-		<Desc>该书页只能在第三个难题骰上使用</Desc>
-		<Desc>[使用时]本幕结束时吸收并移除所有场上的[烧伤]
-每移除5层[烧伤]下一幕开始获得1层[强壮]</Desc>
+		<Desc>只能用在第3颗[难题骰]</Desc>
+		<Desc>[使用时]这一幕结束时移除所有场上的[烧伤],每移除5层[烧伤]下一幕开始获得1层[强壮]</Desc>
 	</BattleCardAbility>
+
 	<BattleCardAbility ID="EternityDice2"><!--火蜥蜴之盾-->
-		<Desc>[拼点胜利]对所有敌方施加1层[烧伤]</Desc>
+		<Desc>[拼点胜利] 对所有敌人施加1层[烧伤]</Desc>
 	</BattleCardAbility>
 
 	<BattleCardAbility ID="EternityCard6"><!--无限的生命之泉-->
-		<Desc>该书页只能在第四个难题骰上使用</Desc>
-		<Desc>[使用时]本幕结束时若本书页仍有骰子未使用
-则恢复所有友方[已损失体力的10%]点体力</Desc>
+		<Desc>只能用在第4颗[难题骰]</Desc>
+		<Desc>[使用时] 这一幕结束时若有未使用的骰子则恢复所有友方[已损失血量的10%]点血量</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="EternityDice4"><!--无限的生命之泉-->
-		<Desc>[拼点胜利]使所有友方恢复2点体力</Desc>
+		<Desc>[拼点胜利]使所有友方单位恢复2点血量</Desc>
 	</BattleCardAbility>
 
 	<BattleCardAbility ID="EternityCard8"><!--神宝[蓬莱的弹枝-七色的弹幕-]-->
-		<Desc>该书页只能在第五个难题骰上使用</Desc>
+		<Desc>只能在第5颗[难题骰]上使用</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="EternityDice5"><!--神宝[蓬莱的弹枝-七色的弹幕-]-->
-		<Desc>[命中时]改为连续7次使用打击5-7的骰子对目标造成伤害</Desc>
+		<Desc>[命中时] 改为连续骰出7次(5-7)的打击骰造成伤害</Desc>
 	</BattleCardAbility>
+
+
 <!--难题书页-E.G.O槽--> 
 	<BattleCardAbility ID="KaguyaPuzzle1"><!--龙颈之玉-->
-		<Desc>[难题][条件]持有时施加20层[负面状态]
-[完成]施加[负面状态]时层数+1</Desc>
+		<Desc>[解决条件] 施加20层[负面状态]
+[难题骰] [第1颗速度骰]变为难题骰;该[难题骰]上所有书页的骰子上下限+1
+[常态加成] 施加[负面状态]时层数+1</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="KaguyaPuzzle2"><!--佛御石之钵-->
-		<Desc>[难题][条件]持有时以[防御型]骰子取得拼点胜利5次
-[完成]随1个[非耐性]抗性改为[耐性]</Desc>
+		<Desc>[难题条件] 以[防御骰]取得拼点胜利5次
+[难题骰] [第2颗速度骰]变为难题骰;该[难题骰]上所有书页的骰子拼点失败时减少2点受到的伤害
+[常态加成]随1个[非耐性]抗性改为[耐性]</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="KaguyaPuzzle3"><!--火鼠的皮衣-->
-		<Desc>[难题][条件]持有时施加10层[烧伤]
-[完成]被施加[烧伤]时层数-1</Desc>
+		<Desc>[难题条件] 施加10层[烧伤]
+[难题骰] [第3颗速度骰]变为难题骰;该[难题骰]上所有书页的骰子拼点胜利时对目标施加2层[烧伤]
+[常态加成]被施加[烧伤]时层数-1</Desc>
 	</BattleCardAbility>
 	
 	<BattleCardAbility ID="KaguyaPuzzle4"><!--燕的子安贝-->
-		<Desc>[难题][条件]持有时恢复20点体力
-[完成]每一幕结束时恢复10点体力与混乱抗性</Desc>
+		<Desc>[难题条件] 恢复20点体力
+[难题骰] [第4颗速度骰]变为难题骰;该[难题骰]上所有书页的骰子拼点胜利时为体力最低的友方恢复3点体力与混乱抗性
+[常态加成]每一幕结束时恢复10点体力与混乱抗性</Desc>
 	</BattleCardAbility>
 	
 	<BattleCardAbility ID="KaguyaPuzzle5"><!--蓬莱玉枝-->
-		<Desc>[难题][条件]投掷35次骰子
-[完成]使用3+骰子书页时所有骰子提升2点威力</Desc>
+		<Desc>[难题条件]投掷35次骰子
+[难题骰] [第5颗速度骰]变为难题骰;该[难题骰]上所有书页的进攻骰若命中敌人则临时减少随机手上战斗书页1点费用
+[常态加成]使用3+骰子书页时所有骰子提升2点威力</Desc>
 	</BattleCardAbility>
 	
 	
 <!--八意永琳-->
 	<BattleCardAbility ID="YagokoroCard1"><!--药符[蝴蝶梦丸]-->
-		<Desc>[(疯狂)]-该书页变为疯狂的梦
-[月相](1)-如果目标为友方角色则本书页施加[入梦]更改为[美梦]
-[月相](5)-本书页施加[入梦]更改为[噩梦]
-本书页可指向友方且不受[满月]影响</Desc>
+		<Desc>本书页可指向友方且不受[满月]影响
+[狂想] 该书页变为疯狂的梦
+[月相(1)]-如果目标为友方角色则本书页改为施加[美梦]
+[月相(5)]-本书页改为施加[噩梦]
+</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard1_NoMoon">
+		<Desc>本书页可指向友方且不受[满月]影响
+[狂想] 该书页变为疯狂的梦
+</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard1_Moon1">
+		<Desc>本书页可指向友方且不受[满月]影响
+[狂想] 该书页变为疯狂的梦
+[月相(1)]-如果目标为友方角色则本书页改为施加[美梦]
+</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard1_Moon5">
+		<Desc>本书页可指向友方且不受[满月]影响
+[狂想] 该书页变为疯狂的梦
+[月相(5)]-本书页改为施加[噩梦]
+</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroDice1"><!--药符[蝴蝶梦丸]-->
 		<Desc>[命中时]下一幕对目标施加1层[入梦]</Desc>
@@ -126,7 +173,16 @@
 	
 	
 	<BattleCardAbility ID="YagokoroCard2"><!--疯狂的梦-->
-		<Desc>[月相](3)-本书页施加[狂梦]层数+1</Desc>
+		<Desc>[月相(2)]-本书页施加[狂梦]层数+1</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard2_NoMoon">
+		<Desc></Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard2_Moon2">
+		<Desc>[月相(2)]-本书页施加[狂梦]层数+1</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard2_FullMoon">
+		<Desc>[满月]-本书页施加[狂梦]层数+1</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroDice2"><!--疯狂的梦-->
 		<Desc>[命中时]下一幕对目标施加1层[狂梦]</Desc>
@@ -134,15 +190,56 @@
 	
 	
 	<BattleCardAbility ID="YagokoroCard3"><!--箭-->
-		<Desc>本书页根据[月相]触发不同效果</Desc>
+		<Desc>[月相(1)] 所有骰子威力-4并末尾置入2颗(4~8)[突刺]骰子
+[月相(2)] 所有骰子威力-2并末尾置入1颗(4~8)[突刺]骰子
+[月相(3)] 所有骰子威力+1
+[月相(4)] 摧毁第1颗骰子并使其余骰子威力+5
+[月相(5)] 本书页下一幕获得[蓄力]</Desc>
 <!--若[永远与须臾]指向本书页则本幕本书页立即获得[蓄力]-->
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard3_NoMoon">
+		<Desc></Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard3_Moon1">
+		<Desc>[月相(1)] 所有骰子威力-4并末尾置入2颗(4~8)[突刺]骰子</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard3_Moon2">
+		<Desc>[月相(2)] 所有骰子威力-2并末尾置入1颗(4~8)[突刺]骰子</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard3_Moon3">
+		<Desc>[月相(3)] 所有骰子威力+1</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard3_Moon4">
+		<Desc>[月相(4)] 摧毁本书页第1颗骰子并使其余骰子威力+5</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard3_Moon5">
+		<Desc>[月相(5)] 本书页下一幕获得1层[蓄力]</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard3_FullMoon">
+		<Desc>[满月] 所有骰子威力-1,摧毁第1颗骰子并末尾置入3颗(4~8)[突刺]骰子
+本书页下一幕获得[蓄力]</Desc>
 	</BattleCardAbility>
 	
 	
 	<BattleCardAbility ID="YagokoroCard4"><!--秘药[仙香玉兔]-->
-		<Desc>[月相](3)-本书页所有骰子威力+2
-[月相](4)-本书页第1颗骰子效果[触发]2次
-[月相](5)-本书页第2颗骰子效果[触发]2次</Desc>
+		<Desc>[月相(3)] 本书页所有骰子威力+2
+[月相(4)] 本书页第1颗骰子[命中时]效果[触发]2次
+[月相(5)] 本书页第2颗骰子[命中时]效果[触发]2次</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard4_NoMoon"><!--秘药[仙香玉兔]-->
+		<Desc></Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard4_Moon3"><!--秘药[仙香玉兔]-->
+		<Desc>[月相(3)] 本书页所有骰子威力+2</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard4_Moon4"><!--秘药[仙香玉兔]-->
+		<Desc>[月相(4)] 本书页第1颗骰子效果[触发]2次</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard4_Moon5"><!--秘药[仙香玉兔]-->
+		<Desc>[月相(5)]-本书页第2颗骰子效果[触发]2次</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard4_FullMoon"><!--秘药[仙香玉兔]-->
+		<Desc>[满月] 本书页所有骰子威力+2并且其[命中时]效果[触发]2次</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroDice3"><!--秘药[仙香玉兔]-->
 		<Desc>[命中时]为体力最低的友方恢复本骰子最终值50%的体力与混乱抗性</Desc>
@@ -153,28 +250,87 @@
 	
 	
 	<BattleCardAbility ID="YagokoroCard5"><!--炼丹[水银之海]-->
-		<Desc>[月相](1)-本书页开头置入1颗打击骰子(4~8)
-[月相](2)-本书页每次击中目标时下一幕施加1层[腐蚀]
-[月相](3)-本书页所有骰子威力+2</Desc>
+		<Desc>[月相(1)] 本书页开头置入1颗打击骰子(4~8)
+[月相(2)] 所有骰子[命中时]下一幕额外施加1层[腐蚀]
+[月相(3)] 所有骰子威力+2</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard5_NoMoon">
+		<Desc></Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard5_Moon1">
+		<Desc>[月相(1)] 本书页开头置入1颗打击骰子(4~8)</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard5_Moon2">
+		<Desc>[月相(2)] 所有骰子[命中时]下一幕额外施加1层[腐蚀]</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard5_Moon3">
+		<Desc>[月相(3)] 所有骰子威力+2</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard5_FullMoon">
+		<Desc>[满月] 本书页开头置入1颗打击骰子(4~8),所有骰子威力+2且[命中时]下一幕额外施加1层[腐蚀]</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroDice5">
-		<Desc>[命中时]对目标施加1层[腐蚀]</Desc>
+		<Desc>[命中时] 下一幕施加1层[腐蚀]</Desc>
 	</BattleCardAbility><!--炼丹[水银之海]-->
 	
 	
 	<BattleCardAbility ID="YagokoroCard6"><!--药符[壶中的大银河]-->
-		<Desc>本书页无法在前四幕中使用
-本书页将在使用后移出战斗 并在4幕后回到手中
-本书页击中目标时根据[月相]触发不同效果</Desc>
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+所有骰子命中时若触发了[月相(1)(2)(3)(4)(5)]则会使友方获得[正面状态],或者对目标施加[负面状态]</Desc>
 <!--注:这张书页若和[神宝“蓬莱的弹枝-七色的弹幕-”]在一幕中一起使用出来-->
 <!--则让[神宝“蓬莱的弹枝-七色的弹幕-”]改变成[永夜符[蓬莱壶中的弹枝]]-->
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard6_NoMoon">
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard6_Moon1">
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+[月相(1)] 所有骰子命中时使所有友方获得1层[强壮] (至多3次)</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard6_Moon2">
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+[月相(2)] 所有骰子命中时施加1层[破绽]</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard6_Moon3">
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+[月相(3)] 所有骰子命中时施加1层[束缚]</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard6_Moon4">
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+[月相(4)] 所有骰子命中时施加1层[虚弱]</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard6_Moon5">
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+[月相(5)] 所有骰子命中时使所有友方获得1层[振奋]</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard6_FullMoon">
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+[满月] 所有骰子命中时使所有友方获得1层[强壮](至多3次)与[振奋],对目标施加1层[破绽],[束缚],[虚弱]</Desc>
 	</BattleCardAbility>
 	
 	
 	<BattleCardAbility ID="YagokoroCard7"><!--天网蛛网捕蝶之法-->
-		<Desc>本书页无法在前四幕中使用
-本书页将在使用后移出战斗 并在4幕后回到手中
-本书页击中目标时根据[月相]触发不同效果</Desc>
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+本书页骰子命中时若触发了[月相(1)(3)(5)]则会禁用目标下一幕的部分进攻骰</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard7_NoMoon"><!--天网蛛网捕蝶之法-->
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard7_Moon1"><!--天网蛛网捕蝶之法-->
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+[月相(1)] 第1颗骰子命中时施加1层[突刺失效]</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard7_Moon3"><!--天网蛛网捕蝶之法-->
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+[月相(3)] 第2颗骰子命中时施加1层[斩击失效]</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard7_Moon5"><!--天网蛛网捕蝶之法-->
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+[月相(5)] 第3颗骰子命中时施加1层[打击失效]</Desc>
+	</BattleCardAbility>
+	<BattleCardAbility ID="YagokoroCard7_FullMoon"><!--天网蛛网捕蝶之法-->
+		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+[满月] 本书页会根据骰子次序依次在命中时施加[突刺失效],[斩击失效]和[打击失效]</Desc>
 	</BattleCardAbility>
 	
 	
@@ -215,16 +371,14 @@
 	</BattleCardAbility>
 
 	<BattleCardAbility ID="YagokoroCard13"><!--裁云断月-->
-		<Desc>[战斗开始]下一幕使自身的所有速度骰子临时转变为月相骰
-本书页使用后的下一幕无法再次使用本书页</Desc>
+		<Desc>[战斗开始] 下一幕使自身的所有速度骰临时转变为[月相骰]
+本书页2幕内至多使用1次</Desc>
 	</BattleCardAbility>
 
 
 <!--铃仙-->
 	<BattleCardAbility ID="InabaCard1"><!--波符[赤眼催眠]-->
-		<Desc>[(疯狂)]-本书页前2颗骰子若[拼点失败]则摧毁目标书页其余骰子</Desc>
-		<!--这里的意思是在[疯狂]骰子使用的时候-->
-		<!--然后效果是-后面的-->
+		<Desc>[狂想] 本书页前2颗骰子若[拼点失败]则摧毁目标书页其余骰子</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="InabaDice1"><!--波符[赤眼催眠]-->
 		<Desc>[拼点失败]使本书页最后一颗骰子威力+5</Desc>
@@ -233,48 +387,37 @@
 	
 	<BattleCardAbility ID="InabaCard2"><!--障壁波动-->
 		<Desc>[使用时]使所有我方角色获得1层[障壁]
-[(疯狂)]-[战斗开始]使所有敌方角色疯狂骰的攻击目标改为自身</Desc>
-		<!--这里的意思是在[疯狂]骰子使用的时候-->
-		<!--然后效果是-后面的-->
+[狂想] 使所有敌方角色疯狂骰的攻击目标改为自身</Desc>
 	</BattleCardAbility>
 	
 	
 	<BattleCardAbility ID="InabaCard3"><!--生药[国士无双之药]-->
 		<Desc>[使用时]获得1层[国士无双]
-[(疯狂)]-若[国士无双]至少为3层则将本书页效果改为
-“移除所有[国士无双]并对自身与所有敌方造成40点伤害”</Desc>
-		<!--这里的意思是在[疯狂]骰子使用的时候-->
-		<!--然后效果是-后面的-->
+[狂想] 若[国士无双]至少为3层则改为移除所有[国士无双]并对自身与所有敌人造成40点伤害</Desc>
 	</BattleCardAbility>
 	
 	
 	
 	<BattleCardAbility ID="InabaCard4"><!--幻胧月睨-->
-		<Desc>本书页无法在前四幕中使用
-本书页将在使用后移出战斗 并在4幕后回到手中
-[(疯狂)]-[使用时]本书页所有骰子威力+3</Desc>
-		<!--这里的意思是在[疯狂]骰子使用的时候-->
-		<!--然后效果是-后面的-->
+		<Desc>无法在前四幕中使用
+[佚亡],会在使用后的第4幕返回手牌
+[狂想] 本书页所有骰子威力+3</Desc>
 	</BattleCardAbility>
-	<BattleCardAbility ID="InabaDice2"><!--幻胧月睨-->
-		<Desc>本骰子造成的混乱伤害*2</Desc>
+	<BattleCardAbility ID="InabaDice2">> <!--幻胧月睨-->
+		<Desc>造成双倍混乱伤害</Desc>
 	</BattleCardAbility>
 	
 	
 	<BattleCardAbility ID="InabaCard5"><!--幻兔[平行交差]-->
-		<Desc>[(疯狂)]-因本书页效果每造成5点伤害则下一幕对目标施加1层[疯狂]</Desc>
-		<!--这里的意思是在[疯狂]骰子使用的时候-->
-		<!--然后效果是-后面的-->
+		<Desc>[狂想] 每通过本书页骰子效果造成5点伤害则下一幕对目标施加1层[疯狂]</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="InabaDice3"><!--幻兔[平行交差]-->
-		<Desc>[命中时]对目标追加自身本幕[已造成的伤害]点伤害(至多40)</Desc>
+		<Desc>[命中时] 追加[本幕造成伤害量]点伤害(至多40)</Desc>
 	</BattleCardAbility>
 	
 	
 	<BattleCardAbility ID="InabaCard6"><!--丧心疮痍-->
-		<Desc>[(疯狂)]-本书页击中目标时使其丢弃2张书页</Desc>
-		<!--这里的意思是在[疯狂]骰子使用的时候-->
-		<!--然后效果是-后面的-->
+		<Desc>[狂想] 本书页击中目标时使其丢弃2张书页</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="InabaDice4"><!--丧心疮痍-->
 		<Desc>[命中时]下一幕对目标施加1层[怠惰]</Desc>
@@ -284,35 +427,29 @@
 <!--E.G.O槽-->
 	<BattleCardAbility ID="InabaCard7"><!--多重疯狂-->
 		<Desc>[使用时]消耗150层[狂气]使自身下2幕进入[狂视]状态</Desc>
-		<!--本幕内施加就是施加3层[狂视]-->
-		<!--下一幕施加就是施加2层[狂视]-->
 	</BattleCardAbility>
 	
 	<BattleCardAbility ID="InabaCard8"><!--疯狂回声-->
 		<Desc>本书页仅可指向友方且不受[疯狂]影响
-[使用时]使指向的[骰子]下一幕更改为[疯狂]骰子
-[(疯狂)]-[使用时]下一幕对随机1名友方施加1层[疯狂]</Desc>
-		<!--这里的意思是在[疯狂]骰子使用的时候-->
-		<!--然后效果是-后面的-->
+[使用时] 下一幕对目标角色施加1层[疯狂]
+[狂想] 额外施加1层</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="InabaDice5"><!--疯狂回声-->
-		<Desc>[拼点胜利]双方恢复1点光芒</Desc>
+		<Desc>[拼点胜利] 恢复1点光芒 (至多2次)</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="InabaDice6"><!--疯狂回声-->
-		<Desc>[拼点胜利]双方抽取1张书页</Desc>
+		<Desc>[拼点胜利] 抽取1张书页 (至多2次)</Desc>
 	</BattleCardAbility>
 	
 	
 	<BattleCardAbility ID="InabaCard9"><!--调整波长-->
 		<Desc>本书页仅可指向友方且不受[疯狂]影响
-[使用时]双方恢复50%[已损失]的混乱抗性
-[(疯狂)]-[使用时]对所有敌方角色造成恢复量50%的混乱伤害(至多20)</Desc>
-		<!--这里的意思是在[疯狂]骰子使用的时候-->
-		<!--然后效果是-后面的-->
+[使用时] 双方恢复50%[已损失]的混乱抗性
+[狂想] 对所有敌人造成50%恢复量的混乱伤害(至多20)</Desc>
 	</BattleCardAbility>
 
 	<BattleCardAbility ID="ETpassfloor"><!--绀珠之药-->
-		<Desc>[装备时]立即击破本楼层并使所有我方角色承受记录下来的战损程度伤害</Desc>
+		<Desc>[装备时] 立即击破本楼层并使所有我方角色承受记录下来的战损程度伤害</Desc>
 	</BattleCardAbility>
 
 </BattleCardAbilityDescRoot>

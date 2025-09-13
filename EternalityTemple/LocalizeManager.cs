@@ -171,7 +171,8 @@ namespace EternalityTemple
                         {
                             if(dict.Keys.Contains(effectText.ID))
                                 dict[effectText.ID] = effectText;
-                            dict.Add(effectText.ID, effectText);
+                            else
+                                dict.Add(effectText.ID, effectText);
                         }
                             
                     }

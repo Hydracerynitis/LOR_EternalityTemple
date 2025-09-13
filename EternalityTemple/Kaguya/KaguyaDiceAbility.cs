@@ -17,6 +17,7 @@ namespace EternalityTemple.Kaguya
     //月之都市 书页
     public class DiceCardSelfAbility_EternityCard1 : DiceCardSelfAbilityBase
     {
+        public override string[] Keywords => new string[] { "YagokoroBuf_txt" };
         public override void OnUseCard()
         {
             owner.cardSlotDetail.RecoverPlayPointByCard(1);
@@ -38,6 +39,8 @@ namespace EternalityTemple.Kaguya
             BattleUnitBuf buf = owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf);
             if (buf != null)
                 card.ApplyDiceStatBonus(DiceMatch.AllDice,new DiceStatBonus() { power = -buf.stack });
+            else
+                card.ApplyDiceStatBonus(DiceMatch.AllDice, new DiceStatBonus() { power = -7 });
         }
     }
     //新难题[艾哲红石] 骰子
@@ -49,66 +52,51 @@ namespace EternalityTemple.Kaguya
             BattleUnitBuf buf = owner.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf);
             if (buf != null)
                 burnstack -= buf.stack / 2;
+            else
+                burnstack-=7/2;
             target.bufListDetail.AddKeywordBufByCard(KeywordBuf.Burn, burnstack,owner);
         }
     }
     //新难题[Mysterium] 书页
     public class DiceCardSelfAbility_EternityCard3 : DiceCardSelfAbilityBase
     {
+        public override string[] Keywords => new string[] { "EternityCard2_Keyword" };
+        private bool activate;
         public override void OnApplyCard()
         {
             base.OnApplyCard();
-            if (this.owner.cardOrder + 1 < BattleUnitBuf_InabaBuf2.GetStack(owner) || this.owner.cardOrder + 1 == BattleUnitBuf_InabaBuf3.GetStack(owner))
+            if (BattleUnitBuf_InabaBuf2.CheckFrenzy(owner,owner.cardOrder))
             {
                 DiceCardXmlInfo xmlData = this.card.card.XmlData;
-                DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769003), false);
+                DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(EternalityInitializer.GetLorId(226769003), false);
                 xmlData.workshopName = cardItem.Name;
                 xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+                xmlData.Rarity = cardItem.Rarity;
                 xmlData.Script = cardItem.Script;
+                activate = true;
             }
-        }
-        public override void OnUseCard()
-        {
-            card.GetDiceBehaviorList().ForEach(x => x.abilityList.Add(new Mysterium() { behavior = x }));
-        }
-        class Mysterium: DiceCardAbilityBase
-        {
-            public override void OnWinParrying()
-            {
-                KeywordBuf keyword = RandomUtil.SelectOne(KeywordBuf.Strength, KeywordBuf.Endurance, KeywordBuf.Protection);
-                owner.bufListDetail.AddKeywordBufThisRoundByCard(keyword, 1);
-            }
-            public override void OnSucceedAttack()
-            {
-                KeywordBuf keyword = RandomUtil.SelectOne(KeywordBuf.Weak, KeywordBuf.Disarm, KeywordBuf.Vulnerable, KeywordBuf.Binding);
-                behavior.card.target.bufListDetail.AddKeywordBufByCard(keyword, 1,owner);
-            }
-        }
-    }
-    //恐惧[崔斯特姆的诅咒] 书页
-    public class DiceCardSelfAbility_EternityCard3_1 : DiceCardSelfAbilityBase
-    {
-        public override void OnEnterCardPhase(BattleUnitModel unit, BattleDiceCardModel self)
-        {
-            base.OnEnterCardPhase(unit, self);
-            DiceCardXmlInfo xmlData = self.XmlData;
-            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769002), false);
-            xmlData.workshopName = cardItem.Name;
-            xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
-            xmlData.Script = cardItem.Script;
         }
         public override void OnReleaseCard()
         {
             base.OnReleaseCard();
             DiceCardXmlInfo xmlData = this.card.card.XmlData;
-            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(new LorId(EternalityInitializer.packageId, 226769002), false);
+            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(EternalityInitializer.GetLorId(226769002), false);
             xmlData.workshopName = cardItem.Name;
             xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
             xmlData.Script = cardItem.Script;
+            xmlData.Rarity = cardItem.Rarity;
+            activate = false;
+        }
+        public override void OnUseCard()
+        {
+            if(!activate)
+                card.GetDiceBehaviorList().ForEach(x => x.abilityList.Add(new Mysterium() { behavior = x }));
         }
         public override void OnSucceedAttack()
         {
-            if(!card.target.bufListDetail.HasBuf<secondAttack>() && card.target.bufListDetail.HasBuf<firstAttack>())
+            if (!activate)
+                return;
+            if (!card.target.bufListDetail.HasBuf<secondAttack>() && card.target.bufListDetail.HasBuf<firstAttack>())
                 card.target.bufListDetail.AddBuf(new secondAttack(owner));
             if (!card.target.bufListDetail.HasBuf<firstAttack>())
                 card.target.bufListDetail.AddBuf(new firstAttack());
@@ -133,6 +121,34 @@ namespace EternalityTemple.Kaguya
                 _kaguya = Kaguya;
             }
             private BattleUnitModel _kaguya;
+        }
+        class Mysterium: DiceCardAbilityBase
+        {
+            public override void OnWinParrying()
+            {
+                KeywordBuf keyword = RandomUtil.SelectOne(KeywordBuf.Strength, KeywordBuf.Endurance, KeywordBuf.Protection);
+                owner.bufListDetail.AddKeywordBufThisRoundByCard(keyword, 1);
+            }
+            public override void OnSucceedAttack()
+            {
+                KeywordBuf keyword = RandomUtil.SelectOne(KeywordBuf.Weak, KeywordBuf.Disarm, KeywordBuf.Vulnerable, KeywordBuf.Binding);
+                behavior.card.target.bufListDetail.AddKeywordBufByCard(keyword, 1,owner);
+            }
+        }
+    }
+    //恐惧[崔斯特姆的诅咒] 书页
+    public class DiceCardSelfAbility_EternityCard3_1 : DiceCardSelfAbilityBase 
+    {
+        //描述用,效果全在 DiceCardSelfAbility_EternityCard3 里
+        public override void OnEnterCardPhase(BattleUnitModel unit, BattleDiceCardModel self)
+        {
+            base.OnEnterCardPhase(unit, self);
+            DiceCardXmlInfo xmlData = self.XmlData;
+            DiceCardXmlInfo cardItem = ItemXmlDataList.instance.GetCardItem(EternalityInitializer.GetLorId(226769002), false);
+            xmlData.workshopName = cardItem.Name;
+            xmlData.DiceBehaviourList = cardItem.DiceBehaviourList;
+            xmlData.Script = cardItem.Script;
+            xmlData.Rarity = cardItem.Rarity;
         }
     }
     //恐惧[崔斯特姆的诅咒] 骰子

@@ -12,7 +12,8 @@ namespace EternalityTemple
     public class EternalityParam
     {
         //这个是司书敌人都会有的跨幕数据 （时辰，狂气，谜题）
-        public int InabaBufGainNum = 0;
+        public int InabaBufStack = 0;
+        public int InabaBufGain = 0;
         public int KaguyaStack = 1;
         public List<(UnitBattleDataModel,int)> PuzzleLog=new List<(UnitBattleDataModel, int)>();
         public List<PuzzleQuestData> QuestLog =new List<PuzzleQuestData> ();
@@ -36,7 +37,8 @@ namespace EternalityTemple
         public void Reset()
         {
             KaguyaStack = 1;
-            InabaBufGainNum = 0;
+            InabaBufStack = 0;
+            InabaBufGain = 0;
             PuzzleLog.Clear();
             QuestLog.Clear();
         }
@@ -65,7 +67,7 @@ namespace EternalityTemple
                 int stack = BattleUnitBuf_InabaBuf1.GetStack(unit);
                 if (stack != 0)
                 {
-                    InabaBufGainNum = stack;
+                    InabaBufStack = stack;
                     return;
                 }
             }

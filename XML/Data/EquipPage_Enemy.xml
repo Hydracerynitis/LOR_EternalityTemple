@@ -26,6 +26,7 @@
       <Passive>226769002</Passive>
       <Passive>226769003</Passive><!--通用-->
       <Passive>226769004</Passive>
+      <Passive>226769104</Passive>
 
     </EquipEffect>
     <RangeType>Hybrid</RangeType>

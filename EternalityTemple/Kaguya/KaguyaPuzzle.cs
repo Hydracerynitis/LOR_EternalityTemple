@@ -1,4 +1,5 @@
 ﻿using LOR_DiceSystem;
+using Sound;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace EternalityTemple.Kaguya
         }
         public override void OnUseInstance(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
         {
-            BattleUnitBuf buf = null;
+            KaguyaPuzzle buf = null;
             switch (getPuzzleId())
             {
                 case 1:
@@ -85,11 +86,15 @@ namespace EternalityTemple.Kaguya
         }
         private BattleUnitBuf_PuzzleBuf getPuzzleBuf(BattleUnitModel unit) => unit.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_PuzzleBuf) as BattleUnitBuf_PuzzleBuf;
 
-        protected void CompletePuzzle()
+        public void CompletePuzzle()
         {
             getPuzzleBuf(_owner)?.AddPuzzle(getPuzzleId());
             if (Kaguya!=null && _owner!=Kaguya)
                 getPuzzleBuf(Kaguya)?.AddPuzzle(getPuzzleId());
+            if (StageController.Instance.IsLogState())
+                _owner.battleCardResultLog?.SetCreatureEffectSound("Creature/ButterFlyMan_Atk_White");
+            else
+                SoundEffectManager.Instance.PlayClip("Creature/ButterFlyMan_Atk_White");
             Destroy();
         }
         public virtual int getPuzzleId() => -1;
@@ -147,7 +152,7 @@ namespace EternalityTemple.Kaguya
             if (buf is BattleUnitBuf_burn)
             {
                 this.stack += stack;
-                if (this.stack >= 15)//修改这里的数值来修改任务的需求
+                if (this.stack >= 10)
                     CompletePuzzle();
             }
         }

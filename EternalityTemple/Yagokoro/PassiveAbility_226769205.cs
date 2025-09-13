@@ -13,7 +13,7 @@ namespace EternalityTemple.Yagokoro
         public override void OnRoundEnd()
         {
             PassiveAbility_226769005 passive = owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_226769005) as PassiveAbility_226769005;
-            if (!passive.IsActivate || passive.TempActivate)
+            if (!passive.IsActivate)
                 return;
             MoonBuf moonBuf = owner.bufListDetail.GetActivatedBufList().Find(x => x is MoonBuf) as MoonBuf;
             if (moonBuf != null)
@@ -32,9 +32,12 @@ namespace EternalityTemple.Yagokoro
         public override void OnRollSpeedDice()
         {
             base.OnRollSpeedDice();
-            if(Singleton<StageController>.Instance.RoundTurn % 2 == 1 && Singleton<StageController>.Instance.RoundTurn < 7)
+            PassiveAbility_226769005 passive = owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_226769005) as PassiveAbility_226769005;
+            if (Singleton<StageController>.Instance.RoundTurn % 2 == 1 && !passive.IsActivate)
             {
-                owner.allyCardDetail.AddNewCard(new LorId(EternalityInitializer.packageId, 226769124)).SetPriorityAdder(9999);
+                BattleDiceCardModel card = owner.allyCardDetail.AddNewCard(new LorId(EternalityInitializer.packageId, 226769124));
+                card.temporary = true;
+                card.SetPriorityAdder(9999);
             }
         }
         public override BattleUnitModel ChangeAttackTarget(BattleDiceCardModel card, int idx)
@@ -46,6 +49,9 @@ namespace EternalityTemple.Yagokoro
             }
             if (card.GetID().id == 226769016 && idx == 0)
             {
+                DiceCardSelfAbility_YagokoroCard1 cardAbility = card._script as DiceCardSelfAbility_YagokoroCard1;
+                if (cardAbility == null || cardAbility.activate)
+                    return result;
                 List<BattleUnitModel> aliveList2 = BattleObjectManager.instance.GetAliveList(owner.faction);
                 aliveList2.Remove(owner);
                 if (aliveList2.Count > 0)

@@ -255,6 +255,7 @@
     <Compile Include="Inaba\Inaba Dice.cs" />
     <Compile Include="Inaba\PassiveAbility_226769010.cs" />
     <Compile Include="Inaba\Inaba Buf.cs" />
+    <Compile Include="Kaguya\PassiveAbility_226769104.cs" />
     <Compile Include="Kaguya\PassiveAbility_226769013.cs" />
     <Compile Include="Kaguya\KaguyaDiceAbility.cs" />
     <Compile Include="Kaguya\KaguyaPuzzle.cs" />

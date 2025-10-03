@@ -108,9 +108,8 @@
 
 	<PassiveDesc ID="226769013">
 		<Name>绀珠之药</Name>
-		<Desc>通过楼层时记录本楼层的战损程度
-进入已通过一次的楼层时于第一幕获得一张能直接击破本楼层并承受记录下来的战损程度伤害的“绀珠之药”
-随着击破楼层的数量增加 被动的启动速度亦增加</Desc>
+		<Desc>再次进入已通过的楼层时于获得一张能直接击破本楼层并继承上次通过时的战损程度的“绀珠之药”
+使用该书页时使所有友方单位情感等级提至5并将时辰推进至子时</Desc>
 	</PassiveDesc>
 
 <!--第二战敌方被动-->
@@ -149,5 +148,77 @@
 		<Name>红雾传说</Name>
 		<Desc>可使用殷红迷雾固有E.G.O"血雾弥漫"
 每一幕开始时若情感等级已达到4级则恢复所有混乱抗性并展现E.G.O(每一舞台至多触发1次)</Desc>
+	</PassiveDesc>
+
+
+	<!--重复被动-->
+	<PassiveDesc ID="25000701">
+		 <Name>刀枪不入+</Name>
+    <Desc>所受伤害与混乱伤害-1(包含负面状态伤害)</Desc>
+	</PassiveDesc>
+	<PassiveDesc ID="25000702">
+		 <Name>刀枪不入++</Name>
+    <Desc>所受伤害与混乱伤害-1(包含负面状态伤害)</Desc>
+	</PassiveDesc>
+	<PassiveDesc ID="21000601">
+		<Name>烧灼攻击+</Name>
+    	<Desc>击中目标时有50%的概率对其施加1层“烧伤”</Desc>
+	</PassiveDesc>
+	<PassiveDesc ID="21000602">
+		<Name>烧灼攻击++</Name>
+    	<Desc>击中目标时有50%的概率对其施加1层“烧伤”</Desc>
+	</PassiveDesc>
+	<PassiveDesc ID="21000603">
+		<Name>烧灼攻击+++</Name>
+    	<Desc>击中目标时有50%的概率对其施加1层“烧伤”</Desc>
+	</PassiveDesc>
+	<PassiveDesc ID="23002001">
+		<Name>皮开肉绽+</Name>
+		<Desc>以“进攻型”骰子取得拼点胜利时将在下一幕中对目标施加1层“流血”</Desc>
+  	</PassiveDesc>
+	<PassiveDesc ID="23002002">
+		<Name>皮开肉绽++</Name>
+		<Desc>以“进攻型”骰子取得拼点胜利时将在下一幕中对目标施加1层“流血”</Desc>
+  	</PassiveDesc>
+	<PassiveDesc ID="23002003">
+		<Name>皮开肉绽+++</Name>
+		<Desc>以“进攻型”骰子取得拼点胜利时将在下一幕中对目标施加1层“流血”</Desc>
+  	</PassiveDesc>
+	<PassiveDesc ID="26000401">
+		<Name>十二收尾人+</Name> 
+		<Desc>使自身的所有骰子最小值+2
+情感等级达到3级后获得额外效果“使自身的所有骰子最大值+1”</Desc>
+  	</PassiveDesc>
+	<PassiveDesc ID="25001501"> 
+		<Name>汹涌激流+</Name>
+		<Desc>每使用4张不同书页便抽取1张书页</Desc>
+  	</PassiveDesc>
+	<PassiveDesc ID="25001701">
+		<Name> 游刃有余+</Name> 
+		<Desc>每一幕开始时若情感等级已达到2级则随机使手中1张费用不为0的书页费用-1(减费效果仅持续1幕)</Desc>
+  	</PassiveDesc>
+	<PassiveDesc ID="25001702">
+		<Name> 游刃有余++</Name> 
+		<Desc>每一幕开始时若情感等级已达到2级则随机使手中1张费用不为0的书页费用-1(减费效果仅持续1幕)</Desc>
+  	</PassiveDesc>
+	<PassiveDesc ID="25001703">
+		<Name> 游刃有余+++</Name> 
+		<Desc>每一幕开始时若情感等级已达到2级则随机使手中1张费用不为0的书页费用-1(减费效果仅持续1幕)</Desc>
+  	</PassiveDesc>
+	 <PassiveDesc ID="23400101">
+		<Name>抽洗控牌+</Name>
+		<Desc>每一幕开始时若上一幕曾丢弃过书页则抽取1张书页</Desc>
+	</PassiveDesc>
+	<PassiveDesc ID="23400201">
+		<Name>底下叠牌+</Name>
+		<Desc>每一幕结束时若当幕曾丢弃过书页则恢复1点光芒</Desc>
+	</PassiveDesc>
+	<PassiveDesc ID="23400202">
+		<Name>底下叠牌++</Name>
+		<Desc>每一幕结束时若当幕曾丢弃过书页则恢复1点光芒</Desc>
+	</PassiveDesc>
+	<PassiveDesc ID="23400203">
+		<Name>底下叠牌+++</Name>
+		<Desc>每一幕结束时若当幕曾丢弃过书页则恢复1点光芒</Desc>
 	</PassiveDesc>
 </PassiveDescRoot>

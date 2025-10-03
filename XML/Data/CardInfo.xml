@@ -252,7 +252,7 @@
     <Artwork>蓬莱的弹枝.png</Artwork>
     <Rarity>Unique</Rarity>
 	<Option>Personal</Option>
-    <Spec Range="FarArea" Cost="7"/>
+    <Spec Range="FarArea" Cost="8"/>
     <Script>EternityCard8</Script>
     <BehaviourList>
      <Behaviour Min="20" Dice="27" Type="Atk" Detail="Hit" Motion="F" EffectRes="" Script="EternityDice5" ActionScript="Neet_AOE"  Desc =""/>

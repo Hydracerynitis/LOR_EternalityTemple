@@ -124,6 +124,91 @@
 </Passive>
 
 
+ <Passive ID="25000701">
+    <Rarity>Rare</Rarity>
+    <Cost>2</Cost>
+	<Script>250007</Script>
+  </Passive>
+  <Passive ID="25000702">
+    <Rarity>Rare</Rarity>
+    <Cost>2</Cost>
+	<Script>250007</Script>
+  </Passive>
+  <Passive ID="21000601">
+    <Rarity>Rare</Rarity>
+	<Script>210006</Script>
+    <Cost>1</Cost>
+  </Passive>
+  <Passive ID="21000602">
+    <Rarity>Rare</Rarity>
+	<Script>210006</Script>
+    <Cost>1</Cost>
+  </Passive>
+  <Passive ID="21000603">
+    <Rarity>Rare</Rarity>
+	<Script>210006</Script>
+    <Cost>1</Cost>
+  </Passive>
+  <Passive ID="23002001">
+    <Rarity>Uncommon</Rarity>
+	<Script>230020</Script>
+    <Cost>1</Cost>
+  </Passive>
+  <Passive ID="23002002">
+    <Rarity>Uncommon</Rarity>
+	<Script>230020</Script>
+    <Cost>1</Cost>
+  </Passive>
+  <Passive ID="23002003">
+    <Rarity>Uncommon</Rarity>
+	<Script>230020</Script>
+    <Cost>1</Cost>
+  </Passive>
+  <Passive ID="26000401">
+    <Rarity>Unique</Rarity>
+	<Script>260004</Script>
+    <Cost>6</Cost>
+  </Passive>
+  <Passive ID="25001501">
+    <Rarity>Unique</Rarity>
+	<Script>250015</Script>
+    <Cost>2</Cost>
+  </Passive>
+  <Passive ID="25001701">
+    <Rarity>Unique</Rarity>
+	<Script>250017</Script>
+    <Cost>3</Cost>
+  </Passive>
+  <Passive ID="25001702">
+    <Rarity>Unique</Rarity>
+	<Script>250017</Script>
+    <Cost>3</Cost>
+  </Passive>
+  <Passive ID="25001703">
+    <Rarity>Unique</Rarity>
+	<Script>250017</Script>
+    <Cost>3</Cost>
+  </Passive>
+  <Passive ID="23400101">
+    <Rarity>Uncommon</Rarity>
+	<Script>234001</Script>
+    <Cost>2</Cost>
+  </Passive>
+  <Passive ID="23400201">
+    <Rarity>Uncommon</Rarity>
+	<Script>234002</Script>
+    <Cost>2</Cost>
+  </Passive>
+  <Passive ID="23400202">
+    <Rarity>Uncommon</Rarity>
+	<Script>234002</Script>
+    <Cost>2</Cost>
+  </Passive>
+  <Passive ID="23400203">
+    <Rarity>Uncommon</Rarity>
+	<Script>234002</Script>
+    <Cost>2</Cost>
+  </Passive>
 
 
 <Passive ID="226769020">

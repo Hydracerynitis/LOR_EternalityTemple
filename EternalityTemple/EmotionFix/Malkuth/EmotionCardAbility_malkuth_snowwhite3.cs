@@ -58,6 +58,8 @@ namespace EternalityEmotion
         public override void OnStartBattle()
         {
             int num = 0;
+            if (!_owner.IsActionable() || _owner.breakDetail.breakLife == 0)
+                return;
             List<BattleUnitModel> victim = new List<BattleUnitModel>();
             foreach (BattleUnitModel enemy in BattleObjectManager.instance.GetAliveList_opponent(_owner.faction))
             {

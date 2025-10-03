@@ -4,7 +4,7 @@
 		<AbnormalityCard ID="ScorchedGirl_Atk_Enemy">
 			<Abnormality>焦化少女</Abnormality>
 			<CardName>余烬</CardName>
-			<AbilityDesc>该来宾被击中时如果伤害高于总血量的1%则对攻击方施加1~3层烧伤</AbilityDesc>
+			<AbilityDesc>该司书被击中时如果伤害高于总血量的1%则对攻击方施加1~3层烧伤</AbilityDesc>
 			<FlaborText>焦黑的身体象征着少女支离破碎的希望，永恒的火焰却寄托着对爱的强烈渴望。”</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">要将所有明亮之物，尽数烧毁……</Dialogue>
@@ -17,8 +17,8 @@
 		<AbnormalityCard ID="ScorchedGirl_Walk_Enemy">
 			<Abnormality>焦化少女</Abnormality>
 			<CardName>脚步</CardName>
-			<AbilityDesc>该来宾承受超过25%生命值的伤害时会给攻击者反馈等量的伤害
-每一幕开始时该来宾获得3层束缚</AbilityDesc>
+			<AbilityDesc>该司书承受超过25%生命值的伤害时会给攻击者反馈等量的伤害
+每一幕开始时该司书获得3层束缚</AbilityDesc>
 			<FlaborText>我来找你了，和我一起化成灰吧。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">如果我即将燃尽，那你也随我一起吧。</Dialogue>
@@ -31,7 +31,7 @@
 ·		<AbnormalityCard ID="ScorchedGirl_Ashes_Enemy">
 			<Abnormality>焦化少女</Abnormality>
 			<CardName>残光</CardName>
-			<AbilityDesc>该来宾每一幕开始时, 获得1层”火苗“.每层“火苗”使书页的第一颗骰子最大值+1并在命中时施加“火苗”层数烧伤.
+			<AbilityDesc>该司书每一幕开始时, 获得1层”火苗“.每层“火苗”使书页的第一颗骰子最大值+1并在命中时施加“火苗”层数烧伤.
 若"火苗"层数不小于4则损失5%最大生命值的血量</AbilityDesc>
 			<FlaborText>她从不轻易表露内心的情感，就像一枚不知何时才会引爆的定时炸弹。</FlaborText>
 			<Dialogues>
@@ -45,7 +45,7 @@
     	<AbnormalityCard ID="HappyTeddyBear_Hug_Enemy">
       		<Abnormality>快乐泰迪</Abnormality>
       		<CardName>思念的拥抱</CardName>
-      		<AbilityDesc>该来宾有40%的概率追加等同于“自身骰子点数”的混乱伤害。</AbilityDesc>
+      		<AbilityDesc>该司书有40%的概率追加等同于“自身骰子点数”的混乱伤害。</AbilityDesc>
       		<FlaborText>泰迪正紧紧抱着某人。泰迪非常喜欢拥抱。但，似乎有些不对劲。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">我们来抱抱吧？这样你会好受些的。</Dialogue>
@@ -58,8 +58,8 @@
     	<AbnormalityCard ID="HappyTeddyBear_Memory_Enemy">
       		<Abnormality>快乐泰迪</Abnormality>
       		<CardName>幸福的记忆</CardName>
-      		<AbilityDesc>该来宾拼点后会对目标司书施加1层“记忆”(最多5次)
-每层记忆会使带有该异想体的来宾与该司书拼点时骰子威力+1，每一幕结束时层数-1</AbilityDesc>
+      		<AbilityDesc>该司书拼点后会对目标施加1层“记忆”(最多5次)
+每层记忆会使带有该异想体的司书与目标拼点时骰子威力+1，每一幕结束时层数-1</AbilityDesc>
       		<FlaborText>可泰迪再也不想失去它的主人了。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">为什么要离开我？我们明明那么亲密……</Dialogue>
@@ -72,7 +72,7 @@
     	<AbnormalityCard ID="HappyTeddyBear_Lonely_Enemy">
       		<Abnormality>快乐泰迪</Abnormality>
       		<CardName>表达爱意</CardName>
-      		<AbilityDesc>该来宾拼点时自身的所有骰子威力+1~2
+      		<AbilityDesc>该司书拼点时自身的所有骰子威力+1~2
 单方面攻击时自身的所有骰子威力-1~2</AbilityDesc>
       		<FlaborText>它的记忆始于温暖的怀抱。</FlaborText>
       		<Dialogues>
@@ -86,8 +86,8 @@
     	<AbnormalityCard ID="FairyCarnival_Care_Enemy">
       		<Abnormality>精灵盛宴</Abnormality>
       		<CardName>精灵的呵护</CardName>
-          	<AbilityDesc>3幕之内，每一幕结束时为该来宾恢复15%最大血量的血量
-若该来宾在此期间承受超过25%最大血量的伤害，则失去30%最大血量并移除该效果</AbilityDesc>
+          	<AbilityDesc>3幕之内，每一幕结束时为该司书恢复15%最大血量的血量
+若该司书在此期间承受超过25%最大血量的伤害，则失去30%最大血量并移除该效果</AbilityDesc>
       		<FlaborText>精灵会保护职员们。在她们的悉心照料下，一切都会变得安宁祥和。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">不用担心！我们会好好照顾你哒。</Dialogue>
@@ -100,7 +100,7 @@
     	<AbnormalityCard ID="FairyCarnival_Gluttony_Enemy">
       		<Abnormality>精灵盛宴</Abnormality>
       		<CardName>贪食</CardName>
-        	<AbilityDesc>若该来宾的目标在这一幕中已承受伤害，则每次命中都将为自身使伤害+1~3并恢复2%最大血量点(至少2点)体力</AbilityDesc>
+        	<AbilityDesc>若该司书的目标在这一幕中已承受伤害，则每次命中都将为自身使伤害+1~3并恢复2%最大血量点(至少2点)体力</AbilityDesc>
       		<FlaborText>说到底，这些精灵不过是一群爱吃肉的怪物罢了，所谓的“呵护”也仅仅是为了保持食物的新鲜。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">我们为什么要守在你身边？当然是为了保护你呀！</Dialogue>
@@ -113,7 +113,7 @@
     	<AbnormalityCard ID="FairyCarnival_QueenAtk_Enemy">
       		<Abnormality>精灵盛宴</Abnormality>
       		<CardName>猎食</CardName>
-      		<AbilityDesc>该来宾造成伤害的50%会转换为体力，每一幕以此方式最多恢复20%最大生命值的体力.
+      		<AbilityDesc>该司书造成伤害的50%会转换为体力，每一幕以此方式最多恢复20%最大生命值的体力.
 如果在上一幕内没有恢复5%最大生命值的体力则损失5%最大生命值并在这一幕提高30%的伤害</AbilityDesc>
       		<FlaborText>他的内脏和眼球遭到不明生物啃食，受损严重。此外，我们察觉到精灵们的嘴角沾有某人的血肉。</FlaborText>
       		<Dialogues>
@@ -127,7 +127,7 @@
 		<AbnormalityCard ID="QueenBee_Funga_Enemy">
       		<Abnormality>蜂后</Abnormality>
       		<CardName>孢子</CardName>
-      		<AbilityDesc>该来宾被击中时对攻击方施加1~3层烧伤并在下一幕中对其施加1~3层“流血”。</AbilityDesc>
+      		<AbilityDesc>该司书被击中时对攻击方施加1~3层烧伤并在下一幕中对其施加1~3层“流血”。</AbilityDesc>
       		<FlaborText>研究表明，孢子内含有能在宿主体内孵化的蜂卵。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">工蜂死后，只要培育新的工蜂填补空缺即可……</Dialogue>
@@ -139,8 +139,8 @@
     	<AbnormalityCard ID="QueenBee_Bee_Enemy">
       		<Abnormality>蜂后</Abnormality>
       		<CardName>工蜂</CardName>
-      		<AbilityDesc>每一幕中通过直接攻击对该来宾造成最多伤害的司书将被标记为“威胁”。
-未应用该异想体书页的来宾会转为攻击“威胁”，击中“威胁”时将提高2~4点伤害。</AbilityDesc>
+      		<AbilityDesc>每一幕中通过直接攻击对该司书造成最多伤害的敌人将被标记为“威胁”。
+未应用该异想体书页的司书会转为攻击“威胁”，击中“威胁”时将提高2~4点伤害。</AbilityDesc>
       		<FlaborText>工蜂只表现出两种行为模式: 为蜂后提供营养素，扩大蜂群数量。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">我的工蜂们，是时候行动了。</Dialogue>
@@ -152,7 +152,7 @@
     	<AbnormalityCard ID="QueenBee_Loyalty_Enemy">
       		<Abnormality>蜂后</Abnormality>
       		<CardName>忠诚</CardName>
-      		<AbilityDesc>上一幕该来宾每承受等同于10%最大生命值的伤害，便在这一幕中使所有司书获得1层“强壮”</AbilityDesc>
+      		<AbilityDesc>上一幕该司书每承受等同于10%最大生命值的伤害，便在这一幕中使所有司书获得1层“强壮”</AbilityDesc>
       		<FlaborText>蜜蜂的忠诚是一种自然本能，一旦找到激发这种本能的方法，那么许多事情都将改变。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">快为我献上更多蜜来。</Dialogue>
@@ -164,8 +164,8 @@
 		<AbnormalityCard ID="SnowWhite_Vine_Enemy">
 			<Abnormality>白雪公主的苹果</Abnormality>
 			<CardName>绞杀藤</CardName>
-      			<AbilityDesc>每一幕开始时随机对1名司书施加6层“束缚”。
-该来宾将会优先攻击”绞杀藤“影响的司书且此时该来宾的进攻骰子威力+1</AbilityDesc>
+      			<AbilityDesc>每一幕开始时随机对1名敌人施加6层“束缚”。
+该司书将会优先攻击”绞杀藤“影响的敌人且此时该司书的进攻骰子威力+1</AbilityDesc>
 			<FlaborText>了无生机的藤蔓从苹果中蔓生而出，纵使全数干枯，它们也从未停止生长。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">在那无比漫长的时光中，唯有腐烂的尸体陪伴在身旁……</Dialogue>
@@ -177,8 +177,8 @@
 		<AbnormalityCard ID="SnowWhite_Thorn_Enemy">
 			<Abnormality>白雪公主的苹果</Abnormality>
 			<CardName>毒刺屏障</CardName>
-			<AbilityDesc>该来宾被击中时如果伤害高于总血量的2%则对攻击方施加2~8点伤害并恢复等量的体力。
-一幕内每次该效果触发时对同一攻击者额外造成20%伤害（可叠加）</AbilityDesc>
+			<AbilityDesc>该司书被击中时如果伤害高于总血量的2%则对攻击方施加2~8点伤害并恢复等量的体力。
+一幕内每次该效果触发时对同一攻击者额外造成20%伤害(可叠加)</AbilityDesc>
 			<FlaborText>被白雪公主咬过一口便遗弃在烂泥中的苹果，永远得不到幸福。那颗苹果在孤独与憎恶之中，日复一日地等待着腐烂……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">美丽的苹果，被遗弃在寂静的森林之中。噢，美丽的苹果……</Dialogue>
@@ -190,8 +190,8 @@
 		<AbnormalityCard ID="SnowWhite_malice_Enemy">
 			<Abnormality>白雪公主的苹果</Abnormality>
 			<CardName>恶意</CardName>
-			<AbilityDesc>每一幕结束时会对该来宾造成最多伤害的司书施加1层恶意(如果这一幕没有造成伤害则随机选择)
-每一幕开始时司书每有1层恶意则获得1层束缚.
+			<AbilityDesc>每一幕结束时会对该司书造成最多伤害的敌人施加1层恶意(如果这一幕没有造成伤害则随机选择)
+每一幕开始时敌人每有1层恶意则获得1层束缚.
 战斗开始时会所有具有缠绕的敌人释放效果为“[交锋]穿刺3~6 全场敌人每有1层束缚该骰子上限+1”的范围杀伤书页</AbilityDesc>
 			<FlaborText>伴随那与生俱来的恶意，花朵绽放之时，所有生命都将消亡。</FlaborText>
 			<Dialogues>

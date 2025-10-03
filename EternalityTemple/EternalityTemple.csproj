@@ -266,12 +266,13 @@
     <Compile Include="Kaguya\PassiveAbility_226769000.cs" />
     <Compile Include="LocalizeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Universal\AbnormalityAttribution.cs" />
+    <Compile Include="Universal\BattleUnitBuf_addAfter.cs" />
     <Compile Include="Universal\PassiveAbility_226769025.cs" />
     <Compile Include="Universal\PassiveAbility_226769024.cs" />
     <Compile Include="Universal\PassiveAbility_226769022.cs" />
     <Compile Include="Universal\PassiveAbility_226769021.cs" />
     <Compile Include="Universal\PassiveAbility_226769020.cs" />
-    <Compile Include="Universal\PassiveAbility_226769019.cs" />
     <Compile Include="Universal\EnemyTeamStageManager_Eternality.cs" />
     <Compile Include="Universal\PassiveAbility_226769004.cs" />
     <Compile Include="Universal\PassiveAbility_226769003.cs" />
@@ -289,6 +290,7 @@
   </ItemGroup>
   <ItemGroup>
     <Publicize Include="Assembly-CSharp" />
+    <Publicize Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

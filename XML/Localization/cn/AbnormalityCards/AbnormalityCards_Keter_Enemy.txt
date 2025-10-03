@@ -4,7 +4,7 @@
 		<AbnormalityCard ID="Bloodbath_Blood_Enemy">
 			<Abnormality>血浴缸</Abnormality>
 			<CardName>鲜血</CardName>
-			<AbilityDesc>该来宾的“防御型”骰子威力+1~2，被击中时所受混乱伤害+3~5
+			<AbilityDesc>该司书的“防御型”骰子威力+1~2，被击中时所受混乱伤害+3~5
 每一幕结束时保留反击池里所有防御骰</AbilityDesc>
 			<FlaborText>望向浴缸内部，你会莫名感到无法承受的忧郁。</FlaborText>
 			<Dialogues>
@@ -18,7 +18,7 @@
 		<AbnormalityCard ID="Bloodbath_Scar_Enemy">
 			<Abnormality>血浴缸</Abnormality>
 			<CardName>疤痕</CardName>
-			<AbilityDesc>根据上一幕所受伤害该来宾被造成最多伤害类型的骰子受到击中时所受伤害-2~5</AbilityDesc>
+			<AbilityDesc>根据上一幕所受伤害该司书被造成最多伤害类型的骰子受到击中时所受伤害-2~5</AbilityDesc>
 			<FlaborText>当我注视着她那伤痕累累的手腕时，我想起了我们的酒窖。那一夜，我把最后一瓶喝得精光。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">要想割开手腕，必须拥有强大的勇气与意志。</Dialogue>
@@ -31,7 +31,7 @@
 		<AbnormalityCard ID="Bloodbath_Hands_Enemy">
 			<Abnormality>血浴缸</Abnormality>
 			<CardName>瘆白之手</CardName>
-			<AbilityDesc>若该来宾连续3次击中同一目标，则追加3~12点混乱伤害。
+			<AbilityDesc>若该司书连续3次击中同一目标，则追加3~12点混乱伤害。
 (攻击其他角色时重置此计数)</AbilityDesc>
 			<FlaborText>我触碰到了冰冷而僵硬的手。
 ——我曾深爱之人的手。</FlaborText>
@@ -59,7 +59,7 @@
 		<AbnormalityCard ID="HeartofAspiration_Doki_Enemy">
 			<Abnormality>渴望之心</Abnormality>
 			<CardName>渴望</CardName>
-			<AbilityDesc>该来宾的速度+1~2，体力上限+15%并恢复等量体力。</AbilityDesc>
+			<AbilityDesc>该司书的速度+1~2，体力上限+15%并恢复等量体力。</AbilityDesc>
 			<FlaborText>携带者的心率瞬间提升至2倍以上，并获得惊人的肌肉活力与力量。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">渴望着，期盼着，直到心脏应答的那一刻。</Dialogue>
@@ -72,8 +72,8 @@
 		<AbnormalityCard ID="HeartofAspiration_Atk_Enemy">
 			<Abnormality>渴望之心</Abnormality>
 			<CardName>剧烈搏动</CardName>
-			<AbilityDesc>该来宾将在下一幕获得4层“强壮”，“忍耐”，“迅捷”与“守护”
-下一幕结束时，该来宾将在下一幕获得"疲倦"(这一幕内无法行动并且受到伤害和混乱伤害提高2点)</AbilityDesc>
+			<AbilityDesc>该司书将在下一幕获得4层“强壮”，“忍耐”，“迅捷”与“守护”
+下一幕结束时，该司书将在下一幕获得"疲倦"(这一幕内无法行动并且受到伤害和混乱伤害提高2点)</AbilityDesc>
 			<FlaborText>一颗无主之心，即使与身体分离也从未停止跳动。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">没错，你能感受到心跳正在疯狂加速。</Dialogue>
@@ -86,7 +86,7 @@
 		<AbnormalityCard ID="Pinocchio_Learn_Enemy">
 			<Abnormality>匹诺曹</Abnormality>
 			<CardName>学习</CardName>
-			<AbilityDesc>每一幕开始的抽牌时将随机一张司书方上一幕所使用的牌该来宾置入手牌(个人牌除外)</AbilityDesc>
+			<AbilityDesc>每一幕开始的抽牌时将随机一张司书方上一幕所使用的牌该司书置入手牌(个人牌除外)</AbilityDesc>
 			<FlaborText>这家伙只会跟在别人身后“学习”，而这就是问题所在。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">我今天也在努力学习，要向你展示一下吗？</Dialogue>
@@ -124,8 +124,8 @@
 		<AbnormalityCard ID="TheSnowQueen_Sord_Enemy">
 			<Abnormality>冰雪女皇</Abnormality>
 			<CardName>凌剑</CardName>
-			<AbilityDesc>该来宾拼点胜利时有50%的概率在下一幕中对目标施加1~3层“束缚”。
-该来宾击中处于“束缚”状态下的目标时将追加2~5点混乱伤害。</AbilityDesc>
+			<AbilityDesc>该司书拼点胜利时有50%的概率在下一幕中对目标施加1~3层“束缚”。
+该司书击中处于“束缚”状态下的目标时将追加2~5点混乱伤害。</AbilityDesc>
 			<FlaborText>寒冷的冬林中，唯有一位女皇。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">锐利的剑锋冰冷无比。</Dialogue>
@@ -138,7 +138,7 @@
 		<AbnormalityCard ID="TheSnowQueen_Chu_Enemy">
 			<Abnormality>冰雪女皇</Abnormality>
 			<CardName>亲吻</CardName>
-			<AbilityDesc>若该来宾以1张战斗书页至少取得2次拼点胜利，则对目标施加1层“霜凌”。
+			<AbilityDesc>若该司书以1张战斗书页至少取得2次拼点胜利，则对目标施加1层“霜凌”。
 每一幕结束时“霜凌”层数大于2的司书将在下一幕中陷入“眩晕”并重置该层数。</AbilityDesc>
 			<FlaborText>冰雪女皇的吻冰封了他的内心，使他不再寒冷。</FlaborText>
 			<Dialogues>
@@ -152,7 +152,7 @@
 		<AbnormalityCard ID="TheSnowQueen_Snow_Enemy">
 			<Abnormality>冰雪女皇</Abnormality>
 			<CardName>雪暴</CardName>
-			<AbilityDesc>这一幕中使除该来宾外的其余角色陷入“眩晕”。</AbilityDesc>
+			<AbilityDesc>这一幕中使除该司书外的其余角色陷入“眩晕”。</AbilityDesc>
 			<FlaborText>玫瑰盛开，雪宫崩塌。欢笑的人们不曾记得，在那有位沉睡的美人。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">我沉睡于此，无人知晓。</Dialogue>
@@ -165,8 +165,8 @@
         <AbnormalityCard ID="QuietKid_Hammer_Enemy">
 			<Abnormality>噤默处子</Abnormality>
       		<CardName>钉与锤</CardName>
-      		<AbilityDesc>该来宾击中目标时将对其施加1层“钉”。
-拥有“钉”的角色被未获得“钉与锤”的来宾击中时将承受“‘钉’层数x5”的伤害并重置该层数。</AbilityDesc>
+      		<AbilityDesc>该司书击中目标时将对其施加1层“钉”。
+拥有“钉”的角色被未获得“钉与锤”的司书击中时将承受“‘钉’层数x5”的伤害并重置该层数。</AbilityDesc>
       		<FlaborText>当她用锤敲入钉时，心中的裂痕将持续增大，最终支离破碎。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">在你心中，有能敲入钉子的缝隙吗？</Dialogue>
@@ -178,7 +178,7 @@
     	<AbnormalityCard ID="QuietKid_Eyeshine_Enemy">
       		<Abnormality>噤默处子</Abnormality>
       		<CardName>目光</CardName>
-      		<AbilityDesc>该来宾击中目标时伤害x2
+      		<AbilityDesc>该司书击中目标时伤害x2
 该司书被击中时所受伤害x2</AbilityDesc>
       		<FlaborText>少女一言不发，只是用那深邃的双眼洞察人们的心。</FlaborText>
       		<Dialogues>
@@ -191,8 +191,8 @@
     	<AbnormalityCard ID="QuietKid_Guilty_Enemy">
       		<Abnormality>噤默处子</Abnormality>
       		<CardName>负罪感</CardName>
-      		<AbilityDesc>该来宾被击中时所受混乱伤害-1~3
-被来宾击中时承受伤害减少该司书这一幕累计攻击伤害的1/5</AbilityDesc>
+      		<AbilityDesc>该司书被击中时所受混乱伤害-1~3
+被司书击中时承受伤害减少该司书这一幕累计攻击伤害的1/5</AbilityDesc>
       		<FlaborText>然而，若是遇见心中怀有“负罪感”或“恐惧”的人，她便会取出藏在身后的钉与锤。</FlaborText>
       		<Dialogues>
         		<Dialogue ID="1">带着如此痛苦的记忆活到现在……可怜的朋友。</Dialogue>

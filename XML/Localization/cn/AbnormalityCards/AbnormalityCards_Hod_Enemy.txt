@@ -4,7 +4,7 @@
 		<AbnormalityCard ID="ShyLookToday_Face_Enemy">
 			<Abnormality>今天也很害羞</Abnormality>
 			<CardName>今日的表情</CardName>
-			<AbilityDesc>该来宾的骰子威力取决于当前表情。(最小-2，最大+2)</AbilityDesc>
+			<AbilityDesc>该司书的骰子威力取决于当前表情。(最小-2，最大+2)</AbilityDesc>
 			<FlaborText>某一天，又是一个阳光明媚的好日子，我就像很久以前小心翼翼地晾干衣服那样，晾起了自己的脸皮。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">因为害羞，我很怕羞……</Dialogue>
@@ -17,7 +17,7 @@
 		<AbnormalityCard ID="ShyLookToday_Shy_Enemy">
 			<Abnormality>今天也很害羞</Abnormality>
 			<CardName>害羞</CardName>
-			<AbilityDesc>该来宾的招架骰子威力+1~2
+			<AbilityDesc>该司书的招架骰子威力+1~2
 反震伤害+2~7</AbilityDesc>
 			<FlaborText>不要窥探她隐藏在脸皮后的真实容貌，这不会有什么好结果的。巨大的脸皮之后是她仅有的私人空间，确保她的隐私不受侵犯是都市留给她的最后一项特权。</FlaborText>
 			<Dialogues>
@@ -30,7 +30,7 @@
 		<AbnormalityCard ID="ShyLookToday_Normalface_Enemy">
 			<Abnormality>今天也很害羞</Abnormality>
 			<CardName>社交距离</CardName>
-			<AbilityDesc>该来宾使用的书页中每有1颗“防御型”骰子，便使招架骰子威力+1</AbilityDesc>
+			<AbilityDesc>该司书使用的书页中每有1颗“防御型”骰子，便使招架骰子威力+1</AbilityDesc>
 			<FlaborText>也许是因为害羞才会执意藏起面容，当无法隐忍的情感涌上心头之际，最好遮住你的脸。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">请不要向后窥探，这是最起码的礼貌……</Dialogue>
@@ -42,7 +42,7 @@
 		<AbnormalityCard ID="RedShoes_Kirakira_Enemy">
 			<Abnormality>红舞鞋</Abnormality>
 			<CardName>闪亮</CardName>
-			<AbilityDesc>该来宾会获得”闪亮亮鞋子“(进攻威力+1~3并且速度提升1~2，受到的伤害和混乱伤害提升50%)
+			<AbilityDesc>该司书会获得”闪亮亮鞋子“(进攻威力+1~3并且速度提升1~2，受到的伤害和混乱伤害提升50%)
 被击杀时击杀者会获得”闪亮亮鞋子“，若无击杀者则击杀方随机1个角色会获得”闪亮亮鞋子“</AbilityDesc>
 			<FlaborText>这双鞋是无色的。不过很快就会染红了。</FlaborText>
 			<Dialogues>
@@ -56,7 +56,7 @@
 		<AbnormalityCard ID="RedShoes_Desire_Enemy">
 			<Abnormality>红舞鞋</Abnormality>
 			<CardName>血之渴望</CardName>
-			<AbilityDesc>该来宾施加的流血层数X2</AbilityDesc>
+			<AbilityDesc>该司书施加的流血层数X2</AbilityDesc>
 			<FlaborText>我要砍断你的狗腿，这辈子都别想跳舞。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">最受关注的人必须是我！</Dialogue>
@@ -69,8 +69,8 @@
 		<AbnormalityCard ID="RedShoes_Cut_Enemy">
 			<Abnormality>红舞鞋</Abnormality>
 			<CardName>利斧</CardName>
-			<AbilityDesc>该来宾的进攻骰子威力+1~2
-该来宾使用斩击骰子时若未能击中目标，则承受2~5点混乱伤害</AbilityDesc>
+			<AbilityDesc>该司书的进攻骰子威力+1~2
+该司书若未能击中目标，则承受2~5点混乱伤害</AbilityDesc>
 			<FlaborText>前辈突然换上舞鞋，颇为满意地露出微笑。她的笑容有些奇怪，不……那根本不是在笑……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">把斧刃磨快……一下就能砍断……</Dialogue>
@@ -81,7 +81,7 @@
 		<AbnormalityCard ID="SpiderBud_Cocoon_Enemy">
 			<Abnormality>蜘蛛巢</Abnormality>
 			<CardName>茧缚</CardName>
-			<AbilityDesc>若该来宾击中目标且掷出最大值，则下一幕中对目标施加3层“麻痹”，“束缚”与“易损”. (每一幕最多触发1次)</AbilityDesc>
+			<AbilityDesc>若该司书击中目标且掷出最大值，则下一幕中对目标施加3层“麻痹”，“束缚”与“易损”. (每一幕最多触发1次)</AbilityDesc>
 			<FlaborText>没有人自愿取回茧中的尸体。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">是哪个不长眼的踩死了我的宝宝？</Dialogue>
@@ -94,7 +94,7 @@
 		<AbnormalityCard ID="SpiderBud_BabyAtk_Enemy">
 			<Abnormality>蜘蛛巢</Abnormality>
 			<CardName>进食</CardName>
-			<AbilityDesc>该来宾击中处于混乱状态的目标时将为所有来宾恢复3~7点体力。</AbilityDesc>
+			<AbilityDesc>该司书击中处于混乱状态的目标时将为所有司书恢复3~7点体力。</AbilityDesc>
 			<FlaborText>成为茧后，员工彼得被倒吊在收容单元的天花板上，为蜘蛛可爱的子女们献上丰盛的一餐。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">感到欢喜吧，你会让我的宝宝们更加幸福。</Dialogue>
@@ -107,8 +107,8 @@
 		<AbnormalityCard ID="SpiderBud_Dinner_Enemy">
 			<Abnormality>蜘蛛巢</Abnormality>
 			<CardName>警戒</CardName>
-			<AbilityDesc>该来宾拼点时目标的骰子威力-1
-该来宾拼点胜利时有50%的概率在下一幕中对目标施加1层“束缚”与“易损”。</AbilityDesc>
+			<AbilityDesc>该司书拼点时目标的骰子威力-1
+该司书拼点胜利时有50%的概率在下一幕中对目标施加1层“束缚”与“易损”。</AbilityDesc>
 			<FlaborText>为了饥肠辘辘的孩子们，于黑暗中觅食的眼瞳发出阵阵红光。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">身处黑暗，也能看得一清二楚……</Dialogue>
@@ -120,9 +120,9 @@
 		<AbnormalityCard ID="Laetitia_Present_Enemy">
 			<Abnormality>蕾蒂希娅</Abnormality>
 			<CardName>惊喜礼物</CardName>
-			<AbilityDesc>第1名与该来宾拼点的司书将被赠予1份“小小礼物”。
-拥有礼物的司书与非赠礼者拼点时有50%的概率失去3~8点体力并在下一幕中获得2层“流血”。
-拥有礼物的司书死亡后，该来宾可向其余司书赠予礼物。</AbilityDesc>
+			<AbilityDesc>第1名与该司书拼点的敌人将被赠予1份“小小礼物”。
+拥有礼物的敌人与非赠礼者拼点时有50%的概率失去3~8点体力并在下一幕中获得2层“流血”。
+拥有礼物的敌人死亡后，该司书可向其余敌人赠予礼物。</AbilityDesc>
 			<FlaborText>如果遇见喜欢的人，她会把亲手制作的礼物送给他们。但礼物的内容是绝对保密的！</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">打开礼物后，你会吓一跳的哦！真的会跳起来哟？</Dialogue>
@@ -134,9 +134,9 @@
 		<AbnormalityCard ID="Laetitia_Friend_Enemy">
 			<Abnormality>蕾蒂希娅</Abnormality>
 			<CardName>小伙伴</CardName>
-			<AbilityDesc>每一幕随机为一个随机司书手中的1张书页赋予“伙伴标记”。
+			<AbilityDesc>每一幕随机为一个随机敌人手中的1张书页赋予“伙伴标记”。
 “伙伴书页”中的所有骰子威力+1。
-若“伙伴书页”在2幕内未被使用，则弃置该书页抽取一张书页并使该司书失去3~8点体力。</AbilityDesc>
+若“伙伴书页”在2幕内未被使用，则弃置该书页抽取一张书页并使该敌人失去3~8点体力。</AbilityDesc>
 			<FlaborText>小不点儿很伤心，她舍不得离开亲爱的朋友们。小眼珠子咕噜一转，她想出了一个绝妙的主意！</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">不能就这么丢下重要的朋友们……所以，我想出了一个绝妙的主意！</Dialogue>
@@ -148,8 +148,8 @@
 		<AbnormalityCard ID="Laetitia_HeartGift_Enemy">
 			<Abnormality>蕾蒂希娅</Abnormality>
 			<CardName>奇趣恶作剧</CardName>
-			<AbilityDesc>该来宾使用书页时第1颗骰子必定掷出最小值或最大值。
-若掷出最小值，则该来宾将失去2~7点体力。</AbilityDesc>
+			<AbilityDesc>该司书使用书页时第1颗骰子必定掷出最小值或最大值。
+若掷出最小值，则该司书将失去2~7点体力。</AbilityDesc>
 			<FlaborText>小不点儿决定留下来，直到为每个人带来欢声和笑语！</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">来和我玩吧！和我的朋友一起哈哈大笑吧！</Dialogue>
@@ -161,7 +161,7 @@
 		<AbnormalityCard ID="BlackSwan_Feather_Enemy">
 			<Abnormality>黑天鹅之梦</Abnormality>
 			<CardName>污秽</CardName>
-			<AbilityDesc>该来宾每一幕开始时获得3层随机负面buff(“束缚”,“易损”,“虚弱”,"破绽"或者“麻痹”)，命中时对所有敌人施加1层自身拥有的随机负面buff</AbilityDesc>
+			<AbilityDesc>该司书每一幕开始时获得3层随机负面buff(“束缚”,“易损”,“虚弱”,"破绽"或者“麻痹”)，命中时对所有敌人施加1层自身拥有的随机负面buff</AbilityDesc>
 			<FlaborText>艾丽莎痛苦地跪倒在地，也如旁人那般呕吐不止……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">徐徐水波划过湖面，仿佛有一群天鹅刚刚起飞……</Dialogue>
@@ -174,7 +174,7 @@
 		<AbnormalityCard ID="BlackSwan_Umbrella_Enemy">
 			<Abnormality>黑天鹅之梦</Abnormality>
 			<CardName>破伞</CardName>
-			<AbilityDesc>该来宾被单方面攻击时以2个6-10反击防御骰迎战
+			<AbilityDesc>该司书被单方面攻击时以2个6-10反击防御骰迎战
 (效果为拼点胜利对目标造成等同于目标骰子威力的伤害和混乱伤害)</AbilityDesc>
 			<FlaborText>心怀美梦的黑天鹅试图通过荨麻解除自身的诅咒，可如今的她只剩下那把珍爱的破伞。</FlaborText>
 			<Dialogues>
@@ -187,7 +187,7 @@
 		<AbnormalityCard ID="BlackSwan_Family_Enemy">
 			<Abnormality>黑天鹅之梦</Abnormality>
 			<CardName>亲爱的家人</CardName>
-			<AbilityDesc>该来宾将获得6层“荨麻衣”，每一幕开始时所有敌人获得“荨麻衣”层数的“守护”,“振奋”，每一幕结束时失去1层“荨麻衣”</AbilityDesc>
+			<AbilityDesc>该司书将获得6层“荨麻衣”，每一幕开始时所有司书获得“荨麻衣”层数的“守护”,“振奋”，每一幕结束时失去1层“荨麻衣”</AbilityDesc>
 			<FlaborText>艾丽莎动身寻找她的哥哥们。她期盼着用荨麻衣解除家人的诅咒，与他们一同分享幸福的梦。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">虽然没有值钱的东西能传给他们，可他们人人怀揣着名为“勤奋”与“真诚”的珍贵宝石。</Dialogue>

@@ -4,7 +4,7 @@
 		<AbnormalityCard ID="ScareCrow_Wisdom_Enemy">
 			<Abnormality>求知的草人</Abnormality>
 			<CardName>被扯出的智慧</CardName>
-			<AbilityDesc>该来宾每使用1张书页，便从手中随机丢弃1张书页以恢复2点光芒。(无法对装备书页生效)</AbilityDesc>
+			<AbilityDesc>该司书每使用1张书页，便从手中随机丢弃1张书页以恢复2点光芒</AbilityDesc>
 			<FlaborText>归来之时，他的前额多了一道长长的疤痕。当被人问及是否痊愈时，他只答道觉得脑袋变轻了。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">智慧……我所缺乏的东西……快把智慧给我……</Dialogue>
@@ -17,7 +17,7 @@
 		<AbnormalityCard ID="Scarecrow_Harvest_Enemy">
 			<Abnormality>求知的草人</Abnormality>
 			<CardName>收割</CardName>
-			<AbilityDesc>该来宾击中目标时恢复2~5点混乱抗性，如果目标混乱抗性高于自身则追加2~4点混乱伤害</AbilityDesc>
+			<AbilityDesc>该司书击中目标时恢复2~5点混乱抗性，如果目标混乱抗性高于自身则追加2~4点混乱伤害</AbilityDesc>
 			<FlaborText>它会对特定职员表现出攻击性，并试图夺走对方的大脑。这类职员在IQ测试中普遍成绩优异。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">我好像，真的变聪明了……现在我什么都知道了……</Dialogue>
@@ -28,7 +28,7 @@
 		<AbnormalityCard ID="Scarecrow_Rake_Enemy">
 			<Abnormality>求知的草人</Abnormality>
 			<CardName>钉耙</CardName>
-			<AbilityDesc>该来宾命中目标时将目标手牌随机一个骰子加入其书页中(每张书页只能触发1次)</AbilityDesc>
+			<AbilityDesc>该司书命中目标时将目标手牌随机一个骰子加入其书页中(每张书页只能触发1次)</AbilityDesc>
 			<FlaborText>本该耕耘田地的农具却被用于破开大脑，我们当中有多少聪明才子惨死在这杆钉耙之下？</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">把你的智慧，给我……</Dialogue>
@@ -39,7 +39,7 @@
 		<AbnormalityCard ID="LumberJack_Cut_Enemy">
 			<Abnormality>热心的樵夫</Abnormality>
 			<CardName>温暖的心</CardName>
-			<AbilityDesc>若该来宾攻击剩余光芒数高于2点的目标，则使自身的“进攻型”骰子威力+1~2</AbilityDesc>
+			<AbilityDesc>若该司书攻击剩余光芒数高于2点的目标，则使自身的“进攻型”骰子威力+1~2</AbilityDesc>
 			<FlaborText>一怒之下，它抡起斧头砍穿了巫师的心脏。那颗心正温暖而有力地跳动着。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">这就是……心跳的感觉……</Dialogue>
@@ -51,8 +51,8 @@
 		<AbnormalityCard ID="LumberJack_Heart_Enemy">
 			<Abnormality>热心的樵夫</Abnormality>
 			<CardName>心脏</CardName>
-			<AbilityDesc>若该来宾在1幕之内至少造成15点伤害，则随机使手中2张费用最高的书页费用-1
-该来宾使用费用低于2的书页时额外造成25%伤害</AbilityDesc>
+			<AbilityDesc>若该司书在1幕之内至少造成15点伤害，则随机使手中2张费用最高的书页费用-1
+该司书使用费用低于2的书页时额外造成25%伤害</AbilityDesc>
 			<FlaborText>再多的心脏也无法填补空缺，那台曾是樵夫的机器不再劈砍树木，而是采伐人类。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">需要……塞满……空腔……</Dialogue>
@@ -64,7 +64,7 @@
 		<AbnormalityCard ID="LumberJack_Tree_Enemy">
 			<Abnormality>热心的樵夫</Abnormality>
 			<CardName>伐木</CardName>
-			<AbilityDesc>该来宾命中时吸取目标1点光芒 (每一幕至多触发2次)</AbilityDesc>
+			<AbilityDesc>该司书命中时吸取目标1点光芒 (每一幕至多触发2次)</AbilityDesc>
 			<FlaborText>在那拥有无数心脏的森林之中，无论怎么砍伐，树木依然青翠如常。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">砍倒了更多的树……可这片森林……依旧葱郁……</Dialogue>
@@ -76,7 +76,7 @@
 		<AbnormalityCard ID="House_LionAtk_Enemy">
 			<Abnormality>归家的路途</Abnormality>
 			<CardName>勇气</CardName>
-			<AbilityDesc>每一幕开始时该来宾将获得“存活来宾数-2”层“强壮”与“守护”。
+			<AbilityDesc>每一幕开始时该司书将获得“存活司书数-2”层“强壮”与“守护”。
 (若数值为负则改为获得“虚弱”与“易损”)</AbilityDesc>
 			<FlaborText>今后能一直跟着你喵？这样我就有勇气撕碎他们……</FlaborText>
 			<Dialogues>
@@ -89,8 +89,8 @@
 		<AbnormalityCard ID="House_BigHouse_Enemy">
 			<Abnormality>归家的路途</Abnormality>
 			<CardName>家</CardName>
-			<AbilityDesc>每一幕开始时至多为3名司书赋予数字。
-该来宾会根据数字顺序攻击司书并使自身的“进攻型”骰子伤害+3
+			<AbilityDesc>每一幕开始时至多为3名敌人赋予数字。
+该司书会根据数字顺序攻击司书并使自身的“进攻型”骰子伤害+3
 			</AbilityDesc>
 			<FlaborText>就这样，我开始了无尽的冒险，永远回不了家了。</FlaborText>
 			<Dialogues>
@@ -103,7 +103,7 @@
 		<AbnormalityCard ID="House_Home_Enemy">
 			<Abnormality>归家的路途</Abnormality>
 			<CardName>同行之路</CardName>
-			<AbilityDesc>该来宾攻击其指定目标时(也就是未能通过转移其攻击目标保护目标司书)，该来宾当前书页的所有骰子威力+1~2
+			<AbilityDesc>该司书攻击其指定目标时(未被转移攻击目标时)，该司书当前书页的所有骰子威力+1~2
 			</AbilityDesc>
 			<FlaborText>一同出发吧。美丽的世界。梦的世界……</FlaborText>
 			<Dialogues>
@@ -116,7 +116,7 @@
 		<AbnormalityCard ID="Ozma_Boom_Enemy">
 			<Abnormality>奥兹玛</Abnormality>
 			<CardName>过去的力量</CardName>
-			<AbilityDesc>该来宾的所有书页费用+1且所有骰子威力+3~4</AbilityDesc>
+			<AbilityDesc>该司书的所有书页费用+1且所有骰子威力+3~4</AbilityDesc>
 			<FlaborText>奥兹玛举起削南瓜的小刀，不顾一切地冲向巫师的所在地。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">吾名奥兹玛……被何人夺走了一切……</Dialogue>
@@ -141,7 +141,7 @@
 		<AbnormalityCard ID="Ozma_Immortal_Enemy">
 			<Abnormality>奥兹玛</Abnormality>
 			<CardName>生命的粉末</CardName>
-			<AbilityDesc>该来宾承受致死伤害时将无视此次伤害并恢复50%体力和所有混乱抗性.(该来宾整场接待至多触发1次)</AbilityDesc>
+			<AbilityDesc>该司书承受致死伤害时将无视此次伤害并恢复50%体力和所有混乱抗性.(该司书整场接待至多触发1次)</AbilityDesc>
 			<FlaborText>最后撒上自己最爱的肉桂粉，将南瓜紧紧抱在怀中。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">如今，在吾身侧……空余这些稚子。</Dialogue>
@@ -153,7 +153,7 @@
 		<AbnormalityCard ID="Oz_Emerald_Enemy">
 			<Abnormality>说谎的大人</Abnormality>
 			<CardName>翡翠</CardName>
-			<AbilityDesc>选中情感卡后下一幕消耗3点光芒在战斗开始时使摧毁随机司书的两张战斗书页(优先摧毁并未拼点的书页)
+			<AbilityDesc>选中情感卡后下一幕消耗3点光芒在战斗开始时随机摧毁两张敌人的战斗书页(优先摧毁并未拼点的书页)
 之后每隔5幕该效果会再次触发一次。(该异想体效果仅会在有足够光芒时触发)</AbilityDesc>
 			<FlaborText>奥兹想到一个奇妙的主意，那翡翠般的双眼似乎愈发闪耀。</FlaborText>
 			<Dialogues>
@@ -166,7 +166,7 @@
 		<AbnormalityCard ID="Oz_Gift_Enemy">
 			<Abnormality>说谎的大人</Abnormality>
 			<CardName>虚假的礼物</CardName>
-			<AbilityDesc>该来宾会随机且不重复地获得“激发勇气的药水”，“装有锯末的布袋”，“用铅制成的心脏”，“永远回不去的家”与“催生变异的粉末”这5种效果中的1种。</AbilityDesc>
+			<AbilityDesc>该司书会随机且不重复地获得“激发勇气的药水”，“装有锯末的布袋”，“用铅制成的心脏”，“永远回不去的家”与“催生变异的粉末”这5种效果中的1种。</AbilityDesc>
 			<FlaborText>可怜的奥兹玛。也许她并不知道，说谎的大人不会无缘无故靠近她。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">到我这来，我会帮你忘掉所有烦恼和忧愁。</Dialogue>

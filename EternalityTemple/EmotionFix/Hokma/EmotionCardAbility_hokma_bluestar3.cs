@@ -13,8 +13,10 @@ namespace EternalityEmotion
         {
             base.OnSelectEmotion();
             round = 3;
-            _owner.bufListDetail.AddBuf(new SoundBuf());
-            _owner.bufListDetail.AddBuf(new Cooldown(round));
+            BattleObjectManager.instance.GetAliveList(_owner.faction).ForEach(
+                x => x.bufListDetail.AddBuf(new SoundBuf()));
+            BattleObjectManager.instance.GetAliveList(_owner.faction).ForEach(
+                x => x.bufListDetail.AddBuf(new Cooldown(round)));
 
         }
         public override void OnRoundStart()
@@ -40,8 +42,10 @@ namespace EternalityEmotion
         {
             base.OnWaveStart();
             if(round==3)
-                _owner.bufListDetail.AddBuf(new SoundBuf());
-            _owner.bufListDetail.AddBuf(new Cooldown(round));
+                BattleObjectManager.instance.GetAliveList(_owner.faction).ForEach(
+                    x => x.bufListDetail.AddBuf(new SoundBuf()));
+            BattleObjectManager.instance.GetAliveList(_owner.faction).ForEach(
+                x => x.bufListDetail.AddBuf(new Cooldown(round)));
         }
         public override void OnRoundEndTheLast()
         {

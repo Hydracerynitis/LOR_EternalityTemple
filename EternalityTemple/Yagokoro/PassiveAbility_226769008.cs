@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace EternalityTemple.Yagokoro
 {
@@ -15,10 +16,9 @@ namespace EternalityTemple.Yagokoro
             double ratio = 0.1;
             foreach (BattleUnitModel unit in BattleObjectManager.instance.GetList(owner.faction))
             {
-                unit.RecoverHP((int)(ratio * (unit.MaxHp - (int)unit.hp)));
+                unit.hp = Mathf.Min(unit.hp + (int)(ratio * (unit.MaxHp - (int)unit.hp)), unit.MaxHp);
                 unit.UpdateUnitData();
             }
-                
         }
     }
 }

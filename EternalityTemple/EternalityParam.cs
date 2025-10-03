@@ -1,5 +1,6 @@
 ﻿using EternalityTemple.Inaba;
 using EternalityTemple.Kaguya;
+using EternalityTemple.Yagokoro;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +16,12 @@ namespace EternalityTemple
         public int InabaBufStack = 0;
         public int InabaBufGain = 0;
         public int KaguyaStack = 1;
+        public Type currentMoon=null;
         public List<(UnitBattleDataModel,int)> PuzzleLog=new List<(UnitBattleDataModel, int)>();
         public List<PuzzleQuestData> QuestLog =new List<PuzzleQuestData> ();
         public Faction faction;
         //这个是战斗机制需要的跨幕数据，所以并不需要创建多个个体
         public static int PickedEmotionCard = 0;
-        public static bool EgoCoolDown = false;
         //这些是跨幕数据的个体，方便其他类访问
         public static EternalityParam Enemy =new EternalityParam() { faction=Faction.Enemy };
         public static EternalityParam Librarian = new EternalityParam() { faction= Faction.Player };
@@ -41,12 +42,14 @@ namespace EternalityTemple
             InabaBufGain = 0;
             PuzzleLog.Clear();
             QuestLog.Clear();
+            currentMoon = null;
         }
         public void EndBattleRecord()
         {
             RecordKaguyaStack();
             RecordInabaGain();
             RecordProgress();
+            RecordMoon();
         }
         private void RecordKaguyaStack()
         {
@@ -87,6 +90,16 @@ namespace EternalityTemple
                 }
             }
             QuestLog.RemoveAll(x => removal.Contains(x));
+        }
+        private void RecordMoon()
+        {
+            foreach (BattleUnitModel unit in BattleObjectManager.instance.GetAliveList(faction))
+            {
+                MoonBuf moonBuf=unit.bufListDetail.GetActivatedBufList().Find(x => x is MoonBuf) as MoonBuf;
+                if (moonBuf == null)
+                    continue;
+                currentMoon = moonBuf.GetType();
+            }
         }
     }
     public class PuzzleQuestData

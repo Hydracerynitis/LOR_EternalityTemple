@@ -4,7 +4,7 @@
 		<AbnormalityCard ID="UniverseZogak_Echo_Enemy">
 			<Abnormality>宇宙碎片</Abnormality>
 			<CardName>异界的回响</CardName>
-			<AbilityDesc>该来宾被单方面攻击时有50%几率对攻击者造成3-6混乱伤害</AbilityDesc>
+			<AbilityDesc>该司书被单方面攻击时有50%几率对攻击者造成3-6混乱伤害</AbilityDesc>
 			<FlaborText>眼前响起了悦耳的歌声，它正慢慢朝你靠近……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">歌声。制作。人类。歌声。双耳。聆听。</Dialogue>
@@ -17,7 +17,7 @@
 		<AbnormalityCard ID="UniverseZogak_Tentacle_Enemy">
 			<Abnormality>宇宙碎片</Abnormality>
 			<CardName>穿透</CardName>
-			<AbilityDesc>该来宾击中目标时将追加10%目标混乱上限的混乱伤害(同一单位每幕只能触发1次)</AbilityDesc>
+			<AbilityDesc>该司书击中目标时将追加10%目标混乱上限的混乱伤害(同一单位每幕只能触发1次)</AbilityDesc>
 			<FlaborText>被触须穿透的那一瞬间，今后的人生将再也无法激起你分毫的兴趣……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">否定。攻击。用以。帮助。给予。</Dialogue>
@@ -30,7 +30,7 @@
 		<AbnormalityCard ID="UniverseZogak_Sing_Enemy">
 			<Abnormality>宇宙碎片</Abnormality>
 			<CardName>无法理解</CardName>
-			<AbilityDesc>该来宾击中目标时有50%的概率在下一幕中对其施加1层“虚弱”与“破绽”。(每一幕至多触发3次)</AbilityDesc>
+			<AbilityDesc>该司书击中目标时有50%的概率在下一幕中对其施加1层“虚弱”与“破绽”。(每一幕至多触发3次)</AbilityDesc>
 			<FlaborText>总而言之，那家伙成功踏入了“宇宙碎片”的领域，但他的大脑显然无法承受。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">理解。与你。一同。人类。与我。</Dialogue>
@@ -41,8 +41,8 @@
 		<AbnormalityCard ID="ChildofGalaxy_Token_Enemy">
 			<Abnormality>银河之子</Abnormality>
 			<CardName>卵石</CardName>
-			<AbilityDesc>每一幕开始时该来宾的“卵石”会与随机攻击方式共鸣
-被共鸣的攻击方式攻击时该来宾恢复4-7点体力。被未共鸣的攻击骰攻击时该来宾额外失去1-3点体力</AbilityDesc>
+			<AbilityDesc>每一幕开始时该司书的“卵石”会与随机攻击方式共鸣
+被共鸣的攻击方式攻击时该司书恢复4-7点体力。被未共鸣的攻击骰攻击时该司书额外失去1-3点体力</AbilityDesc>
 			<FlaborText>它真有那么好吗？比起我呢？这是理所当然的？我什么都知道，无论你做过什么，无论你要去往何方。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">为什么要去其他朋友那儿……比起我，你更喜欢她吗？</Dialogue>
@@ -55,7 +55,7 @@
 		<AbnormalityCard ID="ChildofGalaxy_Tear_Enemy">
 			<Abnormality>银河之子</Abnormality>
 			<CardName>泪水</CardName>
-			<AbilityDesc>该来宾的所有骰子威力+1。
+			<AbilityDesc>该司书的所有骰子威力+1。
 该来宾陷入混乱时则所有角色失去40%混乱上限的混乱抗性</AbilityDesc>
 			<FlaborText>耳畔传来他的低语和呼吸……接着便是一片漆黑……就像我与他初见的那个夜晚……</FlaborText>
 			<Dialogues>
@@ -69,7 +69,7 @@
 		<AbnormalityCard ID="ChildofGalaxy_Friend_Enemy">
 			<Abnormality>银河之子</Abnormality>
 			<CardName>友谊之证</CardName>
-			<AbilityDesc>3幕之内，每一幕开始时为所有来宾恢复10%的体力.</AbilityDesc>
+			<AbilityDesc>3幕之内，每一幕开始时为所有司书恢复10%的体力.</AbilityDesc>
 			<FlaborText>你手中的卵石闪耀着，摇曳着，颤动着。在那之后，它便化作整个银河。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">请不要丢掉它，也不要把它交给别人……</Dialogue>
@@ -82,7 +82,7 @@
 		<AbnormalityCard ID="Porccubus_Thorn_Enemy">
 			<Abnormality>棘刺公交</Abnormality>
 			<CardName>棘刺</CardName>
-			<AbilityDesc>该来宾击中目标时将对其施加1层“快感”。
+			<AbilityDesc>该司书击中目标时将对其施加1层“快感”。
 若“快感”层数达到3，则对目标造成2~7点伤害与混乱伤害并重置该层数.</AbilityDesc>
 			<FlaborText>最初只需要把刺儿轻轻戳进皮肉，而如今需要用全身疯狂地摩擦才能获得等同的刺激。</FlaborText>
 			<Dialogues>
@@ -96,8 +96,8 @@
 		<AbnormalityCard ID="Porccubus_Boom_Enemy">
 			<Abnormality>棘刺公交</Abnormality>
 			<CardName>嗨爆</CardName>
-			<AbilityDesc>该来宾的所有骰子威力+1
-该来宾的混乱抗性上限-50%</AbilityDesc>
+			<AbilityDesc>该司书的所有骰子威力+1
+该司书的混乱抗性上限-50%</AbilityDesc>
 			<FlaborText>我的脑袋就要爆炸了，再见咯~</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">贪求常人无法承受的欢乐，迟早会崩溃的啦。</Dialogue>
@@ -110,7 +110,7 @@
 		<AbnormalityCard ID="Porccubus_Happy_Enemy">
 			<Abnormality>棘刺公交</Abnormality>
 			<CardName>笑粉</CardName>
-			<AbilityDesc>该来宾被击中时若尚未陷入混乱，则恢复2~4点混乱抗性</AbilityDesc>
+			<AbilityDesc>该司书被击中时若尚未陷入混乱，则恢复2~4点混乱抗性</AbilityDesc>
 			<FlaborText>如果棘刺上散落的粉末被世人所知，那么人类恐怕将永远陷入狂喜的泥淖中无法自拔。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">人家会在你的小脑瓜里注满幸福哦。</Dialogue>
@@ -123,7 +123,7 @@
 		<AbnormalityCard ID="Alriune_flower_Enemy">
 			<Abnormality>爱娜温</Abnormality>
 			<CardName>花瓣</CardName>
-			<AbilityDesc>若该来宾已累计承受超出“自身体力上限x10%”的伤害，则恢复5%最大血量点体力并对所有司书造成4~8点混乱伤害.(触发后重置承伤计数)</AbilityDesc>
+			<AbilityDesc>若该司书已累计承受超出“自身体力上限x10%”的伤害，则恢复5%最大血量点体力并对所有司书造成4~8点混乱伤害.(触发后重置承伤计数)</AbilityDesc>
 			<FlaborText>你曾对我说，要用花瓣代替泪水。“我们都是从尘土中走来的，请不要轻言我的结局。”你告诉过我，漫身的鲜花将化作最后的遗言。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">空洞的眼窝亦能看清一切。</Dialogue>
@@ -148,8 +148,8 @@
 		<AbnormalityCard ID="Alriune_Doll_Enemy">
 			<Abnormality>爱娜温</Abnormality>
 			<CardName>春日的起源</CardName>
-			<AbilityDesc>每一幕开始时随机使1名司书获得“花瓣”。
-拥有“花瓣”的司书若在这一幕中被该来宾击中4次，则使所有角色失去3~7点混乱抗性且该来宾将在下一幕中获得“匿踪”。
+			<AbilityDesc>每一幕开始时随机使1名敌人获得“花瓣”。
+拥有“花瓣”的敌人若在这一幕中被该司书击中4次，则使所有角色失去3~7点混乱抗性且该司书将在下一幕中获得“匿踪”。
 (匿踪: 这一幕中无法被指定为攻击目标)</AbilityDesc>
 			<FlaborText>永不凋零的鲜花，只是无可奈何地绽放。</FlaborText>
 			<Dialogues>
@@ -162,7 +162,7 @@
 		<AbnormalityCard ID="SilentOrchestra_Music_Enemy">
 			<Abnormality>沉默乐团</Abnormality>
 			<CardName>返始咏叹调</CardName>
-			<AbilityDesc>如果该来宾在一幕内承受超过25%体力的伤害则恢复所有光芒将体力与混乱抗性恢复至应用本异想体书页时的状态(每一舞台只能触发一次)</AbilityDesc>
+			<AbilityDesc>如果该司书在一幕内承受超过25%体力的伤害则恢复所有光芒将体力与混乱抗性恢复至应用本异想体书页时的状态(每一舞台只能触发一次)</AbilityDesc>
 			<FlaborText>演出仍未谢幕。Da Capo。Da Capo al fine。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">最华丽的演出，于毁灭拉开序幕。</Dialogue>
@@ -174,9 +174,9 @@
 		<AbnormalityCard ID="SilentOrchestra_Affect_Enemy">
 			<Abnormality>沉默乐团</Abnormality>
 			<CardName>狂热崇拜</CardName>
-			<AbilityDesc>每4幕使随机一个没失去理智的司书获得狂热崇拜
-(角色已失去控制若陷入混乱则在下一幕开始时解除此状态。
-被司书击中时该角色将只承受混乱伤害并且该混乱伤害提高100%。并被来宾击中时所受伤害+2~4)</AbilityDesc>
+			<AbilityDesc>每4幕使随机一个没失去理智的敌人获得狂热崇拜
+(角色已失去控制若陷入混乱则在下一幕开始时解除此状态)。
+其他仍有理智的敌人攻击其只会造成混乱伤害并且该混乱伤害提高100%。司书攻击其只会造成伤害并使该伤害+2~4</AbilityDesc>
 			<FlaborText>乐声愈发高亢，将一切引向毁灭。待到演奏家齐聚一堂，无人能够听见，但人人皆可听闻的音乐就此上演。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">无人能够听见，但人人皆可听闻的乐声……</Dialogue>
@@ -188,7 +188,7 @@
 		<AbnormalityCard ID="SilentOrchestra_Finale_Enemy">
 			<Abnormality>沉默乐团</Abnormality>
 			<CardName>闭幕曲</CardName>
-			<AbilityDesc>若该来宾使目标陷入混乱，则下一幕开始时使所有司书失去1~6点光芒。</AbilityDesc>
+			<AbilityDesc>若该司书使目标陷入混乱，则下一幕开始时使所有敌人失去1~6点光芒。</AbilityDesc>
 			<FlaborText>这首乐章会穿透你的一切。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">音乐将贯穿你的灵魂。</Dialogue>

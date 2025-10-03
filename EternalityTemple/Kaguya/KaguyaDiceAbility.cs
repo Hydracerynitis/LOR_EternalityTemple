@@ -236,6 +236,12 @@ namespace EternalityTemple.Kaguya
             int unavailable = owner.speedDiceResult.FindAll(x => x.breaked).Count;
             return SDUI != null && SDUI._speedDiceIndex == unavailable + index;
         }
+        public override void OnUseCard()
+        {
+            LorId cardID = card.card.GetID();
+            owner.personalEgoDetail.RemoveCard(cardID);
+            owner.bufListDetail.AddBuf(new BattleUnitBuf_addAfter(cardID, 2));
+        }
     }
     //火蜥蜴之盾 书页
     public class DiceCardSelfAbility_EternityCard5: DiceCardSelfAbility_PrizeCard
@@ -244,6 +250,9 @@ namespace EternalityTemple.Kaguya
         public override void OnUseCard()
         {
             owner.bufListDetail.AddBuf(new RejunateBurn());
+            LorId cardID = card.card.GetID();
+            owner.personalEgoDetail.RemoveCard(cardID);
+            owner.bufListDetail.AddBuf(new BattleUnitBuf_addAfter(cardID, 2));
         }
         class RejunateBurn : BattleUnitBuf
         {
@@ -275,9 +284,12 @@ namespace EternalityTemple.Kaguya
     public class DiceCardSelfAbility_EternityCard6 : DiceCardSelfAbility_PrizeCard
     {
         public override int index => 3;
-        public override void OnUseCard()
+        public override void OnStartBattle()
         {
             owner.bufListDetail.AddBuf(new CheckUnused(card.GetDiceBehaviorList()));
+            LorId cardID = card.card.GetID();
+            owner.personalEgoDetail.RemoveCard(cardID);
+            owner.bufListDetail.AddBuf(new BattleUnitBuf_addAfter(cardID, 2));
         }
         class CheckUnused : BattleUnitBuf
         {
@@ -313,6 +325,9 @@ namespace EternalityTemple.Kaguya
             card.DestroyPlayingCard();
             List<BattleUnitModel> ally = BattleObjectManager.instance.GetAliveList(owner.faction);
             card.GetDiceBehaviorList().ForEach(b => ally.ForEach(x => x.cardSlotDetail.keepCard.AddBehaviour(card.card, b)));
+            LorId cardID = card.card.GetID();
+            owner.personalEgoDetail.RemoveCard(cardID);
+            owner.bufListDetail.AddBuf(new BattleUnitBuf_addAfter(cardID, 2));
         }
     }
     //佛体的金刚石 骰子
@@ -350,7 +365,19 @@ namespace EternalityTemple.Kaguya
         {
             SpeedDiceUI SDUI = BattleManagerUI.Instance.selectedAllyDice;
             int unavailable = owner.speedDiceResult.FindAll(x => x.breaked).Count;
-            return SDUI != null && SDUI._speedDiceIndex == unavailable + index;
+            return SDUI != null && SDUI._speedDiceIndex == unavailable + index && StageController.Instance.RoundTurn>=5;
+
+        }
+        public override bool IsTrueDamage()
+        {
+            return true;
+        }
+        public override void OnUseCard()
+        {
+            base.OnUseCard();
+            LorId cardID = card.card.GetID();
+            owner.personalEgoDetail.RemoveCard(cardID);
+            owner.bufListDetail.AddBuf(new BattleUnitBuf_addAfter(cardID, 4));
         }
     }
     //神宝[蓬莱的弹枝-七色的弹幕-] 骰子
@@ -367,13 +394,10 @@ namespace EternalityTemple.Kaguya
         {
             if (damagedList.Count <= 0)
                 return;
-            for(int i=0; i<7; i++)
-            {
-                BattleDiceCardModel card = RandomUtil.SelectOne(owner.allyCardDetail.GetHand());
-                card.AddBuf(new PuzzleDiceAbility5.CostDownSelfBuf());
-            }
-            
-            foreach(BattleUnitModel b in damagedList)
+            BattleDiceCardModel hand = RandomUtil.SelectOne(owner.allyCardDetail.GetHand());
+            hand.AddBuf(new PuzzleDiceAbility5.CostDownSelfBuf());
+
+            foreach (BattleUnitModel b in damagedList)
             {
                 for (int i = 0; i < 7; i++)
                     BattleVoidBehaviour.ExtraHit(b, card,BulletsStorm);
@@ -382,16 +406,33 @@ namespace EternalityTemple.Kaguya
     }
     public class DiceCardSelfAbility_ETpassfloor : DiceCardSelfAbilityBase
     {
+        private void UpdateHP(int unitID,int HP)
+        {
+            BattleUnitModel unit = BattleObjectManager.instance.GetAliveList(Faction.Player).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId()== 
+                EternalityInitializer.GetLorId(unitID));
+            if (unit != null)
+            {
+                unit.hp = HP;
+                if (HP <= 0)
+                    unit.Die();
+                BattleUnitBuf kaguyaBuf = unit.bufListDetail.GetActivatedBufList().Find(x => x is BattleUnitBuf_KaguyaBuf);
+                if (kaguyaBuf != null)
+                    kaguyaBuf.stack = 7;
+                unit.emotionDetail.SetEmotionLevel(5);
+            }
+        }
         public override void OnUseInstance(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
         {
             base.OnUseInstance(unit, self, targetUnit);
             SaveData saveData = Singleton<EternalityTempleSaveManager>.Instance.LoadData("passFloor");
-            int dmg1 = saveData.GetInt(Singleton<StageController>.Instance.CurrentFloor.ToString() + "Kaguya");
-            int dmg2 = saveData.GetInt(Singleton<StageController>.Instance.CurrentFloor.ToString() + "Yagokoro");
-            int dmg3 = saveData.GetInt(Singleton<StageController>.Instance.CurrentFloor.ToString() + "Inaba");
-            BattleObjectManager.instance.GetAliveList(Faction.Player).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769103).TakeDamage(dmg1);
-            BattleObjectManager.instance.GetAliveList(Faction.Player).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769104).TakeDamage(dmg2);
-            BattleObjectManager.instance.GetAliveList(Faction.Player).Find((BattleUnitModel x) => x.Book.GetBookClassInfoId().id == 226769105).TakeDamage(dmg3);
+            if (saveData == null)
+                return;
+            int hp1 = saveData.GetInt(Singleton<StageController>.Instance.CurrentFloor.ToString() + "Kaguya");
+            int hp2 = saveData.GetInt(Singleton<StageController>.Instance.CurrentFloor.ToString() + "Yagokoro");
+            int hp3 = saveData.GetInt(Singleton<StageController>.Instance.CurrentFloor.ToString() + "Inaba");
+            UpdateHP(226769103, hp1);
+            UpdateHP(226769104, hp2);
+            UpdateHP(226769105, hp3);
             foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList(Faction.Enemy))
             {
                 battleUnitModel.Die(null, true);

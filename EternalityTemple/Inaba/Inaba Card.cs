@@ -145,25 +145,6 @@ namespace EternalityTemple.Inaba
                 });
             }
         }
-        public class BattleUnitBuf_addAfter : BattleUnitBuf
-        {
-            public BattleUnitBuf_addAfter(LorId cardId, int turnCount)
-            {
-                this._cardId = cardId;
-                this._count = turnCount;
-            }
-            public override void OnRoundStart()
-            {
-                this._count--;
-                if (this._count <= 0)
-                {
-                    this._owner.allyCardDetail.AddNewCard(this._cardId, false);
-                    this.Destroy();
-                }
-            }
-            private int _count;
-            private LorId _cardId = LorId.None;
-        }
 	}
 	public class DiceCardSelfAbility_InabaCard5 : DiceCardSelfAbilityBase
 	{
@@ -185,11 +166,9 @@ namespace EternalityTemple.Inaba
         public override string[] Keywords => new string[] { "InabaBuf7" };
         public override void OnUseCard()
 		{
-			if (BattleUnitBuf_InabaBuf1.GetStack(owner) < 150) 
-            {
-				return;
-            }
-			BattleUnitBuf_InabaBuf1.AddStack(owner, -150);
+			if (BattleUnitBuf_InabaBuf1.GetStack(owner) < 150)
+                return;
+            BattleUnitBuf_InabaBuf1.AddStack(owner, -150);
 			BattleUnitBuf_InabaBuf7.AddReadyStack(owner, 2);
 			owner.view.ChangeSkin("Reisen2");
 		}

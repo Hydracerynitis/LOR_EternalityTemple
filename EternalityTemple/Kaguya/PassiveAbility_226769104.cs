@@ -15,6 +15,7 @@ namespace EternalityTemple.Kaguya
         {
             if (nextPuzzle <= 0 || nextPuzzle > owner.speedDiceCount)
                 return;
+            int unavailable=owner.speedDiceResult.FindAll(x => x.breaked).Count();
             owner.cardOrder = nextPuzzle - 1;
             int puzzlepageId = getPuzzlePage(nextPuzzle);
             if (puzzlepageId < 0)

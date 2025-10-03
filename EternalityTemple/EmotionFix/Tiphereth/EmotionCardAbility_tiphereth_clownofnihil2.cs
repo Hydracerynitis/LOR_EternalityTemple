@@ -10,12 +10,20 @@ namespace EternalityEmotion
 {
     public class EmotionCardAbility_tiphereth_clownofnihil2 : EmotionCardAbilityBase
     {
+        public bool activate = false;
         public override void OnSucceedAttack(BattleDiceBehavior behavior)
         {
             base.OnSucceedAttack(behavior);
+            if (activate)
+                return;
+            activate = true;
             behavior.card.target.allyCardDetail.ExhaustACard(RandomUtil.SelectOne(behavior.card.target.allyCardDetail.GetHand()));
             if(behavior.card.target.bufListDetail.GetActivatedBufList().Find(x => x.GetType() == typeof(VoidBuf))==null)
                 behavior.card.target.bufListDetail.AddBuf(new VoidBuf());
+        }
+        public override void OnRoundStart()
+        {
+            activate = false;
         }
         public class VoidBuf: BattleUnitBuf
         {

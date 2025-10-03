@@ -5,6 +5,7 @@ namespace EternalityTemple.Yagokoro
 {
 	public class DiceCardAbility_YagokoroDice1 : DiceCardAbilityBase
 	{
+        public override bool Invalidity => card.target.faction == owner.faction;
 		public override void OnSucceedAttack(BattleUnitModel target)
 		{
 			DiceCardSelfAbility_YagokoroCard1 diceCardSelfAbility = base.card.cardAbility as DiceCardSelfAbility_YagokoroCard1;

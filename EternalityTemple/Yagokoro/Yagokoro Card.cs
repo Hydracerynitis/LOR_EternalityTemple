@@ -245,10 +245,6 @@ namespace EternalityTemple.Yagokoro
 				return;
 			dreamType = 2;
 		}
-        //public override bool IsValidTarget(BattleUnitModel unit, BattleDiceCardModel self, BattleUnitModel targetUnit)
-        //{
-        //	return targetUnit != null && targetUnit != unit;
-        //}
         public override bool IsTargetableAllUnit()
         {
 			return true;
@@ -535,25 +531,6 @@ namespace EternalityTemple.Yagokoro
 		{
 			this.ExhaustAndReturn();
 		}
-		public class BattleUnitBuf_addAfter : BattleUnitBuf
-		{
-			public BattleUnitBuf_addAfter(LorId cardId, int turnCount)
-			{
-				this._cardId = cardId;
-				this._count = turnCount;
-			}
-			public override void OnRoundStart()
-			{
-				this._count--;
-				if (this._count <= 0)
-				{
-					this._owner.allyCardDetail.AddNewCard(this._cardId, false);
-					this.Destroy();
-				}
-			}
-			private int _count;
-			private LorId _cardId = LorId.None;
-		}
 		public override bool CanActivateMoon(int slot)
 		{
 			return slot >= 1 && slot <= 5;
@@ -656,25 +633,6 @@ namespace EternalityTemple.Yagokoro
 		{
 			this.ExhaustAndReturn();
 		}
-		public class BattleUnitBuf_addAfter : BattleUnitBuf
-		{
-			public BattleUnitBuf_addAfter(LorId cardId, int turnCount)
-			{
-				this._cardId = cardId;
-				this._count = turnCount;
-			}
-			public override void OnRoundStart()
-			{
-				this._count--;
-				if (this._count <= 0)
-				{
-					this._owner.allyCardDetail.AddNewCard(this._cardId, false);
-					this.Destroy();
-				}
-			}
-			private int _count;
-			private LorId _cardId = LorId.None;
-		}
 		public override bool CanActivateMoon(int slot)
 		{
 			return slot == 1 || slot == 3 || slot == 5;
@@ -705,6 +663,9 @@ namespace EternalityTemple.Yagokoro
         public override void OnUseCard()
         {
             base.OnUseCard();
+			if(owner.passiveDetail.PassiveList.Find(x => x is PassiveAbility_226769005) is PassiveAbility_226769005
+				MooonPassive && MooonPassive.IsActivate)
+				return;
 			owner.bufListDetail.AddReadyBuf(new YagokoroBuf12() { stack=0});
         }
     }

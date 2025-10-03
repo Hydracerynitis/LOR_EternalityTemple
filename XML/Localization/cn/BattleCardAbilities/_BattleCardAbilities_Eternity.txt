@@ -75,20 +75,20 @@
 	
 <!--宝物书页--> 
 	<BattleCardAbility ID="PrizeCard"><!--耀眼的龙玉-->
-		<Desc>只能用在第1颗[难题骰]</Desc>
+		<Desc>只能用在第1颗[难题骰]且2幕内只能使用1次</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="EternityDice3"><!--耀眼的龙玉-->
 		<Desc>[命中时] 使目标所有[负面状态]层数+1</Desc>
 	</BattleCardAbility>
 	
 	<BattleCardAbility ID="EternityCard7"><!--佛体的金刚石-->
-		<Desc>只能用在第2颗[难题骰]</Desc>
+		<Desc>只能用在第2颗[难题骰]且2幕内只能使用1次</Desc>
 		<Desc>[战斗开始] 摧毁该书页骰子并将其共享到所有友方[反击池]</Desc>
 	</BattleCardAbility>
 	
 
 	<BattleCardAbility ID="EternityCard5"><!--火蜥蜴之盾-->
-		<Desc>只能用在第3颗[难题骰]</Desc>
+		<Desc>只能用在第3颗[难题骰]且2幕内只能使用1次</Desc>
 		<Desc>[使用时]这一幕结束时移除所有场上的[烧伤],每移除5层[烧伤]下一幕开始获得1层[强壮]</Desc>
 	</BattleCardAbility>
 
@@ -97,18 +97,19 @@
 	</BattleCardAbility>
 
 	<BattleCardAbility ID="EternityCard6"><!--无限的生命之泉-->
-		<Desc>只能用在第4颗[难题骰]</Desc>
-		<Desc>[使用时] 这一幕结束时若有未使用的骰子则恢复所有友方[已损失血量的10%]点血量</Desc>
+		<Desc>只能用在第4颗[难题骰]且2幕内只能使用1次</Desc>
+		<Desc>[战斗开始] 这一幕结束时若有未使用的骰子则恢复所有友方[已损失血量的10%]点血量</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="EternityDice4"><!--无限的生命之泉-->
 		<Desc>[拼点胜利]使所有友方单位恢复2点血量</Desc>
 	</BattleCardAbility>
 
 	<BattleCardAbility ID="EternityCard8"><!--神宝[蓬莱的弹枝-七色的弹幕-]-->
-		<Desc>只能在第5颗[难题骰]上使用</Desc>
+		<Desc>只能在第5颗[难题骰]上使用
+前4幕内无法使用,且4幕内只能使用1次</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="EternityDice5"><!--神宝[蓬莱的弹枝-七色的弹幕-]-->
-		<Desc>[命中时] 改为连续骰出7次(5-7)的打击骰造成伤害</Desc>
+		<Desc>[命中时] 改为连续骰出7次(5-7)的打击骰造成无抗性伤害</Desc>
 	</BattleCardAbility>
 
 
@@ -156,7 +157,8 @@
 </Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard1_Moon1">
-		<Desc>本书页可指向友方且不受[满月]影响
+		<Desc>本书页不受[满月]影响;
+可指向友方且不会对友方造成伤害
 [狂想] 该书页变为疯狂的梦
 [月相(1)]-如果目标为友方角色则本书页改为施加[美梦]
 </Desc>
@@ -168,7 +170,7 @@
 </Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroDice1"><!--药符[蝴蝶梦丸]-->
-		<Desc>[命中时]下一幕对目标施加1层[入梦]</Desc>
+		<Desc>[命中时] 下一幕对目标施加1层[入梦]</Desc>
 	</BattleCardAbility>
 	
 	
@@ -185,7 +187,7 @@
 		<Desc>[满月]-本书页施加[狂梦]层数+1</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroDice2"><!--疯狂的梦-->
-		<Desc>[命中时]下一幕对目标施加1层[狂梦]</Desc>
+		<Desc>[命中时] 下一幕对目标施加1层[狂梦]</Desc>
 	</BattleCardAbility>
 	
 	
@@ -275,61 +277,61 @@
 	
 	
 	<BattleCardAbility ID="YagokoroCard6"><!--药符[壶中的大银河]-->
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 所有骰子命中时若触发了[月相(1)(2)(3)(4)(5)]则会使友方获得[正面状态],或者对目标施加[负面状态]</Desc>
 <!--注:这张书页若和[神宝“蓬莱的弹枝-七色的弹幕-”]在一幕中一起使用出来-->
 <!--则让[神宝“蓬莱的弹枝-七色的弹幕-”]改变成[永夜符[蓬莱壶中的弹枝]]-->
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard6_NoMoon">
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌</Desc>
+		<Desc>前4幕内无法使用,且4幕内只能使用1次</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard6_Moon1">
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 [月相(1)] 所有骰子命中时使所有友方获得1层[强壮] (至多3次)</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard6_Moon2">
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 [月相(2)] 所有骰子命中时施加1层[破绽]</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard6_Moon3">
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 [月相(3)] 所有骰子命中时施加1层[束缚]</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard6_Moon4">
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 [月相(4)] 所有骰子命中时施加1层[虚弱]</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard6_Moon5">
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 [月相(5)] 所有骰子命中时使所有友方获得1层[振奋]</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard6_FullMoon">
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 [满月] 所有骰子命中时使所有友方获得1层[强壮](至多3次)与[振奋],对目标施加1层[破绽],[束缚],[虚弱]</Desc>
 	</BattleCardAbility>
 	
 	
 	<BattleCardAbility ID="YagokoroCard7"><!--天网蛛网捕蝶之法-->
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 本书页骰子命中时若触发了[月相(1)(3)(5)]则会禁用目标下一幕的部分进攻骰</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard7_NoMoon"><!--天网蛛网捕蝶之法-->
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌</Desc>
+		<Desc>前4幕内无法使用,且4幕内只能使用1次</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard7_Moon1"><!--天网蛛网捕蝶之法-->
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 [月相(1)] 第1颗骰子命中时施加1层[突刺失效]</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard7_Moon3"><!--天网蛛网捕蝶之法-->
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 [月相(3)] 第2颗骰子命中时施加1层[斩击失效]</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard7_Moon5"><!--天网蛛网捕蝶之法-->
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 [月相(5)] 第3颗骰子命中时施加1层[打击失效]</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="YagokoroCard7_FullMoon"><!--天网蛛网捕蝶之法-->
-		<Desc>无法在前四幕中使用;[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 [满月] 本书页会根据骰子次序依次在命中时施加[突刺失效],[斩击失效]和[打击失效]</Desc>
 	</BattleCardAbility>
 	
@@ -387,7 +389,7 @@
 	
 	<BattleCardAbility ID="InabaCard2"><!--障壁波动-->
 		<Desc>[使用时]使所有我方角色获得1层[障壁]
-[狂想] 使所有敌方角色疯狂骰的攻击目标改为自身</Desc>
+[狂想] [战斗开始]时使所有敌方角色疯狂骰的攻击目标改为自身</Desc>
 	</BattleCardAbility>
 	
 	
@@ -399,8 +401,7 @@
 	
 	
 	<BattleCardAbility ID="InabaCard4"><!--幻胧月睨-->
-		<Desc>无法在前四幕中使用
-[佚亡],会在使用后的第4幕返回手牌
+		<Desc>前4幕内无法使用,且4幕内只能使用1次
 [狂想] 本书页所有骰子威力+3</Desc>
 	</BattleCardAbility>
 	<BattleCardAbility ID="InabaDice2">> <!--幻胧月睨-->
@@ -449,7 +450,10 @@
 	</BattleCardAbility>
 
 	<BattleCardAbility ID="ETpassfloor"><!--绀珠之药-->
-		<Desc>[装备时] 立即击破本楼层并使所有我方角色承受记录下来的战损程度伤害</Desc>
+		<Desc>[装备时] 立即击破本楼层并将所有我方角色的血量设为上次击破该楼层时的血量:
+[蓬莱山辉夜]: {0}
+[八意永琳]: {1}
+[铃仙]: {2}</Desc>
 	</BattleCardAbility>
 
 </BattleCardAbilityDescRoot>

@@ -4,7 +4,7 @@
 		<AbnormalityCard ID="Bloodytree_Wing_Enemy">
 			<Abnormality>渗透天堂</Abnormality>
 			<CardName>萎缩的血翼</CardName>
-			<AbilityDesc>该来宾造成反震伤害时将追加一半于招架骰子点数的伤害。</AbilityDesc>
+			<AbilityDesc>该司书造成反震伤害时将追加一半于招架骰子点数的伤害。</AbilityDesc>
 			<FlaborText>一旦它意识到你的关注已被切断，便会展开翅膀。宛若一位天使，它的翅膀将伸向天空，继而遮蔽太阳。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">在所有人的关注与视线中……终于结出果实，展翅翱翔。</Dialogue>
@@ -16,7 +16,7 @@
 		<AbnormalityCard ID="Bloodytree_Gaze_Enemy">
 			<Abnormality>渗透天堂</Abnormality>
 			<CardName>他人的视线</CardName>
-			<AbilityDesc>该来宾单方面攻击击中目标时伤害+2~4
+			<AbilityDesc>该司书单方面攻击击中目标时伤害+2~4
 拼点时招架骰子威力+1~3，击中目标时伤害-3~6。</AbilityDesc>
 			<FlaborText>所谓视线正是如此。关注。无形之连接。完全集中。</FlaborText>
 			<Dialogues>
@@ -29,7 +29,7 @@
 		<AbnormalityCard ID="Bloodytree_Forcus_Enemy">
 			<Abnormality>渗透天堂</Abnormality>
 			<CardName>关注与集中</CardName>
-			<AbilityDesc>该来宾将造成并承受双倍反震伤害。</AbilityDesc>
+			<AbilityDesc>该司书将造成并承受双倍反震伤害。</AbilityDesc>
 			<FlaborText>不要转移视线，一直盯着它，将它收容在你的视线之中。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">如此惊人的景象，你不会想要眨眼的。</Dialogue>
@@ -41,7 +41,7 @@
 		<AbnormalityCard ID="Clock_Time_Enemy">
 			<Abnormality>沉默的代价</Abnormality>
 			<CardName>时间</CardName>
-			<AbilityDesc>每一幕若战前准备阶段大于30秒，该来宾的所有骰子威力+1~2</AbilityDesc>
+			<AbilityDesc>每一幕若战前准备阶段大于30秒，该司书的所有骰子威力+1~2</AbilityDesc>
 			<FlaborText>时流若生，生逝如时。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">所谓时间不足，仅是无谓牢骚。</Dialogue>
@@ -53,7 +53,7 @@
 		<AbnormalityCard ID="Clock_Thirteen_Enemy">
 			<Abnormality>沉默的代价</Abnormality>
 			<CardName>第十三声钟响</CardName>
-			<AbilityDesc>每当该来宾使用第13张书页时将使其中的所有骰子威力+1~2并赋予“进攻型”骰子额外效果“[命中时] 追加等同于‘目标体力上限x(骰子点数)%’的伤害”</AbilityDesc>
+			<AbilityDesc>每当该司书使用第13张书页时将使其中的所有骰子威力+1~2并赋予“进攻型”骰子额外效果“[命中时] 追加等同于‘目标体力上限x(骰子点数)%’的伤害”</AbilityDesc>
 			<FlaborText>吾知晓绝对的孤独。分享沉默，应得果报。待到原主归来之时，汝当偿付代价。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">灾难般的钟声再度响彻。</Dialogue>
@@ -65,7 +65,7 @@
 		<AbnormalityCard ID="Clock_Kill_Enemy">
 			<Abnormality>沉默的代价</Abnormality>
 			<CardName>沉默</CardName>
-			<AbilityDesc>每三幕使该来宾与随机司书获得眩晕</AbilityDesc>
+			<AbilityDesc>每三幕使该司书与随机敌人获得眩晕</AbilityDesc>
 			<FlaborText>时而产生时间停止的错觉，时而出现刹那般的沉默。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">沉默，不止带来和平。</Dialogue>
@@ -77,7 +77,7 @@
 		<AbnormalityCard ID="BlueStar_martyrdom_Enemy">
 			<Abnormality>碧蓝新星</Abnormality>
 			<CardName>殉教</CardName>
-			<AbilityDesc>该来宾造成伤害前自己失去2~4点体力；自身每损失7.5%最大生命值便提高10%造成的混乱伤害(至多100%)</AbilityDesc>
+			<AbilityDesc>该司书造成伤害前自己失去2~4点体力；自身每损失7.5%最大生命值便提高10%造成的混乱伤害(至多100%)</AbilityDesc>
 			<FlaborText>让我们化作星辰再会吧。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">在那宇宙的彼端，一同沉浸于永恒的幸福当中吧。</Dialogue>
@@ -88,7 +88,7 @@
 		<AbnormalityCard ID="BlueStar_Atonement_Enemy">
 			<Abnormality>碧蓝新星</Abnormality>
 			<CardName>赎罪</CardName>
-			<AbilityDesc>每一幕开始时若舞台中存在处于“混乱”状态的角色，该来宾承受3~7点伤害并在这一幕中使所有来宾获得1层“强壮”。(至多1层)</AbilityDesc>
+			<AbilityDesc>每一幕开始时若舞台中存在处于“混乱”状态的角色，该司书承受3~7点伤害并在这一幕中使所有司书获得1层“强壮”。(至多1层)</AbilityDesc>
 			<FlaborText>我们的“碧蓝新星”是接纳罪人的唯一之地，我们会在那里洗去一切罪孽。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">舍弃肮脏的皮囊，迸发闪耀的光芒。</Dialogue>
@@ -99,7 +99,7 @@
 		<AbnormalityCard ID="BlueStar_Melody_Enemy">
 			<Abnormality>碧蓝新星</Abnormality>
 			<CardName>思念之声</CardName>
-			<AbilityDesc>这一幕中该来宾击中目标时混乱伤害+2~4
+			<AbilityDesc>这一幕中所有司书击中目标时混乱伤害+2~4
 (此后每3幕触发1次)</AbilityDesc>
 			<FlaborText>冉冉升起的新星意味着全新的开始。你听不见那悠扬的号声吗？</FlaborText>
 			<Dialogues>
@@ -111,8 +111,8 @@
 		<AbnormalityCard ID="WhiteNight_Bless_Enemy">
 			<Abnormality>瘟疫医生</Abnormality>
 			<CardName>洗礼</CardName>
-			<AbilityDesc>该来宾每一幕开始时会额外随机指定2个不同的其他来宾使用洗礼
-效果为“[战斗开始] 使该来宾在这一幕中获得1层‘忍耐’,恢复6点体力”</AbilityDesc>
+			<AbilityDesc>该司书每一幕开始时会额外随机指定2个不同的其他司书使用洗礼
+效果为“[战斗开始] 使该司书在这一幕中获得1层‘忍耐’,恢复6点体力”</AbilityDesc>
 			<FlaborText>“我将治愈你的一切疾病，使你重获新生。”</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">我是来治病的。</Dialogue>
@@ -124,8 +124,8 @@
         <AbnormalityCard ID="WhiteNight_Red_Enemy">
 			<Abnormality>白夜</Abnormality>
 			<CardName>降临</CardName>
-			<AbilityDesc>每一幕开始时该来宾将额外恢复1点光芒。
-将该来宾的“洗礼”效果强化为“[战斗开始] 使该来宾在这一幕中获得2层‘忍耐’且恢复12点体力”</AbilityDesc>
+			<AbilityDesc>每一幕开始时该司书将额外恢复1点光芒。
+将该司书的“洗礼”效果强化为“[战斗开始] 使该司书在这一幕中获得2层‘忍耐’且恢复12点体力”</AbilityDesc>
 			<FlaborText>我乃死，我乃生。我为暗，我亦为光。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">浸染罪孽之人。起身迎接我吧。</Dialogue>
@@ -137,8 +137,8 @@
 		<AbnormalityCard ID="WhiteNight_Confess_Enemy">
 			<Abnormality>一罪与百善</Abnormality>
 			<CardName>告解</CardName>
-			<AbilityDesc>该来宾复所有混乱抗性并移除负面状态。(包含“混乱”状态)
-该来宾被击中时所受混乱伤害-2</AbilityDesc>
+			<AbilityDesc>该司书复所有混乱抗性并移除负面状态。(包含“混乱”状态)
+该司书被击中时所受混乱伤害-2</AbilityDesc>
 			<FlaborText>仅是承受痛苦，便可洗刷一半罪孽。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">……</Dialogue>
@@ -149,7 +149,7 @@
 		<AbnormalityCard ID="WhiteNight_Guard_Enemy">
 			<Abnormality>白夜</Abnormality>
 			<CardName>护卫</CardName>
-			<AbilityDesc>该来宾将无法被指定为攻击目标。(若其余非应用护卫的来宾全部死亡则不生效)</AbilityDesc>
+			<AbilityDesc>该司书将无法被指定为攻击目标。(若其余非应用护卫的司书全部死亡则不生效)</AbilityDesc>
 			<FlaborText>您是他的儿子，您生来为王。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">欢呼吧，满怀恩宠之人，我与你们同在。</Dialogue>
@@ -161,7 +161,7 @@
 		<AbnormalityCard ID="WhiteNight_White_Enemy">
 			<Abnormality>白夜</Abnormality>
 			<CardName>权能</CardName>
-			<AbilityDesc>每一幕开始时使除该来宾外的所有来宾吸收不低于3点的伤害。(若该司书已死亡则不生效)</AbilityDesc>
+			<AbilityDesc>每一幕开始时使除该司书外的所有司书吸收不低于3点的伤害。(若该司书已死亡则不生效)</AbilityDesc>
 			<FlaborText>不要惊慌，我是你的救主，我与你同在。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">安心吧，任何灾祸都无法阻挡你们。</Dialogue>
@@ -173,8 +173,8 @@
 		<AbnormalityCard ID="WhiteNight_Apostle_Enemy">
 			<Abnormality>白夜</Abnormality>
 			<CardName>使徒</CardName>
-			<AbilityDesc>除该来宾外的所有来宾击中目标时伤害+2~7(若该司书已死亡则不生效)
-该来宾累计使用12张“洗礼”后将追加“所有骰子威力+1”效果。</AbilityDesc>
+			<AbilityDesc>除该司书外的所有司书击中目标时伤害+2~7(若该司书已死亡则不生效)
+该司书累计使用12张“洗礼”后将追加“所有骰子威力+1”效果。</AbilityDesc>
 			<FlaborText>我不是拣选了你们12个么。起来吧，我的仆从，迎接我的到来。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">追求和平与神圣。否则便无法看见我。</Dialogue>

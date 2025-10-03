@@ -1,4 +1,5 @@
 ﻿using EternalityTemple.Kaguya;
+using System;
 using System.Linq;
 
 namespace EternalityTemple.Yagokoro
@@ -8,6 +9,7 @@ namespace EternalityTemple.Yagokoro
         public bool IsActivate=false;
         public bool TempActivate = false;
         private YagokoroBuf13 moonChecker =null;
+
         public override void OnRoundEndTheLast()
         {
             if (TempActivate)
@@ -129,6 +131,11 @@ namespace EternalityTemple.Yagokoro
         public override void OnWaveStart()
         {
             owner.personalEgoDetail.AddCard(new LorId(EternalityInitializer.packageId, 226769024));
+            if (EternalityParam.GetFaction(owner.faction).currentMoon != null)
+            {
+                BattleUnitBuf moonBuf = Activator.CreateInstance(EternalityParam.GetFaction(owner.faction).currentMoon) as BattleUnitBuf;
+                owner.bufListDetail.AddBuf(moonBuf);
+            }
         }
     }
 }

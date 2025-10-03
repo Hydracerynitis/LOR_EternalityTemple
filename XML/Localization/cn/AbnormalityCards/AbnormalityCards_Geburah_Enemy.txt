@@ -4,8 +4,8 @@
 		<AbnormalityCard ID="Redhood_Hunt_Enemy">
 			<Abnormality>小红帽雇佣兵</Abnormality>
 			<CardName>猎物</CardName>
-			<AbilityDesc>应用该异想体书页后，该来宾击中的第1名司书将被标记为“猎物”。
-该来宾击中“猎物”时伤害+2~6,"猎物"死亡后，该来宾可将其余司书标记为“猎物”。</AbilityDesc>
+			<AbilityDesc>应用该异想体书页后，该司书击中的第1名敌人将被标记为“猎物”。
+该司书击中“猎物”时伤害+2~6,"猎物"死亡后，该司书可将其余敌人标记为“猎物”。</AbilityDesc>
 			<FlaborText>那头狼的惨死，是我生命中唯一喜爱的事。</FlaborText>
 			<Dialogues>
 			<Dialogue ID="1">狩猎这块儿我可是行家，那种猎物手到擒来。</Dialogue>
@@ -18,7 +18,7 @@
 		<AbnormalityCard ID="Redhood_Revenge_Enemy">
 			<Abnormality>小红帽雇佣兵</Abnormality>
 			<CardName>复仇</CardName>
-			<AbilityDesc>该来宾每承受最大生命值10%的伤害(包括直接攻击伤害与负面状态伤害)，便在下一幕中获得1层“强壮”。(至多4层)</AbilityDesc>
+			<AbilityDesc>该司书每承受最大生命值10%的伤害(包括直接攻击伤害与负面状态伤害)，便在下一幕中获得1层“强壮”。(至多4层)</AbilityDesc>
 			<FlaborText>我们之间不会有任何一方胜出，更谈不上庆祝。我只想用比前一回更残忍，更痛苦的手段撕烂那头狗杂种。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">这阵子我一直在磨刀，不为别的，只为斩下那畜生的头。</Dialogue>
@@ -30,7 +30,7 @@
 		<AbnormalityCard ID="Redhood_RedScar_Enemy">
 			<Abnormality>小红帽雇佣兵</Abnormality>
 			<CardName>伤疤</CardName>
-			<AbilityDesc>应用该异想体书页时，将该来宾的最大体力会设定为其当前体力。
+			<AbilityDesc>应用该异想体书页时，将该司书的最大体力会设定为其当前体力。
 因此每损失20%的最大生命值便永久获得1点“强壮”</AbilityDesc>
 			<FlaborText>15岁时，磨斧子取代了采野花，成为我生命中习以为常的一部分。</FlaborText>
 			<Dialogues>
@@ -43,7 +43,7 @@
 		<AbnormalityCard ID="BigBadWolf_Eat_Enemy">
 			<Abnormality>又大又可能很坏的狼</Abnormality>
 			<CardName>掠食本能</CardName>
-			<AbilityDesc>该来宾拼点胜利时将使自身当前书页的最后一颗骰子威力+1~2(不计入反击骰子)
+			<AbilityDesc>该司书拼点胜利时将使自身当前书页的最后一颗骰子威力+1~2(不计入反击骰子)
 若以该骰子击中目标便为自身恢复3~7点体力。</AbilityDesc>
 			<FlaborText>好久没吃到，如此鲜美的肉了。从那时起，想要自律变得越来越难。不过没关系，我是一头又大又“坏”的狼。</FlaborText>
 			<Dialogues>
@@ -56,8 +56,8 @@
 		<AbnormalityCard ID="BigBadWolf_Claw_Enemy">
 			<Abnormality>又大又可能很坏的狼</Abnormality>
 			<CardName>凶残利爪</CardName>
-			<AbilityDesc>若该来宾在1幕之内承受超出其体力上限30%的伤害，则下一幕中自身将无法被指定为攻击目标。
-在此状态下，该来宾将获得2层“强壮”且击中目标时将在下一幕中对其施加1层“流血”。</AbilityDesc>
+			<AbilityDesc>若该司书在1幕之内承受超出其体力上限30%的伤害，则下一幕中自身将无法被指定为攻击目标。
+在此状态下，该司书将获得2层“强壮”且击中目标时将在下一幕中对其施加1层“流血”。</AbilityDesc>
 			<FlaborText>很久以前，这对利爪曾破开无数生物的肚囊，将其内脏一一撕裂。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">我的爪子又大又利，能让我更好地扮演天生的角色……</Dialogue>
@@ -69,7 +69,7 @@
 		<AbnormalityCard ID="BigBadWolf_Change_Enemy">
 			<Abnormality>又大又可能很坏的狼</Abnormality>
 			<CardName>狼的角色</CardName>
-			<AbilityDesc>该来宾被单方面攻击时以两个4~7斩击的反击骰迎战</AbilityDesc>
+			<AbilityDesc>该司书被单方面攻击时以两个4~7斩击的反击骰迎战</AbilityDesc>
 			<FlaborText>狼做坏事时绝不能越界，狼理应受到惩罚，狼永远是坏榜样……</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">没关系……谁叫我是一头又大又坏的狼……</Dialogue>
@@ -81,7 +81,7 @@
 		<AbnormalityCard ID="Mountain_Eat_Enemy">
 			<Abnormality>微笑的尸山</Abnormality>
 			<CardName>死尸吸收</CardName>
-			<AbilityDesc>该司书击杀来宾时将恢复20%的体力。(至多20点)
+			<AbilityDesc>该司书击杀敌人时将恢复20%的体力。(至多20点)
 每一幕开始时该司书在本舞台中每恢复10%的体力，便获得1层“强壮”。(至多3层)</AbilityDesc>
 			<FlaborText>它唯一想要的，就是浸泡在鲜血中的人肉。一闻到血腥便会狂奔而来。</FlaborText>
 			<Dialogues>
@@ -94,7 +94,7 @@
 		<AbnormalityCard ID="Mountain_Shout_Enemy">
 			<Abnormality>微笑的尸山</Abnormality>
 			<CardName>尸体在笑</CardName>
-			<AbilityDesc>若该司书的体力不高于50%，则被击中时将对所有来宾造成2~5点混乱伤害并在下一幕中对其施加1层“易损”。(每一幕至多触发3次)</AbilityDesc>
+			<AbilityDesc>若该司书的体力不高于50%，则被击中时将对所有司书造成2~5点混乱伤害并在下一幕中对其施加1层“易损”。(每一幕至多触发3次)</AbilityDesc>
 			<FlaborText>一座尸山。那些死尸面带微笑，成为互相分享残肢的一个整体。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">咕噜噜……咕噜……嗝……</Dialogue>
@@ -119,7 +119,7 @@
 	    <AbnormalityCard ID="Nosferatu_BloodHope_Enemy">
 			<Abnormality>诺斯费拉图</Abnormality>
 			<CardName>恐水症</CardName>
-			<AbilityDesc>该来宾击中目标时失去2-7点血量，提高造成伤害+3~7点并在下一幕中对其施加2层“流血”.</AbilityDesc>
+			<AbilityDesc>该司书击中目标时失去2-7点血量，提高造成伤害+3~7点并在下一幕中对其施加2层“流血”.</AbilityDesc>
 			<FlaborText>他们彷徨着。像在寻找什么，却又不明白自己究竟想要什么。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">血……我要血！！！</Dialogue>
@@ -131,7 +131,7 @@
 		<AbnormalityCard ID="Nosferatu_Wine_Enemy">
 			<Abnormality>诺斯费拉图</Abnormality>
 			<CardName>红酒</CardName>
-			<AbilityDesc>若该来宾击杀司书，则为所有来宾恢复10点体力且下一幕开始时该司书将获得2层强壮,其他来宾获得2层虚弱。</AbilityDesc>
+			<AbilityDesc>若该司书击杀敌人，则为所有司书恢复10点体力且下一幕开始时该司书将获得2层强壮,其他司书获得2层虚弱。</AbilityDesc>
 			<FlaborText>虽维持着人类的身姿，但只要有一滴血就会化为凶暴的怪物，度过狂乱的一夜。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">啊……忍受饥渴的痛苦绝非美妙之事。</Dialogue>
@@ -143,7 +143,7 @@
 		<AbnormalityCard ID="Nosferatu_Vampire_Enemy">
 			<Abnormality>诺斯费拉图</Abnormality>
 			<CardName>吸血</CardName>
-			<AbilityDesc>该来宾击中低于50%最大血量的目标时伤害+2~4将恢复2~5点体力。</AbilityDesc>
+			<AbilityDesc>该司书击中低于50%最大血量的目标时伤害+2~4将恢复2~5点体力。</AbilityDesc>
 			<FlaborText>……饥渴，永不满足。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">死亡将与诸位共舞！被吞噬的命运也是公平的！</Dialogue>
@@ -155,8 +155,7 @@
 		<AbnormalityCard ID="NothingThere_Goodbye_Enemy">
 			<Abnormality>一无所有</Abnormality>
 			<CardName>咕德拜</CardName>
-			<AbilityDesc>[选择一名司书]
-该司书在每一幕中使用的最后1颗骰子威力x2</AbilityDesc>
+			<AbilityDesc>该司书在每一幕中使用的最后1颗骰子威力x2</AbilityDesc>
 			<FlaborText>一旦证实它能直立行走，那么你们只有一件事可做。端正姿势，双手合十，向信仰的神明祈祷，而后静观其变吧。</FlaborText>
 			<Dialogues>
 				<Dialogue ID="1">叽噫……呕窝……叽噫呕……救救我！！！</Dialogue>
@@ -180,7 +179,7 @@
 		<AbnormalityCard ID="NothingThere_Skin_Enemy">
 			<Abnormality>一无所有</Abnormality>
 			<CardName>躯壳</CardName>
-			<AbilityDesc>该来宾被击中时不再承受混乱伤害。 </AbilityDesc>
+			<AbilityDesc>该司书被击中时不再承受混乱伤害。 </AbilityDesc>
 			<FlaborText>尽管拥有人类的相貌，但它绝不是人类。每隔一定时间，它便会吞噬与其互动的职员，然后披上他们的躯壳。
 在此过程中，它的骨骼和脏器将被扭成一团，呈现出极度怪诞的形状。</FlaborText>
 			<Dialogues>

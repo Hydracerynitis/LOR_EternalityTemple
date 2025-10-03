@@ -245,6 +245,8 @@ namespace EternalityTemple.Inaba
 				{
 					power = 2
 				});
+				if(owner.personalEgoDetail.GetCardAll().Contains( _card))
+					Destroy();
 			}
 		}
 		public class targetSetter
@@ -295,23 +297,33 @@ namespace EternalityTemple.Inaba
 			}
 			return result;
 		}
-        public override bool IsImmuneDmg()
-        {
-			return true;
-        }
-        public override bool IsImmuneBreakDmg(DamageType type)
-        {
-            return true;
-        }
-        public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
-        {
+		public override bool IsImmuneDmg()
+		{
 			stack--;
-			if(stack<=0)
-			{ 
+			if (stack <= 0)
+			{
 				Destroy();
 			}
-        }
-    }
+			return true;
+		}
+		//     public override bool IsImmuneBreakDmg(DamageType type)
+		//     {
+		//         return true;
+		//     }
+		//public override void BeforeTakeDamage(BattleUnitModel attacker, int dmg)
+		//{
+
+		//    base.BeforeTakeDamage(attacker, dmg);
+		//}
+		//     public override void OnTakeDamageByAttack(BattleDiceBehavior atkDice, int dmg)
+		//     {
+		//stack--;
+		//if(stack<=0)
+		//{ 
+		//	Destroy();
+		//}
+		//     }
+	}
 	public class BattleUnitBuf_InabaBuf5 : BattleUnitBuf
 	{
 		public override string keywordIconId => "Reisen_Buf国士无双";
@@ -414,10 +426,8 @@ namespace EternalityTemple.Inaba
         {
 			BattleUnitBuf_InabaBuf2.AddStack(this._owner, 2);
 			foreach (BattleUnitModel battleUnitModel in BattleObjectManager.instance.GetAliveList_opponent(this._owner.faction))
-            {
-				BattleUnitBuf_InabaBuf2.AddStack(battleUnitModel, 1);
-			}
-		}
+                BattleUnitBuf_InabaBuf2.AddStack(battleUnitModel, 1);
+        }
 		public BattleUnitBuf_InabaBuf7(BattleUnitModel model)
 		{
 			_bufIcon = EternalityInitializer.ArtWorks["Reisen_Buf狂视"];

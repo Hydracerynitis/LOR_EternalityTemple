@@ -27,7 +27,7 @@ namespace EternalityEmotion
 
             public override string keywordIconId => "CardBuf_NihilClown_Card";
 
-            public override string keywordId => "Buf_NihilClown_Card";
+            public override string keywordId => "EF_NihilClown_Card";
 
             public override void Init(BattleUnitModel owner)
             {

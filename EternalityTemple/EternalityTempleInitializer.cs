@@ -9,13 +9,14 @@ using LOR_DiceSystem;
 using Mod;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Xml;
 using TMPro;
 using UI;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Workshop;
 using static UnityEngine.UI.GridLayoutGroup;
@@ -52,9 +53,9 @@ namespace EternalityTemple
             RemoveError();
             AbnormalityLoader.LoadEmotion();
             LocalizeManager.LocalizedTextLoader_LoadOthers_Post(TextDataModel.CurrentLanguage);
-            EternalityInitializer.assetBundle = new Dictionary<string, AssetBundle>();
-            EternalityInitializer.CustomEffects = new Dictionary<string, Type>();
-            EternalityInitializer.AddAssets();
+            assetBundle = new Dictionary<string, AssetBundle>();
+            CustomEffects = new Dictionary<string, Type>();
+            AddAssets();
             if (Singleton<EternalityTempleSaveManager>.Instance.LoadData("passFloor") == null) 
             {
                 Singleton<EternalityTempleSaveManager>.Instance.SaveData(new SaveData(SaveDataType.Dictionary), "passFloor");
@@ -70,6 +71,7 @@ namespace EternalityTemple
             }
             if (!BaseModLoaded)
                 harmony.PatchAll(typeof(BaseModPatch));
+            LoadEternalitySkin();
         }
         //添加特效AB包
         public static void AddAssets()
@@ -80,6 +82,182 @@ namespace EternalityTemple
         {
             AssetBundle value = AssetBundle.LoadFromFile(path);
             assetBundle.Add(name, value);
+        }
+        //加载S动作
+        public static void LoadEternalitySkin()
+        {
+            try
+            {
+                string path = ModPath + "/Resource/CharacterSkin";
+                Debug.Log($"Eternality SkinDirectory: {path}");
+                List<WorkshopSkinData> list = new List<WorkshopSkinData>();
+                if (!Directory.Exists(path))
+                    return;
+                string[] directories = Directory.GetDirectories(path);
+                for (int index = 0; index < directories.Length; ++index)
+                {
+                    string modInfoPath = directories[index] + "/ModInfo.xml";
+                    Debug.Log($"Eternality Skinpath: {modInfoPath}");
+                    WorkshopAppearanceInfo workshopAppearanceInfo = File.Exists(modInfoPath) ?
+                        LoadEternalityAppearanceInfo(directories[index], modInfoPath) : null;
+                    if (workshopAppearanceInfo != null)
+                    {
+                        string[] strArray = directories[index].Split('\\');
+                        string str = strArray[strArray.Length - 1];
+                        workshopAppearanceInfo.path = directories[index];
+                        workshopAppearanceInfo.uniqueId = packageId;
+                        workshopAppearanceInfo.bookName = str;
+                        Debug.Log((object)("workshop bookName : " + workshopAppearanceInfo.bookName));
+                        if (workshopAppearanceInfo.isClothCustom)
+                            list.Add(new WorkshopSkinData()
+                            {
+                                dic = workshopAppearanceInfo.clothCustomInfo,
+                                dataName = workshopAppearanceInfo.bookName,
+                                contentFolderIdx = workshopAppearanceInfo.uniqueId,
+                                id = index
+                            });
+                    }
+                }
+                CustomizingBookSkinLoader.Instance._bookSkinData[packageId] = list;
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError((object)ex);
+            }
+        }
+        private static WorkshopAppearanceInfo LoadEternalityAppearanceInfo(string rootPath, string xml)
+        {
+            WorkshopAppearanceInfo workshopAppearanceInfo = new WorkshopAppearanceInfo();
+            if (string.IsNullOrEmpty(xml))
+                return null;
+            StreamReader streamReader = new StreamReader(xml);
+            XmlDocument xmlDocument = new XmlDocument();
+            try
+            {
+                xmlDocument.LoadXml(streamReader.ReadToEnd());
+                XmlNode xmlNode1 = xmlDocument.SelectSingleNode("ModInfo");
+                XmlNode xmlNode3 = xmlNode1.SelectSingleNode("ClothInfo");
+                if (xmlNode3 != null)
+                {
+                    workshopAppearanceInfo.isClothCustom = true;
+                    string innerText = xmlNode3.SelectSingleNode("Name").InnerText;
+                    if (!string.IsNullOrEmpty(innerText))
+                        workshopAppearanceInfo.bookName = innerText;
+                    for (int index = 0; index <= 30; ++index)
+                    {
+                        ActionDetail key = (ActionDetail)index;
+                        switch (key)
+                        {
+                            case ActionDetail.Standing:
+                            case ActionDetail.NONE:
+                                continue;
+                            default:
+                                string xpath = key.ToString();
+                                try
+                                {
+                                    XmlNode xmlNode5 = xmlNode3.SelectSingleNode(xpath);
+                                    if (xmlNode5 == null)
+                                    {
+                                        xpath = "Penetrate";
+                                        xmlNode5 = xmlNode3.SelectSingleNode(xpath);
+                                    }
+                                    if (xmlNode5 != null)
+                                    {
+                                        string path1 = rootPath + "/ClothCustom/" + xpath + ".png";
+                                        string path2 = rootPath + "/ClothCustom/" + xpath + "_front.png";
+                                        XmlNode xmlNode6 = xmlNode5.SelectSingleNode("Pivot");
+                                        XmlNode namedItem1 = xmlNode6.Attributes.GetNamedItem("pivot_x");
+                                        XmlNode namedItem2 = xmlNode6.Attributes.GetNamedItem("pivot_y");
+                                        XmlNode xmlNode7 = xmlNode5.SelectSingleNode("Head");
+                                        XmlNode namedItem3 = xmlNode7.Attributes.GetNamedItem("head_x");
+                                        XmlNode namedItem4 = xmlNode7.Attributes.GetNamedItem("head_y");
+                                        XmlNode namedItem5 = xmlNode7.Attributes.GetNamedItem("rotation");
+                                        XmlNode xmlNode8 = xmlNode5.SelectSingleNode("Direction");
+                                        XmlNode namedItem6 = xmlNode7.Attributes.GetNamedItem("head_enable");
+                                        float num1 = float.Parse(namedItem1.InnerText);
+                                        float num2 = float.Parse(namedItem2.InnerText);
+                                        float num3 = float.Parse(namedItem3.InnerText);
+                                        float num4 = float.Parse(namedItem4.InnerText);
+                                        float num5 = float.Parse(namedItem5.InnerText);
+                                        bool result = true;
+                                        if (namedItem6 != null)
+                                            bool.TryParse(namedItem6.InnerText, out result);
+                                        Vector2 vector2_1 = new Vector2((float)(((double)num1 + 512.0) / 1024.0), (float)(((double)num2 + 512.0) / 1024.0));
+                                        Vector2 vector2_2 = new Vector2(num3 / 100f, num4 / 100f);
+                                        bool flag1 = false;
+                                        string str1 = path1;
+                                        string str2 = path2;
+                                        bool flag2 = false;
+                                        bool flag3 = false;
+                                        if (File.Exists(path1))
+                                            flag2 = true;
+                                        if (File.Exists(path2))
+                                        {
+                                            flag1 = true;
+                                            flag3 = true;
+                                        }
+                                        CharacterMotion.MotionDirection motionDirection = CharacterMotion.MotionDirection.FrontView;
+                                        if (xmlNode8.InnerText == "Side")
+                                            motionDirection = CharacterMotion.MotionDirection.SideView;
+                                        ClothCustomizeData clothCustomizeData = new ClothCustomizeData()
+                                        {
+                                            spritePath = str1,
+                                            frontSpritePath = str2,
+                                            hasFrontSprite = flag1,
+                                            pivotPos = vector2_1,
+                                            headPos = vector2_2,
+                                            headRotation = num5,
+                                            direction = motionDirection,
+                                            headEnabled = result,
+                                            hasFrontSpriteFile = flag3,
+                                            hasSpriteFile = flag2
+                                        };
+                                        if (str1 != null)
+                                        {
+                                            workshopAppearanceInfo.clothCustomInfo.Add(key, clothCustomizeData);
+                                            continue;
+                                        }
+                                        continue;
+                                    }
+                                    continue;
+                                }
+                                catch (Exception ex)
+                                {
+                                    Debug.LogError((object)ex);
+                                    continue;
+                                }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError((object)ex);
+            }
+            return workshopAppearanceInfo;
+        }
+        [HarmonyPatch(typeof(WorkshopSkinDataSetter),nameof(WorkshopSkinDataSetter.SetData),typeof(WorkshopSkinData))]
+        [HarmonyPrefix]
+        public static void WorkshopSkinDataSetter_SetData(WorkshopSkinDataSetter __instance,WorkshopSkinData data)
+        {
+            if (data.contentFolderIdx == packageId)
+            {
+                foreach(ActionDetail key in data.dic.Keys)
+                {
+                    CharacterMotion characterMotion = __instance.Appearance.GetCharacterMotion(key);
+                    if (characterMotion == null)
+                    {
+                        characterMotion = UnityEngine.Object.Instantiate<CharacterMotion>(__instance.Appearance._motionList[0], __instance.transform);
+                        characterMotion.gameObject.name = "Custom_" + key.ToString();
+                        characterMotion.actionDetail = key;
+                        characterMotion.motionSpriteSet.Clear();
+                        characterMotion.motionSpriteSet.Add(new SpriteSet(characterMotion.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>(), CharacterAppearanceType.Body));
+                        characterMotion.motionSpriteSet.Add(new SpriteSet(characterMotion.transform.GetChild(0).GetChild(0).gameObject.GetComponent<SpriteRenderer>(), CharacterAppearanceType.Head));
+                        characterMotion.motionSpriteSet.Add(new SpriteSet(characterMotion.transform.GetChild(2).gameObject.GetComponent<SpriteRenderer>(), CharacterAppearanceType.Body));
+                        __instance.Appearance._motionList.Add(characterMotion);
+                    }
+                }
+            }
         }
         //加载骰子特效
         [HarmonyPatch(typeof(DiceEffectManager), nameof(DiceEffectManager.CreateBehaviourEffect))]
@@ -458,7 +636,7 @@ namespace EternalityTemple
         public static bool BattleUnitView_ChangeSkin_Pre(string charName, BattleUnitModel ___model)
         {
             bool result;
-            if (charName == "Reisen2")
+            if (charName == "Reisen2" || charName == "Reisen")
             {
                 ___model.view._skinInfo.state= BattleUnitView.SkinState.Changed;
                 ___model.view._skinInfo.skinName = charName;
@@ -492,92 +670,6 @@ namespace EternalityTemple
                 result = true;
             }
             return result;
-        }
-        //修复readyBuf不显示图标
-        [HarmonyPatch(typeof(BattleUnitBufListDetail), "OnRoundStart")]
-        [HarmonyPrefix]
-        private static bool BattleUnitBufListDetail_OnRoundStart_Pre(BattleUnitBufListDetail __instance, BattleUnitModel ____self, List<BattleUnitBuf> ____bufList, List<BattleUnitBuf> ____readyBufList, List<BattleUnitBuf> ____readyReadyBufList)
-        {
-            try
-            {
-                using (List<BattleUnitBuf>.Enumerator enumerator = ____readyBufList.GetEnumerator())
-                {
-                    while (enumerator.MoveNext())
-                    {
-                        BattleUnitBuf ReadyBuf = enumerator.Current;
-                        bool flag = !ReadyBuf.IsDestroyed();
-                        if (flag)
-                        {
-                            BattleUnitBuf battleUnitBuf = ____bufList.Find((BattleUnitBuf x) => x.GetType() == ReadyBuf.GetType() && !x.IsDestroyed());
-                            bool flag2 = battleUnitBuf != null && !ReadyBuf.independentBufIcon && battleUnitBuf.GetBufIcon() != null;
-                            if (flag2)
-                            {
-                                battleUnitBuf.stack += ReadyBuf.stack;
-                                battleUnitBuf.OnAddBuf(ReadyBuf.stack);
-                            }
-                            else
-                            {
-                                __instance.AddBuf(ReadyBuf);
-                                ReadyBuf.OnAddBuf(ReadyBuf.stack);
-                            }
-                        }
-                    }
-                }
-                ____readyBufList.Clear();
-                using (List<BattleUnitBuf>.Enumerator enumerator2 = ____readyReadyBufList.GetEnumerator())
-                {
-                    while (enumerator2.MoveNext())
-                    {
-                        BattleUnitBuf ReadyReadyBuf = enumerator2.Current;
-                        bool flag3 = !ReadyReadyBuf.IsDestroyed();
-                        if (flag3)
-                        {
-                            BattleUnitBuf battleUnitBuf2 = ____readyBufList.Find((BattleUnitBuf x) => x.GetType() == ReadyReadyBuf.GetType() && !x.IsDestroyed());
-                            bool flag4 = battleUnitBuf2 != null && !ReadyReadyBuf.independentBufIcon && battleUnitBuf2.GetBufIcon() != null;
-                            if (flag4)
-                            {
-                                battleUnitBuf2.stack += ReadyReadyBuf.stack;
-                                battleUnitBuf2.OnAddBuf(ReadyReadyBuf.stack);
-                            }
-                            else
-                            {
-                                ____readyBufList.Add(ReadyReadyBuf);
-                                ReadyReadyBuf.OnAddBuf(ReadyReadyBuf.stack);
-                            }
-                        }
-                    }
-                }
-                ____readyReadyBufList.Clear();
-                bool flag5 = ____self.faction == Faction.Player && Singleton<StageController>.Instance.GetStageModel().ClassInfo.chapter == 3;
-                if (flag5)
-                {
-                    int kewordBufStack = __instance.GetKewordBufStack(KeywordBuf.Endurance);
-                    ____self.UnitData.historyInStage.maxEndurance = Mathf.Max(____self.UnitData.historyInStage.maxEndurance, kewordBufStack);
-                }
-                foreach (BattleUnitBuf battleUnitBuf3 in ____bufList.ToArray())
-                {
-                    try
-                    {
-                        bool flag6 = !battleUnitBuf3.IsDestroyed();
-                        if (flag6)
-                        {
-                            battleUnitBuf3.OnRoundStart();
-                        }
-                    }
-                    catch (Exception exception)
-                    {
-                        Debug.LogException(exception);
-                    }
-                }
-                __instance.CheckDestroyedBuf();
-                __instance.CheckAchievements();
-                return false;
-            }
-            catch (Exception ex)
-            {
-                File.WriteAllText(Application.dataPath + "/Mods/ReadyBufFixerror.log", ex.Message + Environment.NewLine + ex.StackTrace);
-            }
-            return true;
         }
         //修复观测被动而导致的UI问题
         [HarmonyPatch(typeof(LevelUpUI),nameof(LevelUpUI.InitBase))]
@@ -658,7 +750,11 @@ namespace EternalityTemple
             EternalityParam.Librarian.Reset();
             EternalityParam.Enemy.Reset();
             EternalityParam.PickedEmotionCard = 0;
-            EternalityParam.EgoCoolDown = false;
+            if(stage.id==new LorId(packageId, 226769001))
+            {
+                Singleton<StageController>.Instance.GetStageModel().ClassInfo.floorNum = 1;
+                Singleton<StageController>.Instance.GetStageModel().ClassInfo.floorOnlyList = new List<SephirahType> { SephirahType.Malkuth };
+            }
         }
         //每一幕结束时记录下双方阵营的时辰狂气(以及未来谜题的进度)
         [HarmonyPatch(typeof(StageController),nameof(StageController.ClearResources))]
@@ -691,6 +787,11 @@ namespace EternalityTemple
                     targetSlot = UnityEngine.Random.Range(0, target.speedDiceResult.Count);
                     BattleUnitBuf_InabaBuf2.frenzyTargets.Add(card, new BattleUnitBuf_InabaBuf2.targetSetter()
                         { target = target,targetSlot=targetSlot });
+                }
+                if (target.cardSlotDetail.cardAry[targetSlot] != null)
+                {
+                    target.cardSlotDetail.cardAry[targetSlot].target = owner;
+                    target.cardSlotDetail.cardAry[targetSlot].targetSlotOrder = owner.cardOrder;
                 }
             }
         }
@@ -776,86 +877,29 @@ namespace EternalityTemple
             if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id == new LorId(packageId, 226769001))
                 __result = false;
         }
-        ////第二战获取异想体？这个根本没有用处，上一个Patch你早就禁用了玩家司书的异想体了
-        //[HarmonyPatch(typeof(EmotionCardXmlList), nameof(EmotionCardXmlList.GetDataList), new Type[]{
-        //            typeof(SephirahType),
-        //            typeof(int),
-        //            typeof(int)})]
-        //[HarmonyPrefix]
-        //public static bool EmotionCardXmlList_GetDataList(List<EmotionCardXmlInfo> ____list, ref List<EmotionCardXmlInfo> __result)
-        //{
-        //    if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id != new LorId(packageId, 226769001))
-        //        return true;
-        //    __result = (from x in ____list
-        //                where x.Sephirah > SephirahType.None
-        //                select x).ToList();
-        //    return false;
-        //}
-        //第二战设定敌人的EGO书页
-        [HarmonyPatch(typeof(StageController), nameof(StageController.ApplyEnemyCardPhase))]
+        //绀珠之药描述
+        [HarmonyPatch(typeof(BattleCardAbilityDescXmlList),nameof(BattleCardAbilityDescXmlList.GetAbilityDesc),typeof(string))]
         [HarmonyPostfix]
-        public static void StageController_ApplyEnemyCardPhase()
+        public static void BattleCardAbilityDescXmlList_GetAbilityDesc(string id, List<string> __result)
         {
-            if (Singleton<StageController>.Instance.GetStageModel().ClassInfo.id != new LorId(packageId, 226769001))
-                return;
-            if (StageController.Instance.CurrentFloor == SephirahType.Keter) return;
-            if(EternalityParam.EgoCoolDown)
+            if(id== "ETpassfloor")
             {
-                EternalityParam.EgoCoolDown = false;
-                return;
-            }
-            List<BattleUnitModel> list = Singleton<StageController>.Instance.GetActionableEnemyList().FindAll((BattleUnitModel x) => x.emotionDetail.EmotionLevel >= 3 && x.turnState != BattleUnitTurnState.BREAK);
-            if (list.Count == 0)
-                return;
-            BattleUnitModel egoTarget = RandomUtil.SelectOne(list);
-            List<BattleUnitModel> source = BattleObjectManager.instance.GetAliveList(Faction.Player).FindAll(x => x.IsTargetable(egoTarget));
-            if (source.Count() <= 0)
-                return;
-            int cardOrder = egoTarget.cardOrder;
-            int num = -1;
-            for (int i = 0; i < egoTarget.cardSlotDetail.cardAry.Count; i++)
-            {
-                if (egoTarget.cardSlotDetail.cardAry[i] == null && !egoTarget.speedDiceResult[i].breaked)
+                string desc = __result[0];
+                SaveData saveData = Singleton<EternalityTempleSaveManager>.Instance.LoadData("passFloor");
+                if (saveData == null)
                 {
-                    num = i;
-                    break;
+                    __result[0] = string.Format(desc, "N/A", "N/A", "N/A");
+                    return;
                 }
-            }
-            if (num == -1)
-                num = egoTarget.speedDiceResult.FindLastIndex((SpeedDice x) => !x.breaked);
-            if (num == -1)
-                return;
-            List<EmotionEgoXmlInfo> list2 = Singleton<EmotionEgoXmlList>.Instance.GetDataList(StageController.Instance.CurrentFloor);
-            if (list2 == null || list2.Count == 0)
-                return;
-            List<DiceCardXmlInfo> list3 = (from x in list2
-                                           where x.CardId != 910015 && x.CardId != 910031 && x.CardId != 910050
-                                           select ItemXmlDataList.instance.GetCardItem(x.CardId, false)).ToList();
-            list3.RemoveAll(x => x.Spec.Ranged == CardRange.Instance);
-            DiceCardXmlInfo cardInfo = RandomUtil.SelectOne(list3);
-            egoTarget.SetCurrentOrder(num);
-            BattleDiceCardModel battleDiceCardModel = BattleDiceCardModel.CreatePlayingCard(cardInfo);
-            battleDiceCardModel.owner = egoTarget;
-            battleDiceCardModel.SetCostToZero();
-            EternalityParam.EgoCoolDown = true;
-            egoTarget.cardSlotDetail.AddCard(null, null, 0, false);
-            egoTarget.cardSlotDetail.AddCard(battleDiceCardModel, RandomUtil.SelectOne(source), 0, false);
-            try
-            {
-                SingletonBehavior<BattleManagerUI>.Instance.ui_TargetArrow.ClearCloneArrows();
-                SingletonBehavior<BattleManagerUI>.Instance.ui_TargetArrow.ActiveTargetParent(true);
-                if (SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.autoCardButton != null)
-                    SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.autoCardButton.SetActivate(true);
-                if (SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.unequipcardallButton != null)
-                    SingletonBehavior<BattleManagerUI>.Instance.ui_emotionInfoBar.unequipcardallButton.SetActivate(true);
-                SingletonBehavior<BattleManagerUI>.Instance.ui_TargetArrow.UpdateTargetList();
-            }
-            catch (Exception)
-            {
+                int hp1 = saveData.GetInt(Singleton<StageController>.Instance.CurrentFloor.ToString() + "Kaguya");
+                int hp2 = saveData.GetInt(Singleton<StageController>.Instance.CurrentFloor.ToString() + "Yagokoro");
+                int hp3 = saveData.GetInt(Singleton<StageController>.Instance.CurrentFloor.ToString() + "Inaba");
+                __result[0]=string.Format(desc, hp1, hp2, hp3);
             }
         }
+
         [HarmonyPatch]
-        public class BaseModPatch
+        public class BaseModPatch  //Copied from UnitRenderUtil.dll by Cyaminthe from Basemod
         {
             [HarmonyPatch(typeof(UIBattleSettingWaveList), "SetData")]
             [HarmonyPrefix]

@@ -112,6 +112,11 @@
       		<Name>愤怒</Name>
       		<Desc>该来宾会额外使用一张不分敌我的范围杀伤书页“邪恶的化身！！！”</Desc>
     	</BattleEffectText>
+		<BattleEffectText ID="EF_NihilClown_Card">
+			<Name>虚无之意</Name>
+			<Desc>已拼点失败{0}次,
+该层数达到25后，自下一幕起该角色将获得“毫无意义”。</Desc>
+		</BattleEffectText>
 		<BattleEffectText ID="EF_Nihil">
       		<Name>虚无</Name>
       		<Desc>移除异想体书页“贪婪”，“憎恶”，与“愤怒”的负面效果。

@@ -165,8 +165,8 @@
       <Passive Pid="@origin">243105</Passive>
       <Passive Pid="@origin">243205</Passive>
       <Passive Pid="@origin">250007</Passive>
-      <Passive Pid="@origin">250007</Passive>
-      <Passive Pid="@origin">250007</Passive>
+      <Passive>25000701</Passive>
+      <Passive>25000702</Passive>
     </EquipEffect>
     <BookIcon>ClassOneFixer</BookIcon>
     <Chapter>6</Chapter>
@@ -198,9 +198,9 @@
       <Passive Pid="@origin">250020</Passive>
       <Passive Pid="@origin">250036</Passive>
       <Passive Pid="@origin">210006</Passive>
-      <Passive Pid="@origin">210006</Passive>
-      <Passive Pid="@origin">210006</Passive>
-      <Passive Pid="@origin">210006</Passive>
+      <Passive>21000601</Passive>
+      <Passive>21000602</Passive>
+      <Passive>21000603</Passive>
 
       <OnlyCard>606001</OnlyCard>
       <OnlyCard>610006</OnlyCard>
@@ -236,9 +236,9 @@
       <Passive Pid="@origin">250001</Passive>
       <Passive Pid="@origin">250021</Passive>
       <Passive Pid="@origin">210006</Passive>
-      <Passive Pid="@origin">210006</Passive>
-      <Passive Pid="@origin">210006</Passive>
-      <Passive Pid="@origin">210006</Passive>
+      <Passive>21000601</Passive>
+      <Passive>21000602</Passive>
+      <Passive>21000603</Passive>
 
       <OnlyCard>606002</OnlyCard>
     </EquipEffect>
@@ -272,9 +272,9 @@
       <Passive Pid="@origin">250002</Passive>
       <Passive Pid="@origin">250001</Passive>
       <Passive Pid="@origin">210006</Passive>
-      <Passive Pid="@origin">210006</Passive>
-      <Passive Pid="@origin">210006</Passive>
-      <Passive Pid="@origin">210006</Passive>
+      <Passive>21000601</Passive>
+      <Passive>21000602</Passive>
+      <Passive>21000603</Passive>
 
 			<OnlyCard>601008</OnlyCard>
     </EquipEffect>
@@ -308,9 +308,9 @@
       <Passive Pid="@origin">240127</Passive>
       <Passive Pid="@origin">240227</Passive>
       <Passive Pid="@origin">210006</Passive>
-      <Passive Pid="@origin">210006</Passive>
-      <Passive Pid="@origin">210006</Passive>
-      <Passive Pid="@origin">210006</Passive>
+      <Passive>21000601</Passive>
+      <Passive>21000602</Passive>
+      <Passive>21000603</Passive>
 
       <OnlyCard>508010</OnlyCard>
     </EquipEffect>
@@ -542,9 +542,9 @@
       <Passive Pid="@origin">240101</Passive>
 
       <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
+      <Passive>23002001</Passive>
+      <Passive>23002002</Passive>
+      <Passive>23002003</Passive>
 
       <OnlyCard>501001</OnlyCard>
     </EquipEffect>
@@ -581,8 +581,7 @@
       <Passive Pid="@origin">243003</Passive>
 
       <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
-
+      <Passive>23002001</Passive>
       <Passive Pid="@origin">234001</Passive>
       <Passive Pid="@origin">234002</Passive>
       
@@ -620,9 +619,9 @@
       <Passive Pid="@origin">252003</Passive>
 
       <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
+      <Passive>23002001</Passive>
+      <Passive>23002002</Passive>
+      <Passive>23002003</Passive>
 
       <OnlyCard>612006</OnlyCard>
 
@@ -659,9 +658,9 @@
       <Passive Pid="@origin">243205</Passive>
 
       <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
+      <Passive>23002001</Passive>
+      <Passive>23002002</Passive>
+      <Passive>23002003</Passive>
     </EquipEffect>
     <BookIcon>ClassOneFixer</BookIcon>
     <Chapter>6</Chapter>
@@ -692,9 +691,9 @@
       <Passive Pid="@origin">260004</Passive>
 
       <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
-      <Passive Pid="@origin">230020</Passive>
+      <Passive>23002001</Passive>
+      <Passive>23002002</Passive>
+      <Passive>23002003</Passive>
 
       <StartPlayPoint>4</StartPlayPoint>
       <MaxPlayPoint>4</MaxPlayPoint>
@@ -1425,7 +1424,7 @@
       <Passive Pid="@origin">260004</Passive>
       <Passive Pid="@origin">230018</Passive>
       <Passive Pid="@origin">251003</Passive>
-      <Passive Pid="@origin">260004</Passive>
+      <Passive>26000401</Passive>
       <Passive Pid="@origin">256001</Passive>
       <Passive Pid="@origin">250214</Passive>
 
@@ -1758,11 +1757,11 @@
       <Passive Pid="@origin">10013</Passive>
       <Passive Pid="@origin">250115</Passive>
       <Passive Pid="@origin">250015</Passive>
-      <Passive Pid="@origin">250015</Passive>
+      <Passive>25001501</Passive>
       <Passive Pid="@origin">250017</Passive>
-      <Passive Pid="@origin">250017</Passive>
-      <Passive Pid="@origin">250017</Passive>
-      <Passive Pid="@origin">250017</Passive>
+      <Passive>25001701</Passive>
+      <Passive>25001702</Passive>
+      <Passive>25001703</Passive>
 		</EquipEffect>
     <BookIcon>BlackSilence</BookIcon>
     <Chapter>7</Chapter>
@@ -1789,11 +1788,11 @@
       <Passive>226769023</Passive>
       <Passive Pid="@origin">260001</Passive>
       <Passive Pid="@origin">234001</Passive>
-      <Passive Pid="@origin">234001</Passive>
+      <Passive>23400101</Passive>
       <Passive Pid="@origin">234002</Passive>
-      <Passive Pid="@origin">234002</Passive>
-      <Passive Pid="@origin">234002</Passive>
-      <Passive Pid="@origin">234002</Passive>
+      <Passive>23400201</Passive>
+      <Passive>23400202</Passive>
+      <Passive>23400203</Passive>
 
       <StartPlayPoint>4</StartPlayPoint>
       <MaxPlayPoint>4</MaxPlayPoint>
@@ -1824,11 +1823,11 @@
       <Passive>226769023</Passive>
       <Passive Pid="@origin">260001</Passive>
       <Passive Pid="@origin">234001</Passive>
-      <Passive Pid="@origin">234001</Passive>
+      <Passive>23400101</Passive>
       <Passive Pid="@origin">234002</Passive>
-      <Passive Pid="@origin">234002</Passive>
-      <Passive Pid="@origin">234002</Passive>
-      <Passive Pid="@origin">234002</Passive>
+      <Passive>23400201</Passive>
+      <Passive>23400202</Passive>
+      <Passive>23400203</Passive>
 
       <StartPlayPoint>4</StartPlayPoint>
       <MaxPlayPoint>4</MaxPlayPoint>
@@ -1859,11 +1858,11 @@
       <Passive>226769023</Passive>
       <Passive Pid="@origin">260001</Passive>
       <Passive Pid="@origin">234001</Passive>
-      <Passive Pid="@origin">234001</Passive>
+      <Passive>23400101</Passive>
       <Passive Pid="@origin">234002</Passive>
-      <Passive Pid="@origin">234002</Passive>
-      <Passive Pid="@origin">234002</Passive>
-      <Passive Pid="@origin">234002</Passive>
+      <Passive>23400201</Passive>
+      <Passive>23400202</Passive>
+      <Passive>23400203</Passive>
 
       <StartPlayPoint>4</StartPlayPoint>
       <MaxPlayPoint>4</MaxPlayPoint>
@@ -1894,9 +1893,9 @@
       <Passive>226769023</Passive>
       <Passive Pid="@origin">260001</Passive>
       <Passive Pid="@origin">234001</Passive>
-      <Passive Pid="@origin">234001</Passive>
+      <Passive>23400101</Passive>
       <Passive Pid="@origin">234002</Passive>
-      <Passive Pid="@origin">234002</Passive>
+      <Passive>23400201</Passive>
 
       <StartPlayPoint>4</StartPlayPoint>
       <MaxPlayPoint>4</MaxPlayPoint>
